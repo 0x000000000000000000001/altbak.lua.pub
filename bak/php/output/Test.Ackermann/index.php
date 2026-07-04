@@ -2,11 +2,13 @@
 
 namespace Test\Ackermann;
 
+require_once __DIR__ . '/../Data.Function/index.php';
 require_once __DIR__ . '/../Data.Ring/index.php';
 require_once __DIR__ . '/../Data.Semiring/index.php';
 require_once __DIR__ . '/../Data.Show/index.php';
 require_once __DIR__ . '/../Effect/index.php';
 require_once __DIR__ . '/../Effect.Console/index.php';
+require_once __DIR__ . '/../Prelude/index.php';
 require_once __DIR__ . '/../Test.Ackermann/index.php';
 
 if (!class_exists(__NAMESPACE__ . '\\Phpurs_Data0')) {
@@ -64,11 +66,11 @@ $__case_0 = $v;
 $__case_1 = $v1;
 if (($__case_0 === 0)) {
 $n = $__case_1;
-return (($GLOBALS['Test_Ackermann_add'] ?? \Test\Ackermann\phpurs_eval_thunk('Test_Ackermann_add')))($n, 1);
+return ($n + 1);
 } else {
 if (($__case_1 === 0)) {
 $m = $__case_0;
-$__tco_tmp_0 = (($GLOBALS['Test_Ackermann_sub'] ?? \Test\Ackermann\phpurs_eval_thunk('Test_Ackermann_sub')))($m, 1);
+$__tco_tmp_0 = ($m - 1);
 $__tco_tmp_1 = 1;
 $v = $__tco_tmp_0;
 $v1 = $__tco_tmp_1;
@@ -77,8 +79,8 @@ continue;
 if (true) {
 $m = $__case_0;
 $n = $__case_1;
-$__tco_tmp_0 = (($GLOBALS['Test_Ackermann_sub'] ?? \Test\Ackermann\phpurs_eval_thunk('Test_Ackermann_sub')))($m, 1);
-$__tco_tmp_1 = (($GLOBALS['Test_Ackermann_ackermann'] ?? \Test\Ackermann\phpurs_eval_thunk('Test_Ackermann_ackermann')))($m, (($GLOBALS['Test_Ackermann_sub'] ?? \Test\Ackermann\phpurs_eval_thunk('Test_Ackermann_sub')))($n, 1));
+$__tco_tmp_0 = ($m - 1);
+$__tco_tmp_1 = (($GLOBALS['Test_Ackermann_ackermann'] ?? \Test\Ackermann\phpurs_eval_thunk('Test_Ackermann_ackermann')))($m, ($n - 1));
 $v = $__tco_tmp_0;
 $v1 = $__tco_tmp_1;
 continue;

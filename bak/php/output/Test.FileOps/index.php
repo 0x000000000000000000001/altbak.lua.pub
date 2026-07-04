@@ -7,6 +7,7 @@ require_once __DIR__ . '/../Control.Bind/index.php';
 require_once __DIR__ . '/../Data.Unit/index.php';
 require_once __DIR__ . '/../Effect/index.php';
 require_once __DIR__ . '/../Effect.Console/index.php';
+require_once __DIR__ . '/../Prelude/index.php';
 require_once __DIR__ . '/../Test.FileOps/index.php';
 
 if (!class_exists(__NAMESPACE__ . '\\Phpurs_Data0')) {
@@ -41,7 +42,8 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (($GLOBALS['Control_Bind_bind'] ?? \Control\Bind\phpurs_eval_thunk('Control_Bind_bind')))($dictBind);
+$__global_Control_Bind_bind = ($GLOBALS['Control_Bind_bind'] ?? \Control\Bind\phpurs_eval_thunk('Control_Bind_bind'));
+    $__res = ($__global_Control_Bind_bind)($dictBind);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -57,58 +59,7 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
   }
 }
 $Prim_undefined = function() { throw new \Exception("undefined"); };
-if (!function_exists('phpurs_uncurry2')) {
-function phpurs_uncurry2($fn) {
-    return function($a, $b = null) use ($fn) {
-        if (func_num_args() < 2) {
-            $__args = func_get_args();
-            return function(...$more) use ($fn, $__args) {
-                return phpurs_uncurry2($fn)(...array_merge($__args, $more));
-            };
-        }
-        return $fn($a)($b);
-    };
-}
-function phpurs_uncurry3($fn) {
-    return function($a, $b = null, $c = null) use ($fn) {
-        if (func_num_args() < 3) {
-            $__args = func_get_args();
-            return function(...$more) use ($fn, $__args) {
-                return phpurs_uncurry3($fn)(...array_merge($__args, $more));
-            };
-        }
-        return $fn($a)($b)($c);
-    };
-}
-function phpurs_uncurry4($fn) {
-    return function($a, $b = null, $c = null, $d = null) use ($fn) {
-        if (func_num_args() < 4) {
-            $__args = func_get_args();
-            return function(...$more) use ($fn, $__args) {
-                return phpurs_uncurry4($fn)(...array_merge($__args, $more));
-            };
-        }
-        return $fn($a)($b)($c)($d);
-    };
-}
-function phpurs_uncurry5($fn) {
-    return function($a, $b = null, $c = null, $d = null, $e = null) use ($fn) {
-        if (func_num_args() < 5) {
-            $__args = func_get_args();
-            return function(...$more) use ($fn, $__args) {
-                return phpurs_uncurry5($fn)(...array_merge($__args, $more));
-            };
-        }
-        return $fn($a)($b)($c)($d)($e);
-    };
-}
-}
 
-
-
-$Test_FileOps_writeFileSync = phpurs_uncurry2(function($path) { return function($content) use(&$path) { return function() use(&$path, &$content) { file_put_contents($path, $content); return null; }; }; });
-$Test_FileOps_readFileSync = function($path) { return function() use(&$path) { return file_get_contents($path); }; };
-$Test_FileOps_loopE = phpurs_uncurry2(function($n) { return function($action) use(&$n) { return function() use(&$n, &$action) { for($i=0; $i<$n; $i++) { $action(); } return null; }; }; });
 
 
 
@@ -120,19 +71,26 @@ function Test_FileOps_loopIO($n) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (($GLOBALS['Test_FileOps_loopE'] ?? \Test\FileOps\phpurs_eval_thunk('Test_FileOps_loopE')))($n, (($GLOBALS['Test_FileOps_discard'] ?? \Test\FileOps\phpurs_eval_thunk('Test_FileOps_discard')))((($GLOBALS['Test_FileOps_writeFileSync'] ?? \Test\FileOps\phpurs_eval_thunk('Test_FileOps_writeFileSync')))("var/iotest.txt", "Hello IO Benchmarks!"), (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
+$__global_Test_FileOps_loopE = ($GLOBALS['Test_FileOps_loopE'] ?? \Test\FileOps\phpurs_eval_thunk('Test_FileOps_loopE'));
+$__global_Test_FileOps_discard = ($GLOBALS['Test_FileOps_discard'] ?? \Test\FileOps\phpurs_eval_thunk('Test_FileOps_discard'));
+$__global_Test_FileOps_writeFileSync = ($GLOBALS['Test_FileOps_writeFileSync'] ?? \Test\FileOps\phpurs_eval_thunk('Test_FileOps_writeFileSync'));
+$__global_Effect_bindE = ($GLOBALS['Effect_bindE'] ?? \Effect\phpurs_eval_thunk('Effect_bindE'));
+$__global_Test_FileOps_readFileSync = ($GLOBALS['Test_FileOps_readFileSync'] ?? \Test\FileOps\phpurs_eval_thunk('Test_FileOps_readFileSync'));
+$__global_Effect_pureE = ($GLOBALS['Effect_pureE'] ?? \Effect\phpurs_eval_thunk('Effect_pureE'));
+$__global_Data_Unit_unit = ($GLOBALS['Data_Unit_unit'] ?? \Data\Unit\phpurs_eval_thunk('Data_Unit_unit'));
+    $__res = ($__global_Test_FileOps_loopE)($n, ($__global_Test_FileOps_discard)(($__global_Test_FileOps_writeFileSync)("var/iotest.txt", "Hello IO Benchmarks!"), (function() use ($__global_Effect_bindE, $__global_Test_FileOps_readFileSync, $__global_Effect_pureE, $__global_Data_Unit_unit) {
+  $__fn = function($__dollar____unused) use ($__global_Effect_bindE, $__global_Test_FileOps_readFileSync, $__global_Effect_pureE, $__global_Data_Unit_unit, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (($GLOBALS['Test_FileOps_bind'] ?? \Test\FileOps\phpurs_eval_thunk('Test_FileOps_bind')))((($GLOBALS['Test_FileOps_readFileSync'] ?? \Test\FileOps\phpurs_eval_thunk('Test_FileOps_readFileSync')))("var/iotest.txt"), (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
+    $__res = ($__global_Effect_bindE)(($__global_Test_FileOps_readFileSync)("var/iotest.txt"), (function() use ($__global_Effect_pureE, $__global_Data_Unit_unit) {
+  $__fn = function($__dollar____unused) use ($__global_Effect_pureE, $__global_Data_Unit_unit, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (($GLOBALS['Test_FileOps_pure'] ?? \Test\FileOps\phpurs_eval_thunk('Test_FileOps_pure')))(($GLOBALS['Data_Unit_unit'] ?? \Data\Unit\phpurs_eval_thunk('Data_Unit_unit')));
+    $__res = ($__global_Effect_pureE)($__global_Data_Unit_unit);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;

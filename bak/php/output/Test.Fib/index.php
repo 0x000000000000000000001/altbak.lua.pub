@@ -2,11 +2,13 @@
 
 namespace Test\Fib;
 
+require_once __DIR__ . '/../Data.Function/index.php';
 require_once __DIR__ . '/../Data.Ring/index.php';
 require_once __DIR__ . '/../Data.Semiring/index.php';
 require_once __DIR__ . '/../Data.Show/index.php';
 require_once __DIR__ . '/../Effect/index.php';
 require_once __DIR__ . '/../Effect.Console/index.php';
+require_once __DIR__ . '/../Prelude/index.php';
 require_once __DIR__ . '/../Test.Fib/index.php';
 
 if (!class_exists(__NAMESPACE__ . '\\Phpurs_Data0')) {
@@ -67,7 +69,7 @@ return 1;
 } else {
 if (true) {
 $n = $__case_0;
-return (($GLOBALS['Test_Fib_add'] ?? \Test\Fib\phpurs_eval_thunk('Test_Fib_add')))((($GLOBALS['Test_Fib_fib'] ?? \Test\Fib\phpurs_eval_thunk('Test_Fib_fib')))((($GLOBALS['Test_Fib_sub'] ?? \Test\Fib\phpurs_eval_thunk('Test_Fib_sub')))($n, 1)), (($GLOBALS['Test_Fib_fib'] ?? \Test\Fib\phpurs_eval_thunk('Test_Fib_fib')))((($GLOBALS['Test_Fib_sub'] ?? \Test\Fib\phpurs_eval_thunk('Test_Fib_sub')))($n, 2)));
+return ((($GLOBALS['Test_Fib_fib'] ?? \Test\Fib\phpurs_eval_thunk('Test_Fib_fib')))(($n - 1)) + (($GLOBALS['Test_Fib_fib'] ?? \Test\Fib\phpurs_eval_thunk('Test_Fib_fib')))(($n - 2)));
 } else {
 throw new \Exception("Pattern match failure");
 };

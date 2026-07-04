@@ -2,11 +2,13 @@
 
 namespace Test\AstTree;
 
+require_once __DIR__ . '/../Data.Function/index.php';
 require_once __DIR__ . '/../Data.Ring/index.php';
 require_once __DIR__ . '/../Data.Semiring/index.php';
 require_once __DIR__ . '/../Data.Show/index.php';
 require_once __DIR__ . '/../Effect/index.php';
 require_once __DIR__ . '/../Effect.Console/index.php';
+require_once __DIR__ . '/../Prelude/index.php';
 require_once __DIR__ . '/../Test.AstTree/index.php';
 
 if (!class_exists(__NAMESPACE__ . '\\Phpurs_Data0')) {
@@ -120,17 +122,17 @@ break;
 case "Add":
 $a = ($__case_0)->v0;
 $b = ($__case_0)->v1;
-return (($GLOBALS['Test_AstTree_add'] ?? \Test\AstTree\phpurs_eval_thunk('Test_AstTree_add')))((($GLOBALS['Test_AstTree_eval'] ?? \Test\AstTree\phpurs_eval_thunk('Test_AstTree_eval')))($a), (($GLOBALS['Test_AstTree_eval'] ?? \Test\AstTree\phpurs_eval_thunk('Test_AstTree_eval')))($b));
+return ((($GLOBALS['Test_AstTree_eval'] ?? \Test\AstTree\phpurs_eval_thunk('Test_AstTree_eval')))($a) + (($GLOBALS['Test_AstTree_eval'] ?? \Test\AstTree\phpurs_eval_thunk('Test_AstTree_eval')))($b));
 break;
 case "Mul":
 $a = ($__case_0)->v0;
 $b = ($__case_0)->v1;
-return (($GLOBALS['Test_AstTree_mul'] ?? \Test\AstTree\phpurs_eval_thunk('Test_AstTree_mul')))((($GLOBALS['Test_AstTree_eval'] ?? \Test\AstTree\phpurs_eval_thunk('Test_AstTree_eval')))($a), (($GLOBALS['Test_AstTree_eval'] ?? \Test\AstTree\phpurs_eval_thunk('Test_AstTree_eval')))($b));
+return ((($GLOBALS['Test_AstTree_eval'] ?? \Test\AstTree\phpurs_eval_thunk('Test_AstTree_eval')))($a) * (($GLOBALS['Test_AstTree_eval'] ?? \Test\AstTree\phpurs_eval_thunk('Test_AstTree_eval')))($b));
 break;
 case "Sub":
 $a = ($__case_0)->v0;
 $b = ($__case_0)->v1;
-return (($GLOBALS['Test_AstTree_sub'] ?? \Test\AstTree\phpurs_eval_thunk('Test_AstTree_sub')))((($GLOBALS['Test_AstTree_eval'] ?? \Test\AstTree\phpurs_eval_thunk('Test_AstTree_eval')))($a), (($GLOBALS['Test_AstTree_eval'] ?? \Test\AstTree\phpurs_eval_thunk('Test_AstTree_eval')))($b));
+return ((($GLOBALS['Test_AstTree_eval'] ?? \Test\AstTree\phpurs_eval_thunk('Test_AstTree_eval')))($a) - (($GLOBALS['Test_AstTree_eval'] ?? \Test\AstTree\phpurs_eval_thunk('Test_AstTree_eval')))($b));
 break;
 default:
 throw new \Exception("Pattern match failure");
@@ -150,14 +152,18 @@ function Test_AstTree_buildTree($v) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
+$__global_Test_AstTree_Val = ($GLOBALS['Test_AstTree_Val'] ?? \Test\AstTree\phpurs_eval_thunk('Test_AstTree_Val'));
+$__global_Test_AstTree_Add = ($GLOBALS['Test_AstTree_Add'] ?? \Test\AstTree\phpurs_eval_thunk('Test_AstTree_Add'));
+$__global_Test_AstTree_Mul = ($GLOBALS['Test_AstTree_Mul'] ?? \Test\AstTree\phpurs_eval_thunk('Test_AstTree_Mul'));
+$__global_Test_AstTree_Sub = ($GLOBALS['Test_AstTree_Sub'] ?? \Test\AstTree\phpurs_eval_thunk('Test_AstTree_Sub'));
 while (true) {
 $__case_0 = $v;
 if (($__case_0 === 0)) {
-return (($GLOBALS['Test_AstTree_Val'] ?? \Test\AstTree\phpurs_eval_thunk('Test_AstTree_Val')))(1);
+return ($__global_Test_AstTree_Val)(1);
 } else {
 if (true) {
 $n = $__case_0;
-return (($GLOBALS['Test_AstTree_Add'] ?? \Test\AstTree\phpurs_eval_thunk('Test_AstTree_Add')))((($GLOBALS['Test_AstTree_Mul'] ?? \Test\AstTree\phpurs_eval_thunk('Test_AstTree_Mul')))((($GLOBALS['Test_AstTree_Val'] ?? \Test\AstTree\phpurs_eval_thunk('Test_AstTree_Val')))($n), (($GLOBALS['Test_AstTree_buildTree'] ?? \Test\AstTree\phpurs_eval_thunk('Test_AstTree_buildTree')))((($GLOBALS['Test_AstTree_sub'] ?? \Test\AstTree\phpurs_eval_thunk('Test_AstTree_sub')))($n, 1))), (($GLOBALS['Test_AstTree_Sub'] ?? \Test\AstTree\phpurs_eval_thunk('Test_AstTree_Sub')))((($GLOBALS['Test_AstTree_buildTree'] ?? \Test\AstTree\phpurs_eval_thunk('Test_AstTree_buildTree')))((($GLOBALS['Test_AstTree_sub'] ?? \Test\AstTree\phpurs_eval_thunk('Test_AstTree_sub')))($n, 1)), (($GLOBALS['Test_AstTree_Val'] ?? \Test\AstTree\phpurs_eval_thunk('Test_AstTree_Val')))(1)));
+return ($__global_Test_AstTree_Add)(($__global_Test_AstTree_Mul)(($__global_Test_AstTree_Val)($n), (($GLOBALS['Test_AstTree_buildTree'] ?? \Test\AstTree\phpurs_eval_thunk('Test_AstTree_buildTree')))(($n - 1))), ($__global_Test_AstTree_Sub)((($GLOBALS['Test_AstTree_buildTree'] ?? \Test\AstTree\phpurs_eval_thunk('Test_AstTree_buildTree')))(($n - 1)), ($__global_Test_AstTree_Val)(1)));
 } else {
 throw new \Exception("Pattern match failure");
 };

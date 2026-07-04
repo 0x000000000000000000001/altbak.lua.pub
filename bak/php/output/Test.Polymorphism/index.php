@@ -2,11 +2,13 @@
 
 namespace Test\Polymorphism;
 
+require_once __DIR__ . '/../Data.Function/index.php';
 require_once __DIR__ . '/../Data.Ring/index.php';
 require_once __DIR__ . '/../Data.Semiring/index.php';
 require_once __DIR__ . '/../Data.Show/index.php';
 require_once __DIR__ . '/../Effect/index.php';
 require_once __DIR__ . '/../Effect.Console/index.php';
+require_once __DIR__ . '/../Prelude/index.php';
 require_once __DIR__ . '/../Test.Polymorphism/index.php';
 
 if (!class_exists(__NAMESPACE__ . '\\Phpurs_Data0')) {
@@ -44,7 +46,7 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     if ($__num === 1) return function($y) use ($x, &$__fn) { return $__fn($x, $y); };
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
-    $__res = (($GLOBALS['Test_Polymorphism_add'] ?? \Test\Polymorphism\phpurs_eval_thunk('Test_Polymorphism_add')))($x, $y);
+    $__res = ($x + $y);
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
@@ -123,8 +125,8 @@ function Test_Polymorphism_polyLoop($dictMonoidish) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$mappend_1 = (($GLOBALS['Test_Polymorphism_mappend_'] ?? \Test\Polymorphism\phpurs_eval_thunk('Test_Polymorphism_mappend_')))($dictMonoidish);
-$mempty_1 = (($GLOBALS['Test_Polymorphism_mempty_'] ?? \Test\Polymorphism\phpurs_eval_thunk('Test_Polymorphism_mempty_')))($dictMonoidish);
+$mappend_1 = ($dictMonoidish)->mappend_;
+$mempty_1 = ($dictMonoidish)->mempty_;
     $__res = (function() use ($mappend_1, $mempty_1) {
   $__fn = function($n_init, $acc_init = null) use ($mappend_1, $mempty_1, &$__fn) {
   $__num = func_num_args();
@@ -149,7 +151,7 @@ return $acc;
 if (true) {
 $n = $__case_0;
 $acc = $__case_1;
-$__tco_tmp_0 = (($GLOBALS['Test_Polymorphism_sub'] ?? \Test\Polymorphism\phpurs_eval_thunk('Test_Polymorphism_sub')))($n, 1);
+$__tco_tmp_0 = ($n - 1);
 $__tco_tmp_1 = ($mappend_1)($acc, $mempty_1);
 $v = $__tco_tmp_0;
 $v1 = $__tco_tmp_1;

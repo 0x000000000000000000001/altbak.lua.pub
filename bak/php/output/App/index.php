@@ -6,6 +6,7 @@ require_once __DIR__ . '/../Control.Applicative/index.php';
 require_once __DIR__ . '/../Control.Bind/index.php';
 require_once __DIR__ . '/../Data.Unit/index.php';
 require_once __DIR__ . '/../Effect/index.php';
+require_once __DIR__ . '/../Prelude/index.php';
 require_once __DIR__ . '/../Test.Ackermann/index.php';
 require_once __DIR__ . '/../Test.AstTree/index.php';
 require_once __DIR__ . '/../Test.Church/index.php';
@@ -52,7 +53,8 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (($GLOBALS['Control_Bind_bind'] ?? \Control\Bind\phpurs_eval_thunk('Control_Bind_bind')))($dictBind);
+$__global_Control_Bind_bind = ($GLOBALS['Control_Bind_bind'] ?? \Control\Bind\phpurs_eval_thunk('Control_Bind_bind'));
+    $__res = ($__global_Control_Bind_bind)($dictBind);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -64,163 +66,191 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (($GLOBALS['App_discard'] ?? \App\phpurs_eval_thunk('App_discard')))(($GLOBALS['Test_AstTree_act'] ?? \Test\AstTree\phpurs_eval_thunk('Test_AstTree_act')), (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
+$__global_App_discard = ($GLOBALS['App_discard'] ?? \App\phpurs_eval_thunk('App_discard'));
+$__global_Test_AstTree_act = ($GLOBALS['Test_AstTree_act'] ?? \Test\AstTree\phpurs_eval_thunk('Test_AstTree_act'));
+$__global_Test_Fib_describe = ($GLOBALS['Test_Fib_describe'] ?? \Test\Fib\phpurs_eval_thunk('Test_Fib_describe'));
+$__global_Test_Fib_act = ($GLOBALS['Test_Fib_act'] ?? \Test\Fib\phpurs_eval_thunk('Test_Fib_act'));
+$__global_Test_ListOps_describe = ($GLOBALS['Test_ListOps_describe'] ?? \Test\ListOps\phpurs_eval_thunk('Test_ListOps_describe'));
+$__global_Test_ListOps_act = ($GLOBALS['Test_ListOps_act'] ?? \Test\ListOps\phpurs_eval_thunk('Test_ListOps_act'));
+$__global_Test_TCO_describe = ($GLOBALS['Test_TCO_describe'] ?? \Test\TCO\phpurs_eval_thunk('Test_TCO_describe'));
+$__global_Test_TCO_act = ($GLOBALS['Test_TCO_act'] ?? \Test\TCO\phpurs_eval_thunk('Test_TCO_act'));
+$__global_Test_Records_describe = ($GLOBALS['Test_Records_describe'] ?? \Test\Records\phpurs_eval_thunk('Test_Records_describe'));
+$__global_Test_Records_act = ($GLOBALS['Test_Records_act'] ?? \Test\Records\phpurs_eval_thunk('Test_Records_act'));
+$__global_Test_Ackermann_describe = ($GLOBALS['Test_Ackermann_describe'] ?? \Test\Ackermann\phpurs_eval_thunk('Test_Ackermann_describe'));
+$__global_Test_Ackermann_act = ($GLOBALS['Test_Ackermann_act'] ?? \Test\Ackermann\phpurs_eval_thunk('Test_Ackermann_act'));
+$__global_Test_Church_describe = ($GLOBALS['Test_Church_describe'] ?? \Test\Church\phpurs_eval_thunk('Test_Church_describe'));
+$__global_Test_Church_act = ($GLOBALS['Test_Church_act'] ?? \Test\Church\phpurs_eval_thunk('Test_Church_act'));
+$__global_Test_Primes_describe = ($GLOBALS['Test_Primes_describe'] ?? \Test\Primes\phpurs_eval_thunk('Test_Primes_describe'));
+$__global_Test_Primes_act = ($GLOBALS['Test_Primes_act'] ?? \Test\Primes\phpurs_eval_thunk('Test_Primes_act'));
+$__global_Test_RBTree_describe = ($GLOBALS['Test_RBTree_describe'] ?? \Test\RBTree\phpurs_eval_thunk('Test_RBTree_describe'));
+$__global_Test_RBTree_act = ($GLOBALS['Test_RBTree_act'] ?? \Test\RBTree\phpurs_eval_thunk('Test_RBTree_act'));
+$__global_Test_Polymorphism_describe = ($GLOBALS['Test_Polymorphism_describe'] ?? \Test\Polymorphism\phpurs_eval_thunk('Test_Polymorphism_describe'));
+$__global_Test_Polymorphism_act = ($GLOBALS['Test_Polymorphism_act'] ?? \Test\Polymorphism\phpurs_eval_thunk('Test_Polymorphism_act'));
+$__global_Test_StateMonad_describe = ($GLOBALS['Test_StateMonad_describe'] ?? \Test\StateMonad\phpurs_eval_thunk('Test_StateMonad_describe'));
+$__global_Test_StateMonad_act = ($GLOBALS['Test_StateMonad_act'] ?? \Test\StateMonad\phpurs_eval_thunk('Test_StateMonad_act'));
+$__global_Test_LazyEvaluation_describe = ($GLOBALS['Test_LazyEvaluation_describe'] ?? \Test\LazyEvaluation\phpurs_eval_thunk('Test_LazyEvaluation_describe'));
+$__global_Test_LazyEvaluation_act = ($GLOBALS['Test_LazyEvaluation_act'] ?? \Test\LazyEvaluation\phpurs_eval_thunk('Test_LazyEvaluation_act'));
+$__global_Test_FileOps_describe = ($GLOBALS['Test_FileOps_describe'] ?? \Test\FileOps\phpurs_eval_thunk('Test_FileOps_describe'));
+$__global_Test_FileOps_act = ($GLOBALS['Test_FileOps_act'] ?? \Test\FileOps\phpurs_eval_thunk('Test_FileOps_act'));
+$__global_Effect_pureE = ($GLOBALS['Effect_pureE'] ?? \Effect\phpurs_eval_thunk('Effect_pureE'));
+$__global_Data_Unit_unit = ($GLOBALS['Data_Unit_unit'] ?? \Data\Unit\phpurs_eval_thunk('Data_Unit_unit'));
+    $__res = ($__global_App_discard)($__global_Test_AstTree_act, (function() use ($__global_App_discard, $__global_Test_Fib_describe, $__global_Test_Fib_act, $__global_Test_ListOps_describe, $__global_Test_ListOps_act, $__global_Test_TCO_describe, $__global_Test_TCO_act, $__global_Test_Records_describe, $__global_Test_Records_act, $__global_Test_Ackermann_describe, $__global_Test_Ackermann_act, $__global_Test_Church_describe, $__global_Test_Church_act, $__global_Test_Primes_describe, $__global_Test_Primes_act, $__global_Test_RBTree_describe, $__global_Test_RBTree_act, $__global_Test_Polymorphism_describe, $__global_Test_Polymorphism_act, $__global_Test_StateMonad_describe, $__global_Test_StateMonad_act, $__global_Test_LazyEvaluation_describe, $__global_Test_LazyEvaluation_act, $__global_Test_FileOps_describe, $__global_Test_FileOps_act, $__global_Effect_pureE, $__global_Data_Unit_unit) {
+  $__fn = function($__dollar____unused) use ($__global_App_discard, $__global_Test_Fib_describe, $__global_Test_Fib_act, $__global_Test_ListOps_describe, $__global_Test_ListOps_act, $__global_Test_TCO_describe, $__global_Test_TCO_act, $__global_Test_Records_describe, $__global_Test_Records_act, $__global_Test_Ackermann_describe, $__global_Test_Ackermann_act, $__global_Test_Church_describe, $__global_Test_Church_act, $__global_Test_Primes_describe, $__global_Test_Primes_act, $__global_Test_RBTree_describe, $__global_Test_RBTree_act, $__global_Test_Polymorphism_describe, $__global_Test_Polymorphism_act, $__global_Test_StateMonad_describe, $__global_Test_StateMonad_act, $__global_Test_LazyEvaluation_describe, $__global_Test_LazyEvaluation_act, $__global_Test_FileOps_describe, $__global_Test_FileOps_act, $__global_Effect_pureE, $__global_Data_Unit_unit, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (($GLOBALS['App_discard'] ?? \App\phpurs_eval_thunk('App_discard')))(($GLOBALS['Test_Fib_describe'] ?? \Test\Fib\phpurs_eval_thunk('Test_Fib_describe')), (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
+    $__res = ($__global_App_discard)($__global_Test_Fib_describe, (function() use ($__global_App_discard, $__global_Test_Fib_act, $__global_Test_ListOps_describe, $__global_Test_ListOps_act, $__global_Test_TCO_describe, $__global_Test_TCO_act, $__global_Test_Records_describe, $__global_Test_Records_act, $__global_Test_Ackermann_describe, $__global_Test_Ackermann_act, $__global_Test_Church_describe, $__global_Test_Church_act, $__global_Test_Primes_describe, $__global_Test_Primes_act, $__global_Test_RBTree_describe, $__global_Test_RBTree_act, $__global_Test_Polymorphism_describe, $__global_Test_Polymorphism_act, $__global_Test_StateMonad_describe, $__global_Test_StateMonad_act, $__global_Test_LazyEvaluation_describe, $__global_Test_LazyEvaluation_act, $__global_Test_FileOps_describe, $__global_Test_FileOps_act, $__global_Effect_pureE, $__global_Data_Unit_unit) {
+  $__fn = function($__dollar____unused) use ($__global_App_discard, $__global_Test_Fib_act, $__global_Test_ListOps_describe, $__global_Test_ListOps_act, $__global_Test_TCO_describe, $__global_Test_TCO_act, $__global_Test_Records_describe, $__global_Test_Records_act, $__global_Test_Ackermann_describe, $__global_Test_Ackermann_act, $__global_Test_Church_describe, $__global_Test_Church_act, $__global_Test_Primes_describe, $__global_Test_Primes_act, $__global_Test_RBTree_describe, $__global_Test_RBTree_act, $__global_Test_Polymorphism_describe, $__global_Test_Polymorphism_act, $__global_Test_StateMonad_describe, $__global_Test_StateMonad_act, $__global_Test_LazyEvaluation_describe, $__global_Test_LazyEvaluation_act, $__global_Test_FileOps_describe, $__global_Test_FileOps_act, $__global_Effect_pureE, $__global_Data_Unit_unit, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (($GLOBALS['App_discard'] ?? \App\phpurs_eval_thunk('App_discard')))(($GLOBALS['Test_Fib_act'] ?? \Test\Fib\phpurs_eval_thunk('Test_Fib_act')), (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
+    $__res = ($__global_App_discard)($__global_Test_Fib_act, (function() use ($__global_App_discard, $__global_Test_ListOps_describe, $__global_Test_ListOps_act, $__global_Test_TCO_describe, $__global_Test_TCO_act, $__global_Test_Records_describe, $__global_Test_Records_act, $__global_Test_Ackermann_describe, $__global_Test_Ackermann_act, $__global_Test_Church_describe, $__global_Test_Church_act, $__global_Test_Primes_describe, $__global_Test_Primes_act, $__global_Test_RBTree_describe, $__global_Test_RBTree_act, $__global_Test_Polymorphism_describe, $__global_Test_Polymorphism_act, $__global_Test_StateMonad_describe, $__global_Test_StateMonad_act, $__global_Test_LazyEvaluation_describe, $__global_Test_LazyEvaluation_act, $__global_Test_FileOps_describe, $__global_Test_FileOps_act, $__global_Effect_pureE, $__global_Data_Unit_unit) {
+  $__fn = function($__dollar____unused) use ($__global_App_discard, $__global_Test_ListOps_describe, $__global_Test_ListOps_act, $__global_Test_TCO_describe, $__global_Test_TCO_act, $__global_Test_Records_describe, $__global_Test_Records_act, $__global_Test_Ackermann_describe, $__global_Test_Ackermann_act, $__global_Test_Church_describe, $__global_Test_Church_act, $__global_Test_Primes_describe, $__global_Test_Primes_act, $__global_Test_RBTree_describe, $__global_Test_RBTree_act, $__global_Test_Polymorphism_describe, $__global_Test_Polymorphism_act, $__global_Test_StateMonad_describe, $__global_Test_StateMonad_act, $__global_Test_LazyEvaluation_describe, $__global_Test_LazyEvaluation_act, $__global_Test_FileOps_describe, $__global_Test_FileOps_act, $__global_Effect_pureE, $__global_Data_Unit_unit, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (($GLOBALS['App_discard'] ?? \App\phpurs_eval_thunk('App_discard')))(($GLOBALS['Test_ListOps_describe'] ?? \Test\ListOps\phpurs_eval_thunk('Test_ListOps_describe')), (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
+    $__res = ($__global_App_discard)($__global_Test_ListOps_describe, (function() use ($__global_App_discard, $__global_Test_ListOps_act, $__global_Test_TCO_describe, $__global_Test_TCO_act, $__global_Test_Records_describe, $__global_Test_Records_act, $__global_Test_Ackermann_describe, $__global_Test_Ackermann_act, $__global_Test_Church_describe, $__global_Test_Church_act, $__global_Test_Primes_describe, $__global_Test_Primes_act, $__global_Test_RBTree_describe, $__global_Test_RBTree_act, $__global_Test_Polymorphism_describe, $__global_Test_Polymorphism_act, $__global_Test_StateMonad_describe, $__global_Test_StateMonad_act, $__global_Test_LazyEvaluation_describe, $__global_Test_LazyEvaluation_act, $__global_Test_FileOps_describe, $__global_Test_FileOps_act, $__global_Effect_pureE, $__global_Data_Unit_unit) {
+  $__fn = function($__dollar____unused) use ($__global_App_discard, $__global_Test_ListOps_act, $__global_Test_TCO_describe, $__global_Test_TCO_act, $__global_Test_Records_describe, $__global_Test_Records_act, $__global_Test_Ackermann_describe, $__global_Test_Ackermann_act, $__global_Test_Church_describe, $__global_Test_Church_act, $__global_Test_Primes_describe, $__global_Test_Primes_act, $__global_Test_RBTree_describe, $__global_Test_RBTree_act, $__global_Test_Polymorphism_describe, $__global_Test_Polymorphism_act, $__global_Test_StateMonad_describe, $__global_Test_StateMonad_act, $__global_Test_LazyEvaluation_describe, $__global_Test_LazyEvaluation_act, $__global_Test_FileOps_describe, $__global_Test_FileOps_act, $__global_Effect_pureE, $__global_Data_Unit_unit, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (($GLOBALS['App_discard'] ?? \App\phpurs_eval_thunk('App_discard')))(($GLOBALS['Test_ListOps_act'] ?? \Test\ListOps\phpurs_eval_thunk('Test_ListOps_act')), (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
+    $__res = ($__global_App_discard)($__global_Test_ListOps_act, (function() use ($__global_App_discard, $__global_Test_TCO_describe, $__global_Test_TCO_act, $__global_Test_Records_describe, $__global_Test_Records_act, $__global_Test_Ackermann_describe, $__global_Test_Ackermann_act, $__global_Test_Church_describe, $__global_Test_Church_act, $__global_Test_Primes_describe, $__global_Test_Primes_act, $__global_Test_RBTree_describe, $__global_Test_RBTree_act, $__global_Test_Polymorphism_describe, $__global_Test_Polymorphism_act, $__global_Test_StateMonad_describe, $__global_Test_StateMonad_act, $__global_Test_LazyEvaluation_describe, $__global_Test_LazyEvaluation_act, $__global_Test_FileOps_describe, $__global_Test_FileOps_act, $__global_Effect_pureE, $__global_Data_Unit_unit) {
+  $__fn = function($__dollar____unused) use ($__global_App_discard, $__global_Test_TCO_describe, $__global_Test_TCO_act, $__global_Test_Records_describe, $__global_Test_Records_act, $__global_Test_Ackermann_describe, $__global_Test_Ackermann_act, $__global_Test_Church_describe, $__global_Test_Church_act, $__global_Test_Primes_describe, $__global_Test_Primes_act, $__global_Test_RBTree_describe, $__global_Test_RBTree_act, $__global_Test_Polymorphism_describe, $__global_Test_Polymorphism_act, $__global_Test_StateMonad_describe, $__global_Test_StateMonad_act, $__global_Test_LazyEvaluation_describe, $__global_Test_LazyEvaluation_act, $__global_Test_FileOps_describe, $__global_Test_FileOps_act, $__global_Effect_pureE, $__global_Data_Unit_unit, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (($GLOBALS['App_discard'] ?? \App\phpurs_eval_thunk('App_discard')))(($GLOBALS['Test_TCO_describe'] ?? \Test\TCO\phpurs_eval_thunk('Test_TCO_describe')), (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
+    $__res = ($__global_App_discard)($__global_Test_TCO_describe, (function() use ($__global_App_discard, $__global_Test_TCO_act, $__global_Test_Records_describe, $__global_Test_Records_act, $__global_Test_Ackermann_describe, $__global_Test_Ackermann_act, $__global_Test_Church_describe, $__global_Test_Church_act, $__global_Test_Primes_describe, $__global_Test_Primes_act, $__global_Test_RBTree_describe, $__global_Test_RBTree_act, $__global_Test_Polymorphism_describe, $__global_Test_Polymorphism_act, $__global_Test_StateMonad_describe, $__global_Test_StateMonad_act, $__global_Test_LazyEvaluation_describe, $__global_Test_LazyEvaluation_act, $__global_Test_FileOps_describe, $__global_Test_FileOps_act, $__global_Effect_pureE, $__global_Data_Unit_unit) {
+  $__fn = function($__dollar____unused) use ($__global_App_discard, $__global_Test_TCO_act, $__global_Test_Records_describe, $__global_Test_Records_act, $__global_Test_Ackermann_describe, $__global_Test_Ackermann_act, $__global_Test_Church_describe, $__global_Test_Church_act, $__global_Test_Primes_describe, $__global_Test_Primes_act, $__global_Test_RBTree_describe, $__global_Test_RBTree_act, $__global_Test_Polymorphism_describe, $__global_Test_Polymorphism_act, $__global_Test_StateMonad_describe, $__global_Test_StateMonad_act, $__global_Test_LazyEvaluation_describe, $__global_Test_LazyEvaluation_act, $__global_Test_FileOps_describe, $__global_Test_FileOps_act, $__global_Effect_pureE, $__global_Data_Unit_unit, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (($GLOBALS['App_discard'] ?? \App\phpurs_eval_thunk('App_discard')))(($GLOBALS['Test_TCO_act'] ?? \Test\TCO\phpurs_eval_thunk('Test_TCO_act')), (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
+    $__res = ($__global_App_discard)($__global_Test_TCO_act, (function() use ($__global_App_discard, $__global_Test_Records_describe, $__global_Test_Records_act, $__global_Test_Ackermann_describe, $__global_Test_Ackermann_act, $__global_Test_Church_describe, $__global_Test_Church_act, $__global_Test_Primes_describe, $__global_Test_Primes_act, $__global_Test_RBTree_describe, $__global_Test_RBTree_act, $__global_Test_Polymorphism_describe, $__global_Test_Polymorphism_act, $__global_Test_StateMonad_describe, $__global_Test_StateMonad_act, $__global_Test_LazyEvaluation_describe, $__global_Test_LazyEvaluation_act, $__global_Test_FileOps_describe, $__global_Test_FileOps_act, $__global_Effect_pureE, $__global_Data_Unit_unit) {
+  $__fn = function($__dollar____unused) use ($__global_App_discard, $__global_Test_Records_describe, $__global_Test_Records_act, $__global_Test_Ackermann_describe, $__global_Test_Ackermann_act, $__global_Test_Church_describe, $__global_Test_Church_act, $__global_Test_Primes_describe, $__global_Test_Primes_act, $__global_Test_RBTree_describe, $__global_Test_RBTree_act, $__global_Test_Polymorphism_describe, $__global_Test_Polymorphism_act, $__global_Test_StateMonad_describe, $__global_Test_StateMonad_act, $__global_Test_LazyEvaluation_describe, $__global_Test_LazyEvaluation_act, $__global_Test_FileOps_describe, $__global_Test_FileOps_act, $__global_Effect_pureE, $__global_Data_Unit_unit, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (($GLOBALS['App_discard'] ?? \App\phpurs_eval_thunk('App_discard')))(($GLOBALS['Test_Records_describe'] ?? \Test\Records\phpurs_eval_thunk('Test_Records_describe')), (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
+    $__res = ($__global_App_discard)($__global_Test_Records_describe, (function() use ($__global_App_discard, $__global_Test_Records_act, $__global_Test_Ackermann_describe, $__global_Test_Ackermann_act, $__global_Test_Church_describe, $__global_Test_Church_act, $__global_Test_Primes_describe, $__global_Test_Primes_act, $__global_Test_RBTree_describe, $__global_Test_RBTree_act, $__global_Test_Polymorphism_describe, $__global_Test_Polymorphism_act, $__global_Test_StateMonad_describe, $__global_Test_StateMonad_act, $__global_Test_LazyEvaluation_describe, $__global_Test_LazyEvaluation_act, $__global_Test_FileOps_describe, $__global_Test_FileOps_act, $__global_Effect_pureE, $__global_Data_Unit_unit) {
+  $__fn = function($__dollar____unused) use ($__global_App_discard, $__global_Test_Records_act, $__global_Test_Ackermann_describe, $__global_Test_Ackermann_act, $__global_Test_Church_describe, $__global_Test_Church_act, $__global_Test_Primes_describe, $__global_Test_Primes_act, $__global_Test_RBTree_describe, $__global_Test_RBTree_act, $__global_Test_Polymorphism_describe, $__global_Test_Polymorphism_act, $__global_Test_StateMonad_describe, $__global_Test_StateMonad_act, $__global_Test_LazyEvaluation_describe, $__global_Test_LazyEvaluation_act, $__global_Test_FileOps_describe, $__global_Test_FileOps_act, $__global_Effect_pureE, $__global_Data_Unit_unit, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (($GLOBALS['App_discard'] ?? \App\phpurs_eval_thunk('App_discard')))(($GLOBALS['Test_Records_act'] ?? \Test\Records\phpurs_eval_thunk('Test_Records_act')), (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
+    $__res = ($__global_App_discard)($__global_Test_Records_act, (function() use ($__global_App_discard, $__global_Test_Ackermann_describe, $__global_Test_Ackermann_act, $__global_Test_Church_describe, $__global_Test_Church_act, $__global_Test_Primes_describe, $__global_Test_Primes_act, $__global_Test_RBTree_describe, $__global_Test_RBTree_act, $__global_Test_Polymorphism_describe, $__global_Test_Polymorphism_act, $__global_Test_StateMonad_describe, $__global_Test_StateMonad_act, $__global_Test_LazyEvaluation_describe, $__global_Test_LazyEvaluation_act, $__global_Test_FileOps_describe, $__global_Test_FileOps_act, $__global_Effect_pureE, $__global_Data_Unit_unit) {
+  $__fn = function($__dollar____unused) use ($__global_App_discard, $__global_Test_Ackermann_describe, $__global_Test_Ackermann_act, $__global_Test_Church_describe, $__global_Test_Church_act, $__global_Test_Primes_describe, $__global_Test_Primes_act, $__global_Test_RBTree_describe, $__global_Test_RBTree_act, $__global_Test_Polymorphism_describe, $__global_Test_Polymorphism_act, $__global_Test_StateMonad_describe, $__global_Test_StateMonad_act, $__global_Test_LazyEvaluation_describe, $__global_Test_LazyEvaluation_act, $__global_Test_FileOps_describe, $__global_Test_FileOps_act, $__global_Effect_pureE, $__global_Data_Unit_unit, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (($GLOBALS['App_discard'] ?? \App\phpurs_eval_thunk('App_discard')))(($GLOBALS['Test_Ackermann_describe'] ?? \Test\Ackermann\phpurs_eval_thunk('Test_Ackermann_describe')), (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
+    $__res = ($__global_App_discard)($__global_Test_Ackermann_describe, (function() use ($__global_App_discard, $__global_Test_Ackermann_act, $__global_Test_Church_describe, $__global_Test_Church_act, $__global_Test_Primes_describe, $__global_Test_Primes_act, $__global_Test_RBTree_describe, $__global_Test_RBTree_act, $__global_Test_Polymorphism_describe, $__global_Test_Polymorphism_act, $__global_Test_StateMonad_describe, $__global_Test_StateMonad_act, $__global_Test_LazyEvaluation_describe, $__global_Test_LazyEvaluation_act, $__global_Test_FileOps_describe, $__global_Test_FileOps_act, $__global_Effect_pureE, $__global_Data_Unit_unit) {
+  $__fn = function($__dollar____unused) use ($__global_App_discard, $__global_Test_Ackermann_act, $__global_Test_Church_describe, $__global_Test_Church_act, $__global_Test_Primes_describe, $__global_Test_Primes_act, $__global_Test_RBTree_describe, $__global_Test_RBTree_act, $__global_Test_Polymorphism_describe, $__global_Test_Polymorphism_act, $__global_Test_StateMonad_describe, $__global_Test_StateMonad_act, $__global_Test_LazyEvaluation_describe, $__global_Test_LazyEvaluation_act, $__global_Test_FileOps_describe, $__global_Test_FileOps_act, $__global_Effect_pureE, $__global_Data_Unit_unit, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (($GLOBALS['App_discard'] ?? \App\phpurs_eval_thunk('App_discard')))(($GLOBALS['Test_Ackermann_act'] ?? \Test\Ackermann\phpurs_eval_thunk('Test_Ackermann_act')), (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
+    $__res = ($__global_App_discard)($__global_Test_Ackermann_act, (function() use ($__global_App_discard, $__global_Test_Church_describe, $__global_Test_Church_act, $__global_Test_Primes_describe, $__global_Test_Primes_act, $__global_Test_RBTree_describe, $__global_Test_RBTree_act, $__global_Test_Polymorphism_describe, $__global_Test_Polymorphism_act, $__global_Test_StateMonad_describe, $__global_Test_StateMonad_act, $__global_Test_LazyEvaluation_describe, $__global_Test_LazyEvaluation_act, $__global_Test_FileOps_describe, $__global_Test_FileOps_act, $__global_Effect_pureE, $__global_Data_Unit_unit) {
+  $__fn = function($__dollar____unused) use ($__global_App_discard, $__global_Test_Church_describe, $__global_Test_Church_act, $__global_Test_Primes_describe, $__global_Test_Primes_act, $__global_Test_RBTree_describe, $__global_Test_RBTree_act, $__global_Test_Polymorphism_describe, $__global_Test_Polymorphism_act, $__global_Test_StateMonad_describe, $__global_Test_StateMonad_act, $__global_Test_LazyEvaluation_describe, $__global_Test_LazyEvaluation_act, $__global_Test_FileOps_describe, $__global_Test_FileOps_act, $__global_Effect_pureE, $__global_Data_Unit_unit, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (($GLOBALS['App_discard'] ?? \App\phpurs_eval_thunk('App_discard')))(($GLOBALS['Test_Church_describe'] ?? \Test\Church\phpurs_eval_thunk('Test_Church_describe')), (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
+    $__res = ($__global_App_discard)($__global_Test_Church_describe, (function() use ($__global_App_discard, $__global_Test_Church_act, $__global_Test_Primes_describe, $__global_Test_Primes_act, $__global_Test_RBTree_describe, $__global_Test_RBTree_act, $__global_Test_Polymorphism_describe, $__global_Test_Polymorphism_act, $__global_Test_StateMonad_describe, $__global_Test_StateMonad_act, $__global_Test_LazyEvaluation_describe, $__global_Test_LazyEvaluation_act, $__global_Test_FileOps_describe, $__global_Test_FileOps_act, $__global_Effect_pureE, $__global_Data_Unit_unit) {
+  $__fn = function($__dollar____unused) use ($__global_App_discard, $__global_Test_Church_act, $__global_Test_Primes_describe, $__global_Test_Primes_act, $__global_Test_RBTree_describe, $__global_Test_RBTree_act, $__global_Test_Polymorphism_describe, $__global_Test_Polymorphism_act, $__global_Test_StateMonad_describe, $__global_Test_StateMonad_act, $__global_Test_LazyEvaluation_describe, $__global_Test_LazyEvaluation_act, $__global_Test_FileOps_describe, $__global_Test_FileOps_act, $__global_Effect_pureE, $__global_Data_Unit_unit, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (($GLOBALS['App_discard'] ?? \App\phpurs_eval_thunk('App_discard')))(($GLOBALS['Test_Church_act'] ?? \Test\Church\phpurs_eval_thunk('Test_Church_act')), (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
+    $__res = ($__global_App_discard)($__global_Test_Church_act, (function() use ($__global_App_discard, $__global_Test_Primes_describe, $__global_Test_Primes_act, $__global_Test_RBTree_describe, $__global_Test_RBTree_act, $__global_Test_Polymorphism_describe, $__global_Test_Polymorphism_act, $__global_Test_StateMonad_describe, $__global_Test_StateMonad_act, $__global_Test_LazyEvaluation_describe, $__global_Test_LazyEvaluation_act, $__global_Test_FileOps_describe, $__global_Test_FileOps_act, $__global_Effect_pureE, $__global_Data_Unit_unit) {
+  $__fn = function($__dollar____unused) use ($__global_App_discard, $__global_Test_Primes_describe, $__global_Test_Primes_act, $__global_Test_RBTree_describe, $__global_Test_RBTree_act, $__global_Test_Polymorphism_describe, $__global_Test_Polymorphism_act, $__global_Test_StateMonad_describe, $__global_Test_StateMonad_act, $__global_Test_LazyEvaluation_describe, $__global_Test_LazyEvaluation_act, $__global_Test_FileOps_describe, $__global_Test_FileOps_act, $__global_Effect_pureE, $__global_Data_Unit_unit, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (($GLOBALS['App_discard'] ?? \App\phpurs_eval_thunk('App_discard')))(($GLOBALS['Test_Primes_describe'] ?? \Test\Primes\phpurs_eval_thunk('Test_Primes_describe')), (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
+    $__res = ($__global_App_discard)($__global_Test_Primes_describe, (function() use ($__global_App_discard, $__global_Test_Primes_act, $__global_Test_RBTree_describe, $__global_Test_RBTree_act, $__global_Test_Polymorphism_describe, $__global_Test_Polymorphism_act, $__global_Test_StateMonad_describe, $__global_Test_StateMonad_act, $__global_Test_LazyEvaluation_describe, $__global_Test_LazyEvaluation_act, $__global_Test_FileOps_describe, $__global_Test_FileOps_act, $__global_Effect_pureE, $__global_Data_Unit_unit) {
+  $__fn = function($__dollar____unused) use ($__global_App_discard, $__global_Test_Primes_act, $__global_Test_RBTree_describe, $__global_Test_RBTree_act, $__global_Test_Polymorphism_describe, $__global_Test_Polymorphism_act, $__global_Test_StateMonad_describe, $__global_Test_StateMonad_act, $__global_Test_LazyEvaluation_describe, $__global_Test_LazyEvaluation_act, $__global_Test_FileOps_describe, $__global_Test_FileOps_act, $__global_Effect_pureE, $__global_Data_Unit_unit, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (($GLOBALS['App_discard'] ?? \App\phpurs_eval_thunk('App_discard')))(($GLOBALS['Test_Primes_act'] ?? \Test\Primes\phpurs_eval_thunk('Test_Primes_act')), (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
+    $__res = ($__global_App_discard)($__global_Test_Primes_act, (function() use ($__global_App_discard, $__global_Test_RBTree_describe, $__global_Test_RBTree_act, $__global_Test_Polymorphism_describe, $__global_Test_Polymorphism_act, $__global_Test_StateMonad_describe, $__global_Test_StateMonad_act, $__global_Test_LazyEvaluation_describe, $__global_Test_LazyEvaluation_act, $__global_Test_FileOps_describe, $__global_Test_FileOps_act, $__global_Effect_pureE, $__global_Data_Unit_unit) {
+  $__fn = function($__dollar____unused) use ($__global_App_discard, $__global_Test_RBTree_describe, $__global_Test_RBTree_act, $__global_Test_Polymorphism_describe, $__global_Test_Polymorphism_act, $__global_Test_StateMonad_describe, $__global_Test_StateMonad_act, $__global_Test_LazyEvaluation_describe, $__global_Test_LazyEvaluation_act, $__global_Test_FileOps_describe, $__global_Test_FileOps_act, $__global_Effect_pureE, $__global_Data_Unit_unit, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (($GLOBALS['App_discard'] ?? \App\phpurs_eval_thunk('App_discard')))(($GLOBALS['Test_RBTree_describe'] ?? \Test\RBTree\phpurs_eval_thunk('Test_RBTree_describe')), (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
+    $__res = ($__global_App_discard)($__global_Test_RBTree_describe, (function() use ($__global_App_discard, $__global_Test_RBTree_act, $__global_Test_Polymorphism_describe, $__global_Test_Polymorphism_act, $__global_Test_StateMonad_describe, $__global_Test_StateMonad_act, $__global_Test_LazyEvaluation_describe, $__global_Test_LazyEvaluation_act, $__global_Test_FileOps_describe, $__global_Test_FileOps_act, $__global_Effect_pureE, $__global_Data_Unit_unit) {
+  $__fn = function($__dollar____unused) use ($__global_App_discard, $__global_Test_RBTree_act, $__global_Test_Polymorphism_describe, $__global_Test_Polymorphism_act, $__global_Test_StateMonad_describe, $__global_Test_StateMonad_act, $__global_Test_LazyEvaluation_describe, $__global_Test_LazyEvaluation_act, $__global_Test_FileOps_describe, $__global_Test_FileOps_act, $__global_Effect_pureE, $__global_Data_Unit_unit, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (($GLOBALS['App_discard'] ?? \App\phpurs_eval_thunk('App_discard')))(($GLOBALS['Test_RBTree_act'] ?? \Test\RBTree\phpurs_eval_thunk('Test_RBTree_act')), (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
+    $__res = ($__global_App_discard)($__global_Test_RBTree_act, (function() use ($__global_App_discard, $__global_Test_Polymorphism_describe, $__global_Test_Polymorphism_act, $__global_Test_StateMonad_describe, $__global_Test_StateMonad_act, $__global_Test_LazyEvaluation_describe, $__global_Test_LazyEvaluation_act, $__global_Test_FileOps_describe, $__global_Test_FileOps_act, $__global_Effect_pureE, $__global_Data_Unit_unit) {
+  $__fn = function($__dollar____unused) use ($__global_App_discard, $__global_Test_Polymorphism_describe, $__global_Test_Polymorphism_act, $__global_Test_StateMonad_describe, $__global_Test_StateMonad_act, $__global_Test_LazyEvaluation_describe, $__global_Test_LazyEvaluation_act, $__global_Test_FileOps_describe, $__global_Test_FileOps_act, $__global_Effect_pureE, $__global_Data_Unit_unit, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (($GLOBALS['App_discard'] ?? \App\phpurs_eval_thunk('App_discard')))(($GLOBALS['Test_Polymorphism_describe'] ?? \Test\Polymorphism\phpurs_eval_thunk('Test_Polymorphism_describe')), (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
+    $__res = ($__global_App_discard)($__global_Test_Polymorphism_describe, (function() use ($__global_App_discard, $__global_Test_Polymorphism_act, $__global_Test_StateMonad_describe, $__global_Test_StateMonad_act, $__global_Test_LazyEvaluation_describe, $__global_Test_LazyEvaluation_act, $__global_Test_FileOps_describe, $__global_Test_FileOps_act, $__global_Effect_pureE, $__global_Data_Unit_unit) {
+  $__fn = function($__dollar____unused) use ($__global_App_discard, $__global_Test_Polymorphism_act, $__global_Test_StateMonad_describe, $__global_Test_StateMonad_act, $__global_Test_LazyEvaluation_describe, $__global_Test_LazyEvaluation_act, $__global_Test_FileOps_describe, $__global_Test_FileOps_act, $__global_Effect_pureE, $__global_Data_Unit_unit, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (($GLOBALS['App_discard'] ?? \App\phpurs_eval_thunk('App_discard')))(($GLOBALS['Test_Polymorphism_act'] ?? \Test\Polymorphism\phpurs_eval_thunk('Test_Polymorphism_act')), (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
+    $__res = ($__global_App_discard)($__global_Test_Polymorphism_act, (function() use ($__global_App_discard, $__global_Test_StateMonad_describe, $__global_Test_StateMonad_act, $__global_Test_LazyEvaluation_describe, $__global_Test_LazyEvaluation_act, $__global_Test_FileOps_describe, $__global_Test_FileOps_act, $__global_Effect_pureE, $__global_Data_Unit_unit) {
+  $__fn = function($__dollar____unused) use ($__global_App_discard, $__global_Test_StateMonad_describe, $__global_Test_StateMonad_act, $__global_Test_LazyEvaluation_describe, $__global_Test_LazyEvaluation_act, $__global_Test_FileOps_describe, $__global_Test_FileOps_act, $__global_Effect_pureE, $__global_Data_Unit_unit, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (($GLOBALS['App_discard'] ?? \App\phpurs_eval_thunk('App_discard')))(($GLOBALS['Test_StateMonad_describe'] ?? \Test\StateMonad\phpurs_eval_thunk('Test_StateMonad_describe')), (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
+    $__res = ($__global_App_discard)($__global_Test_StateMonad_describe, (function() use ($__global_App_discard, $__global_Test_StateMonad_act, $__global_Test_LazyEvaluation_describe, $__global_Test_LazyEvaluation_act, $__global_Test_FileOps_describe, $__global_Test_FileOps_act, $__global_Effect_pureE, $__global_Data_Unit_unit) {
+  $__fn = function($__dollar____unused) use ($__global_App_discard, $__global_Test_StateMonad_act, $__global_Test_LazyEvaluation_describe, $__global_Test_LazyEvaluation_act, $__global_Test_FileOps_describe, $__global_Test_FileOps_act, $__global_Effect_pureE, $__global_Data_Unit_unit, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (($GLOBALS['App_discard'] ?? \App\phpurs_eval_thunk('App_discard')))(($GLOBALS['Test_StateMonad_act'] ?? \Test\StateMonad\phpurs_eval_thunk('Test_StateMonad_act')), (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
+    $__res = ($__global_App_discard)($__global_Test_StateMonad_act, (function() use ($__global_App_discard, $__global_Test_LazyEvaluation_describe, $__global_Test_LazyEvaluation_act, $__global_Test_FileOps_describe, $__global_Test_FileOps_act, $__global_Effect_pureE, $__global_Data_Unit_unit) {
+  $__fn = function($__dollar____unused) use ($__global_App_discard, $__global_Test_LazyEvaluation_describe, $__global_Test_LazyEvaluation_act, $__global_Test_FileOps_describe, $__global_Test_FileOps_act, $__global_Effect_pureE, $__global_Data_Unit_unit, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (($GLOBALS['App_discard'] ?? \App\phpurs_eval_thunk('App_discard')))(($GLOBALS['Test_LazyEvaluation_describe'] ?? \Test\LazyEvaluation\phpurs_eval_thunk('Test_LazyEvaluation_describe')), (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
+    $__res = ($__global_App_discard)($__global_Test_LazyEvaluation_describe, (function() use ($__global_App_discard, $__global_Test_LazyEvaluation_act, $__global_Test_FileOps_describe, $__global_Test_FileOps_act, $__global_Effect_pureE, $__global_Data_Unit_unit) {
+  $__fn = function($__dollar____unused) use ($__global_App_discard, $__global_Test_LazyEvaluation_act, $__global_Test_FileOps_describe, $__global_Test_FileOps_act, $__global_Effect_pureE, $__global_Data_Unit_unit, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (($GLOBALS['App_discard'] ?? \App\phpurs_eval_thunk('App_discard')))(($GLOBALS['Test_LazyEvaluation_act'] ?? \Test\LazyEvaluation\phpurs_eval_thunk('Test_LazyEvaluation_act')), (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
+    $__res = ($__global_App_discard)($__global_Test_LazyEvaluation_act, (function() use ($__global_App_discard, $__global_Test_FileOps_describe, $__global_Test_FileOps_act, $__global_Effect_pureE, $__global_Data_Unit_unit) {
+  $__fn = function($__dollar____unused) use ($__global_App_discard, $__global_Test_FileOps_describe, $__global_Test_FileOps_act, $__global_Effect_pureE, $__global_Data_Unit_unit, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (($GLOBALS['App_discard'] ?? \App\phpurs_eval_thunk('App_discard')))(($GLOBALS['Test_FileOps_describe'] ?? \Test\FileOps\phpurs_eval_thunk('Test_FileOps_describe')), (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
+    $__res = ($__global_App_discard)($__global_Test_FileOps_describe, (function() use ($__global_App_discard, $__global_Test_FileOps_act, $__global_Effect_pureE, $__global_Data_Unit_unit) {
+  $__fn = function($__dollar____unused) use ($__global_App_discard, $__global_Test_FileOps_act, $__global_Effect_pureE, $__global_Data_Unit_unit, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (($GLOBALS['App_discard'] ?? \App\phpurs_eval_thunk('App_discard')))(($GLOBALS['Test_FileOps_act'] ?? \Test\FileOps\phpurs_eval_thunk('Test_FileOps_act')), (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
+    $__res = ($__global_App_discard)($__global_Test_FileOps_act, (function() use ($__global_App_discard, $__global_Effect_pureE, $__global_Data_Unit_unit) {
+  $__fn = function($__dollar____unused) use ($__global_App_discard, $__global_Effect_pureE, $__global_Data_Unit_unit, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (($GLOBALS['App_discard'] ?? \App\phpurs_eval_thunk('App_discard')))((($GLOBALS['App_pure'] ?? \App\phpurs_eval_thunk('App_pure')))(($GLOBALS['Data_Unit_unit'] ?? \Data\Unit\phpurs_eval_thunk('Data_Unit_unit'))), (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
+    $__res = ($__global_App_discard)(($__global_Effect_pureE)($__global_Data_Unit_unit), (function() use ($__global_Effect_pureE, $__global_Data_Unit_unit) {
+  $__fn = function($__dollar____unused) use ($__global_Effect_pureE, $__global_Data_Unit_unit, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (($GLOBALS['App_pure'] ?? \App\phpurs_eval_thunk('App_pure')))(($GLOBALS['Data_Unit_unit'] ?? \Data\Unit\phpurs_eval_thunk('Data_Unit_unit')));
+    $__res = ($__global_Effect_pureE)($__global_Data_Unit_unit);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;

@@ -2,11 +2,13 @@
 
 namespace Test\Church;
 
+require_once __DIR__ . '/../Data.Function/index.php';
 require_once __DIR__ . '/../Data.Ring/index.php';
 require_once __DIR__ . '/../Data.Semiring/index.php';
 require_once __DIR__ . '/../Data.Show/index.php';
 require_once __DIR__ . '/../Effect/index.php';
 require_once __DIR__ . '/../Effect.Console/index.php';
+require_once __DIR__ . '/../Prelude/index.php';
 require_once __DIR__ . '/../Test.Church/index.php';
 
 if (!class_exists(__NAMESPACE__ . '\\Phpurs_Data0')) {
@@ -80,7 +82,7 @@ function Test_Church_toInt($n) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (($GLOBALS['Test_Church_add'] ?? \Test\Church\phpurs_eval_thunk('Test_Church_add')))($x, 1);
+    $__res = ($x + 1);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -146,14 +148,16 @@ function Test_Church_fromInt($v) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
+$__global_Test_Church_zeroC = ($GLOBALS['Test_Church_zeroC'] ?? \Test\Church\phpurs_eval_thunk('Test_Church_zeroC'));
+$__global_Test_Church_succC = ($GLOBALS['Test_Church_succC'] ?? \Test\Church\phpurs_eval_thunk('Test_Church_succC'));
 while (true) {
 $__case_0 = $v;
 if (($__case_0 === 0)) {
-return ($GLOBALS['Test_Church_zeroC'] ?? \Test\Church\phpurs_eval_thunk('Test_Church_zeroC'));
+return $__global_Test_Church_zeroC;
 } else {
 if (true) {
 $n = $__case_0;
-return (($GLOBALS['Test_Church_succC'] ?? \Test\Church\phpurs_eval_thunk('Test_Church_succC')))((($GLOBALS['Test_Church_fromInt'] ?? \Test\Church\phpurs_eval_thunk('Test_Church_fromInt')))((($GLOBALS['Test_Church_sub'] ?? \Test\Church\phpurs_eval_thunk('Test_Church_sub')))($n, 1)));
+return ($__global_Test_Church_succC)((($GLOBALS['Test_Church_fromInt'] ?? \Test\Church\phpurs_eval_thunk('Test_Church_fromInt')))(($n - 1)));
 } else {
 throw new \Exception("Pattern match failure");
 };
@@ -168,5 +172,36 @@ $GLOBALS['Test_Church_fromInt'] = __NAMESPACE__ . '\\Test_Church_fromInt';
 
 
 
+
+// Test_Church_addC
+function Test_Church_addC($m, $n = null, $f = null, $x = null) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Test_Church_addC';
+  if ($__num < 4) {
+    if ($__num === 3) return function($x) use ($m, $n, $f, $__fn) { return $__fn($m, $n, $f, $x); };
+    if ($__num === 2) return function($f, $x = null) use ($m, $n, $__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($m, $n, $f, $x);
+      if ($__num2 === 1) return function($x) use ($m, $n, $f, $__fn) { return $__fn($m, $n, $f, $x); };
+      return phpurs_curry_fallback($__fn, [$m, $n], 4);
+    };
+    if ($__num === 1) return function($n, $f = null, $x = null) use ($m, $__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 3) return $__fn($m, $n, $f, $x);
+      if ($__num2 === 2) return function($x) use ($m, $n, $f, $__fn) { return $__fn($m, $n, $f, $x); };
+      if ($__num2 === 1) return function($f, $x = null) use ($m, $n, $__fn) {
+        $__num3 = func_num_args();
+        if ($__num3 === 2) return $__fn($m, $n, $f, $x);
+        if ($__num3 === 1) return function($x) use ($m, $n, $f, $__fn) { return $__fn($m, $n, $f, $x); };
+        return phpurs_curry_fallback($__fn, [$m, $n], 4);
+      };
+      return phpurs_curry_fallback($__fn, [$m], 4);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 4);
+  }
+    $__res = ($m)($f, ($n)($f, $x));
+    return 4 < $__num ? $__res(...array_slice(func_get_args(), 4)) : $__res;
+}
+$GLOBALS['Test_Church_addC'] = __NAMESPACE__ . '\\Test_Church_addC';
 
 

@@ -3,11 +3,13 @@
 namespace Test\TCO;
 
 require_once __DIR__ . '/../Data.EuclideanRing/index.php';
+require_once __DIR__ . '/../Data.Function/index.php';
 require_once __DIR__ . '/../Data.Ring/index.php';
 require_once __DIR__ . '/../Data.Semiring/index.php';
 require_once __DIR__ . '/../Data.Show/index.php';
 require_once __DIR__ . '/../Effect/index.php';
 require_once __DIR__ . '/../Effect.Console/index.php';
+require_once __DIR__ . '/../Prelude/index.php';
 require_once __DIR__ . '/../Test.TCO/index.php';
 
 if (!class_exists(__NAMESPACE__ . '\\Phpurs_Data0')) {
@@ -62,6 +64,7 @@ function Test_TCO_deepTailRec($v, $v1 = null) {
     if ($__num === 1) return function($v1) use ($v, $__fn) { return $__fn($v, $v1); };
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
+$__global_Data_EuclideanRing_intMod = ($GLOBALS['Data_EuclideanRing_intMod'] ?? \Data\EuclideanRing\phpurs_eval_thunk('Data_EuclideanRing_intMod'));
 while (true) {
 $__case_0 = $v;
 $__case_1 = $v1;
@@ -72,8 +75,8 @@ return $acc;
 if (true) {
 $n = $__case_0;
 $acc = $__case_1;
-$__tco_tmp_0 = (($GLOBALS['Test_TCO_sub'] ?? \Test\TCO\phpurs_eval_thunk('Test_TCO_sub')))($n, 1);
-$__tco_tmp_1 = (($GLOBALS['Test_TCO_add'] ?? \Test\TCO\phpurs_eval_thunk('Test_TCO_add')))($acc, (($GLOBALS['Test_TCO_mod'] ?? \Test\TCO\phpurs_eval_thunk('Test_TCO_mod')))($n, 3));
+$__tco_tmp_0 = ($n - 1);
+$__tco_tmp_1 = ($acc + ($__global_Data_EuclideanRing_intMod)($n, 3));
 $v = $__tco_tmp_0;
 $v1 = $__tco_tmp_1;
 continue;

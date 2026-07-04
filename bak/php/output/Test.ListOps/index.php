@@ -10,6 +10,7 @@ require_once __DIR__ . '/../Data.Semiring/index.php';
 require_once __DIR__ . '/../Data.Show/index.php';
 require_once __DIR__ . '/../Effect/index.php';
 require_once __DIR__ . '/../Effect.Console/index.php';
+require_once __DIR__ . '/../Prelude/index.php';
 require_once __DIR__ . '/../Test.ListOps/index.php';
 
 if (!class_exists(__NAMESPACE__ . '\\Phpurs_Data0')) {
@@ -81,21 +82,24 @@ function Test_ListOps_range($start, $end = null) {
     if ($__num === 1) return function($end) use ($start, $__fn) { return $__fn($start, $end); };
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
-$go = (function() use ($start, &$go) {
-  $__fn = function($curr, $acc = null) use ($start, &$go, &$__fn) {
+$__global_Test_ListOps_lessThan = ($GLOBALS['Test_ListOps_lessThan'] ?? \Test\ListOps\phpurs_eval_thunk('Test_ListOps_lessThan'));
+$__global_Test_ListOps_Cons = ($GLOBALS['Test_ListOps_Cons'] ?? \Test\ListOps\phpurs_eval_thunk('Test_ListOps_Cons'));
+$__global_Test_ListOps_Nil = ($GLOBALS['Test_ListOps_Nil'] ?? \Test\ListOps\phpurs_eval_thunk('Test_ListOps_Nil'));
+$go = (function() use ($__global_Test_ListOps_lessThan, $start, &$go, $__global_Test_ListOps_Cons) {
+  $__fn = function($curr, $acc = null) use ($__global_Test_ListOps_lessThan, $start, &$go, $__global_Test_ListOps_Cons, &$__fn) {
   $__num = func_num_args();
   if ($__num < 2) {
     if ($__num === 1) return function($acc) use ($curr, &$__fn) { return $__fn($curr, $acc); };
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
 while (true) {
-$__case_0 = (($GLOBALS['Test_ListOps_lessThan'] ?? \Test\ListOps\phpurs_eval_thunk('Test_ListOps_lessThan')))($curr, $start);
+$__case_0 = ($__global_Test_ListOps_lessThan)($curr, $start);
 if (($__case_0 === true)) {
 return $acc;
 } else {
 if (true) {
-$__tco_tmp_0 = (($GLOBALS['Test_ListOps_sub'] ?? \Test\ListOps\phpurs_eval_thunk('Test_ListOps_sub')))($curr, 1);
-$__tco_tmp_1 = (($GLOBALS['Test_ListOps_Cons'] ?? \Test\ListOps\phpurs_eval_thunk('Test_ListOps_Cons')))($curr, $acc);
+$__tco_tmp_0 = ($curr - 1);
+$__tco_tmp_1 = ($__global_Test_ListOps_Cons)($curr, $acc);
 $curr = $__tco_tmp_0;
 $acc = $__tco_tmp_1;
 continue;
@@ -109,7 +113,7 @@ throw new \Exception("Pattern match failure");
   };
   return $__fn;
 })();
-    $__res = ($go)($end, ($GLOBALS['Test_ListOps_Nil'] ?? \Test\ListOps\phpurs_eval_thunk('Test_ListOps_Nil')));
+    $__res = ($go)($end, $__global_Test_ListOps_Nil);
     return 2 < $__num ? $__res(...array_slice(func_get_args(), 2)) : $__res;
 }
 $GLOBALS['Test_ListOps_range'] = __NAMESPACE__ . '\\Test_ListOps_range';
@@ -167,8 +171,11 @@ function Test_ListOps_filterEvens($lst) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$go = (function() use (&$go) {
-  $__fn = function($v, $v1 = null) use (&$go, &$__fn) {
+$__global_Data_EuclideanRing_intMod = ($GLOBALS['Data_EuclideanRing_intMod'] ?? \Data\EuclideanRing\phpurs_eval_thunk('Data_EuclideanRing_intMod'));
+$__global_Test_ListOps_Cons = ($GLOBALS['Test_ListOps_Cons'] ?? \Test\ListOps\phpurs_eval_thunk('Test_ListOps_Cons'));
+$__global_Test_ListOps_Nil = ($GLOBALS['Test_ListOps_Nil'] ?? \Test\ListOps\phpurs_eval_thunk('Test_ListOps_Nil'));
+$go = (function() use ($__global_Data_EuclideanRing_intMod, &$go, $__global_Test_ListOps_Cons) {
+  $__fn = function($v, $v1 = null) use ($__global_Data_EuclideanRing_intMod, &$go, $__global_Test_ListOps_Cons, &$__fn) {
   $__num = func_num_args();
   if ($__num < 2) {
     if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
@@ -186,10 +193,10 @@ case "Cons":
 $x = ($__case_0)->v0;
 $xs = ($__case_0)->v1;
 $acc = $__case_1;
-$__case_0 = (($GLOBALS['Test_ListOps_eq'] ?? \Test\ListOps\phpurs_eval_thunk('Test_ListOps_eq')))((($GLOBALS['Test_ListOps_mod'] ?? \Test\ListOps\phpurs_eval_thunk('Test_ListOps_mod')))($x, 2), 0);
+$__case_0 = (($__global_Data_EuclideanRing_intMod)($x, 2) === 0);
 if (($__case_0 === true)) {
 $__tco_tmp_0 = $xs;
-$__tco_tmp_1 = (($GLOBALS['Test_ListOps_Cons'] ?? \Test\ListOps\phpurs_eval_thunk('Test_ListOps_Cons')))($x, $acc);
+$__tco_tmp_1 = ($__global_Test_ListOps_Cons)($x, $acc);
 $v = $__tco_tmp_0;
 $v1 = $__tco_tmp_1;
 continue 2;
@@ -215,7 +222,7 @@ break;
   };
   return $__fn;
 })();
-    $__res = ($go)($lst, ($GLOBALS['Test_ListOps_Nil'] ?? \Test\ListOps\phpurs_eval_thunk('Test_ListOps_Nil')));
+    $__res = ($go)($lst, $__global_Test_ListOps_Nil);
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Test_ListOps_filterEvens'] = __NAMESPACE__ . '\\Test_ListOps_filterEvens';

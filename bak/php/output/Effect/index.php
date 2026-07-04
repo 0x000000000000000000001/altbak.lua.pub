@@ -7,7 +7,10 @@ require_once __DIR__ . '/../Control.Apply/index.php';
 require_once __DIR__ . '/../Control.Bind/index.php';
 require_once __DIR__ . '/../Control.Monad/index.php';
 require_once __DIR__ . '/../Data.Functor/index.php';
+require_once __DIR__ . '/../Data.Monoid/index.php';
+require_once __DIR__ . '/../Data.Semigroup/index.php';
 require_once __DIR__ . '/../Effect/index.php';
+require_once __DIR__ . '/../Prelude/index.php';
 
 if (!class_exists(__NAMESPACE__ . '\\Phpurs_Data0')) {
   class Phpurs_Data0 { public $tag; public function __construct($t) { $this->tag = $t; } }
@@ -41,7 +44,8 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($GLOBALS['Effect_applicativeEffect'] ?? \Effect\phpurs_eval_thunk('Effect_applicativeEffect'));
+$__global_Effect_applicativeEffect = ($GLOBALS['Effect_applicativeEffect'] ?? \Effect\phpurs_eval_thunk('Effect_applicativeEffect'));
+    $__res = $__global_Effect_applicativeEffect;
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -51,7 +55,8 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($GLOBALS['Effect_bindEffect'] ?? \Effect\phpurs_eval_thunk('Effect_bindEffect'));
+$__global_Effect_bindEffect = ($GLOBALS['Effect_bindEffect'] ?? \Effect\phpurs_eval_thunk('Effect_bindEffect'));
+    $__res = $__global_Effect_bindEffect;
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -62,7 +67,8 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($GLOBALS['Effect_applyEffect'] ?? \Effect\phpurs_eval_thunk('Effect_applyEffect'));
+$__global_Effect_applyEffect = ($GLOBALS['Effect_applyEffect'] ?? \Effect\phpurs_eval_thunk('Effect_applyEffect'));
+    $__res = $__global_Effect_applyEffect;
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -73,7 +79,8 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($GLOBALS['Effect_applyEffect'] ?? \Effect\phpurs_eval_thunk('Effect_applyEffect'));
+$__global_Effect_applyEffect = ($GLOBALS['Effect_applyEffect'] ?? \Effect\phpurs_eval_thunk('Effect_applyEffect'));
+    $__res = $__global_Effect_applyEffect;
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -84,12 +91,14 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($GLOBALS['Effect_functorEffect'] ?? \Effect\phpurs_eval_thunk('Effect_functorEffect'));
+$__global_Effect_functorEffect = ($GLOBALS['Effect_functorEffect'] ?? \Effect\phpurs_eval_thunk('Effect_functorEffect'));
+    $__res = $__global_Effect_functorEffect;
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
 })()]); break;
       case 'Effect_functorEffect': $v = (($GLOBALS['Data_Functor_Functor__dollar__Dict'] ?? \Data\Functor\phpurs_eval_thunk('Data_Functor_Functor__dollar__Dict')))((object)["map" => (($GLOBALS['Control_Applicative_liftA1'] ?? \Control\Applicative\phpurs_eval_thunk('Control_Applicative_liftA1')))(($GLOBALS['Effect_applicativeEffect'] ?? \Effect\phpurs_eval_thunk('Effect_applicativeEffect')))]); break;
+      case 'Effect_lift2': $v = (($GLOBALS['Control_Apply_lift2'] ?? \Control\Apply\phpurs_eval_thunk('Control_Apply_lift2')))(($GLOBALS['Effect_applyEffect'] ?? \Effect\phpurs_eval_thunk('Effect_applyEffect'))); break;
       default: throw new \Exception("Unknown thunk " . $id);
     }
     $GLOBALS[$id] = $v;
@@ -97,61 +106,52 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
   }
 }
 $Prim_undefined = function() { throw new \Exception("undefined"); };
-if (!function_exists('phpurs_uncurry2')) {
-function phpurs_uncurry2($fn) {
-    return function($a, $b = null) use ($fn) {
-        if (func_num_args() < 2) {
-            $__args = func_get_args();
-            return function(...$more) use ($fn, $__args) {
-                return phpurs_uncurry2($fn)(...array_merge($__args, $more));
-            };
-        }
-        return $fn($a)($b);
-    };
+
+
+
+
+
+
+
+
+// Effect_semigroupEffect
+function Effect_semigroupEffect($dictSemigroup) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Effect_semigroupEffect';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__global_Data_Semigroup_Semigroup__dollar__Dict = ($GLOBALS['Data_Semigroup_Semigroup__dollar__Dict'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_Semigroup__dollar__Dict'));
+$__global_Effect_lift2 = ($GLOBALS['Effect_lift2'] ?? \Effect\phpurs_eval_thunk('Effect_lift2'));
+    $__res = ($__global_Data_Semigroup_Semigroup__dollar__Dict)((object)["append" => ($__global_Effect_lift2)(($dictSemigroup)->append)]);
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
-function phpurs_uncurry3($fn) {
-    return function($a, $b = null, $c = null) use ($fn) {
-        if (func_num_args() < 3) {
-            $__args = func_get_args();
-            return function(...$more) use ($fn, $__args) {
-                return phpurs_uncurry3($fn)(...array_merge($__args, $more));
-            };
-        }
-        return $fn($a)($b)($c);
-    };
+$GLOBALS['Effect_semigroupEffect'] = __NAMESPACE__ . '\\Effect_semigroupEffect';
+
+// Effect_monoidEffect
+function Effect_monoidEffect($dictMonoid) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Effect_monoidEffect';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__global_Effect_semigroupEffect = ($GLOBALS['Effect_semigroupEffect'] ?? \Effect\phpurs_eval_thunk('Effect_semigroupEffect'));
+$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
+$__global_Data_Monoid_Monoid__dollar__Dict = ($GLOBALS['Data_Monoid_Monoid__dollar__Dict'] ?? \Data\Monoid\phpurs_eval_thunk('Data_Monoid_Monoid__dollar__Dict'));
+$__global_Effect_pureE = ($GLOBALS['Effect_pureE'] ?? \Effect\phpurs_eval_thunk('Effect_pureE'));
+$semigroupEffect1 = ($__global_Effect_semigroupEffect)((($dictMonoid)->Semigroup0)($__global_Prim_undefined));
+    $__res = ($__global_Data_Monoid_Monoid__dollar__Dict)((object)["mempty" => ($__global_Effect_pureE)(($dictMonoid)->mempty), "Semigroup0" => (function() use ($semigroupEffect1) {
+  $__fn = function($__dollar____unused) use ($semigroupEffect1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $semigroupEffect1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()]);
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
-function phpurs_uncurry4($fn) {
-    return function($a, $b = null, $c = null, $d = null) use ($fn) {
-        if (func_num_args() < 4) {
-            $__args = func_get_args();
-            return function(...$more) use ($fn, $__args) {
-                return phpurs_uncurry4($fn)(...array_merge($__args, $more));
-            };
-        }
-        return $fn($a)($b)($c)($d);
-    };
-}
-function phpurs_uncurry5($fn) {
-    return function($a, $b = null, $c = null, $d = null, $e = null) use ($fn) {
-        if (func_num_args() < 5) {
-            $__args = func_get_args();
-            return function(...$more) use ($fn, $__args) {
-                return phpurs_uncurry5($fn)(...array_merge($__args, $more));
-            };
-        }
-        return $fn($a)($b)($c)($d)($e);
-    };
-}
-}
-
-
-
-
-$Effect_pureE = function($x) { return function() use(&$x) { return $x; }; };
-$Effect_bindE = phpurs_uncurry2(function($a) { return function($f) use(&$a) { return function() use(&$a, &$f) { return $f($a())(); }; }; });
-
-
-
-
-
+$GLOBALS['Effect_monoidEffect'] = __NAMESPACE__ . '\\Effect_monoidEffect';
 

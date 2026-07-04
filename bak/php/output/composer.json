@@ -1,6 +1,4 @@
 {
-    "require": {
-        "revolt/event-loop": "^1.0.0"
-    },
+    "require": {},
     "require-dev": {}
 }

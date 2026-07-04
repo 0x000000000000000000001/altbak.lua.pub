@@ -8,6 +8,7 @@ require_once __DIR__ . '/../Data.Semiring/index.php';
 require_once __DIR__ . '/../Data.Show/index.php';
 require_once __DIR__ . '/../Effect/index.php';
 require_once __DIR__ . '/../Effect.Console/index.php';
+require_once __DIR__ . '/../Prelude/index.php';
 require_once __DIR__ . '/../Test.Records/index.php';
 
 if (!class_exists(__NAMESPACE__ . '\\Phpurs_Data0')) {
@@ -62,6 +63,7 @@ function Test_Records_updateRec($v, $v1 = null) {
     if ($__num === 1) return function($v1) use ($v, $__fn) { return $__fn($v, $v1); };
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
+$__global_Data_EuclideanRing_intMod = ($GLOBALS['Data_EuclideanRing_intMod'] ?? \Data\EuclideanRing\phpurs_eval_thunk('Data_EuclideanRing_intMod'));
 while (true) {
 $__case_0 = $v;
 $__case_1 = $v1;
@@ -72,18 +74,18 @@ return $r;
 if (true) {
 $n = $__case_0;
 $r = $__case_1;
-$__tco_tmp_0 = (($GLOBALS['Test_Records_sub'] ?? \Test\Records\phpurs_eval_thunk('Test_Records_sub')))($n, 1);
+$__tco_tmp_0 = ($n - 1);
 $v2 = $r;
 $v3 = ($r)->b;
 $v4 = (($r)->b)->d;
 $__update_tmp_0 = clone $v4;
-$__update_tmp_0->e = (($GLOBALS['Test_Records_add'] ?? \Test\Records\phpurs_eval_thunk('Test_Records_add')))(((($r)->b)->d)->e, 3);
-$__update_tmp_0->f = (($GLOBALS['Test_Records_add'] ?? \Test\Records\phpurs_eval_thunk('Test_Records_add')))(((($r)->b)->d)->f, (($GLOBALS['Test_Records_mod'] ?? \Test\Records\phpurs_eval_thunk('Test_Records_mod')))($n, 5));
+$__update_tmp_0->e = (((($r)->b)->d)->e + 3);
+$__update_tmp_0->f = (((($r)->b)->d)->f + ($__global_Data_EuclideanRing_intMod)($n, 5));
 $__update_tmp_1 = clone $v3;
-$__update_tmp_1->c = (($GLOBALS['Test_Records_add'] ?? \Test\Records\phpurs_eval_thunk('Test_Records_add')))((($r)->b)->c, 2);
+$__update_tmp_1->c = ((($r)->b)->c + 2);
 $__update_tmp_1->d = $__update_tmp_0;
 $__update_tmp_2 = clone $v2;
-$__update_tmp_2->a = (($GLOBALS['Test_Records_add'] ?? \Test\Records\phpurs_eval_thunk('Test_Records_add')))(($r)->a, 1);
+$__update_tmp_2->a = (($r)->a + 1);
 $__update_tmp_2->b = $__update_tmp_1;
 $__tco_tmp_1 = $__update_tmp_2;
 $v = $__tco_tmp_0;
