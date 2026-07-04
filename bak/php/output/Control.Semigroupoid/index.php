@@ -25,33 +25,58 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_curry_fallback')) {
     };
   }
 }
-$Prim_undefined = function() { throw new \Exception("undefined"); };
-
-
-// Control_Semigroupoid_Semigroupoid$Dict
-$Control_Semigroupoid_Semigroupoid__dollar__Dict = (function() {
-  $__fn = function($x) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = $x;
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
-
-// Control_Semigroupoid_semigroupoidFn
-$Control_Semigroupoid_semigroupoidFn = ($GLOBALS['Control_Semigroupoid_Semigroupoid__dollar__Dict'])((object)["compose" => (function() {
+if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
+  function phpurs_eval_thunk($id) {
+    static $cache = [];
+    if (array_key_exists($id, $cache)) return $cache[$id];
+    switch ($id) {
+      case 'Control_Semigroupoid_semigroupoidFn': $v = (($GLOBALS['Control_Semigroupoid_Semigroupoid__dollar__Dict'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_Semigroupoid__dollar__Dict')))((object)["compose" => (function() {
   $__fn = function($f, $g = null, $x = null) use (&$__fn) {
   $__num = func_num_args();
-  if ($__num < 3) return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  if ($__num < 3) {
+    if ($__num === 2) return function($x) use ($f, $g, &$__fn) { return $__fn($f, $g, $x); };
+    if ($__num === 1) return function($g, $x = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $g, $x);
+      if ($__num2 === 1) return function($x) use ($f, $g, &$__fn) { return $__fn($f, $g, $x); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
     $__res = ($f)(($g)($x));
   return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
   };
   return $__fn;
-})()]);
+})()]); break;
+      default: throw new \Exception("Unknown thunk " . $id);
+    }
+    $GLOBALS[$id] = $v;
+    return $cache[$id] = $v;
+  }
+}
+$Prim_undefined = function() { throw new \Exception("undefined"); };
+
+
+// Control_Semigroupoid_Semigroupoid$Dict
+function Control_Semigroupoid_Semigroupoid__dollar__Dict($x) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Control_Semigroupoid_Semigroupoid__dollar__Dict';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $x;
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Control_Semigroupoid_Semigroupoid__dollar__Dict'] = __NAMESPACE__ . '\\Control_Semigroupoid_Semigroupoid__dollar__Dict';
+
 
 // Control_Semigroupoid_compose
-$Control_Semigroupoid_compose = (function() {
+function Control_Semigroupoid_compose($dict) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Control_Semigroupoid_compose';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
   $__body = function($dict) {
     $__case_0 = $dict;
     if (true) {
@@ -61,32 +86,32 @@ return ($v)->compose;
 throw new \Exception("Pattern match failure");
 };
   };
-  $__fn = function($dict) use ($__body, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
     $__res = $__body($dict);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Control_Semigroupoid_compose'] = __NAMESPACE__ . '\\Control_Semigroupoid_compose';
 
 // Control_Semigroupoid_composeFlipped
-$Control_Semigroupoid_composeFlipped = (function() {
-  $__fn = function($dictSemigroupoid) use (&$__fn) {
+function Control_Semigroupoid_composeFlipped($dictSemigroupoid) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-$compose1 = ($GLOBALS['Control_Semigroupoid_compose'])($dictSemigroupoid);
+  $__fn = __NAMESPACE__ . '\\' . 'Control_Semigroupoid_composeFlipped';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$compose1 = (($GLOBALS['Control_Semigroupoid_compose'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_compose')))($dictSemigroupoid);
     $__res = (function() use ($compose1) {
   $__fn = function($f, $g = null) use ($compose1, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 2) return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  if ($__num < 2) {
+    if ($__num === 1) return function($g) use ($f, &$__fn) { return $__fn($f, $g); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
     $__res = ($compose1)($g, $f);
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
 })();
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Control_Semigroupoid_composeFlipped'] = __NAMESPACE__ . '\\Control_Semigroupoid_composeFlipped';
 

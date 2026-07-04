@@ -27,44 +27,47 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_curry_fallback')) {
     };
   }
 }
+if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
+  function phpurs_eval_thunk($id) {
+    static $cache = [];
+    if (array_key_exists($id, $cache)) return $cache[$id];
+    switch ($id) {
+      case 'Data_Number_tau': $v = 6.283185307179586; break;
+      case 'Data_Number_sqrt2': $v = 1.4142135623730951; break;
+      case 'Data_Number_sqrt1_2': $v = 0.7071067811865476; break;
+      case 'Data_Number_pi': $v = 3.141592653589793; break;
+      case 'Data_Number_log2e': $v = 1.4426950408889634; break;
+      case 'Data_Number_log10e': $v = 0.4342944819032518; break;
+      case 'Data_Number_ln2': $v = 0.6931471805599453; break;
+      case 'Data_Number_ln10': $v = 2.302585092994046; break;
+      case 'Data_Number_e': $v = 2.718281828459045; break;
+      default: throw new \Exception("Unknown thunk " . $id);
+    }
+    $GLOBALS[$id] = $v;
+    return $cache[$id] = $v;
+  }
+}
 $Prim_undefined = function() { throw new \Exception("undefined"); };
 
 
-// Data_Number_tau
-$Data_Number_tau = 6.283185307179586;
 
-// Data_Number_sqrt2
-$Data_Number_sqrt2 = 1.4142135623730951;
 
-// Data_Number_sqrt1_2
-$Data_Number_sqrt1_2 = 0.7071067811865476;
 
-// Data_Number_pi
-$Data_Number_pi = 3.141592653589793;
 
-// Data_Number_log2e
-$Data_Number_log2e = 1.4426950408889634;
 
-// Data_Number_log10e
-$Data_Number_log10e = 0.4342944819032518;
 
-// Data_Number_ln2
-$Data_Number_ln2 = 0.6931471805599453;
 
-// Data_Number_ln10
-$Data_Number_ln10 = 2.302585092994046;
 
 // Data_Number_fromString
-$Data_Number_fromString = (function() {
-  $__fn = function($str) use (&$__fn) {
+function Data_Number_fromString($str) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = ($GLOBALS['Data_Function_Uncurried_runFn4'])($GLOBALS['Data_Number_fromStringImpl'], $str, $GLOBALS['Data_Number_isFinite'], $GLOBALS['Data_Maybe_Just'], $GLOBALS['Data_Maybe_Nothing']);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Number_fromString';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = (($GLOBALS['Data_Function_Uncurried_runFn4'] ?? \Data\Function\Uncurried\phpurs_eval_thunk('Data_Function_Uncurried_runFn4')))(($GLOBALS['Data_Number_fromStringImpl'] ?? \Data\Number\phpurs_eval_thunk('Data_Number_fromStringImpl')), $str, ($GLOBALS['Data_Number_isFinite'] ?? \Data\Number\phpurs_eval_thunk('Data_Number_isFinite')), ($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')), ($GLOBALS['Data_Maybe_Nothing'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Nothing')));
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Number_fromString'] = __NAMESPACE__ . '\\Data_Number_fromString';
 
-// Data_Number_e
-$Data_Number_e = 2.718281828459045;
 

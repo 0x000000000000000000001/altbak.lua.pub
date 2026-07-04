@@ -33,36 +33,51 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_curry_fallback')) {
     };
   }
 }
-$Prim_undefined = function() { throw new \Exception("undefined"); };
-
-
-// Control_MonadPlus_MonadPlus$Dict
-$Control_MonadPlus_MonadPlus__dollar__Dict = (function() {
-  $__fn = function($x) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = $x;
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
-
-// Control_MonadPlus_monadPlusArray
-$Control_MonadPlus_monadPlusArray = ($GLOBALS['Control_MonadPlus_MonadPlus__dollar__Dict'])((object)["Monad0" => (function() {
+if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
+  function phpurs_eval_thunk($id) {
+    static $cache = [];
+    if (array_key_exists($id, $cache)) return $cache[$id];
+    switch ($id) {
+      case 'Control_MonadPlus_monadPlusArray': $v = (($GLOBALS['Control_MonadPlus_MonadPlus__dollar__Dict'] ?? \Control\MonadPlus\phpurs_eval_thunk('Control_MonadPlus_MonadPlus__dollar__Dict')))((object)["Monad0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = $GLOBALS['Control_Monad_monadArray'];
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($GLOBALS['Control_Monad_monadArray'] ?? \Control\Monad\phpurs_eval_thunk('Control_Monad_monadArray'));
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
 })(), "Alternative1" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = $GLOBALS['Control_Alternative_alternativeArray'];
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($GLOBALS['Control_Alternative_alternativeArray'] ?? \Control\Alternative\phpurs_eval_thunk('Control_Alternative_alternativeArray'));
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})()]);
+})()]); break;
+      default: throw new \Exception("Unknown thunk " . $id);
+    }
+    $GLOBALS[$id] = $v;
+    return $cache[$id] = $v;
+  }
+}
+$Prim_undefined = function() { throw new \Exception("undefined"); };
+
+
+// Control_MonadPlus_MonadPlus$Dict
+function Control_MonadPlus_MonadPlus__dollar__Dict($x) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Control_MonadPlus_MonadPlus__dollar__Dict';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $x;
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Control_MonadPlus_MonadPlus__dollar__Dict'] = __NAMESPACE__ . '\\Control_MonadPlus_MonadPlus__dollar__Dict';
+
 

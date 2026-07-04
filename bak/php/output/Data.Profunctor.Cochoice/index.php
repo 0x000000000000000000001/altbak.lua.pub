@@ -27,22 +27,40 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_curry_fallback')) {
     };
   }
 }
+if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
+  function phpurs_eval_thunk($id) {
+    static $cache = [];
+    if (array_key_exists($id, $cache)) return $cache[$id];
+    switch ($id) {
+
+      default: throw new \Exception("Unknown thunk " . $id);
+    }
+    $GLOBALS[$id] = $v;
+    return $cache[$id] = $v;
+  }
+}
 $Prim_undefined = function() { throw new \Exception("undefined"); };
 
 
 // Data_Profunctor_Cochoice_Cochoice$Dict
-$Data_Profunctor_Cochoice_Cochoice__dollar__Dict = (function() {
-  $__fn = function($x) use (&$__fn) {
+function Data_Profunctor_Cochoice_Cochoice__dollar__Dict($x) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Profunctor_Cochoice_Cochoice__dollar__Dict';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $x;
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Profunctor_Cochoice_Cochoice__dollar__Dict'] = __NAMESPACE__ . '\\Data_Profunctor_Cochoice_Cochoice__dollar__Dict';
 
 // Data_Profunctor_Cochoice_unright
-$Data_Profunctor_Cochoice_unright = (function() {
+function Data_Profunctor_Cochoice_unright($dict) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Profunctor_Cochoice_unright';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
   $__body = function($dict) {
     $__case_0 = $dict;
     if (true) {
@@ -52,17 +70,18 @@ return ($v)->unright;
 throw new \Exception("Pattern match failure");
 };
   };
-  $__fn = function($dict) use ($__body, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
     $__res = $__body($dict);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Profunctor_Cochoice_unright'] = __NAMESPACE__ . '\\Data_Profunctor_Cochoice_unright';
 
 // Data_Profunctor_Cochoice_unleft
-$Data_Profunctor_Cochoice_unleft = (function() {
+function Data_Profunctor_Cochoice_unleft($dict) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Profunctor_Cochoice_unleft';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
   $__body = function($dict) {
     $__case_0 = $dict;
     if (true) {
@@ -72,12 +91,8 @@ return ($v)->unleft;
 throw new \Exception("Pattern match failure");
 };
   };
-  $__fn = function($dict) use ($__body, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
     $__res = $__body($dict);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Profunctor_Cochoice_unleft'] = __NAMESPACE__ . '\\Data_Profunctor_Cochoice_unleft';
 

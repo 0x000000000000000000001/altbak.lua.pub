@@ -26,30 +26,48 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_curry_fallback')) {
     };
   }
 }
+if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
+  function phpurs_eval_thunk($id) {
+    static $cache = [];
+    if (array_key_exists($id, $cache)) return $cache[$id];
+    switch ($id) {
+
+      default: throw new \Exception("Unknown thunk " . $id);
+    }
+    $GLOBALS[$id] = $v;
+    return $cache[$id] = $v;
+  }
+}
 $Prim_undefined = function() { throw new \Exception("undefined"); };
 
 
 // Data_Symbol_IsSymbol$Dict
-$Data_Symbol_IsSymbol__dollar__Dict = (function() {
-  $__fn = function($x) use (&$__fn) {
+function Data_Symbol_IsSymbol__dollar__Dict($x) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Symbol_IsSymbol__dollar__Dict';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $x;
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Symbol_IsSymbol__dollar__Dict'] = __NAMESPACE__ . '\\Data_Symbol_IsSymbol__dollar__Dict';
 
 // Data_Symbol_reifySymbol
-$Data_Symbol_reifySymbol = (function() {
-  $__fn = function($s, $f = null) use (&$__fn) {
+function Data_Symbol_reifySymbol($s, $f = null) {
   $__num = func_num_args();
-  if ($__num < 2) return phpurs_curry_fallback($__fn, func_get_args(), 2);
-$coerce = $GLOBALS['Data_Symbol_unsafeCoerce'];
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Symbol_reifySymbol';
+  if ($__num < 2) {
+    if ($__num === 1) return function($f) use ($s, $__fn) { return $__fn($s, $f); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+$coerce = ($GLOBALS['Data_Symbol_unsafeCoerce'] ?? \Data\Symbol\phpurs_eval_thunk('Data_Symbol_unsafeCoerce'));
     $__res = ($coerce)((function() use ($f) {
   $__fn = function($dictIsSymbol) use ($f, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = ($f)($dictIsSymbol);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
@@ -57,19 +75,25 @@ $coerce = $GLOBALS['Data_Symbol_unsafeCoerce'];
 })(), (object)["reflectSymbol" => (function() use ($s) {
   $__fn = function($v) use ($s, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $s;
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})()], $GLOBALS['Type_Proxy_Proxy']);
-  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
-  };
-  return $__fn;
-})();
+})()], ($GLOBALS['Type_Proxy_Proxy'] ?? \Type\Proxy\phpurs_eval_thunk('Type_Proxy_Proxy')));
+    return 2 < $__num ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+}
+$GLOBALS['Data_Symbol_reifySymbol'] = __NAMESPACE__ . '\\Data_Symbol_reifySymbol';
 
 // Data_Symbol_reflectSymbol
-$Data_Symbol_reflectSymbol = (function() {
+function Data_Symbol_reflectSymbol($dict) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Symbol_reflectSymbol';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
   $__body = function($dict) {
     $__case_0 = $dict;
     if (true) {
@@ -79,12 +103,8 @@ return ($v)->reflectSymbol;
 throw new \Exception("Pattern match failure");
 };
   };
-  $__fn = function($dict) use ($__body, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
     $__res = $__body($dict);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Symbol_reflectSymbol'] = __NAMESPACE__ . '\\Data_Symbol_reflectSymbol';
 

@@ -28,33 +28,61 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_curry_fallback')) {
     };
   }
 }
-$Prim_undefined = function() { throw new \Exception("undefined"); };
-
-
-// Effect_Class_MonadEffect$Dict
-$Effect_Class_MonadEffect__dollar__Dict = (function() {
+if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
+  function phpurs_eval_thunk($id) {
+    static $cache = [];
+    if (array_key_exists($id, $cache)) return $cache[$id];
+    switch ($id) {
+      case 'Effect_Class_monadEffectEffect': $v = (($GLOBALS['Effect_Class_MonadEffect__dollar__Dict'] ?? \Effect\Class\phpurs_eval_thunk('Effect_Class_MonadEffect__dollar__Dict')))((object)["liftEffect" => (function() {
   $__fn = function($x) use (&$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $x;
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})();
-
-// Effect_Class_monadEffectEffect
-$Effect_Class_monadEffectEffect = ($GLOBALS['Effect_Class_MonadEffect__dollar__Dict'])((object)["liftEffect" => ($GLOBALS['Control_Category_identity'])($GLOBALS['Control_Category_categoryFn']), "Monad0" => (function() {
+})(), "Monad0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = $GLOBALS['Effect_monadEffect'];
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($GLOBALS['Effect_monadEffect'] ?? \Effect\phpurs_eval_thunk('Effect_monadEffect'));
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})()]);
+})()]); break;
+      default: throw new \Exception("Unknown thunk " . $id);
+    }
+    $GLOBALS[$id] = $v;
+    return $cache[$id] = $v;
+  }
+}
+$Prim_undefined = function() { throw new \Exception("undefined"); };
+
+
+// Effect_Class_MonadEffect$Dict
+function Effect_Class_MonadEffect__dollar__Dict($x) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Effect_Class_MonadEffect__dollar__Dict';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $x;
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Effect_Class_MonadEffect__dollar__Dict'] = __NAMESPACE__ . '\\Effect_Class_MonadEffect__dollar__Dict';
+
 
 // Effect_Class_liftEffect
-$Effect_Class_liftEffect = (function() {
+function Effect_Class_liftEffect($dict) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Effect_Class_liftEffect';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
   $__body = function($dict) {
     $__case_0 = $dict;
     if (true) {
@@ -64,12 +92,8 @@ return ($v)->liftEffect;
 throw new \Exception("Pattern match failure");
 };
   };
-  $__fn = function($dict) use ($__body, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
     $__res = $__body($dict);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Effect_Class_liftEffect'] = __NAMESPACE__ . '\\Effect_Class_liftEffect';
 

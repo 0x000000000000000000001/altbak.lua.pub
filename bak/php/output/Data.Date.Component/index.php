@@ -39,272 +39,177 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_curry_fallback')) {
     };
   }
 }
-$Prim_undefined = function() { throw new \Exception("undefined"); };
-
-
-// Data_Date_Component_append
-$Data_Date_Component_append = ($GLOBALS['Data_Semigroup_append'])($GLOBALS['Data_Semigroup_semigroupString']);
-
-// Data_Date_Component_show
-$Data_Date_Component_show = ($GLOBALS['Data_Show_show'])($GLOBALS['Data_Show_showInt']);
-
-// Data_Date_Component_negate
-$Data_Date_Component_negate = ($GLOBALS['Data_Ring_negate'])($GLOBALS['Data_Ring_ringInt']);
-
-// Data_Date_Component_conj
-$Data_Date_Component_conj = ($GLOBALS['Data_HeytingAlgebra_conj'])($GLOBALS['Data_HeytingAlgebra_heytingAlgebraBoolean']);
-
-// Data_Date_Component_greaterThanOrEq
-$Data_Date_Component_greaterThanOrEq = ($GLOBALS['Data_Ord_greaterThanOrEq'])($GLOBALS['Data_Ord_ordInt']);
-
-// Data_Date_Component_lessThanOrEq
-$Data_Date_Component_lessThanOrEq = ($GLOBALS['Data_Ord_lessThanOrEq'])($GLOBALS['Data_Ord_ordInt']);
-
-// Data_Date_Component_compose
-$Data_Date_Component_compose = ($GLOBALS['Control_Semigroupoid_compose'])($GLOBALS['Control_Semigroupoid_semigroupoidFn']);
-
-// Data_Date_Component_add
-$Data_Date_Component_add = ($GLOBALS['Data_Semiring_add'])($GLOBALS['Data_Semiring_semiringInt']);
-
-// Data_Date_Component_sub
-$Data_Date_Component_sub = ($GLOBALS['Data_Ring_sub'])($GLOBALS['Data_Ring_ringInt']);
-
-// Data_Date_Component_Year
-$Data_Date_Component_Year = (function() {
-  $__fn = function($x) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = $x;
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
-
-// Data_Date_Component_Monday
-$Data_Date_Component_Monday = new Phpurs_Data0("Monday");
-
-// Data_Date_Component_Tuesday
-$Data_Date_Component_Tuesday = new Phpurs_Data0("Tuesday");
-
-// Data_Date_Component_Wednesday
-$Data_Date_Component_Wednesday = new Phpurs_Data0("Wednesday");
-
-// Data_Date_Component_Thursday
-$Data_Date_Component_Thursday = new Phpurs_Data0("Thursday");
-
-// Data_Date_Component_Friday
-$Data_Date_Component_Friday = new Phpurs_Data0("Friday");
-
-// Data_Date_Component_Saturday
-$Data_Date_Component_Saturday = new Phpurs_Data0("Saturday");
-
-// Data_Date_Component_Sunday
-$Data_Date_Component_Sunday = new Phpurs_Data0("Sunday");
-
-// Data_Date_Component_January
-$Data_Date_Component_January = new Phpurs_Data0("January");
-
-// Data_Date_Component_February
-$Data_Date_Component_February = new Phpurs_Data0("February");
-
-// Data_Date_Component_March
-$Data_Date_Component_March = new Phpurs_Data0("March");
-
-// Data_Date_Component_April
-$Data_Date_Component_April = new Phpurs_Data0("April");
-
-// Data_Date_Component_May
-$Data_Date_Component_May = new Phpurs_Data0("May");
-
-// Data_Date_Component_June
-$Data_Date_Component_June = new Phpurs_Data0("June");
-
-// Data_Date_Component_July
-$Data_Date_Component_July = new Phpurs_Data0("July");
-
-// Data_Date_Component_August
-$Data_Date_Component_August = new Phpurs_Data0("August");
-
-// Data_Date_Component_September
-$Data_Date_Component_September = new Phpurs_Data0("September");
-
-// Data_Date_Component_October
-$Data_Date_Component_October = new Phpurs_Data0("October");
-
-// Data_Date_Component_November
-$Data_Date_Component_November = new Phpurs_Data0("November");
-
-// Data_Date_Component_December
-$Data_Date_Component_December = new Phpurs_Data0("December");
-
-// Data_Date_Component_Day
-$Data_Date_Component_Day = (function() {
-  $__fn = function($x) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = $x;
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
-
-// Data_Date_Component_showYear
-$Data_Date_Component_showYear = ($GLOBALS['Data_Show_Show__dollar__Dict'])((object)["show" => (function() {
+if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
+  function phpurs_eval_thunk($id) {
+    static $cache = [];
+    if (array_key_exists($id, $cache)) return $cache[$id];
+    switch ($id) {
+      case 'Data_Date_Component_append': $v = ($GLOBALS['Data_Semigroup_concatString'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_concatString')); break;
+      case 'Data_Date_Component_show': $v = ($GLOBALS['Data_Show_showIntImpl'] ?? \Data\Show\phpurs_eval_thunk('Data_Show_showIntImpl')); break;
+      case 'Data_Date_Component_negate': $v = (($GLOBALS['Data_Ring_negate'] ?? \Data\Ring\phpurs_eval_thunk('Data_Ring_negate')))(($GLOBALS['Data_Ring_ringInt'] ?? \Data\Ring\phpurs_eval_thunk('Data_Ring_ringInt'))); break;
+      case 'Data_Date_Component_conj': $v = ($GLOBALS['Data_HeytingAlgebra_boolConj'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_boolConj')); break;
+      case 'Data_Date_Component_greaterThanOrEq': $v = (($GLOBALS['Data_Ord_greaterThanOrEq'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_greaterThanOrEq')))(($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'))); break;
+      case 'Data_Date_Component_lessThanOrEq': $v = (($GLOBALS['Data_Ord_lessThanOrEq'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_lessThanOrEq')))(($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'))); break;
+      case 'Data_Date_Component_add': $v = ($GLOBALS['Data_Semiring_intAdd'] ?? \Data\Semiring\phpurs_eval_thunk('Data_Semiring_intAdd')); break;
+      case 'Data_Date_Component_sub': $v = ($GLOBALS['Data_Ring_intSub'] ?? \Data\Ring\phpurs_eval_thunk('Data_Ring_intSub')); break;
+      case 'Data_Date_Component_Monday': $v = ($GLOBALS['__phpurs_data0_Monday'] ??= new Phpurs_Data0("Monday")); break;
+      case 'Data_Date_Component_Tuesday': $v = ($GLOBALS['__phpurs_data0_Tuesday'] ??= new Phpurs_Data0("Tuesday")); break;
+      case 'Data_Date_Component_Wednesday': $v = ($GLOBALS['__phpurs_data0_Wednesday'] ??= new Phpurs_Data0("Wednesday")); break;
+      case 'Data_Date_Component_Thursday': $v = ($GLOBALS['__phpurs_data0_Thursday'] ??= new Phpurs_Data0("Thursday")); break;
+      case 'Data_Date_Component_Friday': $v = ($GLOBALS['__phpurs_data0_Friday'] ??= new Phpurs_Data0("Friday")); break;
+      case 'Data_Date_Component_Saturday': $v = ($GLOBALS['__phpurs_data0_Saturday'] ??= new Phpurs_Data0("Saturday")); break;
+      case 'Data_Date_Component_Sunday': $v = ($GLOBALS['__phpurs_data0_Sunday'] ??= new Phpurs_Data0("Sunday")); break;
+      case 'Data_Date_Component_January': $v = ($GLOBALS['__phpurs_data0_January'] ??= new Phpurs_Data0("January")); break;
+      case 'Data_Date_Component_February': $v = ($GLOBALS['__phpurs_data0_February'] ??= new Phpurs_Data0("February")); break;
+      case 'Data_Date_Component_March': $v = ($GLOBALS['__phpurs_data0_March'] ??= new Phpurs_Data0("March")); break;
+      case 'Data_Date_Component_April': $v = ($GLOBALS['__phpurs_data0_April'] ??= new Phpurs_Data0("April")); break;
+      case 'Data_Date_Component_May': $v = ($GLOBALS['__phpurs_data0_May'] ??= new Phpurs_Data0("May")); break;
+      case 'Data_Date_Component_June': $v = ($GLOBALS['__phpurs_data0_June'] ??= new Phpurs_Data0("June")); break;
+      case 'Data_Date_Component_July': $v = ($GLOBALS['__phpurs_data0_July'] ??= new Phpurs_Data0("July")); break;
+      case 'Data_Date_Component_August': $v = ($GLOBALS['__phpurs_data0_August'] ??= new Phpurs_Data0("August")); break;
+      case 'Data_Date_Component_September': $v = ($GLOBALS['__phpurs_data0_September'] ??= new Phpurs_Data0("September")); break;
+      case 'Data_Date_Component_October': $v = ($GLOBALS['__phpurs_data0_October'] ??= new Phpurs_Data0("October")); break;
+      case 'Data_Date_Component_November': $v = ($GLOBALS['__phpurs_data0_November'] ??= new Phpurs_Data0("November")); break;
+      case 'Data_Date_Component_December': $v = ($GLOBALS['__phpurs_data0_December'] ??= new Phpurs_Data0("December")); break;
+      case 'Data_Date_Component_showYear': $v = (($GLOBALS['Data_Show_Show__dollar__Dict'] ?? \Data\Show\phpurs_eval_thunk('Data_Show_Show__dollar__Dict')))((object)["show" => (function() {
   $__body = function($v) {
     $__case_0 = $v;
     if (true) {
 $y = $__case_0;
-return ($GLOBALS['Data_Date_Component_append'])("(Year ", ($GLOBALS['Data_Date_Component_append'])(($GLOBALS['Data_Date_Component_show'])($y), ")"));
+return (($GLOBALS['Data_Date_Component_append'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_append')))("(Year ", (($GLOBALS['Data_Date_Component_append'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_append')))((($GLOBALS['Data_Date_Component_show'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_show')))($y), ")"));
 } else {
 throw new \Exception("Pattern match failure");
 };
   };
   $__fn = function($v) use ($__body, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $__body($v);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})()]);
-
-// Data_Date_Component_showWeekday
-$Data_Date_Component_showWeekday = ($GLOBALS['Data_Show_Show__dollar__Dict'])((object)["show" => (function() {
+})()]); break;
+      case 'Data_Date_Component_showWeekday': $v = (($GLOBALS['Data_Show_Show__dollar__Dict'] ?? \Data\Show\phpurs_eval_thunk('Data_Show_Show__dollar__Dict')))((object)["show" => (function() {
   $__body = function($v) {
     $__case_0 = $v;
-    if ((($__case_0)->tag === "Monday")) {
+    switch (($__case_0)->tag) {
+case "Monday":
 return "Monday";
-} else {
-if ((($__case_0)->tag === "Tuesday")) {
+break;
+case "Tuesday":
 return "Tuesday";
-} else {
-if ((($__case_0)->tag === "Wednesday")) {
+break;
+case "Wednesday":
 return "Wednesday";
-} else {
-if ((($__case_0)->tag === "Thursday")) {
+break;
+case "Thursday":
 return "Thursday";
-} else {
-if ((($__case_0)->tag === "Friday")) {
+break;
+case "Friday":
 return "Friday";
-} else {
-if ((($__case_0)->tag === "Saturday")) {
+break;
+case "Saturday":
 return "Saturday";
-} else {
-if ((($__case_0)->tag === "Sunday")) {
+break;
+case "Sunday":
 return "Sunday";
-} else {
+break;
+default:
 throw new \Exception("Pattern match failure");
-};
-};
-};
-};
-};
-};
+break;
 };
   };
   $__fn = function($v) use ($__body, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $__body($v);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})()]);
-
-// Data_Date_Component_showMonth
-$Data_Date_Component_showMonth = ($GLOBALS['Data_Show_Show__dollar__Dict'])((object)["show" => (function() {
+})()]); break;
+      case 'Data_Date_Component_showMonth': $v = (($GLOBALS['Data_Show_Show__dollar__Dict'] ?? \Data\Show\phpurs_eval_thunk('Data_Show_Show__dollar__Dict')))((object)["show" => (function() {
   $__body = function($v) {
     $__case_0 = $v;
-    if ((($__case_0)->tag === "January")) {
+    switch (($__case_0)->tag) {
+case "January":
 return "January";
-} else {
-if ((($__case_0)->tag === "February")) {
+break;
+case "February":
 return "February";
-} else {
-if ((($__case_0)->tag === "March")) {
+break;
+case "March":
 return "March";
-} else {
-if ((($__case_0)->tag === "April")) {
+break;
+case "April":
 return "April";
-} else {
-if ((($__case_0)->tag === "May")) {
+break;
+case "May":
 return "May";
-} else {
-if ((($__case_0)->tag === "June")) {
+break;
+case "June":
 return "June";
-} else {
-if ((($__case_0)->tag === "July")) {
+break;
+case "July":
 return "July";
-} else {
-if ((($__case_0)->tag === "August")) {
+break;
+case "August":
 return "August";
-} else {
-if ((($__case_0)->tag === "September")) {
+break;
+case "September":
 return "September";
-} else {
-if ((($__case_0)->tag === "October")) {
+break;
+case "October":
 return "October";
-} else {
-if ((($__case_0)->tag === "November")) {
+break;
+case "November":
 return "November";
-} else {
-if ((($__case_0)->tag === "December")) {
+break;
+case "December":
 return "December";
-} else {
+break;
+default:
 throw new \Exception("Pattern match failure");
-};
-};
-};
-};
-};
-};
-};
-};
-};
-};
-};
+break;
 };
   };
   $__fn = function($v) use ($__body, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $__body($v);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})()]);
-
-// Data_Date_Component_showDay
-$Data_Date_Component_showDay = ($GLOBALS['Data_Show_Show__dollar__Dict'])((object)["show" => (function() {
+})()]); break;
+      case 'Data_Date_Component_showDay': $v = (($GLOBALS['Data_Show_Show__dollar__Dict'] ?? \Data\Show\phpurs_eval_thunk('Data_Show_Show__dollar__Dict')))((object)["show" => (function() {
   $__body = function($v) {
     $__case_0 = $v;
     if (true) {
 $d = $__case_0;
-return ($GLOBALS['Data_Date_Component_append'])("(Day ", ($GLOBALS['Data_Date_Component_append'])(($GLOBALS['Data_Date_Component_show'])($d), ")"));
+return (($GLOBALS['Data_Date_Component_append'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_append')))("(Day ", (($GLOBALS['Data_Date_Component_append'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_append')))((($GLOBALS['Data_Date_Component_show'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_show')))($d), ")"));
 } else {
 throw new \Exception("Pattern match failure");
 };
   };
   $__fn = function($v) use ($__body, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $__body($v);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})()]);
-
-// Data_Date_Component_ordYear
-$Data_Date_Component_ordYear = $GLOBALS['Data_Ord_ordInt'];
-
-// Data_Date_Component_ordDay
-$Data_Date_Component_ordDay = $GLOBALS['Data_Ord_ordInt'];
-
-// Data_Date_Component_eqYear
-$Data_Date_Component_eqYear = $GLOBALS['Data_Eq_eqInt'];
-
-// Data_Date_Component_eqWeekday
-$Data_Date_Component_eqWeekday = ($GLOBALS['Data_Eq_Eq__dollar__Dict'])((object)["eq" => (function() {
+})()]); break;
+      case 'Data_Date_Component_ordYear': $v = ($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt')); break;
+      case 'Data_Date_Component_ordDay': $v = ($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt')); break;
+      case 'Data_Date_Component_eqYear': $v = ($GLOBALS['Data_Eq_eqInt'] ?? \Data\Eq\phpurs_eval_thunk('Data_Eq_eqInt')); break;
+      case 'Data_Date_Component_eqWeekday': $v = (($GLOBALS['Data_Eq_Eq__dollar__Dict'] ?? \Data\Eq\phpurs_eval_thunk('Data_Eq_Eq__dollar__Dict')))((object)["eq" => (function() {
   $__body = function($x, $y) {
     $__case_0 = $x;
     $__case_1 = $y;
@@ -344,74 +249,75 @@ throw new \Exception("Pattern match failure");
   };
   $__fn = function($x, $y = null) use ($__body, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 2) return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  if ($__num < 2) {
+    if ($__num === 1) return function($y) use ($x, &$__fn) { return $__fn($x, $y); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
     $__res = $__body($x, $y);
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
-})()]);
-
-// Data_Date_Component_ordWeekday
-$Data_Date_Component_ordWeekday = ($GLOBALS['Data_Ord_Ord__dollar__Dict'])((object)["compare" => (function() {
+})()]); break;
+      case 'Data_Date_Component_ordWeekday': $v = (($GLOBALS['Data_Ord_Ord__dollar__Dict'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_Ord__dollar__Dict')))((object)["compare" => (function() {
   $__body = function($x, $y) {
     $__case_0 = $x;
     $__case_1 = $y;
     if (((($__case_0)->tag === "Monday") && (($__case_1)->tag === "Monday"))) {
-return $GLOBALS['Data_Ordering_EQ'];
+return ($GLOBALS['Data_Ordering_EQ'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_EQ'));
 } else {
 if ((($__case_0)->tag === "Monday")) {
-return $GLOBALS['Data_Ordering_LT'];
+return ($GLOBALS['Data_Ordering_LT'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_LT'));
 } else {
 if ((($__case_1)->tag === "Monday")) {
-return $GLOBALS['Data_Ordering_GT'];
+return ($GLOBALS['Data_Ordering_GT'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_GT'));
 } else {
 if (((($__case_0)->tag === "Tuesday") && (($__case_1)->tag === "Tuesday"))) {
-return $GLOBALS['Data_Ordering_EQ'];
+return ($GLOBALS['Data_Ordering_EQ'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_EQ'));
 } else {
 if ((($__case_0)->tag === "Tuesday")) {
-return $GLOBALS['Data_Ordering_LT'];
+return ($GLOBALS['Data_Ordering_LT'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_LT'));
 } else {
 if ((($__case_1)->tag === "Tuesday")) {
-return $GLOBALS['Data_Ordering_GT'];
+return ($GLOBALS['Data_Ordering_GT'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_GT'));
 } else {
 if (((($__case_0)->tag === "Wednesday") && (($__case_1)->tag === "Wednesday"))) {
-return $GLOBALS['Data_Ordering_EQ'];
+return ($GLOBALS['Data_Ordering_EQ'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_EQ'));
 } else {
 if ((($__case_0)->tag === "Wednesday")) {
-return $GLOBALS['Data_Ordering_LT'];
+return ($GLOBALS['Data_Ordering_LT'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_LT'));
 } else {
 if ((($__case_1)->tag === "Wednesday")) {
-return $GLOBALS['Data_Ordering_GT'];
+return ($GLOBALS['Data_Ordering_GT'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_GT'));
 } else {
 if (((($__case_0)->tag === "Thursday") && (($__case_1)->tag === "Thursday"))) {
-return $GLOBALS['Data_Ordering_EQ'];
+return ($GLOBALS['Data_Ordering_EQ'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_EQ'));
 } else {
 if ((($__case_0)->tag === "Thursday")) {
-return $GLOBALS['Data_Ordering_LT'];
+return ($GLOBALS['Data_Ordering_LT'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_LT'));
 } else {
 if ((($__case_1)->tag === "Thursday")) {
-return $GLOBALS['Data_Ordering_GT'];
+return ($GLOBALS['Data_Ordering_GT'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_GT'));
 } else {
 if (((($__case_0)->tag === "Friday") && (($__case_1)->tag === "Friday"))) {
-return $GLOBALS['Data_Ordering_EQ'];
+return ($GLOBALS['Data_Ordering_EQ'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_EQ'));
 } else {
 if ((($__case_0)->tag === "Friday")) {
-return $GLOBALS['Data_Ordering_LT'];
+return ($GLOBALS['Data_Ordering_LT'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_LT'));
 } else {
 if ((($__case_1)->tag === "Friday")) {
-return $GLOBALS['Data_Ordering_GT'];
+return ($GLOBALS['Data_Ordering_GT'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_GT'));
 } else {
 if (((($__case_0)->tag === "Saturday") && (($__case_1)->tag === "Saturday"))) {
-return $GLOBALS['Data_Ordering_EQ'];
+return ($GLOBALS['Data_Ordering_EQ'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_EQ'));
 } else {
 if ((($__case_0)->tag === "Saturday")) {
-return $GLOBALS['Data_Ordering_LT'];
+return ($GLOBALS['Data_Ordering_LT'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_LT'));
 } else {
 if ((($__case_1)->tag === "Saturday")) {
-return $GLOBALS['Data_Ordering_GT'];
+return ($GLOBALS['Data_Ordering_GT'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_GT'));
 } else {
 if (((($__case_0)->tag === "Sunday") && (($__case_1)->tag === "Sunday"))) {
-return $GLOBALS['Data_Ordering_EQ'];
+return ($GLOBALS['Data_Ordering_EQ'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_EQ'));
 } else {
 throw new \Exception("Pattern match failure");
 };
@@ -436,7 +342,10 @@ throw new \Exception("Pattern match failure");
   };
   $__fn = function($x, $y = null) use ($__body, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 2) return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  if ($__num < 2) {
+    if ($__num === 1) return function($y) use ($x, &$__fn) { return $__fn($x, $y); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
     $__res = $__body($x, $y);
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
@@ -444,15 +353,15 @@ throw new \Exception("Pattern match failure");
 })(), "Eq0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = $GLOBALS['Data_Date_Component_eqWeekday'];
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($GLOBALS['Data_Date_Component_eqWeekday'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_eqWeekday'));
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})()]);
-
-// Data_Date_Component_eqMonth
-$Data_Date_Component_eqMonth = ($GLOBALS['Data_Eq_Eq__dollar__Dict'])((object)["eq" => (function() {
+})()]); break;
+      case 'Data_Date_Component_eqMonth': $v = (($GLOBALS['Data_Eq_Eq__dollar__Dict'] ?? \Data\Eq\phpurs_eval_thunk('Data_Eq_Eq__dollar__Dict')))((object)["eq" => (function() {
   $__body = function($x, $y) {
     $__case_0 = $x;
     $__case_1 = $y;
@@ -512,119 +421,120 @@ throw new \Exception("Pattern match failure");
   };
   $__fn = function($x, $y = null) use ($__body, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 2) return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  if ($__num < 2) {
+    if ($__num === 1) return function($y) use ($x, &$__fn) { return $__fn($x, $y); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
     $__res = $__body($x, $y);
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
-})()]);
-
-// Data_Date_Component_ordMonth
-$Data_Date_Component_ordMonth = ($GLOBALS['Data_Ord_Ord__dollar__Dict'])((object)["compare" => (function() {
+})()]); break;
+      case 'Data_Date_Component_ordMonth': $v = (($GLOBALS['Data_Ord_Ord__dollar__Dict'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_Ord__dollar__Dict')))((object)["compare" => (function() {
   $__body = function($x, $y) {
     $__case_0 = $x;
     $__case_1 = $y;
     if (((($__case_0)->tag === "January") && (($__case_1)->tag === "January"))) {
-return $GLOBALS['Data_Ordering_EQ'];
+return ($GLOBALS['Data_Ordering_EQ'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_EQ'));
 } else {
 if ((($__case_0)->tag === "January")) {
-return $GLOBALS['Data_Ordering_LT'];
+return ($GLOBALS['Data_Ordering_LT'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_LT'));
 } else {
 if ((($__case_1)->tag === "January")) {
-return $GLOBALS['Data_Ordering_GT'];
+return ($GLOBALS['Data_Ordering_GT'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_GT'));
 } else {
 if (((($__case_0)->tag === "February") && (($__case_1)->tag === "February"))) {
-return $GLOBALS['Data_Ordering_EQ'];
+return ($GLOBALS['Data_Ordering_EQ'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_EQ'));
 } else {
 if ((($__case_0)->tag === "February")) {
-return $GLOBALS['Data_Ordering_LT'];
+return ($GLOBALS['Data_Ordering_LT'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_LT'));
 } else {
 if ((($__case_1)->tag === "February")) {
-return $GLOBALS['Data_Ordering_GT'];
+return ($GLOBALS['Data_Ordering_GT'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_GT'));
 } else {
 if (((($__case_0)->tag === "March") && (($__case_1)->tag === "March"))) {
-return $GLOBALS['Data_Ordering_EQ'];
+return ($GLOBALS['Data_Ordering_EQ'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_EQ'));
 } else {
 if ((($__case_0)->tag === "March")) {
-return $GLOBALS['Data_Ordering_LT'];
+return ($GLOBALS['Data_Ordering_LT'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_LT'));
 } else {
 if ((($__case_1)->tag === "March")) {
-return $GLOBALS['Data_Ordering_GT'];
+return ($GLOBALS['Data_Ordering_GT'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_GT'));
 } else {
 if (((($__case_0)->tag === "April") && (($__case_1)->tag === "April"))) {
-return $GLOBALS['Data_Ordering_EQ'];
+return ($GLOBALS['Data_Ordering_EQ'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_EQ'));
 } else {
 if ((($__case_0)->tag === "April")) {
-return $GLOBALS['Data_Ordering_LT'];
+return ($GLOBALS['Data_Ordering_LT'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_LT'));
 } else {
 if ((($__case_1)->tag === "April")) {
-return $GLOBALS['Data_Ordering_GT'];
+return ($GLOBALS['Data_Ordering_GT'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_GT'));
 } else {
 if (((($__case_0)->tag === "May") && (($__case_1)->tag === "May"))) {
-return $GLOBALS['Data_Ordering_EQ'];
+return ($GLOBALS['Data_Ordering_EQ'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_EQ'));
 } else {
 if ((($__case_0)->tag === "May")) {
-return $GLOBALS['Data_Ordering_LT'];
+return ($GLOBALS['Data_Ordering_LT'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_LT'));
 } else {
 if ((($__case_1)->tag === "May")) {
-return $GLOBALS['Data_Ordering_GT'];
+return ($GLOBALS['Data_Ordering_GT'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_GT'));
 } else {
 if (((($__case_0)->tag === "June") && (($__case_1)->tag === "June"))) {
-return $GLOBALS['Data_Ordering_EQ'];
+return ($GLOBALS['Data_Ordering_EQ'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_EQ'));
 } else {
 if ((($__case_0)->tag === "June")) {
-return $GLOBALS['Data_Ordering_LT'];
+return ($GLOBALS['Data_Ordering_LT'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_LT'));
 } else {
 if ((($__case_1)->tag === "June")) {
-return $GLOBALS['Data_Ordering_GT'];
+return ($GLOBALS['Data_Ordering_GT'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_GT'));
 } else {
 if (((($__case_0)->tag === "July") && (($__case_1)->tag === "July"))) {
-return $GLOBALS['Data_Ordering_EQ'];
+return ($GLOBALS['Data_Ordering_EQ'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_EQ'));
 } else {
 if ((($__case_0)->tag === "July")) {
-return $GLOBALS['Data_Ordering_LT'];
+return ($GLOBALS['Data_Ordering_LT'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_LT'));
 } else {
 if ((($__case_1)->tag === "July")) {
-return $GLOBALS['Data_Ordering_GT'];
+return ($GLOBALS['Data_Ordering_GT'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_GT'));
 } else {
 if (((($__case_0)->tag === "August") && (($__case_1)->tag === "August"))) {
-return $GLOBALS['Data_Ordering_EQ'];
+return ($GLOBALS['Data_Ordering_EQ'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_EQ'));
 } else {
 if ((($__case_0)->tag === "August")) {
-return $GLOBALS['Data_Ordering_LT'];
+return ($GLOBALS['Data_Ordering_LT'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_LT'));
 } else {
 if ((($__case_1)->tag === "August")) {
-return $GLOBALS['Data_Ordering_GT'];
+return ($GLOBALS['Data_Ordering_GT'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_GT'));
 } else {
 if (((($__case_0)->tag === "September") && (($__case_1)->tag === "September"))) {
-return $GLOBALS['Data_Ordering_EQ'];
+return ($GLOBALS['Data_Ordering_EQ'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_EQ'));
 } else {
 if ((($__case_0)->tag === "September")) {
-return $GLOBALS['Data_Ordering_LT'];
+return ($GLOBALS['Data_Ordering_LT'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_LT'));
 } else {
 if ((($__case_1)->tag === "September")) {
-return $GLOBALS['Data_Ordering_GT'];
+return ($GLOBALS['Data_Ordering_GT'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_GT'));
 } else {
 if (((($__case_0)->tag === "October") && (($__case_1)->tag === "October"))) {
-return $GLOBALS['Data_Ordering_EQ'];
+return ($GLOBALS['Data_Ordering_EQ'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_EQ'));
 } else {
 if ((($__case_0)->tag === "October")) {
-return $GLOBALS['Data_Ordering_LT'];
+return ($GLOBALS['Data_Ordering_LT'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_LT'));
 } else {
 if ((($__case_1)->tag === "October")) {
-return $GLOBALS['Data_Ordering_GT'];
+return ($GLOBALS['Data_Ordering_GT'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_GT'));
 } else {
 if (((($__case_0)->tag === "November") && (($__case_1)->tag === "November"))) {
-return $GLOBALS['Data_Ordering_EQ'];
+return ($GLOBALS['Data_Ordering_EQ'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_EQ'));
 } else {
 if ((($__case_0)->tag === "November")) {
-return $GLOBALS['Data_Ordering_LT'];
+return ($GLOBALS['Data_Ordering_LT'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_LT'));
 } else {
 if ((($__case_1)->tag === "November")) {
-return $GLOBALS['Data_Ordering_GT'];
+return ($GLOBALS['Data_Ordering_GT'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_GT'));
 } else {
 if (((($__case_0)->tag === "December") && (($__case_1)->tag === "December"))) {
-return $GLOBALS['Data_Ordering_EQ'];
+return ($GLOBALS['Data_Ordering_EQ'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_EQ'));
 } else {
 throw new \Exception("Pattern match failure");
 };
@@ -664,7 +574,10 @@ throw new \Exception("Pattern match failure");
   };
   $__fn = function($x, $y = null) use ($__body, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 2) return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  if ($__num < 2) {
+    if ($__num === 1) return function($y) use ($x, &$__fn) { return $__fn($x, $y); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
     $__res = $__body($x, $y);
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
@@ -672,51 +585,49 @@ throw new \Exception("Pattern match failure");
 })(), "Eq0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = $GLOBALS['Data_Date_Component_eqMonth'];
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($GLOBALS['Data_Date_Component_eqMonth'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_eqMonth'));
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})()]);
-
-// Data_Date_Component_eqDay
-$Data_Date_Component_eqDay = $GLOBALS['Data_Eq_eqInt'];
-
-// Data_Date_Component_boundedYear
-$Data_Date_Component_boundedYear = ($GLOBALS['Data_Bounded_Bounded__dollar__Dict'])((object)["bottom" => ($GLOBALS['Data_Date_Component_Year'])(($GLOBALS['Data_Date_Component_negate'])(271820)), "top" => ($GLOBALS['Data_Date_Component_Year'])(275759), "Ord0" => (function() {
+})()]); break;
+      case 'Data_Date_Component_eqDay': $v = ($GLOBALS['Data_Eq_eqInt'] ?? \Data\Eq\phpurs_eval_thunk('Data_Eq_eqInt')); break;
+      case 'Data_Date_Component_boundedYear': $v = (($GLOBALS['Data_Bounded_Bounded__dollar__Dict'] ?? \Data\Bounded\phpurs_eval_thunk('Data_Bounded_Bounded__dollar__Dict')))((object)["bottom" => (($GLOBALS['Data_Date_Component_Year'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_Year')))((($GLOBALS['Data_Date_Component_negate'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_negate')))(271820)), "top" => (($GLOBALS['Data_Date_Component_Year'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_Year')))(275759), "Ord0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = $GLOBALS['Data_Date_Component_ordYear'];
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($GLOBALS['Data_Date_Component_ordYear'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_ordYear'));
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})()]);
-
-// Data_Date_Component_boundedWeekday
-$Data_Date_Component_boundedWeekday = ($GLOBALS['Data_Bounded_Bounded__dollar__Dict'])((object)["bottom" => $GLOBALS['Data_Date_Component_Monday'], "top" => $GLOBALS['Data_Date_Component_Sunday'], "Ord0" => (function() {
+})()]); break;
+      case 'Data_Date_Component_boundedWeekday': $v = (($GLOBALS['Data_Bounded_Bounded__dollar__Dict'] ?? \Data\Bounded\phpurs_eval_thunk('Data_Bounded_Bounded__dollar__Dict')))((object)["bottom" => ($GLOBALS['Data_Date_Component_Monday'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_Monday')), "top" => ($GLOBALS['Data_Date_Component_Sunday'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_Sunday')), "Ord0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = $GLOBALS['Data_Date_Component_ordWeekday'];
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($GLOBALS['Data_Date_Component_ordWeekday'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_ordWeekday'));
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})()]);
-
-// Data_Date_Component_boundedMonth
-$Data_Date_Component_boundedMonth = ($GLOBALS['Data_Bounded_Bounded__dollar__Dict'])((object)["bottom" => $GLOBALS['Data_Date_Component_January'], "top" => $GLOBALS['Data_Date_Component_December'], "Ord0" => (function() {
+})()]); break;
+      case 'Data_Date_Component_boundedMonth': $v = (($GLOBALS['Data_Bounded_Bounded__dollar__Dict'] ?? \Data\Bounded\phpurs_eval_thunk('Data_Bounded_Bounded__dollar__Dict')))((object)["bottom" => ($GLOBALS['Data_Date_Component_January'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_January')), "top" => ($GLOBALS['Data_Date_Component_December'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_December')), "Ord0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = $GLOBALS['Data_Date_Component_ordMonth'];
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($GLOBALS['Data_Date_Component_ordMonth'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_ordMonth'));
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})()]);
-
-// Data_Date_Component_boundedEnumYear
-$Data_Date_Component_boundedEnumYear = ($GLOBALS['Data_Enum_BoundedEnum__dollar__Dict'])((object)["cardinality" => ($GLOBALS['Data_Enum_Cardinality'])(547580), "toEnum" => (function() {
+})()]); break;
+      case 'Data_Date_Component_boundedEnumYear': $v = (($GLOBALS['Data_Enum_BoundedEnum__dollar__Dict'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_BoundedEnum__dollar__Dict')))((object)["cardinality" => (($GLOBALS['Data_Enum_Cardinality'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_Cardinality')))(547580), "toEnum" => (function() {
   $__body = function($n) {
     $__case_0 = $n;
     if (true) {
@@ -728,7 +639,9 @@ throw new \Exception("Pattern match failure");
   };
   $__fn = function($n) use ($__body, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $__body($n);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
@@ -745,7 +658,9 @@ throw new \Exception("Pattern match failure");
   };
   $__fn = function($v) use ($__body, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $__body($v);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
@@ -753,75 +668,157 @@ throw new \Exception("Pattern match failure");
 })(), "Bounded0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = $GLOBALS['Data_Date_Component_boundedYear'];
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($GLOBALS['Data_Date_Component_boundedYear'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_boundedYear'));
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
 })(), "Enum1" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = $GLOBALS['Data_Date_Component_enumYear'];
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($GLOBALS['Data_Date_Component_enumYear'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_enumYear'));
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})()]);
-
-// Data_Date_Component_enumYear
-$Data_Date_Component_enumYear = ($GLOBALS['Data_Enum_Enum__dollar__Dict'])((object)["succ" => ($GLOBALS['Data_Date_Component_compose'])(($GLOBALS['Data_Enum_toEnum'])($GLOBALS['Data_Date_Component_boundedEnumYear']), ($GLOBALS['Data_Date_Component_compose'])((function() {
+})()]); break;
+      case 'Data_Date_Component_enumYear': $v = (($GLOBALS['Data_Enum_Enum__dollar__Dict'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_Enum__dollar__Dict')))((object)["succ" => (($GLOBALS['Data_Date_Component_compose'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_compose')))((function() {
+  $__body = function($n) {
+    $__case_0 = $n;
+    if (true) {
+$n1 = $__case_0;
+return "/* Unsupported: Guards not supported */";
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($n) use ($__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $__body($n);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})(), (($GLOBALS['Data_Date_Component_compose'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_compose')))((function() {
   $__fn = function($v) use (&$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = ($GLOBALS['Data_Date_Component_add'])($v, 1);
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = (($GLOBALS['Data_Date_Component_add'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_add')))($v, 1);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})(), ($GLOBALS['Data_Enum_fromEnum'])($GLOBALS['Data_Date_Component_boundedEnumYear']))), "pred" => ($GLOBALS['Data_Date_Component_compose'])(($GLOBALS['Data_Enum_toEnum'])($GLOBALS['Data_Date_Component_boundedEnumYear']), ($GLOBALS['Data_Date_Component_compose'])((function() {
+})(), (function() {
+  $__body = function($v) {
+    $__case_0 = $v;
+    if (true) {
+$n = $__case_0;
+return $n;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($v) use ($__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $__body($v);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})())), "pred" => (($GLOBALS['Data_Date_Component_compose'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_compose')))((function() {
+  $__body = function($n) {
+    $__case_0 = $n;
+    if (true) {
+$n1 = $__case_0;
+return "/* Unsupported: Guards not supported */";
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($n) use ($__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $__body($n);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})(), (($GLOBALS['Data_Date_Component_compose'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_compose')))((function() {
   $__fn = function($v) use (&$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = ($GLOBALS['Data_Date_Component_sub'])($v, 1);
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = (($GLOBALS['Data_Date_Component_sub'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_sub')))($v, 1);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})(), ($GLOBALS['Data_Enum_fromEnum'])($GLOBALS['Data_Date_Component_boundedEnumYear']))), "Ord0" => (function() {
+})(), (function() {
+  $__body = function($v) {
+    $__case_0 = $v;
+    if (true) {
+$n = $__case_0;
+return $n;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($v) use ($__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $__body($v);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})())), "Ord0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = $GLOBALS['Data_Date_Component_ordYear'];
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($GLOBALS['Data_Date_Component_ordYear'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_ordYear'));
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})()]);
-
-// Data_Date_Component_boundedEnumWeekday
-$Data_Date_Component_boundedEnumWeekday = ($GLOBALS['Data_Enum_BoundedEnum__dollar__Dict'])((object)["cardinality" => ($GLOBALS['Data_Enum_Cardinality'])(7), "toEnum" => (function() {
+})()]); break;
+      case 'Data_Date_Component_boundedEnumWeekday': $v = (($GLOBALS['Data_Enum_BoundedEnum__dollar__Dict'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_BoundedEnum__dollar__Dict')))((object)["cardinality" => (($GLOBALS['Data_Enum_Cardinality'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_Cardinality')))(7), "toEnum" => (function() {
   $__body = function($v) {
     $__case_0 = $v;
     if (($__case_0 === 1)) {
-return ($GLOBALS['Data_Maybe_Just'])($GLOBALS['Data_Date_Component_Monday']);
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_Monday'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_Monday')));
 } else {
 if (($__case_0 === 2)) {
-return ($GLOBALS['Data_Maybe_Just'])($GLOBALS['Data_Date_Component_Tuesday']);
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_Tuesday'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_Tuesday')));
 } else {
 if (($__case_0 === 3)) {
-return ($GLOBALS['Data_Maybe_Just'])($GLOBALS['Data_Date_Component_Wednesday']);
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_Wednesday'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_Wednesday')));
 } else {
 if (($__case_0 === 4)) {
-return ($GLOBALS['Data_Maybe_Just'])($GLOBALS['Data_Date_Component_Thursday']);
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_Thursday'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_Thursday')));
 } else {
 if (($__case_0 === 5)) {
-return ($GLOBALS['Data_Maybe_Just'])($GLOBALS['Data_Date_Component_Friday']);
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_Friday'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_Friday')));
 } else {
 if (($__case_0 === 6)) {
-return ($GLOBALS['Data_Maybe_Just'])($GLOBALS['Data_Date_Component_Saturday']);
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_Saturday'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_Saturday')));
 } else {
 if (($__case_0 === 7)) {
-return ($GLOBALS['Data_Maybe_Just'])($GLOBALS['Data_Date_Component_Sunday']);
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_Sunday'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_Sunday')));
 } else {
 if (true) {
-return $GLOBALS['Data_Maybe_Nothing'];
+return ($GLOBALS['Data_Maybe_Nothing'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Nothing'));
 } else {
 throw new \Exception("Pattern match failure");
 };
@@ -835,7 +832,9 @@ throw new \Exception("Pattern match failure");
   };
   $__fn = function($v) use ($__body, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $__body($v);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
@@ -843,28 +842,92 @@ throw new \Exception("Pattern match failure");
 })(), "fromEnum" => (function() {
   $__body = function($v) {
     $__case_0 = $v;
-    if ((($__case_0)->tag === "Monday")) {
+    switch (($__case_0)->tag) {
+case "Monday":
 return 1;
-} else {
-if ((($__case_0)->tag === "Tuesday")) {
+break;
+case "Tuesday":
 return 2;
-} else {
-if ((($__case_0)->tag === "Wednesday")) {
+break;
+case "Wednesday":
 return 3;
-} else {
-if ((($__case_0)->tag === "Thursday")) {
+break;
+case "Thursday":
 return 4;
-} else {
-if ((($__case_0)->tag === "Friday")) {
+break;
+case "Friday":
 return 5;
-} else {
-if ((($__case_0)->tag === "Saturday")) {
+break;
+case "Saturday":
 return 6;
-} else {
-if ((($__case_0)->tag === "Sunday")) {
+break;
+case "Sunday":
 return 7;
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($v) use ($__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $__body($v);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})(), "Bounded0" => (function() {
+  $__fn = function($__dollar____unused) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($GLOBALS['Data_Date_Component_boundedWeekday'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_boundedWeekday'));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})(), "Enum1" => (function() {
+  $__fn = function($__dollar____unused) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($GLOBALS['Data_Date_Component_enumWeekday'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_enumWeekday'));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()]); break;
+      case 'Data_Date_Component_enumWeekday': $v = (($GLOBALS['Data_Enum_Enum__dollar__Dict'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_Enum__dollar__Dict')))((object)["succ" => (($GLOBALS['Data_Date_Component_compose'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_compose')))((function() {
+  $__body = function($v) {
+    $__case_0 = $v;
+    if (($__case_0 === 1)) {
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_Monday'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_Monday')));
+} else {
+if (($__case_0 === 2)) {
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_Tuesday'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_Tuesday')));
+} else {
+if (($__case_0 === 3)) {
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_Wednesday'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_Wednesday')));
+} else {
+if (($__case_0 === 4)) {
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_Thursday'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_Thursday')));
+} else {
+if (($__case_0 === 5)) {
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_Friday'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_Friday')));
+} else {
+if (($__case_0 === 6)) {
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_Saturday'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_Saturday')));
+} else {
+if (($__case_0 === 7)) {
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_Sunday'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_Sunday')));
+} else {
+if (true) {
+return ($GLOBALS['Data_Maybe_Nothing'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Nothing'));
 } else {
 throw new \Exception("Pattern match failure");
+};
 };
 };
 };
@@ -875,98 +938,209 @@ throw new \Exception("Pattern match failure");
   };
   $__fn = function($v) use ($__body, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $__body($v);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})(), "Bounded0" => (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = $GLOBALS['Data_Date_Component_boundedWeekday'];
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})(), "Enum1" => (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = $GLOBALS['Data_Date_Component_enumWeekday'];
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})()]);
-
-// Data_Date_Component_enumWeekday
-$Data_Date_Component_enumWeekday = ($GLOBALS['Data_Enum_Enum__dollar__Dict'])((object)["succ" => ($GLOBALS['Data_Date_Component_compose'])(($GLOBALS['Data_Enum_toEnum'])($GLOBALS['Data_Date_Component_boundedEnumWeekday']), ($GLOBALS['Data_Date_Component_compose'])((function() {
+})(), (($GLOBALS['Data_Date_Component_compose'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_compose')))((function() {
   $__fn = function($v) use (&$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = ($GLOBALS['Data_Date_Component_add'])($v, 1);
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = (($GLOBALS['Data_Date_Component_add'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_add')))($v, 1);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})(), ($GLOBALS['Data_Enum_fromEnum'])($GLOBALS['Data_Date_Component_boundedEnumWeekday']))), "pred" => ($GLOBALS['Data_Date_Component_compose'])(($GLOBALS['Data_Enum_toEnum'])($GLOBALS['Data_Date_Component_boundedEnumWeekday']), ($GLOBALS['Data_Date_Component_compose'])((function() {
-  $__fn = function($v) use (&$__fn) {
+})(), (function() {
+  $__body = function($v) {
+    $__case_0 = $v;
+    switch (($__case_0)->tag) {
+case "Monday":
+return 1;
+break;
+case "Tuesday":
+return 2;
+break;
+case "Wednesday":
+return 3;
+break;
+case "Thursday":
+return 4;
+break;
+case "Friday":
+return 5;
+break;
+case "Saturday":
+return 6;
+break;
+case "Sunday":
+return 7;
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($v) use ($__body, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = ($GLOBALS['Data_Date_Component_sub'])($v, 1);
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $__body($v);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})(), ($GLOBALS['Data_Enum_fromEnum'])($GLOBALS['Data_Date_Component_boundedEnumWeekday']))), "Ord0" => (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = $GLOBALS['Data_Date_Component_ordWeekday'];
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})()]);
-
-// Data_Date_Component_boundedEnumMonth
-$Data_Date_Component_boundedEnumMonth = ($GLOBALS['Data_Enum_BoundedEnum__dollar__Dict'])((object)["cardinality" => ($GLOBALS['Data_Enum_Cardinality'])(12), "toEnum" => (function() {
+})())), "pred" => (($GLOBALS['Data_Date_Component_compose'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_compose')))((function() {
   $__body = function($v) {
     $__case_0 = $v;
     if (($__case_0 === 1)) {
-return ($GLOBALS['Data_Maybe_Just'])($GLOBALS['Data_Date_Component_January']);
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_Monday'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_Monday')));
 } else {
 if (($__case_0 === 2)) {
-return ($GLOBALS['Data_Maybe_Just'])($GLOBALS['Data_Date_Component_February']);
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_Tuesday'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_Tuesday')));
 } else {
 if (($__case_0 === 3)) {
-return ($GLOBALS['Data_Maybe_Just'])($GLOBALS['Data_Date_Component_March']);
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_Wednesday'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_Wednesday')));
 } else {
 if (($__case_0 === 4)) {
-return ($GLOBALS['Data_Maybe_Just'])($GLOBALS['Data_Date_Component_April']);
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_Thursday'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_Thursday')));
 } else {
 if (($__case_0 === 5)) {
-return ($GLOBALS['Data_Maybe_Just'])($GLOBALS['Data_Date_Component_May']);
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_Friday'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_Friday')));
 } else {
 if (($__case_0 === 6)) {
-return ($GLOBALS['Data_Maybe_Just'])($GLOBALS['Data_Date_Component_June']);
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_Saturday'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_Saturday')));
 } else {
 if (($__case_0 === 7)) {
-return ($GLOBALS['Data_Maybe_Just'])($GLOBALS['Data_Date_Component_July']);
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_Sunday'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_Sunday')));
+} else {
+if (true) {
+return ($GLOBALS['Data_Maybe_Nothing'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Nothing'));
+} else {
+throw new \Exception("Pattern match failure");
+};
+};
+};
+};
+};
+};
+};
+};
+  };
+  $__fn = function($v) use ($__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $__body($v);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})(), (($GLOBALS['Data_Date_Component_compose'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_compose')))((function() {
+  $__fn = function($v) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = (($GLOBALS['Data_Date_Component_sub'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_sub')))($v, 1);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})(), (function() {
+  $__body = function($v) {
+    $__case_0 = $v;
+    switch (($__case_0)->tag) {
+case "Monday":
+return 1;
+break;
+case "Tuesday":
+return 2;
+break;
+case "Wednesday":
+return 3;
+break;
+case "Thursday":
+return 4;
+break;
+case "Friday":
+return 5;
+break;
+case "Saturday":
+return 6;
+break;
+case "Sunday":
+return 7;
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($v) use ($__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $__body($v);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})())), "Ord0" => (function() {
+  $__fn = function($__dollar____unused) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($GLOBALS['Data_Date_Component_ordWeekday'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_ordWeekday'));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()]); break;
+      case 'Data_Date_Component_boundedEnumMonth': $v = (($GLOBALS['Data_Enum_BoundedEnum__dollar__Dict'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_BoundedEnum__dollar__Dict')))((object)["cardinality" => (($GLOBALS['Data_Enum_Cardinality'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_Cardinality')))(12), "toEnum" => (function() {
+  $__body = function($v) {
+    $__case_0 = $v;
+    if (($__case_0 === 1)) {
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_January'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_January')));
+} else {
+if (($__case_0 === 2)) {
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_February'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_February')));
+} else {
+if (($__case_0 === 3)) {
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_March'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_March')));
+} else {
+if (($__case_0 === 4)) {
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_April'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_April')));
+} else {
+if (($__case_0 === 5)) {
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_May'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_May')));
+} else {
+if (($__case_0 === 6)) {
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_June'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_June')));
+} else {
+if (($__case_0 === 7)) {
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_July'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_July')));
 } else {
 if (($__case_0 === 8)) {
-return ($GLOBALS['Data_Maybe_Just'])($GLOBALS['Data_Date_Component_August']);
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_August'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_August')));
 } else {
 if (($__case_0 === 9)) {
-return ($GLOBALS['Data_Maybe_Just'])($GLOBALS['Data_Date_Component_September']);
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_September'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_September')));
 } else {
 if (($__case_0 === 10)) {
-return ($GLOBALS['Data_Maybe_Just'])($GLOBALS['Data_Date_Component_October']);
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_October'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_October')));
 } else {
 if (($__case_0 === 11)) {
-return ($GLOBALS['Data_Maybe_Just'])($GLOBALS['Data_Date_Component_November']);
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_November'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_November')));
 } else {
 if (($__case_0 === 12)) {
-return ($GLOBALS['Data_Maybe_Just'])($GLOBALS['Data_Date_Component_December']);
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_December'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_December')));
 } else {
 if (true) {
-return $GLOBALS['Data_Maybe_Nothing'];
+return ($GLOBALS['Data_Maybe_Nothing'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Nothing'));
 } else {
 throw new \Exception("Pattern match failure");
 };
@@ -985,7 +1159,9 @@ throw new \Exception("Pattern match failure");
   };
   $__fn = function($v) use ($__body, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $__body($v);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
@@ -993,43 +1169,122 @@ throw new \Exception("Pattern match failure");
 })(), "fromEnum" => (function() {
   $__body = function($v) {
     $__case_0 = $v;
-    if ((($__case_0)->tag === "January")) {
+    switch (($__case_0)->tag) {
+case "January":
 return 1;
-} else {
-if ((($__case_0)->tag === "February")) {
+break;
+case "February":
 return 2;
-} else {
-if ((($__case_0)->tag === "March")) {
+break;
+case "March":
 return 3;
-} else {
-if ((($__case_0)->tag === "April")) {
+break;
+case "April":
 return 4;
-} else {
-if ((($__case_0)->tag === "May")) {
+break;
+case "May":
 return 5;
-} else {
-if ((($__case_0)->tag === "June")) {
+break;
+case "June":
 return 6;
-} else {
-if ((($__case_0)->tag === "July")) {
+break;
+case "July":
 return 7;
-} else {
-if ((($__case_0)->tag === "August")) {
+break;
+case "August":
 return 8;
-} else {
-if ((($__case_0)->tag === "September")) {
+break;
+case "September":
 return 9;
-} else {
-if ((($__case_0)->tag === "October")) {
+break;
+case "October":
 return 10;
-} else {
-if ((($__case_0)->tag === "November")) {
+break;
+case "November":
 return 11;
-} else {
-if ((($__case_0)->tag === "December")) {
+break;
+case "December":
 return 12;
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($v) use ($__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $__body($v);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})(), "Bounded0" => (function() {
+  $__fn = function($__dollar____unused) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($GLOBALS['Data_Date_Component_boundedMonth'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_boundedMonth'));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})(), "Enum1" => (function() {
+  $__fn = function($__dollar____unused) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($GLOBALS['Data_Date_Component_enumMonth'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_enumMonth'));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()]); break;
+      case 'Data_Date_Component_enumMonth': $v = (($GLOBALS['Data_Enum_Enum__dollar__Dict'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_Enum__dollar__Dict')))((object)["succ" => (($GLOBALS['Data_Date_Component_compose'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_compose')))((function() {
+  $__body = function($v) {
+    $__case_0 = $v;
+    if (($__case_0 === 1)) {
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_January'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_January')));
+} else {
+if (($__case_0 === 2)) {
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_February'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_February')));
+} else {
+if (($__case_0 === 3)) {
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_March'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_March')));
+} else {
+if (($__case_0 === 4)) {
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_April'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_April')));
+} else {
+if (($__case_0 === 5)) {
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_May'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_May')));
+} else {
+if (($__case_0 === 6)) {
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_June'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_June')));
+} else {
+if (($__case_0 === 7)) {
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_July'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_July')));
+} else {
+if (($__case_0 === 8)) {
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_August'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_August')));
+} else {
+if (($__case_0 === 9)) {
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_September'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_September')));
+} else {
+if (($__case_0 === 10)) {
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_October'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_October')));
+} else {
+if (($__case_0 === 11)) {
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_November'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_November')));
+} else {
+if (($__case_0 === 12)) {
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_December'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_December')));
+} else {
+if (true) {
+return ($GLOBALS['Data_Maybe_Nothing'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Nothing'));
 } else {
 throw new \Exception("Pattern match failure");
+};
 };
 };
 };
@@ -1045,69 +1300,230 @@ throw new \Exception("Pattern match failure");
   };
   $__fn = function($v) use ($__body, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $__body($v);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})(), "Bounded0" => (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = $GLOBALS['Data_Date_Component_boundedMonth'];
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})(), "Enum1" => (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = $GLOBALS['Data_Date_Component_enumMonth'];
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})()]);
-
-// Data_Date_Component_enumMonth
-$Data_Date_Component_enumMonth = ($GLOBALS['Data_Enum_Enum__dollar__Dict'])((object)["succ" => ($GLOBALS['Data_Date_Component_compose'])(($GLOBALS['Data_Enum_toEnum'])($GLOBALS['Data_Date_Component_boundedEnumMonth']), ($GLOBALS['Data_Date_Component_compose'])((function() {
+})(), (($GLOBALS['Data_Date_Component_compose'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_compose')))((function() {
   $__fn = function($v) use (&$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = ($GLOBALS['Data_Date_Component_add'])($v, 1);
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = (($GLOBALS['Data_Date_Component_add'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_add')))($v, 1);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})(), ($GLOBALS['Data_Enum_fromEnum'])($GLOBALS['Data_Date_Component_boundedEnumMonth']))), "pred" => ($GLOBALS['Data_Date_Component_compose'])(($GLOBALS['Data_Enum_toEnum'])($GLOBALS['Data_Date_Component_boundedEnumMonth']), ($GLOBALS['Data_Date_Component_compose'])((function() {
+})(), (function() {
+  $__body = function($v) {
+    $__case_0 = $v;
+    switch (($__case_0)->tag) {
+case "January":
+return 1;
+break;
+case "February":
+return 2;
+break;
+case "March":
+return 3;
+break;
+case "April":
+return 4;
+break;
+case "May":
+return 5;
+break;
+case "June":
+return 6;
+break;
+case "July":
+return 7;
+break;
+case "August":
+return 8;
+break;
+case "September":
+return 9;
+break;
+case "October":
+return 10;
+break;
+case "November":
+return 11;
+break;
+case "December":
+return 12;
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($v) use ($__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $__body($v);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})())), "pred" => (($GLOBALS['Data_Date_Component_compose'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_compose')))((function() {
+  $__body = function($v) {
+    $__case_0 = $v;
+    if (($__case_0 === 1)) {
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_January'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_January')));
+} else {
+if (($__case_0 === 2)) {
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_February'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_February')));
+} else {
+if (($__case_0 === 3)) {
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_March'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_March')));
+} else {
+if (($__case_0 === 4)) {
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_April'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_April')));
+} else {
+if (($__case_0 === 5)) {
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_May'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_May')));
+} else {
+if (($__case_0 === 6)) {
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_June'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_June')));
+} else {
+if (($__case_0 === 7)) {
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_July'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_July')));
+} else {
+if (($__case_0 === 8)) {
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_August'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_August')));
+} else {
+if (($__case_0 === 9)) {
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_September'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_September')));
+} else {
+if (($__case_0 === 10)) {
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_October'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_October')));
+} else {
+if (($__case_0 === 11)) {
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_November'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_November')));
+} else {
+if (($__case_0 === 12)) {
+return (($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')))(($GLOBALS['Data_Date_Component_December'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_December')));
+} else {
+if (true) {
+return ($GLOBALS['Data_Maybe_Nothing'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Nothing'));
+} else {
+throw new \Exception("Pattern match failure");
+};
+};
+};
+};
+};
+};
+};
+};
+};
+};
+};
+};
+};
+  };
+  $__fn = function($v) use ($__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $__body($v);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})(), (($GLOBALS['Data_Date_Component_compose'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_compose')))((function() {
   $__fn = function($v) use (&$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = ($GLOBALS['Data_Date_Component_sub'])($v, 1);
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = (($GLOBALS['Data_Date_Component_sub'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_sub')))($v, 1);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})(), ($GLOBALS['Data_Enum_fromEnum'])($GLOBALS['Data_Date_Component_boundedEnumMonth']))), "Ord0" => (function() {
+})(), (function() {
+  $__body = function($v) {
+    $__case_0 = $v;
+    switch (($__case_0)->tag) {
+case "January":
+return 1;
+break;
+case "February":
+return 2;
+break;
+case "March":
+return 3;
+break;
+case "April":
+return 4;
+break;
+case "May":
+return 5;
+break;
+case "June":
+return 6;
+break;
+case "July":
+return 7;
+break;
+case "August":
+return 8;
+break;
+case "September":
+return 9;
+break;
+case "October":
+return 10;
+break;
+case "November":
+return 11;
+break;
+case "December":
+return 12;
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($v) use ($__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $__body($v);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})())), "Ord0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = $GLOBALS['Data_Date_Component_ordMonth'];
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($GLOBALS['Data_Date_Component_ordMonth'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_ordMonth'));
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})()]);
-
-// Data_Date_Component_boundedDay
-$Data_Date_Component_boundedDay = ($GLOBALS['Data_Bounded_Bounded__dollar__Dict'])((object)["bottom" => ($GLOBALS['Data_Date_Component_Day'])(1), "top" => ($GLOBALS['Data_Date_Component_Day'])(31), "Ord0" => (function() {
+})()]); break;
+      case 'Data_Date_Component_boundedDay': $v = (($GLOBALS['Data_Bounded_Bounded__dollar__Dict'] ?? \Data\Bounded\phpurs_eval_thunk('Data_Bounded_Bounded__dollar__Dict')))((object)["bottom" => (($GLOBALS['Data_Date_Component_Day'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_Day')))(1), "top" => (($GLOBALS['Data_Date_Component_Day'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_Day')))(31), "Ord0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = $GLOBALS['Data_Date_Component_ordDay'];
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($GLOBALS['Data_Date_Component_ordDay'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_ordDay'));
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})()]);
-
-// Data_Date_Component_boundedEnumDay
-$Data_Date_Component_boundedEnumDay = ($GLOBALS['Data_Enum_BoundedEnum__dollar__Dict'])((object)["cardinality" => ($GLOBALS['Data_Enum_Cardinality'])(31), "toEnum" => (function() {
+})()]); break;
+      case 'Data_Date_Component_boundedEnumDay': $v = (($GLOBALS['Data_Enum_BoundedEnum__dollar__Dict'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_BoundedEnum__dollar__Dict')))((object)["cardinality" => (($GLOBALS['Data_Enum_Cardinality'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_Cardinality')))(31), "toEnum" => (function() {
   $__body = function($n) {
     $__case_0 = $n;
     if (true) {
@@ -1119,7 +1535,9 @@ throw new \Exception("Pattern match failure");
   };
   $__fn = function($n) use ($__body, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $__body($n);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
@@ -1136,7 +1554,9 @@ throw new \Exception("Pattern match failure");
   };
   $__fn = function($v) use ($__body, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $__body($v);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
@@ -1144,45 +1564,231 @@ throw new \Exception("Pattern match failure");
 })(), "Bounded0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = $GLOBALS['Data_Date_Component_boundedDay'];
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($GLOBALS['Data_Date_Component_boundedDay'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_boundedDay'));
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
 })(), "Enum1" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = $GLOBALS['Data_Date_Component_enumDay'];
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($GLOBALS['Data_Date_Component_enumDay'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_enumDay'));
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})()]);
-
-// Data_Date_Component_enumDay
-$Data_Date_Component_enumDay = ($GLOBALS['Data_Enum_Enum__dollar__Dict'])((object)["succ" => ($GLOBALS['Data_Date_Component_compose'])(($GLOBALS['Data_Enum_toEnum'])($GLOBALS['Data_Date_Component_boundedEnumDay']), ($GLOBALS['Data_Date_Component_compose'])((function() {
+})()]); break;
+      case 'Data_Date_Component_enumDay': $v = (($GLOBALS['Data_Enum_Enum__dollar__Dict'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_Enum__dollar__Dict')))((object)["succ" => (($GLOBALS['Data_Date_Component_compose'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_compose')))((function() {
+  $__body = function($n) {
+    $__case_0 = $n;
+    if (true) {
+$n1 = $__case_0;
+return "/* Unsupported: Guards not supported */";
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($n) use ($__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $__body($n);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})(), (($GLOBALS['Data_Date_Component_compose'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_compose')))((function() {
   $__fn = function($v) use (&$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = ($GLOBALS['Data_Date_Component_add'])($v, 1);
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = (($GLOBALS['Data_Date_Component_add'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_add')))($v, 1);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})(), ($GLOBALS['Data_Enum_fromEnum'])($GLOBALS['Data_Date_Component_boundedEnumDay']))), "pred" => ($GLOBALS['Data_Date_Component_compose'])(($GLOBALS['Data_Enum_toEnum'])($GLOBALS['Data_Date_Component_boundedEnumDay']), ($GLOBALS['Data_Date_Component_compose'])((function() {
+})(), (function() {
+  $__body = function($v) {
+    $__case_0 = $v;
+    if (true) {
+$n = $__case_0;
+return $n;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($v) use ($__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $__body($v);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})())), "pred" => (($GLOBALS['Data_Date_Component_compose'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_compose')))((function() {
+  $__body = function($n) {
+    $__case_0 = $n;
+    if (true) {
+$n1 = $__case_0;
+return "/* Unsupported: Guards not supported */";
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($n) use ($__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $__body($n);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})(), (($GLOBALS['Data_Date_Component_compose'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_compose')))((function() {
   $__fn = function($v) use (&$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = ($GLOBALS['Data_Date_Component_sub'])($v, 1);
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = (($GLOBALS['Data_Date_Component_sub'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_sub')))($v, 1);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})(), ($GLOBALS['Data_Enum_fromEnum'])($GLOBALS['Data_Date_Component_boundedEnumDay']))), "Ord0" => (function() {
+})(), (function() {
+  $__body = function($v) {
+    $__case_0 = $v;
+    if (true) {
+$n = $__case_0;
+return $n;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($v) use ($__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $__body($v);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})())), "Ord0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = $GLOBALS['Data_Date_Component_ordDay'];
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($GLOBALS['Data_Date_Component_ordDay'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_ordDay'));
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})()]);
+})()]); break;
+      default: throw new \Exception("Unknown thunk " . $id);
+    }
+    $GLOBALS[$id] = $v;
+    return $cache[$id] = $v;
+  }
+}
+$Prim_undefined = function() { throw new \Exception("undefined"); };
+
+
+
+
+
+
+
+
+// Data_Date_Component_compose
+function Data_Date_Component_compose($f, $g = null, $x = null) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Date_Component_compose';
+  if ($__num < 3) {
+    if ($__num === 2) return function($x) use ($f, $g, $__fn) { return $__fn($f, $g, $x); };
+    if ($__num === 1) return function($g, $x = null) use ($f, $__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $g, $x);
+      if ($__num2 === 1) return function($x) use ($f, $g, $__fn) { return $__fn($f, $g, $x); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = ($f)(($g)($x));
+    return 3 < $__num ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+}
+$GLOBALS['Data_Date_Component_compose'] = __NAMESPACE__ . '\\Data_Date_Component_compose';
+
+
+
+// Data_Date_Component_Year
+function Data_Date_Component_Year($x) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Date_Component_Year';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $x;
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Date_Component_Year'] = __NAMESPACE__ . '\\Data_Date_Component_Year';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Data_Date_Component_Day
+function Data_Date_Component_Day($x) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Date_Component_Day';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $x;
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Date_Component_Day'] = __NAMESPACE__ . '\\Data_Date_Component_Day';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

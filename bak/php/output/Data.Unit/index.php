@@ -25,6 +25,18 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_curry_fallback')) {
     };
   }
 }
+if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
+  function phpurs_eval_thunk($id) {
+    static $cache = [];
+    if (array_key_exists($id, $cache)) return $cache[$id];
+    switch ($id) {
+
+      default: throw new \Exception("Unknown thunk " . $id);
+    }
+    $GLOBALS[$id] = $v;
+    return $cache[$id] = $v;
+  }
+}
 $Prim_undefined = function() { throw new \Exception("undefined"); };
 if (!function_exists('phpurs_uncurry2')) {
 function phpurs_uncurry2($fn) {
@@ -76,6 +88,6 @@ function phpurs_uncurry5($fn) {
 
 
 
-$Data_Unit_unit = null;
+$Data_Unit_unit = 1;
 
 

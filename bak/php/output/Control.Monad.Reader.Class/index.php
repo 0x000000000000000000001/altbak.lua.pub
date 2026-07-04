@@ -30,55 +30,85 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_curry_fallback')) {
     };
   }
 }
+if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
+  function phpurs_eval_thunk($id) {
+    static $cache = [];
+    if (array_key_exists($id, $cache)) return $cache[$id];
+    switch ($id) {
+      case 'Control_Monad_Reader_Class_monadAskFun': $v = (($GLOBALS['Control_Monad_Reader_Class_MonadAsk__dollar__Dict'] ?? \Control\Monad\Reader\Class\phpurs_eval_thunk('Control_Monad_Reader_Class_MonadAsk__dollar__Dict')))((object)["ask" => (function() {
+  $__fn = function($x) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $x;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})(), "Monad0" => (function() {
+  $__fn = function($__dollar____unused) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($GLOBALS['Control_Monad_monadFn'] ?? \Control\Monad\phpurs_eval_thunk('Control_Monad_monadFn'));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()]); break;
+      case 'Control_Monad_Reader_Class_monadReaderFun': $v = (($GLOBALS['Control_Monad_Reader_Class_MonadReader__dollar__Dict'] ?? \Control\Monad\Reader\Class\phpurs_eval_thunk('Control_Monad_Reader_Class_MonadReader__dollar__Dict')))((object)["local" => (($GLOBALS['Control_Semigroupoid_composeFlipped'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_composeFlipped')))(($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn'))), "MonadAsk0" => (function() {
+  $__fn = function($__dollar____unused) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($GLOBALS['Control_Monad_Reader_Class_monadAskFun'] ?? \Control\Monad\Reader\Class\phpurs_eval_thunk('Control_Monad_Reader_Class_monadAskFun'));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()]); break;
+      default: throw new \Exception("Unknown thunk " . $id);
+    }
+    $GLOBALS[$id] = $v;
+    return $cache[$id] = $v;
+  }
+}
 $Prim_undefined = function() { throw new \Exception("undefined"); };
 
 
 // Control_Monad_Reader_Class_MonadAsk$Dict
-$Control_Monad_Reader_Class_MonadAsk__dollar__Dict = (function() {
-  $__fn = function($x) use (&$__fn) {
+function Control_Monad_Reader_Class_MonadAsk__dollar__Dict($x) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  $__fn = __NAMESPACE__ . '\\' . 'Control_Monad_Reader_Class_MonadAsk__dollar__Dict';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $x;
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Control_Monad_Reader_Class_MonadAsk__dollar__Dict'] = __NAMESPACE__ . '\\Control_Monad_Reader_Class_MonadAsk__dollar__Dict';
 
 // Control_Monad_Reader_Class_MonadReader$Dict
-$Control_Monad_Reader_Class_MonadReader__dollar__Dict = (function() {
-  $__fn = function($x) use (&$__fn) {
+function Control_Monad_Reader_Class_MonadReader__dollar__Dict($x) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  $__fn = __NAMESPACE__ . '\\' . 'Control_Monad_Reader_Class_MonadReader__dollar__Dict';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $x;
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Control_Monad_Reader_Class_MonadReader__dollar__Dict'] = __NAMESPACE__ . '\\Control_Monad_Reader_Class_MonadReader__dollar__Dict';
 
-// Control_Monad_Reader_Class_monadAskFun
-$Control_Monad_Reader_Class_monadAskFun = ($GLOBALS['Control_Monad_Reader_Class_MonadAsk__dollar__Dict'])((object)["ask" => ($GLOBALS['Control_Category_identity'])($GLOBALS['Control_Category_categoryFn']), "Monad0" => (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = $GLOBALS['Control_Monad_monadFn'];
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})()]);
 
-// Control_Monad_Reader_Class_monadReaderFun
-$Control_Monad_Reader_Class_monadReaderFun = ($GLOBALS['Control_Monad_Reader_Class_MonadReader__dollar__Dict'])((object)["local" => ($GLOBALS['Control_Semigroupoid_composeFlipped'])($GLOBALS['Control_Semigroupoid_semigroupoidFn']), "MonadAsk0" => (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = $GLOBALS['Control_Monad_Reader_Class_monadAskFun'];
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})()]);
 
 // Control_Monad_Reader_Class_local
-$Control_Monad_Reader_Class_local = (function() {
+function Control_Monad_Reader_Class_local($dict) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Control_Monad_Reader_Class_local';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
   $__body = function($dict) {
     $__case_0 = $dict;
     if (true) {
@@ -88,17 +118,18 @@ return ($v)->local;
 throw new \Exception("Pattern match failure");
 };
   };
-  $__fn = function($dict) use ($__body, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
     $__res = $__body($dict);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Control_Monad_Reader_Class_local'] = __NAMESPACE__ . '\\Control_Monad_Reader_Class_local';
 
 // Control_Monad_Reader_Class_ask
-$Control_Monad_Reader_Class_ask = (function() {
+function Control_Monad_Reader_Class_ask($dict) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Control_Monad_Reader_Class_ask';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
   $__body = function($dict) {
     $__case_0 = $dict;
     if (true) {
@@ -108,33 +139,32 @@ return ($v)->ask;
 throw new \Exception("Pattern match failure");
 };
   };
-  $__fn = function($dict) use ($__body, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
     $__res = $__body($dict);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Control_Monad_Reader_Class_ask'] = __NAMESPACE__ . '\\Control_Monad_Reader_Class_ask';
 
 // Control_Monad_Reader_Class_asks
-$Control_Monad_Reader_Class_asks = (function() {
-  $__fn = function($dictMonadAsk) use (&$__fn) {
+function Control_Monad_Reader_Class_asks($dictMonadAsk) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-$map = ($GLOBALS['Data_Functor_map'])((((((((($dictMonadAsk)->Monad0)($GLOBALS['Prim_undefined']))->Bind1)($GLOBALS['Prim_undefined']))->Apply0)($GLOBALS['Prim_undefined']))->Functor0)($GLOBALS['Prim_undefined']));
-$ask1 = ($GLOBALS['Control_Monad_Reader_Class_ask'])($dictMonadAsk);
+  $__fn = __NAMESPACE__ . '\\' . 'Control_Monad_Reader_Class_asks';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$map = (($GLOBALS['Data_Functor_map'] ?? \Data\Functor\phpurs_eval_thunk('Data_Functor_map')))((((((((($dictMonadAsk)->Monad0)(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))))->Bind1)(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))))->Apply0)(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))))->Functor0)(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))));
+$ask1 = (($GLOBALS['Control_Monad_Reader_Class_ask'] ?? \Control\Monad\Reader\Class\phpurs_eval_thunk('Control_Monad_Reader_Class_ask')))($dictMonadAsk);
     $__res = (function() use ($map, $ask1) {
   $__fn = function($f) use ($map, $ask1, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = ($map)($f, $ask1);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
 })();
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Control_Monad_Reader_Class_asks'] = __NAMESPACE__ . '\\Control_Monad_Reader_Class_asks';
 

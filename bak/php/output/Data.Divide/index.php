@@ -36,31 +36,13 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_curry_fallback')) {
     };
   }
 }
-$Prim_undefined = function() { throw new \Exception("undefined"); };
-
-
-// Data_Divide_conj
-$Data_Divide_conj = ($GLOBALS['Data_HeytingAlgebra_conj'])($GLOBALS['Data_HeytingAlgebra_heytingAlgebraBoolean']);
-
-// Data_Divide_append
-$Data_Divide_append = ($GLOBALS['Data_Semigroup_append'])($GLOBALS['Data_Ordering_semigroupOrdering']);
-
-// Data_Divide_identity
-$Data_Divide_identity = ($GLOBALS['Control_Category_identity'])($GLOBALS['Control_Category_categoryFn']);
-
-// Data_Divide_Divide$Dict
-$Data_Divide_Divide__dollar__Dict = (function() {
-  $__fn = function($x) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = $x;
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
-
-// Data_Divide_dividePredicate
-$Data_Divide_dividePredicate = ($GLOBALS['Data_Divide_Divide__dollar__Dict'])((object)["divide" => (function() {
+if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
+  function phpurs_eval_thunk($id) {
+    static $cache = [];
+    if (array_key_exists($id, $cache)) return $cache[$id];
+    switch ($id) {
+      case 'Data_Divide_conj': $v = ($GLOBALS['Data_HeytingAlgebra_boolConj'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_boolConj')); break;
+      case 'Data_Divide_dividePredicate': $v = (($GLOBALS['Data_Divide_Divide__dollar__Dict'] ?? \Data\Divide\phpurs_eval_thunk('Data_Divide_Divide__dollar__Dict')))((object)["divide" => (function() {
   $__body = function($f, $v, $v1) {
     $__case_0 = $f;
     $__case_1 = $v;
@@ -69,21 +51,26 @@ $Data_Divide_dividePredicate = ($GLOBALS['Data_Divide_Divide__dollar__Dict'])((o
 $f1 = $__case_0;
 $g = $__case_1;
 $h = $__case_2;
-return ($GLOBALS['Data_Predicate_Predicate'])((function() use ($f1, $g, $h) {
+return (($GLOBALS['Data_Predicate_Predicate'] ?? \Data\Predicate\phpurs_eval_thunk('Data_Predicate_Predicate')))((function() use ($f1, $g, $h) {
   $__body = function($a) use ($f1, $g, $h) {
     $v2 = ($f1)($a);
     $__case_0 = $v2;
-    if ((($__case_0)->tag === "Tuple")) {
+    switch (($__case_0)->tag) {
+case "Tuple":
 $b = ($__case_0)->v0;
 $c = ($__case_0)->v1;
-return ($GLOBALS['Data_Divide_conj'])(($g)($b), ($h)($c));
-} else {
+return (($GLOBALS['Data_Divide_conj'] ?? \Data\Divide\phpurs_eval_thunk('Data_Divide_conj')))(($g)($b), ($h)($c));
+break;
+default:
 throw new \Exception("Pattern match failure");
+break;
 };
   };
   $__fn = function($a) use ($f1, $g, $h, $__body, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $__body($a);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
@@ -95,7 +82,16 @@ throw new \Exception("Pattern match failure");
   };
   $__fn = function($f, $v = null, $v1 = null) use ($__body, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 3) return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  if ($__num < 3) {
+    if ($__num === 2) return function($v1) use ($f, $v, &$__fn) { return $__fn($f, $v, $v1); };
+    if ($__num === 1) return function($v, $v1 = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $v, $v1);
+      if ($__num2 === 1) return function($v1) use ($f, $v, &$__fn) { return $__fn($f, $v, $v1); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
     $__res = $__body($f, $v, $v1);
   return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
   };
@@ -103,20 +99,244 @@ throw new \Exception("Pattern match failure");
 })(), "Contravariant0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = $GLOBALS['Data_Predicate_contravariantPredicate'];
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($GLOBALS['Data_Predicate_contravariantPredicate'] ?? \Data\Predicate\phpurs_eval_thunk('Data_Predicate_contravariantPredicate'));
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})()]);
+})()]); break;
+      case 'Data_Divide_divideEquivalence': $v = (($GLOBALS['Data_Divide_Divide__dollar__Dict'] ?? \Data\Divide\phpurs_eval_thunk('Data_Divide_Divide__dollar__Dict')))((object)["divide" => (function() {
+  $__body = function($f, $v, $v1) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    $__case_2 = $v1;
+    if (true) {
+$f1 = $__case_0;
+$g = $__case_1;
+$h = $__case_2;
+return (($GLOBALS['Data_Equivalence_Equivalence'] ?? \Data\Equivalence\phpurs_eval_thunk('Data_Equivalence_Equivalence')))((function() use ($f1, $g, $h) {
+  $__body = function($a, $b) use ($f1, $g, $h) {
+    $v2 = ($f1)($a);
+    $__case_0 = $v2;
+    switch (($__case_0)->tag) {
+case "Tuple":
+$a__prime__ = ($__case_0)->v0;
+$a__prime____prime__ = ($__case_0)->v1;
+$v3 = ($f1)($b);
+$__case_0 = $v3;
+switch (($__case_0)->tag) {
+case "Tuple":
+$b__prime__ = ($__case_0)->v0;
+$b__prime____prime__ = ($__case_0)->v1;
+return (($GLOBALS['Data_Divide_conj'] ?? \Data\Divide\phpurs_eval_thunk('Data_Divide_conj')))(($g)($a__prime__, $b__prime__), ($h)($a__prime____prime__, $b__prime____prime__));
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($a, $b = null) use ($f1, $g, $h, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($b) use ($a, &$__fn) { return $__fn($a, $b); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($a, $b);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})());
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $v = null, $v1 = null) use ($__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($v1) use ($f, $v, &$__fn) { return $__fn($f, $v, $v1); };
+    if ($__num === 1) return function($v, $v1 = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $v, $v1);
+      if ($__num2 === 1) return function($v1) use ($f, $v, &$__fn) { return $__fn($f, $v, $v1); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = $__body($f, $v, $v1);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})(), "Contravariant0" => (function() {
+  $__fn = function($__dollar____unused) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($GLOBALS['Data_Equivalence_contravariantEquivalence'] ?? \Data\Equivalence\phpurs_eval_thunk('Data_Equivalence_contravariantEquivalence'));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()]); break;
+      case 'Data_Divide_divideComparison': $v = (($GLOBALS['Data_Divide_Divide__dollar__Dict'] ?? \Data\Divide\phpurs_eval_thunk('Data_Divide_Divide__dollar__Dict')))((object)["divide" => (function() {
+  $__body = function($f, $v, $v1) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    $__case_2 = $v1;
+    if (true) {
+$f1 = $__case_0;
+$g = $__case_1;
+$h = $__case_2;
+return (($GLOBALS['Data_Comparison_Comparison'] ?? \Data\Comparison\phpurs_eval_thunk('Data_Comparison_Comparison')))((function() use ($f1, $g, $h) {
+  $__body = function($a, $b) use ($f1, $g, $h) {
+    $v2 = ($f1)($a);
+    $__case_0 = $v2;
+    switch (($__case_0)->tag) {
+case "Tuple":
+$a__prime__ = ($__case_0)->v0;
+$a__prime____prime__ = ($__case_0)->v1;
+$v3 = ($f1)($b);
+$__case_0 = $v3;
+switch (($__case_0)->tag) {
+case "Tuple":
+$b__prime__ = ($__case_0)->v0;
+$b__prime____prime__ = ($__case_0)->v1;
+return (($GLOBALS['Data_Divide_append'] ?? \Data\Divide\phpurs_eval_thunk('Data_Divide_append')))(($g)($a__prime__, $b__prime__), ($h)($a__prime____prime__, $b__prime____prime__));
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($a, $b = null) use ($f1, $g, $h, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($b) use ($a, &$__fn) { return $__fn($a, $b); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($a, $b);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})());
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $v = null, $v1 = null) use ($__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($v1) use ($f, $v, &$__fn) { return $__fn($f, $v, $v1); };
+    if ($__num === 1) return function($v, $v1 = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $v, $v1);
+      if ($__num2 === 1) return function($v1) use ($f, $v, &$__fn) { return $__fn($f, $v, $v1); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = $__body($f, $v, $v1);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})(), "Contravariant0" => (function() {
+  $__fn = function($__dollar____unused) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($GLOBALS['Data_Comparison_contravariantComparison'] ?? \Data\Comparison\phpurs_eval_thunk('Data_Comparison_contravariantComparison'));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()]); break;
+      default: throw new \Exception("Unknown thunk " . $id);
+    }
+    $GLOBALS[$id] = $v;
+    return $cache[$id] = $v;
+  }
+}
+$Prim_undefined = function() { throw new \Exception("undefined"); };
+
+
+
+// Data_Divide_append
+function Data_Divide_append($v, $v1 = null) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Divide_append';
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, $__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+  $__body = function($v, $v1) {
+    $__case_0 = $v;
+    $__case_1 = $v1;
+    switch (($__case_0)->tag) {
+case "LT":
+return ($GLOBALS['Data_Ordering_LT'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_LT'));
+break;
+case "GT":
+return ($GLOBALS['Data_Ordering_GT'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_GT'));
+break;
+case "EQ":
+$y = $__case_1;
+return $y;
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+    $__res = $__body($v, $v1);
+    return 2 < $__num ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+}
+$GLOBALS['Data_Divide_append'] = __NAMESPACE__ . '\\Data_Divide_append';
+
+// Data_Divide_identity
+function Data_Divide_identity($x) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Divide_identity';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $x;
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Divide_identity'] = __NAMESPACE__ . '\\Data_Divide_identity';
+
+// Data_Divide_Divide$Dict
+function Data_Divide_Divide__dollar__Dict($x) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Divide_Divide__dollar__Dict';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $x;
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Divide_Divide__dollar__Dict'] = __NAMESPACE__ . '\\Data_Divide_Divide__dollar__Dict';
+
 
 // Data_Divide_divideOp
-$Data_Divide_divideOp = (function() {
-  $__fn = function($dictSemigroup) use (&$__fn) {
+function Data_Divide_divideOp($dictSemigroup) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-$append1 = ($GLOBALS['Data_Semigroup_append'])($dictSemigroup);
-    $__res = ($GLOBALS['Data_Divide_Divide__dollar__Dict'])((object)["divide" => (function() use ($append1) {
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Divide_divideOp';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$append1 = (($GLOBALS['Data_Semigroup_append'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_append')))($dictSemigroup);
+    $__res = (($GLOBALS['Data_Divide_Divide__dollar__Dict'] ?? \Data\Divide\phpurs_eval_thunk('Data_Divide_Divide__dollar__Dict')))((object)["divide" => (function() use ($append1) {
   $__body = function($f, $v, $v1) use ($append1) {
     $__case_0 = $f;
     $__case_1 = $v;
@@ -125,21 +345,26 @@ $append1 = ($GLOBALS['Data_Semigroup_append'])($dictSemigroup);
 $f1 = $__case_0;
 $g = $__case_1;
 $h = $__case_2;
-return ($GLOBALS['Data_Op_Op'])((function() use ($f1, $append1, $g, $h) {
+return (($GLOBALS['Data_Op_Op'] ?? \Data\Op\phpurs_eval_thunk('Data_Op_Op')))((function() use ($f1, $append1, $g, $h) {
   $__body = function($a) use ($f1, $append1, $g, $h) {
     $v2 = ($f1)($a);
     $__case_0 = $v2;
-    if ((($__case_0)->tag === "Tuple")) {
+    switch (($__case_0)->tag) {
+case "Tuple":
 $b = ($__case_0)->v0;
 $c = ($__case_0)->v1;
 return ($append1)(($g)($b), ($h)($c));
-} else {
+break;
+default:
 throw new \Exception("Pattern match failure");
+break;
 };
   };
   $__fn = function($a) use ($f1, $append1, $g, $h, $__body, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $__body($a);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
@@ -151,7 +376,16 @@ throw new \Exception("Pattern match failure");
   };
   $__fn = function($f, $v = null, $v1 = null) use ($append1, $__body, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 3) return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  if ($__num < 3) {
+    if ($__num === 2) return function($v1) use ($f, $v, &$__fn) { return $__fn($f, $v, $v1); };
+    if ($__num === 1) return function($v, $v1 = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $v, $v1);
+      if ($__num2 === 1) return function($v1) use ($f, $v, &$__fn) { return $__fn($f, $v, $v1); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
     $__res = $__body($f, $v, $v1);
   return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
   };
@@ -159,137 +393,27 @@ throw new \Exception("Pattern match failure");
 })(), "Contravariant0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = $GLOBALS['Data_Op_contravariantOp'];
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($GLOBALS['Data_Op_contravariantOp'] ?? \Data\Op\phpurs_eval_thunk('Data_Op_contravariantOp'));
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
 })()]);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Divide_divideOp'] = __NAMESPACE__ . '\\Data_Divide_divideOp';
 
-// Data_Divide_divideEquivalence
-$Data_Divide_divideEquivalence = ($GLOBALS['Data_Divide_Divide__dollar__Dict'])((object)["divide" => (function() {
-  $__body = function($f, $v, $v1) {
-    $__case_0 = $f;
-    $__case_1 = $v;
-    $__case_2 = $v1;
-    if (true) {
-$f1 = $__case_0;
-$g = $__case_1;
-$h = $__case_2;
-return ($GLOBALS['Data_Equivalence_Equivalence'])((function() use ($f1, $g, $h) {
-  $__body = function($a, $b) use ($f1, $g, $h) {
-    $v2 = ($f1)($a);
-    $__case_0 = $v2;
-    if ((($__case_0)->tag === "Tuple")) {
-$a__prime__ = ($__case_0)->v0;
-$a__prime____prime__ = ($__case_0)->v1;
-$v3 = ($f1)($b);
-$__case_0 = $v3;
-if ((($__case_0)->tag === "Tuple")) {
-$b__prime__ = ($__case_0)->v0;
-$b__prime____prime__ = ($__case_0)->v1;
-return ($GLOBALS['Data_Divide_conj'])(($g)($a__prime__, $b__prime__), ($h)($a__prime____prime__, $b__prime____prime__));
-} else {
-throw new \Exception("Pattern match failure");
-};
-} else {
-throw new \Exception("Pattern match failure");
-};
-  };
-  $__fn = function($a, $b = null) use ($f1, $g, $h, $__body, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 2) return phpurs_curry_fallback($__fn, func_get_args(), 2);
-    $__res = $__body($a, $b);
-  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
-  };
-  return $__fn;
-})());
-} else {
-throw new \Exception("Pattern match failure");
-};
-  };
-  $__fn = function($f, $v = null, $v1 = null) use ($__body, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 3) return phpurs_curry_fallback($__fn, func_get_args(), 3);
-    $__res = $__body($f, $v, $v1);
-  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
-  };
-  return $__fn;
-})(), "Contravariant0" => (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = $GLOBALS['Data_Equivalence_contravariantEquivalence'];
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})()]);
 
-// Data_Divide_divideComparison
-$Data_Divide_divideComparison = ($GLOBALS['Data_Divide_Divide__dollar__Dict'])((object)["divide" => (function() {
-  $__body = function($f, $v, $v1) {
-    $__case_0 = $f;
-    $__case_1 = $v;
-    $__case_2 = $v1;
-    if (true) {
-$f1 = $__case_0;
-$g = $__case_1;
-$h = $__case_2;
-return ($GLOBALS['Data_Comparison_Comparison'])((function() use ($f1, $g, $h) {
-  $__body = function($a, $b) use ($f1, $g, $h) {
-    $v2 = ($f1)($a);
-    $__case_0 = $v2;
-    if ((($__case_0)->tag === "Tuple")) {
-$a__prime__ = ($__case_0)->v0;
-$a__prime____prime__ = ($__case_0)->v1;
-$v3 = ($f1)($b);
-$__case_0 = $v3;
-if ((($__case_0)->tag === "Tuple")) {
-$b__prime__ = ($__case_0)->v0;
-$b__prime____prime__ = ($__case_0)->v1;
-return ($GLOBALS['Data_Divide_append'])(($g)($a__prime__, $b__prime__), ($h)($a__prime____prime__, $b__prime____prime__));
-} else {
-throw new \Exception("Pattern match failure");
-};
-} else {
-throw new \Exception("Pattern match failure");
-};
-  };
-  $__fn = function($a, $b = null) use ($f1, $g, $h, $__body, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 2) return phpurs_curry_fallback($__fn, func_get_args(), 2);
-    $__res = $__body($a, $b);
-  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
-  };
-  return $__fn;
-})());
-} else {
-throw new \Exception("Pattern match failure");
-};
-  };
-  $__fn = function($f, $v = null, $v1 = null) use ($__body, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 3) return phpurs_curry_fallback($__fn, func_get_args(), 3);
-    $__res = $__body($f, $v, $v1);
-  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
-  };
-  return $__fn;
-})(), "Contravariant0" => (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = $GLOBALS['Data_Comparison_contravariantComparison'];
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})()]);
 
 // Data_Divide_divide
-$Data_Divide_divide = (function() {
+function Data_Divide_divide($dict) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Divide_divide';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
   $__body = function($dict) {
     $__case_0 = $dict;
     if (true) {
@@ -299,23 +423,20 @@ return ($v)->divide;
 throw new \Exception("Pattern match failure");
 };
   };
-  $__fn = function($dict) use ($__body, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
     $__res = $__body($dict);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Divide_divide'] = __NAMESPACE__ . '\\Data_Divide_divide';
 
 // Data_Divide_divided
-$Data_Divide_divided = (function() {
-  $__fn = function($dictDivide) use (&$__fn) {
+function Data_Divide_divided($dictDivide) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = ($GLOBALS['Data_Divide_divide'])($dictDivide, $GLOBALS['Data_Divide_identity']);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Divide_divided';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = (($GLOBALS['Data_Divide_divide'] ?? \Data\Divide\phpurs_eval_thunk('Data_Divide_divide')))($dictDivide, ($GLOBALS['Data_Divide_identity'] ?? \Data\Divide\phpurs_eval_thunk('Data_Divide_identity')));
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Divide_divided'] = __NAMESPACE__ . '\\Data_Divide_divided';
 

@@ -34,290 +34,373 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_curry_fallback')) {
     };
   }
 }
+if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
+  function phpurs_eval_thunk($id) {
+    static $cache = [];
+    if (array_key_exists($id, $cache)) return $cache[$id];
+    switch ($id) {
+      case 'Data_Newtype_coerce': $v = (($GLOBALS['Safe_Coerce_coerce'] ?? \Safe\Coerce\phpurs_eval_thunk('Safe_Coerce_coerce')))(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))); break;
+      case 'Data_Newtype_wrap1': $v = (($GLOBALS['Data_Newtype_wrap'] ?? \Data\Newtype\phpurs_eval_thunk('Data_Newtype_wrap')))(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))); break;
+      case 'Data_Newtype_unwrap1': $v = (($GLOBALS['Data_Newtype_unwrap'] ?? \Data\Newtype\phpurs_eval_thunk('Data_Newtype_unwrap')))(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))); break;
+      case 'Data_Newtype_newtypeMultiplicative': $v = (($GLOBALS['Data_Newtype_Newtype__dollar__Dict'] ?? \Data\Newtype\phpurs_eval_thunk('Data_Newtype_Newtype__dollar__Dict')))((object)["Coercible0" => (function() {
+  $__fn = function($__dollar____unused) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()]); break;
+      case 'Data_Newtype_newtypeLast': $v = (($GLOBALS['Data_Newtype_Newtype__dollar__Dict'] ?? \Data\Newtype\phpurs_eval_thunk('Data_Newtype_Newtype__dollar__Dict')))((object)["Coercible0" => (function() {
+  $__fn = function($__dollar____unused) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()]); break;
+      case 'Data_Newtype_newtypeFirst': $v = (($GLOBALS['Data_Newtype_Newtype__dollar__Dict'] ?? \Data\Newtype\phpurs_eval_thunk('Data_Newtype_Newtype__dollar__Dict')))((object)["Coercible0" => (function() {
+  $__fn = function($__dollar____unused) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()]); break;
+      case 'Data_Newtype_newtypeEndo': $v = (($GLOBALS['Data_Newtype_Newtype__dollar__Dict'] ?? \Data\Newtype\phpurs_eval_thunk('Data_Newtype_Newtype__dollar__Dict')))((object)["Coercible0" => (function() {
+  $__fn = function($__dollar____unused) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()]); break;
+      case 'Data_Newtype_newtypeDual': $v = (($GLOBALS['Data_Newtype_Newtype__dollar__Dict'] ?? \Data\Newtype\phpurs_eval_thunk('Data_Newtype_Newtype__dollar__Dict')))((object)["Coercible0" => (function() {
+  $__fn = function($__dollar____unused) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()]); break;
+      case 'Data_Newtype_newtypeDisj': $v = (($GLOBALS['Data_Newtype_Newtype__dollar__Dict'] ?? \Data\Newtype\phpurs_eval_thunk('Data_Newtype_Newtype__dollar__Dict')))((object)["Coercible0" => (function() {
+  $__fn = function($__dollar____unused) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()]); break;
+      case 'Data_Newtype_newtypeConj': $v = (($GLOBALS['Data_Newtype_Newtype__dollar__Dict'] ?? \Data\Newtype\phpurs_eval_thunk('Data_Newtype_Newtype__dollar__Dict')))((object)["Coercible0" => (function() {
+  $__fn = function($__dollar____unused) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()]); break;
+      case 'Data_Newtype_newtypeAdditive': $v = (($GLOBALS['Data_Newtype_Newtype__dollar__Dict'] ?? \Data\Newtype\phpurs_eval_thunk('Data_Newtype_Newtype__dollar__Dict')))((object)["Coercible0" => (function() {
+  $__fn = function($__dollar____unused) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()]); break;
+      default: throw new \Exception("Unknown thunk " . $id);
+    }
+    $GLOBALS[$id] = $v;
+    return $cache[$id] = $v;
+  }
+}
 $Prim_undefined = function() { throw new \Exception("undefined"); };
 
 
-// Data_Newtype_coerce
-$Data_Newtype_coerce = ($GLOBALS['Safe_Coerce_coerce'])($GLOBALS['Prim_undefined']);
 
 // Data_Newtype_Newtype$Dict
-$Data_Newtype_Newtype__dollar__Dict = (function() {
-  $__fn = function($x) use (&$__fn) {
+function Data_Newtype_Newtype__dollar__Dict($x) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Newtype_Newtype__dollar__Dict';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $x;
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Newtype_Newtype__dollar__Dict'] = __NAMESPACE__ . '\\Data_Newtype_Newtype__dollar__Dict';
 
 // Data_Newtype_wrap
-$Data_Newtype_wrap = (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
+function Data_Newtype_wrap($__dollar____unused) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = $GLOBALS['Data_Newtype_coerce'];
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Newtype_wrap';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($GLOBALS['Data_Newtype_coerce'] ?? \Data\Newtype\phpurs_eval_thunk('Data_Newtype_coerce'));
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Newtype_wrap'] = __NAMESPACE__ . '\\Data_Newtype_wrap';
 
-// Data_Newtype_wrap1
-$Data_Newtype_wrap1 = ($GLOBALS['Data_Newtype_wrap'])($GLOBALS['Prim_undefined']);
 
 // Data_Newtype_unwrap
-$Data_Newtype_unwrap = (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
+function Data_Newtype_unwrap($__dollar____unused) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = $GLOBALS['Data_Newtype_coerce'];
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Newtype_unwrap';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($GLOBALS['Data_Newtype_coerce'] ?? \Data\Newtype\phpurs_eval_thunk('Data_Newtype_coerce'));
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Newtype_unwrap'] = __NAMESPACE__ . '\\Data_Newtype_unwrap';
 
-// Data_Newtype_unwrap1
-$Data_Newtype_unwrap1 = ($GLOBALS['Data_Newtype_unwrap'])($GLOBALS['Prim_undefined']);
 
 // Data_Newtype_underF2
-$Data_Newtype_underF2 = (function() {
-  $__fn = function($__dollar____unused___, $__dollar____unused__ = null, $__dollar____unused_ = null, $__dollar____unused = null, $v = null) use (&$__fn) {
+function Data_Newtype_underF2($__dollar____unused___, $__dollar____unused__ = null, $__dollar____unused_ = null, $__dollar____unused = null, $v = null) {
   $__num = func_num_args();
-  if ($__num < 5) return phpurs_curry_fallback($__fn, func_get_args(), 5);
-    $__res = $GLOBALS['Data_Newtype_coerce'];
-  return $__num > 5 ? $__res(...array_slice(func_get_args(), 5)) : $__res;
-  };
-  return $__fn;
-})();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Newtype_underF2';
+  if ($__num < 5) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 5);
+  }
+    $__res = ($GLOBALS['Data_Newtype_coerce'] ?? \Data\Newtype\phpurs_eval_thunk('Data_Newtype_coerce'));
+    return 5 < $__num ? $__res(...array_slice(func_get_args(), 5)) : $__res;
+}
+$GLOBALS['Data_Newtype_underF2'] = __NAMESPACE__ . '\\Data_Newtype_underF2';
 
 // Data_Newtype_underF
-$Data_Newtype_underF = (function() {
-  $__fn = function($__dollar____unused___, $__dollar____unused__ = null, $__dollar____unused_ = null, $__dollar____unused = null, $v = null) use (&$__fn) {
+function Data_Newtype_underF($__dollar____unused___, $__dollar____unused__ = null, $__dollar____unused_ = null, $__dollar____unused = null, $v = null) {
   $__num = func_num_args();
-  if ($__num < 5) return phpurs_curry_fallback($__fn, func_get_args(), 5);
-    $__res = $GLOBALS['Data_Newtype_coerce'];
-  return $__num > 5 ? $__res(...array_slice(func_get_args(), 5)) : $__res;
-  };
-  return $__fn;
-})();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Newtype_underF';
+  if ($__num < 5) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 5);
+  }
+    $__res = ($GLOBALS['Data_Newtype_coerce'] ?? \Data\Newtype\phpurs_eval_thunk('Data_Newtype_coerce'));
+    return 5 < $__num ? $__res(...array_slice(func_get_args(), 5)) : $__res;
+}
+$GLOBALS['Data_Newtype_underF'] = __NAMESPACE__ . '\\Data_Newtype_underF';
 
 // Data_Newtype_under2
-$Data_Newtype_under2 = (function() {
-  $__fn = function($__dollar____unused_, $__dollar____unused = null, $v = null) use (&$__fn) {
+function Data_Newtype_under2($__dollar____unused_, $__dollar____unused = null, $v = null) {
   $__num = func_num_args();
-  if ($__num < 3) return phpurs_curry_fallback($__fn, func_get_args(), 3);
-    $__res = $GLOBALS['Data_Newtype_coerce'];
-  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
-  };
-  return $__fn;
-})();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Newtype_under2';
+  if ($__num < 3) {
+    if ($__num === 2) return function($v) use ($__dollar____unused_, $__dollar____unused, $__fn) { return $__fn($__dollar____unused_, $__dollar____unused, $v); };
+    if ($__num === 1) return function($__dollar____unused, $v = null) use ($__dollar____unused_, $__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($__dollar____unused_, $__dollar____unused, $v);
+      if ($__num2 === 1) return function($v) use ($__dollar____unused_, $__dollar____unused, $__fn) { return $__fn($__dollar____unused_, $__dollar____unused, $v); };
+      return phpurs_curry_fallback($__fn, [$__dollar____unused_], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = ($GLOBALS['Data_Newtype_coerce'] ?? \Data\Newtype\phpurs_eval_thunk('Data_Newtype_coerce'));
+    return 3 < $__num ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+}
+$GLOBALS['Data_Newtype_under2'] = __NAMESPACE__ . '\\Data_Newtype_under2';
 
 // Data_Newtype_under
-$Data_Newtype_under = (function() {
-  $__fn = function($__dollar____unused_, $__dollar____unused = null, $v = null) use (&$__fn) {
+function Data_Newtype_under($__dollar____unused_, $__dollar____unused = null, $v = null) {
   $__num = func_num_args();
-  if ($__num < 3) return phpurs_curry_fallback($__fn, func_get_args(), 3);
-    $__res = $GLOBALS['Data_Newtype_coerce'];
-  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
-  };
-  return $__fn;
-})();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Newtype_under';
+  if ($__num < 3) {
+    if ($__num === 2) return function($v) use ($__dollar____unused_, $__dollar____unused, $__fn) { return $__fn($__dollar____unused_, $__dollar____unused, $v); };
+    if ($__num === 1) return function($__dollar____unused, $v = null) use ($__dollar____unused_, $__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($__dollar____unused_, $__dollar____unused, $v);
+      if ($__num2 === 1) return function($v) use ($__dollar____unused_, $__dollar____unused, $__fn) { return $__fn($__dollar____unused_, $__dollar____unused, $v); };
+      return phpurs_curry_fallback($__fn, [$__dollar____unused_], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = ($GLOBALS['Data_Newtype_coerce'] ?? \Data\Newtype\phpurs_eval_thunk('Data_Newtype_coerce'));
+    return 3 < $__num ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+}
+$GLOBALS['Data_Newtype_under'] = __NAMESPACE__ . '\\Data_Newtype_under';
 
 // Data_Newtype_un
-$Data_Newtype_un = (function() {
-  $__fn = function($__dollar____unused, $v = null) use (&$__fn) {
+function Data_Newtype_un($__dollar____unused, $v = null) {
   $__num = func_num_args();
-  if ($__num < 2) return phpurs_curry_fallback($__fn, func_get_args(), 2);
-    $__res = $GLOBALS['Data_Newtype_unwrap1'];
-  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
-  };
-  return $__fn;
-})();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Newtype_un';
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($__dollar____unused, $__fn) { return $__fn($__dollar____unused, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($GLOBALS['Data_Newtype_unwrap1'] ?? \Data\Newtype\phpurs_eval_thunk('Data_Newtype_unwrap1'));
+    return 2 < $__num ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+}
+$GLOBALS['Data_Newtype_un'] = __NAMESPACE__ . '\\Data_Newtype_un';
 
 // Data_Newtype_traverse
-$Data_Newtype_traverse = (function() {
-  $__fn = function($__dollar____unused_, $__dollar____unused = null, $v = null) use (&$__fn) {
+function Data_Newtype_traverse($__dollar____unused_, $__dollar____unused = null, $v = null) {
   $__num = func_num_args();
-  if ($__num < 3) return phpurs_curry_fallback($__fn, func_get_args(), 3);
-    $__res = $GLOBALS['Data_Newtype_coerce'];
-  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
-  };
-  return $__fn;
-})();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Newtype_traverse';
+  if ($__num < 3) {
+    if ($__num === 2) return function($v) use ($__dollar____unused_, $__dollar____unused, $__fn) { return $__fn($__dollar____unused_, $__dollar____unused, $v); };
+    if ($__num === 1) return function($__dollar____unused, $v = null) use ($__dollar____unused_, $__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($__dollar____unused_, $__dollar____unused, $v);
+      if ($__num2 === 1) return function($v) use ($__dollar____unused_, $__dollar____unused, $__fn) { return $__fn($__dollar____unused_, $__dollar____unused, $v); };
+      return phpurs_curry_fallback($__fn, [$__dollar____unused_], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = ($GLOBALS['Data_Newtype_coerce'] ?? \Data\Newtype\phpurs_eval_thunk('Data_Newtype_coerce'));
+    return 3 < $__num ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+}
+$GLOBALS['Data_Newtype_traverse'] = __NAMESPACE__ . '\\Data_Newtype_traverse';
 
 // Data_Newtype_overF2
-$Data_Newtype_overF2 = (function() {
-  $__fn = function($__dollar____unused___, $__dollar____unused__ = null, $__dollar____unused_ = null, $__dollar____unused = null, $v = null) use (&$__fn) {
+function Data_Newtype_overF2($__dollar____unused___, $__dollar____unused__ = null, $__dollar____unused_ = null, $__dollar____unused = null, $v = null) {
   $__num = func_num_args();
-  if ($__num < 5) return phpurs_curry_fallback($__fn, func_get_args(), 5);
-    $__res = $GLOBALS['Data_Newtype_coerce'];
-  return $__num > 5 ? $__res(...array_slice(func_get_args(), 5)) : $__res;
-  };
-  return $__fn;
-})();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Newtype_overF2';
+  if ($__num < 5) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 5);
+  }
+    $__res = ($GLOBALS['Data_Newtype_coerce'] ?? \Data\Newtype\phpurs_eval_thunk('Data_Newtype_coerce'));
+    return 5 < $__num ? $__res(...array_slice(func_get_args(), 5)) : $__res;
+}
+$GLOBALS['Data_Newtype_overF2'] = __NAMESPACE__ . '\\Data_Newtype_overF2';
 
 // Data_Newtype_overF
-$Data_Newtype_overF = (function() {
-  $__fn = function($__dollar____unused___, $__dollar____unused__ = null, $__dollar____unused_ = null, $__dollar____unused = null, $v = null) use (&$__fn) {
+function Data_Newtype_overF($__dollar____unused___, $__dollar____unused__ = null, $__dollar____unused_ = null, $__dollar____unused = null, $v = null) {
   $__num = func_num_args();
-  if ($__num < 5) return phpurs_curry_fallback($__fn, func_get_args(), 5);
-    $__res = $GLOBALS['Data_Newtype_coerce'];
-  return $__num > 5 ? $__res(...array_slice(func_get_args(), 5)) : $__res;
-  };
-  return $__fn;
-})();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Newtype_overF';
+  if ($__num < 5) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 5);
+  }
+    $__res = ($GLOBALS['Data_Newtype_coerce'] ?? \Data\Newtype\phpurs_eval_thunk('Data_Newtype_coerce'));
+    return 5 < $__num ? $__res(...array_slice(func_get_args(), 5)) : $__res;
+}
+$GLOBALS['Data_Newtype_overF'] = __NAMESPACE__ . '\\Data_Newtype_overF';
 
 // Data_Newtype_over2
-$Data_Newtype_over2 = (function() {
-  $__fn = function($__dollar____unused_, $__dollar____unused = null, $v = null) use (&$__fn) {
+function Data_Newtype_over2($__dollar____unused_, $__dollar____unused = null, $v = null) {
   $__num = func_num_args();
-  if ($__num < 3) return phpurs_curry_fallback($__fn, func_get_args(), 3);
-    $__res = $GLOBALS['Data_Newtype_coerce'];
-  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
-  };
-  return $__fn;
-})();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Newtype_over2';
+  if ($__num < 3) {
+    if ($__num === 2) return function($v) use ($__dollar____unused_, $__dollar____unused, $__fn) { return $__fn($__dollar____unused_, $__dollar____unused, $v); };
+    if ($__num === 1) return function($__dollar____unused, $v = null) use ($__dollar____unused_, $__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($__dollar____unused_, $__dollar____unused, $v);
+      if ($__num2 === 1) return function($v) use ($__dollar____unused_, $__dollar____unused, $__fn) { return $__fn($__dollar____unused_, $__dollar____unused, $v); };
+      return phpurs_curry_fallback($__fn, [$__dollar____unused_], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = ($GLOBALS['Data_Newtype_coerce'] ?? \Data\Newtype\phpurs_eval_thunk('Data_Newtype_coerce'));
+    return 3 < $__num ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+}
+$GLOBALS['Data_Newtype_over2'] = __NAMESPACE__ . '\\Data_Newtype_over2';
 
 // Data_Newtype_over
-$Data_Newtype_over = (function() {
-  $__fn = function($__dollar____unused_, $__dollar____unused = null, $v = null) use (&$__fn) {
+function Data_Newtype_over($__dollar____unused_, $__dollar____unused = null, $v = null) {
   $__num = func_num_args();
-  if ($__num < 3) return phpurs_curry_fallback($__fn, func_get_args(), 3);
-    $__res = $GLOBALS['Data_Newtype_coerce'];
-  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
-  };
-  return $__fn;
-})();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Newtype_over';
+  if ($__num < 3) {
+    if ($__num === 2) return function($v) use ($__dollar____unused_, $__dollar____unused, $__fn) { return $__fn($__dollar____unused_, $__dollar____unused, $v); };
+    if ($__num === 1) return function($__dollar____unused, $v = null) use ($__dollar____unused_, $__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($__dollar____unused_, $__dollar____unused, $v);
+      if ($__num2 === 1) return function($v) use ($__dollar____unused_, $__dollar____unused, $__fn) { return $__fn($__dollar____unused_, $__dollar____unused, $v); };
+      return phpurs_curry_fallback($__fn, [$__dollar____unused_], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = ($GLOBALS['Data_Newtype_coerce'] ?? \Data\Newtype\phpurs_eval_thunk('Data_Newtype_coerce'));
+    return 3 < $__num ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+}
+$GLOBALS['Data_Newtype_over'] = __NAMESPACE__ . '\\Data_Newtype_over';
 
-// Data_Newtype_newtypeMultiplicative
-$Data_Newtype_newtypeMultiplicative = ($GLOBALS['Data_Newtype_Newtype__dollar__Dict'])((object)["Coercible0" => (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = $GLOBALS['Prim_undefined'];
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})()]);
 
-// Data_Newtype_newtypeLast
-$Data_Newtype_newtypeLast = ($GLOBALS['Data_Newtype_Newtype__dollar__Dict'])((object)["Coercible0" => (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = $GLOBALS['Prim_undefined'];
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})()]);
 
-// Data_Newtype_newtypeFirst
-$Data_Newtype_newtypeFirst = ($GLOBALS['Data_Newtype_Newtype__dollar__Dict'])((object)["Coercible0" => (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = $GLOBALS['Prim_undefined'];
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})()]);
 
-// Data_Newtype_newtypeEndo
-$Data_Newtype_newtypeEndo = ($GLOBALS['Data_Newtype_Newtype__dollar__Dict'])((object)["Coercible0" => (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = $GLOBALS['Prim_undefined'];
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})()]);
 
-// Data_Newtype_newtypeDual
-$Data_Newtype_newtypeDual = ($GLOBALS['Data_Newtype_Newtype__dollar__Dict'])((object)["Coercible0" => (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = $GLOBALS['Prim_undefined'];
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})()]);
 
-// Data_Newtype_newtypeDisj
-$Data_Newtype_newtypeDisj = ($GLOBALS['Data_Newtype_Newtype__dollar__Dict'])((object)["Coercible0" => (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = $GLOBALS['Prim_undefined'];
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})()]);
 
-// Data_Newtype_newtypeConj
-$Data_Newtype_newtypeConj = ($GLOBALS['Data_Newtype_Newtype__dollar__Dict'])((object)["Coercible0" => (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = $GLOBALS['Prim_undefined'];
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})()]);
 
-// Data_Newtype_newtypeAdditive
-$Data_Newtype_newtypeAdditive = ($GLOBALS['Data_Newtype_Newtype__dollar__Dict'])((object)["Coercible0" => (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = $GLOBALS['Prim_undefined'];
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})()]);
 
 // Data_Newtype_modify
-$Data_Newtype_modify = (function() {
-  $__fn = function($__dollar____unused, $fn = null, $t = null) use (&$__fn) {
+function Data_Newtype_modify($__dollar____unused, $fn = null, $t = null) {
   $__num = func_num_args();
-  if ($__num < 3) return phpurs_curry_fallback($__fn, func_get_args(), 3);
-    $__res = ($GLOBALS['Data_Newtype_wrap1'])(($fn)(($GLOBALS['Data_Newtype_unwrap1'])($t)));
-  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
-  };
-  return $__fn;
-})();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Newtype_modify';
+  if ($__num < 3) {
+    if ($__num === 2) return function($t) use ($__dollar____unused, $fn, $__fn) { return $__fn($__dollar____unused, $fn, $t); };
+    if ($__num === 1) return function($fn, $t = null) use ($__dollar____unused, $__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($__dollar____unused, $fn, $t);
+      if ($__num2 === 1) return function($t) use ($__dollar____unused, $fn, $__fn) { return $__fn($__dollar____unused, $fn, $t); };
+      return phpurs_curry_fallback($__fn, [$__dollar____unused], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = (($GLOBALS['Data_Newtype_wrap1'] ?? \Data\Newtype\phpurs_eval_thunk('Data_Newtype_wrap1')))(($fn)((($GLOBALS['Data_Newtype_unwrap1'] ?? \Data\Newtype\phpurs_eval_thunk('Data_Newtype_unwrap1')))($t)));
+    return 3 < $__num ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+}
+$GLOBALS['Data_Newtype_modify'] = __NAMESPACE__ . '\\Data_Newtype_modify';
 
 // Data_Newtype_collect
-$Data_Newtype_collect = (function() {
-  $__fn = function($__dollar____unused_, $__dollar____unused = null, $v = null) use (&$__fn) {
+function Data_Newtype_collect($__dollar____unused_, $__dollar____unused = null, $v = null) {
   $__num = func_num_args();
-  if ($__num < 3) return phpurs_curry_fallback($__fn, func_get_args(), 3);
-    $__res = $GLOBALS['Data_Newtype_coerce'];
-  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
-  };
-  return $__fn;
-})();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Newtype_collect';
+  if ($__num < 3) {
+    if ($__num === 2) return function($v) use ($__dollar____unused_, $__dollar____unused, $__fn) { return $__fn($__dollar____unused_, $__dollar____unused, $v); };
+    if ($__num === 1) return function($__dollar____unused, $v = null) use ($__dollar____unused_, $__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($__dollar____unused_, $__dollar____unused, $v);
+      if ($__num2 === 1) return function($v) use ($__dollar____unused_, $__dollar____unused, $__fn) { return $__fn($__dollar____unused_, $__dollar____unused, $v); };
+      return phpurs_curry_fallback($__fn, [$__dollar____unused_], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = ($GLOBALS['Data_Newtype_coerce'] ?? \Data\Newtype\phpurs_eval_thunk('Data_Newtype_coerce'));
+    return 3 < $__num ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+}
+$GLOBALS['Data_Newtype_collect'] = __NAMESPACE__ . '\\Data_Newtype_collect';
 
 // Data_Newtype_alaF
-$Data_Newtype_alaF = (function() {
-  $__fn = function($__dollar____unused___, $__dollar____unused__ = null, $__dollar____unused_ = null, $__dollar____unused = null, $v = null) use (&$__fn) {
+function Data_Newtype_alaF($__dollar____unused___, $__dollar____unused__ = null, $__dollar____unused_ = null, $__dollar____unused = null, $v = null) {
   $__num = func_num_args();
-  if ($__num < 5) return phpurs_curry_fallback($__fn, func_get_args(), 5);
-    $__res = $GLOBALS['Data_Newtype_coerce'];
-  return $__num > 5 ? $__res(...array_slice(func_get_args(), 5)) : $__res;
-  };
-  return $__fn;
-})();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Newtype_alaF';
+  if ($__num < 5) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 5);
+  }
+    $__res = ($GLOBALS['Data_Newtype_coerce'] ?? \Data\Newtype\phpurs_eval_thunk('Data_Newtype_coerce'));
+    return 5 < $__num ? $__res(...array_slice(func_get_args(), 5)) : $__res;
+}
+$GLOBALS['Data_Newtype_alaF'] = __NAMESPACE__ . '\\Data_Newtype_alaF';
 
 // Data_Newtype_ala
-$Data_Newtype_ala = (function() {
-  $__fn = function($__dollar____unused__, $__dollar____unused_ = null, $__dollar____unused = null, $v = null, $f = null) use (&$__fn) {
+function Data_Newtype_ala($__dollar____unused__, $__dollar____unused_ = null, $__dollar____unused = null, $v = null, $f = null) {
   $__num = func_num_args();
-  if ($__num < 5) return phpurs_curry_fallback($__fn, func_get_args(), 5);
-    $__res = ($GLOBALS['Data_Newtype_coerce'])(($f)($GLOBALS['Data_Newtype_wrap1']));
-  return $__num > 5 ? $__res(...array_slice(func_get_args(), 5)) : $__res;
-  };
-  return $__fn;
-})();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Newtype_ala';
+  if ($__num < 5) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 5);
+  }
+    $__res = (($GLOBALS['Data_Newtype_coerce'] ?? \Data\Newtype\phpurs_eval_thunk('Data_Newtype_coerce')))(($f)(($GLOBALS['Data_Newtype_wrap1'] ?? \Data\Newtype\phpurs_eval_thunk('Data_Newtype_wrap1'))));
+    return 5 < $__num ? $__res(...array_slice(func_get_args(), 5)) : $__res;
+}
+$GLOBALS['Data_Newtype_ala'] = __NAMESPACE__ . '\\Data_Newtype_ala';
 

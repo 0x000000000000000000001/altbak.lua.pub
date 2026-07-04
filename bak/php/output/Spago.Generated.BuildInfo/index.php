@@ -25,15 +25,23 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_curry_fallback')) {
     };
   }
 }
+if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
+  function phpurs_eval_thunk($id) {
+    static $cache = [];
+    if (array_key_exists($id, $cache)) return $cache[$id];
+    switch ($id) {
+      case 'Spago_Generated_BuildInfo_spagoVersion': $v = "1.0.4"; break;
+      case 'Spago_Generated_BuildInfo_pursVersion': $v = "0.15.16"; break;
+      case 'Spago_Generated_BuildInfo_packages': $v = (object)["ps-scheme-test" => "0.0.0"]; break;
+      default: throw new \Exception("Unknown thunk " . $id);
+    }
+    $GLOBALS[$id] = $v;
+    return $cache[$id] = $v;
+  }
+}
 $Prim_undefined = function() { throw new \Exception("undefined"); };
 
 
-// Spago_Generated_BuildInfo_spagoVersion
-$Spago_Generated_BuildInfo_spagoVersion = "1.0.4";
 
-// Spago_Generated_BuildInfo_pursVersion
-$Spago_Generated_BuildInfo_pursVersion = "0.15.16";
 
-// Spago_Generated_BuildInfo_packages
-$Spago_Generated_BuildInfo_packages = (object)["ps-scheme-test" => "0.0.0"];
 

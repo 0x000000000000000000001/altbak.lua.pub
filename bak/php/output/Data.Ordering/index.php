@@ -28,103 +28,74 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_curry_fallback')) {
     };
   }
 }
-$Prim_undefined = function() { throw new \Exception("undefined"); };
-
-
-// Data_Ordering_LT
-$Data_Ordering_LT = new Phpurs_Data0("LT");
-
-// Data_Ordering_GT
-$Data_Ordering_GT = new Phpurs_Data0("GT");
-
-// Data_Ordering_EQ
-$Data_Ordering_EQ = new Phpurs_Data0("EQ");
-
-// Data_Ordering_showOrdering
-$Data_Ordering_showOrdering = ($GLOBALS['Data_Show_Show__dollar__Dict'])((object)["show" => (function() {
+if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
+  function phpurs_eval_thunk($id) {
+    static $cache = [];
+    if (array_key_exists($id, $cache)) return $cache[$id];
+    switch ($id) {
+      case 'Data_Ordering_LT': $v = ($GLOBALS['__phpurs_data0_LT'] ??= new Phpurs_Data0("LT")); break;
+      case 'Data_Ordering_GT': $v = ($GLOBALS['__phpurs_data0_GT'] ??= new Phpurs_Data0("GT")); break;
+      case 'Data_Ordering_EQ': $v = ($GLOBALS['__phpurs_data0_EQ'] ??= new Phpurs_Data0("EQ")); break;
+      case 'Data_Ordering_showOrdering': $v = (($GLOBALS['Data_Show_Show__dollar__Dict'] ?? \Data\Show\phpurs_eval_thunk('Data_Show_Show__dollar__Dict')))((object)["show" => (function() {
   $__body = function($v) {
     $__case_0 = $v;
-    if ((($__case_0)->tag === "LT")) {
+    switch (($__case_0)->tag) {
+case "LT":
 return "LT";
-} else {
-if ((($__case_0)->tag === "GT")) {
+break;
+case "GT":
 return "GT";
-} else {
-if ((($__case_0)->tag === "EQ")) {
+break;
+case "EQ":
 return "EQ";
-} else {
+break;
+default:
 throw new \Exception("Pattern match failure");
-};
-};
+break;
 };
   };
   $__fn = function($v) use ($__body, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $__body($v);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})()]);
-
-// Data_Ordering_semigroupOrdering
-$Data_Ordering_semigroupOrdering = ($GLOBALS['Data_Semigroup_Semigroup__dollar__Dict'])((object)["append" => (function() {
+})()]); break;
+      case 'Data_Ordering_semigroupOrdering': $v = (($GLOBALS['Data_Semigroup_Semigroup__dollar__Dict'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_Semigroup__dollar__Dict')))((object)["append" => (function() {
   $__body = function($v, $v1) {
     $__case_0 = $v;
     $__case_1 = $v1;
-    if ((($__case_0)->tag === "LT")) {
-return $GLOBALS['Data_Ordering_LT'];
-} else {
-if ((($__case_0)->tag === "GT")) {
-return $GLOBALS['Data_Ordering_GT'];
-} else {
-if ((($__case_0)->tag === "EQ")) {
+    switch (($__case_0)->tag) {
+case "LT":
+return ($GLOBALS['Data_Ordering_LT'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_LT'));
+break;
+case "GT":
+return ($GLOBALS['Data_Ordering_GT'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_GT'));
+break;
+case "EQ":
 $y = $__case_1;
 return $y;
-} else {
+break;
+default:
 throw new \Exception("Pattern match failure");
-};
-};
+break;
 };
   };
   $__fn = function($v, $v1 = null) use ($__body, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 2) return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
     $__res = $__body($v, $v1);
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
-})()]);
-
-// Data_Ordering_invert
-$Data_Ordering_invert = (function() {
-  $__body = function($v) {
-    $__case_0 = $v;
-    if ((($__case_0)->tag === "GT")) {
-return $GLOBALS['Data_Ordering_LT'];
-} else {
-if ((($__case_0)->tag === "EQ")) {
-return $GLOBALS['Data_Ordering_EQ'];
-} else {
-if ((($__case_0)->tag === "LT")) {
-return $GLOBALS['Data_Ordering_GT'];
-} else {
-throw new \Exception("Pattern match failure");
-};
-};
-};
-  };
-  $__fn = function($v) use ($__body, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = $__body($v);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
-
-// Data_Ordering_eqOrdering
-$Data_Ordering_eqOrdering = ($GLOBALS['Data_Eq_Eq__dollar__Dict'])((object)["eq" => (function() {
+})()]); break;
+      case 'Data_Ordering_eqOrdering': $v = (($GLOBALS['Data_Eq_Eq__dollar__Dict'] ?? \Data\Eq\phpurs_eval_thunk('Data_Eq_Eq__dollar__Dict')))((object)["eq" => (function() {
   $__body = function($v, $v1) {
     $__case_0 = $v;
     $__case_1 = $v1;
@@ -148,10 +119,56 @@ throw new \Exception("Pattern match failure");
   };
   $__fn = function($v, $v1 = null) use ($__body, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 2) return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
     $__res = $__body($v, $v1);
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
-})()]);
+})()]); break;
+      default: throw new \Exception("Unknown thunk " . $id);
+    }
+    $GLOBALS[$id] = $v;
+    return $cache[$id] = $v;
+  }
+}
+$Prim_undefined = function() { throw new \Exception("undefined"); };
+
+
+
+
+
+
+
+// Data_Ordering_invert
+function Data_Ordering_invert($v) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Ordering_invert';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+  $__body = function($v) {
+    $__case_0 = $v;
+    switch (($__case_0)->tag) {
+case "GT":
+return ($GLOBALS['Data_Ordering_LT'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_LT'));
+break;
+case "EQ":
+return ($GLOBALS['Data_Ordering_EQ'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_EQ'));
+break;
+case "LT":
+return ($GLOBALS['Data_Ordering_GT'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_GT'));
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+    $__res = $__body($v);
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Ordering_invert'] = __NAMESPACE__ . '\\Data_Ordering_invert';
+
 

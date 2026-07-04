@@ -31,55 +31,90 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_curry_fallback')) {
     };
   }
 }
-$Prim_undefined = function() { throw new \Exception("undefined"); };
-
-
-// Data_Show_Generic_append
-$Data_Show_Generic_append = ($GLOBALS['Data_Semigroup_append'])($GLOBALS['Data_Semigroup_semigroupArray']);
-
-// Data_Show_Generic_append1
-$Data_Show_Generic_append1 = ($GLOBALS['Data_Semigroup_append'])($GLOBALS['Data_Semigroup_semigroupString']);
-
-// Data_Show_Generic_GenericShowArgs$Dict
-$Data_Show_Generic_GenericShowArgs__dollar__Dict = (function() {
-  $__fn = function($x) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = $x;
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
-
-// Data_Show_Generic_GenericShow$Dict
-$Data_Show_Generic_GenericShow__dollar__Dict = (function() {
-  $__fn = function($x) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = $x;
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
-
-// Data_Show_Generic_genericShowArgsNoArguments
-$Data_Show_Generic_genericShowArgsNoArguments = ($GLOBALS['Data_Show_Generic_GenericShowArgs__dollar__Dict'])((object)["genericShowArgs" => (function() {
+if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
+  function phpurs_eval_thunk($id) {
+    static $cache = [];
+    if (array_key_exists($id, $cache)) return $cache[$id];
+    switch ($id) {
+      case 'Data_Show_Generic_append': $v = ($GLOBALS['Data_Semigroup_concatArray'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_concatArray')); break;
+      case 'Data_Show_Generic_append1': $v = ($GLOBALS['Data_Semigroup_concatString'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_concatString')); break;
+      case 'Data_Show_Generic_genericShowArgsNoArguments': $v = (($GLOBALS['Data_Show_Generic_GenericShowArgs__dollar__Dict'] ?? \Data\Show\Generic\phpurs_eval_thunk('Data_Show_Generic_GenericShowArgs__dollar__Dict')))((object)["genericShowArgs" => (function() {
   $__fn = function($v) use (&$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = [];
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})()]);
+})()]); break;
+      case 'Data_Show_Generic_genericShowNoConstructors': $v = (($GLOBALS['Data_Show_Generic_GenericShow__dollar__Dict'] ?? \Data\Show\Generic\phpurs_eval_thunk('Data_Show_Generic_GenericShow__dollar__Dict')))((object)["genericShow'" => (function() {
+  $__fn = function($a) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ((function() {
+  $__fn = function($a) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = (($GLOBALS['Data_Show_Generic_genericShow__prime__'] ?? \Data\Show\Generic\phpurs_eval_thunk('Data_Show_Generic_genericShow__prime__')))(($GLOBALS['Data_Show_Generic_genericShowNoConstructors'] ?? \Data\Show\Generic\phpurs_eval_thunk('Data_Show_Generic_genericShowNoConstructors')), $a);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})())($a);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()]); break;
+      default: throw new \Exception("Unknown thunk " . $id);
+    }
+    $GLOBALS[$id] = $v;
+    return $cache[$id] = $v;
+  }
+}
+$Prim_undefined = function() { throw new \Exception("undefined"); };
+
+
+
+
+// Data_Show_Generic_GenericShowArgs$Dict
+function Data_Show_Generic_GenericShowArgs__dollar__Dict($x) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Show_Generic_GenericShowArgs__dollar__Dict';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $x;
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Show_Generic_GenericShowArgs__dollar__Dict'] = __NAMESPACE__ . '\\Data_Show_Generic_GenericShowArgs__dollar__Dict';
+
+// Data_Show_Generic_GenericShow$Dict
+function Data_Show_Generic_GenericShow__dollar__Dict($x) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Show_Generic_GenericShow__dollar__Dict';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $x;
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Show_Generic_GenericShow__dollar__Dict'] = __NAMESPACE__ . '\\Data_Show_Generic_GenericShow__dollar__Dict';
+
 
 // Data_Show_Generic_genericShowArgsArgument
-$Data_Show_Generic_genericShowArgsArgument = (function() {
-  $__fn = function($dictShow) use (&$__fn) {
+function Data_Show_Generic_genericShowArgsArgument($dictShow) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-$show = ($GLOBALS['Data_Show_show'])($dictShow);
-    $__res = ($GLOBALS['Data_Show_Generic_GenericShowArgs__dollar__Dict'])((object)["genericShowArgs" => (function() use ($show) {
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Show_Generic_genericShowArgsArgument';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$show = (($GLOBALS['Data_Show_show'] ?? \Data\Show\phpurs_eval_thunk('Data_Show_show')))($dictShow);
+    $__res = (($GLOBALS['Data_Show_Generic_GenericShowArgs__dollar__Dict'] ?? \Data\Show\Generic\phpurs_eval_thunk('Data_Show_Generic_GenericShowArgs__dollar__Dict')))((object)["genericShowArgs" => (function() use ($show) {
   $__body = function($v) use ($show) {
     $__case_0 = $v;
     if (true) {
@@ -91,19 +126,25 @@ throw new \Exception("Pattern match failure");
   };
   $__fn = function($v) use ($show, $__body, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $__body($v);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
 })()]);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Show_Generic_genericShowArgsArgument'] = __NAMESPACE__ . '\\Data_Show_Generic_genericShowArgsArgument';
 
 // Data_Show_Generic_genericShowArgs
-$Data_Show_Generic_genericShowArgs = (function() {
+function Data_Show_Generic_genericShowArgs($dict) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Show_Generic_genericShowArgs';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
   $__body = function($dict) {
     $__case_0 = $dict;
     if (true) {
@@ -113,40 +154,45 @@ return ($v)->genericShowArgs;
 throw new \Exception("Pattern match failure");
 };
   };
-  $__fn = function($dict) use ($__body, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
     $__res = $__body($dict);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Show_Generic_genericShowArgs'] = __NAMESPACE__ . '\\Data_Show_Generic_genericShowArgs';
 
 // Data_Show_Generic_genericShowArgsProduct
-$Data_Show_Generic_genericShowArgsProduct = (function() {
-  $__fn = function($dictGenericShowArgs) use (&$__fn) {
+function Data_Show_Generic_genericShowArgsProduct($dictGenericShowArgs) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-$genericShowArgs1 = ($GLOBALS['Data_Show_Generic_genericShowArgs'])($dictGenericShowArgs);
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Show_Generic_genericShowArgsProduct';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$genericShowArgs1 = (($GLOBALS['Data_Show_Generic_genericShowArgs'] ?? \Data\Show\Generic\phpurs_eval_thunk('Data_Show_Generic_genericShowArgs')))($dictGenericShowArgs);
     $__res = (function() use ($genericShowArgs1) {
   $__fn = function($dictGenericShowArgs1) use ($genericShowArgs1, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-$genericShowArgs2 = ($GLOBALS['Data_Show_Generic_genericShowArgs'])($dictGenericShowArgs1);
-    $__res = ($GLOBALS['Data_Show_Generic_GenericShowArgs__dollar__Dict'])((object)["genericShowArgs" => (function() use ($genericShowArgs1, $genericShowArgs2) {
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$genericShowArgs2 = (($GLOBALS['Data_Show_Generic_genericShowArgs'] ?? \Data\Show\Generic\phpurs_eval_thunk('Data_Show_Generic_genericShowArgs')))($dictGenericShowArgs1);
+    $__res = (($GLOBALS['Data_Show_Generic_GenericShowArgs__dollar__Dict'] ?? \Data\Show\Generic\phpurs_eval_thunk('Data_Show_Generic_GenericShowArgs__dollar__Dict')))((object)["genericShowArgs" => (function() use ($genericShowArgs1, $genericShowArgs2) {
   $__body = function($v) use ($genericShowArgs1, $genericShowArgs2) {
     $__case_0 = $v;
-    if ((($__case_0)->tag === "Product")) {
+    switch (($__case_0)->tag) {
+case "Product":
 $a = ($__case_0)->v0;
 $b = ($__case_0)->v1;
-return ($GLOBALS['Data_Show_Generic_append'])(($genericShowArgs1)($a), ($genericShowArgs2)($b));
-} else {
+return (($GLOBALS['Data_Show_Generic_append'] ?? \Data\Show\Generic\phpurs_eval_thunk('Data_Show_Generic_append')))(($genericShowArgs1)($a), ($genericShowArgs2)($b));
+break;
+default:
 throw new \Exception("Pattern match failure");
+break;
 };
   };
   $__fn = function($v) use ($genericShowArgs1, $genericShowArgs2, $__body, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $__body($v);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
@@ -156,28 +202,31 @@ throw new \Exception("Pattern match failure");
   };
   return $__fn;
 })();
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Show_Generic_genericShowArgsProduct'] = __NAMESPACE__ . '\\Data_Show_Generic_genericShowArgsProduct';
 
 // Data_Show_Generic_genericShowConstructor
-$Data_Show_Generic_genericShowConstructor = (function() {
-  $__fn = function($dictGenericShowArgs) use (&$__fn) {
+function Data_Show_Generic_genericShowConstructor($dictGenericShowArgs) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-$genericShowArgs1 = ($GLOBALS['Data_Show_Generic_genericShowArgs'])($dictGenericShowArgs);
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Show_Generic_genericShowConstructor';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$genericShowArgs1 = (($GLOBALS['Data_Show_Generic_genericShowArgs'] ?? \Data\Show\Generic\phpurs_eval_thunk('Data_Show_Generic_genericShowArgs')))($dictGenericShowArgs);
     $__res = (function() use ($genericShowArgs1) {
   $__fn = function($dictIsSymbol) use ($genericShowArgs1, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-$reflectSymbol = ($GLOBALS['Data_Symbol_reflectSymbol'])($dictIsSymbol);
-    $__res = ($GLOBALS['Data_Show_Generic_GenericShow__dollar__Dict'])((object)["genericShow'" => (function() use ($reflectSymbol, $genericShowArgs1) {
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$reflectSymbol = (($GLOBALS['Data_Symbol_reflectSymbol'] ?? \Data\Symbol\phpurs_eval_thunk('Data_Symbol_reflectSymbol')))($dictIsSymbol);
+    $__res = (($GLOBALS['Data_Show_Generic_GenericShow__dollar__Dict'] ?? \Data\Show\Generic\phpurs_eval_thunk('Data_Show_Generic_GenericShow__dollar__Dict')))((object)["genericShow'" => (function() use ($reflectSymbol, $genericShowArgs1) {
   $__body = function($v) use ($reflectSymbol, $genericShowArgs1) {
     $__case_0 = $v;
     if (true) {
 $a = $__case_0;
-$ctor = ($reflectSymbol)($GLOBALS['Type_Proxy_Proxy']);
+$ctor = ($reflectSymbol)(($GLOBALS['Type_Proxy_Proxy'] ?? \Type\Proxy\phpurs_eval_thunk('Type_Proxy_Proxy')));
 $v1 = ($genericShowArgs1)($a);
 $__case_0 = $v1;
 if (($__case_0 === /* ArrayLiteral */)) {
@@ -185,7 +234,7 @@ return $ctor;
 } else {
 if (true) {
 $args = $__case_0;
-return ($GLOBALS['Data_Show_Generic_append1'])("(", ($GLOBALS['Data_Show_Generic_append1'])(($GLOBALS['Data_Show_Generic_intercalate'])(" ", ($GLOBALS['Data_Show_Generic_append'])([$ctor], $args)), ")"));
+return (($GLOBALS['Data_Show_Generic_append1'] ?? \Data\Show\Generic\phpurs_eval_thunk('Data_Show_Generic_append1')))("(", (($GLOBALS['Data_Show_Generic_append1'] ?? \Data\Show\Generic\phpurs_eval_thunk('Data_Show_Generic_append1')))((($GLOBALS['Data_Show_Generic_intercalate'] ?? \Data\Show\Generic\phpurs_eval_thunk('Data_Show_Generic_intercalate')))(" ", (($GLOBALS['Data_Show_Generic_append'] ?? \Data\Show\Generic\phpurs_eval_thunk('Data_Show_Generic_append')))([$ctor], $args)), ")"));
 } else {
 throw new \Exception("Pattern match failure");
 };
@@ -196,7 +245,9 @@ throw new \Exception("Pattern match failure");
   };
   $__fn = function($v) use ($reflectSymbol, $genericShowArgs1, $__body, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $__body($v);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
@@ -206,13 +257,17 @@ throw new \Exception("Pattern match failure");
   };
   return $__fn;
 })();
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Show_Generic_genericShowConstructor'] = __NAMESPACE__ . '\\Data_Show_Generic_genericShowConstructor';
 
 // Data_Show_Generic_genericShow'
-$Data_Show_Generic_genericShow__prime__ = (function() {
+function Data_Show_Generic_genericShow__prime__($dict) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Show_Generic_genericShow__prime__';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
   $__body = function($dict) {
     $__case_0 = $dict;
     if (true) {
@@ -222,55 +277,49 @@ return ($v)->genericShow__prime__;
 throw new \Exception("Pattern match failure");
 };
   };
-  $__fn = function($dict) use ($__body, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
     $__res = $__body($dict);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Show_Generic_genericShow__prime__'] = __NAMESPACE__ . '\\Data_Show_Generic_genericShow__prime__';
 
-// Data_Show_Generic_genericShowNoConstructors
-$Data_Show_Generic_genericShowNoConstructors = ($GLOBALS['Data_Show_Generic_GenericShow__dollar__Dict'])((object)["genericShow'" => (function() {
-  $__fn = function($a) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = ($GLOBALS['Data_Show_Generic_genericShow__prime__'])($GLOBALS['Data_Show_Generic_genericShowNoConstructors'], $a);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})()]);
 
 // Data_Show_Generic_genericShowSum
-$Data_Show_Generic_genericShowSum = (function() {
-  $__fn = function($dictGenericShow) use (&$__fn) {
+function Data_Show_Generic_genericShowSum($dictGenericShow) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-$genericShow__prime__1 = ($GLOBALS['Data_Show_Generic_genericShow__prime__'])($dictGenericShow);
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Show_Generic_genericShowSum';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$genericShow__prime__1 = (($GLOBALS['Data_Show_Generic_genericShow__prime__'] ?? \Data\Show\Generic\phpurs_eval_thunk('Data_Show_Generic_genericShow__prime__')))($dictGenericShow);
     $__res = (function() use ($genericShow__prime__1) {
   $__fn = function($dictGenericShow1) use ($genericShow__prime__1, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-$genericShow__prime__2 = ($GLOBALS['Data_Show_Generic_genericShow__prime__'])($dictGenericShow1);
-    $__res = ($GLOBALS['Data_Show_Generic_GenericShow__dollar__Dict'])((object)["genericShow'" => (function() use ($genericShow__prime__1, $genericShow__prime__2) {
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$genericShow__prime__2 = (($GLOBALS['Data_Show_Generic_genericShow__prime__'] ?? \Data\Show\Generic\phpurs_eval_thunk('Data_Show_Generic_genericShow__prime__')))($dictGenericShow1);
+    $__res = (($GLOBALS['Data_Show_Generic_GenericShow__dollar__Dict'] ?? \Data\Show\Generic\phpurs_eval_thunk('Data_Show_Generic_GenericShow__dollar__Dict')))((object)["genericShow'" => (function() use ($genericShow__prime__1, $genericShow__prime__2) {
   $__body = function($v) use ($genericShow__prime__1, $genericShow__prime__2) {
     $__case_0 = $v;
-    if ((($__case_0)->tag === "Inl")) {
+    switch (($__case_0)->tag) {
+case "Inl":
 $a = ($__case_0)->v0;
 return ($genericShow__prime__1)($a);
-} else {
-if ((($__case_0)->tag === "Inr")) {
+break;
+case "Inr":
 $b = ($__case_0)->v0;
 return ($genericShow__prime__2)($b);
-} else {
+break;
+default:
 throw new \Exception("Pattern match failure");
-};
+break;
 };
   };
   $__fn = function($v) use ($genericShow__prime__1, $genericShow__prime__2, $__body, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $__body($v);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
@@ -280,26 +329,31 @@ throw new \Exception("Pattern match failure");
   };
   return $__fn;
 })();
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Show_Generic_genericShowSum'] = __NAMESPACE__ . '\\Data_Show_Generic_genericShowSum';
 
 // Data_Show_Generic_genericShow
-$Data_Show_Generic_genericShow = (function() {
-  $__fn = function($dictGeneric) use (&$__fn) {
+function Data_Show_Generic_genericShow($dictGeneric) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-$from = ($GLOBALS['Data_Generic_Rep_from'])($dictGeneric);
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Show_Generic_genericShow';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$from = (($GLOBALS['Data_Generic_Rep_from'] ?? \Data\Generic\Rep\phpurs_eval_thunk('Data_Generic_Rep_from')))($dictGeneric);
     $__res = (function() use ($from) {
   $__fn = function($dictGenericShow) use ($from, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-$genericShow__prime__1 = ($GLOBALS['Data_Show_Generic_genericShow__prime__'])($dictGenericShow);
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$genericShow__prime__1 = (($GLOBALS['Data_Show_Generic_genericShow__prime__'] ?? \Data\Show\Generic\phpurs_eval_thunk('Data_Show_Generic_genericShow__prime__')))($dictGenericShow);
     $__res = (function() use ($genericShow__prime__1, $from) {
   $__fn = function($x) use ($genericShow__prime__1, $from, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = ($genericShow__prime__1)(($from)($x));
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
@@ -309,8 +363,7 @@ $genericShow__prime__1 = ($GLOBALS['Data_Show_Generic_genericShow__prime__'])($d
   };
   return $__fn;
 })();
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Show_Generic_genericShow'] = __NAMESPACE__ . '\\Data_Show_Generic_genericShow';
 

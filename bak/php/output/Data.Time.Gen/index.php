@@ -30,19 +30,32 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_curry_fallback')) {
     };
   }
 }
+if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
+  function phpurs_eval_thunk($id) {
+    static $cache = [];
+    if (array_key_exists($id, $cache)) return $cache[$id];
+    switch ($id) {
+
+      default: throw new \Exception("Unknown thunk " . $id);
+    }
+    $GLOBALS[$id] = $v;
+    return $cache[$id] = $v;
+  }
+}
 $Prim_undefined = function() { throw new \Exception("undefined"); };
 
 
 // Data_Time_Gen_genTime
-$Data_Time_Gen_genTime = (function() {
-  $__fn = function($dictMonadGen) use (&$__fn) {
+function Data_Time_Gen_genTime($dictMonadGen) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-$Apply0 = (((((($dictMonadGen)->Monad0)($GLOBALS['Prim_undefined']))->Bind1)($GLOBALS['Prim_undefined']))->Apply0)($GLOBALS['Prim_undefined']);
-$apply = ($GLOBALS['Control_Apply_apply'])($Apply0);
-    $__res = ($apply)(($apply)(($apply)(($GLOBALS['Data_Functor_map'])((($Apply0)->Functor0)($GLOBALS['Prim_undefined']), $GLOBALS['Data_Time_Time'], ($GLOBALS['Data_Time_Component_Gen_genHour'])($dictMonadGen)), ($GLOBALS['Data_Time_Component_Gen_genMinute'])($dictMonadGen)), ($GLOBALS['Data_Time_Component_Gen_genSecond'])($dictMonadGen)), ($GLOBALS['Data_Time_Component_Gen_genMillisecond'])($dictMonadGen));
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Time_Gen_genTime';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$Apply0 = (((((($dictMonadGen)->Monad0)(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))))->Bind1)(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))))->Apply0)(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined')));
+$apply = (($GLOBALS['Control_Apply_apply'] ?? \Control\Apply\phpurs_eval_thunk('Control_Apply_apply')))($Apply0);
+    $__res = ($apply)(($apply)(($apply)((($GLOBALS['Data_Functor_map'] ?? \Data\Functor\phpurs_eval_thunk('Data_Functor_map')))((($Apply0)->Functor0)(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))), ($GLOBALS['Data_Time_Time'] ?? \Data\Time\phpurs_eval_thunk('Data_Time_Time')), (($GLOBALS['Data_Time_Component_Gen_genHour'] ?? \Data\Time\Component\Gen\phpurs_eval_thunk('Data_Time_Component_Gen_genHour')))($dictMonadGen)), (($GLOBALS['Data_Time_Component_Gen_genMinute'] ?? \Data\Time\Component\Gen\phpurs_eval_thunk('Data_Time_Component_Gen_genMinute')))($dictMonadGen)), (($GLOBALS['Data_Time_Component_Gen_genSecond'] ?? \Data\Time\Component\Gen\phpurs_eval_thunk('Data_Time_Component_Gen_genSecond')))($dictMonadGen)), (($GLOBALS['Data_Time_Component_Gen_genMillisecond'] ?? \Data\Time\Component\Gen\phpurs_eval_thunk('Data_Time_Component_Gen_genMillisecond')))($dictMonadGen));
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Time_Gen_genTime'] = __NAMESPACE__ . '\\Data_Time_Gen_genTime';
 

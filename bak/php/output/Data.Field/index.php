@@ -30,29 +30,47 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_curry_fallback')) {
     };
   }
 }
+if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
+  function phpurs_eval_thunk($id) {
+    static $cache = [];
+    if (array_key_exists($id, $cache)) return $cache[$id];
+    switch ($id) {
+
+      default: throw new \Exception("Unknown thunk " . $id);
+    }
+    $GLOBALS[$id] = $v;
+    return $cache[$id] = $v;
+  }
+}
 $Prim_undefined = function() { throw new \Exception("undefined"); };
 
 
 // Data_Field_Field$Dict
-$Data_Field_Field__dollar__Dict = (function() {
-  $__fn = function($x) use (&$__fn) {
+function Data_Field_Field__dollar__Dict($x) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Field_Field__dollar__Dict';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $x;
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Field_Field__dollar__Dict'] = __NAMESPACE__ . '\\Data_Field_Field__dollar__Dict';
 
 // Data_Field_field
-$Data_Field_field = (function() {
-  $__fn = function($dictEuclideanRing, $dictDivisionRing = null) use (&$__fn) {
+function Data_Field_field($dictEuclideanRing, $dictDivisionRing = null) {
   $__num = func_num_args();
-  if ($__num < 2) return phpurs_curry_fallback($__fn, func_get_args(), 2);
-    $__res = ($GLOBALS['Data_Field_Field__dollar__Dict'])((object)["EuclideanRing0" => (function() use ($dictEuclideanRing) {
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Field_field';
+  if ($__num < 2) {
+    if ($__num === 1) return function($dictDivisionRing) use ($dictEuclideanRing, $__fn) { return $__fn($dictEuclideanRing, $dictDivisionRing); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = (($GLOBALS['Data_Field_Field__dollar__Dict'] ?? \Data\Field\phpurs_eval_thunk('Data_Field_Field__dollar__Dict')))((object)["EuclideanRing0" => (function() use ($dictEuclideanRing) {
   $__fn = function($__dollar____unused) use ($dictEuclideanRing, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $dictEuclideanRing;
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
@@ -60,14 +78,15 @@ $Data_Field_field = (function() {
 })(), "DivisionRing1" => (function() use ($dictDivisionRing) {
   $__fn = function($__dollar____unused) use ($dictDivisionRing, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $dictDivisionRing;
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
 })()]);
-  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
-  };
-  return $__fn;
-})();
+    return 2 < $__num ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+}
+$GLOBALS['Data_Field_field'] = __NAMESPACE__ . '\\Data_Field_field';
 

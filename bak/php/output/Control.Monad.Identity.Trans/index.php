@@ -52,47 +52,104 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_curry_fallback')) {
     };
   }
 }
+if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
+  function phpurs_eval_thunk($id) {
+    static $cache = [];
+    if (array_key_exists($id, $cache)) return $cache[$id];
+    switch ($id) {
+      case 'Control_Monad_Identity_Trans_newtypeIdentityT': $v = (($GLOBALS['Data_Newtype_Newtype__dollar__Dict'] ?? \Data\Newtype\phpurs_eval_thunk('Data_Newtype_Newtype__dollar__Dict')))((object)["Coercible0" => (function() {
+  $__fn = function($__dollar____unused) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()]); break;
+      case 'Control_Monad_Identity_Trans_monadTransIdentityT': $v = (($GLOBALS['Control_Monad_Trans_Class_MonadTrans__dollar__Dict'] ?? \Control\Monad\Trans\Class\phpurs_eval_thunk('Control_Monad_Trans_Class_MonadTrans__dollar__Dict')))((object)["lift" => (function() {
+  $__fn = function($dictMonad) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($GLOBALS['Control_Monad_Identity_Trans_IdentityT'] ?? \Control\Monad\Identity\Trans\phpurs_eval_thunk('Control_Monad_Identity_Trans_IdentityT'));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()]); break;
+      default: throw new \Exception("Unknown thunk " . $id);
+    }
+    $GLOBALS[$id] = $v;
+    return $cache[$id] = $v;
+  }
+}
 $Prim_undefined = function() { throw new \Exception("undefined"); };
 
 
 // Control_Monad_Identity_Trans_compose
-$Control_Monad_Identity_Trans_compose = ($GLOBALS['Control_Semigroupoid_compose'])($GLOBALS['Control_Semigroupoid_semigroupoidFn']);
+function Control_Monad_Identity_Trans_compose($f, $g = null, $x = null) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Control_Monad_Identity_Trans_compose';
+  if ($__num < 3) {
+    if ($__num === 2) return function($x) use ($f, $g, $__fn) { return $__fn($f, $g, $x); };
+    if ($__num === 1) return function($g, $x = null) use ($f, $__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $g, $x);
+      if ($__num2 === 1) return function($x) use ($f, $g, $__fn) { return $__fn($f, $g, $x); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = ($f)(($g)($x));
+    return 3 < $__num ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+}
+$GLOBALS['Control_Monad_Identity_Trans_compose'] = __NAMESPACE__ . '\\Control_Monad_Identity_Trans_compose';
 
 // Control_Monad_Identity_Trans_IdentityT
-$Control_Monad_Identity_Trans_IdentityT = (function() {
-  $__fn = function($x) use (&$__fn) {
+function Control_Monad_Identity_Trans_IdentityT($x) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  $__fn = __NAMESPACE__ . '\\' . 'Control_Monad_Identity_Trans_IdentityT';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $x;
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Control_Monad_Identity_Trans_IdentityT'] = __NAMESPACE__ . '\\Control_Monad_Identity_Trans_IdentityT';
 
 // Control_Monad_Identity_Trans_monadSTIdentityT
-$Control_Monad_Identity_Trans_monadSTIdentityT = (function() {
-  $__fn = function($dictMonadST) use (&$__fn) {
+function Control_Monad_Identity_Trans_monadSTIdentityT($dictMonadST) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  $__fn = __NAMESPACE__ . '\\' . 'Control_Monad_Identity_Trans_monadSTIdentityT';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $dictMonadST;
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Control_Monad_Identity_Trans_monadSTIdentityT'] = __NAMESPACE__ . '\\Control_Monad_Identity_Trans_monadSTIdentityT';
 
 // Control_Monad_Identity_Trans_traversableIdentityT
-$Control_Monad_Identity_Trans_traversableIdentityT = (function() {
-  $__fn = function($dictTraversable) use (&$__fn) {
+function Control_Monad_Identity_Trans_traversableIdentityT($dictTraversable) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  $__fn = __NAMESPACE__ . '\\' . 'Control_Monad_Identity_Trans_traversableIdentityT';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $dictTraversable;
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Control_Monad_Identity_Trans_traversableIdentityT'] = __NAMESPACE__ . '\\Control_Monad_Identity_Trans_traversableIdentityT';
 
 // Control_Monad_Identity_Trans_runIdentityT
-$Control_Monad_Identity_Trans_runIdentityT = (function() {
+function Control_Monad_Identity_Trans_runIdentityT($v) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Control_Monad_Identity_Trans_runIdentityT';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
   $__body = function($v) {
     $__case_0 = $v;
     if (true) {
@@ -102,246 +159,244 @@ return $ma;
 throw new \Exception("Pattern match failure");
 };
   };
-  $__fn = function($v) use ($__body, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
     $__res = $__body($v);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Control_Monad_Identity_Trans_runIdentityT'] = __NAMESPACE__ . '\\Control_Monad_Identity_Trans_runIdentityT';
 
 // Control_Monad_Identity_Trans_plusIdentityT
-$Control_Monad_Identity_Trans_plusIdentityT = (function() {
-  $__fn = function($dictPlus) use (&$__fn) {
+function Control_Monad_Identity_Trans_plusIdentityT($dictPlus) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  $__fn = __NAMESPACE__ . '\\' . 'Control_Monad_Identity_Trans_plusIdentityT';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $dictPlus;
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Control_Monad_Identity_Trans_plusIdentityT'] = __NAMESPACE__ . '\\Control_Monad_Identity_Trans_plusIdentityT';
 
-// Control_Monad_Identity_Trans_newtypeIdentityT
-$Control_Monad_Identity_Trans_newtypeIdentityT = ($GLOBALS['Data_Newtype_Newtype__dollar__Dict'])((object)["Coercible0" => (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = $GLOBALS['Prim_undefined'];
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})()]);
 
 // Control_Monad_Identity_Trans_monadWriterIdentityT
-$Control_Monad_Identity_Trans_monadWriterIdentityT = (function() {
-  $__fn = function($dictMonadWriter) use (&$__fn) {
+function Control_Monad_Identity_Trans_monadWriterIdentityT($dictMonadWriter) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  $__fn = __NAMESPACE__ . '\\' . 'Control_Monad_Identity_Trans_monadWriterIdentityT';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $dictMonadWriter;
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Control_Monad_Identity_Trans_monadWriterIdentityT'] = __NAMESPACE__ . '\\Control_Monad_Identity_Trans_monadWriterIdentityT';
 
-// Control_Monad_Identity_Trans_monadTransIdentityT
-$Control_Monad_Identity_Trans_monadTransIdentityT = ($GLOBALS['Control_Monad_Trans_Class_MonadTrans__dollar__Dict'])((object)["lift" => (function() {
-  $__fn = function($dictMonad) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = $GLOBALS['Control_Monad_Identity_Trans_IdentityT'];
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})()]);
 
 // Control_Monad_Identity_Trans_monadThrowIdentityT
-$Control_Monad_Identity_Trans_monadThrowIdentityT = (function() {
-  $__fn = function($dictMonadThrow) use (&$__fn) {
+function Control_Monad_Identity_Trans_monadThrowIdentityT($dictMonadThrow) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  $__fn = __NAMESPACE__ . '\\' . 'Control_Monad_Identity_Trans_monadThrowIdentityT';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $dictMonadThrow;
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Control_Monad_Identity_Trans_monadThrowIdentityT'] = __NAMESPACE__ . '\\Control_Monad_Identity_Trans_monadThrowIdentityT';
 
 // Control_Monad_Identity_Trans_monadTellIdentityT
-$Control_Monad_Identity_Trans_monadTellIdentityT = (function() {
-  $__fn = function($dictMonadTell) use (&$__fn) {
+function Control_Monad_Identity_Trans_monadTellIdentityT($dictMonadTell) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  $__fn = __NAMESPACE__ . '\\' . 'Control_Monad_Identity_Trans_monadTellIdentityT';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $dictMonadTell;
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Control_Monad_Identity_Trans_monadTellIdentityT'] = __NAMESPACE__ . '\\Control_Monad_Identity_Trans_monadTellIdentityT';
 
 // Control_Monad_Identity_Trans_monadStateIdentityT
-$Control_Monad_Identity_Trans_monadStateIdentityT = (function() {
-  $__fn = function($dictMonadState) use (&$__fn) {
+function Control_Monad_Identity_Trans_monadStateIdentityT($dictMonadState) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  $__fn = __NAMESPACE__ . '\\' . 'Control_Monad_Identity_Trans_monadStateIdentityT';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $dictMonadState;
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Control_Monad_Identity_Trans_monadStateIdentityT'] = __NAMESPACE__ . '\\Control_Monad_Identity_Trans_monadStateIdentityT';
 
 // Control_Monad_Identity_Trans_monadRecIdentityT
-$Control_Monad_Identity_Trans_monadRecIdentityT = (function() {
-  $__fn = function($dictMonadRec) use (&$__fn) {
+function Control_Monad_Identity_Trans_monadRecIdentityT($dictMonadRec) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  $__fn = __NAMESPACE__ . '\\' . 'Control_Monad_Identity_Trans_monadRecIdentityT';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $dictMonadRec;
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Control_Monad_Identity_Trans_monadRecIdentityT'] = __NAMESPACE__ . '\\Control_Monad_Identity_Trans_monadRecIdentityT';
 
 // Control_Monad_Identity_Trans_monadReaderIdentityT
-$Control_Monad_Identity_Trans_monadReaderIdentityT = (function() {
-  $__fn = function($dictMonadReader) use (&$__fn) {
+function Control_Monad_Identity_Trans_monadReaderIdentityT($dictMonadReader) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  $__fn = __NAMESPACE__ . '\\' . 'Control_Monad_Identity_Trans_monadReaderIdentityT';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $dictMonadReader;
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Control_Monad_Identity_Trans_monadReaderIdentityT'] = __NAMESPACE__ . '\\Control_Monad_Identity_Trans_monadReaderIdentityT';
 
 // Control_Monad_Identity_Trans_monadPlusIdentityT
-$Control_Monad_Identity_Trans_monadPlusIdentityT = (function() {
-  $__fn = function($dictMonadPlus) use (&$__fn) {
+function Control_Monad_Identity_Trans_monadPlusIdentityT($dictMonadPlus) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  $__fn = __NAMESPACE__ . '\\' . 'Control_Monad_Identity_Trans_monadPlusIdentityT';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $dictMonadPlus;
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Control_Monad_Identity_Trans_monadPlusIdentityT'] = __NAMESPACE__ . '\\Control_Monad_Identity_Trans_monadPlusIdentityT';
 
 // Control_Monad_Identity_Trans_monadIdentityT
-$Control_Monad_Identity_Trans_monadIdentityT = (function() {
-  $__fn = function($dictMonad) use (&$__fn) {
+function Control_Monad_Identity_Trans_monadIdentityT($dictMonad) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  $__fn = __NAMESPACE__ . '\\' . 'Control_Monad_Identity_Trans_monadIdentityT';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $dictMonad;
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Control_Monad_Identity_Trans_monadIdentityT'] = __NAMESPACE__ . '\\Control_Monad_Identity_Trans_monadIdentityT';
 
 // Control_Monad_Identity_Trans_monadErrorIdentityT
-$Control_Monad_Identity_Trans_monadErrorIdentityT = (function() {
-  $__fn = function($dictMonadError) use (&$__fn) {
+function Control_Monad_Identity_Trans_monadErrorIdentityT($dictMonadError) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  $__fn = __NAMESPACE__ . '\\' . 'Control_Monad_Identity_Trans_monadErrorIdentityT';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $dictMonadError;
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Control_Monad_Identity_Trans_monadErrorIdentityT'] = __NAMESPACE__ . '\\Control_Monad_Identity_Trans_monadErrorIdentityT';
 
 // Control_Monad_Identity_Trans_monadEffectIdentityT
-$Control_Monad_Identity_Trans_monadEffectIdentityT = (function() {
-  $__fn = function($dictMonadEffect) use (&$__fn) {
+function Control_Monad_Identity_Trans_monadEffectIdentityT($dictMonadEffect) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  $__fn = __NAMESPACE__ . '\\' . 'Control_Monad_Identity_Trans_monadEffectIdentityT';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $dictMonadEffect;
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Control_Monad_Identity_Trans_monadEffectIdentityT'] = __NAMESPACE__ . '\\Control_Monad_Identity_Trans_monadEffectIdentityT';
 
 // Control_Monad_Identity_Trans_monadContIdentityT
-$Control_Monad_Identity_Trans_monadContIdentityT = (function() {
-  $__fn = function($dictMonadCont) use (&$__fn) {
+function Control_Monad_Identity_Trans_monadContIdentityT($dictMonadCont) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  $__fn = __NAMESPACE__ . '\\' . 'Control_Monad_Identity_Trans_monadContIdentityT';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $dictMonadCont;
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Control_Monad_Identity_Trans_monadContIdentityT'] = __NAMESPACE__ . '\\Control_Monad_Identity_Trans_monadContIdentityT';
 
 // Control_Monad_Identity_Trans_monadAskIdentityT
-$Control_Monad_Identity_Trans_monadAskIdentityT = (function() {
-  $__fn = function($dictMonadAsk) use (&$__fn) {
+function Control_Monad_Identity_Trans_monadAskIdentityT($dictMonadAsk) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  $__fn = __NAMESPACE__ . '\\' . 'Control_Monad_Identity_Trans_monadAskIdentityT';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $dictMonadAsk;
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Control_Monad_Identity_Trans_monadAskIdentityT'] = __NAMESPACE__ . '\\Control_Monad_Identity_Trans_monadAskIdentityT';
 
 // Control_Monad_Identity_Trans_mapIdentityT
-$Control_Monad_Identity_Trans_mapIdentityT = (function() {
+function Control_Monad_Identity_Trans_mapIdentityT($f, $v = null) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Control_Monad_Identity_Trans_mapIdentityT';
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, $__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
   $__body = function($f, $v) {
     $__case_0 = $f;
     $__case_1 = $v;
     if (true) {
 $f1 = $__case_0;
 $m = $__case_1;
-return ($GLOBALS['Control_Monad_Identity_Trans_IdentityT'])(($f1)($m));
+return (($GLOBALS['Control_Monad_Identity_Trans_IdentityT'] ?? \Control\Monad\Identity\Trans\phpurs_eval_thunk('Control_Monad_Identity_Trans_IdentityT')))(($f1)($m));
 } else {
 throw new \Exception("Pattern match failure");
 };
   };
-  $__fn = function($f, $v = null) use ($__body, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 2) return phpurs_curry_fallback($__fn, func_get_args(), 2);
     $__res = $__body($f, $v);
-  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
-  };
-  return $__fn;
-})();
+    return 2 < $__num ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+}
+$GLOBALS['Control_Monad_Identity_Trans_mapIdentityT'] = __NAMESPACE__ . '\\Control_Monad_Identity_Trans_mapIdentityT';
 
 // Control_Monad_Identity_Trans_functorIdentityT
-$Control_Monad_Identity_Trans_functorIdentityT = (function() {
-  $__fn = function($dictFunctor) use (&$__fn) {
+function Control_Monad_Identity_Trans_functorIdentityT($dictFunctor) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  $__fn = __NAMESPACE__ . '\\' . 'Control_Monad_Identity_Trans_functorIdentityT';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $dictFunctor;
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Control_Monad_Identity_Trans_functorIdentityT'] = __NAMESPACE__ . '\\Control_Monad_Identity_Trans_functorIdentityT';
 
 // Control_Monad_Identity_Trans_foldableIdentityT
-$Control_Monad_Identity_Trans_foldableIdentityT = (function() {
-  $__fn = function($dictFoldable) use (&$__fn) {
+function Control_Monad_Identity_Trans_foldableIdentityT($dictFoldable) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  $__fn = __NAMESPACE__ . '\\' . 'Control_Monad_Identity_Trans_foldableIdentityT';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $dictFoldable;
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Control_Monad_Identity_Trans_foldableIdentityT'] = __NAMESPACE__ . '\\Control_Monad_Identity_Trans_foldableIdentityT';
 
 // Control_Monad_Identity_Trans_extendIdentityI
-$Control_Monad_Identity_Trans_extendIdentityI = (function() {
-  $__fn = function($dictExtend) use (&$__fn) {
+function Control_Monad_Identity_Trans_extendIdentityI($dictExtend) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-$extend = ($GLOBALS['Control_Extend_extend'])($dictExtend);
-$functorIdentityT1 = ($GLOBALS['Control_Monad_Identity_Trans_functorIdentityT'])((($dictExtend)->Functor0)($GLOBALS['Prim_undefined']));
-    $__res = ($GLOBALS['Control_Extend_Extend__dollar__Dict'])((object)["extend" => (function() use ($extend) {
+  $__fn = __NAMESPACE__ . '\\' . 'Control_Monad_Identity_Trans_extendIdentityI';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$extend = (($GLOBALS['Control_Extend_extend'] ?? \Control\Extend\phpurs_eval_thunk('Control_Extend_extend')))($dictExtend);
+$functorIdentityT1 = (($GLOBALS['Control_Monad_Identity_Trans_functorIdentityT'] ?? \Control\Monad\Identity\Trans\phpurs_eval_thunk('Control_Monad_Identity_Trans_functorIdentityT')))((($dictExtend)->Functor0)(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))));
+    $__res = (($GLOBALS['Control_Extend_Extend__dollar__Dict'] ?? \Control\Extend\phpurs_eval_thunk('Control_Extend_Extend__dollar__Dict')))((object)["extend" => (function() use ($extend) {
   $__body = function($f, $v) use ($extend) {
     $__case_0 = $f;
     $__case_1 = $v;
     if (true) {
 $f1 = $__case_0;
 $m = $__case_1;
-return ($GLOBALS['Control_Monad_Identity_Trans_IdentityT'])(($extend)(($GLOBALS['Control_Monad_Identity_Trans_compose'])($f1, $GLOBALS['Control_Monad_Identity_Trans_IdentityT']), $m));
+return (($GLOBALS['Control_Monad_Identity_Trans_IdentityT'] ?? \Control\Monad\Identity\Trans\phpurs_eval_thunk('Control_Monad_Identity_Trans_IdentityT')))(($extend)((($GLOBALS['Control_Monad_Identity_Trans_compose'] ?? \Control\Monad\Identity\Trans\phpurs_eval_thunk('Control_Monad_Identity_Trans_compose')))($f1, ($GLOBALS['Control_Monad_Identity_Trans_IdentityT'] ?? \Control\Monad\Identity\Trans\phpurs_eval_thunk('Control_Monad_Identity_Trans_IdentityT'))), $m));
 } else {
 throw new \Exception("Pattern match failure");
 };
   };
   $__fn = function($f, $v = null) use ($extend, $__body, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 2) return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, &$__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
     $__res = $__body($f, $v);
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
@@ -349,29 +404,34 @@ throw new \Exception("Pattern match failure");
 })(), "Functor0" => (function() use ($functorIdentityT1) {
   $__fn = function($__dollar____unused) use ($functorIdentityT1, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $functorIdentityT1;
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
 })()]);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Control_Monad_Identity_Trans_extendIdentityI'] = __NAMESPACE__ . '\\Control_Monad_Identity_Trans_extendIdentityI';
 
 // Control_Monad_Identity_Trans_eqIdentityT
-$Control_Monad_Identity_Trans_eqIdentityT = (function() {
-  $__fn = function($dictEq1) use (&$__fn) {
+function Control_Monad_Identity_Trans_eqIdentityT($dictEq1) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-$eq1 = ($GLOBALS['Data_Eq_eq1'])($dictEq1);
+  $__fn = __NAMESPACE__ . '\\' . 'Control_Monad_Identity_Trans_eqIdentityT';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$eq1 = (($GLOBALS['Data_Eq_eq1'] ?? \Data\Eq\phpurs_eval_thunk('Data_Eq_eq1')))($dictEq1);
     $__res = (function() use ($eq1) {
   $__fn = function($dictEq) use ($eq1, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
 $eq11 = ($eq1)($dictEq);
-    $__res = ($GLOBALS['Data_Eq_Eq__dollar__Dict'])((object)["eq" => (function() use ($eq11) {
+    $__res = (($GLOBALS['Data_Eq_Eq__dollar__Dict'] ?? \Data\Eq\phpurs_eval_thunk('Data_Eq_Eq__dollar__Dict')))((object)["eq" => (function() use ($eq11) {
   $__body = function($x, $y) use ($eq11) {
     $__case_0 = $x;
     $__case_1 = $y;
@@ -385,7 +445,10 @@ throw new \Exception("Pattern match failure");
   };
   $__fn = function($x, $y = null) use ($eq11, $__body, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 2) return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  if ($__num < 2) {
+    if ($__num === 1) return function($y) use ($x, &$__fn) { return $__fn($x, $y); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
     $__res = $__body($x, $y);
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
@@ -395,25 +458,28 @@ throw new \Exception("Pattern match failure");
   };
   return $__fn;
 })();
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Control_Monad_Identity_Trans_eqIdentityT'] = __NAMESPACE__ . '\\Control_Monad_Identity_Trans_eqIdentityT';
 
 // Control_Monad_Identity_Trans_ordIdentityT
-$Control_Monad_Identity_Trans_ordIdentityT = (function() {
-  $__fn = function($dictOrd1) use (&$__fn) {
+function Control_Monad_Identity_Trans_ordIdentityT($dictOrd1) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-$compare1 = ($GLOBALS['Data_Ord_compare1'])($dictOrd1);
-$eqIdentityT1 = ($GLOBALS['Control_Monad_Identity_Trans_eqIdentityT'])((($dictOrd1)->Eq10)($GLOBALS['Prim_undefined']));
+  $__fn = __NAMESPACE__ . '\\' . 'Control_Monad_Identity_Trans_ordIdentityT';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$compare1 = (($GLOBALS['Data_Ord_compare1'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_compare1')))($dictOrd1);
+$eqIdentityT1 = (($GLOBALS['Control_Monad_Identity_Trans_eqIdentityT'] ?? \Control\Monad\Identity\Trans\phpurs_eval_thunk('Control_Monad_Identity_Trans_eqIdentityT')))((($dictOrd1)->Eq10)(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))));
     $__res = (function() use ($compare1, $eqIdentityT1) {
   $__fn = function($dictOrd) use ($compare1, $eqIdentityT1, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
 $compare11 = ($compare1)($dictOrd);
-$eqIdentityT2 = ($eqIdentityT1)((($dictOrd)->Eq0)($GLOBALS['Prim_undefined']));
-    $__res = ($GLOBALS['Data_Ord_Ord__dollar__Dict'])((object)["compare" => (function() use ($compare11) {
+$eqIdentityT2 = ($eqIdentityT1)((($dictOrd)->Eq0)(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))));
+    $__res = (($GLOBALS['Data_Ord_Ord__dollar__Dict'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_Ord__dollar__Dict')))((object)["compare" => (function() use ($compare11) {
   $__body = function($x, $y) use ($compare11) {
     $__case_0 = $x;
     $__case_1 = $y;
@@ -427,7 +493,10 @@ throw new \Exception("Pattern match failure");
   };
   $__fn = function($x, $y = null) use ($compare11, $__body, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 2) return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  if ($__num < 2) {
+    if ($__num === 1) return function($y) use ($x, &$__fn) { return $__fn($x, $y); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
     $__res = $__body($x, $y);
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
@@ -435,7 +504,9 @@ throw new \Exception("Pattern match failure");
 })(), "Eq0" => (function() use ($eqIdentityT2) {
   $__fn = function($__dollar____unused) use ($eqIdentityT2, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $eqIdentityT2;
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
@@ -445,132 +516,147 @@ throw new \Exception("Pattern match failure");
   };
   return $__fn;
 })();
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Control_Monad_Identity_Trans_ordIdentityT'] = __NAMESPACE__ . '\\Control_Monad_Identity_Trans_ordIdentityT';
 
 // Control_Monad_Identity_Trans_eq1IdentityT
-$Control_Monad_Identity_Trans_eq1IdentityT = (function() {
-  $__fn = function($dictEq1) use (&$__fn) {
+function Control_Monad_Identity_Trans_eq1IdentityT($dictEq1) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-$eqIdentityT1 = ($GLOBALS['Control_Monad_Identity_Trans_eqIdentityT'])($dictEq1);
-    $__res = ($GLOBALS['Data_Eq_Eq1__dollar__Dict'])((object)["eq1" => (function() use ($eqIdentityT1) {
+  $__fn = __NAMESPACE__ . '\\' . 'Control_Monad_Identity_Trans_eq1IdentityT';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$eqIdentityT1 = (($GLOBALS['Control_Monad_Identity_Trans_eqIdentityT'] ?? \Control\Monad\Identity\Trans\phpurs_eval_thunk('Control_Monad_Identity_Trans_eqIdentityT')))($dictEq1);
+    $__res = (($GLOBALS['Data_Eq_Eq1__dollar__Dict'] ?? \Data\Eq\phpurs_eval_thunk('Data_Eq_Eq1__dollar__Dict')))((object)["eq1" => (function() use ($eqIdentityT1) {
   $__fn = function($dictEq) use ($eqIdentityT1, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = ($GLOBALS['Data_Eq_eq'])(($eqIdentityT1)($dictEq));
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = (($GLOBALS['Data_Eq_eq'] ?? \Data\Eq\phpurs_eval_thunk('Data_Eq_eq')))(($eqIdentityT1)($dictEq));
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
 })()]);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Control_Monad_Identity_Trans_eq1IdentityT'] = __NAMESPACE__ . '\\Control_Monad_Identity_Trans_eq1IdentityT';
 
 // Control_Monad_Identity_Trans_ord1IdentityT
-$Control_Monad_Identity_Trans_ord1IdentityT = (function() {
-  $__fn = function($dictOrd1) use (&$__fn) {
+function Control_Monad_Identity_Trans_ord1IdentityT($dictOrd1) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-$ordIdentityT1 = ($GLOBALS['Control_Monad_Identity_Trans_ordIdentityT'])($dictOrd1);
-$eq1IdentityT1 = ($GLOBALS['Control_Monad_Identity_Trans_eq1IdentityT'])((($dictOrd1)->Eq10)($GLOBALS['Prim_undefined']));
-    $__res = ($GLOBALS['Data_Ord_Ord1__dollar__Dict'])((object)["compare1" => (function() use ($ordIdentityT1) {
+  $__fn = __NAMESPACE__ . '\\' . 'Control_Monad_Identity_Trans_ord1IdentityT';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$ordIdentityT1 = (($GLOBALS['Control_Monad_Identity_Trans_ordIdentityT'] ?? \Control\Monad\Identity\Trans\phpurs_eval_thunk('Control_Monad_Identity_Trans_ordIdentityT')))($dictOrd1);
+$eq1IdentityT1 = (($GLOBALS['Control_Monad_Identity_Trans_eq1IdentityT'] ?? \Control\Monad\Identity\Trans\phpurs_eval_thunk('Control_Monad_Identity_Trans_eq1IdentityT')))((($dictOrd1)->Eq10)(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))));
+    $__res = (($GLOBALS['Data_Ord_Ord1__dollar__Dict'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_Ord1__dollar__Dict')))((object)["compare1" => (function() use ($ordIdentityT1) {
   $__fn = function($dictOrd) use ($ordIdentityT1, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = ($GLOBALS['Data_Ord_compare'])(($ordIdentityT1)($dictOrd));
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = (($GLOBALS['Data_Ord_compare'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_compare')))(($ordIdentityT1)($dictOrd));
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
 })(), "Eq10" => (function() use ($eq1IdentityT1) {
   $__fn = function($__dollar____unused) use ($eq1IdentityT1, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $eq1IdentityT1;
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
 })()]);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Control_Monad_Identity_Trans_ord1IdentityT'] = __NAMESPACE__ . '\\Control_Monad_Identity_Trans_ord1IdentityT';
 
 // Control_Monad_Identity_Trans_comonadIdentityT
-$Control_Monad_Identity_Trans_comonadIdentityT = (function() {
-  $__fn = function($dictComonad) use (&$__fn) {
+function Control_Monad_Identity_Trans_comonadIdentityT($dictComonad) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-$extendIdentityI1 = ($GLOBALS['Control_Monad_Identity_Trans_extendIdentityI'])((($dictComonad)->Extend0)($GLOBALS['Prim_undefined']));
-    $__res = ($GLOBALS['Control_Comonad_Comonad__dollar__Dict'])((object)["extract" => ($GLOBALS['Control_Monad_Identity_Trans_compose'])(($GLOBALS['Control_Comonad_extract'])($dictComonad), $GLOBALS['Control_Monad_Identity_Trans_runIdentityT']), "Extend0" => (function() use ($extendIdentityI1) {
+  $__fn = __NAMESPACE__ . '\\' . 'Control_Monad_Identity_Trans_comonadIdentityT';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$extendIdentityI1 = (($GLOBALS['Control_Monad_Identity_Trans_extendIdentityI'] ?? \Control\Monad\Identity\Trans\phpurs_eval_thunk('Control_Monad_Identity_Trans_extendIdentityI')))((($dictComonad)->Extend0)(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))));
+    $__res = (($GLOBALS['Control_Comonad_Comonad__dollar__Dict'] ?? \Control\Comonad\phpurs_eval_thunk('Control_Comonad_Comonad__dollar__Dict')))((object)["extract" => (($GLOBALS['Control_Monad_Identity_Trans_compose'] ?? \Control\Monad\Identity\Trans\phpurs_eval_thunk('Control_Monad_Identity_Trans_compose')))((($GLOBALS['Control_Comonad_extract'] ?? \Control\Comonad\phpurs_eval_thunk('Control_Comonad_extract')))($dictComonad), ($GLOBALS['Control_Monad_Identity_Trans_runIdentityT'] ?? \Control\Monad\Identity\Trans\phpurs_eval_thunk('Control_Monad_Identity_Trans_runIdentityT'))), "Extend0" => (function() use ($extendIdentityI1) {
   $__fn = function($__dollar____unused) use ($extendIdentityI1, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $extendIdentityI1;
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
 })()]);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Control_Monad_Identity_Trans_comonadIdentityT'] = __NAMESPACE__ . '\\Control_Monad_Identity_Trans_comonadIdentityT';
 
 // Control_Monad_Identity_Trans_bindIdentityT
-$Control_Monad_Identity_Trans_bindIdentityT = (function() {
-  $__fn = function($dictBind) use (&$__fn) {
+function Control_Monad_Identity_Trans_bindIdentityT($dictBind) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  $__fn = __NAMESPACE__ . '\\' . 'Control_Monad_Identity_Trans_bindIdentityT';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $dictBind;
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Control_Monad_Identity_Trans_bindIdentityT'] = __NAMESPACE__ . '\\Control_Monad_Identity_Trans_bindIdentityT';
 
 // Control_Monad_Identity_Trans_applyIdentityT
-$Control_Monad_Identity_Trans_applyIdentityT = (function() {
-  $__fn = function($dictApply) use (&$__fn) {
+function Control_Monad_Identity_Trans_applyIdentityT($dictApply) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  $__fn = __NAMESPACE__ . '\\' . 'Control_Monad_Identity_Trans_applyIdentityT';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $dictApply;
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Control_Monad_Identity_Trans_applyIdentityT'] = __NAMESPACE__ . '\\Control_Monad_Identity_Trans_applyIdentityT';
 
 // Control_Monad_Identity_Trans_applicativeIdentityT
-$Control_Monad_Identity_Trans_applicativeIdentityT = (function() {
-  $__fn = function($dictApplicative) use (&$__fn) {
+function Control_Monad_Identity_Trans_applicativeIdentityT($dictApplicative) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  $__fn = __NAMESPACE__ . '\\' . 'Control_Monad_Identity_Trans_applicativeIdentityT';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $dictApplicative;
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Control_Monad_Identity_Trans_applicativeIdentityT'] = __NAMESPACE__ . '\\Control_Monad_Identity_Trans_applicativeIdentityT';
 
 // Control_Monad_Identity_Trans_alternativeIdentityT
-$Control_Monad_Identity_Trans_alternativeIdentityT = (function() {
-  $__fn = function($dictAlternative) use (&$__fn) {
+function Control_Monad_Identity_Trans_alternativeIdentityT($dictAlternative) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  $__fn = __NAMESPACE__ . '\\' . 'Control_Monad_Identity_Trans_alternativeIdentityT';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $dictAlternative;
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Control_Monad_Identity_Trans_alternativeIdentityT'] = __NAMESPACE__ . '\\Control_Monad_Identity_Trans_alternativeIdentityT';
 
 // Control_Monad_Identity_Trans_altIdentityT
-$Control_Monad_Identity_Trans_altIdentityT = (function() {
-  $__fn = function($dictAlt) use (&$__fn) {
+function Control_Monad_Identity_Trans_altIdentityT($dictAlt) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  $__fn = __NAMESPACE__ . '\\' . 'Control_Monad_Identity_Trans_altIdentityT';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $dictAlt;
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Control_Monad_Identity_Trans_altIdentityT'] = __NAMESPACE__ . '\\Control_Monad_Identity_Trans_altIdentityT';
 

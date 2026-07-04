@@ -32,33 +32,45 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_curry_fallback')) {
     };
   }
 }
+if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
+  function phpurs_eval_thunk($id) {
+    static $cache = [];
+    if (array_key_exists($id, $cache)) return $cache[$id];
+    switch ($id) {
+      case 'Test_Ackermann_add': $v = ($GLOBALS['Data_Semiring_intAdd'] ?? \Data\Semiring\phpurs_eval_thunk('Data_Semiring_intAdd')); break;
+      case 'Test_Ackermann_sub': $v = ($GLOBALS['Data_Ring_intSub'] ?? \Data\Ring\phpurs_eval_thunk('Data_Ring_intSub')); break;
+      case 'Test_Ackermann_describe': $v = (($GLOBALS['Effect_Console_log'] ?? \Effect\Console\phpurs_eval_thunk('Effect_Console_log')))("Ackermann (3, 4):"); break;
+      case 'Test_Ackermann_act': $v = (($GLOBALS['Effect_Console_logShow'] ?? \Effect\Console\phpurs_eval_thunk('Effect_Console_logShow')))(($GLOBALS['Data_Show_showInt'] ?? \Data\Show\phpurs_eval_thunk('Data_Show_showInt')), (($GLOBALS['Test_Ackermann_ackermann'] ?? \Test\Ackermann\phpurs_eval_thunk('Test_Ackermann_ackermann')))(3, 4)); break;
+      default: throw new \Exception("Unknown thunk " . $id);
+    }
+    $GLOBALS[$id] = $v;
+    return $cache[$id] = $v;
+  }
+}
 $Prim_undefined = function() { throw new \Exception("undefined"); };
 
 
-// Test_Ackermann_add
-$Test_Ackermann_add = ($GLOBALS['Data_Semiring_add'])($GLOBALS['Data_Semiring_semiringInt']);
 
-// Test_Ackermann_sub
-$Test_Ackermann_sub = ($GLOBALS['Data_Ring_sub'])($GLOBALS['Data_Ring_ringInt']);
 
-// Test_Ackermann_describe
-$Test_Ackermann_describe = ($GLOBALS['Effect_Console_log'])("Ackermann (3, 4):");
 
 // Test_Ackermann_ackermann
-$Test_Ackermann_ackermann = (function() {
-  $__fn = function($v, $v1 = null) use (&$__fn) {
+function Test_Ackermann_ackermann($v, $v1 = null) {
   $__num = func_num_args();
-  if ($__num < 2) return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  $__fn = __NAMESPACE__ . '\\' . 'Test_Ackermann_ackermann';
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, $__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
 while (true) {
 $__case_0 = $v;
 $__case_1 = $v1;
 if (($__case_0 === 0)) {
 $n = $__case_1;
-return ($GLOBALS['Test_Ackermann_add'])($n, 1);
+return (($GLOBALS['Test_Ackermann_add'] ?? \Test\Ackermann\phpurs_eval_thunk('Test_Ackermann_add')))($n, 1);
 } else {
 if (($__case_1 === 0)) {
 $m = $__case_0;
-$__tco_tmp_0 = ($GLOBALS['Test_Ackermann_sub'])($m, 1);
+$__tco_tmp_0 = (($GLOBALS['Test_Ackermann_sub'] ?? \Test\Ackermann\phpurs_eval_thunk('Test_Ackermann_sub')))($m, 1);
 $__tco_tmp_1 = 1;
 $v = $__tco_tmp_0;
 $v1 = $__tco_tmp_1;
@@ -67,8 +79,8 @@ continue;
 if (true) {
 $m = $__case_0;
 $n = $__case_1;
-$__tco_tmp_0 = ($GLOBALS['Test_Ackermann_sub'])($m, 1);
-$__tco_tmp_1 = ($GLOBALS['Test_Ackermann_ackermann'])($m, ($GLOBALS['Test_Ackermann_sub'])($n, 1));
+$__tco_tmp_0 = (($GLOBALS['Test_Ackermann_sub'] ?? \Test\Ackermann\phpurs_eval_thunk('Test_Ackermann_sub')))($m, 1);
+$__tco_tmp_1 = (($GLOBALS['Test_Ackermann_ackermann'] ?? \Test\Ackermann\phpurs_eval_thunk('Test_Ackermann_ackermann')))($m, (($GLOBALS['Test_Ackermann_sub'] ?? \Test\Ackermann\phpurs_eval_thunk('Test_Ackermann_sub')))($n, 1));
 $v = $__tco_tmp_0;
 $v1 = $__tco_tmp_1;
 continue;
@@ -79,11 +91,8 @@ throw new \Exception("Pattern match failure");
 };
 };
     $__res = null;
-  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
-  };
-  return $__fn;
-})();
+    return 2 < $__num ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+}
+$GLOBALS['Test_Ackermann_ackermann'] = __NAMESPACE__ . '\\Test_Ackermann_ackermann';
 
-// Test_Ackermann_act
-$Test_Ackermann_act = ($GLOBALS['Effect_Console_logShow'])($GLOBALS['Data_Show_showInt'], ($GLOBALS['Test_Ackermann_ackermann'])(3, 4));
 

@@ -31,46 +31,73 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_curry_fallback')) {
     };
   }
 }
+if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
+  function phpurs_eval_thunk($id) {
+    static $cache = [];
+    if (array_key_exists($id, $cache)) return $cache[$id];
+    switch ($id) {
+      case 'Control_Monad_Reader_unwrap': $v = (($GLOBALS['Data_Newtype_unwrap'] ?? \Data\Newtype\phpurs_eval_thunk('Data_Newtype_unwrap')))(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))); break;
+      case 'Control_Monad_Reader_withReader': $v = ($GLOBALS['Control_Monad_Reader_Trans_withReaderT'] ?? \Control\Monad\Reader\Trans\phpurs_eval_thunk('Control_Monad_Reader_Trans_withReaderT')); break;
+      default: throw new \Exception("Unknown thunk " . $id);
+    }
+    $GLOBALS[$id] = $v;
+    return $cache[$id] = $v;
+  }
+}
 $Prim_undefined = function() { throw new \Exception("undefined"); };
 
 
 // Control_Monad_Reader_compose
-$Control_Monad_Reader_compose = ($GLOBALS['Control_Semigroupoid_compose'])($GLOBALS['Control_Semigroupoid_semigroupoidFn']);
+function Control_Monad_Reader_compose($f, $g = null, $x = null) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Control_Monad_Reader_compose';
+  if ($__num < 3) {
+    if ($__num === 2) return function($x) use ($f, $g, $__fn) { return $__fn($f, $g, $x); };
+    if ($__num === 1) return function($g, $x = null) use ($f, $__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $g, $x);
+      if ($__num2 === 1) return function($x) use ($f, $g, $__fn) { return $__fn($f, $g, $x); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = ($f)(($g)($x));
+    return 3 < $__num ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+}
+$GLOBALS['Control_Monad_Reader_compose'] = __NAMESPACE__ . '\\Control_Monad_Reader_compose';
 
-// Control_Monad_Reader_unwrap
-$Control_Monad_Reader_unwrap = ($GLOBALS['Data_Newtype_unwrap'])($GLOBALS['Prim_undefined']);
 
-// Control_Monad_Reader_withReader
-$Control_Monad_Reader_withReader = $GLOBALS['Control_Monad_Reader_Trans_withReaderT'];
 
 // Control_Monad_Reader_runReader
-$Control_Monad_Reader_runReader = (function() {
+function Control_Monad_Reader_runReader($v) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Control_Monad_Reader_runReader';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
   $__body = function($v) {
     $__case_0 = $v;
     if (true) {
 $m = $__case_0;
-return ($GLOBALS['Control_Monad_Reader_compose'])($GLOBALS['Control_Monad_Reader_unwrap'], $m);
+return (($GLOBALS['Control_Monad_Reader_compose'] ?? \Control\Monad\Reader\phpurs_eval_thunk('Control_Monad_Reader_compose')))(($GLOBALS['Control_Monad_Reader_unwrap'] ?? \Control\Monad\Reader\phpurs_eval_thunk('Control_Monad_Reader_unwrap')), $m);
 } else {
 throw new \Exception("Pattern match failure");
 };
   };
-  $__fn = function($v) use ($__body, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
     $__res = $__body($v);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Control_Monad_Reader_runReader'] = __NAMESPACE__ . '\\Control_Monad_Reader_runReader';
 
 // Control_Monad_Reader_mapReader
-$Control_Monad_Reader_mapReader = (function() {
-  $__fn = function($f) use (&$__fn) {
+function Control_Monad_Reader_mapReader($f) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = ($GLOBALS['Control_Monad_Reader_Trans_mapReaderT'])(($GLOBALS['Control_Monad_Reader_compose'])($GLOBALS['Data_Identity_Identity'], ($GLOBALS['Control_Monad_Reader_compose'])($f, $GLOBALS['Control_Monad_Reader_unwrap'])));
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+  $__fn = __NAMESPACE__ . '\\' . 'Control_Monad_Reader_mapReader';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = (($GLOBALS['Control_Monad_Reader_Trans_mapReaderT'] ?? \Control\Monad\Reader\Trans\phpurs_eval_thunk('Control_Monad_Reader_Trans_mapReaderT')))((($GLOBALS['Control_Monad_Reader_compose'] ?? \Control\Monad\Reader\phpurs_eval_thunk('Control_Monad_Reader_compose')))(($GLOBALS['Data_Identity_Identity'] ?? \Data\Identity\phpurs_eval_thunk('Data_Identity_Identity')), (($GLOBALS['Control_Monad_Reader_compose'] ?? \Control\Monad\Reader\phpurs_eval_thunk('Control_Monad_Reader_compose')))($f, ($GLOBALS['Control_Monad_Reader_unwrap'] ?? \Control\Monad\Reader\phpurs_eval_thunk('Control_Monad_Reader_unwrap')))));
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Control_Monad_Reader_mapReader'] = __NAMESPACE__ . '\\Control_Monad_Reader_mapReader';
 

@@ -27,36 +27,53 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_curry_fallback')) {
     };
   }
 }
+if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
+  function phpurs_eval_thunk($id) {
+    static $cache = [];
+    if (array_key_exists($id, $cache)) return $cache[$id];
+    switch ($id) {
+      case 'Data_Monoid_Generic_genericMonoidNoArguments': $v = (($GLOBALS['Data_Monoid_Generic_GenericMonoid__dollar__Dict'] ?? \Data\Monoid\Generic\phpurs_eval_thunk('Data_Monoid_Generic_GenericMonoid__dollar__Dict')))((object)["genericMempty'" => ($GLOBALS['Data_Generic_Rep_NoArguments'] ?? \Data\Generic\Rep\phpurs_eval_thunk('Data_Generic_Rep_NoArguments'))]); break;
+      default: throw new \Exception("Unknown thunk " . $id);
+    }
+    $GLOBALS[$id] = $v;
+    return $cache[$id] = $v;
+  }
+}
 $Prim_undefined = function() { throw new \Exception("undefined"); };
 
 
 // Data_Monoid_Generic_GenericMonoid$Dict
-$Data_Monoid_Generic_GenericMonoid__dollar__Dict = (function() {
-  $__fn = function($x) use (&$__fn) {
+function Data_Monoid_Generic_GenericMonoid__dollar__Dict($x) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Monoid_Generic_GenericMonoid__dollar__Dict';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $x;
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Monoid_Generic_GenericMonoid__dollar__Dict'] = __NAMESPACE__ . '\\Data_Monoid_Generic_GenericMonoid__dollar__Dict';
 
-// Data_Monoid_Generic_genericMonoidNoArguments
-$Data_Monoid_Generic_genericMonoidNoArguments = ($GLOBALS['Data_Monoid_Generic_GenericMonoid__dollar__Dict'])((object)["genericMempty'" => $GLOBALS['Data_Generic_Rep_NoArguments']]);
 
 // Data_Monoid_Generic_genericMonoidArgument
-$Data_Monoid_Generic_genericMonoidArgument = (function() {
-  $__fn = function($dictMonoid) use (&$__fn) {
+function Data_Monoid_Generic_genericMonoidArgument($dictMonoid) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = ($GLOBALS['Data_Monoid_Generic_GenericMonoid__dollar__Dict'])((object)["genericMempty'" => ($GLOBALS['Data_Generic_Rep_Argument'])(($GLOBALS['Data_Monoid_mempty'])($dictMonoid))]);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Monoid_Generic_genericMonoidArgument';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = (($GLOBALS['Data_Monoid_Generic_GenericMonoid__dollar__Dict'] ?? \Data\Monoid\Generic\phpurs_eval_thunk('Data_Monoid_Generic_GenericMonoid__dollar__Dict')))((object)["genericMempty'" => (($GLOBALS['Data_Generic_Rep_Argument'] ?? \Data\Generic\Rep\phpurs_eval_thunk('Data_Generic_Rep_Argument')))((($GLOBALS['Data_Monoid_mempty'] ?? \Data\Monoid\phpurs_eval_thunk('Data_Monoid_mempty')))($dictMonoid))]);
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Monoid_Generic_genericMonoidArgument'] = __NAMESPACE__ . '\\Data_Monoid_Generic_genericMonoidArgument';
 
 // Data_Monoid_Generic_genericMempty'
-$Data_Monoid_Generic_genericMempty__prime__ = (function() {
+function Data_Monoid_Generic_genericMempty__prime__($dict) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Monoid_Generic_genericMempty__prime__';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
   $__body = function($dict) {
     $__case_0 = $dict;
     if (true) {
@@ -66,63 +83,66 @@ return ($v)->genericMempty__prime__;
 throw new \Exception("Pattern match failure");
 };
   };
-  $__fn = function($dict) use ($__body, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
     $__res = $__body($dict);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Monoid_Generic_genericMempty__prime__'] = __NAMESPACE__ . '\\Data_Monoid_Generic_genericMempty__prime__';
 
 // Data_Monoid_Generic_genericMonoidConstructor
-$Data_Monoid_Generic_genericMonoidConstructor = (function() {
-  $__fn = function($dictGenericMonoid) use (&$__fn) {
+function Data_Monoid_Generic_genericMonoidConstructor($dictGenericMonoid) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = ($GLOBALS['Data_Monoid_Generic_GenericMonoid__dollar__Dict'])((object)["genericMempty'" => ($GLOBALS['Data_Generic_Rep_Constructor'])(($GLOBALS['Data_Monoid_Generic_genericMempty__prime__'])($dictGenericMonoid))]);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Monoid_Generic_genericMonoidConstructor';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = (($GLOBALS['Data_Monoid_Generic_GenericMonoid__dollar__Dict'] ?? \Data\Monoid\Generic\phpurs_eval_thunk('Data_Monoid_Generic_GenericMonoid__dollar__Dict')))((object)["genericMempty'" => (($GLOBALS['Data_Generic_Rep_Constructor'] ?? \Data\Generic\Rep\phpurs_eval_thunk('Data_Generic_Rep_Constructor')))((($GLOBALS['Data_Monoid_Generic_genericMempty__prime__'] ?? \Data\Monoid\Generic\phpurs_eval_thunk('Data_Monoid_Generic_genericMempty__prime__')))($dictGenericMonoid))]);
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Monoid_Generic_genericMonoidConstructor'] = __NAMESPACE__ . '\\Data_Monoid_Generic_genericMonoidConstructor';
 
 // Data_Monoid_Generic_genericMonoidProduct
-$Data_Monoid_Generic_genericMonoidProduct = (function() {
-  $__fn = function($dictGenericMonoid) use (&$__fn) {
+function Data_Monoid_Generic_genericMonoidProduct($dictGenericMonoid) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-$genericMempty__prime__1 = ($GLOBALS['Data_Monoid_Generic_genericMempty__prime__'])($dictGenericMonoid);
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Monoid_Generic_genericMonoidProduct';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$genericMempty__prime__1 = (($GLOBALS['Data_Monoid_Generic_genericMempty__prime__'] ?? \Data\Monoid\Generic\phpurs_eval_thunk('Data_Monoid_Generic_genericMempty__prime__')))($dictGenericMonoid);
     $__res = (function() use ($genericMempty__prime__1) {
   $__fn = function($dictGenericMonoid1) use ($genericMempty__prime__1, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = ($GLOBALS['Data_Monoid_Generic_GenericMonoid__dollar__Dict'])((object)["genericMempty'" => ($GLOBALS['Data_Generic_Rep_Product'])($genericMempty__prime__1, ($GLOBALS['Data_Monoid_Generic_genericMempty__prime__'])($dictGenericMonoid1))]);
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = (($GLOBALS['Data_Monoid_Generic_GenericMonoid__dollar__Dict'] ?? \Data\Monoid\Generic\phpurs_eval_thunk('Data_Monoid_Generic_GenericMonoid__dollar__Dict')))((object)["genericMempty'" => (($GLOBALS['Data_Generic_Rep_Product'] ?? \Data\Generic\Rep\phpurs_eval_thunk('Data_Generic_Rep_Product')))($genericMempty__prime__1, (($GLOBALS['Data_Monoid_Generic_genericMempty__prime__'] ?? \Data\Monoid\Generic\phpurs_eval_thunk('Data_Monoid_Generic_genericMempty__prime__')))($dictGenericMonoid1))]);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
 })();
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Monoid_Generic_genericMonoidProduct'] = __NAMESPACE__ . '\\Data_Monoid_Generic_genericMonoidProduct';
 
 // Data_Monoid_Generic_genericMempty
-$Data_Monoid_Generic_genericMempty = (function() {
-  $__fn = function($dictGeneric) use (&$__fn) {
+function Data_Monoid_Generic_genericMempty($dictGeneric) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-$to = ($GLOBALS['Data_Generic_Rep_to'])($dictGeneric);
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Monoid_Generic_genericMempty';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$to = (($GLOBALS['Data_Generic_Rep_to'] ?? \Data\Generic\Rep\phpurs_eval_thunk('Data_Generic_Rep_to')))($dictGeneric);
     $__res = (function() use ($to) {
   $__fn = function($dictGenericMonoid) use ($to, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = ($to)(($GLOBALS['Data_Monoid_Generic_genericMempty__prime__'])($dictGenericMonoid));
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($to)((($GLOBALS['Data_Monoid_Generic_genericMempty__prime__'] ?? \Data\Monoid\Generic\phpurs_eval_thunk('Data_Monoid_Generic_genericMempty__prime__')))($dictGenericMonoid));
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
 })();
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Monoid_Generic_genericMempty'] = __NAMESPACE__ . '\\Data_Monoid_Generic_genericMempty';
 

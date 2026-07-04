@@ -33,48 +33,63 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_curry_fallback')) {
     };
   }
 }
+if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
+  function phpurs_eval_thunk($id) {
+    static $cache = [];
+    if (array_key_exists($id, $cache)) return $cache[$id];
+    switch ($id) {
+      case 'Data_Enum_Gen_foldable1NonEmpty': $v = (($GLOBALS['Data_NonEmpty_foldable1NonEmpty'] ?? \Data\NonEmpty\phpurs_eval_thunk('Data_NonEmpty_foldable1NonEmpty')))(($GLOBALS['Data_Foldable_foldableArray'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableArray'))); break;
+      default: throw new \Exception("Unknown thunk " . $id);
+    }
+    $GLOBALS[$id] = $v;
+    return $cache[$id] = $v;
+  }
+}
 $Prim_undefined = function() { throw new \Exception("undefined"); };
 
 
-// Data_Enum_Gen_foldable1NonEmpty
-$Data_Enum_Gen_foldable1NonEmpty = ($GLOBALS['Data_NonEmpty_foldable1NonEmpty'])($GLOBALS['Data_Foldable_foldableArray']);
 
 // Data_Enum_Gen_genBoundedEnum
-$Data_Enum_Gen_genBoundedEnum = (function() {
-  $__fn = function($dictMonadGen) use (&$__fn) {
+function Data_Enum_Gen_genBoundedEnum($dictMonadGen) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-$elements = ($GLOBALS['Control_Monad_Gen_elements'])($dictMonadGen, $GLOBALS['Data_Enum_Gen_foldable1NonEmpty']);
-$pure = ($GLOBALS['Control_Applicative_pure'])((((($dictMonadGen)->Monad0)($GLOBALS['Prim_undefined']))->Applicative0)($GLOBALS['Prim_undefined']));
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Enum_Gen_genBoundedEnum';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$elements = (($GLOBALS['Control_Monad_Gen_elements'] ?? \Control\Monad\Gen\phpurs_eval_thunk('Control_Monad_Gen_elements')))($dictMonadGen, ($GLOBALS['Data_Enum_Gen_foldable1NonEmpty'] ?? \Data\Enum\Gen\phpurs_eval_thunk('Data_Enum_Gen_foldable1NonEmpty')));
+$pure = (($GLOBALS['Control_Applicative_pure'] ?? \Control\Applicative\phpurs_eval_thunk('Control_Applicative_pure')))((((($dictMonadGen)->Monad0)(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))))->Applicative0)(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))));
     $__res = (function() use ($elements, $pure) {
   $__body = function($dictBoundedEnum) use ($elements, $pure) {
-    $Enum1 = (($dictBoundedEnum)->Enum1)($GLOBALS['Prim_undefined']);
-    $Bounded0 = (($dictBoundedEnum)->Bounded0)($GLOBALS['Prim_undefined']);
-    $bottom = ($GLOBALS['Data_Bounded_bottom'])($Bounded0);
-    $v = ($GLOBALS['Data_Enum_succ'])($Enum1, $bottom);
+    $Enum1 = (($dictBoundedEnum)->Enum1)(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined')));
+    $Bounded0 = (($dictBoundedEnum)->Bounded0)(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined')));
+    $bottom = (($GLOBALS['Data_Bounded_bottom'] ?? \Data\Bounded\phpurs_eval_thunk('Data_Bounded_bottom')))($Bounded0);
+    $v = (($GLOBALS['Data_Enum_succ'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_succ')))($Enum1, $bottom);
     $__case_0 = $v;
-    if ((($__case_0)->tag === "Just")) {
+    switch (($__case_0)->tag) {
+case "Just":
 $a = ($__case_0)->v0;
-$possibilities = ($GLOBALS['Data_Enum_enumFromTo'])($Enum1, $GLOBALS['Data_Unfoldable1_unfoldable1Array'], $a, ($GLOBALS['Data_Bounded_top'])($Bounded0));
-return ($elements)(($GLOBALS['Data_NonEmpty_NonEmpty'])($bottom, $possibilities));
-} else {
-if ((($__case_0)->tag === "Nothing")) {
+$possibilities = (($GLOBALS['Data_Enum_enumFromTo'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_enumFromTo')))($Enum1, ($GLOBALS['Data_Unfoldable1_unfoldable1Array'] ?? \Data\Unfoldable1\phpurs_eval_thunk('Data_Unfoldable1_unfoldable1Array')), $a, (($GLOBALS['Data_Bounded_top'] ?? \Data\Bounded\phpurs_eval_thunk('Data_Bounded_top')))($Bounded0));
+return ($elements)((($GLOBALS['Data_NonEmpty_NonEmpty'] ?? \Data\NonEmpty\phpurs_eval_thunk('Data_NonEmpty_NonEmpty')))($bottom, $possibilities));
+break;
+case "Nothing":
 return ($pure)($bottom);
-} else {
+break;
+default:
 throw new \Exception("Pattern match failure");
-};
+break;
 };
   };
   $__fn = function($dictBoundedEnum) use ($elements, $pure, $__body, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $__body($dictBoundedEnum);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
 })();
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Enum_Gen_genBoundedEnum'] = __NAMESPACE__ . '\\Data_Enum_Gen_genBoundedEnum';
 

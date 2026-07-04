@@ -29,61 +29,78 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_curry_fallback')) {
     };
   }
 }
+if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
+  function phpurs_eval_thunk($id) {
+    static $cache = [];
+    if (array_key_exists($id, $cache)) return $cache[$id];
+    switch ($id) {
+
+      default: throw new \Exception("Unknown thunk " . $id);
+    }
+    $GLOBALS[$id] = $v;
+    return $cache[$id] = $v;
+  }
+}
 $Prim_undefined = function() { throw new \Exception("undefined"); };
 
 
 // Data_Time_Duration_Gen_genSeconds
-$Data_Time_Duration_Gen_genSeconds = (function() {
-  $__fn = function($dictMonadGen) use (&$__fn) {
+function Data_Time_Duration_Gen_genSeconds($dictMonadGen) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = ($GLOBALS['Data_Functor_map'])((((((((($dictMonadGen)->Monad0)($GLOBALS['Prim_undefined']))->Bind1)($GLOBALS['Prim_undefined']))->Apply0)($GLOBALS['Prim_undefined']))->Functor0)($GLOBALS['Prim_undefined']), $GLOBALS['Data_Time_Duration_Seconds'], ($GLOBALS['Control_Monad_Gen_Class_chooseFloat'])($dictMonadGen, 0.0, 600.0));
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Time_Duration_Gen_genSeconds';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = (($GLOBALS['Data_Functor_map'] ?? \Data\Functor\phpurs_eval_thunk('Data_Functor_map')))((((((((($dictMonadGen)->Monad0)(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))))->Bind1)(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))))->Apply0)(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))))->Functor0)(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))), ($GLOBALS['Data_Time_Duration_Seconds'] ?? \Data\Time\Duration\phpurs_eval_thunk('Data_Time_Duration_Seconds')), (($GLOBALS['Control_Monad_Gen_Class_chooseFloat'] ?? \Control\Monad\Gen\Class\phpurs_eval_thunk('Control_Monad_Gen_Class_chooseFloat')))($dictMonadGen, 0.0, 600.0));
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Time_Duration_Gen_genSeconds'] = __NAMESPACE__ . '\\Data_Time_Duration_Gen_genSeconds';
 
 // Data_Time_Duration_Gen_genMinutes
-$Data_Time_Duration_Gen_genMinutes = (function() {
-  $__fn = function($dictMonadGen) use (&$__fn) {
+function Data_Time_Duration_Gen_genMinutes($dictMonadGen) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = ($GLOBALS['Data_Functor_map'])((((((((($dictMonadGen)->Monad0)($GLOBALS['Prim_undefined']))->Bind1)($GLOBALS['Prim_undefined']))->Apply0)($GLOBALS['Prim_undefined']))->Functor0)($GLOBALS['Prim_undefined']), $GLOBALS['Data_Time_Duration_Minutes'], ($GLOBALS['Control_Monad_Gen_Class_chooseFloat'])($dictMonadGen, 0.0, 600.0));
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Time_Duration_Gen_genMinutes';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = (($GLOBALS['Data_Functor_map'] ?? \Data\Functor\phpurs_eval_thunk('Data_Functor_map')))((((((((($dictMonadGen)->Monad0)(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))))->Bind1)(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))))->Apply0)(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))))->Functor0)(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))), ($GLOBALS['Data_Time_Duration_Minutes'] ?? \Data\Time\Duration\phpurs_eval_thunk('Data_Time_Duration_Minutes')), (($GLOBALS['Control_Monad_Gen_Class_chooseFloat'] ?? \Control\Monad\Gen\Class\phpurs_eval_thunk('Control_Monad_Gen_Class_chooseFloat')))($dictMonadGen, 0.0, 600.0));
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Time_Duration_Gen_genMinutes'] = __NAMESPACE__ . '\\Data_Time_Duration_Gen_genMinutes';
 
 // Data_Time_Duration_Gen_genMilliseconds
-$Data_Time_Duration_Gen_genMilliseconds = (function() {
-  $__fn = function($dictMonadGen) use (&$__fn) {
+function Data_Time_Duration_Gen_genMilliseconds($dictMonadGen) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = ($GLOBALS['Data_Functor_map'])((((((((($dictMonadGen)->Monad0)($GLOBALS['Prim_undefined']))->Bind1)($GLOBALS['Prim_undefined']))->Apply0)($GLOBALS['Prim_undefined']))->Functor0)($GLOBALS['Prim_undefined']), $GLOBALS['Data_Time_Duration_Milliseconds'], ($GLOBALS['Control_Monad_Gen_Class_chooseFloat'])($dictMonadGen, 0.0, 600000.0));
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Time_Duration_Gen_genMilliseconds';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = (($GLOBALS['Data_Functor_map'] ?? \Data\Functor\phpurs_eval_thunk('Data_Functor_map')))((((((((($dictMonadGen)->Monad0)(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))))->Bind1)(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))))->Apply0)(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))))->Functor0)(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))), ($GLOBALS['Data_Time_Duration_Milliseconds'] ?? \Data\Time\Duration\phpurs_eval_thunk('Data_Time_Duration_Milliseconds')), (($GLOBALS['Control_Monad_Gen_Class_chooseFloat'] ?? \Control\Monad\Gen\Class\phpurs_eval_thunk('Control_Monad_Gen_Class_chooseFloat')))($dictMonadGen, 0.0, 600000.0));
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Time_Duration_Gen_genMilliseconds'] = __NAMESPACE__ . '\\Data_Time_Duration_Gen_genMilliseconds';
 
 // Data_Time_Duration_Gen_genHours
-$Data_Time_Duration_Gen_genHours = (function() {
-  $__fn = function($dictMonadGen) use (&$__fn) {
+function Data_Time_Duration_Gen_genHours($dictMonadGen) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = ($GLOBALS['Data_Functor_map'])((((((((($dictMonadGen)->Monad0)($GLOBALS['Prim_undefined']))->Bind1)($GLOBALS['Prim_undefined']))->Apply0)($GLOBALS['Prim_undefined']))->Functor0)($GLOBALS['Prim_undefined']), $GLOBALS['Data_Time_Duration_Hours'], ($GLOBALS['Control_Monad_Gen_Class_chooseFloat'])($dictMonadGen, 0.0, 240.0));
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Time_Duration_Gen_genHours';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = (($GLOBALS['Data_Functor_map'] ?? \Data\Functor\phpurs_eval_thunk('Data_Functor_map')))((((((((($dictMonadGen)->Monad0)(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))))->Bind1)(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))))->Apply0)(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))))->Functor0)(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))), ($GLOBALS['Data_Time_Duration_Hours'] ?? \Data\Time\Duration\phpurs_eval_thunk('Data_Time_Duration_Hours')), (($GLOBALS['Control_Monad_Gen_Class_chooseFloat'] ?? \Control\Monad\Gen\Class\phpurs_eval_thunk('Control_Monad_Gen_Class_chooseFloat')))($dictMonadGen, 0.0, 240.0));
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Time_Duration_Gen_genHours'] = __NAMESPACE__ . '\\Data_Time_Duration_Gen_genHours';
 
 // Data_Time_Duration_Gen_genDays
-$Data_Time_Duration_Gen_genDays = (function() {
-  $__fn = function($dictMonadGen) use (&$__fn) {
+function Data_Time_Duration_Gen_genDays($dictMonadGen) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = ($GLOBALS['Data_Functor_map'])((((((((($dictMonadGen)->Monad0)($GLOBALS['Prim_undefined']))->Bind1)($GLOBALS['Prim_undefined']))->Apply0)($GLOBALS['Prim_undefined']))->Functor0)($GLOBALS['Prim_undefined']), $GLOBALS['Data_Time_Duration_Days'], ($GLOBALS['Control_Monad_Gen_Class_chooseFloat'])($dictMonadGen, 0.0, 42.0));
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Time_Duration_Gen_genDays';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = (($GLOBALS['Data_Functor_map'] ?? \Data\Functor\phpurs_eval_thunk('Data_Functor_map')))((((((((($dictMonadGen)->Monad0)(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))))->Bind1)(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))))->Apply0)(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))))->Functor0)(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))), ($GLOBALS['Data_Time_Duration_Days'] ?? \Data\Time\Duration\phpurs_eval_thunk('Data_Time_Duration_Days')), (($GLOBALS['Control_Monad_Gen_Class_chooseFloat'] ?? \Control\Monad\Gen\Class\phpurs_eval_thunk('Control_Monad_Gen_Class_chooseFloat')))($dictMonadGen, 0.0, 42.0));
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Time_Duration_Gen_genDays'] = __NAMESPACE__ . '\\Data_Time_Duration_Gen_genDays';
 

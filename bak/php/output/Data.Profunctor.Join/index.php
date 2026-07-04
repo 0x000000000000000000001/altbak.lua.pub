@@ -36,132 +36,157 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_curry_fallback')) {
     };
   }
 }
-$Prim_undefined = function() { throw new \Exception("undefined"); };
-
-
-// Data_Profunctor_Join_append
-$Data_Profunctor_Join_append = ($GLOBALS['Data_Semigroup_append'])($GLOBALS['Data_Semigroup_semigroupString']);
-
-// Data_Profunctor_Join_Join
-$Data_Profunctor_Join_Join = (function() {
-  $__fn = function($x) use (&$__fn) {
+if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
+  function phpurs_eval_thunk($id) {
+    static $cache = [];
+    if (array_key_exists($id, $cache)) return $cache[$id];
+    switch ($id) {
+      case 'Data_Profunctor_Join_append': $v = ($GLOBALS['Data_Semigroup_concatString'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_concatString')); break;
+      case 'Data_Profunctor_Join_newtypeJoin': $v = (($GLOBALS['Data_Newtype_Newtype__dollar__Dict'] ?? \Data\Newtype\phpurs_eval_thunk('Data_Newtype_Newtype__dollar__Dict')))((object)["Coercible0" => (function() {
+  $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = $x;
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})();
+})()]); break;
+      default: throw new \Exception("Unknown thunk " . $id);
+    }
+    $GLOBALS[$id] = $v;
+    return $cache[$id] = $v;
+  }
+}
+$Prim_undefined = function() { throw new \Exception("undefined"); };
+
+
+
+// Data_Profunctor_Join_Join
+function Data_Profunctor_Join_Join($x) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Profunctor_Join_Join';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $x;
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Profunctor_Join_Join'] = __NAMESPACE__ . '\\Data_Profunctor_Join_Join';
 
 // Data_Profunctor_Join_showJoin
-$Data_Profunctor_Join_showJoin = (function() {
-  $__fn = function($dictShow) use (&$__fn) {
+function Data_Profunctor_Join_showJoin($dictShow) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-$show = ($GLOBALS['Data_Show_show'])($dictShow);
-    $__res = ($GLOBALS['Data_Show_Show__dollar__Dict'])((object)["show" => (function() use ($show) {
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Profunctor_Join_showJoin';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$show = (($GLOBALS['Data_Show_show'] ?? \Data\Show\phpurs_eval_thunk('Data_Show_show')))($dictShow);
+    $__res = (($GLOBALS['Data_Show_Show__dollar__Dict'] ?? \Data\Show\phpurs_eval_thunk('Data_Show_Show__dollar__Dict')))((object)["show" => (function() use ($show) {
   $__body = function($v) use ($show) {
     $__case_0 = $v;
     if (true) {
 $x = $__case_0;
-return ($GLOBALS['Data_Profunctor_Join_append'])("(Join ", ($GLOBALS['Data_Profunctor_Join_append'])(($show)($x), ")"));
+return (($GLOBALS['Data_Profunctor_Join_append'] ?? \Data\Profunctor\Join\phpurs_eval_thunk('Data_Profunctor_Join_append')))("(Join ", (($GLOBALS['Data_Profunctor_Join_append'] ?? \Data\Profunctor\Join\phpurs_eval_thunk('Data_Profunctor_Join_append')))(($show)($x), ")"));
 } else {
 throw new \Exception("Pattern match failure");
 };
   };
   $__fn = function($v) use ($show, $__body, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $__body($v);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
 })()]);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Profunctor_Join_showJoin'] = __NAMESPACE__ . '\\Data_Profunctor_Join_showJoin';
 
 // Data_Profunctor_Join_semigroupJoin
-$Data_Profunctor_Join_semigroupJoin = (function() {
-  $__fn = function($dictSemigroupoid) use (&$__fn) {
+function Data_Profunctor_Join_semigroupJoin($dictSemigroupoid) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-$compose = ($GLOBALS['Control_Semigroupoid_compose'])($dictSemigroupoid);
-    $__res = ($GLOBALS['Data_Semigroup_Semigroup__dollar__Dict'])((object)["append" => (function() use ($compose) {
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Profunctor_Join_semigroupJoin';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$compose = (($GLOBALS['Control_Semigroupoid_compose'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_compose')))($dictSemigroupoid);
+    $__res = (($GLOBALS['Data_Semigroup_Semigroup__dollar__Dict'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_Semigroup__dollar__Dict')))((object)["append" => (function() use ($compose) {
   $__body = function($v, $v1) use ($compose) {
     $__case_0 = $v;
     $__case_1 = $v1;
     if (true) {
 $a = $__case_0;
 $b = $__case_1;
-return ($GLOBALS['Data_Profunctor_Join_Join'])(($compose)($a, $b));
+return (($GLOBALS['Data_Profunctor_Join_Join'] ?? \Data\Profunctor\Join\phpurs_eval_thunk('Data_Profunctor_Join_Join')))(($compose)($a, $b));
 } else {
 throw new \Exception("Pattern match failure");
 };
   };
   $__fn = function($v, $v1 = null) use ($compose, $__body, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 2) return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
     $__res = $__body($v, $v1);
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
 })()]);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Profunctor_Join_semigroupJoin'] = __NAMESPACE__ . '\\Data_Profunctor_Join_semigroupJoin';
 
 // Data_Profunctor_Join_ordJoin
-$Data_Profunctor_Join_ordJoin = (function() {
-  $__fn = function($dictOrd) use (&$__fn) {
+function Data_Profunctor_Join_ordJoin($dictOrd) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Profunctor_Join_ordJoin';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $dictOrd;
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Profunctor_Join_ordJoin'] = __NAMESPACE__ . '\\Data_Profunctor_Join_ordJoin';
 
-// Data_Profunctor_Join_newtypeJoin
-$Data_Profunctor_Join_newtypeJoin = ($GLOBALS['Data_Newtype_Newtype__dollar__Dict'])((object)["Coercible0" => (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = $GLOBALS['Prim_undefined'];
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})()]);
 
 // Data_Profunctor_Join_monoidJoin
-$Data_Profunctor_Join_monoidJoin = (function() {
-  $__fn = function($dictCategory) use (&$__fn) {
+function Data_Profunctor_Join_monoidJoin($dictCategory) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-$semigroupJoin1 = ($GLOBALS['Data_Profunctor_Join_semigroupJoin'])((($dictCategory)->Semigroupoid0)($GLOBALS['Prim_undefined']));
-    $__res = ($GLOBALS['Data_Monoid_Monoid__dollar__Dict'])((object)["mempty" => ($GLOBALS['Data_Profunctor_Join_Join'])(($GLOBALS['Control_Category_identity'])($dictCategory)), "Semigroup0" => (function() use ($semigroupJoin1) {
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Profunctor_Join_monoidJoin';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$semigroupJoin1 = (($GLOBALS['Data_Profunctor_Join_semigroupJoin'] ?? \Data\Profunctor\Join\phpurs_eval_thunk('Data_Profunctor_Join_semigroupJoin')))((($dictCategory)->Semigroupoid0)(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))));
+    $__res = (($GLOBALS['Data_Monoid_Monoid__dollar__Dict'] ?? \Data\Monoid\phpurs_eval_thunk('Data_Monoid_Monoid__dollar__Dict')))((object)["mempty" => (($GLOBALS['Data_Profunctor_Join_Join'] ?? \Data\Profunctor\Join\phpurs_eval_thunk('Data_Profunctor_Join_Join')))((($GLOBALS['Control_Category_identity'] ?? \Control\Category\phpurs_eval_thunk('Control_Category_identity')))($dictCategory)), "Semigroup0" => (function() use ($semigroupJoin1) {
   $__fn = function($__dollar____unused) use ($semigroupJoin1, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $semigroupJoin1;
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
 })()]);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Profunctor_Join_monoidJoin'] = __NAMESPACE__ . '\\Data_Profunctor_Join_monoidJoin';
 
 // Data_Profunctor_Join_invariantJoin
-$Data_Profunctor_Join_invariantJoin = (function() {
-  $__fn = function($dictProfunctor) use (&$__fn) {
+function Data_Profunctor_Join_invariantJoin($dictProfunctor) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-$dimap = ($GLOBALS['Data_Profunctor_dimap'])($dictProfunctor);
-    $__res = ($GLOBALS['Data_Functor_Invariant_Invariant__dollar__Dict'])((object)["imap" => (function() use ($dimap) {
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Profunctor_Join_invariantJoin';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$dimap = (($GLOBALS['Data_Profunctor_dimap'] ?? \Data\Profunctor\phpurs_eval_thunk('Data_Profunctor_dimap')))($dictProfunctor);
+    $__res = (($GLOBALS['Data_Functor_Invariant_Invariant__dollar__Dict'] ?? \Data\Functor\Invariant\phpurs_eval_thunk('Data_Functor_Invariant_Invariant__dollar__Dict')))((object)["imap" => (function() use ($dimap) {
   $__body = function($f, $g, $v) use ($dimap) {
     $__case_0 = $f;
     $__case_1 = $g;
@@ -170,32 +195,41 @@ $dimap = ($GLOBALS['Data_Profunctor_dimap'])($dictProfunctor);
 $f1 = $__case_0;
 $g1 = $__case_1;
 $a = $__case_2;
-return ($GLOBALS['Data_Profunctor_Join_Join'])(($dimap)($g1, $f1, $a));
+return (($GLOBALS['Data_Profunctor_Join_Join'] ?? \Data\Profunctor\Join\phpurs_eval_thunk('Data_Profunctor_Join_Join')))(($dimap)($g1, $f1, $a));
 } else {
 throw new \Exception("Pattern match failure");
 };
   };
   $__fn = function($f, $g = null, $v = null) use ($dimap, $__body, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 3) return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  if ($__num < 3) {
+    if ($__num === 2) return function($v) use ($f, $g, &$__fn) { return $__fn($f, $g, $v); };
+    if ($__num === 1) return function($g, $v = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $g, $v);
+      if ($__num2 === 1) return function($v) use ($f, $g, &$__fn) { return $__fn($f, $g, $v); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
     $__res = $__body($f, $g, $v);
   return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
   };
   return $__fn;
 })()]);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Profunctor_Join_invariantJoin'] = __NAMESPACE__ . '\\Data_Profunctor_Join_invariantJoin';
 
 // Data_Profunctor_Join_eqJoin
-$Data_Profunctor_Join_eqJoin = (function() {
-  $__fn = function($dictEq) use (&$__fn) {
+function Data_Profunctor_Join_eqJoin($dictEq) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Profunctor_Join_eqJoin';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $dictEq;
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Profunctor_Join_eqJoin'] = __NAMESPACE__ . '\\Data_Profunctor_Join_eqJoin';
 

@@ -26,6 +26,19 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_curry_fallback')) {
     };
   }
 }
+if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
+  function phpurs_eval_thunk($id) {
+    static $cache = [];
+    if (array_key_exists($id, $cache)) return $cache[$id];
+    switch ($id) {
+      case 'Partial_Unsafe_crashWith': $v = (($GLOBALS['Partial_crashWith'] ?? \Partial\phpurs_eval_thunk('Partial_crashWith')))(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))); break;
+      case 'Partial_Unsafe_unsafePartial': $v = ($GLOBALS['Partial_Unsafe__unsafePartial'] ?? \Partial\Unsafe\phpurs_eval_thunk('Partial_Unsafe__unsafePartial')); break;
+      default: throw new \Exception("Unknown thunk " . $id);
+    }
+    $GLOBALS[$id] = $v;
+    return $cache[$id] = $v;
+  }
+}
 $Prim_undefined = function() { throw new \Exception("undefined"); };
 if (!function_exists('phpurs_uncurry2')) {
 function phpurs_uncurry2($fn) {
@@ -78,28 +91,27 @@ function phpurs_uncurry5($fn) {
 
 $Partial_Unsafe__unsafePartial = function($f) { return $f(); };
 
-// Partial_Unsafe_crashWith
-$Partial_Unsafe_crashWith = ($GLOBALS['Partial_crashWith'])($GLOBALS['Prim_undefined']);
 
-// Partial_Unsafe_unsafePartial
-$Partial_Unsafe_unsafePartial = $GLOBALS['Partial_Unsafe__unsafePartial'];
 
 // Partial_Unsafe_unsafeCrashWith
-$Partial_Unsafe_unsafeCrashWith = (function() {
-  $__fn = function($msg) use (&$__fn) {
+function Partial_Unsafe_unsafeCrashWith($msg) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = ($GLOBALS['Partial_Unsafe_unsafePartial'])((function() use ($msg) {
+  $__fn = __NAMESPACE__ . '\\' . 'Partial_Unsafe_unsafeCrashWith';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = (($GLOBALS['Partial_Unsafe_unsafePartial'] ?? \Partial\Unsafe\phpurs_eval_thunk('Partial_Unsafe_unsafePartial')))((function() use ($msg) {
   $__fn = function($__dollar____unused) use ($msg, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = ($GLOBALS['Partial_Unsafe_crashWith'])($msg);
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = (($GLOBALS['Partial_Unsafe_crashWith'] ?? \Partial\Unsafe\phpurs_eval_thunk('Partial_Unsafe_crashWith')))($msg);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
 })());
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Partial_Unsafe_unsafeCrashWith'] = __NAMESPACE__ . '\\Partial_Unsafe_unsafeCrashWith';
 

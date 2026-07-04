@@ -33,133 +33,158 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_curry_fallback')) {
     };
   }
 }
-$Prim_undefined = function() { throw new \Exception("undefined"); };
-
-
-// Data_Ord_Min_append
-$Data_Ord_Min_append = ($GLOBALS['Data_Semigroup_append'])($GLOBALS['Data_Semigroup_semigroupString']);
-
-// Data_Ord_Min_Min
-$Data_Ord_Min_Min = (function() {
-  $__fn = function($x) use (&$__fn) {
+if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
+  function phpurs_eval_thunk($id) {
+    static $cache = [];
+    if (array_key_exists($id, $cache)) return $cache[$id];
+    switch ($id) {
+      case 'Data_Ord_Min_append': $v = ($GLOBALS['Data_Semigroup_concatString'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_concatString')); break;
+      case 'Data_Ord_Min_newtypeMin': $v = (($GLOBALS['Data_Newtype_Newtype__dollar__Dict'] ?? \Data\Newtype\phpurs_eval_thunk('Data_Newtype_Newtype__dollar__Dict')))((object)["Coercible0" => (function() {
+  $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = $x;
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})();
+})()]); break;
+      default: throw new \Exception("Unknown thunk " . $id);
+    }
+    $GLOBALS[$id] = $v;
+    return $cache[$id] = $v;
+  }
+}
+$Prim_undefined = function() { throw new \Exception("undefined"); };
+
+
+
+// Data_Ord_Min_Min
+function Data_Ord_Min_Min($x) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Ord_Min_Min';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $x;
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Ord_Min_Min'] = __NAMESPACE__ . '\\Data_Ord_Min_Min';
 
 // Data_Ord_Min_showMin
-$Data_Ord_Min_showMin = (function() {
-  $__fn = function($dictShow) use (&$__fn) {
+function Data_Ord_Min_showMin($dictShow) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-$show = ($GLOBALS['Data_Show_show'])($dictShow);
-    $__res = ($GLOBALS['Data_Show_Show__dollar__Dict'])((object)["show" => (function() use ($show) {
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Ord_Min_showMin';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$show = (($GLOBALS['Data_Show_show'] ?? \Data\Show\phpurs_eval_thunk('Data_Show_show')))($dictShow);
+    $__res = (($GLOBALS['Data_Show_Show__dollar__Dict'] ?? \Data\Show\phpurs_eval_thunk('Data_Show_Show__dollar__Dict')))((object)["show" => (function() use ($show) {
   $__body = function($v) use ($show) {
     $__case_0 = $v;
     if (true) {
 $a = $__case_0;
-return ($GLOBALS['Data_Ord_Min_append'])("(Min ", ($GLOBALS['Data_Ord_Min_append'])(($show)($a), ")"));
+return (($GLOBALS['Data_Ord_Min_append'] ?? \Data\Ord\Min\phpurs_eval_thunk('Data_Ord_Min_append')))("(Min ", (($GLOBALS['Data_Ord_Min_append'] ?? \Data\Ord\Min\phpurs_eval_thunk('Data_Ord_Min_append')))(($show)($a), ")"));
 } else {
 throw new \Exception("Pattern match failure");
 };
   };
   $__fn = function($v) use ($show, $__body, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $__body($v);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
 })()]);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Ord_Min_showMin'] = __NAMESPACE__ . '\\Data_Ord_Min_showMin';
 
 // Data_Ord_Min_semigroupMin
-$Data_Ord_Min_semigroupMin = (function() {
-  $__fn = function($dictOrd) use (&$__fn) {
+function Data_Ord_Min_semigroupMin($dictOrd) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-$min = ($GLOBALS['Data_Ord_min'])($dictOrd);
-    $__res = ($GLOBALS['Data_Semigroup_Semigroup__dollar__Dict'])((object)["append" => (function() use ($min) {
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Ord_Min_semigroupMin';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$min = (($GLOBALS['Data_Ord_min'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_min')))($dictOrd);
+    $__res = (($GLOBALS['Data_Semigroup_Semigroup__dollar__Dict'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_Semigroup__dollar__Dict')))((object)["append" => (function() use ($min) {
   $__body = function($v, $v1) use ($min) {
     $__case_0 = $v;
     $__case_1 = $v1;
     if (true) {
 $x = $__case_0;
 $y = $__case_1;
-return ($GLOBALS['Data_Ord_Min_Min'])(($min)($x, $y));
+return (($GLOBALS['Data_Ord_Min_Min'] ?? \Data\Ord\Min\phpurs_eval_thunk('Data_Ord_Min_Min')))(($min)($x, $y));
 } else {
 throw new \Exception("Pattern match failure");
 };
   };
   $__fn = function($v, $v1 = null) use ($min, $__body, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 2) return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
     $__res = $__body($v, $v1);
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
 })()]);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Ord_Min_semigroupMin'] = __NAMESPACE__ . '\\Data_Ord_Min_semigroupMin';
 
-// Data_Ord_Min_newtypeMin
-$Data_Ord_Min_newtypeMin = ($GLOBALS['Data_Newtype_Newtype__dollar__Dict'])((object)["Coercible0" => (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = $GLOBALS['Prim_undefined'];
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})()]);
 
 // Data_Ord_Min_monoidMin
-$Data_Ord_Min_monoidMin = (function() {
-  $__fn = function($dictBounded) use (&$__fn) {
+function Data_Ord_Min_monoidMin($dictBounded) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-$semigroupMin1 = ($GLOBALS['Data_Ord_Min_semigroupMin'])((($dictBounded)->Ord0)($GLOBALS['Prim_undefined']));
-    $__res = ($GLOBALS['Data_Monoid_Monoid__dollar__Dict'])((object)["mempty" => ($GLOBALS['Data_Ord_Min_Min'])(($GLOBALS['Data_Bounded_top'])($dictBounded)), "Semigroup0" => (function() use ($semigroupMin1) {
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Ord_Min_monoidMin';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$semigroupMin1 = (($GLOBALS['Data_Ord_Min_semigroupMin'] ?? \Data\Ord\Min\phpurs_eval_thunk('Data_Ord_Min_semigroupMin')))((($dictBounded)->Ord0)(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))));
+    $__res = (($GLOBALS['Data_Monoid_Monoid__dollar__Dict'] ?? \Data\Monoid\phpurs_eval_thunk('Data_Monoid_Monoid__dollar__Dict')))((object)["mempty" => (($GLOBALS['Data_Ord_Min_Min'] ?? \Data\Ord\Min\phpurs_eval_thunk('Data_Ord_Min_Min')))((($GLOBALS['Data_Bounded_top'] ?? \Data\Bounded\phpurs_eval_thunk('Data_Bounded_top')))($dictBounded)), "Semigroup0" => (function() use ($semigroupMin1) {
   $__fn = function($__dollar____unused) use ($semigroupMin1, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $semigroupMin1;
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
 })()]);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Ord_Min_monoidMin'] = __NAMESPACE__ . '\\Data_Ord_Min_monoidMin';
 
 // Data_Ord_Min_eqMin
-$Data_Ord_Min_eqMin = (function() {
-  $__fn = function($dictEq) use (&$__fn) {
+function Data_Ord_Min_eqMin($dictEq) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Ord_Min_eqMin';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $dictEq;
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Ord_Min_eqMin'] = __NAMESPACE__ . '\\Data_Ord_Min_eqMin';
 
 // Data_Ord_Min_ordMin
-$Data_Ord_Min_ordMin = (function() {
-  $__fn = function($dictOrd) use (&$__fn) {
+function Data_Ord_Min_ordMin($dictOrd) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-$compare = ($GLOBALS['Data_Ord_compare'])($dictOrd);
-$eqMin1 = ($GLOBALS['Data_Ord_Min_eqMin'])((($dictOrd)->Eq0)($GLOBALS['Prim_undefined']));
-    $__res = ($GLOBALS['Data_Ord_Ord__dollar__Dict'])((object)["compare" => (function() use ($compare) {
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Ord_Min_ordMin';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$compare = (($GLOBALS['Data_Ord_compare'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_compare')))($dictOrd);
+$eqMin1 = (($GLOBALS['Data_Ord_Min_eqMin'] ?? \Data\Ord\Min\phpurs_eval_thunk('Data_Ord_Min_eqMin')))((($dictOrd)->Eq0)(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))));
+    $__res = (($GLOBALS['Data_Ord_Ord__dollar__Dict'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_Ord__dollar__Dict')))((object)["compare" => (function() use ($compare) {
   $__body = function($v, $v1) use ($compare) {
     $__case_0 = $v;
     $__case_1 = $v1;
@@ -173,7 +198,10 @@ throw new \Exception("Pattern match failure");
   };
   $__fn = function($v, $v1 = null) use ($compare, $__body, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 2) return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
     $__res = $__body($v, $v1);
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
@@ -181,14 +209,15 @@ throw new \Exception("Pattern match failure");
 })(), "Eq0" => (function() use ($eqMin1) {
   $__fn = function($__dollar____unused) use ($eqMin1, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $eqMin1;
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
 })()]);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Ord_Min_ordMin'] = __NAMESPACE__ . '\\Data_Ord_Min_ordMin';
 

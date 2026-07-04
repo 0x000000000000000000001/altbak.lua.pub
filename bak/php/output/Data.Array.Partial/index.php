@@ -27,56 +27,73 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_curry_fallback')) {
     };
   }
 }
+if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
+  function phpurs_eval_thunk($id) {
+    static $cache = [];
+    if (array_key_exists($id, $cache)) return $cache[$id];
+    switch ($id) {
+      case 'Data_Array_Partial_unsafeIndex': $v = (($GLOBALS['Data_Array_unsafeIndex'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_unsafeIndex')))(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))); break;
+      case 'Data_Array_Partial_sub': $v = ($GLOBALS['Data_Ring_intSub'] ?? \Data\Ring\phpurs_eval_thunk('Data_Ring_intSub')); break;
+      default: throw new \Exception("Unknown thunk " . $id);
+    }
+    $GLOBALS[$id] = $v;
+    return $cache[$id] = $v;
+  }
+}
 $Prim_undefined = function() { throw new \Exception("undefined"); };
 
 
-// Data_Array_Partial_unsafeIndex
-$Data_Array_Partial_unsafeIndex = ($GLOBALS['Data_Array_unsafeIndex'])($GLOBALS['Prim_undefined']);
 
-// Data_Array_Partial_sub
-$Data_Array_Partial_sub = ($GLOBALS['Data_Ring_sub'])($GLOBALS['Data_Ring_ringInt']);
 
 // Data_Array_Partial_tail
-$Data_Array_Partial_tail = (function() {
-  $__fn = function($__dollar____unused, $xs = null) use (&$__fn) {
+function Data_Array_Partial_tail($__dollar____unused, $xs = null) {
   $__num = func_num_args();
-  if ($__num < 2) return phpurs_curry_fallback($__fn, func_get_args(), 2);
-    $__res = ($GLOBALS['Data_Array_slice'])(1, ($GLOBALS['Data_Array_length'])($xs), $xs);
-  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
-  };
-  return $__fn;
-})();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Array_Partial_tail';
+  if ($__num < 2) {
+    if ($__num === 1) return function($xs) use ($__dollar____unused, $__fn) { return $__fn($__dollar____unused, $xs); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = (($GLOBALS['Data_Array_slice'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_slice')))(1, (($GLOBALS['Data_Array_length'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_length')))($xs), $xs);
+    return 2 < $__num ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+}
+$GLOBALS['Data_Array_Partial_tail'] = __NAMESPACE__ . '\\Data_Array_Partial_tail';
 
 // Data_Array_Partial_last
-$Data_Array_Partial_last = (function() {
-  $__fn = function($__dollar____unused, $xs = null) use (&$__fn) {
+function Data_Array_Partial_last($__dollar____unused, $xs = null) {
   $__num = func_num_args();
-  if ($__num < 2) return phpurs_curry_fallback($__fn, func_get_args(), 2);
-    $__res = ($GLOBALS['Data_Array_Partial_unsafeIndex'])($xs, ($GLOBALS['Data_Array_Partial_sub'])(($GLOBALS['Data_Array_length'])($xs), 1));
-  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
-  };
-  return $__fn;
-})();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Array_Partial_last';
+  if ($__num < 2) {
+    if ($__num === 1) return function($xs) use ($__dollar____unused, $__fn) { return $__fn($__dollar____unused, $xs); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = (($GLOBALS['Data_Array_Partial_unsafeIndex'] ?? \Data\Array\Partial\phpurs_eval_thunk('Data_Array_Partial_unsafeIndex')))($xs, (($GLOBALS['Data_Array_Partial_sub'] ?? \Data\Array\Partial\phpurs_eval_thunk('Data_Array_Partial_sub')))((($GLOBALS['Data_Array_length'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_length')))($xs), 1));
+    return 2 < $__num ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+}
+$GLOBALS['Data_Array_Partial_last'] = __NAMESPACE__ . '\\Data_Array_Partial_last';
 
 // Data_Array_Partial_init
-$Data_Array_Partial_init = (function() {
-  $__fn = function($__dollar____unused, $xs = null) use (&$__fn) {
+function Data_Array_Partial_init($__dollar____unused, $xs = null) {
   $__num = func_num_args();
-  if ($__num < 2) return phpurs_curry_fallback($__fn, func_get_args(), 2);
-    $__res = ($GLOBALS['Data_Array_slice'])(0, ($GLOBALS['Data_Array_Partial_sub'])(($GLOBALS['Data_Array_length'])($xs), 1), $xs);
-  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
-  };
-  return $__fn;
-})();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Array_Partial_init';
+  if ($__num < 2) {
+    if ($__num === 1) return function($xs) use ($__dollar____unused, $__fn) { return $__fn($__dollar____unused, $xs); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = (($GLOBALS['Data_Array_slice'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_slice')))(0, (($GLOBALS['Data_Array_Partial_sub'] ?? \Data\Array\Partial\phpurs_eval_thunk('Data_Array_Partial_sub')))((($GLOBALS['Data_Array_length'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_length')))($xs), 1), $xs);
+    return 2 < $__num ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+}
+$GLOBALS['Data_Array_Partial_init'] = __NAMESPACE__ . '\\Data_Array_Partial_init';
 
 // Data_Array_Partial_head
-$Data_Array_Partial_head = (function() {
-  $__fn = function($__dollar____unused, $xs = null) use (&$__fn) {
+function Data_Array_Partial_head($__dollar____unused, $xs = null) {
   $__num = func_num_args();
-  if ($__num < 2) return phpurs_curry_fallback($__fn, func_get_args(), 2);
-    $__res = ($GLOBALS['Data_Array_Partial_unsafeIndex'])($xs, 0);
-  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
-  };
-  return $__fn;
-})();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Array_Partial_head';
+  if ($__num < 2) {
+    if ($__num === 1) return function($xs) use ($__dollar____unused, $__fn) { return $__fn($__dollar____unused, $xs); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = (($GLOBALS['Data_Array_Partial_unsafeIndex'] ?? \Data\Array\Partial\phpurs_eval_thunk('Data_Array_Partial_unsafeIndex')))($xs, 0);
+    return 2 < $__num ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+}
+$GLOBALS['Data_Array_Partial_head'] = __NAMESPACE__ . '\\Data_Array_Partial_head';
 

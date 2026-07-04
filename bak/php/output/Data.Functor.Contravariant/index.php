@@ -29,43 +29,62 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_curry_fallback')) {
     };
   }
 }
-$Prim_undefined = function() { throw new \Exception("undefined"); };
-
-
-// Data_Functor_Contravariant_Contravariant$Dict
-$Data_Functor_Contravariant_Contravariant__dollar__Dict = (function() {
-  $__fn = function($x) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = $x;
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
-
-// Data_Functor_Contravariant_contravariantConst
-$Data_Functor_Contravariant_contravariantConst = ($GLOBALS['Data_Functor_Contravariant_Contravariant__dollar__Dict'])((object)["cmap" => (function() {
+if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
+  function phpurs_eval_thunk($id) {
+    static $cache = [];
+    if (array_key_exists($id, $cache)) return $cache[$id];
+    switch ($id) {
+      case 'Data_Functor_Contravariant_contravariantConst': $v = (($GLOBALS['Data_Functor_Contravariant_Contravariant__dollar__Dict'] ?? \Data\Functor\Contravariant\phpurs_eval_thunk('Data_Functor_Contravariant_Contravariant__dollar__Dict')))((object)["cmap" => (function() {
   $__body = function($v, $v1) {
     $__case_0 = $v;
     $__case_1 = $v1;
     if (true) {
 $x = $__case_1;
-return ($GLOBALS['Data_Const_Const'])($x);
+return (($GLOBALS['Data_Const_Const'] ?? \Data\Const\phpurs_eval_thunk('Data_Const_Const')))($x);
 } else {
 throw new \Exception("Pattern match failure");
 };
   };
   $__fn = function($v, $v1 = null) use ($__body, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 2) return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
     $__res = $__body($v, $v1);
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
-})()]);
+})()]); break;
+      default: throw new \Exception("Unknown thunk " . $id);
+    }
+    $GLOBALS[$id] = $v;
+    return $cache[$id] = $v;
+  }
+}
+$Prim_undefined = function() { throw new \Exception("undefined"); };
+
+
+// Data_Functor_Contravariant_Contravariant$Dict
+function Data_Functor_Contravariant_Contravariant__dollar__Dict($x) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Functor_Contravariant_Contravariant__dollar__Dict';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $x;
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Functor_Contravariant_Contravariant__dollar__Dict'] = __NAMESPACE__ . '\\Data_Functor_Contravariant_Contravariant__dollar__Dict';
+
 
 // Data_Functor_Contravariant_cmap
-$Data_Functor_Contravariant_cmap = (function() {
+function Data_Functor_Contravariant_cmap($dict) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Functor_Contravariant_cmap';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
   $__body = function($dict) {
     $__case_0 = $dict;
     if (true) {
@@ -75,51 +94,57 @@ return ($v)->cmap;
 throw new \Exception("Pattern match failure");
 };
   };
-  $__fn = function($dict) use ($__body, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
     $__res = $__body($dict);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Functor_Contravariant_cmap'] = __NAMESPACE__ . '\\Data_Functor_Contravariant_cmap';
 
 // Data_Functor_Contravariant_cmapFlipped
-$Data_Functor_Contravariant_cmapFlipped = (function() {
-  $__fn = function($dictContravariant) use (&$__fn) {
+function Data_Functor_Contravariant_cmapFlipped($dictContravariant) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-$cmap1 = ($GLOBALS['Data_Functor_Contravariant_cmap'])($dictContravariant);
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Functor_Contravariant_cmapFlipped';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$cmap1 = (($GLOBALS['Data_Functor_Contravariant_cmap'] ?? \Data\Functor\Contravariant\phpurs_eval_thunk('Data_Functor_Contravariant_cmap')))($dictContravariant);
     $__res = (function() use ($cmap1) {
   $__fn = function($x, $f = null) use ($cmap1, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 2) return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  if ($__num < 2) {
+    if ($__num === 1) return function($f) use ($x, &$__fn) { return $__fn($x, $f); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
     $__res = ($cmap1)($f, $x);
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
 })();
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Functor_Contravariant_cmapFlipped'] = __NAMESPACE__ . '\\Data_Functor_Contravariant_cmapFlipped';
 
 // Data_Functor_Contravariant_coerce
-$Data_Functor_Contravariant_coerce = (function() {
-  $__fn = function($dictContravariant) use (&$__fn) {
+function Data_Functor_Contravariant_coerce($dictContravariant) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-$cmap1 = ($GLOBALS['Data_Functor_Contravariant_cmap'])($dictContravariant);
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Functor_Contravariant_coerce';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$cmap1 = (($GLOBALS['Data_Functor_Contravariant_cmap'] ?? \Data\Functor\Contravariant\phpurs_eval_thunk('Data_Functor_Contravariant_cmap')))($dictContravariant);
     $__res = (function() use ($cmap1) {
   $__fn = function($dictFunctor) use ($cmap1, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-$map = ($GLOBALS['Data_Functor_map'])($dictFunctor);
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$map = (($GLOBALS['Data_Functor_map'] ?? \Data\Functor\phpurs_eval_thunk('Data_Functor_map')))($dictFunctor);
     $__res = (function() use ($map, $cmap1) {
   $__fn = function($a) use ($map, $cmap1, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = ($map)($GLOBALS['Data_Void_absurd'], ($cmap1)($GLOBALS['Data_Void_absurd'], $a));
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($map)(($GLOBALS['Data_Void_absurd'] ?? \Data\Void\phpurs_eval_thunk('Data_Void_absurd')), ($cmap1)(($GLOBALS['Data_Void_absurd'] ?? \Data\Void\phpurs_eval_thunk('Data_Void_absurd')), $a));
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -128,28 +153,31 @@ $map = ($GLOBALS['Data_Functor_map'])($dictFunctor);
   };
   return $__fn;
 })();
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Functor_Contravariant_coerce'] = __NAMESPACE__ . '\\Data_Functor_Contravariant_coerce';
 
 // Data_Functor_Contravariant_imapC
-$Data_Functor_Contravariant_imapC = (function() {
-  $__fn = function($dictContravariant) use (&$__fn) {
+function Data_Functor_Contravariant_imapC($dictContravariant) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-$cmap1 = ($GLOBALS['Data_Functor_Contravariant_cmap'])($dictContravariant);
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Functor_Contravariant_imapC';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$cmap1 = (($GLOBALS['Data_Functor_Contravariant_cmap'] ?? \Data\Functor\Contravariant\phpurs_eval_thunk('Data_Functor_Contravariant_cmap')))($dictContravariant);
     $__res = (function() use ($cmap1) {
   $__fn = function($v, $f = null) use ($cmap1, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 2) return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  if ($__num < 2) {
+    if ($__num === 1) return function($f) use ($v, &$__fn) { return $__fn($v, $f); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
     $__res = ($cmap1)($f);
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
 })();
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Functor_Contravariant_imapC'] = __NAMESPACE__ . '\\Data_Functor_Contravariant_imapC';
 

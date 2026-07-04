@@ -25,9 +25,19 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_curry_fallback')) {
     };
   }
 }
+if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
+  function phpurs_eval_thunk($id) {
+    static $cache = [];
+    if (array_key_exists($id, $cache)) return $cache[$id];
+    switch ($id) {
+      case 'Type_Proxy_Proxy': $v = ($GLOBALS['__phpurs_data0_Proxy'] ??= new Phpurs_Data0("Proxy")); break;
+      default: throw new \Exception("Unknown thunk " . $id);
+    }
+    $GLOBALS[$id] = $v;
+    return $cache[$id] = $v;
+  }
+}
 $Prim_undefined = function() { throw new \Exception("undefined"); };
 
 
-// Type_Proxy_Proxy
-$Type_Proxy_Proxy = new Phpurs_Data0("Proxy");
 

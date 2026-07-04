@@ -32,51 +32,72 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_curry_fallback')) {
     };
   }
 }
+if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
+  function phpurs_eval_thunk($id) {
+    static $cache = [];
+    if (array_key_exists($id, $cache)) return $cache[$id];
+    switch ($id) {
+      case 'Data_Number_Approximate_lessThanOrEq': $v = (($GLOBALS['Data_Ord_lessThanOrEq'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_lessThanOrEq')))(($GLOBALS['Data_Ord_ordNumber'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordNumber'))); break;
+      case 'Data_Number_Approximate_sub': $v = ($GLOBALS['Data_Ring_numSub'] ?? \Data\Ring\phpurs_eval_thunk('Data_Ring_numSub')); break;
+      case 'Data_Number_Approximate_div': $v = ($GLOBALS['Data_EuclideanRing_numDiv'] ?? \Data\EuclideanRing\phpurs_eval_thunk('Data_EuclideanRing_numDiv')); break;
+      case 'Data_Number_Approximate_mul': $v = ($GLOBALS['Data_Semiring_numMul'] ?? \Data\Semiring\phpurs_eval_thunk('Data_Semiring_numMul')); break;
+      case 'Data_Number_Approximate_add': $v = ($GLOBALS['Data_Semiring_numAdd'] ?? \Data\Semiring\phpurs_eval_thunk('Data_Semiring_numAdd')); break;
+      case 'Data_Number_Approximate_not': $v = ($GLOBALS['Data_HeytingAlgebra_boolNot'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_boolNot')); break;
+      case 'Data_Number_Approximate_eqApproximate': $v = ($onePPM = (($GLOBALS['Data_Number_Approximate_Fraction'] ?? \Data\Number\Approximate\phpurs_eval_thunk('Data_Number_Approximate_Fraction')))(0.000001);
+return (($GLOBALS['Data_Number_Approximate_eqRelative'] ?? \Data\Number\Approximate\phpurs_eval_thunk('Data_Number_Approximate_eqRelative')))($onePPM);)(); break;
+      default: throw new \Exception("Unknown thunk " . $id);
+    }
+    $GLOBALS[$id] = $v;
+    return $cache[$id] = $v;
+  }
+}
 $Prim_undefined = function() { throw new \Exception("undefined"); };
 
 
-// Data_Number_Approximate_lessThanOrEq
-$Data_Number_Approximate_lessThanOrEq = ($GLOBALS['Data_Ord_lessThanOrEq'])($GLOBALS['Data_Ord_ordNumber']);
 
-// Data_Number_Approximate_sub
-$Data_Number_Approximate_sub = ($GLOBALS['Data_Ring_sub'])($GLOBALS['Data_Ring_ringNumber']);
 
-// Data_Number_Approximate_div
-$Data_Number_Approximate_div = ($GLOBALS['Data_EuclideanRing_div'])($GLOBALS['Data_EuclideanRing_euclideanRingNumber']);
 
-// Data_Number_Approximate_mul
-$Data_Number_Approximate_mul = ($GLOBALS['Data_Semiring_mul'])($GLOBALS['Data_Semiring_semiringNumber']);
 
-// Data_Number_Approximate_add
-$Data_Number_Approximate_add = ($GLOBALS['Data_Semiring_add'])($GLOBALS['Data_Semiring_semiringNumber']);
 
-// Data_Number_Approximate_not
-$Data_Number_Approximate_not = ($GLOBALS['Data_HeytingAlgebra_not'])($GLOBALS['Data_HeytingAlgebra_heytingAlgebraBoolean']);
 
 // Data_Number_Approximate_Tolerance
-$Data_Number_Approximate_Tolerance = (function() {
-  $__fn = function($x) use (&$__fn) {
+function Data_Number_Approximate_Tolerance($x) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Number_Approximate_Tolerance';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $x;
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Number_Approximate_Tolerance'] = __NAMESPACE__ . '\\Data_Number_Approximate_Tolerance';
 
 // Data_Number_Approximate_Fraction
-$Data_Number_Approximate_Fraction = (function() {
-  $__fn = function($x) use (&$__fn) {
+function Data_Number_Approximate_Fraction($x) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Number_Approximate_Fraction';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $x;
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Number_Approximate_Fraction'] = __NAMESPACE__ . '\\Data_Number_Approximate_Fraction';
 
 // Data_Number_Approximate_eqRelative
-$Data_Number_Approximate_eqRelative = (function() {
+function Data_Number_Approximate_eqRelative($v, $v1 = null, $v2 = null) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Number_Approximate_eqRelative';
+  if ($__num < 3) {
+    if ($__num === 2) return function($v2) use ($v, $v1, $__fn) { return $__fn($v, $v1, $v2); };
+    if ($__num === 1) return function($v1, $v2 = null) use ($v, $__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($v, $v1, $v2);
+      if ($__num2 === 1) return function($v2) use ($v, $v1, $__fn) { return $__fn($v, $v1, $v2); };
+      return phpurs_curry_fallback($__fn, [$v], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
   $__body = function($v, $v1, $v2) {
     $__case_0 = $v;
     $__case_1 = $v1;
@@ -84,50 +105,57 @@ $Data_Number_Approximate_eqRelative = (function() {
     if (($__case_1 === 0.0)) {
 $frac = $__case_0;
 $y = $__case_2;
-return ($GLOBALS['Data_Number_Approximate_lessThanOrEq'])(($GLOBALS['Data_Number_abs'])($y), $frac);
+return (($GLOBALS['Data_Number_Approximate_lessThanOrEq'] ?? \Data\Number\Approximate\phpurs_eval_thunk('Data_Number_Approximate_lessThanOrEq')))((($GLOBALS['Data_Number_abs'] ?? \Data\Number\phpurs_eval_thunk('Data_Number_abs')))($y), $frac);
 } else {
 if (($__case_2 === 0.0)) {
 $frac = $__case_0;
 $x = $__case_1;
-return ($GLOBALS['Data_Number_Approximate_lessThanOrEq'])(($GLOBALS['Data_Number_abs'])($x), $frac);
+return (($GLOBALS['Data_Number_Approximate_lessThanOrEq'] ?? \Data\Number\Approximate\phpurs_eval_thunk('Data_Number_Approximate_lessThanOrEq')))((($GLOBALS['Data_Number_abs'] ?? \Data\Number\phpurs_eval_thunk('Data_Number_abs')))($x), $frac);
 } else {
 if (true) {
 $frac = $__case_0;
 $x = $__case_1;
 $y = $__case_2;
-return ($GLOBALS['Data_Number_Approximate_lessThanOrEq'])(($GLOBALS['Data_Number_abs'])(($GLOBALS['Data_Number_Approximate_sub'])($x, $y)), ($GLOBALS['Data_Number_Approximate_div'])(($GLOBALS['Data_Number_Approximate_mul'])($frac, ($GLOBALS['Data_Number_abs'])(($GLOBALS['Data_Number_Approximate_add'])($x, $y))), 2.0));
+return (($GLOBALS['Data_Number_Approximate_lessThanOrEq'] ?? \Data\Number\Approximate\phpurs_eval_thunk('Data_Number_Approximate_lessThanOrEq')))((($GLOBALS['Data_Number_abs'] ?? \Data\Number\phpurs_eval_thunk('Data_Number_abs')))((($GLOBALS['Data_Number_Approximate_sub'] ?? \Data\Number\Approximate\phpurs_eval_thunk('Data_Number_Approximate_sub')))($x, $y)), (($GLOBALS['Data_Number_Approximate_div'] ?? \Data\Number\Approximate\phpurs_eval_thunk('Data_Number_Approximate_div')))((($GLOBALS['Data_Number_Approximate_mul'] ?? \Data\Number\Approximate\phpurs_eval_thunk('Data_Number_Approximate_mul')))($frac, (($GLOBALS['Data_Number_abs'] ?? \Data\Number\phpurs_eval_thunk('Data_Number_abs')))((($GLOBALS['Data_Number_Approximate_add'] ?? \Data\Number\Approximate\phpurs_eval_thunk('Data_Number_Approximate_add')))($x, $y))), 2.0));
 } else {
 throw new \Exception("Pattern match failure");
 };
 };
 };
   };
-  $__fn = function($v, $v1 = null, $v2 = null) use ($__body, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 3) return phpurs_curry_fallback($__fn, func_get_args(), 3);
     $__res = $__body($v, $v1, $v2);
-  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
-  };
-  return $__fn;
-})();
+    return 3 < $__num ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+}
+$GLOBALS['Data_Number_Approximate_eqRelative'] = __NAMESPACE__ . '\\Data_Number_Approximate_eqRelative';
 
-// Data_Number_Approximate_eqApproximate
-$Data_Number_Approximate_eqApproximate = ($onePPM = ($GLOBALS['Data_Number_Approximate_Fraction'])(0.000001);
-return ($GLOBALS['Data_Number_Approximate_eqRelative'])($onePPM);)();
 
 // Data_Number_Approximate_neqApproximate
-$Data_Number_Approximate_neqApproximate = (function() {
-  $__fn = function($x, $y = null) use (&$__fn) {
+function Data_Number_Approximate_neqApproximate($x, $y = null) {
   $__num = func_num_args();
-  if ($__num < 2) return phpurs_curry_fallback($__fn, func_get_args(), 2);
-    $__res = ($GLOBALS['Data_Number_Approximate_not'])(($GLOBALS['Data_Number_Approximate_eqApproximate'])($x, $y));
-  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
-  };
-  return $__fn;
-})();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Number_Approximate_neqApproximate';
+  if ($__num < 2) {
+    if ($__num === 1) return function($y) use ($x, $__fn) { return $__fn($x, $y); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = (($GLOBALS['Data_Number_Approximate_not'] ?? \Data\Number\Approximate\phpurs_eval_thunk('Data_Number_Approximate_not')))((($GLOBALS['Data_Number_Approximate_eqApproximate'] ?? \Data\Number\Approximate\phpurs_eval_thunk('Data_Number_Approximate_eqApproximate')))($x, $y));
+    return 2 < $__num ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+}
+$GLOBALS['Data_Number_Approximate_neqApproximate'] = __NAMESPACE__ . '\\Data_Number_Approximate_neqApproximate';
 
 // Data_Number_Approximate_eqAbsolute
-$Data_Number_Approximate_eqAbsolute = (function() {
+function Data_Number_Approximate_eqAbsolute($v, $x = null, $y = null) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Number_Approximate_eqAbsolute';
+  if ($__num < 3) {
+    if ($__num === 2) return function($y) use ($v, $x, $__fn) { return $__fn($v, $x, $y); };
+    if ($__num === 1) return function($x, $y = null) use ($v, $__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($v, $x, $y);
+      if ($__num2 === 1) return function($y) use ($v, $x, $__fn) { return $__fn($v, $x, $y); };
+      return phpurs_curry_fallback($__fn, [$v], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
   $__body = function($v, $x, $y) {
     $__case_0 = $v;
     $__case_1 = $x;
@@ -136,17 +164,13 @@ $Data_Number_Approximate_eqAbsolute = (function() {
 $tolerance = $__case_0;
 $x1 = $__case_1;
 $y1 = $__case_2;
-return ($GLOBALS['Data_Number_Approximate_lessThanOrEq'])(($GLOBALS['Data_Number_abs'])(($GLOBALS['Data_Number_Approximate_sub'])($x1, $y1)), $tolerance);
+return (($GLOBALS['Data_Number_Approximate_lessThanOrEq'] ?? \Data\Number\Approximate\phpurs_eval_thunk('Data_Number_Approximate_lessThanOrEq')))((($GLOBALS['Data_Number_abs'] ?? \Data\Number\phpurs_eval_thunk('Data_Number_abs')))((($GLOBALS['Data_Number_Approximate_sub'] ?? \Data\Number\Approximate\phpurs_eval_thunk('Data_Number_Approximate_sub')))($x1, $y1)), $tolerance);
 } else {
 throw new \Exception("Pattern match failure");
 };
   };
-  $__fn = function($v, $x = null, $y = null) use ($__body, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 3) return phpurs_curry_fallback($__fn, func_get_args(), 3);
     $__res = $__body($v, $x, $y);
-  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
-  };
-  return $__fn;
-})();
+    return 3 < $__num ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+}
+$GLOBALS['Data_Number_Approximate_eqAbsolute'] = __NAMESPACE__ . '\\Data_Number_Approximate_eqAbsolute';
 

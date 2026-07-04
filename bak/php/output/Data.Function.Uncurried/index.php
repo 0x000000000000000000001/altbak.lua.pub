@@ -25,6 +25,18 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_curry_fallback')) {
     };
   }
 }
+if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
+  function phpurs_eval_thunk($id) {
+    static $cache = [];
+    if (array_key_exists($id, $cache)) return $cache[$id];
+    switch ($id) {
+
+      default: throw new \Exception("Unknown thunk " . $id);
+    }
+    $GLOBALS[$id] = $v;
+    return $cache[$id] = $v;
+  }
+}
 $Prim_undefined = function() { throw new \Exception("undefined"); };
 if (!function_exists('phpurs_uncurry2')) {
 function phpurs_uncurry2($fn) {
@@ -80,24 +92,26 @@ $Data_Function_Uncurried_runFn2 = phpurs_uncurry3(function($fn) { return functio
 $Data_Function_Uncurried_runFn3 = phpurs_uncurry4(function($fn) { return function($a) use(&$fn) { return function($b) use(&$fn, &$a) { return function($c) use(&$fn, &$a, &$b) { return $fn($a, $b, $c); }; }; }; });
 
 // Data_Function_Uncurried_runFn1
-$Data_Function_Uncurried_runFn1 = (function() {
-  $__fn = function($f) use (&$__fn) {
+function Data_Function_Uncurried_runFn1($f) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Function_Uncurried_runFn1';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $f;
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Function_Uncurried_runFn1'] = __NAMESPACE__ . '\\Data_Function_Uncurried_runFn1';
 
 // Data_Function_Uncurried_mkFn1
-$Data_Function_Uncurried_mkFn1 = (function() {
-  $__fn = function($f) use (&$__fn) {
+function Data_Function_Uncurried_mkFn1($f) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Function_Uncurried_mkFn1';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $f;
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Function_Uncurried_mkFn1'] = __NAMESPACE__ . '\\Data_Function_Uncurried_mkFn1';
 

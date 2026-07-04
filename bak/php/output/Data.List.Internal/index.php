@@ -28,194 +28,301 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_curry_fallback')) {
     };
   }
 }
+if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
+  function phpurs_eval_thunk($id) {
+    static $cache = [];
+    if (array_key_exists($id, $cache)) return $cache[$id];
+    switch ($id) {
+      case 'Data_List_Internal_Leaf': $v = ($GLOBALS['__phpurs_data0_Leaf'] ??= new Phpurs_Data0("Leaf")); break;
+      case 'Data_List_Internal_emptySet': $v = ($GLOBALS['Data_List_Internal_Leaf'] ?? \Data\List\Internal\phpurs_eval_thunk('Data_List_Internal_Leaf')); break;
+      default: throw new \Exception("Unknown thunk " . $id);
+    }
+    $GLOBALS[$id] = $v;
+    return $cache[$id] = $v;
+  }
+}
 $Prim_undefined = function() { throw new \Exception("undefined"); };
 
 
-// Data_List_Internal_Leaf
-$Data_List_Internal_Leaf = new Phpurs_Data0("Leaf");
 
 // Data_List_Internal_Two
-$Data_List_Internal_Two = (function() {
-  $__fn = function($value0, $value1 = null, $value2 = null) use (&$__fn) {
+function Data_List_Internal_Two($value0, $value1 = null, $value2 = null) {
   $__num = func_num_args();
-  if ($__num < 3) return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  $__fn = __NAMESPACE__ . '\\' . 'Data_List_Internal_Two';
+  if ($__num < 3) {
+    if ($__num === 2) return function($value2) use ($value0, $value1, $__fn) { return $__fn($value0, $value1, $value2); };
+    if ($__num === 1) return function($value1, $value2 = null) use ($value0, $__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($value0, $value1, $value2);
+      if ($__num2 === 1) return function($value2) use ($value0, $value1, $__fn) { return $__fn($value0, $value1, $value2); };
+      return phpurs_curry_fallback($__fn, [$value0], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
     $__res = new Phpurs_Data3("Two", $value0, $value1, $value2);
-  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
-  };
-  return $__fn;
-})();
+    return 3 < $__num ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+}
+$GLOBALS['Data_List_Internal_Two'] = __NAMESPACE__ . '\\Data_List_Internal_Two';
 
 // Data_List_Internal_Three
-$Data_List_Internal_Three = (function() {
-  $__fn = function($value0, $value1 = null, $value2 = null, $value3 = null, $value4 = null) use (&$__fn) {
+function Data_List_Internal_Three($value0, $value1 = null, $value2 = null, $value3 = null, $value4 = null) {
   $__num = func_num_args();
-  if ($__num < 5) return phpurs_curry_fallback($__fn, func_get_args(), 5);
+  $__fn = __NAMESPACE__ . '\\' . 'Data_List_Internal_Three';
+  if ($__num < 5) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 5);
+  }
     $__res = new Phpurs_Data5("Three", $value0, $value1, $value2, $value3, $value4);
-  return $__num > 5 ? $__res(...array_slice(func_get_args(), 5)) : $__res;
-  };
-  return $__fn;
-})();
+    return 5 < $__num ? $__res(...array_slice(func_get_args(), 5)) : $__res;
+}
+$GLOBALS['Data_List_Internal_Three'] = __NAMESPACE__ . '\\Data_List_Internal_Three';
 
 // Data_List_Internal_TwoLeft
-$Data_List_Internal_TwoLeft = (function() {
-  $__fn = function($value0, $value1 = null) use (&$__fn) {
+function Data_List_Internal_TwoLeft($value0, $value1 = null) {
   $__num = func_num_args();
-  if ($__num < 2) return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  $__fn = __NAMESPACE__ . '\\' . 'Data_List_Internal_TwoLeft';
+  if ($__num < 2) {
+    if ($__num === 1) return function($value1) use ($value0, $__fn) { return $__fn($value0, $value1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
     $__res = new Phpurs_Data2("TwoLeft", $value0, $value1);
-  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
-  };
-  return $__fn;
-})();
+    return 2 < $__num ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+}
+$GLOBALS['Data_List_Internal_TwoLeft'] = __NAMESPACE__ . '\\Data_List_Internal_TwoLeft';
 
 // Data_List_Internal_TwoRight
-$Data_List_Internal_TwoRight = (function() {
-  $__fn = function($value0, $value1 = null) use (&$__fn) {
+function Data_List_Internal_TwoRight($value0, $value1 = null) {
   $__num = func_num_args();
-  if ($__num < 2) return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  $__fn = __NAMESPACE__ . '\\' . 'Data_List_Internal_TwoRight';
+  if ($__num < 2) {
+    if ($__num === 1) return function($value1) use ($value0, $__fn) { return $__fn($value0, $value1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
     $__res = new Phpurs_Data2("TwoRight", $value0, $value1);
-  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
-  };
-  return $__fn;
-})();
+    return 2 < $__num ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+}
+$GLOBALS['Data_List_Internal_TwoRight'] = __NAMESPACE__ . '\\Data_List_Internal_TwoRight';
 
 // Data_List_Internal_ThreeLeft
-$Data_List_Internal_ThreeLeft = (function() {
-  $__fn = function($value0, $value1 = null, $value2 = null, $value3 = null) use (&$__fn) {
+function Data_List_Internal_ThreeLeft($value0, $value1 = null, $value2 = null, $value3 = null) {
   $__num = func_num_args();
-  if ($__num < 4) return phpurs_curry_fallback($__fn, func_get_args(), 4);
+  $__fn = __NAMESPACE__ . '\\' . 'Data_List_Internal_ThreeLeft';
+  if ($__num < 4) {
+    if ($__num === 3) return function($value3) use ($value0, $value1, $value2, $__fn) { return $__fn($value0, $value1, $value2, $value3); };
+    if ($__num === 2) return function($value2, $value3 = null) use ($value0, $value1, $__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($value0, $value1, $value2, $value3);
+      if ($__num2 === 1) return function($value3) use ($value0, $value1, $value2, $__fn) { return $__fn($value0, $value1, $value2, $value3); };
+      return phpurs_curry_fallback($__fn, [$value0, $value1], 4);
+    };
+    if ($__num === 1) return function($value1, $value2 = null, $value3 = null) use ($value0, $__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 3) return $__fn($value0, $value1, $value2, $value3);
+      if ($__num2 === 2) return function($value3) use ($value0, $value1, $value2, $__fn) { return $__fn($value0, $value1, $value2, $value3); };
+      if ($__num2 === 1) return function($value2, $value3 = null) use ($value0, $value1, $__fn) {
+        $__num3 = func_num_args();
+        if ($__num3 === 2) return $__fn($value0, $value1, $value2, $value3);
+        if ($__num3 === 1) return function($value3) use ($value0, $value1, $value2, $__fn) { return $__fn($value0, $value1, $value2, $value3); };
+        return phpurs_curry_fallback($__fn, [$value0, $value1], 4);
+      };
+      return phpurs_curry_fallback($__fn, [$value0], 4);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 4);
+  }
     $__res = new Phpurs_Data4("ThreeLeft", $value0, $value1, $value2, $value3);
-  return $__num > 4 ? $__res(...array_slice(func_get_args(), 4)) : $__res;
-  };
-  return $__fn;
-})();
+    return 4 < $__num ? $__res(...array_slice(func_get_args(), 4)) : $__res;
+}
+$GLOBALS['Data_List_Internal_ThreeLeft'] = __NAMESPACE__ . '\\Data_List_Internal_ThreeLeft';
 
 // Data_List_Internal_ThreeMiddle
-$Data_List_Internal_ThreeMiddle = (function() {
-  $__fn = function($value0, $value1 = null, $value2 = null, $value3 = null) use (&$__fn) {
+function Data_List_Internal_ThreeMiddle($value0, $value1 = null, $value2 = null, $value3 = null) {
   $__num = func_num_args();
-  if ($__num < 4) return phpurs_curry_fallback($__fn, func_get_args(), 4);
+  $__fn = __NAMESPACE__ . '\\' . 'Data_List_Internal_ThreeMiddle';
+  if ($__num < 4) {
+    if ($__num === 3) return function($value3) use ($value0, $value1, $value2, $__fn) { return $__fn($value0, $value1, $value2, $value3); };
+    if ($__num === 2) return function($value2, $value3 = null) use ($value0, $value1, $__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($value0, $value1, $value2, $value3);
+      if ($__num2 === 1) return function($value3) use ($value0, $value1, $value2, $__fn) { return $__fn($value0, $value1, $value2, $value3); };
+      return phpurs_curry_fallback($__fn, [$value0, $value1], 4);
+    };
+    if ($__num === 1) return function($value1, $value2 = null, $value3 = null) use ($value0, $__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 3) return $__fn($value0, $value1, $value2, $value3);
+      if ($__num2 === 2) return function($value3) use ($value0, $value1, $value2, $__fn) { return $__fn($value0, $value1, $value2, $value3); };
+      if ($__num2 === 1) return function($value2, $value3 = null) use ($value0, $value1, $__fn) {
+        $__num3 = func_num_args();
+        if ($__num3 === 2) return $__fn($value0, $value1, $value2, $value3);
+        if ($__num3 === 1) return function($value3) use ($value0, $value1, $value2, $__fn) { return $__fn($value0, $value1, $value2, $value3); };
+        return phpurs_curry_fallback($__fn, [$value0, $value1], 4);
+      };
+      return phpurs_curry_fallback($__fn, [$value0], 4);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 4);
+  }
     $__res = new Phpurs_Data4("ThreeMiddle", $value0, $value1, $value2, $value3);
-  return $__num > 4 ? $__res(...array_slice(func_get_args(), 4)) : $__res;
-  };
-  return $__fn;
-})();
+    return 4 < $__num ? $__res(...array_slice(func_get_args(), 4)) : $__res;
+}
+$GLOBALS['Data_List_Internal_ThreeMiddle'] = __NAMESPACE__ . '\\Data_List_Internal_ThreeMiddle';
 
 // Data_List_Internal_ThreeRight
-$Data_List_Internal_ThreeRight = (function() {
-  $__fn = function($value0, $value1 = null, $value2 = null, $value3 = null) use (&$__fn) {
+function Data_List_Internal_ThreeRight($value0, $value1 = null, $value2 = null, $value3 = null) {
   $__num = func_num_args();
-  if ($__num < 4) return phpurs_curry_fallback($__fn, func_get_args(), 4);
+  $__fn = __NAMESPACE__ . '\\' . 'Data_List_Internal_ThreeRight';
+  if ($__num < 4) {
+    if ($__num === 3) return function($value3) use ($value0, $value1, $value2, $__fn) { return $__fn($value0, $value1, $value2, $value3); };
+    if ($__num === 2) return function($value2, $value3 = null) use ($value0, $value1, $__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($value0, $value1, $value2, $value3);
+      if ($__num2 === 1) return function($value3) use ($value0, $value1, $value2, $__fn) { return $__fn($value0, $value1, $value2, $value3); };
+      return phpurs_curry_fallback($__fn, [$value0, $value1], 4);
+    };
+    if ($__num === 1) return function($value1, $value2 = null, $value3 = null) use ($value0, $__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 3) return $__fn($value0, $value1, $value2, $value3);
+      if ($__num2 === 2) return function($value3) use ($value0, $value1, $value2, $__fn) { return $__fn($value0, $value1, $value2, $value3); };
+      if ($__num2 === 1) return function($value2, $value3 = null) use ($value0, $value1, $__fn) {
+        $__num3 = func_num_args();
+        if ($__num3 === 2) return $__fn($value0, $value1, $value2, $value3);
+        if ($__num3 === 1) return function($value3) use ($value0, $value1, $value2, $__fn) { return $__fn($value0, $value1, $value2, $value3); };
+        return phpurs_curry_fallback($__fn, [$value0, $value1], 4);
+      };
+      return phpurs_curry_fallback($__fn, [$value0], 4);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 4);
+  }
     $__res = new Phpurs_Data4("ThreeRight", $value0, $value1, $value2, $value3);
-  return $__num > 4 ? $__res(...array_slice(func_get_args(), 4)) : $__res;
-  };
-  return $__fn;
-})();
+    return 4 < $__num ? $__res(...array_slice(func_get_args(), 4)) : $__res;
+}
+$GLOBALS['Data_List_Internal_ThreeRight'] = __NAMESPACE__ . '\\Data_List_Internal_ThreeRight';
 
 // Data_List_Internal_KickUp
-$Data_List_Internal_KickUp = (function() {
-  $__fn = function($value0, $value1 = null, $value2 = null) use (&$__fn) {
+function Data_List_Internal_KickUp($value0, $value1 = null, $value2 = null) {
   $__num = func_num_args();
-  if ($__num < 3) return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  $__fn = __NAMESPACE__ . '\\' . 'Data_List_Internal_KickUp';
+  if ($__num < 3) {
+    if ($__num === 2) return function($value2) use ($value0, $value1, $__fn) { return $__fn($value0, $value1, $value2); };
+    if ($__num === 1) return function($value1, $value2 = null) use ($value0, $__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($value0, $value1, $value2);
+      if ($__num2 === 1) return function($value2) use ($value0, $value1, $__fn) { return $__fn($value0, $value1, $value2); };
+      return phpurs_curry_fallback($__fn, [$value0], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
     $__res = new Phpurs_Data3("KickUp", $value0, $value1, $value2);
-  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
-  };
-  return $__fn;
-})();
+    return 3 < $__num ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+}
+$GLOBALS['Data_List_Internal_KickUp'] = __NAMESPACE__ . '\\Data_List_Internal_KickUp';
 
 // Data_List_Internal_fromZipper
-$Data_List_Internal_fromZipper = (function() {
-  $__fn = function($v, $v1 = null) use (&$__fn) {
+function Data_List_Internal_fromZipper($v, $v1 = null) {
   $__num = func_num_args();
-  if ($__num < 2) return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  $__fn = __NAMESPACE__ . '\\' . 'Data_List_Internal_fromZipper';
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, $__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
 while (true) {
 $__case_0 = $v;
 $__case_1 = $v1;
-if ((($__case_0)->tag === "Nil")) {
+switch (($__case_0)->tag) {
+case "Nil":
 $tree = $__case_1;
 return $tree;
-} else {
-if ((($__case_0)->tag === "Cons")) {
+break;
+case "Cons":
 $x = ($__case_0)->v0;
 $ctx = ($__case_0)->v1;
 $tree = $__case_1;
 $__case_0 = $x;
-if ((($__case_0)->tag === "TwoLeft")) {
+switch (($__case_0)->tag) {
+case "TwoLeft":
 $k1 = ($__case_0)->v0;
 $right = ($__case_0)->v1;
 $__tco_tmp_0 = $ctx;
-$__tco_tmp_1 = ($GLOBALS['Data_List_Internal_Two'])($tree, $k1, $right);
+$__tco_tmp_1 = (($GLOBALS['Data_List_Internal_Two'] ?? \Data\List\Internal\phpurs_eval_thunk('Data_List_Internal_Two')))($tree, $k1, $right);
 $v = $__tco_tmp_0;
 $v1 = $__tco_tmp_1;
-continue;
-} else {
-if ((($__case_0)->tag === "TwoRight")) {
+continue 2;
+break;
+case "TwoRight":
 $left = ($__case_0)->v0;
 $k1 = ($__case_0)->v1;
 $__tco_tmp_0 = $ctx;
-$__tco_tmp_1 = ($GLOBALS['Data_List_Internal_Two'])($left, $k1, $tree);
+$__tco_tmp_1 = (($GLOBALS['Data_List_Internal_Two'] ?? \Data\List\Internal\phpurs_eval_thunk('Data_List_Internal_Two')))($left, $k1, $tree);
 $v = $__tco_tmp_0;
 $v1 = $__tco_tmp_1;
-continue;
-} else {
-if ((($__case_0)->tag === "ThreeLeft")) {
+continue 2;
+break;
+case "ThreeLeft":
 $k1 = ($__case_0)->v0;
 $mid = ($__case_0)->v1;
 $k2 = ($__case_0)->v2;
 $right = ($__case_0)->v3;
 $__tco_tmp_0 = $ctx;
-$__tco_tmp_1 = ($GLOBALS['Data_List_Internal_Three'])($tree, $k1, $mid, $k2, $right);
+$__tco_tmp_1 = (($GLOBALS['Data_List_Internal_Three'] ?? \Data\List\Internal\phpurs_eval_thunk('Data_List_Internal_Three')))($tree, $k1, $mid, $k2, $right);
 $v = $__tco_tmp_0;
 $v1 = $__tco_tmp_1;
-continue;
-} else {
-if ((($__case_0)->tag === "ThreeMiddle")) {
+continue 2;
+break;
+case "ThreeMiddle":
 $left = ($__case_0)->v0;
 $k1 = ($__case_0)->v1;
 $k2 = ($__case_0)->v2;
 $right = ($__case_0)->v3;
 $__tco_tmp_0 = $ctx;
-$__tco_tmp_1 = ($GLOBALS['Data_List_Internal_Three'])($left, $k1, $tree, $k2, $right);
+$__tco_tmp_1 = (($GLOBALS['Data_List_Internal_Three'] ?? \Data\List\Internal\phpurs_eval_thunk('Data_List_Internal_Three')))($left, $k1, $tree, $k2, $right);
 $v = $__tco_tmp_0;
 $v1 = $__tco_tmp_1;
-continue;
-} else {
-if ((($__case_0)->tag === "ThreeRight")) {
+continue 2;
+break;
+case "ThreeRight":
 $left = ($__case_0)->v0;
 $k1 = ($__case_0)->v1;
 $mid = ($__case_0)->v2;
 $k2 = ($__case_0)->v3;
 $__tco_tmp_0 = $ctx;
-$__tco_tmp_1 = ($GLOBALS['Data_List_Internal_Three'])($left, $k1, $mid, $k2, $tree);
+$__tco_tmp_1 = (($GLOBALS['Data_List_Internal_Three'] ?? \Data\List\Internal\phpurs_eval_thunk('Data_List_Internal_Three')))($left, $k1, $mid, $k2, $tree);
 $v = $__tco_tmp_0;
 $v1 = $__tco_tmp_1;
-continue;
-} else {
+continue 2;
+break;
+default:
 throw new \Exception("Pattern match failure");
+break;
 };
-};
-};
-};
-};
-} else {
+break;
+default:
 throw new \Exception("Pattern match failure");
-};
+break;
 };
 };
     $__res = null;
-  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
-  };
-  return $__fn;
-})();
+    return 2 < $__num ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+}
+$GLOBALS['Data_List_Internal_fromZipper'] = __NAMESPACE__ . '\\Data_List_Internal_fromZipper';
 
 // Data_List_Internal_insertAndLookupBy
-$Data_List_Internal_insertAndLookupBy = (function() {
-  $__fn = function($comp, $k = null, $orig = null) use (&$__fn) {
+function Data_List_Internal_insertAndLookupBy($comp, $k = null, $orig = null) {
   $__num = func_num_args();
-  if ($__num < 3) return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  $__fn = __NAMESPACE__ . '\\' . 'Data_List_Internal_insertAndLookupBy';
+  if ($__num < 3) {
+    if ($__num === 2) return function($orig) use ($comp, $k, $__fn) { return $__fn($comp, $k, $orig); };
+    if ($__num === 1) return function($k, $orig = null) use ($comp, $__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($comp, $k, $orig);
+      if ($__num2 === 1) return function($orig) use ($comp, $k, $__fn) { return $__fn($comp, $k, $orig); };
+      return phpurs_curry_fallback($__fn, [$comp], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
 $up = (function() use (&$up) {
   $__fn = function($v, $v1 = null) use (&$up, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 2) return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
 while (true) {
 $__case_0 = $v;
 $__case_1 = $v1;
@@ -223,9 +330,10 @@ if (((($__case_0)->tag === "Nil") && (($__case_1)->tag === "KickUp"))) {
 $left = ($__case_1)->v0;
 $k__prime__ = ($__case_1)->v1;
 $right = ($__case_1)->v2;
-return ($GLOBALS['Data_List_Internal_Two'])($left, $k__prime__, $right);
+return (($GLOBALS['Data_List_Internal_Two'] ?? \Data\List\Internal\phpurs_eval_thunk('Data_List_Internal_Two')))($left, $k__prime__, $right);
 } else {
-if ((($__case_0)->tag === "Cons")) {
+switch (($__case_0)->tag) {
+case "Cons":
 $x = ($__case_0)->v0;
 $ctx = ($__case_0)->v1;
 $kup = $__case_1;
@@ -237,7 +345,7 @@ $right = ($__case_0)->v1;
 $left = ($__case_1)->v0;
 $k__prime__ = ($__case_1)->v1;
 $mid = ($__case_1)->v2;
-return ($GLOBALS['Data_List_Internal_fromZipper'])($ctx, ($GLOBALS['Data_List_Internal_Three'])($left, $k__prime__, $mid, $k1, $right));
+return (($GLOBALS['Data_List_Internal_fromZipper'] ?? \Data\List\Internal\phpurs_eval_thunk('Data_List_Internal_fromZipper')))($ctx, (($GLOBALS['Data_List_Internal_Three'] ?? \Data\List\Internal\phpurs_eval_thunk('Data_List_Internal_Three')))($left, $k__prime__, $mid, $k1, $right));
 } else {
 if (((($__case_0)->tag === "TwoRight") && (($__case_1)->tag === "KickUp"))) {
 $left = ($__case_0)->v0;
@@ -245,7 +353,7 @@ $k1 = ($__case_0)->v1;
 $mid = ($__case_1)->v0;
 $k__prime__ = ($__case_1)->v1;
 $right = ($__case_1)->v2;
-return ($GLOBALS['Data_List_Internal_fromZipper'])($ctx, ($GLOBALS['Data_List_Internal_Three'])($left, $k1, $mid, $k__prime__, $right));
+return (($GLOBALS['Data_List_Internal_fromZipper'] ?? \Data\List\Internal\phpurs_eval_thunk('Data_List_Internal_fromZipper')))($ctx, (($GLOBALS['Data_List_Internal_Three'] ?? \Data\List\Internal\phpurs_eval_thunk('Data_List_Internal_Three')))($left, $k1, $mid, $k__prime__, $right));
 } else {
 if (((($__case_0)->tag === "ThreeLeft") && (($__case_1)->tag === "KickUp"))) {
 $k1 = ($__case_0)->v0;
@@ -256,10 +364,10 @@ $a = ($__case_1)->v0;
 $k__prime__ = ($__case_1)->v1;
 $b = ($__case_1)->v2;
 $__tco_tmp_0 = $ctx;
-$__tco_tmp_1 = ($GLOBALS['Data_List_Internal_KickUp'])(($GLOBALS['Data_List_Internal_Two'])($a, $k__prime__, $b), $k1, ($GLOBALS['Data_List_Internal_Two'])($c, $k2, $d));
+$__tco_tmp_1 = (($GLOBALS['Data_List_Internal_KickUp'] ?? \Data\List\Internal\phpurs_eval_thunk('Data_List_Internal_KickUp')))((($GLOBALS['Data_List_Internal_Two'] ?? \Data\List\Internal\phpurs_eval_thunk('Data_List_Internal_Two')))($a, $k__prime__, $b), $k1, (($GLOBALS['Data_List_Internal_Two'] ?? \Data\List\Internal\phpurs_eval_thunk('Data_List_Internal_Two')))($c, $k2, $d));
 $v = $__tco_tmp_0;
 $v1 = $__tco_tmp_1;
-continue;
+continue 2;
 } else {
 if (((($__case_0)->tag === "ThreeMiddle") && (($__case_1)->tag === "KickUp"))) {
 $a = ($__case_0)->v0;
@@ -270,10 +378,10 @@ $b = ($__case_1)->v0;
 $k__prime__ = ($__case_1)->v1;
 $c = ($__case_1)->v2;
 $__tco_tmp_0 = $ctx;
-$__tco_tmp_1 = ($GLOBALS['Data_List_Internal_KickUp'])(($GLOBALS['Data_List_Internal_Two'])($a, $k1, $b), $k__prime__, ($GLOBALS['Data_List_Internal_Two'])($c, $k2, $d));
+$__tco_tmp_1 = (($GLOBALS['Data_List_Internal_KickUp'] ?? \Data\List\Internal\phpurs_eval_thunk('Data_List_Internal_KickUp')))((($GLOBALS['Data_List_Internal_Two'] ?? \Data\List\Internal\phpurs_eval_thunk('Data_List_Internal_Two')))($a, $k1, $b), $k__prime__, (($GLOBALS['Data_List_Internal_Two'] ?? \Data\List\Internal\phpurs_eval_thunk('Data_List_Internal_Two')))($c, $k2, $d));
 $v = $__tco_tmp_0;
 $v1 = $__tco_tmp_1;
-continue;
+continue 2;
 } else {
 if (((($__case_0)->tag === "ThreeRight") && (($__case_1)->tag === "KickUp"))) {
 $a = ($__case_0)->v0;
@@ -284,10 +392,10 @@ $c = ($__case_1)->v0;
 $k__prime__ = ($__case_1)->v1;
 $d = ($__case_1)->v2;
 $__tco_tmp_0 = $ctx;
-$__tco_tmp_1 = ($GLOBALS['Data_List_Internal_KickUp'])(($GLOBALS['Data_List_Internal_Two'])($a, $k1, $b), $k2, ($GLOBALS['Data_List_Internal_Two'])($c, $k__prime__, $d));
+$__tco_tmp_1 = (($GLOBALS['Data_List_Internal_KickUp'] ?? \Data\List\Internal\phpurs_eval_thunk('Data_List_Internal_KickUp')))((($GLOBALS['Data_List_Internal_Two'] ?? \Data\List\Internal\phpurs_eval_thunk('Data_List_Internal_Two')))($a, $k1, $b), $k2, (($GLOBALS['Data_List_Internal_Two'] ?? \Data\List\Internal\phpurs_eval_thunk('Data_List_Internal_Two')))($c, $k__prime__, $d));
 $v = $__tco_tmp_0;
 $v1 = $__tco_tmp_1;
-continue;
+continue 2;
 } else {
 throw new \Exception("Pattern match failure");
 };
@@ -295,8 +403,10 @@ throw new \Exception("Pattern match failure");
 };
 };
 };
-} else {
+break;
+default:
 throw new \Exception("Pattern match failure");
+break;
 };
 };
 };
@@ -308,15 +418,19 @@ throw new \Exception("Pattern match failure");
 $down = (function() use (&$up, $k, $comp, $orig, &$down) {
   $__fn = function($v, $v1 = null) use (&$up, $k, $comp, $orig, &$down, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 2) return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
 while (true) {
 $__case_0 = $v;
 $__case_1 = $v1;
-if ((($__case_1)->tag === "Leaf")) {
+switch (($__case_1)->tag) {
+case "Leaf":
 $ctx = $__case_0;
-return (object)["found" => false, "result" => ($up)($ctx, ($GLOBALS['Data_List_Internal_KickUp'])($GLOBALS['Data_List_Internal_Leaf'], $k, $GLOBALS['Data_List_Internal_Leaf']))];
-} else {
-if ((($__case_1)->tag === "Two")) {
+return (object)["found" => false, "result" => ($up)($ctx, (($GLOBALS['Data_List_Internal_KickUp'] ?? \Data\List\Internal\phpurs_eval_thunk('Data_List_Internal_KickUp')))(($GLOBALS['Data_List_Internal_Leaf'] ?? \Data\List\Internal\phpurs_eval_thunk('Data_List_Internal_Leaf')), $k, ($GLOBALS['Data_List_Internal_Leaf'] ?? \Data\List\Internal\phpurs_eval_thunk('Data_List_Internal_Leaf'))))];
+break;
+case "Two":
 $ctx = $__case_0;
 $left = ($__case_1)->v0;
 $k1 = ($__case_1)->v1;
@@ -327,25 +441,25 @@ if ((($__case_0)->tag === "EQ")) {
 return (object)["found" => true, "result" => $orig];
 } else {
 if ((($__case_0)->tag === "LT")) {
-$__tco_tmp_0 = ($GLOBALS['Data_List_Types_Cons'])(($GLOBALS['Data_List_Internal_TwoLeft'])($k1, $right), $ctx);
+$__tco_tmp_0 = (($GLOBALS['Data_List_Types_Cons'] ?? \Data\List\Types\phpurs_eval_thunk('Data_List_Types_Cons')))((($GLOBALS['Data_List_Internal_TwoLeft'] ?? \Data\List\Internal\phpurs_eval_thunk('Data_List_Internal_TwoLeft')))($k1, $right), $ctx);
 $__tco_tmp_1 = $left;
 $v = $__tco_tmp_0;
 $v1 = $__tco_tmp_1;
-continue;
+continue 2;
 } else {
 if (true) {
-$__tco_tmp_0 = ($GLOBALS['Data_List_Types_Cons'])(($GLOBALS['Data_List_Internal_TwoRight'])($left, $k1), $ctx);
+$__tco_tmp_0 = (($GLOBALS['Data_List_Types_Cons'] ?? \Data\List\Types\phpurs_eval_thunk('Data_List_Types_Cons')))((($GLOBALS['Data_List_Internal_TwoRight'] ?? \Data\List\Internal\phpurs_eval_thunk('Data_List_Internal_TwoRight')))($left, $k1), $ctx);
 $__tco_tmp_1 = $right;
 $v = $__tco_tmp_0;
 $v1 = $__tco_tmp_1;
-continue;
+continue 2;
 } else {
 throw new \Exception("Pattern match failure");
 };
 };
 };
-} else {
-if ((($__case_1)->tag === "Three")) {
+break;
+case "Three":
 $ctx = $__case_0;
 $left = ($__case_1)->v0;
 $k1 = ($__case_1)->v1;
@@ -367,25 +481,25 @@ if ((($__case_1)->tag === "EQ")) {
 return (object)["found" => true, "result" => $orig];
 } else {
 if ((($__case_0)->tag === "LT")) {
-$__tco_tmp_0 = ($GLOBALS['Data_List_Types_Cons'])(($GLOBALS['Data_List_Internal_ThreeLeft'])($k1, $mid, $k2, $right), $ctx);
+$__tco_tmp_0 = (($GLOBALS['Data_List_Types_Cons'] ?? \Data\List\Types\phpurs_eval_thunk('Data_List_Types_Cons')))((($GLOBALS['Data_List_Internal_ThreeLeft'] ?? \Data\List\Internal\phpurs_eval_thunk('Data_List_Internal_ThreeLeft')))($k1, $mid, $k2, $right), $ctx);
 $__tco_tmp_1 = $left;
 $v = $__tco_tmp_0;
 $v1 = $__tco_tmp_1;
-continue;
+continue 2;
 } else {
 if (((($__case_0)->tag === "GT") && (($__case_1)->tag === "LT"))) {
-$__tco_tmp_0 = ($GLOBALS['Data_List_Types_Cons'])(($GLOBALS['Data_List_Internal_ThreeMiddle'])($left, $k1, $k2, $right), $ctx);
+$__tco_tmp_0 = (($GLOBALS['Data_List_Types_Cons'] ?? \Data\List\Types\phpurs_eval_thunk('Data_List_Types_Cons')))((($GLOBALS['Data_List_Internal_ThreeMiddle'] ?? \Data\List\Internal\phpurs_eval_thunk('Data_List_Internal_ThreeMiddle')))($left, $k1, $k2, $right), $ctx);
 $__tco_tmp_1 = $mid;
 $v = $__tco_tmp_0;
 $v1 = $__tco_tmp_1;
-continue;
+continue 2;
 } else {
 if (true) {
-$__tco_tmp_0 = ($GLOBALS['Data_List_Types_Cons'])(($GLOBALS['Data_List_Internal_ThreeRight'])($left, $k1, $mid, $k2), $ctx);
+$__tco_tmp_0 = (($GLOBALS['Data_List_Types_Cons'] ?? \Data\List\Types\phpurs_eval_thunk('Data_List_Types_Cons')))((($GLOBALS['Data_List_Internal_ThreeRight'] ?? \Data\List\Internal\phpurs_eval_thunk('Data_List_Internal_ThreeRight')))($left, $k1, $mid, $k2), $ctx);
 $__tco_tmp_1 = $right;
 $v = $__tco_tmp_0;
 $v1 = $__tco_tmp_1;
-continue;
+continue 2;
 } else {
 throw new \Exception("Pattern match failure");
 };
@@ -396,10 +510,10 @@ throw new \Exception("Pattern match failure");
 throw new \Exception("Pattern match failure");
 };
 };
-} else {
+break;
+default:
 throw new \Exception("Pattern match failure");
-};
-};
+break;
 };
 };
     $__res = null;
@@ -407,12 +521,9 @@ throw new \Exception("Pattern match failure");
   };
   return $__fn;
 })();
-    $__res = ($down)($GLOBALS['Data_List_Types_Nil'], $orig);
-  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
-  };
-  return $__fn;
-})();
+    $__res = ($down)(($GLOBALS['Data_List_Types_Nil'] ?? \Data\List\Types\phpurs_eval_thunk('Data_List_Types_Nil')), $orig);
+    return 3 < $__num ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+}
+$GLOBALS['Data_List_Internal_insertAndLookupBy'] = __NAMESPACE__ . '\\Data_List_Internal_insertAndLookupBy';
 
-// Data_List_Internal_emptySet
-$Data_List_Internal_emptySet = $GLOBALS['Data_List_Internal_Leaf'];
 

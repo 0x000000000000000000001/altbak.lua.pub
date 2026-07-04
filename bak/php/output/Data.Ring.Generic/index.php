@@ -29,22 +29,51 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_curry_fallback')) {
     };
   }
 }
+if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
+  function phpurs_eval_thunk($id) {
+    static $cache = [];
+    if (array_key_exists($id, $cache)) return $cache[$id];
+    switch ($id) {
+      case 'Data_Ring_Generic_genericRingNoArguments': $v = (($GLOBALS['Data_Ring_Generic_GenericRing__dollar__Dict'] ?? \Data\Ring\Generic\phpurs_eval_thunk('Data_Ring_Generic_GenericRing__dollar__Dict')))((object)["genericSub'" => (function() {
+  $__fn = function($v, $v1 = null) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($GLOBALS['Data_Generic_Rep_NoArguments'] ?? \Data\Generic\Rep\phpurs_eval_thunk('Data_Generic_Rep_NoArguments'));
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()]); break;
+      default: throw new \Exception("Unknown thunk " . $id);
+    }
+    $GLOBALS[$id] = $v;
+    return $cache[$id] = $v;
+  }
+}
 $Prim_undefined = function() { throw new \Exception("undefined"); };
 
 
 // Data_Ring_Generic_GenericRing$Dict
-$Data_Ring_Generic_GenericRing__dollar__Dict = (function() {
-  $__fn = function($x) use (&$__fn) {
+function Data_Ring_Generic_GenericRing__dollar__Dict($x) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Ring_Generic_GenericRing__dollar__Dict';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $x;
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Ring_Generic_GenericRing__dollar__Dict'] = __NAMESPACE__ . '\\Data_Ring_Generic_GenericRing__dollar__Dict';
 
 // Data_Ring_Generic_genericSub'
-$Data_Ring_Generic_genericSub__prime__ = (function() {
+function Data_Ring_Generic_genericSub__prime__($dict) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Ring_Generic_genericSub__prime__';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
   $__body = function($dict) {
     $__case_0 = $dict;
     if (true) {
@@ -54,31 +83,34 @@ return ($v)->genericSub__prime__;
 throw new \Exception("Pattern match failure");
 };
   };
-  $__fn = function($dict) use ($__body, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
     $__res = $__body($dict);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Ring_Generic_genericSub__prime__'] = __NAMESPACE__ . '\\Data_Ring_Generic_genericSub__prime__';
 
 // Data_Ring_Generic_genericSub
-$Data_Ring_Generic_genericSub = (function() {
-  $__fn = function($dictGeneric) use (&$__fn) {
+function Data_Ring_Generic_genericSub($dictGeneric) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-$to = ($GLOBALS['Data_Generic_Rep_to'])($dictGeneric);
-$from = ($GLOBALS['Data_Generic_Rep_from'])($dictGeneric);
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Ring_Generic_genericSub';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$to = (($GLOBALS['Data_Generic_Rep_to'] ?? \Data\Generic\Rep\phpurs_eval_thunk('Data_Generic_Rep_to')))($dictGeneric);
+$from = (($GLOBALS['Data_Generic_Rep_from'] ?? \Data\Generic\Rep\phpurs_eval_thunk('Data_Generic_Rep_from')))($dictGeneric);
     $__res = (function() use ($to, $from) {
   $__fn = function($dictGenericRing) use ($to, $from, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-$genericSub__prime__1 = ($GLOBALS['Data_Ring_Generic_genericSub__prime__'])($dictGenericRing);
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$genericSub__prime__1 = (($GLOBALS['Data_Ring_Generic_genericSub__prime__'] ?? \Data\Ring\Generic\phpurs_eval_thunk('Data_Ring_Generic_genericSub__prime__')))($dictGenericRing);
     $__res = (function() use ($to, $genericSub__prime__1, $from) {
   $__fn = function($x, $y = null) use ($to, $genericSub__prime__1, $from, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 2) return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  if ($__num < 2) {
+    if ($__num === 1) return function($y) use ($x, &$__fn) { return $__fn($x, $y); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
     $__res = ($to)(($genericSub__prime__1)(($from)($x), ($from)($y)));
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
@@ -88,23 +120,26 @@ $genericSub__prime__1 = ($GLOBALS['Data_Ring_Generic_genericSub__prime__'])($dic
   };
   return $__fn;
 })();
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Ring_Generic_genericSub'] = __NAMESPACE__ . '\\Data_Ring_Generic_genericSub';
 
 // Data_Ring_Generic_genericRingProduct
-$Data_Ring_Generic_genericRingProduct = (function() {
-  $__fn = function($dictGenericRing) use (&$__fn) {
+function Data_Ring_Generic_genericRingProduct($dictGenericRing) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-$genericSub__prime__1 = ($GLOBALS['Data_Ring_Generic_genericSub__prime__'])($dictGenericRing);
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Ring_Generic_genericRingProduct';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$genericSub__prime__1 = (($GLOBALS['Data_Ring_Generic_genericSub__prime__'] ?? \Data\Ring\Generic\phpurs_eval_thunk('Data_Ring_Generic_genericSub__prime__')))($dictGenericRing);
     $__res = (function() use ($genericSub__prime__1) {
   $__fn = function($dictGenericRing1) use ($genericSub__prime__1, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-$genericSub__prime__2 = ($GLOBALS['Data_Ring_Generic_genericSub__prime__'])($dictGenericRing1);
-    $__res = ($GLOBALS['Data_Ring_Generic_GenericRing__dollar__Dict'])((object)["genericSub'" => (function() use ($genericSub__prime__1, $genericSub__prime__2) {
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$genericSub__prime__2 = (($GLOBALS['Data_Ring_Generic_genericSub__prime__'] ?? \Data\Ring\Generic\phpurs_eval_thunk('Data_Ring_Generic_genericSub__prime__')))($dictGenericRing1);
+    $__res = (($GLOBALS['Data_Ring_Generic_GenericRing__dollar__Dict'] ?? \Data\Ring\Generic\phpurs_eval_thunk('Data_Ring_Generic_GenericRing__dollar__Dict')))((object)["genericSub'" => (function() use ($genericSub__prime__1, $genericSub__prime__2) {
   $__body = function($v, $v1) use ($genericSub__prime__1, $genericSub__prime__2) {
     $__case_0 = $v;
     $__case_1 = $v1;
@@ -113,14 +148,17 @@ $a1 = ($__case_0)->v0;
 $b1 = ($__case_0)->v1;
 $a2 = ($__case_1)->v0;
 $b2 = ($__case_1)->v1;
-return ($GLOBALS['Data_Generic_Rep_Product'])(($genericSub__prime__1)($a1, $a2), ($genericSub__prime__2)($b1, $b2));
+return (($GLOBALS['Data_Generic_Rep_Product'] ?? \Data\Generic\Rep\phpurs_eval_thunk('Data_Generic_Rep_Product')))(($genericSub__prime__1)($a1, $a2), ($genericSub__prime__2)($b1, $b2));
 } else {
 throw new \Exception("Pattern match failure");
 };
   };
   $__fn = function($v, $v1 = null) use ($genericSub__prime__1, $genericSub__prime__2, $__body, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 2) return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
     $__res = $__body($v, $v1);
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
@@ -130,81 +168,78 @@ throw new \Exception("Pattern match failure");
   };
   return $__fn;
 })();
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Ring_Generic_genericRingProduct'] = __NAMESPACE__ . '\\Data_Ring_Generic_genericRingProduct';
 
-// Data_Ring_Generic_genericRingNoArguments
-$Data_Ring_Generic_genericRingNoArguments = ($GLOBALS['Data_Ring_Generic_GenericRing__dollar__Dict'])((object)["genericSub'" => (function() {
-  $__fn = function($v, $v1 = null) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 2) return phpurs_curry_fallback($__fn, func_get_args(), 2);
-    $__res = $GLOBALS['Data_Generic_Rep_NoArguments'];
-  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
-  };
-  return $__fn;
-})()]);
 
 // Data_Ring_Generic_genericRingConstructor
-$Data_Ring_Generic_genericRingConstructor = (function() {
-  $__fn = function($dictGenericRing) use (&$__fn) {
+function Data_Ring_Generic_genericRingConstructor($dictGenericRing) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-$genericSub__prime__1 = ($GLOBALS['Data_Ring_Generic_genericSub__prime__'])($dictGenericRing);
-    $__res = ($GLOBALS['Data_Ring_Generic_GenericRing__dollar__Dict'])((object)["genericSub'" => (function() use ($genericSub__prime__1) {
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Ring_Generic_genericRingConstructor';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$genericSub__prime__1 = (($GLOBALS['Data_Ring_Generic_genericSub__prime__'] ?? \Data\Ring\Generic\phpurs_eval_thunk('Data_Ring_Generic_genericSub__prime__')))($dictGenericRing);
+    $__res = (($GLOBALS['Data_Ring_Generic_GenericRing__dollar__Dict'] ?? \Data\Ring\Generic\phpurs_eval_thunk('Data_Ring_Generic_GenericRing__dollar__Dict')))((object)["genericSub'" => (function() use ($genericSub__prime__1) {
   $__body = function($v, $v1) use ($genericSub__prime__1) {
     $__case_0 = $v;
     $__case_1 = $v1;
     if (true) {
 $a1 = $__case_0;
 $a2 = $__case_1;
-return ($GLOBALS['Data_Generic_Rep_Constructor'])(($genericSub__prime__1)($a1, $a2));
+return (($GLOBALS['Data_Generic_Rep_Constructor'] ?? \Data\Generic\Rep\phpurs_eval_thunk('Data_Generic_Rep_Constructor')))(($genericSub__prime__1)($a1, $a2));
 } else {
 throw new \Exception("Pattern match failure");
 };
   };
   $__fn = function($v, $v1 = null) use ($genericSub__prime__1, $__body, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 2) return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
     $__res = $__body($v, $v1);
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
 })()]);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Ring_Generic_genericRingConstructor'] = __NAMESPACE__ . '\\Data_Ring_Generic_genericRingConstructor';
 
 // Data_Ring_Generic_genericRingArgument
-$Data_Ring_Generic_genericRingArgument = (function() {
-  $__fn = function($dictRing) use (&$__fn) {
+function Data_Ring_Generic_genericRingArgument($dictRing) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-$sub = ($GLOBALS['Data_Ring_sub'])($dictRing);
-    $__res = ($GLOBALS['Data_Ring_Generic_GenericRing__dollar__Dict'])((object)["genericSub'" => (function() use ($sub) {
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Ring_Generic_genericRingArgument';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$sub = (($GLOBALS['Data_Ring_sub'] ?? \Data\Ring\phpurs_eval_thunk('Data_Ring_sub')))($dictRing);
+    $__res = (($GLOBALS['Data_Ring_Generic_GenericRing__dollar__Dict'] ?? \Data\Ring\Generic\phpurs_eval_thunk('Data_Ring_Generic_GenericRing__dollar__Dict')))((object)["genericSub'" => (function() use ($sub) {
   $__body = function($v, $v1) use ($sub) {
     $__case_0 = $v;
     $__case_1 = $v1;
     if (true) {
 $x = $__case_0;
 $y = $__case_1;
-return ($GLOBALS['Data_Generic_Rep_Argument'])(($sub)($x, $y));
+return (($GLOBALS['Data_Generic_Rep_Argument'] ?? \Data\Generic\Rep\phpurs_eval_thunk('Data_Generic_Rep_Argument')))(($sub)($x, $y));
 } else {
 throw new \Exception("Pattern match failure");
 };
   };
   $__fn = function($v, $v1 = null) use ($sub, $__body, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 2) return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
     $__res = $__body($v, $v1);
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
 })()]);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Ring_Generic_genericRingArgument'] = __NAMESPACE__ . '\\Data_Ring_Generic_genericRingArgument';
 

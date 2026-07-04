@@ -30,64 +30,97 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_curry_fallback')) {
     };
   }
 }
+if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
+  function phpurs_eval_thunk($id) {
+    static $cache = [];
+    if (array_key_exists($id, $cache)) return $cache[$id];
+    switch ($id) {
+      case 'Control_Monad_Cont_unwrap': $v = (($GLOBALS['Data_Newtype_unwrap'] ?? \Data\Newtype\phpurs_eval_thunk('Data_Newtype_unwrap')))(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))); break;
+      default: throw new \Exception("Unknown thunk " . $id);
+    }
+    $GLOBALS[$id] = $v;
+    return $cache[$id] = $v;
+  }
+}
 $Prim_undefined = function() { throw new \Exception("undefined"); };
 
 
 // Control_Monad_Cont_compose
-$Control_Monad_Cont_compose = ($GLOBALS['Control_Semigroupoid_compose'])($GLOBALS['Control_Semigroupoid_semigroupoidFn']);
+function Control_Monad_Cont_compose($f, $g = null, $x = null) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Control_Monad_Cont_compose';
+  if ($__num < 3) {
+    if ($__num === 2) return function($x) use ($f, $g, $__fn) { return $__fn($f, $g, $x); };
+    if ($__num === 1) return function($g, $x = null) use ($f, $__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $g, $x);
+      if ($__num2 === 1) return function($x) use ($f, $g, $__fn) { return $__fn($f, $g, $x); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = ($f)(($g)($x));
+    return 3 < $__num ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+}
+$GLOBALS['Control_Monad_Cont_compose'] = __NAMESPACE__ . '\\Control_Monad_Cont_compose';
 
-// Control_Monad_Cont_unwrap
-$Control_Monad_Cont_unwrap = ($GLOBALS['Data_Newtype_unwrap'])($GLOBALS['Prim_undefined']);
 
 // Control_Monad_Cont_withCont
-$Control_Monad_Cont_withCont = (function() {
-  $__fn = function($f) use (&$__fn) {
+function Control_Monad_Cont_withCont($f) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = ($GLOBALS['Control_Monad_Cont_Trans_withContT'])(($GLOBALS['Control_Monad_Cont_compose'])(($GLOBALS['Control_Monad_Cont_compose'])($GLOBALS['Data_Identity_Identity']), ($GLOBALS['Control_Monad_Cont_compose'])($f, ($GLOBALS['Control_Monad_Cont_compose'])($GLOBALS['Control_Monad_Cont_unwrap']))));
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+  $__fn = __NAMESPACE__ . '\\' . 'Control_Monad_Cont_withCont';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = (($GLOBALS['Control_Monad_Cont_Trans_withContT'] ?? \Control\Monad\Cont\Trans\phpurs_eval_thunk('Control_Monad_Cont_Trans_withContT')))((($GLOBALS['Control_Monad_Cont_compose'] ?? \Control\Monad\Cont\phpurs_eval_thunk('Control_Monad_Cont_compose')))((($GLOBALS['Control_Monad_Cont_compose'] ?? \Control\Monad\Cont\phpurs_eval_thunk('Control_Monad_Cont_compose')))(($GLOBALS['Data_Identity_Identity'] ?? \Data\Identity\phpurs_eval_thunk('Data_Identity_Identity'))), (($GLOBALS['Control_Monad_Cont_compose'] ?? \Control\Monad\Cont\phpurs_eval_thunk('Control_Monad_Cont_compose')))($f, (($GLOBALS['Control_Monad_Cont_compose'] ?? \Control\Monad\Cont\phpurs_eval_thunk('Control_Monad_Cont_compose')))(($GLOBALS['Control_Monad_Cont_unwrap'] ?? \Control\Monad\Cont\phpurs_eval_thunk('Control_Monad_Cont_unwrap'))))));
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Control_Monad_Cont_withCont'] = __NAMESPACE__ . '\\Control_Monad_Cont_withCont';
 
 // Control_Monad_Cont_runCont
-$Control_Monad_Cont_runCont = (function() {
-  $__fn = function($cc, $k = null) use (&$__fn) {
+function Control_Monad_Cont_runCont($cc, $k = null) {
   $__num = func_num_args();
-  if ($__num < 2) return phpurs_curry_fallback($__fn, func_get_args(), 2);
-    $__res = ($GLOBALS['Control_Monad_Cont_unwrap'])(($GLOBALS['Control_Monad_Cont_Trans_runContT'])($cc, ($GLOBALS['Control_Monad_Cont_compose'])($GLOBALS['Data_Identity_Identity'], $k)));
-  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
-  };
-  return $__fn;
-})();
+  $__fn = __NAMESPACE__ . '\\' . 'Control_Monad_Cont_runCont';
+  if ($__num < 2) {
+    if ($__num === 1) return function($k) use ($cc, $__fn) { return $__fn($cc, $k); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = (($GLOBALS['Control_Monad_Cont_unwrap'] ?? \Control\Monad\Cont\phpurs_eval_thunk('Control_Monad_Cont_unwrap')))((($GLOBALS['Control_Monad_Cont_Trans_runContT'] ?? \Control\Monad\Cont\Trans\phpurs_eval_thunk('Control_Monad_Cont_Trans_runContT')))($cc, (($GLOBALS['Control_Monad_Cont_compose'] ?? \Control\Monad\Cont\phpurs_eval_thunk('Control_Monad_Cont_compose')))(($GLOBALS['Data_Identity_Identity'] ?? \Data\Identity\phpurs_eval_thunk('Data_Identity_Identity')), $k)));
+    return 2 < $__num ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+}
+$GLOBALS['Control_Monad_Cont_runCont'] = __NAMESPACE__ . '\\Control_Monad_Cont_runCont';
 
 // Control_Monad_Cont_mapCont
-$Control_Monad_Cont_mapCont = (function() {
-  $__fn = function($f) use (&$__fn) {
+function Control_Monad_Cont_mapCont($f) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = ($GLOBALS['Control_Monad_Cont_Trans_mapContT'])(($GLOBALS['Control_Monad_Cont_compose'])($GLOBALS['Data_Identity_Identity'], ($GLOBALS['Control_Monad_Cont_compose'])($f, $GLOBALS['Control_Monad_Cont_unwrap'])));
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+  $__fn = __NAMESPACE__ . '\\' . 'Control_Monad_Cont_mapCont';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = (($GLOBALS['Control_Monad_Cont_Trans_mapContT'] ?? \Control\Monad\Cont\Trans\phpurs_eval_thunk('Control_Monad_Cont_Trans_mapContT')))((($GLOBALS['Control_Monad_Cont_compose'] ?? \Control\Monad\Cont\phpurs_eval_thunk('Control_Monad_Cont_compose')))(($GLOBALS['Data_Identity_Identity'] ?? \Data\Identity\phpurs_eval_thunk('Data_Identity_Identity')), (($GLOBALS['Control_Monad_Cont_compose'] ?? \Control\Monad\Cont\phpurs_eval_thunk('Control_Monad_Cont_compose')))($f, ($GLOBALS['Control_Monad_Cont_unwrap'] ?? \Control\Monad\Cont\phpurs_eval_thunk('Control_Monad_Cont_unwrap')))));
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Control_Monad_Cont_mapCont'] = __NAMESPACE__ . '\\Control_Monad_Cont_mapCont';
 
 // Control_Monad_Cont_cont
-$Control_Monad_Cont_cont = (function() {
-  $__fn = function($f) use (&$__fn) {
+function Control_Monad_Cont_cont($f) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = ($GLOBALS['Control_Monad_Cont_Trans_ContT'])((function() use ($f) {
+  $__fn = __NAMESPACE__ . '\\' . 'Control_Monad_Cont_cont';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = (($GLOBALS['Control_Monad_Cont_Trans_ContT'] ?? \Control\Monad\Cont\Trans\phpurs_eval_thunk('Control_Monad_Cont_Trans_ContT')))((function() use ($f) {
   $__fn = function($c) use ($f, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = ($GLOBALS['Data_Identity_Identity'])(($f)(($GLOBALS['Control_Monad_Cont_compose'])($GLOBALS['Control_Monad_Cont_unwrap'], $c)));
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = (($GLOBALS['Data_Identity_Identity'] ?? \Data\Identity\phpurs_eval_thunk('Data_Identity_Identity')))(($f)((($GLOBALS['Control_Monad_Cont_compose'] ?? \Control\Monad\Cont\phpurs_eval_thunk('Control_Monad_Cont_compose')))(($GLOBALS['Control_Monad_Cont_unwrap'] ?? \Control\Monad\Cont\phpurs_eval_thunk('Control_Monad_Cont_unwrap')), $c)));
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
 })());
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Control_Monad_Cont_cont'] = __NAMESPACE__ . '\\Control_Monad_Cont_cont';
 

@@ -33,88 +33,119 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_curry_fallback')) {
     };
   }
 }
+if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
+  function phpurs_eval_thunk($id) {
+    static $cache = [];
+    if (array_key_exists($id, $cache)) return $cache[$id];
+    switch ($id) {
+      case 'Test_Async_bind': $v = ($GLOBALS['Effect_Aff__bind'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff__bind')); break;
+      case 'Test_Async_discard': $v = ((function() {
+  $__fn = function($dictBind) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = (($GLOBALS['Control_Bind_bind'] ?? \Control\Bind\phpurs_eval_thunk('Control_Bind_bind')))($dictBind);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})())(($GLOBALS['Effect_Aff_bindAff'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_bindAff'))); break;
+      case 'Test_Async_liftEffect': $v = ($GLOBALS['Effect_Aff__liftEffect'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff__liftEffect')); break;
+      case 'Test_Async_pure': $v = ($GLOBALS['Effect_Aff__pure'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff__pure')); break;
+      case 'Test_Async_describe': $v = (($GLOBALS['Effect_Console_log'] ?? \Effect\Console\phpurs_eval_thunk('Effect_Console_log')))("Asynchronous Concurrency (Aff):"); break;
+      case 'Test_Async_act': $v = (($GLOBALS['Effect_Aff_launchAff_'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_launchAff_')))((($GLOBALS['Test_Async_bind'] ?? \Test\Async\phpurs_eval_thunk('Test_Async_bind')))((($GLOBALS['Effect_Aff_forkAff'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_forkAff')))((($GLOBALS['Test_Async_discard'] ?? \Test\Async\phpurs_eval_thunk('Test_Async_discard')))((($GLOBALS['Effect_Aff_delay'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_delay')))((($GLOBALS['Data_Time_Duration_Milliseconds'] ?? \Data\Time\Duration\phpurs_eval_thunk('Data_Time_Duration_Milliseconds')))(10.0)), (function() {
+  $__fn = function($__dollar____unused) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = (($GLOBALS['Test_Async_bind'] ?? \Test\Async\phpurs_eval_thunk('Test_Async_bind')))((($GLOBALS['Test_Async_liftEffect'] ?? \Test\Async\phpurs_eval_thunk('Test_Async_liftEffect')))((($GLOBALS['Effect_Console_log'] ?? \Effect\Console\phpurs_eval_thunk('Effect_Console_log')))("Fiber 1 finished")), (function() {
+  $__fn = function($__dollar____unused) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = (($GLOBALS['Test_Async_pure'] ?? \Test\Async\phpurs_eval_thunk('Test_Async_pure')))(($GLOBALS['Data_Unit_unit'] ?? \Data\Unit\phpurs_eval_thunk('Data_Unit_unit')));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})());
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})())), (function() {
+  $__fn = function($__dollar____unused) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = (($GLOBALS['Test_Async_bind'] ?? \Test\Async\phpurs_eval_thunk('Test_Async_bind')))((($GLOBALS['Effect_Aff_forkAff'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_forkAff')))((($GLOBALS['Test_Async_discard'] ?? \Test\Async\phpurs_eval_thunk('Test_Async_discard')))((($GLOBALS['Effect_Aff_delay'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_delay')))((($GLOBALS['Data_Time_Duration_Milliseconds'] ?? \Data\Time\Duration\phpurs_eval_thunk('Data_Time_Duration_Milliseconds')))(20.0)), (function() {
+  $__fn = function($__dollar____unused) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = (($GLOBALS['Test_Async_bind'] ?? \Test\Async\phpurs_eval_thunk('Test_Async_bind')))((($GLOBALS['Test_Async_liftEffect'] ?? \Test\Async\phpurs_eval_thunk('Test_Async_liftEffect')))((($GLOBALS['Effect_Console_log'] ?? \Effect\Console\phpurs_eval_thunk('Effect_Console_log')))("Fiber 2 finished")), (function() {
+  $__fn = function($__dollar____unused) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = (($GLOBALS['Test_Async_pure'] ?? \Test\Async\phpurs_eval_thunk('Test_Async_pure')))(($GLOBALS['Data_Unit_unit'] ?? \Data\Unit\phpurs_eval_thunk('Data_Unit_unit')));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})());
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})())), (function() {
+  $__fn = function($__dollar____unused) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = (($GLOBALS['Test_Async_discard'] ?? \Test\Async\phpurs_eval_thunk('Test_Async_discard')))((($GLOBALS['Effect_Aff_delay'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_delay')))((($GLOBALS['Data_Time_Duration_Milliseconds'] ?? \Data\Time\Duration\phpurs_eval_thunk('Data_Time_Duration_Milliseconds')))(30.0)), (function() {
+  $__fn = function($__dollar____unused) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = (($GLOBALS['Test_Async_bind'] ?? \Test\Async\phpurs_eval_thunk('Test_Async_bind')))((($GLOBALS['Test_Async_liftEffect'] ?? \Test\Async\phpurs_eval_thunk('Test_Async_liftEffect')))((($GLOBALS['Effect_Console_log'] ?? \Effect\Console\phpurs_eval_thunk('Effect_Console_log')))("Main fiber finished")), (function() {
+  $__fn = function($__dollar____unused) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = (($GLOBALS['Test_Async_pure'] ?? \Test\Async\phpurs_eval_thunk('Test_Async_pure')))(($GLOBALS['Data_Unit_unit'] ?? \Data\Unit\phpurs_eval_thunk('Data_Unit_unit')));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})());
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})());
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})());
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})())); break;
+      default: throw new \Exception("Unknown thunk " . $id);
+    }
+    $GLOBALS[$id] = $v;
+    return $cache[$id] = $v;
+  }
+}
 $Prim_undefined = function() { throw new \Exception("undefined"); };
 
 
-// Test_Async_bind
-$Test_Async_bind = ($GLOBALS['Control_Bind_bind'])($GLOBALS['Effect_Aff_bindAff']);
 
-// Test_Async_discard
-$Test_Async_discard = ($GLOBALS['Control_Bind_discard'])($GLOBALS['Control_Bind_discardUnit'], $GLOBALS['Effect_Aff_bindAff']);
 
-// Test_Async_liftEffect
-$Test_Async_liftEffect = ($GLOBALS['Effect_Class_liftEffect'])($GLOBALS['Effect_Aff_monadEffectAff']);
 
-// Test_Async_pure
-$Test_Async_pure = ($GLOBALS['Control_Applicative_pure'])($GLOBALS['Effect_Aff_applicativeAff']);
 
-// Test_Async_describe
-$Test_Async_describe = ($GLOBALS['Effect_Console_log'])("Asynchronous Concurrency (Aff):");
 
-// Test_Async_act
-$Test_Async_act = ($GLOBALS['Effect_Aff_launchAff_'])(($GLOBALS['Test_Async_bind'])(($GLOBALS['Effect_Aff_forkAff'])(($GLOBALS['Test_Async_discard'])(($GLOBALS['Effect_Aff_delay'])(($GLOBALS['Data_Time_Duration_Milliseconds'])(10.0)), (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = ($GLOBALS['Test_Async_bind'])(($GLOBALS['Test_Async_liftEffect'])(($GLOBALS['Effect_Console_log'])("Fiber 1 finished")), (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = ($GLOBALS['Test_Async_pure'])($GLOBALS['Data_Unit_unit']);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})());
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})())), (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = ($GLOBALS['Test_Async_bind'])(($GLOBALS['Effect_Aff_forkAff'])(($GLOBALS['Test_Async_discard'])(($GLOBALS['Effect_Aff_delay'])(($GLOBALS['Data_Time_Duration_Milliseconds'])(20.0)), (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = ($GLOBALS['Test_Async_bind'])(($GLOBALS['Test_Async_liftEffect'])(($GLOBALS['Effect_Console_log'])("Fiber 2 finished")), (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = ($GLOBALS['Test_Async_pure'])($GLOBALS['Data_Unit_unit']);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})());
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})())), (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = ($GLOBALS['Test_Async_discard'])(($GLOBALS['Effect_Aff_delay'])(($GLOBALS['Data_Time_Duration_Milliseconds'])(30.0)), (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = ($GLOBALS['Test_Async_bind'])(($GLOBALS['Test_Async_liftEffect'])(($GLOBALS['Effect_Console_log'])("Main fiber finished")), (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = ($GLOBALS['Test_Async_pure'])($GLOBALS['Data_Unit_unit']);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})());
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})());
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})());
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})()));
 

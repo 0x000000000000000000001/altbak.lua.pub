@@ -32,20 +32,33 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_curry_fallback')) {
     };
   }
 }
+if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
+  function phpurs_eval_thunk($id) {
+    static $cache = [];
+    if (array_key_exists($id, $cache)) return $cache[$id];
+    switch ($id) {
+      case 'Test_Fib_add': $v = ($GLOBALS['Data_Semiring_intAdd'] ?? \Data\Semiring\phpurs_eval_thunk('Data_Semiring_intAdd')); break;
+      case 'Test_Fib_sub': $v = ($GLOBALS['Data_Ring_intSub'] ?? \Data\Ring\phpurs_eval_thunk('Data_Ring_intSub')); break;
+      case 'Test_Fib_describe': $v = (($GLOBALS['Effect_Console_log'] ?? \Effect\Console\phpurs_eval_thunk('Effect_Console_log')))("Fibonacci:"); break;
+      case 'Test_Fib_act': $v = (($GLOBALS['Effect_Console_logShow'] ?? \Effect\Console\phpurs_eval_thunk('Effect_Console_logShow')))(($GLOBALS['Data_Show_showInt'] ?? \Data\Show\phpurs_eval_thunk('Data_Show_showInt')), (($GLOBALS['Test_Fib_fib'] ?? \Test\Fib\phpurs_eval_thunk('Test_Fib_fib')))(10)); break;
+      default: throw new \Exception("Unknown thunk " . $id);
+    }
+    $GLOBALS[$id] = $v;
+    return $cache[$id] = $v;
+  }
+}
 $Prim_undefined = function() { throw new \Exception("undefined"); };
 
 
-// Test_Fib_add
-$Test_Fib_add = ($GLOBALS['Data_Semiring_add'])($GLOBALS['Data_Semiring_semiringInt']);
 
-// Test_Fib_sub
-$Test_Fib_sub = ($GLOBALS['Data_Ring_sub'])($GLOBALS['Data_Ring_ringInt']);
 
 // Test_Fib_fib
-$Test_Fib_fib = (function() {
-  $__fn = function($v) use (&$__fn) {
+function Test_Fib_fib($v) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  $__fn = __NAMESPACE__ . '\\' . 'Test_Fib_fib';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
 while (true) {
 $__case_0 = $v;
 if (($__case_0 === 0)) {
@@ -56,7 +69,7 @@ return 1;
 } else {
 if (true) {
 $n = $__case_0;
-return ($GLOBALS['Test_Fib_add'])(($GLOBALS['Test_Fib_fib'])(($GLOBALS['Test_Fib_sub'])($n, 1)), ($GLOBALS['Test_Fib_fib'])(($GLOBALS['Test_Fib_sub'])($n, 2)));
+return (($GLOBALS['Test_Fib_add'] ?? \Test\Fib\phpurs_eval_thunk('Test_Fib_add')))((($GLOBALS['Test_Fib_fib'] ?? \Test\Fib\phpurs_eval_thunk('Test_Fib_fib')))((($GLOBALS['Test_Fib_sub'] ?? \Test\Fib\phpurs_eval_thunk('Test_Fib_sub')))($n, 1)), (($GLOBALS['Test_Fib_fib'] ?? \Test\Fib\phpurs_eval_thunk('Test_Fib_fib')))((($GLOBALS['Test_Fib_sub'] ?? \Test\Fib\phpurs_eval_thunk('Test_Fib_sub')))($n, 2)));
 } else {
 throw new \Exception("Pattern match failure");
 };
@@ -64,14 +77,9 @@ throw new \Exception("Pattern match failure");
 };
 };
     $__res = null;
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Test_Fib_fib'] = __NAMESPACE__ . '\\Test_Fib_fib';
 
-// Test_Fib_describe
-$Test_Fib_describe = ($GLOBALS['Effect_Console_log'])("Fibonacci:");
 
-// Test_Fib_act
-$Test_Fib_act = ($GLOBALS['Effect_Console_logShow'])($GLOBALS['Data_Show_showInt'], ($GLOBALS['Test_Fib_fib'])(10));
 

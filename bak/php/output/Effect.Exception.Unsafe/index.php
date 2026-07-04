@@ -28,15 +28,40 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_curry_fallback')) {
     };
   }
 }
+if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
+  function phpurs_eval_thunk($id) {
+    static $cache = [];
+    if (array_key_exists($id, $cache)) return $cache[$id];
+    switch ($id) {
+      case 'Effect_Exception_Unsafe_unsafeThrowException': $v = (($GLOBALS['Effect_Exception_Unsafe_compose'] ?? \Effect\Exception\Unsafe\phpurs_eval_thunk('Effect_Exception_Unsafe_compose')))(($GLOBALS['Effect_Unsafe_unsafePerformEffect'] ?? \Effect\Unsafe\phpurs_eval_thunk('Effect_Unsafe_unsafePerformEffect')), ($GLOBALS['Effect_Exception_throwException'] ?? \Effect\Exception\phpurs_eval_thunk('Effect_Exception_throwException'))); break;
+      case 'Effect_Exception_Unsafe_unsafeThrow': $v = (($GLOBALS['Effect_Exception_Unsafe_compose'] ?? \Effect\Exception\Unsafe\phpurs_eval_thunk('Effect_Exception_Unsafe_compose')))(($GLOBALS['Effect_Exception_Unsafe_unsafeThrowException'] ?? \Effect\Exception\Unsafe\phpurs_eval_thunk('Effect_Exception_Unsafe_unsafeThrowException')), ($GLOBALS['Effect_Exception_error'] ?? \Effect\Exception\phpurs_eval_thunk('Effect_Exception_error'))); break;
+      default: throw new \Exception("Unknown thunk " . $id);
+    }
+    $GLOBALS[$id] = $v;
+    return $cache[$id] = $v;
+  }
+}
 $Prim_undefined = function() { throw new \Exception("undefined"); };
 
 
 // Effect_Exception_Unsafe_compose
-$Effect_Exception_Unsafe_compose = ($GLOBALS['Control_Semigroupoid_compose'])($GLOBALS['Control_Semigroupoid_semigroupoidFn']);
+function Effect_Exception_Unsafe_compose($f, $g = null, $x = null) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Effect_Exception_Unsafe_compose';
+  if ($__num < 3) {
+    if ($__num === 2) return function($x) use ($f, $g, $__fn) { return $__fn($f, $g, $x); };
+    if ($__num === 1) return function($g, $x = null) use ($f, $__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $g, $x);
+      if ($__num2 === 1) return function($x) use ($f, $g, $__fn) { return $__fn($f, $g, $x); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = ($f)(($g)($x));
+    return 3 < $__num ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+}
+$GLOBALS['Effect_Exception_Unsafe_compose'] = __NAMESPACE__ . '\\Effect_Exception_Unsafe_compose';
 
-// Effect_Exception_Unsafe_unsafeThrowException
-$Effect_Exception_Unsafe_unsafeThrowException = ($GLOBALS['Effect_Exception_Unsafe_compose'])($GLOBALS['Effect_Unsafe_unsafePerformEffect'], $GLOBALS['Effect_Exception_throwException']);
 
-// Effect_Exception_Unsafe_unsafeThrow
-$Effect_Exception_Unsafe_unsafeThrow = ($GLOBALS['Effect_Exception_Unsafe_compose'])($GLOBALS['Effect_Exception_Unsafe_unsafeThrowException'], $GLOBALS['Effect_Exception_error']);
 

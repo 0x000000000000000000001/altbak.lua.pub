@@ -32,25 +32,70 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_curry_fallback')) {
     };
   }
 }
-$Prim_undefined = function() { throw new \Exception("undefined"); };
-
-
-// Data_Functor_Coproduct_Inject_compose
-$Data_Functor_Coproduct_Inject_compose = ($GLOBALS['Control_Semigroupoid_compose'])($GLOBALS['Control_Semigroupoid_semigroupoidFn']);
-
-// Data_Functor_Coproduct_Inject_Inject$Dict
-$Data_Functor_Coproduct_Inject_Inject__dollar__Dict = (function() {
+if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
+  function phpurs_eval_thunk($id) {
+    static $cache = [];
+    if (array_key_exists($id, $cache)) return $cache[$id];
+    switch ($id) {
+      case 'Data_Functor_Coproduct_Inject_injectReflexive': $v = (($GLOBALS['Data_Functor_Coproduct_Inject_Inject__dollar__Dict'] ?? \Data\Functor\Coproduct\Inject\phpurs_eval_thunk('Data_Functor_Coproduct_Inject_Inject__dollar__Dict')))((object)["inj" => (function() {
   $__fn = function($x) use (&$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = $x;
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})();
+})(), "prj" => ($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just'))]); break;
+      case 'Data_Functor_Coproduct_Inject_injectLeft': $v = (($GLOBALS['Data_Functor_Coproduct_Inject_Inject__dollar__Dict'] ?? \Data\Functor\Coproduct\Inject\phpurs_eval_thunk('Data_Functor_Coproduct_Inject_Inject__dollar__Dict')))((object)["inj" => (($GLOBALS['Data_Functor_Coproduct_Inject_compose'] ?? \Data\Functor\Coproduct\Inject\phpurs_eval_thunk('Data_Functor_Coproduct_Inject_compose')))(($GLOBALS['Data_Functor_Coproduct_Coproduct'] ?? \Data\Functor\Coproduct\phpurs_eval_thunk('Data_Functor_Coproduct_Coproduct')), ($GLOBALS['Data_Either_Left'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Left'))), "prj" => (($GLOBALS['Data_Functor_Coproduct_coproduct'] ?? \Data\Functor\Coproduct\phpurs_eval_thunk('Data_Functor_Coproduct_coproduct')))(($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')), (($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const')))(($GLOBALS['Data_Maybe_Nothing'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Nothing'))))]); break;
+      default: throw new \Exception("Unknown thunk " . $id);
+    }
+    $GLOBALS[$id] = $v;
+    return $cache[$id] = $v;
+  }
+}
+$Prim_undefined = function() { throw new \Exception("undefined"); };
+
+
+// Data_Functor_Coproduct_Inject_compose
+function Data_Functor_Coproduct_Inject_compose($f, $g = null, $x = null) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Functor_Coproduct_Inject_compose';
+  if ($__num < 3) {
+    if ($__num === 2) return function($x) use ($f, $g, $__fn) { return $__fn($f, $g, $x); };
+    if ($__num === 1) return function($g, $x = null) use ($f, $__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $g, $x);
+      if ($__num2 === 1) return function($x) use ($f, $g, $__fn) { return $__fn($f, $g, $x); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = ($f)(($g)($x));
+    return 3 < $__num ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+}
+$GLOBALS['Data_Functor_Coproduct_Inject_compose'] = __NAMESPACE__ . '\\Data_Functor_Coproduct_Inject_compose';
+
+// Data_Functor_Coproduct_Inject_Inject$Dict
+function Data_Functor_Coproduct_Inject_Inject__dollar__Dict($x) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Functor_Coproduct_Inject_Inject__dollar__Dict';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $x;
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Functor_Coproduct_Inject_Inject__dollar__Dict'] = __NAMESPACE__ . '\\Data_Functor_Coproduct_Inject_Inject__dollar__Dict';
 
 // Data_Functor_Coproduct_Inject_prj
-$Data_Functor_Coproduct_Inject_prj = (function() {
+function Data_Functor_Coproduct_Inject_prj($dict) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Functor_Coproduct_Inject_prj';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
   $__body = function($dict) {
     $__case_0 = $dict;
     if (true) {
@@ -60,23 +105,20 @@ return ($v)->prj;
 throw new \Exception("Pattern match failure");
 };
   };
-  $__fn = function($dict) use ($__body, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
     $__res = $__body($dict);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Functor_Coproduct_Inject_prj'] = __NAMESPACE__ . '\\Data_Functor_Coproduct_Inject_prj';
 
-// Data_Functor_Coproduct_Inject_injectReflexive
-$Data_Functor_Coproduct_Inject_injectReflexive = ($GLOBALS['Data_Functor_Coproduct_Inject_Inject__dollar__Dict'])((object)["inj" => ($GLOBALS['Control_Category_identity'])($GLOBALS['Control_Category_categoryFn']), "prj" => $GLOBALS['Data_Maybe_Just']]);
 
-// Data_Functor_Coproduct_Inject_injectLeft
-$Data_Functor_Coproduct_Inject_injectLeft = ($GLOBALS['Data_Functor_Coproduct_Inject_Inject__dollar__Dict'])((object)["inj" => ($GLOBALS['Data_Functor_Coproduct_Inject_compose'])($GLOBALS['Data_Functor_Coproduct_Coproduct'], $GLOBALS['Data_Either_Left']), "prj" => ($GLOBALS['Data_Functor_Coproduct_coproduct'])($GLOBALS['Data_Maybe_Just'], ($GLOBALS['Data_Function_const'])($GLOBALS['Data_Maybe_Nothing']))]);
 
 // Data_Functor_Coproduct_Inject_inj
-$Data_Functor_Coproduct_Inject_inj = (function() {
+function Data_Functor_Coproduct_Inject_inj($dict) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Functor_Coproduct_Inject_inj';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
   $__body = function($dict) {
     $__case_0 = $dict;
     if (true) {
@@ -86,23 +128,20 @@ return ($v)->inj;
 throw new \Exception("Pattern match failure");
 };
   };
-  $__fn = function($dict) use ($__body, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
     $__res = $__body($dict);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Functor_Coproduct_Inject_inj'] = __NAMESPACE__ . '\\Data_Functor_Coproduct_Inject_inj';
 
 // Data_Functor_Coproduct_Inject_injectRight
-$Data_Functor_Coproduct_Inject_injectRight = (function() {
-  $__fn = function($dictInject) use (&$__fn) {
+function Data_Functor_Coproduct_Inject_injectRight($dictInject) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = ($GLOBALS['Data_Functor_Coproduct_Inject_Inject__dollar__Dict'])((object)["inj" => ($GLOBALS['Data_Functor_Coproduct_Inject_compose'])($GLOBALS['Data_Functor_Coproduct_Coproduct'], ($GLOBALS['Data_Functor_Coproduct_Inject_compose'])($GLOBALS['Data_Either_Right'], ($GLOBALS['Data_Functor_Coproduct_Inject_inj'])($dictInject))), "prj" => ($GLOBALS['Data_Functor_Coproduct_coproduct'])(($GLOBALS['Data_Function_const'])($GLOBALS['Data_Maybe_Nothing']), ($GLOBALS['Data_Functor_Coproduct_Inject_prj'])($dictInject))]);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Functor_Coproduct_Inject_injectRight';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = (($GLOBALS['Data_Functor_Coproduct_Inject_Inject__dollar__Dict'] ?? \Data\Functor\Coproduct\Inject\phpurs_eval_thunk('Data_Functor_Coproduct_Inject_Inject__dollar__Dict')))((object)["inj" => (($GLOBALS['Data_Functor_Coproduct_Inject_compose'] ?? \Data\Functor\Coproduct\Inject\phpurs_eval_thunk('Data_Functor_Coproduct_Inject_compose')))(($GLOBALS['Data_Functor_Coproduct_Coproduct'] ?? \Data\Functor\Coproduct\phpurs_eval_thunk('Data_Functor_Coproduct_Coproduct')), (($GLOBALS['Data_Functor_Coproduct_Inject_compose'] ?? \Data\Functor\Coproduct\Inject\phpurs_eval_thunk('Data_Functor_Coproduct_Inject_compose')))(($GLOBALS['Data_Either_Right'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Right')), (($GLOBALS['Data_Functor_Coproduct_Inject_inj'] ?? \Data\Functor\Coproduct\Inject\phpurs_eval_thunk('Data_Functor_Coproduct_Inject_inj')))($dictInject))), "prj" => (($GLOBALS['Data_Functor_Coproduct_coproduct'] ?? \Data\Functor\Coproduct\phpurs_eval_thunk('Data_Functor_Coproduct_coproduct')))((($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const')))(($GLOBALS['Data_Maybe_Nothing'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Nothing'))), (($GLOBALS['Data_Functor_Coproduct_Inject_prj'] ?? \Data\Functor\Coproduct\Inject\phpurs_eval_thunk('Data_Functor_Coproduct_Inject_prj')))($dictInject))]);
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Functor_Coproduct_Inject_injectRight'] = __NAMESPACE__ . '\\Data_Functor_Coproduct_Inject_injectRight';
 

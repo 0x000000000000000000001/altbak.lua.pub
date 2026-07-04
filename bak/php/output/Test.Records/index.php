@@ -32,23 +32,37 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_curry_fallback')) {
     };
   }
 }
+if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
+  function phpurs_eval_thunk($id) {
+    static $cache = [];
+    if (array_key_exists($id, $cache)) return $cache[$id];
+    switch ($id) {
+      case 'Test_Records_sub': $v = ($GLOBALS['Data_Ring_intSub'] ?? \Data\Ring\phpurs_eval_thunk('Data_Ring_intSub')); break;
+      case 'Test_Records_add': $v = ($GLOBALS['Data_Semiring_intAdd'] ?? \Data\Semiring\phpurs_eval_thunk('Data_Semiring_intAdd')); break;
+      case 'Test_Records_mod': $v = ($GLOBALS['Data_EuclideanRing_intMod'] ?? \Data\EuclideanRing\phpurs_eval_thunk('Data_EuclideanRing_intMod')); break;
+      case 'Test_Records_initial': $v = (object)["a" => 0, "b" => (object)["c" => 0, "d" => (object)["e" => 0, "f" => 0]]]; break;
+      case 'Test_Records_describe': $v = (($GLOBALS['Effect_Console_log'] ?? \Effect\Console\phpurs_eval_thunk('Effect_Console_log')))("Deep Record Updates (10k iterations):"); break;
+      case 'Test_Records_act': $v = (($GLOBALS['Effect_Console_logShow'] ?? \Effect\Console\phpurs_eval_thunk('Effect_Console_logShow')))(($GLOBALS['Data_Show_showInt'] ?? \Data\Show\phpurs_eval_thunk('Data_Show_showInt')), ((((($GLOBALS['Test_Records_updateRec'] ?? \Test\Records\phpurs_eval_thunk('Test_Records_updateRec')))(10000, ($GLOBALS['Test_Records_initial'] ?? \Test\Records\phpurs_eval_thunk('Test_Records_initial'))))->b)->d)->f); break;
+      default: throw new \Exception("Unknown thunk " . $id);
+    }
+    $GLOBALS[$id] = $v;
+    return $cache[$id] = $v;
+  }
+}
 $Prim_undefined = function() { throw new \Exception("undefined"); };
 
 
-// Test_Records_sub
-$Test_Records_sub = ($GLOBALS['Data_Ring_sub'])($GLOBALS['Data_Ring_ringInt']);
 
-// Test_Records_add
-$Test_Records_add = ($GLOBALS['Data_Semiring_add'])($GLOBALS['Data_Semiring_semiringInt']);
 
-// Test_Records_mod
-$Test_Records_mod = ($GLOBALS['Data_EuclideanRing_mod'])($GLOBALS['Data_EuclideanRing_euclideanRingInt']);
 
 // Test_Records_updateRec
-$Test_Records_updateRec = (function() {
-  $__fn = function($v, $v1 = null) use (&$__fn) {
+function Test_Records_updateRec($v, $v1 = null) {
   $__num = func_num_args();
-  if ($__num < 2) return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  $__fn = __NAMESPACE__ . '\\' . 'Test_Records_updateRec';
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, $__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
 while (true) {
 $__case_0 = $v;
 $__case_1 = $v1;
@@ -59,11 +73,20 @@ return $r;
 if (true) {
 $n = $__case_0;
 $r = $__case_1;
-$__tco_tmp_0 = ($GLOBALS['Test_Records_sub'])($n, 1);
+$__tco_tmp_0 = (($GLOBALS['Test_Records_sub'] ?? \Test\Records\phpurs_eval_thunk('Test_Records_sub')))($n, 1);
 $v2 = $r;
 $v3 = ($r)->b;
 $v4 = (($r)->b)->d;
-$__tco_tmp_1 = (function($__e, $__v0, $__v1) { $__obj = clone $__e; $__obj->a = $__v0; $__obj->b = $__v1; return $__obj; })($v2, ($GLOBALS['Test_Records_add'])(($r)->a, 1), (function($__e, $__v0, $__v1) { $__obj = clone $__e; $__obj->c = $__v0; $__obj->d = $__v1; return $__obj; })($v3, ($GLOBALS['Test_Records_add'])((($r)->b)->c, 2), (function($__e, $__v0, $__v1) { $__obj = clone $__e; $__obj->e = $__v0; $__obj->f = $__v1; return $__obj; })($v4, ($GLOBALS['Test_Records_add'])(((($r)->b)->d)->e, 3), ($GLOBALS['Test_Records_add'])(((($r)->b)->d)->f, ($GLOBALS['Test_Records_mod'])($n, 5)))));
+$__update_tmp_0 = clone $v4;
+$__update_tmp_0->e = (($GLOBALS['Test_Records_add'] ?? \Test\Records\phpurs_eval_thunk('Test_Records_add')))(((($r)->b)->d)->e, 3);
+$__update_tmp_0->f = (($GLOBALS['Test_Records_add'] ?? \Test\Records\phpurs_eval_thunk('Test_Records_add')))(((($r)->b)->d)->f, (($GLOBALS['Test_Records_mod'] ?? \Test\Records\phpurs_eval_thunk('Test_Records_mod')))($n, 5));
+$__update_tmp_1 = clone $v3;
+$__update_tmp_1->c = (($GLOBALS['Test_Records_add'] ?? \Test\Records\phpurs_eval_thunk('Test_Records_add')))((($r)->b)->c, 2);
+$__update_tmp_1->d = $__update_tmp_0;
+$__update_tmp_2 = clone $v2;
+$__update_tmp_2->a = (($GLOBALS['Test_Records_add'] ?? \Test\Records\phpurs_eval_thunk('Test_Records_add')))(($r)->a, 1);
+$__update_tmp_2->b = $__update_tmp_1;
+$__tco_tmp_1 = $__update_tmp_2;
 $v = $__tco_tmp_0;
 $v1 = $__tco_tmp_1;
 continue;
@@ -73,17 +96,10 @@ throw new \Exception("Pattern match failure");
 };
 };
     $__res = null;
-  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
-  };
-  return $__fn;
-})();
+    return 2 < $__num ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+}
+$GLOBALS['Test_Records_updateRec'] = __NAMESPACE__ . '\\Test_Records_updateRec';
 
-// Test_Records_initial
-$Test_Records_initial = (object)["a" => 0, "b" => (object)["c" => 0, "d" => (object)["e" => 0, "f" => 0]]];
 
-// Test_Records_describe
-$Test_Records_describe = ($GLOBALS['Effect_Console_log'])("Deep Record Updates (10k iterations):");
 
-// Test_Records_act
-$Test_Records_act = ($GLOBALS['Effect_Console_logShow'])($GLOBALS['Data_Show_showInt'], (((($GLOBALS['Test_Records_updateRec'])(10000, $GLOBALS['Test_Records_initial']))->b)->d)->f);
 

@@ -26,858 +26,1035 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_curry_fallback')) {
     };
   }
 }
+if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
+  function phpurs_eval_thunk($id) {
+    static $cache = [];
+    if (array_key_exists($id, $cache)) return $cache[$id];
+    switch ($id) {
+      case 'Data_Either_Nested_in1': $v = ($GLOBALS['Data_Either_Left'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Left')); break;
+      default: throw new \Exception("Unknown thunk " . $id);
+    }
+    $GLOBALS[$id] = $v;
+    return $cache[$id] = $v;
+  }
+}
 $Prim_undefined = function() { throw new \Exception("undefined"); };
 
 
 // Data_Either_Nested_in9
-$Data_Either_Nested_in9 = (function() {
-  $__fn = function($v) use (&$__fn) {
+function Data_Either_Nested_in9($v) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = ($GLOBALS['Data_Either_Right'])(($GLOBALS['Data_Either_Right'])(($GLOBALS['Data_Either_Right'])(($GLOBALS['Data_Either_Right'])(($GLOBALS['Data_Either_Right'])(($GLOBALS['Data_Either_Right'])(($GLOBALS['Data_Either_Right'])(($GLOBALS['Data_Either_Right'])(($GLOBALS['Data_Either_Left'])($v)))))))));
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Either_Nested_in9';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = (($GLOBALS['Data_Either_Right'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Right')))((($GLOBALS['Data_Either_Right'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Right')))((($GLOBALS['Data_Either_Right'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Right')))((($GLOBALS['Data_Either_Right'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Right')))((($GLOBALS['Data_Either_Right'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Right')))((($GLOBALS['Data_Either_Right'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Right')))((($GLOBALS['Data_Either_Right'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Right')))((($GLOBALS['Data_Either_Right'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Right')))((($GLOBALS['Data_Either_Left'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Left')))($v)))))))));
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Either_Nested_in9'] = __NAMESPACE__ . '\\Data_Either_Nested_in9';
 
 // Data_Either_Nested_in8
-$Data_Either_Nested_in8 = (function() {
-  $__fn = function($v) use (&$__fn) {
+function Data_Either_Nested_in8($v) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = ($GLOBALS['Data_Either_Right'])(($GLOBALS['Data_Either_Right'])(($GLOBALS['Data_Either_Right'])(($GLOBALS['Data_Either_Right'])(($GLOBALS['Data_Either_Right'])(($GLOBALS['Data_Either_Right'])(($GLOBALS['Data_Either_Right'])(($GLOBALS['Data_Either_Left'])($v))))))));
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Either_Nested_in8';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = (($GLOBALS['Data_Either_Right'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Right')))((($GLOBALS['Data_Either_Right'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Right')))((($GLOBALS['Data_Either_Right'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Right')))((($GLOBALS['Data_Either_Right'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Right')))((($GLOBALS['Data_Either_Right'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Right')))((($GLOBALS['Data_Either_Right'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Right')))((($GLOBALS['Data_Either_Right'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Right')))((($GLOBALS['Data_Either_Left'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Left')))($v))))))));
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Either_Nested_in8'] = __NAMESPACE__ . '\\Data_Either_Nested_in8';
 
 // Data_Either_Nested_in7
-$Data_Either_Nested_in7 = (function() {
-  $__fn = function($v) use (&$__fn) {
+function Data_Either_Nested_in7($v) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = ($GLOBALS['Data_Either_Right'])(($GLOBALS['Data_Either_Right'])(($GLOBALS['Data_Either_Right'])(($GLOBALS['Data_Either_Right'])(($GLOBALS['Data_Either_Right'])(($GLOBALS['Data_Either_Right'])(($GLOBALS['Data_Either_Left'])($v)))))));
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Either_Nested_in7';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = (($GLOBALS['Data_Either_Right'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Right')))((($GLOBALS['Data_Either_Right'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Right')))((($GLOBALS['Data_Either_Right'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Right')))((($GLOBALS['Data_Either_Right'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Right')))((($GLOBALS['Data_Either_Right'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Right')))((($GLOBALS['Data_Either_Right'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Right')))((($GLOBALS['Data_Either_Left'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Left')))($v)))))));
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Either_Nested_in7'] = __NAMESPACE__ . '\\Data_Either_Nested_in7';
 
 // Data_Either_Nested_in6
-$Data_Either_Nested_in6 = (function() {
-  $__fn = function($v) use (&$__fn) {
+function Data_Either_Nested_in6($v) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = ($GLOBALS['Data_Either_Right'])(($GLOBALS['Data_Either_Right'])(($GLOBALS['Data_Either_Right'])(($GLOBALS['Data_Either_Right'])(($GLOBALS['Data_Either_Right'])(($GLOBALS['Data_Either_Left'])($v))))));
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Either_Nested_in6';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = (($GLOBALS['Data_Either_Right'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Right')))((($GLOBALS['Data_Either_Right'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Right')))((($GLOBALS['Data_Either_Right'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Right')))((($GLOBALS['Data_Either_Right'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Right')))((($GLOBALS['Data_Either_Right'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Right')))((($GLOBALS['Data_Either_Left'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Left')))($v))))));
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Either_Nested_in6'] = __NAMESPACE__ . '\\Data_Either_Nested_in6';
 
 // Data_Either_Nested_in5
-$Data_Either_Nested_in5 = (function() {
-  $__fn = function($v) use (&$__fn) {
+function Data_Either_Nested_in5($v) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = ($GLOBALS['Data_Either_Right'])(($GLOBALS['Data_Either_Right'])(($GLOBALS['Data_Either_Right'])(($GLOBALS['Data_Either_Right'])(($GLOBALS['Data_Either_Left'])($v)))));
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Either_Nested_in5';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = (($GLOBALS['Data_Either_Right'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Right')))((($GLOBALS['Data_Either_Right'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Right')))((($GLOBALS['Data_Either_Right'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Right')))((($GLOBALS['Data_Either_Right'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Right')))((($GLOBALS['Data_Either_Left'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Left')))($v)))));
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Either_Nested_in5'] = __NAMESPACE__ . '\\Data_Either_Nested_in5';
 
 // Data_Either_Nested_in4
-$Data_Either_Nested_in4 = (function() {
-  $__fn = function($v) use (&$__fn) {
+function Data_Either_Nested_in4($v) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = ($GLOBALS['Data_Either_Right'])(($GLOBALS['Data_Either_Right'])(($GLOBALS['Data_Either_Right'])(($GLOBALS['Data_Either_Left'])($v))));
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Either_Nested_in4';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = (($GLOBALS['Data_Either_Right'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Right')))((($GLOBALS['Data_Either_Right'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Right')))((($GLOBALS['Data_Either_Right'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Right')))((($GLOBALS['Data_Either_Left'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Left')))($v))));
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Either_Nested_in4'] = __NAMESPACE__ . '\\Data_Either_Nested_in4';
 
 // Data_Either_Nested_in3
-$Data_Either_Nested_in3 = (function() {
-  $__fn = function($v) use (&$__fn) {
+function Data_Either_Nested_in3($v) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = ($GLOBALS['Data_Either_Right'])(($GLOBALS['Data_Either_Right'])(($GLOBALS['Data_Either_Left'])($v)));
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Either_Nested_in3';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = (($GLOBALS['Data_Either_Right'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Right')))((($GLOBALS['Data_Either_Right'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Right')))((($GLOBALS['Data_Either_Left'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Left')))($v)));
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Either_Nested_in3'] = __NAMESPACE__ . '\\Data_Either_Nested_in3';
 
 // Data_Either_Nested_in2
-$Data_Either_Nested_in2 = (function() {
-  $__fn = function($v) use (&$__fn) {
+function Data_Either_Nested_in2($v) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = ($GLOBALS['Data_Either_Right'])(($GLOBALS['Data_Either_Left'])($v));
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Either_Nested_in2';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = (($GLOBALS['Data_Either_Right'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Right')))((($GLOBALS['Data_Either_Left'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Left')))($v));
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Either_Nested_in2'] = __NAMESPACE__ . '\\Data_Either_Nested_in2';
 
 // Data_Either_Nested_in10
-$Data_Either_Nested_in10 = (function() {
-  $__fn = function($v) use (&$__fn) {
+function Data_Either_Nested_in10($v) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = ($GLOBALS['Data_Either_Right'])(($GLOBALS['Data_Either_Right'])(($GLOBALS['Data_Either_Right'])(($GLOBALS['Data_Either_Right'])(($GLOBALS['Data_Either_Right'])(($GLOBALS['Data_Either_Right'])(($GLOBALS['Data_Either_Right'])(($GLOBALS['Data_Either_Right'])(($GLOBALS['Data_Either_Right'])(($GLOBALS['Data_Either_Left'])($v))))))))));
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Either_Nested_in10';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = (($GLOBALS['Data_Either_Right'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Right')))((($GLOBALS['Data_Either_Right'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Right')))((($GLOBALS['Data_Either_Right'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Right')))((($GLOBALS['Data_Either_Right'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Right')))((($GLOBALS['Data_Either_Right'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Right')))((($GLOBALS['Data_Either_Right'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Right')))((($GLOBALS['Data_Either_Right'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Right')))((($GLOBALS['Data_Either_Right'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Right')))((($GLOBALS['Data_Either_Right'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Right')))((($GLOBALS['Data_Either_Left'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Left')))($v))))))))));
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Either_Nested_in10'] = __NAMESPACE__ . '\\Data_Either_Nested_in10';
 
-// Data_Either_Nested_in1
-$Data_Either_Nested_in1 = $GLOBALS['Data_Either_Left'];
 
 // Data_Either_Nested_either9
-$Data_Either_Nested_either9 = (function() {
+function Data_Either_Nested_either9($a, $b = null, $c = null, $d = null, $e = null, $f = null, $g = null, $h = null, $i = null, $y = null) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Either_Nested_either9';
+  if ($__num < 10) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 10);
+  }
   $__body = function($a, $b, $c, $d, $e, $f, $g, $h, $i, $y) {
     $__case_0 = $y;
-    if ((($__case_0)->tag === "Left")) {
+    switch (($__case_0)->tag) {
+case "Left":
 $r = ($__case_0)->v0;
 return ($a)($r);
-} else {
-if ((($__case_0)->tag === "Right")) {
+break;
+case "Right":
 $_1 = ($__case_0)->v0;
 $__case_0 = $_1;
-if ((($__case_0)->tag === "Left")) {
+switch (($__case_0)->tag) {
+case "Left":
 $r = ($__case_0)->v0;
 return ($b)($r);
-} else {
-if ((($__case_0)->tag === "Right")) {
+break;
+case "Right":
 $_2 = ($__case_0)->v0;
 $__case_0 = $_2;
-if ((($__case_0)->tag === "Left")) {
+switch (($__case_0)->tag) {
+case "Left":
 $r = ($__case_0)->v0;
 return ($c)($r);
-} else {
-if ((($__case_0)->tag === "Right")) {
+break;
+case "Right":
 $_3 = ($__case_0)->v0;
 $__case_0 = $_3;
-if ((($__case_0)->tag === "Left")) {
+switch (($__case_0)->tag) {
+case "Left":
 $r = ($__case_0)->v0;
 return ($d)($r);
-} else {
-if ((($__case_0)->tag === "Right")) {
+break;
+case "Right":
 $_4 = ($__case_0)->v0;
 $__case_0 = $_4;
-if ((($__case_0)->tag === "Left")) {
+switch (($__case_0)->tag) {
+case "Left":
 $r = ($__case_0)->v0;
 return ($e)($r);
-} else {
-if ((($__case_0)->tag === "Right")) {
+break;
+case "Right":
 $_5 = ($__case_0)->v0;
 $__case_0 = $_5;
-if ((($__case_0)->tag === "Left")) {
+switch (($__case_0)->tag) {
+case "Left":
 $r = ($__case_0)->v0;
 return ($f)($r);
-} else {
-if ((($__case_0)->tag === "Right")) {
+break;
+case "Right":
 $_6 = ($__case_0)->v0;
 $__case_0 = $_6;
-if ((($__case_0)->tag === "Left")) {
+switch (($__case_0)->tag) {
+case "Left":
 $r = ($__case_0)->v0;
 return ($g)($r);
-} else {
-if ((($__case_0)->tag === "Right")) {
+break;
+case "Right":
 $_7 = ($__case_0)->v0;
 $__case_0 = $_7;
-if ((($__case_0)->tag === "Left")) {
+switch (($__case_0)->tag) {
+case "Left":
 $r = ($__case_0)->v0;
 return ($h)($r);
-} else {
-if ((($__case_0)->tag === "Right")) {
+break;
+case "Right":
 $_8 = ($__case_0)->v0;
 $__case_0 = $_8;
-if ((($__case_0)->tag === "Left")) {
+switch (($__case_0)->tag) {
+case "Left":
 $r = ($__case_0)->v0;
 return ($i)($r);
-} else {
-if ((($__case_0)->tag === "Right")) {
+break;
+case "Right":
 $_9 = ($__case_0)->v0;
-return ($GLOBALS['Data_Void_absurd'])($_9);
-} else {
+return (($GLOBALS['Data_Void_absurd'] ?? \Data\Void\phpurs_eval_thunk('Data_Void_absurd')))($_9);
+break;
+default:
 throw new \Exception("Pattern match failure");
+break;
 };
-};
-} else {
+break;
+default:
 throw new \Exception("Pattern match failure");
+break;
 };
-};
-} else {
+break;
+default:
 throw new \Exception("Pattern match failure");
+break;
 };
-};
-} else {
+break;
+default:
 throw new \Exception("Pattern match failure");
+break;
 };
-};
-} else {
+break;
+default:
 throw new \Exception("Pattern match failure");
+break;
 };
-};
-} else {
+break;
+default:
 throw new \Exception("Pattern match failure");
+break;
 };
-};
-} else {
+break;
+default:
 throw new \Exception("Pattern match failure");
+break;
 };
-};
-} else {
+break;
+default:
 throw new \Exception("Pattern match failure");
+break;
 };
-};
-} else {
+break;
+default:
 throw new \Exception("Pattern match failure");
-};
+break;
 };
   };
-  $__fn = function($a, $b = null, $c = null, $d = null, $e = null, $f = null, $g = null, $h = null, $i = null, $y = null) use ($__body, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 10) return phpurs_curry_fallback($__fn, func_get_args(), 10);
     $__res = $__body($a, $b, $c, $d, $e, $f, $g, $h, $i, $y);
-  return $__num > 10 ? $__res(...array_slice(func_get_args(), 10)) : $__res;
-  };
-  return $__fn;
-})();
+    return 10 < $__num ? $__res(...array_slice(func_get_args(), 10)) : $__res;
+}
+$GLOBALS['Data_Either_Nested_either9'] = __NAMESPACE__ . '\\Data_Either_Nested_either9';
 
 // Data_Either_Nested_either8
-$Data_Either_Nested_either8 = (function() {
+function Data_Either_Nested_either8($a, $b = null, $c = null, $d = null, $e = null, $f = null, $g = null, $h = null, $y = null) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Either_Nested_either8';
+  if ($__num < 9) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 9);
+  }
   $__body = function($a, $b, $c, $d, $e, $f, $g, $h, $y) {
     $__case_0 = $y;
-    if ((($__case_0)->tag === "Left")) {
+    switch (($__case_0)->tag) {
+case "Left":
 $r = ($__case_0)->v0;
 return ($a)($r);
-} else {
-if ((($__case_0)->tag === "Right")) {
+break;
+case "Right":
 $_1 = ($__case_0)->v0;
 $__case_0 = $_1;
-if ((($__case_0)->tag === "Left")) {
+switch (($__case_0)->tag) {
+case "Left":
 $r = ($__case_0)->v0;
 return ($b)($r);
-} else {
-if ((($__case_0)->tag === "Right")) {
+break;
+case "Right":
 $_2 = ($__case_0)->v0;
 $__case_0 = $_2;
-if ((($__case_0)->tag === "Left")) {
+switch (($__case_0)->tag) {
+case "Left":
 $r = ($__case_0)->v0;
 return ($c)($r);
-} else {
-if ((($__case_0)->tag === "Right")) {
+break;
+case "Right":
 $_3 = ($__case_0)->v0;
 $__case_0 = $_3;
-if ((($__case_0)->tag === "Left")) {
+switch (($__case_0)->tag) {
+case "Left":
 $r = ($__case_0)->v0;
 return ($d)($r);
-} else {
-if ((($__case_0)->tag === "Right")) {
+break;
+case "Right":
 $_4 = ($__case_0)->v0;
 $__case_0 = $_4;
-if ((($__case_0)->tag === "Left")) {
+switch (($__case_0)->tag) {
+case "Left":
 $r = ($__case_0)->v0;
 return ($e)($r);
-} else {
-if ((($__case_0)->tag === "Right")) {
+break;
+case "Right":
 $_5 = ($__case_0)->v0;
 $__case_0 = $_5;
-if ((($__case_0)->tag === "Left")) {
+switch (($__case_0)->tag) {
+case "Left":
 $r = ($__case_0)->v0;
 return ($f)($r);
-} else {
-if ((($__case_0)->tag === "Right")) {
+break;
+case "Right":
 $_6 = ($__case_0)->v0;
 $__case_0 = $_6;
-if ((($__case_0)->tag === "Left")) {
+switch (($__case_0)->tag) {
+case "Left":
 $r = ($__case_0)->v0;
 return ($g)($r);
-} else {
-if ((($__case_0)->tag === "Right")) {
+break;
+case "Right":
 $_7 = ($__case_0)->v0;
 $__case_0 = $_7;
-if ((($__case_0)->tag === "Left")) {
+switch (($__case_0)->tag) {
+case "Left":
 $r = ($__case_0)->v0;
 return ($h)($r);
-} else {
-if ((($__case_0)->tag === "Right")) {
+break;
+case "Right":
 $_8 = ($__case_0)->v0;
-return ($GLOBALS['Data_Void_absurd'])($_8);
-} else {
+return (($GLOBALS['Data_Void_absurd'] ?? \Data\Void\phpurs_eval_thunk('Data_Void_absurd')))($_8);
+break;
+default:
 throw new \Exception("Pattern match failure");
+break;
 };
-};
-} else {
+break;
+default:
 throw new \Exception("Pattern match failure");
+break;
 };
-};
-} else {
+break;
+default:
 throw new \Exception("Pattern match failure");
+break;
 };
-};
-} else {
+break;
+default:
 throw new \Exception("Pattern match failure");
+break;
 };
-};
-} else {
+break;
+default:
 throw new \Exception("Pattern match failure");
+break;
 };
-};
-} else {
+break;
+default:
 throw new \Exception("Pattern match failure");
+break;
 };
-};
-} else {
+break;
+default:
 throw new \Exception("Pattern match failure");
+break;
 };
-};
-} else {
+break;
+default:
 throw new \Exception("Pattern match failure");
-};
+break;
 };
   };
-  $__fn = function($a, $b = null, $c = null, $d = null, $e = null, $f = null, $g = null, $h = null, $y = null) use ($__body, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 9) return phpurs_curry_fallback($__fn, func_get_args(), 9);
     $__res = $__body($a, $b, $c, $d, $e, $f, $g, $h, $y);
-  return $__num > 9 ? $__res(...array_slice(func_get_args(), 9)) : $__res;
-  };
-  return $__fn;
-})();
+    return 9 < $__num ? $__res(...array_slice(func_get_args(), 9)) : $__res;
+}
+$GLOBALS['Data_Either_Nested_either8'] = __NAMESPACE__ . '\\Data_Either_Nested_either8';
 
 // Data_Either_Nested_either7
-$Data_Either_Nested_either7 = (function() {
+function Data_Either_Nested_either7($a, $b = null, $c = null, $d = null, $e = null, $f = null, $g = null, $y = null) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Either_Nested_either7';
+  if ($__num < 8) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 8);
+  }
   $__body = function($a, $b, $c, $d, $e, $f, $g, $y) {
     $__case_0 = $y;
-    if ((($__case_0)->tag === "Left")) {
+    switch (($__case_0)->tag) {
+case "Left":
 $r = ($__case_0)->v0;
 return ($a)($r);
-} else {
-if ((($__case_0)->tag === "Right")) {
+break;
+case "Right":
 $_1 = ($__case_0)->v0;
 $__case_0 = $_1;
-if ((($__case_0)->tag === "Left")) {
+switch (($__case_0)->tag) {
+case "Left":
 $r = ($__case_0)->v0;
 return ($b)($r);
-} else {
-if ((($__case_0)->tag === "Right")) {
+break;
+case "Right":
 $_2 = ($__case_0)->v0;
 $__case_0 = $_2;
-if ((($__case_0)->tag === "Left")) {
+switch (($__case_0)->tag) {
+case "Left":
 $r = ($__case_0)->v0;
 return ($c)($r);
-} else {
-if ((($__case_0)->tag === "Right")) {
+break;
+case "Right":
 $_3 = ($__case_0)->v0;
 $__case_0 = $_3;
-if ((($__case_0)->tag === "Left")) {
+switch (($__case_0)->tag) {
+case "Left":
 $r = ($__case_0)->v0;
 return ($d)($r);
-} else {
-if ((($__case_0)->tag === "Right")) {
+break;
+case "Right":
 $_4 = ($__case_0)->v0;
 $__case_0 = $_4;
-if ((($__case_0)->tag === "Left")) {
+switch (($__case_0)->tag) {
+case "Left":
 $r = ($__case_0)->v0;
 return ($e)($r);
-} else {
-if ((($__case_0)->tag === "Right")) {
+break;
+case "Right":
 $_5 = ($__case_0)->v0;
 $__case_0 = $_5;
-if ((($__case_0)->tag === "Left")) {
+switch (($__case_0)->tag) {
+case "Left":
 $r = ($__case_0)->v0;
 return ($f)($r);
-} else {
-if ((($__case_0)->tag === "Right")) {
+break;
+case "Right":
 $_6 = ($__case_0)->v0;
 $__case_0 = $_6;
-if ((($__case_0)->tag === "Left")) {
+switch (($__case_0)->tag) {
+case "Left":
 $r = ($__case_0)->v0;
 return ($g)($r);
-} else {
-if ((($__case_0)->tag === "Right")) {
+break;
+case "Right":
 $_7 = ($__case_0)->v0;
-return ($GLOBALS['Data_Void_absurd'])($_7);
-} else {
+return (($GLOBALS['Data_Void_absurd'] ?? \Data\Void\phpurs_eval_thunk('Data_Void_absurd')))($_7);
+break;
+default:
 throw new \Exception("Pattern match failure");
+break;
 };
-};
-} else {
+break;
+default:
 throw new \Exception("Pattern match failure");
+break;
 };
-};
-} else {
+break;
+default:
 throw new \Exception("Pattern match failure");
+break;
 };
-};
-} else {
+break;
+default:
 throw new \Exception("Pattern match failure");
+break;
 };
-};
-} else {
+break;
+default:
 throw new \Exception("Pattern match failure");
+break;
 };
-};
-} else {
+break;
+default:
 throw new \Exception("Pattern match failure");
+break;
 };
-};
-} else {
+break;
+default:
 throw new \Exception("Pattern match failure");
-};
+break;
 };
   };
-  $__fn = function($a, $b = null, $c = null, $d = null, $e = null, $f = null, $g = null, $y = null) use ($__body, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 8) return phpurs_curry_fallback($__fn, func_get_args(), 8);
     $__res = $__body($a, $b, $c, $d, $e, $f, $g, $y);
-  return $__num > 8 ? $__res(...array_slice(func_get_args(), 8)) : $__res;
-  };
-  return $__fn;
-})();
+    return 8 < $__num ? $__res(...array_slice(func_get_args(), 8)) : $__res;
+}
+$GLOBALS['Data_Either_Nested_either7'] = __NAMESPACE__ . '\\Data_Either_Nested_either7';
 
 // Data_Either_Nested_either6
-$Data_Either_Nested_either6 = (function() {
+function Data_Either_Nested_either6($a, $b = null, $c = null, $d = null, $e = null, $f = null, $y = null) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Either_Nested_either6';
+  if ($__num < 7) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 7);
+  }
   $__body = function($a, $b, $c, $d, $e, $f, $y) {
     $__case_0 = $y;
-    if ((($__case_0)->tag === "Left")) {
+    switch (($__case_0)->tag) {
+case "Left":
 $r = ($__case_0)->v0;
 return ($a)($r);
-} else {
-if ((($__case_0)->tag === "Right")) {
+break;
+case "Right":
 $_1 = ($__case_0)->v0;
 $__case_0 = $_1;
-if ((($__case_0)->tag === "Left")) {
+switch (($__case_0)->tag) {
+case "Left":
 $r = ($__case_0)->v0;
 return ($b)($r);
-} else {
-if ((($__case_0)->tag === "Right")) {
+break;
+case "Right":
 $_2 = ($__case_0)->v0;
 $__case_0 = $_2;
-if ((($__case_0)->tag === "Left")) {
+switch (($__case_0)->tag) {
+case "Left":
 $r = ($__case_0)->v0;
 return ($c)($r);
-} else {
-if ((($__case_0)->tag === "Right")) {
+break;
+case "Right":
 $_3 = ($__case_0)->v0;
 $__case_0 = $_3;
-if ((($__case_0)->tag === "Left")) {
+switch (($__case_0)->tag) {
+case "Left":
 $r = ($__case_0)->v0;
 return ($d)($r);
-} else {
-if ((($__case_0)->tag === "Right")) {
+break;
+case "Right":
 $_4 = ($__case_0)->v0;
 $__case_0 = $_4;
-if ((($__case_0)->tag === "Left")) {
+switch (($__case_0)->tag) {
+case "Left":
 $r = ($__case_0)->v0;
 return ($e)($r);
-} else {
-if ((($__case_0)->tag === "Right")) {
+break;
+case "Right":
 $_5 = ($__case_0)->v0;
 $__case_0 = $_5;
-if ((($__case_0)->tag === "Left")) {
+switch (($__case_0)->tag) {
+case "Left":
 $r = ($__case_0)->v0;
 return ($f)($r);
-} else {
-if ((($__case_0)->tag === "Right")) {
+break;
+case "Right":
 $_6 = ($__case_0)->v0;
-return ($GLOBALS['Data_Void_absurd'])($_6);
-} else {
+return (($GLOBALS['Data_Void_absurd'] ?? \Data\Void\phpurs_eval_thunk('Data_Void_absurd')))($_6);
+break;
+default:
 throw new \Exception("Pattern match failure");
+break;
 };
-};
-} else {
+break;
+default:
 throw new \Exception("Pattern match failure");
+break;
 };
-};
-} else {
+break;
+default:
 throw new \Exception("Pattern match failure");
+break;
 };
-};
-} else {
+break;
+default:
 throw new \Exception("Pattern match failure");
+break;
 };
-};
-} else {
+break;
+default:
 throw new \Exception("Pattern match failure");
+break;
 };
-};
-} else {
+break;
+default:
 throw new \Exception("Pattern match failure");
-};
+break;
 };
   };
-  $__fn = function($a, $b = null, $c = null, $d = null, $e = null, $f = null, $y = null) use ($__body, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 7) return phpurs_curry_fallback($__fn, func_get_args(), 7);
     $__res = $__body($a, $b, $c, $d, $e, $f, $y);
-  return $__num > 7 ? $__res(...array_slice(func_get_args(), 7)) : $__res;
-  };
-  return $__fn;
-})();
+    return 7 < $__num ? $__res(...array_slice(func_get_args(), 7)) : $__res;
+}
+$GLOBALS['Data_Either_Nested_either6'] = __NAMESPACE__ . '\\Data_Either_Nested_either6';
 
 // Data_Either_Nested_either5
-$Data_Either_Nested_either5 = (function() {
+function Data_Either_Nested_either5($a, $b = null, $c = null, $d = null, $e = null, $y = null) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Either_Nested_either5';
+  if ($__num < 6) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 6);
+  }
   $__body = function($a, $b, $c, $d, $e, $y) {
     $__case_0 = $y;
-    if ((($__case_0)->tag === "Left")) {
+    switch (($__case_0)->tag) {
+case "Left":
 $r = ($__case_0)->v0;
 return ($a)($r);
-} else {
-if ((($__case_0)->tag === "Right")) {
+break;
+case "Right":
 $_1 = ($__case_0)->v0;
 $__case_0 = $_1;
-if ((($__case_0)->tag === "Left")) {
+switch (($__case_0)->tag) {
+case "Left":
 $r = ($__case_0)->v0;
 return ($b)($r);
-} else {
-if ((($__case_0)->tag === "Right")) {
+break;
+case "Right":
 $_2 = ($__case_0)->v0;
 $__case_0 = $_2;
-if ((($__case_0)->tag === "Left")) {
+switch (($__case_0)->tag) {
+case "Left":
 $r = ($__case_0)->v0;
 return ($c)($r);
-} else {
-if ((($__case_0)->tag === "Right")) {
+break;
+case "Right":
 $_3 = ($__case_0)->v0;
 $__case_0 = $_3;
-if ((($__case_0)->tag === "Left")) {
+switch (($__case_0)->tag) {
+case "Left":
 $r = ($__case_0)->v0;
 return ($d)($r);
-} else {
-if ((($__case_0)->tag === "Right")) {
+break;
+case "Right":
 $_4 = ($__case_0)->v0;
 $__case_0 = $_4;
-if ((($__case_0)->tag === "Left")) {
+switch (($__case_0)->tag) {
+case "Left":
 $r = ($__case_0)->v0;
 return ($e)($r);
-} else {
-if ((($__case_0)->tag === "Right")) {
+break;
+case "Right":
 $_5 = ($__case_0)->v0;
-return ($GLOBALS['Data_Void_absurd'])($_5);
-} else {
+return (($GLOBALS['Data_Void_absurd'] ?? \Data\Void\phpurs_eval_thunk('Data_Void_absurd')))($_5);
+break;
+default:
 throw new \Exception("Pattern match failure");
+break;
 };
-};
-} else {
+break;
+default:
 throw new \Exception("Pattern match failure");
+break;
 };
-};
-} else {
+break;
+default:
 throw new \Exception("Pattern match failure");
+break;
 };
-};
-} else {
+break;
+default:
 throw new \Exception("Pattern match failure");
+break;
 };
-};
-} else {
+break;
+default:
 throw new \Exception("Pattern match failure");
-};
+break;
 };
   };
-  $__fn = function($a, $b = null, $c = null, $d = null, $e = null, $y = null) use ($__body, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 6) return phpurs_curry_fallback($__fn, func_get_args(), 6);
     $__res = $__body($a, $b, $c, $d, $e, $y);
-  return $__num > 6 ? $__res(...array_slice(func_get_args(), 6)) : $__res;
-  };
-  return $__fn;
-})();
+    return 6 < $__num ? $__res(...array_slice(func_get_args(), 6)) : $__res;
+}
+$GLOBALS['Data_Either_Nested_either5'] = __NAMESPACE__ . '\\Data_Either_Nested_either5';
 
 // Data_Either_Nested_either4
-$Data_Either_Nested_either4 = (function() {
+function Data_Either_Nested_either4($a, $b = null, $c = null, $d = null, $y = null) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Either_Nested_either4';
+  if ($__num < 5) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 5);
+  }
   $__body = function($a, $b, $c, $d, $y) {
     $__case_0 = $y;
-    if ((($__case_0)->tag === "Left")) {
+    switch (($__case_0)->tag) {
+case "Left":
 $r = ($__case_0)->v0;
 return ($a)($r);
-} else {
-if ((($__case_0)->tag === "Right")) {
+break;
+case "Right":
 $_1 = ($__case_0)->v0;
 $__case_0 = $_1;
-if ((($__case_0)->tag === "Left")) {
+switch (($__case_0)->tag) {
+case "Left":
 $r = ($__case_0)->v0;
 return ($b)($r);
-} else {
-if ((($__case_0)->tag === "Right")) {
+break;
+case "Right":
 $_2 = ($__case_0)->v0;
 $__case_0 = $_2;
-if ((($__case_0)->tag === "Left")) {
+switch (($__case_0)->tag) {
+case "Left":
 $r = ($__case_0)->v0;
 return ($c)($r);
-} else {
-if ((($__case_0)->tag === "Right")) {
+break;
+case "Right":
 $_3 = ($__case_0)->v0;
 $__case_0 = $_3;
-if ((($__case_0)->tag === "Left")) {
+switch (($__case_0)->tag) {
+case "Left":
 $r = ($__case_0)->v0;
 return ($d)($r);
-} else {
-if ((($__case_0)->tag === "Right")) {
+break;
+case "Right":
 $_4 = ($__case_0)->v0;
-return ($GLOBALS['Data_Void_absurd'])($_4);
-} else {
+return (($GLOBALS['Data_Void_absurd'] ?? \Data\Void\phpurs_eval_thunk('Data_Void_absurd')))($_4);
+break;
+default:
 throw new \Exception("Pattern match failure");
+break;
 };
-};
-} else {
+break;
+default:
 throw new \Exception("Pattern match failure");
+break;
 };
-};
-} else {
+break;
+default:
 throw new \Exception("Pattern match failure");
+break;
 };
-};
-} else {
+break;
+default:
 throw new \Exception("Pattern match failure");
-};
+break;
 };
   };
-  $__fn = function($a, $b = null, $c = null, $d = null, $y = null) use ($__body, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 5) return phpurs_curry_fallback($__fn, func_get_args(), 5);
     $__res = $__body($a, $b, $c, $d, $y);
-  return $__num > 5 ? $__res(...array_slice(func_get_args(), 5)) : $__res;
-  };
-  return $__fn;
-})();
+    return 5 < $__num ? $__res(...array_slice(func_get_args(), 5)) : $__res;
+}
+$GLOBALS['Data_Either_Nested_either4'] = __NAMESPACE__ . '\\Data_Either_Nested_either4';
 
 // Data_Either_Nested_either3
-$Data_Either_Nested_either3 = (function() {
+function Data_Either_Nested_either3($a, $b = null, $c = null, $y = null) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Either_Nested_either3';
+  if ($__num < 4) {
+    if ($__num === 3) return function($y) use ($a, $b, $c, $__fn) { return $__fn($a, $b, $c, $y); };
+    if ($__num === 2) return function($c, $y = null) use ($a, $b, $__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($a, $b, $c, $y);
+      if ($__num2 === 1) return function($y) use ($a, $b, $c, $__fn) { return $__fn($a, $b, $c, $y); };
+      return phpurs_curry_fallback($__fn, [$a, $b], 4);
+    };
+    if ($__num === 1) return function($b, $c = null, $y = null) use ($a, $__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 3) return $__fn($a, $b, $c, $y);
+      if ($__num2 === 2) return function($y) use ($a, $b, $c, $__fn) { return $__fn($a, $b, $c, $y); };
+      if ($__num2 === 1) return function($c, $y = null) use ($a, $b, $__fn) {
+        $__num3 = func_num_args();
+        if ($__num3 === 2) return $__fn($a, $b, $c, $y);
+        if ($__num3 === 1) return function($y) use ($a, $b, $c, $__fn) { return $__fn($a, $b, $c, $y); };
+        return phpurs_curry_fallback($__fn, [$a, $b], 4);
+      };
+      return phpurs_curry_fallback($__fn, [$a], 4);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 4);
+  }
   $__body = function($a, $b, $c, $y) {
     $__case_0 = $y;
-    if ((($__case_0)->tag === "Left")) {
+    switch (($__case_0)->tag) {
+case "Left":
 $r = ($__case_0)->v0;
 return ($a)($r);
-} else {
-if ((($__case_0)->tag === "Right")) {
+break;
+case "Right":
 $_1 = ($__case_0)->v0;
 $__case_0 = $_1;
-if ((($__case_0)->tag === "Left")) {
+switch (($__case_0)->tag) {
+case "Left":
 $r = ($__case_0)->v0;
 return ($b)($r);
-} else {
-if ((($__case_0)->tag === "Right")) {
+break;
+case "Right":
 $_2 = ($__case_0)->v0;
 $__case_0 = $_2;
-if ((($__case_0)->tag === "Left")) {
+switch (($__case_0)->tag) {
+case "Left":
 $r = ($__case_0)->v0;
 return ($c)($r);
-} else {
-if ((($__case_0)->tag === "Right")) {
+break;
+case "Right":
 $_3 = ($__case_0)->v0;
-return ($GLOBALS['Data_Void_absurd'])($_3);
-} else {
+return (($GLOBALS['Data_Void_absurd'] ?? \Data\Void\phpurs_eval_thunk('Data_Void_absurd')))($_3);
+break;
+default:
 throw new \Exception("Pattern match failure");
+break;
 };
-};
-} else {
+break;
+default:
 throw new \Exception("Pattern match failure");
+break;
 };
-};
-} else {
+break;
+default:
 throw new \Exception("Pattern match failure");
-};
+break;
 };
   };
-  $__fn = function($a, $b = null, $c = null, $y = null) use ($__body, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 4) return phpurs_curry_fallback($__fn, func_get_args(), 4);
     $__res = $__body($a, $b, $c, $y);
-  return $__num > 4 ? $__res(...array_slice(func_get_args(), 4)) : $__res;
-  };
-  return $__fn;
-})();
+    return 4 < $__num ? $__res(...array_slice(func_get_args(), 4)) : $__res;
+}
+$GLOBALS['Data_Either_Nested_either3'] = __NAMESPACE__ . '\\Data_Either_Nested_either3';
 
 // Data_Either_Nested_either2
-$Data_Either_Nested_either2 = (function() {
+function Data_Either_Nested_either2($a, $b = null, $y = null) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Either_Nested_either2';
+  if ($__num < 3) {
+    if ($__num === 2) return function($y) use ($a, $b, $__fn) { return $__fn($a, $b, $y); };
+    if ($__num === 1) return function($b, $y = null) use ($a, $__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($a, $b, $y);
+      if ($__num2 === 1) return function($y) use ($a, $b, $__fn) { return $__fn($a, $b, $y); };
+      return phpurs_curry_fallback($__fn, [$a], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
   $__body = function($a, $b, $y) {
     $__case_0 = $y;
-    if ((($__case_0)->tag === "Left")) {
+    switch (($__case_0)->tag) {
+case "Left":
 $r = ($__case_0)->v0;
 return ($a)($r);
-} else {
-if ((($__case_0)->tag === "Right")) {
+break;
+case "Right":
 $_1 = ($__case_0)->v0;
 $__case_0 = $_1;
-if ((($__case_0)->tag === "Left")) {
+switch (($__case_0)->tag) {
+case "Left":
 $r = ($__case_0)->v0;
 return ($b)($r);
-} else {
-if ((($__case_0)->tag === "Right")) {
+break;
+case "Right":
 $_2 = ($__case_0)->v0;
-return ($GLOBALS['Data_Void_absurd'])($_2);
-} else {
+return (($GLOBALS['Data_Void_absurd'] ?? \Data\Void\phpurs_eval_thunk('Data_Void_absurd')))($_2);
+break;
+default:
 throw new \Exception("Pattern match failure");
+break;
 };
-};
-} else {
+break;
+default:
 throw new \Exception("Pattern match failure");
-};
+break;
 };
   };
-  $__fn = function($a, $b = null, $y = null) use ($__body, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 3) return phpurs_curry_fallback($__fn, func_get_args(), 3);
     $__res = $__body($a, $b, $y);
-  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
-  };
-  return $__fn;
-})();
+    return 3 < $__num ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+}
+$GLOBALS['Data_Either_Nested_either2'] = __NAMESPACE__ . '\\Data_Either_Nested_either2';
 
 // Data_Either_Nested_either10
-$Data_Either_Nested_either10 = (function() {
+function Data_Either_Nested_either10($a, $b = null, $c = null, $d = null, $e = null, $f = null, $g = null, $h = null, $i = null, $j = null, $y = null) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Either_Nested_either10';
+  if ($__num < 11) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 11);
+  }
   $__body = function($a, $b, $c, $d, $e, $f, $g, $h, $i, $j, $y) {
     $__case_0 = $y;
-    if ((($__case_0)->tag === "Left")) {
+    switch (($__case_0)->tag) {
+case "Left":
 $r = ($__case_0)->v0;
 return ($a)($r);
-} else {
-if ((($__case_0)->tag === "Right")) {
+break;
+case "Right":
 $_1 = ($__case_0)->v0;
 $__case_0 = $_1;
-if ((($__case_0)->tag === "Left")) {
+switch (($__case_0)->tag) {
+case "Left":
 $r = ($__case_0)->v0;
 return ($b)($r);
-} else {
-if ((($__case_0)->tag === "Right")) {
+break;
+case "Right":
 $_2 = ($__case_0)->v0;
 $__case_0 = $_2;
-if ((($__case_0)->tag === "Left")) {
+switch (($__case_0)->tag) {
+case "Left":
 $r = ($__case_0)->v0;
 return ($c)($r);
-} else {
-if ((($__case_0)->tag === "Right")) {
+break;
+case "Right":
 $_3 = ($__case_0)->v0;
 $__case_0 = $_3;
-if ((($__case_0)->tag === "Left")) {
+switch (($__case_0)->tag) {
+case "Left":
 $r = ($__case_0)->v0;
 return ($d)($r);
-} else {
-if ((($__case_0)->tag === "Right")) {
+break;
+case "Right":
 $_4 = ($__case_0)->v0;
 $__case_0 = $_4;
-if ((($__case_0)->tag === "Left")) {
+switch (($__case_0)->tag) {
+case "Left":
 $r = ($__case_0)->v0;
 return ($e)($r);
-} else {
-if ((($__case_0)->tag === "Right")) {
+break;
+case "Right":
 $_5 = ($__case_0)->v0;
 $__case_0 = $_5;
-if ((($__case_0)->tag === "Left")) {
+switch (($__case_0)->tag) {
+case "Left":
 $r = ($__case_0)->v0;
 return ($f)($r);
-} else {
-if ((($__case_0)->tag === "Right")) {
+break;
+case "Right":
 $_6 = ($__case_0)->v0;
 $__case_0 = $_6;
-if ((($__case_0)->tag === "Left")) {
+switch (($__case_0)->tag) {
+case "Left":
 $r = ($__case_0)->v0;
 return ($g)($r);
-} else {
-if ((($__case_0)->tag === "Right")) {
+break;
+case "Right":
 $_7 = ($__case_0)->v0;
 $__case_0 = $_7;
-if ((($__case_0)->tag === "Left")) {
+switch (($__case_0)->tag) {
+case "Left":
 $r = ($__case_0)->v0;
 return ($h)($r);
-} else {
-if ((($__case_0)->tag === "Right")) {
+break;
+case "Right":
 $_8 = ($__case_0)->v0;
 $__case_0 = $_8;
-if ((($__case_0)->tag === "Left")) {
+switch (($__case_0)->tag) {
+case "Left":
 $r = ($__case_0)->v0;
 return ($i)($r);
-} else {
-if ((($__case_0)->tag === "Right")) {
+break;
+case "Right":
 $_9 = ($__case_0)->v0;
 $__case_0 = $_9;
-if ((($__case_0)->tag === "Left")) {
+switch (($__case_0)->tag) {
+case "Left":
 $r = ($__case_0)->v0;
 return ($j)($r);
-} else {
-if ((($__case_0)->tag === "Right")) {
+break;
+case "Right":
 $_10 = ($__case_0)->v0;
-return ($GLOBALS['Data_Void_absurd'])($_10);
-} else {
+return (($GLOBALS['Data_Void_absurd'] ?? \Data\Void\phpurs_eval_thunk('Data_Void_absurd')))($_10);
+break;
+default:
 throw new \Exception("Pattern match failure");
+break;
 };
-};
-} else {
+break;
+default:
 throw new \Exception("Pattern match failure");
+break;
 };
-};
-} else {
+break;
+default:
 throw new \Exception("Pattern match failure");
+break;
 };
-};
-} else {
+break;
+default:
 throw new \Exception("Pattern match failure");
+break;
 };
-};
-} else {
+break;
+default:
 throw new \Exception("Pattern match failure");
+break;
 };
-};
-} else {
+break;
+default:
 throw new \Exception("Pattern match failure");
+break;
 };
-};
-} else {
+break;
+default:
 throw new \Exception("Pattern match failure");
+break;
 };
-};
-} else {
+break;
+default:
 throw new \Exception("Pattern match failure");
+break;
 };
-};
-} else {
+break;
+default:
 throw new \Exception("Pattern match failure");
+break;
 };
-};
-} else {
+break;
+default:
 throw new \Exception("Pattern match failure");
-};
+break;
 };
   };
-  $__fn = function($a, $b = null, $c = null, $d = null, $e = null, $f = null, $g = null, $h = null, $i = null, $j = null, $y = null) use ($__body, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 11) return phpurs_curry_fallback($__fn, func_get_args(), 11);
     $__res = $__body($a, $b, $c, $d, $e, $f, $g, $h, $i, $j, $y);
-  return $__num > 11 ? $__res(...array_slice(func_get_args(), 11)) : $__res;
-  };
-  return $__fn;
-})();
+    return 11 < $__num ? $__res(...array_slice(func_get_args(), 11)) : $__res;
+}
+$GLOBALS['Data_Either_Nested_either10'] = __NAMESPACE__ . '\\Data_Either_Nested_either10';
 
 // Data_Either_Nested_either1
-$Data_Either_Nested_either1 = (function() {
+function Data_Either_Nested_either1($y) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Either_Nested_either1';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
   $__body = function($y) {
     $__case_0 = $y;
-    if ((($__case_0)->tag === "Left")) {
+    switch (($__case_0)->tag) {
+case "Left":
 $r = ($__case_0)->v0;
 return $r;
-} else {
-if ((($__case_0)->tag === "Right")) {
+break;
+case "Right":
 $_1 = ($__case_0)->v0;
-return ($GLOBALS['Data_Void_absurd'])($_1);
-} else {
+return (($GLOBALS['Data_Void_absurd'] ?? \Data\Void\phpurs_eval_thunk('Data_Void_absurd')))($_1);
+break;
+default:
 throw new \Exception("Pattern match failure");
-};
+break;
 };
   };
-  $__fn = function($y) use ($__body, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
     $__res = $__body($y);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Either_Nested_either1'] = __NAMESPACE__ . '\\Data_Either_Nested_either1';
 
 // Data_Either_Nested_at9
-$Data_Either_Nested_at9 = (function() {
+function Data_Either_Nested_at9($b, $f = null, $y = null) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Either_Nested_at9';
+  if ($__num < 3) {
+    if ($__num === 2) return function($y) use ($b, $f, $__fn) { return $__fn($b, $f, $y); };
+    if ($__num === 1) return function($f, $y = null) use ($b, $__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($b, $f, $y);
+      if ($__num2 === 1) return function($y) use ($b, $f, $__fn) { return $__fn($b, $f, $y); };
+      return phpurs_curry_fallback($__fn, [$b], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
   $__body = function($b, $f, $y) {
     $__case_0 = $y;
     if (((($__case_0)->tag === "Right") && (((($__case_0)->v0)->tag === "Right") && ((((($__case_0)->v0)->v0)->tag === "Right") && (((((($__case_0)->v0)->v0)->v0)->tag === "Right") && ((((((($__case_0)->v0)->v0)->v0)->v0)->tag === "Right") && (((((((($__case_0)->v0)->v0)->v0)->v0)->v0)->tag === "Right") && ((((((((($__case_0)->v0)->v0)->v0)->v0)->v0)->v0)->tag === "Right") && (((((((((($__case_0)->v0)->v0)->v0)->v0)->v0)->v0)->v0)->tag === "Right") && (((((((((($__case_0)->v0)->v0)->v0)->v0)->v0)->v0)->v0)->v0)->tag === "Left")))))))))) {
@@ -891,17 +1068,25 @@ throw new \Exception("Pattern match failure");
 };
 };
   };
-  $__fn = function($b, $f = null, $y = null) use ($__body, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 3) return phpurs_curry_fallback($__fn, func_get_args(), 3);
     $__res = $__body($b, $f, $y);
-  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
-  };
-  return $__fn;
-})();
+    return 3 < $__num ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+}
+$GLOBALS['Data_Either_Nested_at9'] = __NAMESPACE__ . '\\Data_Either_Nested_at9';
 
 // Data_Either_Nested_at8
-$Data_Either_Nested_at8 = (function() {
+function Data_Either_Nested_at8($b, $f = null, $y = null) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Either_Nested_at8';
+  if ($__num < 3) {
+    if ($__num === 2) return function($y) use ($b, $f, $__fn) { return $__fn($b, $f, $y); };
+    if ($__num === 1) return function($f, $y = null) use ($b, $__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($b, $f, $y);
+      if ($__num2 === 1) return function($y) use ($b, $f, $__fn) { return $__fn($b, $f, $y); };
+      return phpurs_curry_fallback($__fn, [$b], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
   $__body = function($b, $f, $y) {
     $__case_0 = $y;
     if (((($__case_0)->tag === "Right") && (((($__case_0)->v0)->tag === "Right") && ((((($__case_0)->v0)->v0)->tag === "Right") && (((((($__case_0)->v0)->v0)->v0)->tag === "Right") && ((((((($__case_0)->v0)->v0)->v0)->v0)->tag === "Right") && (((((((($__case_0)->v0)->v0)->v0)->v0)->v0)->tag === "Right") && ((((((((($__case_0)->v0)->v0)->v0)->v0)->v0)->v0)->tag === "Right") && ((((((((($__case_0)->v0)->v0)->v0)->v0)->v0)->v0)->v0)->tag === "Left"))))))))) {
@@ -915,17 +1100,25 @@ throw new \Exception("Pattern match failure");
 };
 };
   };
-  $__fn = function($b, $f = null, $y = null) use ($__body, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 3) return phpurs_curry_fallback($__fn, func_get_args(), 3);
     $__res = $__body($b, $f, $y);
-  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
-  };
-  return $__fn;
-})();
+    return 3 < $__num ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+}
+$GLOBALS['Data_Either_Nested_at8'] = __NAMESPACE__ . '\\Data_Either_Nested_at8';
 
 // Data_Either_Nested_at7
-$Data_Either_Nested_at7 = (function() {
+function Data_Either_Nested_at7($b, $f = null, $y = null) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Either_Nested_at7';
+  if ($__num < 3) {
+    if ($__num === 2) return function($y) use ($b, $f, $__fn) { return $__fn($b, $f, $y); };
+    if ($__num === 1) return function($f, $y = null) use ($b, $__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($b, $f, $y);
+      if ($__num2 === 1) return function($y) use ($b, $f, $__fn) { return $__fn($b, $f, $y); };
+      return phpurs_curry_fallback($__fn, [$b], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
   $__body = function($b, $f, $y) {
     $__case_0 = $y;
     if (((($__case_0)->tag === "Right") && (((($__case_0)->v0)->tag === "Right") && ((((($__case_0)->v0)->v0)->tag === "Right") && (((((($__case_0)->v0)->v0)->v0)->tag === "Right") && ((((((($__case_0)->v0)->v0)->v0)->v0)->tag === "Right") && (((((((($__case_0)->v0)->v0)->v0)->v0)->v0)->tag === "Right") && (((((((($__case_0)->v0)->v0)->v0)->v0)->v0)->v0)->tag === "Left")))))))) {
@@ -939,17 +1132,25 @@ throw new \Exception("Pattern match failure");
 };
 };
   };
-  $__fn = function($b, $f = null, $y = null) use ($__body, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 3) return phpurs_curry_fallback($__fn, func_get_args(), 3);
     $__res = $__body($b, $f, $y);
-  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
-  };
-  return $__fn;
-})();
+    return 3 < $__num ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+}
+$GLOBALS['Data_Either_Nested_at7'] = __NAMESPACE__ . '\\Data_Either_Nested_at7';
 
 // Data_Either_Nested_at6
-$Data_Either_Nested_at6 = (function() {
+function Data_Either_Nested_at6($b, $f = null, $y = null) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Either_Nested_at6';
+  if ($__num < 3) {
+    if ($__num === 2) return function($y) use ($b, $f, $__fn) { return $__fn($b, $f, $y); };
+    if ($__num === 1) return function($f, $y = null) use ($b, $__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($b, $f, $y);
+      if ($__num2 === 1) return function($y) use ($b, $f, $__fn) { return $__fn($b, $f, $y); };
+      return phpurs_curry_fallback($__fn, [$b], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
   $__body = function($b, $f, $y) {
     $__case_0 = $y;
     if (((($__case_0)->tag === "Right") && (((($__case_0)->v0)->tag === "Right") && ((((($__case_0)->v0)->v0)->tag === "Right") && (((((($__case_0)->v0)->v0)->v0)->tag === "Right") && ((((((($__case_0)->v0)->v0)->v0)->v0)->tag === "Right") && ((((((($__case_0)->v0)->v0)->v0)->v0)->v0)->tag === "Left"))))))) {
@@ -963,17 +1164,25 @@ throw new \Exception("Pattern match failure");
 };
 };
   };
-  $__fn = function($b, $f = null, $y = null) use ($__body, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 3) return phpurs_curry_fallback($__fn, func_get_args(), 3);
     $__res = $__body($b, $f, $y);
-  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
-  };
-  return $__fn;
-})();
+    return 3 < $__num ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+}
+$GLOBALS['Data_Either_Nested_at6'] = __NAMESPACE__ . '\\Data_Either_Nested_at6';
 
 // Data_Either_Nested_at5
-$Data_Either_Nested_at5 = (function() {
+function Data_Either_Nested_at5($b, $f = null, $y = null) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Either_Nested_at5';
+  if ($__num < 3) {
+    if ($__num === 2) return function($y) use ($b, $f, $__fn) { return $__fn($b, $f, $y); };
+    if ($__num === 1) return function($f, $y = null) use ($b, $__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($b, $f, $y);
+      if ($__num2 === 1) return function($y) use ($b, $f, $__fn) { return $__fn($b, $f, $y); };
+      return phpurs_curry_fallback($__fn, [$b], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
   $__body = function($b, $f, $y) {
     $__case_0 = $y;
     if (((($__case_0)->tag === "Right") && (((($__case_0)->v0)->tag === "Right") && ((((($__case_0)->v0)->v0)->tag === "Right") && (((((($__case_0)->v0)->v0)->v0)->tag === "Right") && (((((($__case_0)->v0)->v0)->v0)->v0)->tag === "Left")))))) {
@@ -987,17 +1196,25 @@ throw new \Exception("Pattern match failure");
 };
 };
   };
-  $__fn = function($b, $f = null, $y = null) use ($__body, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 3) return phpurs_curry_fallback($__fn, func_get_args(), 3);
     $__res = $__body($b, $f, $y);
-  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
-  };
-  return $__fn;
-})();
+    return 3 < $__num ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+}
+$GLOBALS['Data_Either_Nested_at5'] = __NAMESPACE__ . '\\Data_Either_Nested_at5';
 
 // Data_Either_Nested_at4
-$Data_Either_Nested_at4 = (function() {
+function Data_Either_Nested_at4($b, $f = null, $y = null) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Either_Nested_at4';
+  if ($__num < 3) {
+    if ($__num === 2) return function($y) use ($b, $f, $__fn) { return $__fn($b, $f, $y); };
+    if ($__num === 1) return function($f, $y = null) use ($b, $__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($b, $f, $y);
+      if ($__num2 === 1) return function($y) use ($b, $f, $__fn) { return $__fn($b, $f, $y); };
+      return phpurs_curry_fallback($__fn, [$b], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
   $__body = function($b, $f, $y) {
     $__case_0 = $y;
     if (((($__case_0)->tag === "Right") && (((($__case_0)->v0)->tag === "Right") && ((((($__case_0)->v0)->v0)->tag === "Right") && ((((($__case_0)->v0)->v0)->v0)->tag === "Left"))))) {
@@ -1011,17 +1228,25 @@ throw new \Exception("Pattern match failure");
 };
 };
   };
-  $__fn = function($b, $f = null, $y = null) use ($__body, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 3) return phpurs_curry_fallback($__fn, func_get_args(), 3);
     $__res = $__body($b, $f, $y);
-  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
-  };
-  return $__fn;
-})();
+    return 3 < $__num ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+}
+$GLOBALS['Data_Either_Nested_at4'] = __NAMESPACE__ . '\\Data_Either_Nested_at4';
 
 // Data_Either_Nested_at3
-$Data_Either_Nested_at3 = (function() {
+function Data_Either_Nested_at3($b, $f = null, $y = null) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Either_Nested_at3';
+  if ($__num < 3) {
+    if ($__num === 2) return function($y) use ($b, $f, $__fn) { return $__fn($b, $f, $y); };
+    if ($__num === 1) return function($f, $y = null) use ($b, $__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($b, $f, $y);
+      if ($__num2 === 1) return function($y) use ($b, $f, $__fn) { return $__fn($b, $f, $y); };
+      return phpurs_curry_fallback($__fn, [$b], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
   $__body = function($b, $f, $y) {
     $__case_0 = $y;
     if (((($__case_0)->tag === "Right") && (((($__case_0)->v0)->tag === "Right") && (((($__case_0)->v0)->v0)->tag === "Left")))) {
@@ -1035,17 +1260,25 @@ throw new \Exception("Pattern match failure");
 };
 };
   };
-  $__fn = function($b, $f = null, $y = null) use ($__body, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 3) return phpurs_curry_fallback($__fn, func_get_args(), 3);
     $__res = $__body($b, $f, $y);
-  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
-  };
-  return $__fn;
-})();
+    return 3 < $__num ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+}
+$GLOBALS['Data_Either_Nested_at3'] = __NAMESPACE__ . '\\Data_Either_Nested_at3';
 
 // Data_Either_Nested_at2
-$Data_Either_Nested_at2 = (function() {
+function Data_Either_Nested_at2($b, $f = null, $y = null) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Either_Nested_at2';
+  if ($__num < 3) {
+    if ($__num === 2) return function($y) use ($b, $f, $__fn) { return $__fn($b, $f, $y); };
+    if ($__num === 1) return function($f, $y = null) use ($b, $__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($b, $f, $y);
+      if ($__num2 === 1) return function($y) use ($b, $f, $__fn) { return $__fn($b, $f, $y); };
+      return phpurs_curry_fallback($__fn, [$b], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
   $__body = function($b, $f, $y) {
     $__case_0 = $y;
     if (((($__case_0)->tag === "Right") && ((($__case_0)->v0)->tag === "Left"))) {
@@ -1059,17 +1292,25 @@ throw new \Exception("Pattern match failure");
 };
 };
   };
-  $__fn = function($b, $f = null, $y = null) use ($__body, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 3) return phpurs_curry_fallback($__fn, func_get_args(), 3);
     $__res = $__body($b, $f, $y);
-  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
-  };
-  return $__fn;
-})();
+    return 3 < $__num ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+}
+$GLOBALS['Data_Either_Nested_at2'] = __NAMESPACE__ . '\\Data_Either_Nested_at2';
 
 // Data_Either_Nested_at10
-$Data_Either_Nested_at10 = (function() {
+function Data_Either_Nested_at10($b, $f = null, $y = null) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Either_Nested_at10';
+  if ($__num < 3) {
+    if ($__num === 2) return function($y) use ($b, $f, $__fn) { return $__fn($b, $f, $y); };
+    if ($__num === 1) return function($f, $y = null) use ($b, $__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($b, $f, $y);
+      if ($__num2 === 1) return function($y) use ($b, $f, $__fn) { return $__fn($b, $f, $y); };
+      return phpurs_curry_fallback($__fn, [$b], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
   $__body = function($b, $f, $y) {
     $__case_0 = $y;
     if (((($__case_0)->tag === "Right") && (((($__case_0)->v0)->tag === "Right") && ((((($__case_0)->v0)->v0)->tag === "Right") && (((((($__case_0)->v0)->v0)->v0)->tag === "Right") && ((((((($__case_0)->v0)->v0)->v0)->v0)->tag === "Right") && (((((((($__case_0)->v0)->v0)->v0)->v0)->v0)->tag === "Right") && ((((((((($__case_0)->v0)->v0)->v0)->v0)->v0)->v0)->tag === "Right") && (((((((((($__case_0)->v0)->v0)->v0)->v0)->v0)->v0)->v0)->tag === "Right") && ((((((((((($__case_0)->v0)->v0)->v0)->v0)->v0)->v0)->v0)->v0)->tag === "Right") && ((((((((((($__case_0)->v0)->v0)->v0)->v0)->v0)->v0)->v0)->v0)->v0)->tag === "Left"))))))))))) {
@@ -1083,17 +1324,25 @@ throw new \Exception("Pattern match failure");
 };
 };
   };
-  $__fn = function($b, $f = null, $y = null) use ($__body, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 3) return phpurs_curry_fallback($__fn, func_get_args(), 3);
     $__res = $__body($b, $f, $y);
-  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
-  };
-  return $__fn;
-})();
+    return 3 < $__num ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+}
+$GLOBALS['Data_Either_Nested_at10'] = __NAMESPACE__ . '\\Data_Either_Nested_at10';
 
 // Data_Either_Nested_at1
-$Data_Either_Nested_at1 = (function() {
+function Data_Either_Nested_at1($b, $f = null, $y = null) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Either_Nested_at1';
+  if ($__num < 3) {
+    if ($__num === 2) return function($y) use ($b, $f, $__fn) { return $__fn($b, $f, $y); };
+    if ($__num === 1) return function($f, $y = null) use ($b, $__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($b, $f, $y);
+      if ($__num2 === 1) return function($y) use ($b, $f, $__fn) { return $__fn($b, $f, $y); };
+      return phpurs_curry_fallback($__fn, [$b], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
   $__body = function($b, $f, $y) {
     $__case_0 = $y;
     if ((($__case_0)->tag === "Left")) {
@@ -1107,12 +1356,8 @@ throw new \Exception("Pattern match failure");
 };
 };
   };
-  $__fn = function($b, $f = null, $y = null) use ($__body, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 3) return phpurs_curry_fallback($__fn, func_get_args(), 3);
     $__res = $__body($b, $f, $y);
-  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
-  };
-  return $__fn;
-})();
+    return 3 < $__num ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+}
+$GLOBALS['Data_Either_Nested_at1'] = __NAMESPACE__ . '\\Data_Either_Nested_at1';
 

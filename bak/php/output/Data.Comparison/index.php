@@ -33,105 +33,126 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_curry_fallback')) {
     };
   }
 }
-$Prim_undefined = function() { throw new \Exception("undefined"); };
-
-
-// Data_Comparison_append
-$Data_Comparison_append = ($GLOBALS['Data_Semigroup_append'])(($GLOBALS['Data_Semigroup_semigroupFn'])(($GLOBALS['Data_Semigroup_semigroupFn'])($GLOBALS['Data_Ordering_semigroupOrdering'])));
-
-// Data_Comparison_Comparison
-$Data_Comparison_Comparison = (function() {
-  $__fn = function($x) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = $x;
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
-
-// Data_Comparison_semigroupComparison
-$Data_Comparison_semigroupComparison = ($GLOBALS['Data_Semigroup_Semigroup__dollar__Dict'])((object)["append" => (function() {
+if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
+  function phpurs_eval_thunk($id) {
+    static $cache = [];
+    if (array_key_exists($id, $cache)) return $cache[$id];
+    switch ($id) {
+      case 'Data_Comparison_append': $v = (($GLOBALS['Data_Semigroup_append'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_append')))((($GLOBALS['Data_Semigroup_semigroupFn'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_semigroupFn')))((($GLOBALS['Data_Semigroup_semigroupFn'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_semigroupFn')))(($GLOBALS['Data_Ordering_semigroupOrdering'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_semigroupOrdering'))))); break;
+      case 'Data_Comparison_semigroupComparison': $v = (($GLOBALS['Data_Semigroup_Semigroup__dollar__Dict'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_Semigroup__dollar__Dict')))((object)["append" => (function() {
   $__body = function($v, $v1) {
     $__case_0 = $v;
     $__case_1 = $v1;
     if (true) {
 $p = $__case_0;
 $q = $__case_1;
-return ($GLOBALS['Data_Comparison_Comparison'])(($GLOBALS['Data_Comparison_append'])($p, $q));
+return (($GLOBALS['Data_Comparison_Comparison'] ?? \Data\Comparison\phpurs_eval_thunk('Data_Comparison_Comparison')))((($GLOBALS['Data_Comparison_append'] ?? \Data\Comparison\phpurs_eval_thunk('Data_Comparison_append')))($p, $q));
 } else {
 throw new \Exception("Pattern match failure");
 };
   };
   $__fn = function($v, $v1 = null) use ($__body, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 2) return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
     $__res = $__body($v, $v1);
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
-})()]);
-
-// Data_Comparison_newtypeComparison
-$Data_Comparison_newtypeComparison = ($GLOBALS['Data_Newtype_Newtype__dollar__Dict'])((object)["Coercible0" => (function() {
+})()]); break;
+      case 'Data_Comparison_newtypeComparison': $v = (($GLOBALS['Data_Newtype_Newtype__dollar__Dict'] ?? \Data\Newtype\phpurs_eval_thunk('Data_Newtype_Newtype__dollar__Dict')))((object)["Coercible0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = $GLOBALS['Prim_undefined'];
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})()]);
-
-// Data_Comparison_monoidComparison
-$Data_Comparison_monoidComparison = ($GLOBALS['Data_Monoid_Monoid__dollar__Dict'])((object)["mempty" => ($GLOBALS['Data_Comparison_Comparison'])((function() {
+})()]); break;
+      case 'Data_Comparison_monoidComparison': $v = (($GLOBALS['Data_Monoid_Monoid__dollar__Dict'] ?? \Data\Monoid\phpurs_eval_thunk('Data_Monoid_Monoid__dollar__Dict')))((object)["mempty" => (($GLOBALS['Data_Comparison_Comparison'] ?? \Data\Comparison\phpurs_eval_thunk('Data_Comparison_Comparison')))((function() {
   $__fn = function($v, $v1 = null) use (&$__fn) {
   $__num = func_num_args();
-  if ($__num < 2) return phpurs_curry_fallback($__fn, func_get_args(), 2);
-    $__res = $GLOBALS['Data_Ordering_EQ'];
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($GLOBALS['Data_Ordering_EQ'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_EQ'));
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
 })()), "Semigroup0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = $GLOBALS['Data_Comparison_semigroupComparison'];
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($GLOBALS['Data_Comparison_semigroupComparison'] ?? \Data\Comparison\phpurs_eval_thunk('Data_Comparison_semigroupComparison'));
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})()]);
-
-// Data_Comparison_defaultComparison
-$Data_Comparison_defaultComparison = (function() {
-  $__fn = function($dictOrd) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = ($GLOBALS['Data_Comparison_Comparison'])(($GLOBALS['Data_Ord_compare'])($dictOrd));
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
-
-// Data_Comparison_contravariantComparison
-$Data_Comparison_contravariantComparison = ($GLOBALS['Data_Functor_Contravariant_Contravariant__dollar__Dict'])((object)["cmap" => (function() {
+})()]); break;
+      case 'Data_Comparison_contravariantComparison': $v = (($GLOBALS['Data_Functor_Contravariant_Contravariant__dollar__Dict'] ?? \Data\Functor\Contravariant\phpurs_eval_thunk('Data_Functor_Contravariant_Contravariant__dollar__Dict')))((object)["cmap" => (function() {
   $__body = function($f, $v) {
     $__case_0 = $f;
     $__case_1 = $v;
     if (true) {
 $f1 = $__case_0;
 $g = $__case_1;
-return ($GLOBALS['Data_Comparison_Comparison'])(($GLOBALS['Data_Function_on'])($g, $f1));
+return (($GLOBALS['Data_Comparison_Comparison'] ?? \Data\Comparison\phpurs_eval_thunk('Data_Comparison_Comparison')))((($GLOBALS['Data_Function_on'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_on')))($g, $f1));
 } else {
 throw new \Exception("Pattern match failure");
 };
   };
   $__fn = function($f, $v = null) use ($__body, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 2) return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, &$__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
     $__res = $__body($f, $v);
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
-})()]);
+})()]); break;
+      default: throw new \Exception("Unknown thunk " . $id);
+    }
+    $GLOBALS[$id] = $v;
+    return $cache[$id] = $v;
+  }
+}
+$Prim_undefined = function() { throw new \Exception("undefined"); };
+
+
+
+// Data_Comparison_Comparison
+function Data_Comparison_Comparison($x) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Comparison_Comparison';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $x;
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Comparison_Comparison'] = __NAMESPACE__ . '\\Data_Comparison_Comparison';
+
+
+
+
+// Data_Comparison_defaultComparison
+function Data_Comparison_defaultComparison($dictOrd) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Comparison_defaultComparison';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = (($GLOBALS['Data_Comparison_Comparison'] ?? \Data\Comparison\phpurs_eval_thunk('Data_Comparison_Comparison')))((($GLOBALS['Data_Ord_compare'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_compare')))($dictOrd));
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Comparison_defaultComparison'] = __NAMESPACE__ . '\\Data_Comparison_defaultComparison';
+
 

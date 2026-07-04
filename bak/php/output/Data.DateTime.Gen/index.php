@@ -31,18 +31,31 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_curry_fallback')) {
     };
   }
 }
+if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
+  function phpurs_eval_thunk($id) {
+    static $cache = [];
+    if (array_key_exists($id, $cache)) return $cache[$id];
+    switch ($id) {
+
+      default: throw new \Exception("Unknown thunk " . $id);
+    }
+    $GLOBALS[$id] = $v;
+    return $cache[$id] = $v;
+  }
+}
 $Prim_undefined = function() { throw new \Exception("undefined"); };
 
 
 // Data_DateTime_Gen_genDateTime
-$Data_DateTime_Gen_genDateTime = (function() {
-  $__fn = function($dictMonadGen) use (&$__fn) {
+function Data_DateTime_Gen_genDateTime($dictMonadGen) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-$Apply0 = (((((($dictMonadGen)->Monad0)($GLOBALS['Prim_undefined']))->Bind1)($GLOBALS['Prim_undefined']))->Apply0)($GLOBALS['Prim_undefined']);
-    $__res = ($GLOBALS['Control_Apply_apply'])($Apply0, ($GLOBALS['Data_Functor_map'])((($Apply0)->Functor0)($GLOBALS['Prim_undefined']), $GLOBALS['Data_DateTime_DateTime'], ($GLOBALS['Data_Date_Gen_genDate'])($dictMonadGen)), ($GLOBALS['Data_Time_Gen_genTime'])($dictMonadGen));
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_DateTime_Gen_genDateTime';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$Apply0 = (((((($dictMonadGen)->Monad0)(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))))->Bind1)(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))))->Apply0)(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined')));
+    $__res = (($GLOBALS['Control_Apply_apply'] ?? \Control\Apply\phpurs_eval_thunk('Control_Apply_apply')))($Apply0, (($GLOBALS['Data_Functor_map'] ?? \Data\Functor\phpurs_eval_thunk('Data_Functor_map')))((($Apply0)->Functor0)(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))), ($GLOBALS['Data_DateTime_DateTime'] ?? \Data\DateTime\phpurs_eval_thunk('Data_DateTime_DateTime')), (($GLOBALS['Data_Date_Gen_genDate'] ?? \Data\Date\Gen\phpurs_eval_thunk('Data_Date_Gen_genDate')))($dictMonadGen)), (($GLOBALS['Data_Time_Gen_genTime'] ?? \Data\Time\Gen\phpurs_eval_thunk('Data_Time_Gen_genTime')))($dictMonadGen));
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_DateTime_Gen_genDateTime'] = __NAMESPACE__ . '\\Data_DateTime_Gen_genDateTime';
 

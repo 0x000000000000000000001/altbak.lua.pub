@@ -34,52 +34,69 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_curry_fallback')) {
     };
   }
 }
+if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
+  function phpurs_eval_thunk($id) {
+    static $cache = [];
+    if (array_key_exists($id, $cache)) return $cache[$id];
+    switch ($id) {
+      case 'Test_ListOps_lessThan': $v = (($GLOBALS['Data_Ord_lessThan'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_lessThan')))(($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'))); break;
+      case 'Test_ListOps_sub': $v = ($GLOBALS['Data_Ring_intSub'] ?? \Data\Ring\phpurs_eval_thunk('Data_Ring_intSub')); break;
+      case 'Test_ListOps_eq': $v = ($GLOBALS['Data_Eq_eqIntImpl'] ?? \Data\Eq\phpurs_eval_thunk('Data_Eq_eqIntImpl')); break;
+      case 'Test_ListOps_mod': $v = ($GLOBALS['Data_EuclideanRing_intMod'] ?? \Data\EuclideanRing\phpurs_eval_thunk('Data_EuclideanRing_intMod')); break;
+      case 'Test_ListOps_Nil': $v = ($GLOBALS['__phpurs_data0_Nil'] ??= new Phpurs_Data0("Nil")); break;
+      case 'Test_ListOps_sumEvens': $v = (($GLOBALS['Test_ListOps_foldl'] ?? \Test\ListOps\phpurs_eval_thunk('Test_ListOps_foldl')))(($GLOBALS['Data_Semiring_intAdd'] ?? \Data\Semiring\phpurs_eval_thunk('Data_Semiring_intAdd')), 0, (($GLOBALS['Test_ListOps_filterEvens'] ?? \Test\ListOps\phpurs_eval_thunk('Test_ListOps_filterEvens')))((($GLOBALS['Test_ListOps_range'] ?? \Test\ListOps\phpurs_eval_thunk('Test_ListOps_range')))(1, 900))); break;
+      case 'Test_ListOps_describe': $v = (($GLOBALS['Effect_Console_log'] ?? \Effect\Console\phpurs_eval_thunk('Effect_Console_log')))("List Processing (900 elements):"); break;
+      case 'Test_ListOps_act': $v = (($GLOBALS['Effect_Console_logShow'] ?? \Effect\Console\phpurs_eval_thunk('Effect_Console_logShow')))(($GLOBALS['Data_Show_showInt'] ?? \Data\Show\phpurs_eval_thunk('Data_Show_showInt')), ($GLOBALS['Test_ListOps_sumEvens'] ?? \Test\ListOps\phpurs_eval_thunk('Test_ListOps_sumEvens'))); break;
+      default: throw new \Exception("Unknown thunk " . $id);
+    }
+    $GLOBALS[$id] = $v;
+    return $cache[$id] = $v;
+  }
+}
 $Prim_undefined = function() { throw new \Exception("undefined"); };
 
 
-// Test_ListOps_lessThan
-$Test_ListOps_lessThan = ($GLOBALS['Data_Ord_lessThan'])($GLOBALS['Data_Ord_ordInt']);
 
-// Test_ListOps_sub
-$Test_ListOps_sub = ($GLOBALS['Data_Ring_sub'])($GLOBALS['Data_Ring_ringInt']);
 
-// Test_ListOps_eq
-$Test_ListOps_eq = ($GLOBALS['Data_Eq_eq'])($GLOBALS['Data_Eq_eqInt']);
 
-// Test_ListOps_mod
-$Test_ListOps_mod = ($GLOBALS['Data_EuclideanRing_mod'])($GLOBALS['Data_EuclideanRing_euclideanRingInt']);
 
-// Test_ListOps_Nil
-$Test_ListOps_Nil = new Phpurs_Data0("Nil");
 
 // Test_ListOps_Cons
-$Test_ListOps_Cons = (function() {
-  $__fn = function($value0, $value1 = null) use (&$__fn) {
+function Test_ListOps_Cons($value0, $value1 = null) {
   $__num = func_num_args();
-  if ($__num < 2) return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  $__fn = __NAMESPACE__ . '\\' . 'Test_ListOps_Cons';
+  if ($__num < 2) {
+    if ($__num === 1) return function($value1) use ($value0, $__fn) { return $__fn($value0, $value1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
     $__res = new Phpurs_Data2("Cons", $value0, $value1);
-  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
-  };
-  return $__fn;
-})();
+    return 2 < $__num ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+}
+$GLOBALS['Test_ListOps_Cons'] = __NAMESPACE__ . '\\Test_ListOps_Cons';
 
 // Test_ListOps_range
-$Test_ListOps_range = (function() {
-  $__fn = function($start, $end = null) use (&$__fn) {
+function Test_ListOps_range($start, $end = null) {
   $__num = func_num_args();
-  if ($__num < 2) return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  $__fn = __NAMESPACE__ . '\\' . 'Test_ListOps_range';
+  if ($__num < 2) {
+    if ($__num === 1) return function($end) use ($start, $__fn) { return $__fn($start, $end); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
 $go = (function() use ($start, &$go) {
   $__fn = function($curr, $acc = null) use ($start, &$go, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 2) return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  if ($__num < 2) {
+    if ($__num === 1) return function($acc) use ($curr, &$__fn) { return $__fn($curr, $acc); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
 while (true) {
-$__case_0 = ($GLOBALS['Test_ListOps_lessThan'])($curr, $start);
+$__case_0 = (($GLOBALS['Test_ListOps_lessThan'] ?? \Test\ListOps\phpurs_eval_thunk('Test_ListOps_lessThan')))($curr, $start);
 if (($__case_0 === true)) {
 return $acc;
 } else {
 if (true) {
-$__tco_tmp_0 = ($GLOBALS['Test_ListOps_sub'])($curr, 1);
-$__tco_tmp_1 = ($GLOBALS['Test_ListOps_Cons'])($curr, $acc);
+$__tco_tmp_0 = (($GLOBALS['Test_ListOps_sub'] ?? \Test\ListOps\phpurs_eval_thunk('Test_ListOps_sub')))($curr, 1);
+$__tco_tmp_1 = (($GLOBALS['Test_ListOps_Cons'] ?? \Test\ListOps\phpurs_eval_thunk('Test_ListOps_Cons')))($curr, $acc);
 $curr = $__tco_tmp_0;
 $acc = $__tco_tmp_1;
 continue;
@@ -93,26 +110,35 @@ throw new \Exception("Pattern match failure");
   };
   return $__fn;
 })();
-    $__res = ($go)($end, $GLOBALS['Test_ListOps_Nil']);
-  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
-  };
-  return $__fn;
-})();
+    $__res = ($go)($end, ($GLOBALS['Test_ListOps_Nil'] ?? \Test\ListOps\phpurs_eval_thunk('Test_ListOps_Nil')));
+    return 2 < $__num ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+}
+$GLOBALS['Test_ListOps_range'] = __NAMESPACE__ . '\\Test_ListOps_range';
 
 // Test_ListOps_foldl
-$Test_ListOps_foldl = (function() {
-  $__fn = function($v, $v1 = null, $v2 = null) use (&$__fn) {
+function Test_ListOps_foldl($v, $v1 = null, $v2 = null) {
   $__num = func_num_args();
-  if ($__num < 3) return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  $__fn = __NAMESPACE__ . '\\' . 'Test_ListOps_foldl';
+  if ($__num < 3) {
+    if ($__num === 2) return function($v2) use ($v, $v1, $__fn) { return $__fn($v, $v1, $v2); };
+    if ($__num === 1) return function($v1, $v2 = null) use ($v, $__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($v, $v1, $v2);
+      if ($__num2 === 1) return function($v2) use ($v, $v1, $__fn) { return $__fn($v, $v1, $v2); };
+      return phpurs_curry_fallback($__fn, [$v], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
 while (true) {
 $__case_0 = $v;
 $__case_1 = $v1;
 $__case_2 = $v2;
-if ((($__case_2)->tag === "Nil")) {
+switch (($__case_2)->tag) {
+case "Nil":
 $acc = $__case_1;
 return $acc;
-} else {
-if ((($__case_2)->tag === "Cons")) {
+break;
+case "Cons":
 $f = $__case_0;
 $acc = $__case_1;
 $x = ($__case_2)->v0;
@@ -123,59 +149,66 @@ $__tco_tmp_2 = $xs;
 $v = $__tco_tmp_0;
 $v1 = $__tco_tmp_1;
 $v2 = $__tco_tmp_2;
-continue;
-} else {
+continue 2;
+break;
+default:
 throw new \Exception("Pattern match failure");
-};
+break;
 };
 };
     $__res = null;
-  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
-  };
-  return $__fn;
-})();
+    return 3 < $__num ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+}
+$GLOBALS['Test_ListOps_foldl'] = __NAMESPACE__ . '\\Test_ListOps_foldl';
 
 // Test_ListOps_filterEvens
-$Test_ListOps_filterEvens = (function() {
-  $__fn = function($lst) use (&$__fn) {
+function Test_ListOps_filterEvens($lst) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  $__fn = __NAMESPACE__ . '\\' . 'Test_ListOps_filterEvens';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
 $go = (function() use (&$go) {
   $__fn = function($v, $v1 = null) use (&$go, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 2) return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
 while (true) {
 $__case_0 = $v;
 $__case_1 = $v1;
-if ((($__case_0)->tag === "Nil")) {
+switch (($__case_0)->tag) {
+case "Nil":
 $acc = $__case_1;
 return $acc;
-} else {
-if ((($__case_0)->tag === "Cons")) {
+break;
+case "Cons":
 $x = ($__case_0)->v0;
 $xs = ($__case_0)->v1;
 $acc = $__case_1;
-$__case_0 = ($GLOBALS['Test_ListOps_eq'])(($GLOBALS['Test_ListOps_mod'])($x, 2), 0);
+$__case_0 = (($GLOBALS['Test_ListOps_eq'] ?? \Test\ListOps\phpurs_eval_thunk('Test_ListOps_eq')))((($GLOBALS['Test_ListOps_mod'] ?? \Test\ListOps\phpurs_eval_thunk('Test_ListOps_mod')))($x, 2), 0);
 if (($__case_0 === true)) {
 $__tco_tmp_0 = $xs;
-$__tco_tmp_1 = ($GLOBALS['Test_ListOps_Cons'])($x, $acc);
+$__tco_tmp_1 = (($GLOBALS['Test_ListOps_Cons'] ?? \Test\ListOps\phpurs_eval_thunk('Test_ListOps_Cons')))($x, $acc);
 $v = $__tco_tmp_0;
 $v1 = $__tco_tmp_1;
-continue;
+continue 2;
 } else {
 if (true) {
 $__tco_tmp_0 = $xs;
 $__tco_tmp_1 = $acc;
 $v = $__tco_tmp_0;
 $v1 = $__tco_tmp_1;
-continue;
+continue 2;
 } else {
 throw new \Exception("Pattern match failure");
 };
 };
-} else {
+break;
+default:
 throw new \Exception("Pattern match failure");
-};
+break;
 };
 };
     $__res = null;
@@ -183,18 +216,11 @@ throw new \Exception("Pattern match failure");
   };
   return $__fn;
 })();
-    $__res = ($go)($lst, $GLOBALS['Test_ListOps_Nil']);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    $__res = ($go)($lst, ($GLOBALS['Test_ListOps_Nil'] ?? \Test\ListOps\phpurs_eval_thunk('Test_ListOps_Nil')));
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Test_ListOps_filterEvens'] = __NAMESPACE__ . '\\Test_ListOps_filterEvens';
 
-// Test_ListOps_sumEvens
-$Test_ListOps_sumEvens = ($GLOBALS['Test_ListOps_foldl'])(($GLOBALS['Data_Semiring_add'])($GLOBALS['Data_Semiring_semiringInt']), 0, ($GLOBALS['Test_ListOps_filterEvens'])(($GLOBALS['Test_ListOps_range'])(1, 900)));
 
-// Test_ListOps_describe
-$Test_ListOps_describe = ($GLOBALS['Effect_Console_log'])("List Processing (900 elements):");
 
-// Test_ListOps_act
-$Test_ListOps_act = ($GLOBALS['Effect_Console_logShow'])($GLOBALS['Data_Show_showInt'], $GLOBALS['Test_ListOps_sumEvens']);
 

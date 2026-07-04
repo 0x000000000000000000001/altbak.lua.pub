@@ -37,46 +37,71 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_curry_fallback')) {
     };
   }
 }
+if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
+  function phpurs_eval_thunk($id) {
+    static $cache = [];
+    if (array_key_exists($id, $cache)) return $cache[$id];
+    switch ($id) {
+
+      default: throw new \Exception("Unknown thunk " . $id);
+    }
+    $GLOBALS[$id] = $v;
+    return $cache[$id] = $v;
+  }
+}
 $Prim_undefined = function() { throw new \Exception("undefined"); };
 
 
 // Data_Map_Gen_genMap
-$Data_Map_Gen_genMap = (function() {
-  $__fn = function($dictMonadRec) use (&$__fn) {
+function Data_Map_Gen_genMap($dictMonadRec) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-$unfoldable = ($GLOBALS['Control_Monad_Gen_unfoldable'])($dictMonadRec);
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Map_Gen_genMap';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$unfoldable = (($GLOBALS['Control_Monad_Gen_unfoldable'] ?? \Control\Monad\Gen\phpurs_eval_thunk('Control_Monad_Gen_unfoldable')))($dictMonadRec);
     $__res = (function() use ($unfoldable) {
   $__fn = function($dictMonadGen) use ($unfoldable, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-$sized = ($GLOBALS['Control_Monad_Gen_Class_sized'])($dictMonadGen);
-$Bind1 = (((($dictMonadGen)->Monad0)($GLOBALS['Prim_undefined']))->Bind1)($GLOBALS['Prim_undefined']);
-$bind = ($GLOBALS['Control_Bind_bind'])($Bind1);
-$chooseInt = ($GLOBALS['Control_Monad_Gen_Class_chooseInt'])($dictMonadGen);
-$resize = ($GLOBALS['Control_Monad_Gen_Class_resize'])($dictMonadGen);
-$Apply0 = (($Bind1)->Apply0)($GLOBALS['Prim_undefined']);
-$map = ($GLOBALS['Data_Functor_map'])((($Apply0)->Functor0)($GLOBALS['Prim_undefined']));
-$unfoldable1 = ($unfoldable)($dictMonadGen, $GLOBALS['Data_List_Types_unfoldableList']);
-$apply = ($GLOBALS['Control_Apply_apply'])($Apply0);
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$sized = (($GLOBALS['Control_Monad_Gen_Class_sized'] ?? \Control\Monad\Gen\Class\phpurs_eval_thunk('Control_Monad_Gen_Class_sized')))($dictMonadGen);
+$Bind1 = (((($dictMonadGen)->Monad0)(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))))->Bind1)(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined')));
+$bind = (($GLOBALS['Control_Bind_bind'] ?? \Control\Bind\phpurs_eval_thunk('Control_Bind_bind')))($Bind1);
+$chooseInt = (($GLOBALS['Control_Monad_Gen_Class_chooseInt'] ?? \Control\Monad\Gen\Class\phpurs_eval_thunk('Control_Monad_Gen_Class_chooseInt')))($dictMonadGen);
+$resize = (($GLOBALS['Control_Monad_Gen_Class_resize'] ?? \Control\Monad\Gen\Class\phpurs_eval_thunk('Control_Monad_Gen_Class_resize')))($dictMonadGen);
+$Apply0 = (($Bind1)->Apply0)(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined')));
+$map = (($GLOBALS['Data_Functor_map'] ?? \Data\Functor\phpurs_eval_thunk('Data_Functor_map')))((($Apply0)->Functor0)(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))));
+$unfoldable1 = ($unfoldable)($dictMonadGen, ($GLOBALS['Data_List_Types_unfoldableList'] ?? \Data\List\Types\phpurs_eval_thunk('Data_List_Types_unfoldableList')));
+$apply = (($GLOBALS['Control_Apply_apply'] ?? \Control\Apply\phpurs_eval_thunk('Control_Apply_apply')))($Apply0);
     $__res = (function() use ($sized, $bind, $chooseInt, $resize, $map, $unfoldable1, $apply) {
   $__fn = function($dictOrd) use ($sized, $bind, $chooseInt, $resize, $map, $unfoldable1, $apply, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-$fromFoldable = ($GLOBALS['Data_Map_Internal_fromFoldable'])($dictOrd, $GLOBALS['Data_List_Types_foldableList']);
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$fromFoldable = (($GLOBALS['Data_Map_Internal_fromFoldable'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_fromFoldable')))($dictOrd, ($GLOBALS['Data_List_Types_foldableList'] ?? \Data\List\Types\phpurs_eval_thunk('Data_List_Types_foldableList')));
     $__res = (function() use ($sized, $bind, $chooseInt, $resize, $map, $fromFoldable, $unfoldable1, $apply) {
   $__fn = function($genKey, $genValue = null) use ($sized, $bind, $chooseInt, $resize, $map, $fromFoldable, $unfoldable1, $apply, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 2) return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  if ($__num < 2) {
+    if ($__num === 1) return function($genValue) use ($genKey, &$__fn) { return $__fn($genKey, $genValue); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
     $__res = ($sized)((function() use ($bind, $chooseInt, $resize, $map, $fromFoldable, $unfoldable1, $apply, $genKey, $genValue) {
   $__fn = function($size) use ($bind, $chooseInt, $resize, $map, $fromFoldable, $unfoldable1, $apply, $genKey, $genValue, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = ($bind)(($chooseInt)(0, $size), (function() use ($resize, $map, $fromFoldable, $unfoldable1, $apply, $genKey, $genValue) {
   $__fn = function($newSize) use ($resize, $map, $fromFoldable, $unfoldable1, $apply, $genKey, $genValue, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) return phpurs_curry_fallback($__fn, func_get_args(), 1);
-    $__res = ($resize)(($GLOBALS['Data_Function_const'])($newSize), ($map)($fromFoldable, ($unfoldable1)(($apply)(($map)($GLOBALS['Data_Tuple_Tuple'], $genKey), $genValue))));
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($resize)((($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const')))($newSize), ($map)($fromFoldable, ($unfoldable1)(($apply)(($map)(($GLOBALS['Data_Tuple_Tuple'] ?? \Data\Tuple\phpurs_eval_thunk('Data_Tuple_Tuple')), $genKey), $genValue))));
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -97,8 +122,7 @@ $fromFoldable = ($GLOBALS['Data_Map_Internal_fromFoldable'])($dictOrd, $GLOBALS[
   };
   return $__fn;
 })();
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
+    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Map_Gen_genMap'] = __NAMESPACE__ . '\\Data_Map_Gen_genMap';
 
