@@ -31,7 +31,7 @@ sys  0m0.376s | sys  0m0.398s  | sys  0m0.016s        | sys  0m0.062s | sys  0m0
 
 > [!WARNING]
 > **About the PHP results**
-> Please note that the `phpurs` backend is a brand new, completely experimental, and "homemade" compiler built entirely from scratch for this repository. It recently received major optimizations (Type Class resolution, Native TCO, Lazy Loading initialization) which drastically reduced its execution time to ~6 seconds. However, due to PHP's heavy closures and lack of a functional VM, it remains inherently slower than highly optimized engines like V8 or BEAM.
+> Please note that the `phpurs` backend is a brand new, completely experimental, and "homemade" compiler built entirely from scratch for this repository. Its execution time is not yet representative of PHP's actual performance limit, as the compiler is still immature and actively undergoing optimization. Still a WIP!
 
 
 > [!NOTE]
