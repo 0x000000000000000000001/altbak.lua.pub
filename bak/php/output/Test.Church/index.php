@@ -2,13 +2,11 @@
 
 namespace Test\Church;
 
-require_once __DIR__ . '/../Data.Function/index.php';
 require_once __DIR__ . '/../Data.Ring/index.php';
 require_once __DIR__ . '/../Data.Semiring/index.php';
 require_once __DIR__ . '/../Data.Show/index.php';
 require_once __DIR__ . '/../Effect/index.php';
 require_once __DIR__ . '/../Effect.Console/index.php';
-require_once __DIR__ . '/../Prelude/index.php';
 require_once __DIR__ . '/../Test.Church/index.php';
 
 if (!class_exists(__NAMESPACE__ . '\\Phpurs_Data0')) {
@@ -170,36 +168,5 @@ $GLOBALS['Test_Church_fromInt'] = __NAMESPACE__ . '\\Test_Church_fromInt';
 
 
 
-
-// Test_Church_addC
-function Test_Church_addC($m, $n = null, $f = null, $x = null) {
-  $__num = func_num_args();
-  $__fn = __NAMESPACE__ . '\\' . 'Test_Church_addC';
-  if ($__num < 4) {
-    if ($__num === 3) return function($x) use ($m, $n, $f, $__fn) { return $__fn($m, $n, $f, $x); };
-    if ($__num === 2) return function($f, $x = null) use ($m, $n, $__fn) {
-      $__num2 = func_num_args();
-      if ($__num2 === 2) return $__fn($m, $n, $f, $x);
-      if ($__num2 === 1) return function($x) use ($m, $n, $f, $__fn) { return $__fn($m, $n, $f, $x); };
-      return phpurs_curry_fallback($__fn, [$m, $n], 4);
-    };
-    if ($__num === 1) return function($n, $f = null, $x = null) use ($m, $__fn) {
-      $__num2 = func_num_args();
-      if ($__num2 === 3) return $__fn($m, $n, $f, $x);
-      if ($__num2 === 2) return function($x) use ($m, $n, $f, $__fn) { return $__fn($m, $n, $f, $x); };
-      if ($__num2 === 1) return function($f, $x = null) use ($m, $n, $__fn) {
-        $__num3 = func_num_args();
-        if ($__num3 === 2) return $__fn($m, $n, $f, $x);
-        if ($__num3 === 1) return function($x) use ($m, $n, $f, $__fn) { return $__fn($m, $n, $f, $x); };
-        return phpurs_curry_fallback($__fn, [$m, $n], 4);
-      };
-      return phpurs_curry_fallback($__fn, [$m], 4);
-    };
-    return phpurs_curry_fallback($__fn, func_get_args(), 4);
-  }
-    $__res = ($m)($f, ($n)($f, $x));
-    return 4 < $__num ? $__res(...array_slice(func_get_args(), 4)) : $__res;
-}
-$GLOBALS['Test_Church_addC'] = __NAMESPACE__ . '\\Test_Church_addC';
 
 

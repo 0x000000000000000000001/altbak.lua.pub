@@ -4,7 +4,6 @@ namespace Data\Ordering;
 
 require_once __DIR__ . '/../Data.Eq/index.php';
 require_once __DIR__ . '/../Data.Ordering/index.php';
-require_once __DIR__ . '/../Data.Semigroup/index.php';
 require_once __DIR__ . '/../Data.Show/index.php';
 
 if (!class_exists(__NAMESPACE__ . '\\Phpurs_Data0')) {
@@ -36,98 +35,6 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
       case 'Data_Ordering_LT': $v = ($GLOBALS['__phpurs_data0_LT'] ??= new Phpurs_Data0("LT")); break;
       case 'Data_Ordering_GT': $v = ($GLOBALS['__phpurs_data0_GT'] ??= new Phpurs_Data0("GT")); break;
       case 'Data_Ordering_EQ': $v = ($GLOBALS['__phpurs_data0_EQ'] ??= new Phpurs_Data0("EQ")); break;
-      case 'Data_Ordering_showOrdering': $v = (($GLOBALS['Data_Show_Show__dollar__Dict'] ?? \Data\Show\phpurs_eval_thunk('Data_Show_Show__dollar__Dict')))((object)["show" => (function() {
-  $__body = function($v) {
-    $__case_0 = $v;
-    switch (($__case_0)->tag) {
-case "LT":
-return "LT";
-break;
-case "GT":
-return "GT";
-break;
-case "EQ":
-return "EQ";
-break;
-default:
-throw new \Exception("Pattern match failure");
-break;
-};
-  };
-  $__fn = function($v) use ($__body, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) {
-    return phpurs_curry_fallback($__fn, func_get_args(), 1);
-  }
-    $__res = $__body($v);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})()]); break;
-      case 'Data_Ordering_semigroupOrdering': $v = (($GLOBALS['Data_Semigroup_Semigroup__dollar__Dict'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_Semigroup__dollar__Dict')))((object)["append" => (function() {
-  $__body = function($v, $v1) {
-    $__case_0 = $v;
-    $__case_1 = $v1;
-    switch (($__case_0)->tag) {
-case "LT":
-return ($GLOBALS['Data_Ordering_LT'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_LT'));
-break;
-case "GT":
-return ($GLOBALS['Data_Ordering_GT'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_GT'));
-break;
-case "EQ":
-$y = $__case_1;
-return $y;
-break;
-default:
-throw new \Exception("Pattern match failure");
-break;
-};
-  };
-  $__fn = function($v, $v1 = null) use ($__body, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 2) {
-    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
-    return phpurs_curry_fallback($__fn, func_get_args(), 2);
-  }
-    $__res = $__body($v, $v1);
-  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
-  };
-  return $__fn;
-})()]); break;
-      case 'Data_Ordering_eqOrdering': $v = (($GLOBALS['Data_Eq_Eq__dollar__Dict'] ?? \Data\Eq\phpurs_eval_thunk('Data_Eq_Eq__dollar__Dict')))((object)["eq" => (function() {
-  $__body = function($v, $v1) {
-    $__case_0 = $v;
-    $__case_1 = $v1;
-    if (((($__case_0)->tag === "LT") && (($__case_1)->tag === "LT"))) {
-return true;
-} else {
-if (((($__case_0)->tag === "GT") && (($__case_1)->tag === "GT"))) {
-return true;
-} else {
-if (((($__case_0)->tag === "EQ") && (($__case_1)->tag === "EQ"))) {
-return true;
-} else {
-if (true) {
-return false;
-} else {
-throw new \Exception("Pattern match failure");
-};
-};
-};
-};
-  };
-  $__fn = function($v, $v1 = null) use ($__body, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 2) {
-    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
-    return phpurs_curry_fallback($__fn, func_get_args(), 2);
-  }
-    $__res = $__body($v, $v1);
-  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
-  };
-  return $__fn;
-})()]); break;
       default: throw new \Exception("Unknown thunk " . $id);
     }
     $GLOBALS[$id] = $v;
@@ -138,37 +45,5 @@ $Prim_undefined = function() { throw new \Exception("undefined"); };
 
 
 
-
-
-
-
-// Data_Ordering_invert
-function Data_Ordering_invert($v) {
-  $__num = func_num_args();
-  $__fn = __NAMESPACE__ . '\\' . 'Data_Ordering_invert';
-  if ($__num < 1) {
-    return phpurs_curry_fallback($__fn, func_get_args(), 1);
-  }
-  $__body = function($v) {
-    $__case_0 = $v;
-    switch (($__case_0)->tag) {
-case "GT":
-return ($GLOBALS['Data_Ordering_LT'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_LT'));
-break;
-case "EQ":
-return ($GLOBALS['Data_Ordering_EQ'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_EQ'));
-break;
-case "LT":
-return ($GLOBALS['Data_Ordering_GT'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_GT'));
-break;
-default:
-throw new \Exception("Pattern match failure");
-break;
-};
-  };
-    $__res = $__body($v);
-    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-}
-$GLOBALS['Data_Ordering_invert'] = __NAMESPACE__ . '\\Data_Ordering_invert';
 
 

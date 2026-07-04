@@ -7,7 +7,6 @@ require_once __DIR__ . '/../Control.Bind/index.php';
 require_once __DIR__ . '/../Data.Unit/index.php';
 require_once __DIR__ . '/../Effect/index.php';
 require_once __DIR__ . '/../Effect.Console/index.php';
-require_once __DIR__ . '/../Prelude/index.php';
 require_once __DIR__ . '/../Test.FileOps/index.php';
 
 if (!class_exists(__NAMESPACE__ . '\\Phpurs_Data0')) {

@@ -6,7 +6,6 @@ require_once __DIR__ . '/../Control.Applicative/index.php';
 require_once __DIR__ . '/../Control.Bind/index.php';
 require_once __DIR__ . '/../Data.Unit/index.php';
 require_once __DIR__ . '/../Effect/index.php';
-require_once __DIR__ . '/../Prelude/index.php';
 require_once __DIR__ . '/../Test.Ackermann/index.php';
 require_once __DIR__ . '/../Test.AstTree/index.php';
 require_once __DIR__ . '/../Test.Church/index.php';
@@ -215,7 +214,17 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
+    $__res = (($GLOBALS['App_discard'] ?? \App\phpurs_eval_thunk('App_discard')))((($GLOBALS['App_pure'] ?? \App\phpurs_eval_thunk('App_pure')))(($GLOBALS['Data_Unit_unit'] ?? \Data\Unit\phpurs_eval_thunk('Data_Unit_unit'))), (function() {
+  $__fn = function($__dollar____unused) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
     $__res = (($GLOBALS['App_pure'] ?? \App\phpurs_eval_thunk('App_pure')))(($GLOBALS['Data_Unit_unit'] ?? \Data\Unit\phpurs_eval_thunk('Data_Unit_unit')));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})());
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;

@@ -2,13 +2,11 @@
 
 namespace Test\Polymorphism;
 
-require_once __DIR__ . '/../Data.Function/index.php';
 require_once __DIR__ . '/../Data.Ring/index.php';
 require_once __DIR__ . '/../Data.Semiring/index.php';
 require_once __DIR__ . '/../Data.Show/index.php';
 require_once __DIR__ . '/../Effect/index.php';
 require_once __DIR__ . '/../Effect.Console/index.php';
-require_once __DIR__ . '/../Prelude/index.php';
 require_once __DIR__ . '/../Test.Polymorphism/index.php';
 
 if (!class_exists(__NAMESPACE__ . '\\Phpurs_Data0')) {

@@ -6,7 +6,6 @@ require_once __DIR__ . '/../Control.Applicative/index.php';
 require_once __DIR__ . '/../Control.Apply/index.php';
 require_once __DIR__ . '/../Data.Functor/index.php';
 require_once __DIR__ . '/../Data.Unit/index.php';
-require_once __DIR__ . '/../Type.Proxy/index.php';
 
 if (!class_exists(__NAMESPACE__ . '\\Phpurs_Data0')) {
   class Phpurs_Data0 { public $tag; public function __construct($t) { $this->tag = $t; } }
@@ -34,70 +33,7 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Control_Applicative_applicativeProxy': $v = (($GLOBALS['Control_Applicative_Applicative__dollar__Dict'] ?? \Control\Applicative\phpurs_eval_thunk('Control_Applicative_Applicative__dollar__Dict')))((object)["pure" => (function() {
-  $__fn = function($v) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) {
-    return phpurs_curry_fallback($__fn, func_get_args(), 1);
-  }
-    $__res = ($GLOBALS['Type_Proxy_Proxy'] ?? \Type\Proxy\phpurs_eval_thunk('Type_Proxy_Proxy'));
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})(), "Apply0" => (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) {
-    return phpurs_curry_fallback($__fn, func_get_args(), 1);
-  }
-    $__res = ($GLOBALS['Control_Apply_applyProxy'] ?? \Control\Apply\phpurs_eval_thunk('Control_Apply_applyProxy'));
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})()]); break;
-      case 'Control_Applicative_applicativeFn': $v = (($GLOBALS['Control_Applicative_Applicative__dollar__Dict'] ?? \Control\Applicative\phpurs_eval_thunk('Control_Applicative_Applicative__dollar__Dict')))((object)["pure" => (function() {
-  $__fn = function($x, $v = null) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 2) {
-    if ($__num === 1) return function($v) use ($x, &$__fn) { return $__fn($x, $v); };
-    return phpurs_curry_fallback($__fn, func_get_args(), 2);
-  }
-    $__res = $x;
-  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
-  };
-  return $__fn;
-})(), "Apply0" => (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) {
-    return phpurs_curry_fallback($__fn, func_get_args(), 1);
-  }
-    $__res = ($GLOBALS['Control_Apply_applyFn'] ?? \Control\Apply\phpurs_eval_thunk('Control_Apply_applyFn'));
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})()]); break;
-      case 'Control_Applicative_applicativeArray': $v = (($GLOBALS['Control_Applicative_Applicative__dollar__Dict'] ?? \Control\Applicative\phpurs_eval_thunk('Control_Applicative_Applicative__dollar__Dict')))((object)["pure" => (function() {
-  $__fn = function($x) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) {
-    return phpurs_curry_fallback($__fn, func_get_args(), 1);
-  }
-    $__res = [$x];
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})(), "Apply0" => (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) {
-    return phpurs_curry_fallback($__fn, func_get_args(), 1);
-  }
-    $__res = ($GLOBALS['Control_Apply_applyArray'] ?? \Control\Apply\phpurs_eval_thunk('Control_Apply_applyArray'));
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})()]); break;
+
       default: throw new \Exception("Unknown thunk " . $id);
     }
     $GLOBALS[$id] = $v;
@@ -189,82 +125,6 @@ throw new \Exception("Pattern match failure");
 }
 $GLOBALS['Control_Applicative_pure'] = __NAMESPACE__ . '\\Control_Applicative_pure';
 
-// Control_Applicative_unless
-function Control_Applicative_unless($dictApplicative) {
-  $__num = func_num_args();
-  $__fn = __NAMESPACE__ . '\\' . 'Control_Applicative_unless';
-  if ($__num < 1) {
-    return phpurs_curry_fallback($__fn, func_get_args(), 1);
-  }
-$pure1 = (($GLOBALS['Control_Applicative_pure'] ?? \Control\Applicative\phpurs_eval_thunk('Control_Applicative_pure')))($dictApplicative);
-    $__res = (function() use ($pure1) {
-  $__body = function($v, $v1) use ($pure1) {
-    $__case_0 = $v;
-    $__case_1 = $v1;
-    if (($__case_0 === false)) {
-$m = $__case_1;
-return $m;
-} else {
-if (($__case_0 === true)) {
-return ($pure1)(($GLOBALS['Data_Unit_unit'] ?? \Data\Unit\phpurs_eval_thunk('Data_Unit_unit')));
-} else {
-throw new \Exception("Pattern match failure");
-};
-};
-  };
-  $__fn = function($v, $v1 = null) use ($pure1, $__body, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 2) {
-    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
-    return phpurs_curry_fallback($__fn, func_get_args(), 2);
-  }
-    $__res = $__body($v, $v1);
-  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
-  };
-  return $__fn;
-})();
-    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-}
-$GLOBALS['Control_Applicative_unless'] = __NAMESPACE__ . '\\Control_Applicative_unless';
-
-// Control_Applicative_when
-function Control_Applicative_when($dictApplicative) {
-  $__num = func_num_args();
-  $__fn = __NAMESPACE__ . '\\' . 'Control_Applicative_when';
-  if ($__num < 1) {
-    return phpurs_curry_fallback($__fn, func_get_args(), 1);
-  }
-$pure1 = (($GLOBALS['Control_Applicative_pure'] ?? \Control\Applicative\phpurs_eval_thunk('Control_Applicative_pure')))($dictApplicative);
-    $__res = (function() use ($pure1) {
-  $__body = function($v, $v1) use ($pure1) {
-    $__case_0 = $v;
-    $__case_1 = $v1;
-    if (($__case_0 === true)) {
-$m = $__case_1;
-return $m;
-} else {
-if (($__case_0 === false)) {
-return ($pure1)(($GLOBALS['Data_Unit_unit'] ?? \Data\Unit\phpurs_eval_thunk('Data_Unit_unit')));
-} else {
-throw new \Exception("Pattern match failure");
-};
-};
-  };
-  $__fn = function($v, $v1 = null) use ($pure1, $__body, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 2) {
-    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
-    return phpurs_curry_fallback($__fn, func_get_args(), 2);
-  }
-    $__res = $__body($v, $v1);
-  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
-  };
-  return $__fn;
-})();
-    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-}
-$GLOBALS['Control_Applicative_when'] = __NAMESPACE__ . '\\Control_Applicative_when';
-
 // Control_Applicative_liftA1
 function Control_Applicative_liftA1($dictApplicative) {
   $__num = func_num_args();
@@ -289,7 +149,4 @@ $pure1 = (($GLOBALS['Control_Applicative_pure'] ?? \Control\Applicative\phpurs_e
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Control_Applicative_liftA1'] = __NAMESPACE__ . '\\Control_Applicative_liftA1';
-
-
-
 

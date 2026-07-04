@@ -7,10 +7,7 @@ require_once __DIR__ . '/../Control.Apply/index.php';
 require_once __DIR__ . '/../Control.Bind/index.php';
 require_once __DIR__ . '/../Control.Monad/index.php';
 require_once __DIR__ . '/../Data.Functor/index.php';
-require_once __DIR__ . '/../Data.Monoid/index.php';
-require_once __DIR__ . '/../Data.Semigroup/index.php';
 require_once __DIR__ . '/../Effect/index.php';
-require_once __DIR__ . '/../Prelude/index.php';
 
 if (!class_exists(__NAMESPACE__ . '\\Phpurs_Data0')) {
   class Phpurs_Data0 { public $tag; public function __construct($t) { $this->tag = $t; } }
@@ -93,7 +90,6 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
   return $__fn;
 })()]); break;
       case 'Effect_functorEffect': $v = (($GLOBALS['Data_Functor_Functor__dollar__Dict'] ?? \Data\Functor\phpurs_eval_thunk('Data_Functor_Functor__dollar__Dict')))((object)["map" => (($GLOBALS['Control_Applicative_liftA1'] ?? \Control\Applicative\phpurs_eval_thunk('Control_Applicative_liftA1')))(($GLOBALS['Effect_applicativeEffect'] ?? \Effect\phpurs_eval_thunk('Effect_applicativeEffect')))]); break;
-      case 'Effect_lift2': $v = (($GLOBALS['Control_Apply_lift2'] ?? \Control\Apply\phpurs_eval_thunk('Control_Apply_lift2')))(($GLOBALS['Effect_applyEffect'] ?? \Effect\phpurs_eval_thunk('Effect_applyEffect'))); break;
       default: throw new \Exception("Unknown thunk " . $id);
     }
     $GLOBALS[$id] = $v;
@@ -158,40 +154,4 @@ $Effect_bindE = phpurs_uncurry2(function($a) { return function($f) use(&$a) { re
 
 
 
-
-
-// Effect_semigroupEffect
-function Effect_semigroupEffect($dictSemigroup) {
-  $__num = func_num_args();
-  $__fn = __NAMESPACE__ . '\\' . 'Effect_semigroupEffect';
-  if ($__num < 1) {
-    return phpurs_curry_fallback($__fn, func_get_args(), 1);
-  }
-    $__res = (($GLOBALS['Data_Semigroup_Semigroup__dollar__Dict'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_Semigroup__dollar__Dict')))((object)["append" => (($GLOBALS['Effect_lift2'] ?? \Effect\phpurs_eval_thunk('Effect_lift2')))((($GLOBALS['Data_Semigroup_append'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_append')))($dictSemigroup))]);
-    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-}
-$GLOBALS['Effect_semigroupEffect'] = __NAMESPACE__ . '\\Effect_semigroupEffect';
-
-// Effect_monoidEffect
-function Effect_monoidEffect($dictMonoid) {
-  $__num = func_num_args();
-  $__fn = __NAMESPACE__ . '\\' . 'Effect_monoidEffect';
-  if ($__num < 1) {
-    return phpurs_curry_fallback($__fn, func_get_args(), 1);
-  }
-$semigroupEffect1 = (($GLOBALS['Effect_semigroupEffect'] ?? \Effect\phpurs_eval_thunk('Effect_semigroupEffect')))((($dictMonoid)->Semigroup0)(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))));
-    $__res = (($GLOBALS['Data_Monoid_Monoid__dollar__Dict'] ?? \Data\Monoid\phpurs_eval_thunk('Data_Monoid_Monoid__dollar__Dict')))((object)["mempty" => (($GLOBALS['Effect_pureE'] ?? \Effect\phpurs_eval_thunk('Effect_pureE')))((($GLOBALS['Data_Monoid_mempty'] ?? \Data\Monoid\phpurs_eval_thunk('Data_Monoid_mempty')))($dictMonoid)), "Semigroup0" => (function() use ($semigroupEffect1) {
-  $__fn = function($__dollar____unused) use ($semigroupEffect1, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) {
-    return phpurs_curry_fallback($__fn, func_get_args(), 1);
-  }
-    $__res = $semigroupEffect1;
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})()]);
-    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-}
-$GLOBALS['Effect_monoidEffect'] = __NAMESPACE__ . '\\Effect_monoidEffect';
 
