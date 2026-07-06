@@ -19,8 +19,8 @@ if [ "$1" == "--x" ]; then
   trap "rm -rf src/Test/STArray.purs src/Test/AffOperations.purs src/Test/StringOps.purs src/Test/FileOps src/AppX.purs" EXIT
 fi
 
-if [ -f "composer.template.json" ]; then
-  cp composer.template.json composer.json
+if [ -f "run/bak/php/composer.template.json" ]; then
+  cp run/bak/php/composer.template.json composer.json
 fi
 
 export PATH="$PWD/run/bak/js/node_modules/.bin:$PATH"
