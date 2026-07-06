@@ -2,12 +2,12 @@
 set -e
 cd "$(dirname "$0")/../.."
 
-mkdir -p bak/es/output-purs bak/js/spago
+mkdir -p run/bak/es/output-purs run/bak/js/spago
 rm -rf output .spago spago.yaml spago.lock
-ln -s bak/es/output-purs output
-ln -s bak/js/spago .spago
-ln -s bak/js/spago.yaml spago.yaml
-touch bak/es/spago.lock && ln -s bak/es/spago.lock spago.lock
+ln -s run/bak/es/output-purs output
+ln -s run/bak/js/spago .spago
+ln -s run/bak/js/spago.yaml spago.yaml
+touch run/bak/es/spago.lock && ln -s run/bak/es/spago.lock spago.lock
 
 ENTRY_POINT="App"
 
@@ -19,15 +19,15 @@ if [ "$1" == "--x" ]; then
   trap "rm -rf src/Test/STArray.purs src/Test/AffOperations.purs src/Test/StringOps.purs src/Test/FileOps src/AppX.purs" EXIT
 fi
 
-export PATH="$PWD/bak/js/node_modules/.bin:$PATH"
+export PATH="$PWD/run/bak/js/node_modules/.bin:$PATH"
 spago build > /dev/null 2>&1
-purs-backend-es build --output-dir bak/es/output > /dev/null 2>&1
-find bak/es/output-purs -name "foreign.js" | while read -r f; do
-  dest="bak/es/output/$(basename $(dirname $f))"
+purs-backend-es build --output-dir run/bak/es/output > /dev/null 2>&1
+find run/bak/es/output-purs -name "foreign.js" | while read -r f; do
+  dest="run/bak/es/output/$(basename $(dirname $f))"
   mkdir -p "$dest"
   cp "$f" "$dest/foreign.js"
 done
 
 
 echo "=== Arista ES ==="
-time node -e "import('./bak/es/output/' + '$ENTRY_POINT' + '/index.js').then(m => m.main())"
+time node -e "import('./run/bak/es/output/' + '$ENTRY_POINT' + '/index.js').then(m => m.main())"

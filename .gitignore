@@ -10,6 +10,7 @@ generated-docs/
 .agents/
 .vscode/
 vendor/
+var/
 composer.lock
 composer.json
 .composer-spago.json

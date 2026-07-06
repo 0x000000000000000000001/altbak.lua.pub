@@ -2,13 +2,13 @@
 set -e
 cd "$(dirname "$0")/../.."
 
-mkdir -p bak/erl/output bak/erl/spago
+mkdir -p run/bak/erl/output run/bak/erl/spago
 rm -rf output .spago spago.yaml spago.lock
-ln -s bak/erl/output output
-ln -s bak/erl/spago .spago
-ln -s bak/erl/spago.yaml spago.yaml
-touch bak/erl/spago.lock && ln -s bak/erl/spago.lock spago.lock
-export PATH="$PWD/bak/js/node_modules/.bin:$PATH"
+ln -s run/bak/erl/output output
+ln -s run/bak/erl/spago .spago
+ln -s run/bak/erl/spago.yaml spago.yaml
+touch run/bak/erl/spago.lock && ln -s run/bak/erl/spago.lock spago.lock
+export PATH="$PWD/run/bak/js/node_modules/.bin:$PATH"
 spago fetch > /dev/null 2>&1
 # Overwrite legacy CommonJS files with empty ES modules to satisfy newer purs compiler
 find .spago/p -name "*.js" -exec sh -c 'echo "export const __patched = 1;" > "$1"' _ {} \;

@@ -2,12 +2,12 @@
 set -e
 cd "$(dirname "$0")/../.."
 
-mkdir -p bak/js/output bak/js/spago
+mkdir -p run/bak/js/output run/bak/js/spago
 rm -rf output .spago spago.yaml spago.lock
-ln -s bak/js/output output
-ln -s bak/js/spago .spago
-ln -s bak/js/spago.yaml spago.yaml
-touch bak/js/spago.lock && ln -s bak/js/spago.lock spago.lock
+ln -s run/bak/js/output output
+ln -s run/bak/js/spago .spago
+ln -s run/bak/js/spago.yaml spago.yaml
+touch run/bak/js/spago.lock && ln -s run/bak/js/spago.lock spago.lock
 npx spago build > /dev/null 2>&1
 
 echo "=== Native Node V8 ==="
