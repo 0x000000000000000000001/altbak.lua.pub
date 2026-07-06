@@ -1,7 +1,0 @@
-{
-    "name": "phpurs/ffi-overlay",
-    "description": "PHP FFI dependencies for standard libraries",
-    "require": {
-        "revolt/event-loop": "^1.0.0"
-    }
-}
