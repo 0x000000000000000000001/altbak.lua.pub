@@ -42,8 +42,6 @@ sys  0m0.396s | sys  0m0.456s  | sys  0m0.014s        | sys  0m0.926s | sys  0m0
 
 > [!NOTE]
 > This repository intentionally omits compiled folders from `.gitignore`. All generated code, dependencies, and compilation artifacts are deliberately committed.
-> 
-> *N.b. Some artifacts like the `bak/php/ffi` folder are purely temporary workarounds for this repository, waiting for a cleaner workflow where base libraries like `purescript-prelude` are properly forked and adapted with PHP FFI natively.*
 
 The purpose of this approach is to allow an educational exploration of how the backends work, without needing to install the local compilers yourself. You can directly inspect:
 
