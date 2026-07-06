@@ -15,4 +15,3 @@ composer.lock
 composer.json
 .composer-spago.json
 cachegrind.out*
-purs_files.txt
