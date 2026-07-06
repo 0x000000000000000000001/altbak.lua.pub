@@ -88,18 +88,14 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Data_CommutativeRing_commutativeRingInt': $v = (object)["Ring0" => (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
+      case 'Data_CommutativeRing_commutativeRingInt': $v = (object)["Ring0" => function($__dollar____unused) {
   $__num = func_num_args();
-  if ($__num < 1) {
-    return phpurs_curry_fallback($__fn, func_get_args(), 1);
-  }
-$__global_Data_Ring_ringInt = ($GLOBALS['Data_Ring_ringInt'] ?? \Data\Ring\phpurs_eval_thunk('Data_Ring_ringInt'));
-    $__res = $__global_Data_Ring_ringInt;
+  $__global_Data_Ring_ringInt = ($GLOBALS['Data_Ring_ringInt'] ?? \Data\Ring\phpurs_eval_thunk('Data_Ring_ringInt'));
+  $__res = $__global_Data_Ring_ringInt;
+  goto __end;;
+  __end:
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})()]; break;
+}]; break;
       default: throw new \Exception("Unknown thunk " . $id);
     }
     $GLOBALS[$id] = $v;
@@ -116,8 +112,10 @@ function Data_CommutativeRing_CommutativeRing__dollar__Dict($x) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = $x;
-    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  $__res = $x;
+  goto __end;;
+  __end:
+  return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_CommutativeRing_CommutativeRing__dollar__Dict'] = __NAMESPACE__ . '\\Data_CommutativeRing_CommutativeRing__dollar__Dict';
 

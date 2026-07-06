@@ -2,6 +2,7 @@
 
 namespace Data\Show;
 
+require_once __DIR__ . '/../Data.Semigroup/index.php';
 require_once __DIR__ . '/../Data.Show/index.php';
 require_once __DIR__ . '/../Data.Unit/index.php';
 
@@ -116,8 +117,10 @@ function Data_Show_Show__dollar__Dict($x) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = $x;
-    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  $__res = $x;
+  goto __end;;
+  __end:
+  return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Show_Show__dollar__Dict'] = __NAMESPACE__ . '\\Data_Show_Show__dollar__Dict';
 
@@ -129,17 +132,16 @@ function Data_Show_show($dict) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-  $__body = function($dict) {
-    $__case_0 = $dict;
-    if (true) {
+  $__case_0 = $dict;
+  if (true) {
 $v = $__case_0;
-return ($v)->show;
+$__res = ($v)->show;
+goto __end;;
 } else {
 throw new \Exception("Pattern match failure");
 };
-  };
-    $__res = $__body($dict);
-    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  __end:
+  return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Show_show'] = __NAMESPACE__ . '\\Data_Show_show';
 

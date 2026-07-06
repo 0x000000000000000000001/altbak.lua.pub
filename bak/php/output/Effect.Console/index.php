@@ -107,20 +107,18 @@ function Effect_Console_logShow($dictShow) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Effect_Console_log = ($GLOBALS['Effect_Console_log'] ?? \Effect\Console\phpurs_eval_thunk('Effect_Console_log'));
-$show = ($dictShow)->show;
-    $__res = (function() use ($__global_Effect_Console_log, $show) {
-  $__fn = function($a) use ($__global_Effect_Console_log, $show, &$__fn) {
+  $__global_Effect_Console_log = ($GLOBALS['Effect_Console_log'] ?? \Effect\Console\phpurs_eval_thunk('Effect_Console_log'));
+  $show = ($dictShow)->show;
+  $__res = function($a) use ($__global_Effect_Console_log, $show) {
   $__num = func_num_args();
-  if ($__num < 1) {
-    return phpurs_curry_fallback($__fn, func_get_args(), 1);
-  }
-    $__res = ($__global_Effect_Console_log)(($show)($a));
+  $__res = ($__global_Effect_Console_log)(($show)($a));
+  goto __end;;
+  __end:
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
-    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+};
+  goto __end;;
+  __end:
+  return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Effect_Console_logShow'] = __NAMESPACE__ . '\\Effect_Console_logShow';
 

@@ -45,7 +45,7 @@
       (scm:list (scm:cons (scm:string->symbol "val") s0) (scm:cons (scm:string->symbol "state") s0))))
 
   (scm:define describe
-    (Effect.Console.log (rt:string->pstring "State Monad (12M Binds, 6k Stack Depth):")))
+    (Effect.Console.log (rt:string->pstring "State Monad (1.2k Binds, 60 Stack Depth):")))
 
   (scm:define bindState
     (scm:lambda (v0)

@@ -57,7 +57,7 @@ get() -> fun (S) ->
 end.
 %-file("/Users/0x1/Documents/htdocs/altbak.pub/src/Test/StateMonad.purs", 46).
 -spec describe() -> fun(() -> any()).
-describe() -> (effect_console@ps:log(<<"State Monad (12M Binds, 6k Stack Depth):"/utf8>>)).
+describe() -> (effect_console@ps:log(<<"State Monad (1.2k Binds, 60 Stack Depth):"/utf8>>)).
 %-file("/Users/0x1/Documents/htdocs/altbak.pub/src/Test/StateMonad.purs", 15).
 -spec bindState(test_stateMonad_State(any(),any()),fun((any()) -> test_stateMonad_State(any(),any()))) -> test_stateMonad_State(any(),any()).
 bindState(_@23,_@24) -> case { _@23, _@24 } of

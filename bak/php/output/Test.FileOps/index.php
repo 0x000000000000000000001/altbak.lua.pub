@@ -94,7 +94,7 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
       case 'Test_FileOps_bind': $v = ($GLOBALS['Effect_bindE'] ?? \Effect\phpurs_eval_thunk('Effect_bindE')); break;
       case 'Test_FileOps_pure': $v = ($GLOBALS['Effect_pureE'] ?? \Effect\phpurs_eval_thunk('Effect_pureE')); break;
       case 'Test_FileOps_describe': $v = (($GLOBALS['Effect_Console_log'] ?? \Effect\Console\phpurs_eval_thunk('Effect_Console_log')))("File I/O (10k writes/reads):"); break;
-      case 'Test_FileOps_act': $v = (($GLOBALS['Test_FileOps_loopIO'] ?? \Test\FileOps\phpurs_eval_thunk('Test_FileOps_loopIO')))(10000); break;
+      case 'Test_FileOps_act': $v = \Test\FileOps\Test_FileOps_loopIO(10000); break;
       default: throw new \Exception("Unknown thunk " . $id);
     }
     $GLOBALS[$id] = $v;
@@ -165,35 +165,29 @@ function Test_FileOps_loopIO($n) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Test_FileOps_loopE = ($GLOBALS['Test_FileOps_loopE'] ?? \Test\FileOps\phpurs_eval_thunk('Test_FileOps_loopE'));
-$__global_Test_FileOps_discard = ($GLOBALS['Test_FileOps_discard'] ?? \Test\FileOps\phpurs_eval_thunk('Test_FileOps_discard'));
-$__global_Test_FileOps_writeFileSync = ($GLOBALS['Test_FileOps_writeFileSync'] ?? \Test\FileOps\phpurs_eval_thunk('Test_FileOps_writeFileSync'));
-$__global_Effect_bindE = ($GLOBALS['Effect_bindE'] ?? \Effect\phpurs_eval_thunk('Effect_bindE'));
-$__global_Test_FileOps_readFileSync = ($GLOBALS['Test_FileOps_readFileSync'] ?? \Test\FileOps\phpurs_eval_thunk('Test_FileOps_readFileSync'));
-$__global_Effect_pureE = ($GLOBALS['Effect_pureE'] ?? \Effect\phpurs_eval_thunk('Effect_pureE'));
-$__global_Data_Unit_unit = ($GLOBALS['Data_Unit_unit'] ?? \Data\Unit\phpurs_eval_thunk('Data_Unit_unit'));
-    $__res = ($__global_Test_FileOps_loopE)($n, ($__global_Test_FileOps_discard)(($__global_Test_FileOps_writeFileSync)("var/iotest.txt", "Hello IO Benchmarks!"), (function() use ($__global_Effect_bindE, $__global_Test_FileOps_readFileSync, $__global_Effect_pureE, $__global_Data_Unit_unit) {
-  $__fn = function($__dollar____unused) use ($__global_Effect_bindE, $__global_Test_FileOps_readFileSync, $__global_Effect_pureE, $__global_Data_Unit_unit, &$__fn) {
+  $__global_Test_FileOps_loopE = ($GLOBALS['Test_FileOps_loopE'] ?? \Test\FileOps\phpurs_eval_thunk('Test_FileOps_loopE'));
+  $__global_Test_FileOps_discard = ($GLOBALS['Test_FileOps_discard'] ?? \Test\FileOps\phpurs_eval_thunk('Test_FileOps_discard'));
+  $__global_Test_FileOps_writeFileSync = ($GLOBALS['Test_FileOps_writeFileSync'] ?? \Test\FileOps\phpurs_eval_thunk('Test_FileOps_writeFileSync'));
+  $__global_Effect_bindE = ($GLOBALS['Effect_bindE'] ?? \Effect\phpurs_eval_thunk('Effect_bindE'));
+  $__global_Test_FileOps_readFileSync = ($GLOBALS['Test_FileOps_readFileSync'] ?? \Test\FileOps\phpurs_eval_thunk('Test_FileOps_readFileSync'));
+  $__global_Effect_pureE = ($GLOBALS['Effect_pureE'] ?? \Effect\phpurs_eval_thunk('Effect_pureE'));
+  $__global_Data_Unit_unit = ($GLOBALS['Data_Unit_unit'] ?? \Data\Unit\phpurs_eval_thunk('Data_Unit_unit'));
+  $__res = ($__global_Test_FileOps_loopE)($n, ($__global_Test_FileOps_discard)(($__global_Test_FileOps_writeFileSync)("var/iotest.txt", "Hello IO Benchmarks!"), function($__dollar____unused) use ($__global_Effect_bindE, $__global_Test_FileOps_readFileSync, $__global_Effect_pureE, $__global_Data_Unit_unit) {
   $__num = func_num_args();
-  if ($__num < 1) {
-    return phpurs_curry_fallback($__fn, func_get_args(), 1);
-  }
-    $__res = ($__global_Effect_bindE)(($__global_Test_FileOps_readFileSync)("var/iotest.txt"), (function() use ($__global_Effect_pureE, $__global_Data_Unit_unit) {
-  $__fn = function($__dollar____unused) use ($__global_Effect_pureE, $__global_Data_Unit_unit, &$__fn) {
+  $__res = ($__global_Effect_bindE)(($__global_Test_FileOps_readFileSync)("var/iotest.txt"), function($__dollar____unused) use ($__global_Effect_pureE, $__global_Data_Unit_unit) {
   $__num = func_num_args();
-  if ($__num < 1) {
-    return phpurs_curry_fallback($__fn, func_get_args(), 1);
-  }
-    $__res = ($__global_Effect_pureE)($__global_Data_Unit_unit);
+  $__res = ($__global_Effect_pureE)($__global_Data_Unit_unit);
+  goto __end;;
+  __end:
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})());
+});
+  goto __end;;
+  __end:
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})()));
-    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}));
+  goto __end;;
+  __end:
+  return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Test_FileOps_loopIO'] = __NAMESPACE__ . '\\Test_FileOps_loopIO';
 

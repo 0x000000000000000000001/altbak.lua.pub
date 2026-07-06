@@ -5,6 +5,7 @@ namespace Data\EuclideanRing;
 require_once __DIR__ . '/../Data.CommutativeRing/index.php';
 require_once __DIR__ . '/../Data.Eq/index.php';
 require_once __DIR__ . '/../Data.EuclideanRing/index.php';
+require_once __DIR__ . '/../Data.HeytingAlgebra/index.php';
 require_once __DIR__ . '/../Data.Ring/index.php';
 require_once __DIR__ . '/../Data.Semiring/index.php';
 
@@ -89,18 +90,14 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Data_EuclideanRing_euclideanRingInt': $v = (object)["degree" => ($GLOBALS['Data_EuclideanRing_intDegree'] ?? \Data\EuclideanRing\phpurs_eval_thunk('Data_EuclideanRing_intDegree')), "div" => ($GLOBALS['Data_EuclideanRing_intDiv'] ?? \Data\EuclideanRing\phpurs_eval_thunk('Data_EuclideanRing_intDiv')), "mod" => ($GLOBALS['Data_EuclideanRing_intMod'] ?? \Data\EuclideanRing\phpurs_eval_thunk('Data_EuclideanRing_intMod')), "CommutativeRing0" => (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
+      case 'Data_EuclideanRing_euclideanRingInt': $v = (object)["degree" => ($GLOBALS['Data_EuclideanRing_intDegree'] ?? \Data\EuclideanRing\phpurs_eval_thunk('Data_EuclideanRing_intDegree')), "div" => ($GLOBALS['Data_EuclideanRing_intDiv'] ?? \Data\EuclideanRing\phpurs_eval_thunk('Data_EuclideanRing_intDiv')), "mod" => ($GLOBALS['Data_EuclideanRing_intMod'] ?? \Data\EuclideanRing\phpurs_eval_thunk('Data_EuclideanRing_intMod')), "CommutativeRing0" => function($__dollar____unused) {
   $__num = func_num_args();
-  if ($__num < 1) {
-    return phpurs_curry_fallback($__fn, func_get_args(), 1);
-  }
-$__global_Data_CommutativeRing_commutativeRingInt = ($GLOBALS['Data_CommutativeRing_commutativeRingInt'] ?? \Data\CommutativeRing\phpurs_eval_thunk('Data_CommutativeRing_commutativeRingInt'));
-    $__res = $__global_Data_CommutativeRing_commutativeRingInt;
+  $__global_Data_CommutativeRing_commutativeRingInt = ($GLOBALS['Data_CommutativeRing_commutativeRingInt'] ?? \Data\CommutativeRing\phpurs_eval_thunk('Data_CommutativeRing_commutativeRingInt'));
+  $__res = $__global_Data_CommutativeRing_commutativeRingInt;
+  goto __end;;
+  __end:
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})()]; break;
+}]; break;
       default: throw new \Exception("Unknown thunk " . $id);
     }
     $GLOBALS[$id] = $v;
@@ -147,8 +144,10 @@ function Data_EuclideanRing_EuclideanRing__dollar__Dict($x) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = $x;
-    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  $__res = $x;
+  goto __end;;
+  __end:
+  return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_EuclideanRing_EuclideanRing__dollar__Dict'] = __NAMESPACE__ . '\\Data_EuclideanRing_EuclideanRing__dollar__Dict';
 
@@ -159,18 +158,37 @@ function Data_EuclideanRing_mod($dict) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-  $__body = function($dict) {
-    $__case_0 = $dict;
-    if (true) {
+  $__case_0 = $dict;
+  if (true) {
 $v = $__case_0;
-return ($v)->mod;
+$__res = ($v)->mod;
+goto __end;;
 } else {
 throw new \Exception("Pattern match failure");
 };
-  };
-    $__res = $__body($dict);
-    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  __end:
+  return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_EuclideanRing_mod'] = __NAMESPACE__ . '\\Data_EuclideanRing_mod';
 
+
+// Data_EuclideanRing_div
+function Data_EuclideanRing_div($dict) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_EuclideanRing_div';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+  $__case_0 = $dict;
+  if (true) {
+$v = $__case_0;
+$__res = ($v)->div;
+goto __end;;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  __end:
+  return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_EuclideanRing_div'] = __NAMESPACE__ . '\\Data_EuclideanRing_div';
 

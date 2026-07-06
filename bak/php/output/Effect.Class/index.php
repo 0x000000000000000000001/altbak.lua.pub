@@ -88,28 +88,7 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Effect_Class_monadEffectEffect': $v = (function() {
-  $__case_0 = ($GLOBALS['Control_Category_categoryFn'] ?? \Control\Category\phpurs_eval_thunk('Control_Category_categoryFn'));
-  $__case_res_0 = null;
-  if (true) {
-$v = $__case_0;
-$__case_res_0 = ($v)->identity;
-} else {
-throw new \Exception("Pattern match failure");
-};
-  return (object)["liftEffect" => $__case_res_0, "Monad0" => (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) {
-    return phpurs_curry_fallback($__fn, func_get_args(), 1);
-  }
-$__global_Effect_monadEffect = ($GLOBALS['Effect_monadEffect'] ?? \Effect\phpurs_eval_thunk('Effect_monadEffect'));
-    $__res = $__global_Effect_monadEffect;
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})()];
-})(); break;
+
       default: throw new \Exception("Unknown thunk " . $id);
     }
     $GLOBALS[$id] = $v;
@@ -126,11 +105,12 @@ function Effect_Class_MonadEffect__dollar__Dict($x) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = $x;
-    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  $__res = $x;
+  goto __end;;
+  __end:
+  return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Effect_Class_MonadEffect__dollar__Dict'] = __NAMESPACE__ . '\\Effect_Class_MonadEffect__dollar__Dict';
-
 
 // Effect_Class_liftEffect
 function Effect_Class_liftEffect($dict) {
@@ -139,17 +119,16 @@ function Effect_Class_liftEffect($dict) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-  $__body = function($dict) {
-    $__case_0 = $dict;
-    if (true) {
+  $__case_0 = $dict;
+  if (true) {
 $v = $__case_0;
-return ($v)->liftEffect;
+$__res = ($v)->liftEffect;
+goto __end;;
 } else {
 throw new \Exception("Pattern match failure");
 };
-  };
-    $__res = $__body($dict);
-    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  __end:
+  return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Effect_Class_liftEffect'] = __NAMESPACE__ . '\\Effect_Class_liftEffect';
 

@@ -6,6 +6,8 @@ package:
     - effect
     - prelude
     - datetime
+    - strings
+    - arrays
 workspace:
   packageSet:
     registry: 77.7.0

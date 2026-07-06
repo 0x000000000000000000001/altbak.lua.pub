@@ -2,6 +2,7 @@
 
 namespace Test\LazyEvaluation;
 
+require_once __DIR__ . '/../Data.Function/index.php';
 require_once __DIR__ . '/../Data.Ring/index.php';
 require_once __DIR__ . '/../Data.Semiring/index.php';
 require_once __DIR__ . '/../Data.Show/index.php';
@@ -94,7 +95,7 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
       case 'Test_LazyEvaluation_sub': $v = ($GLOBALS['Data_Ring_intSub'] ?? \Data\Ring\phpurs_eval_thunk('Data_Ring_intSub')); break;
       case 'Test_LazyEvaluation_add': $v = ($GLOBALS['Data_Semiring_intAdd'] ?? \Data\Semiring\phpurs_eval_thunk('Data_Semiring_intAdd')); break;
       case 'Test_LazyEvaluation_describe': $v = (($GLOBALS['Effect_Console_log'] ?? \Effect\Console\phpurs_eval_thunk('Effect_Console_log')))("Lazy Evaluation (1M Thunks Forced, 1k Depth):"); break;
-      case 'Test_LazyEvaluation_act': $v = (($GLOBALS['Effect_Console_logShow'] ?? \Effect\Console\phpurs_eval_thunk('Effect_Console_logShow')))(($GLOBALS['Data_Show_showInt'] ?? \Data\Show\phpurs_eval_thunk('Data_Show_showInt')), (($GLOBALS['Test_LazyEvaluation_runManyTimes'] ?? \Test\LazyEvaluation\phpurs_eval_thunk('Test_LazyEvaluation_runManyTimes')))(1000, 0)); break;
+      case 'Test_LazyEvaluation_act': $v = \Effect\Console\Effect_Console_logShow(($GLOBALS['Data_Show_showInt'] ?? \Data\Show\phpurs_eval_thunk('Data_Show_showInt')), \Test\LazyEvaluation\Test_LazyEvaluation_runManyTimes(1000, 0)); break;
       default: throw new \Exception("Unknown thunk " . $id);
     }
     $GLOBALS[$id] = $v;
@@ -113,8 +114,10 @@ function Test_LazyEvaluation_Lazy($x) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = $x;
-    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  $__res = $x;
+  goto __end;;
+  __end:
+  return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Test_LazyEvaluation_Lazy'] = __NAMESPACE__ . '\\Test_LazyEvaluation_Lazy';
 
@@ -125,18 +128,17 @@ function Test_LazyEvaluation_force($v) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-  $__body = function($v) {
-    $__global_Data_Unit_unit = ($GLOBALS['Data_Unit_unit'] ?? \Data\Unit\phpurs_eval_thunk('Data_Unit_unit'));
-    $__case_0 = $v;
-    if (true) {
+  $__global_Data_Unit_unit = ($GLOBALS['Data_Unit_unit'] ?? \Data\Unit\phpurs_eval_thunk('Data_Unit_unit'));
+  $__case_0 = $v;
+  if (true) {
 $f = $__case_0;
-return ($f)($__global_Data_Unit_unit);
+$__res = ($f)($__global_Data_Unit_unit);
+goto __end;;
 } else {
 throw new \Exception("Pattern match failure");
 };
-  };
-    $__res = $__body($v);
-    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  __end:
+  return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Test_LazyEvaluation_force'] = __NAMESPACE__ . '\\Test_LazyEvaluation_force';
 
@@ -148,8 +150,10 @@ function Test_LazyEvaluation_defer($f) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = $f;
-    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  $__res = $f;
+  goto __end;;
+  __end:
+  return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Test_LazyEvaluation_defer'] = __NAMESPACE__ . '\\Test_LazyEvaluation_defer';
 
@@ -161,39 +165,38 @@ function Test_LazyEvaluation_buildThunks($v, $v1 = null) {
     if ($__num === 1) return function($v1) use ($v, $__fn) { return $__fn($v, $v1); };
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
-$__global_Test_LazyEvaluation_defer = ($GLOBALS['Test_LazyEvaluation_defer'] ?? \Test\LazyEvaluation\phpurs_eval_thunk('Test_LazyEvaluation_defer'));
-$__global_Test_LazyEvaluation_force = ($GLOBALS['Test_LazyEvaluation_force'] ?? \Test\LazyEvaluation\phpurs_eval_thunk('Test_LazyEvaluation_force'));
-while (true) {
+  $__global_Test_LazyEvaluation_defer = ($GLOBALS['Test_LazyEvaluation_defer'] ?? \Test\LazyEvaluation\phpurs_eval_thunk('Test_LazyEvaluation_defer'));
+  $__global_Test_LazyEvaluation_force = ($GLOBALS['Test_LazyEvaluation_force'] ?? \Test\LazyEvaluation\phpurs_eval_thunk('Test_LazyEvaluation_force'));
+  while (true) {
 $__case_0 = $v;
 $__case_1 = $v1;
 switch ($__case_0) {
 case 0:
 $acc = $__case_1;
-return $acc;
+$__res = $acc;
+goto __end;;
 break;
 default:
 $n = $__case_0;
 $acc = $__case_1;
 $__tco_tmp_0 = ($n - 1);
-$__tco_tmp_1 = ($__global_Test_LazyEvaluation_defer)((function() use ($__global_Test_LazyEvaluation_force, $acc) {
-  $__fn = function($v2) use ($__global_Test_LazyEvaluation_force, $acc, &$__fn) {
+$__tco_tmp_1 = ($__global_Test_LazyEvaluation_defer)(function($v2) use ($__global_Test_LazyEvaluation_force, $acc) {
   $__num = func_num_args();
-  if ($__num < 1) {
-    return phpurs_curry_fallback($__fn, func_get_args(), 1);
-  }
-    $__res = (($__global_Test_LazyEvaluation_force)($acc) + 1);
+  $__res = (($__global_Test_LazyEvaluation_force)($acc) + 1);
+  goto __end;;
+  __end:
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})());
+});
 $v = $__tco_tmp_0;
 $v1 = $__tco_tmp_1;
 continue 2;
 break;
 };
 };
-    $__res = null;
-    return 2 < $__num ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  $__res = null;
+  goto __end;;
+  __end:
+  return 2 < $__num ? $__res(...array_slice(func_get_args(), 2)) : $__res;
 }
 $GLOBALS['Test_LazyEvaluation_buildThunks'] = __NAMESPACE__ . '\\Test_LazyEvaluation_buildThunks';
 
@@ -205,40 +208,39 @@ function Test_LazyEvaluation_runManyTimes($v, $v1 = null) {
     if ($__num === 1) return function($v1) use ($v, $__fn) { return $__fn($v, $v1); };
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
-$__global_Test_LazyEvaluation_force = ($GLOBALS['Test_LazyEvaluation_force'] ?? \Test\LazyEvaluation\phpurs_eval_thunk('Test_LazyEvaluation_force'));
-$__global_Test_LazyEvaluation_buildThunks = ($GLOBALS['Test_LazyEvaluation_buildThunks'] ?? \Test\LazyEvaluation\phpurs_eval_thunk('Test_LazyEvaluation_buildThunks'));
-$__global_Test_LazyEvaluation_defer = ($GLOBALS['Test_LazyEvaluation_defer'] ?? \Test\LazyEvaluation\phpurs_eval_thunk('Test_LazyEvaluation_defer'));
-while (true) {
+  $__global_Test_LazyEvaluation_force = ($GLOBALS['Test_LazyEvaluation_force'] ?? \Test\LazyEvaluation\phpurs_eval_thunk('Test_LazyEvaluation_force'));
+  $__global_Test_LazyEvaluation_buildThunks = ($GLOBALS['Test_LazyEvaluation_buildThunks'] ?? \Test\LazyEvaluation\phpurs_eval_thunk('Test_LazyEvaluation_buildThunks'));
+  $__global_Test_LazyEvaluation_defer = ($GLOBALS['Test_LazyEvaluation_defer'] ?? \Test\LazyEvaluation\phpurs_eval_thunk('Test_LazyEvaluation_defer'));
+  while (true) {
 $__case_0 = $v;
 $__case_1 = $v1;
 switch ($__case_0) {
 case 0:
 $acc = $__case_1;
-return $acc;
+$__res = $acc;
+goto __end;;
 break;
 default:
 $n = $__case_0;
 $acc = $__case_1;
 $__tco_tmp_0 = ($n - 1);
-$__tco_tmp_1 = ($acc + ($__global_Test_LazyEvaluation_force)(($__global_Test_LazyEvaluation_buildThunks)(1000, ($__global_Test_LazyEvaluation_defer)((function() {
-  $__fn = function($v2) use (&$__fn) {
+$__tco_tmp_1 = ($acc + ($__global_Test_LazyEvaluation_force)(($__global_Test_LazyEvaluation_buildThunks)(1000, ($__global_Test_LazyEvaluation_defer)(function($v2) {
   $__num = func_num_args();
-  if ($__num < 1) {
-    return phpurs_curry_fallback($__fn, func_get_args(), 1);
-  }
-    $__res = 0;
+  $__res = 0;
+  goto __end;;
+  __end:
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})()))));
+}))));
 $v = $__tco_tmp_0;
 $v1 = $__tco_tmp_1;
 continue 2;
 break;
 };
 };
-    $__res = null;
-    return 2 < $__num ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  $__res = null;
+  goto __end;;
+  __end:
+  return 2 < $__num ? $__res(...array_slice(func_get_args(), 2)) : $__res;
 }
 $GLOBALS['Test_LazyEvaluation_runManyTimes'] = __NAMESPACE__ . '\\Test_LazyEvaluation_runManyTimes';
 

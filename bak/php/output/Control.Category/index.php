@@ -86,28 +86,20 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Control_Category_categoryFn': $v = (object)["identity" => (function() {
-  $__fn = function($x) use (&$__fn) {
+      case 'Control_Category_categoryFn': $v = (object)["identity" => function($x) {
   $__num = func_num_args();
-  if ($__num < 1) {
-    return phpurs_curry_fallback($__fn, func_get_args(), 1);
-  }
-    $__res = $x;
+  $__res = $x;
+  goto __end;;
+  __end:
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})(), "Semigroupoid0" => (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
+}, "Semigroupoid0" => function($__dollar____unused) {
   $__num = func_num_args();
-  if ($__num < 1) {
-    return phpurs_curry_fallback($__fn, func_get_args(), 1);
-  }
-$__global_Control_Semigroupoid_semigroupoidFn = ($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn'));
-    $__res = $__global_Control_Semigroupoid_semigroupoidFn;
+  $__global_Control_Semigroupoid_semigroupoidFn = ($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn'));
+  $__res = $__global_Control_Semigroupoid_semigroupoidFn;
+  goto __end;;
+  __end:
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})()]; break;
+}]; break;
       default: throw new \Exception("Unknown thunk " . $id);
     }
     $GLOBALS[$id] = $v;
@@ -124,8 +116,10 @@ function Control_Category_Category__dollar__Dict($x) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = $x;
-    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  $__res = $x;
+  goto __end;;
+  __end:
+  return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Control_Category_Category__dollar__Dict'] = __NAMESPACE__ . '\\Control_Category_Category__dollar__Dict';
 
@@ -136,17 +130,16 @@ function Control_Category_identity($dict) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-  $__body = function($dict) {
-    $__case_0 = $dict;
-    if (true) {
+  $__case_0 = $dict;
+  if (true) {
 $v = $__case_0;
-return ($v)->identity;
+$__res = ($v)->identity;
+goto __end;;
 } else {
 throw new \Exception("Pattern match failure");
 };
-  };
-    $__res = $__body($dict);
-    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  __end:
+  return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Control_Category_identity'] = __NAMESPACE__ . '\\Control_Category_identity';
 

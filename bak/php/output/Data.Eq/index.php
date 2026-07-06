@@ -3,6 +3,7 @@
 namespace Data\Eq;
 
 require_once __DIR__ . '/../Data.Eq/index.php';
+require_once __DIR__ . '/../Data.HeytingAlgebra/index.php';
 require_once __DIR__ . '/../Data.Unit/index.php';
 
 if (!class_exists(__NAMESPACE__ . '\\Phpurs_Data0')) {
@@ -87,6 +88,7 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
       case 'Data_Eq_eqInt': $v = (object)["eq" => ($GLOBALS['Data_Eq_eqIntImpl'] ?? \Data\Eq\phpurs_eval_thunk('Data_Eq_eqIntImpl'))]; break;
+      case 'Data_Eq_eqChar': $v = (object)["eq" => ($GLOBALS['Data_Eq_eqCharImpl'] ?? \Data\Eq\phpurs_eval_thunk('Data_Eq_eqCharImpl'))]; break;
       case 'Data_Eq_eqBoolean': $v = (object)["eq" => ($GLOBALS['Data_Eq_eqBooleanImpl'] ?? \Data\Eq\phpurs_eval_thunk('Data_Eq_eqBooleanImpl'))]; break;
       case 'Data_Eq_eq2': $v = ($GLOBALS['Data_Eq_eqBooleanImpl'] ?? \Data\Eq\phpurs_eval_thunk('Data_Eq_eqBooleanImpl')); break;
       default: throw new \Exception("Unknown thunk " . $id);
@@ -118,10 +120,13 @@ function Data_Eq_Eq__dollar__Dict($x) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = $x;
-    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  $__res = $x;
+  goto __end;;
+  __end:
+  return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Eq_Eq__dollar__Dict'] = __NAMESPACE__ . '\\Data_Eq_Eq__dollar__Dict';
+
 
 
 
@@ -132,17 +137,16 @@ function Data_Eq_eq($dict) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-  $__body = function($dict) {
-    $__case_0 = $dict;
-    if (true) {
+  $__case_0 = $dict;
+  if (true) {
 $v = $__case_0;
-return ($v)->eq;
+$__res = ($v)->eq;
+goto __end;;
 } else {
 throw new \Exception("Pattern match failure");
 };
-  };
-    $__res = $__body($dict);
-    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  __end:
+  return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Eq_eq'] = __NAMESPACE__ . '\\Data_Eq_eq';
 
@@ -154,20 +158,24 @@ function Data_Eq_notEq($dictEq) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$eq3 = ($dictEq)->eq;
-    $__res = (function() use ($eq3) {
+  $eq3 = ($dictEq)->eq;
+  $__res = (function() use ($eq3, &$__fn) {
   $__fn = function($x, $y = null) use ($eq3, &$__fn) {
   $__num = func_num_args();
   if ($__num < 2) {
     if ($__num === 1) return function($y) use ($x, &$__fn) { return $__fn($x, $y); };
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
-    $__res = (($eq3)($x, $y) === false);
+  $__res = (($eq3)($x, $y) === false);
+  goto __end;;
+  __end:
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
 })();
-    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  goto __end;;
+  __end:
+  return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Eq_notEq'] = __NAMESPACE__ . '\\Data_Eq_notEq';
 

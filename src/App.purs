@@ -15,6 +15,9 @@ import Test.Polymorphism as Polymorphism
 import Test.StateMonad as StateMonad
 import Test.LazyEvaluation as LazyEvaluation
 import Test.FileOps as FileOps
+import Test.STArray as STArray
+import Test.AffOperations as AffOperations
+import Test.StringOps as StringOps
 
 main :: Effect Unit
 main = do
@@ -57,5 +60,10 @@ main = do
   FileOps.describe
   FileOps.act
   
-  pure unit
+  STArray.describe
+  STArray.act
+  
+  StringOps.describe *> AffOperations.describe
+  StringOps.act *> AffOperations.act
+  
   pure unit

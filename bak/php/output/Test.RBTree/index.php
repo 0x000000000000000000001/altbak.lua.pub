@@ -2,6 +2,7 @@
 
 namespace Test\RBTree;
 
+require_once __DIR__ . '/../Data.Function/index.php';
 require_once __DIR__ . '/../Data.Ord/index.php';
 require_once __DIR__ . '/../Data.Ring/index.php';
 require_once __DIR__ . '/../Data.Semiring/index.php';
@@ -91,15 +92,15 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Test_RBTree_greaterThan': $v = (($GLOBALS['Data_Ord_greaterThan'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_greaterThan')))(($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'))); break;
+      case 'Test_RBTree_greaterThan': $v = \Data\Ord\Data_Ord_greaterThan(($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'))); break;
       case 'Test_RBTree_add': $v = ($GLOBALS['Data_Semiring_intAdd'] ?? \Data\Semiring\phpurs_eval_thunk('Data_Semiring_intAdd')); break;
-      case 'Test_RBTree_lessThan': $v = (($GLOBALS['Data_Ord_lessThan'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_lessThan')))(($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'))); break;
+      case 'Test_RBTree_lessThan': $v = \Data\Ord\Data_Ord_lessThan(($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'))); break;
       case 'Test_RBTree_sub': $v = ($GLOBALS['Data_Ring_intSub'] ?? \Data\Ring\phpurs_eval_thunk('Data_Ring_intSub')); break;
       case 'Test_RBTree_R': $v = ($GLOBALS['__phpurs_data0_R'] ??= new Phpurs_Data0("R")); break;
       case 'Test_RBTree_B': $v = ($GLOBALS['__phpurs_data0_B'] ??= new Phpurs_Data0("B")); break;
       case 'Test_RBTree_E': $v = ($GLOBALS['__phpurs_data0_E'] ??= new Phpurs_Data0("E")); break;
       case 'Test_RBTree_describe': $v = (($GLOBALS['Effect_Console_log'] ?? \Effect\Console\phpurs_eval_thunk('Effect_Console_log')))("Red-Black Tree (100k Worst-Case Insertions):"); break;
-      case 'Test_RBTree_act': $v = (($GLOBALS['Effect_Console_logShow'] ?? \Effect\Console\phpurs_eval_thunk('Effect_Console_logShow')))(($GLOBALS['Data_Show_showInt'] ?? \Data\Show\phpurs_eval_thunk('Data_Show_showInt')), (($GLOBALS['Test_RBTree_depth'] ?? \Test\RBTree\phpurs_eval_thunk('Test_RBTree_depth')))((($GLOBALS['Test_RBTree_buildTree'] ?? \Test\RBTree\phpurs_eval_thunk('Test_RBTree_buildTree')))(100000, ($GLOBALS['__phpurs_data0_E'] ??= new Phpurs_Data0("E"))))); break;
+      case 'Test_RBTree_act': $v = \Effect\Console\Effect_Console_logShow(($GLOBALS['Data_Show_showInt'] ?? \Data\Show\phpurs_eval_thunk('Data_Show_showInt')), \Test\RBTree\Test_RBTree_depth(\Test\RBTree\Test_RBTree_buildTree(100000, ($GLOBALS['__phpurs_data0_E'] ??= new Phpurs_Data0("E"))))); break;
       default: throw new \Exception("Unknown thunk " . $id);
     }
     $GLOBALS[$id] = $v;
@@ -142,8 +143,10 @@ function Test_RBTree_T($value0, $value1 = null, $value2 = null, $value3 = null) 
     };
     return phpurs_curry_fallback($__fn, func_get_args(), 4);
   }
-    $__res = new Phpurs_Data4("T", $value0, $value1, $value2, $value3);
-    return 4 < $__num ? $__res(...array_slice(func_get_args(), 4)) : $__res;
+  $__res = new Phpurs_Data4("T", $value0, $value1, $value2, $value3);
+  goto __end;;
+  __end:
+  return 4 < $__num ? $__res(...array_slice(func_get_args(), 4)) : $__res;
 }
 $GLOBALS['Test_RBTree_T'] = __NAMESPACE__ . '\\Test_RBTree_T';
 
@@ -155,20 +158,20 @@ function Test_RBTree_max($x, $y = null) {
     if ($__num === 1) return function($y) use ($x, $__fn) { return $__fn($x, $y); };
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
-  $__body = function($x, $y) {
-    $__global_Test_RBTree_greaterThan = ($GLOBALS['Test_RBTree_greaterThan'] ?? \Test\RBTree\phpurs_eval_thunk('Test_RBTree_greaterThan'));
-    $__case_0 = ($__global_Test_RBTree_greaterThan)($x, $y);
-    switch ($__case_0) {
+  $__global_Test_RBTree_greaterThan = ($GLOBALS['Test_RBTree_greaterThan'] ?? \Test\RBTree\phpurs_eval_thunk('Test_RBTree_greaterThan'));
+  $__case_0 = ($__global_Test_RBTree_greaterThan)($x, $y);
+  switch ($__case_0) {
 case true:
-return $x;
+$__res = $x;
+goto __end;;
 break;
 default:
-return $y;
+$__res = $y;
+goto __end;;
 break;
 };
-  };
-    $__res = $__body($x, $y);
-    return 2 < $__num ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  __end:
+  return 2 < $__num ? $__res(...array_slice(func_get_args(), 2)) : $__res;
 }
 $GLOBALS['Test_RBTree_max'] = __NAMESPACE__ . '\\Test_RBTree_max';
 
@@ -180,25 +183,29 @@ function Test_RBTree_depth($v) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Test_RBTree_max = ($GLOBALS['Test_RBTree_max'] ?? \Test\RBTree\phpurs_eval_thunk('Test_RBTree_max'));
-while (true) {
+  $__global_Test_RBTree_max = ($GLOBALS['Test_RBTree_max'] ?? \Test\RBTree\phpurs_eval_thunk('Test_RBTree_max'));
+  while (true) {
 $__case_0 = $v;
 switch (($__case_0)->tag) {
 case "E":
-return 0;
+$__res = 0;
+goto __end;;
 break;
 case "T":
 $a = ($__case_0)->v1;
 $b = ($__case_0)->v3;
-return (1 + ($__global_Test_RBTree_max)((($GLOBALS['Test_RBTree_depth'] ?? \Test\RBTree\phpurs_eval_thunk('Test_RBTree_depth')))($a), (($GLOBALS['Test_RBTree_depth'] ?? \Test\RBTree\phpurs_eval_thunk('Test_RBTree_depth')))($b)));
+$__res = (1 + ($__global_Test_RBTree_max)(\Test\RBTree\Test_RBTree_depth($a), \Test\RBTree\Test_RBTree_depth($b)));
+goto __end;;
 break;
 default:
 throw new \Exception("Pattern match failure");
 break;
 };
 };
-    $__res = null;
-    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  $__res = null;
+  goto __end;;
+  __end:
+  return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Test_RBTree_depth'] = __NAMESPACE__ . '\\Test_RBTree_depth';
 
@@ -228,12 +235,11 @@ function Test_RBTree_balance($v, $v1 = null, $v2 = null, $v3 = null) {
     };
     return phpurs_curry_fallback($__fn, func_get_args(), 4);
   }
-  $__body = function($v, $v1, $v2, $v3) {
-    $__case_0 = $v;
-    $__case_1 = $v1;
-    $__case_2 = $v2;
-    $__case_3 = $v3;
-    if (((($__case_0)->tag === "B") && (((($__case_1)->tag === "T") && ((($__case_1)->v0)->tag === "R")) && (((($__case_1)->v1)->tag === "T") && (((($__case_1)->v1)->v0)->tag === "R"))))) {
+  $__case_0 = $v;
+  $__case_1 = $v1;
+  $__case_2 = $v2;
+  $__case_3 = $v3;
+  if (((($__case_0)->tag === "B") && (((($__case_1)->tag === "T") && ((($__case_1)->v0)->tag === "R")) && (((($__case_1)->v1)->tag === "T") && (((($__case_1)->v1)->v0)->tag === "R"))))) {
 $a = (($__case_1)->v1)->v1;
 $x = (($__case_1)->v1)->v2;
 $b = (($__case_1)->v1)->v3;
@@ -241,7 +247,8 @@ $y = ($__case_1)->v2;
 $c = ($__case_1)->v3;
 $z = $__case_2;
 $d = $__case_3;
-return new Phpurs_Data4("T", ($GLOBALS['__phpurs_data0_R'] ??= new Phpurs_Data0("R")), new Phpurs_Data4("T", ($GLOBALS['__phpurs_data0_B'] ??= new Phpurs_Data0("B")), $a, $x, $b), $y, new Phpurs_Data4("T", ($GLOBALS['__phpurs_data0_B'] ??= new Phpurs_Data0("B")), $c, $z, $d));
+$__res = new Phpurs_Data4("T", ($GLOBALS['__phpurs_data0_R'] ??= new Phpurs_Data0("R")), new Phpurs_Data4("T", ($GLOBALS['__phpurs_data0_B'] ??= new Phpurs_Data0("B")), $a, $x, $b), $y, new Phpurs_Data4("T", ($GLOBALS['__phpurs_data0_B'] ??= new Phpurs_Data0("B")), $c, $z, $d));
+goto __end;;
 } else {
 if (((($__case_0)->tag === "B") && (((($__case_1)->tag === "T") && ((($__case_1)->v0)->tag === "R")) && (((($__case_1)->v3)->tag === "T") && (((($__case_1)->v3)->v0)->tag === "R"))))) {
 $a = ($__case_1)->v1;
@@ -251,7 +258,8 @@ $y = (($__case_1)->v3)->v2;
 $c = (($__case_1)->v3)->v3;
 $z = $__case_2;
 $d = $__case_3;
-return new Phpurs_Data4("T", ($GLOBALS['__phpurs_data0_R'] ??= new Phpurs_Data0("R")), new Phpurs_Data4("T", ($GLOBALS['__phpurs_data0_B'] ??= new Phpurs_Data0("B")), $a, $x, $b), $y, new Phpurs_Data4("T", ($GLOBALS['__phpurs_data0_B'] ??= new Phpurs_Data0("B")), $c, $z, $d));
+$__res = new Phpurs_Data4("T", ($GLOBALS['__phpurs_data0_R'] ??= new Phpurs_Data0("R")), new Phpurs_Data4("T", ($GLOBALS['__phpurs_data0_B'] ??= new Phpurs_Data0("B")), $a, $x, $b), $y, new Phpurs_Data4("T", ($GLOBALS['__phpurs_data0_B'] ??= new Phpurs_Data0("B")), $c, $z, $d));
+goto __end;;
 } else {
 if (((($__case_0)->tag === "B") && (((($__case_3)->tag === "T") && ((($__case_3)->v0)->tag === "R")) && (((($__case_3)->v1)->tag === "T") && (((($__case_3)->v1)->v0)->tag === "R"))))) {
 $a = $__case_1;
@@ -261,7 +269,8 @@ $y = (($__case_3)->v1)->v2;
 $c = (($__case_3)->v1)->v3;
 $z = ($__case_3)->v2;
 $d = ($__case_3)->v3;
-return new Phpurs_Data4("T", ($GLOBALS['__phpurs_data0_R'] ??= new Phpurs_Data0("R")), new Phpurs_Data4("T", ($GLOBALS['__phpurs_data0_B'] ??= new Phpurs_Data0("B")), $a, $x, $b), $y, new Phpurs_Data4("T", ($GLOBALS['__phpurs_data0_B'] ??= new Phpurs_Data0("B")), $c, $z, $d));
+$__res = new Phpurs_Data4("T", ($GLOBALS['__phpurs_data0_R'] ??= new Phpurs_Data0("R")), new Phpurs_Data4("T", ($GLOBALS['__phpurs_data0_B'] ??= new Phpurs_Data0("B")), $a, $x, $b), $y, new Phpurs_Data4("T", ($GLOBALS['__phpurs_data0_B'] ??= new Phpurs_Data0("B")), $c, $z, $d));
+goto __end;;
 } else {
 if (((($__case_0)->tag === "B") && (((($__case_3)->tag === "T") && ((($__case_3)->v0)->tag === "R")) && (((($__case_3)->v3)->tag === "T") && (((($__case_3)->v3)->v0)->tag === "R"))))) {
 $a = $__case_1;
@@ -271,14 +280,16 @@ $y = ($__case_3)->v2;
 $c = (($__case_3)->v3)->v1;
 $z = (($__case_3)->v3)->v2;
 $d = (($__case_3)->v3)->v3;
-return new Phpurs_Data4("T", ($GLOBALS['__phpurs_data0_R'] ??= new Phpurs_Data0("R")), new Phpurs_Data4("T", ($GLOBALS['__phpurs_data0_B'] ??= new Phpurs_Data0("B")), $a, $x, $b), $y, new Phpurs_Data4("T", ($GLOBALS['__phpurs_data0_B'] ??= new Phpurs_Data0("B")), $c, $z, $d));
+$__res = new Phpurs_Data4("T", ($GLOBALS['__phpurs_data0_R'] ??= new Phpurs_Data0("R")), new Phpurs_Data4("T", ($GLOBALS['__phpurs_data0_B'] ??= new Phpurs_Data0("B")), $a, $x, $b), $y, new Phpurs_Data4("T", ($GLOBALS['__phpurs_data0_B'] ??= new Phpurs_Data0("B")), $c, $z, $d));
+goto __end;;
 } else {
 if (true) {
 $color = $__case_0;
 $a = $__case_1;
 $x = $__case_2;
 $b = $__case_3;
-return new Phpurs_Data4("T", $color, $a, $x, $b);
+$__res = new Phpurs_Data4("T", $color, $a, $x, $b);
+goto __end;;
 } else {
 throw new \Exception("Pattern match failure");
 };
@@ -286,9 +297,8 @@ throw new \Exception("Pattern match failure");
 };
 };
 };
-  };
-    $__res = $__body($v, $v1, $v2, $v3);
-    return 4 < $__num ? $__res(...array_slice(func_get_args(), 4)) : $__res;
+  __end:
+  return 4 < $__num ? $__res(...array_slice(func_get_args(), 4)) : $__res;
 }
 $GLOBALS['Test_RBTree_balance'] = __NAMESPACE__ . '\\Test_RBTree_balance';
 
@@ -300,48 +310,39 @@ function Test_RBTree_insert($x, $s = null) {
     if ($__num === 1) return function($s) use ($x, $__fn) { return $__fn($x, $s); };
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
-$__global_Test_RBTree_lessThan = ($GLOBALS['Test_RBTree_lessThan'] ?? \Test\RBTree\phpurs_eval_thunk('Test_RBTree_lessThan'));
-$__global_Test_RBTree_balance = ($GLOBALS['Test_RBTree_balance'] ?? \Test\RBTree\phpurs_eval_thunk('Test_RBTree_balance'));
-$__global_Test_RBTree_greaterThan = ($GLOBALS['Test_RBTree_greaterThan'] ?? \Test\RBTree\phpurs_eval_thunk('Test_RBTree_greaterThan'));
-$makeBlack = (function() {
-  $__body = function($v) {
-    $__case_0 = $v;
-    switch (($__case_0)->tag) {
+  $__global_Test_RBTree_lessThan = ($GLOBALS['Test_RBTree_lessThan'] ?? \Test\RBTree\phpurs_eval_thunk('Test_RBTree_lessThan'));
+  $__global_Test_RBTree_balance = ($GLOBALS['Test_RBTree_balance'] ?? \Test\RBTree\phpurs_eval_thunk('Test_RBTree_balance'));
+  $__global_Test_RBTree_greaterThan = ($GLOBALS['Test_RBTree_greaterThan'] ?? \Test\RBTree\phpurs_eval_thunk('Test_RBTree_greaterThan'));
+  $makeBlack = function($v) {
+  $__num = func_num_args();
+  $__case_0 = $v;
+  switch (($__case_0)->tag) {
 case "T":
 $a = ($__case_0)->v1;
 $y = ($__case_0)->v2;
 $b = ($__case_0)->v3;
-return new Phpurs_Data4("T", ($GLOBALS['__phpurs_data0_B'] ??= new Phpurs_Data0("B")), $a, $y, $b);
+$__res = new Phpurs_Data4("T", ($GLOBALS['__phpurs_data0_B'] ??= new Phpurs_Data0("B")), $a, $y, $b);
+goto __end;;
 break;
 case "E":
-return ($GLOBALS['__phpurs_data0_E'] ??= new Phpurs_Data0("E"));
+$__res = ($GLOBALS['__phpurs_data0_E'] ??= new Phpurs_Data0("E"));
+goto __end;;
 break;
 default:
 throw new \Exception("Pattern match failure");
 break;
 };
-  };
-  $__fn = function($v) use ($__body, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) {
-    return phpurs_curry_fallback($__fn, func_get_args(), 1);
-  }
-    $__res = $__body($v);
+  __end:
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
-$ins = (function() use ($x, $__global_Test_RBTree_lessThan, $__global_Test_RBTree_balance, &$ins, $__global_Test_RBTree_greaterThan) {
-  $__fn = function($v) use ($x, $__global_Test_RBTree_lessThan, $__global_Test_RBTree_balance, &$ins, $__global_Test_RBTree_greaterThan, &$__fn) {
+};
+  $ins = function($v) use ($x, $__global_Test_RBTree_lessThan, $__global_Test_RBTree_balance, &$ins, $__global_Test_RBTree_greaterThan) {
   $__num = func_num_args();
-  if ($__num < 1) {
-    return phpurs_curry_fallback($__fn, func_get_args(), 1);
-  }
-while (true) {
+  while (true) {
 $__case_0 = $v;
 switch (($__case_0)->tag) {
 case "E":
-return new Phpurs_Data4("T", ($GLOBALS['__phpurs_data0_R'] ??= new Phpurs_Data0("R")), ($GLOBALS['__phpurs_data0_E'] ??= new Phpurs_Data0("E")), $x, ($GLOBALS['__phpurs_data0_E'] ??= new Phpurs_Data0("E")));
+$__res = new Phpurs_Data4("T", ($GLOBALS['__phpurs_data0_R'] ??= new Phpurs_Data0("R")), ($GLOBALS['__phpurs_data0_E'] ??= new Phpurs_Data0("E")), $x, ($GLOBALS['__phpurs_data0_E'] ??= new Phpurs_Data0("E")));
+goto __end;;
 break;
 case "T":
 $color = ($__case_0)->v0;
@@ -351,16 +352,19 @@ $b = ($__case_0)->v3;
 $__case_0 = ($__global_Test_RBTree_lessThan)($x, $y);
 switch ($__case_0) {
 case true:
-return ($__global_Test_RBTree_balance)($color, ($ins)($a), $y, $b);
+$__res = ($__global_Test_RBTree_balance)($color, ($ins)($a), $y, $b);
+goto __end;;
 break;
 default:
 $__case_0 = ($__global_Test_RBTree_greaterThan)($x, $y);
 switch ($__case_0) {
 case true:
-return ($__global_Test_RBTree_balance)($color, $a, $y, ($ins)($b));
+$__res = ($__global_Test_RBTree_balance)($color, $a, $y, ($ins)($b));
+goto __end;;
 break;
 default:
-return new Phpurs_Data4("T", $color, $a, $y, $b);
+$__res = new Phpurs_Data4("T", $color, $a, $y, $b);
+goto __end;;
 break;
 };
 break;
@@ -371,13 +375,15 @@ throw new \Exception("Pattern match failure");
 break;
 };
 };
-    $__res = null;
+  $__res = null;
+  goto __end;;
+  __end:
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})();
-    $__res = ($makeBlack)(($ins)($s));
-    return 2 < $__num ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+};
+  $__res = ($makeBlack)(($ins)($s));
+  goto __end;;
+  __end:
+  return 2 < $__num ? $__res(...array_slice(func_get_args(), 2)) : $__res;
 }
 $GLOBALS['Test_RBTree_insert'] = __NAMESPACE__ . '\\Test_RBTree_insert';
 
@@ -389,14 +395,15 @@ function Test_RBTree_buildTree($v, $v1 = null) {
     if ($__num === 1) return function($v1) use ($v, $__fn) { return $__fn($v, $v1); };
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
-$__global_Test_RBTree_insert = ($GLOBALS['Test_RBTree_insert'] ?? \Test\RBTree\phpurs_eval_thunk('Test_RBTree_insert'));
-while (true) {
+  $__global_Test_RBTree_insert = ($GLOBALS['Test_RBTree_insert'] ?? \Test\RBTree\phpurs_eval_thunk('Test_RBTree_insert'));
+  while (true) {
 $__case_0 = $v;
 $__case_1 = $v1;
 switch ($__case_0) {
 case 0:
 $acc = $__case_1;
-return $acc;
+$__res = $acc;
+goto __end;;
 break;
 default:
 $n = $__case_0;
@@ -409,8 +416,10 @@ continue 2;
 break;
 };
 };
-    $__res = null;
-    return 2 < $__num ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  $__res = null;
+  goto __end;;
+  __end:
+  return 2 < $__num ? $__res(...array_slice(func_get_args(), 2)) : $__res;
 }
 $GLOBALS['Test_RBTree_buildTree'] = __NAMESPACE__ . '\\Test_RBTree_buildTree';
 

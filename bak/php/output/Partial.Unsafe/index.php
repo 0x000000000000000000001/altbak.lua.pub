@@ -86,7 +86,7 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Partial_Unsafe_crashWith': $v = (($GLOBALS['Partial_crashWith'] ?? \Partial\phpurs_eval_thunk('Partial_crashWith')))(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))); break;
+      case 'Partial_Unsafe_crashWith': $v = \Partial\Partial_crashWith(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))); break;
       case 'Partial_Unsafe_unsafePartial': $v = ($GLOBALS['Partial_Unsafe__unsafePartial'] ?? \Partial\Unsafe\phpurs_eval_thunk('Partial_Unsafe__unsafePartial')); break;
       default: throw new \Exception("Unknown thunk " . $id);
     }
@@ -95,7 +95,7 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
   }
 }
 $Prim_undefined = function() { throw new \Exception("undefined"); };
-$Partial_Unsafe__unsafePartial = function($f) { return $f(); };
+$Partial_Unsafe__unsafePartial = function($f) { return $f(null); };
 
 
 
@@ -106,20 +106,18 @@ function Partial_Unsafe_unsafeCrashWith($msg) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Partial_Unsafe__unsafePartial = ($GLOBALS['Partial_Unsafe__unsafePartial'] ?? \Partial\Unsafe\phpurs_eval_thunk('Partial_Unsafe__unsafePartial'));
-$__global_Partial_Unsafe_crashWith = ($GLOBALS['Partial_Unsafe_crashWith'] ?? \Partial\Unsafe\phpurs_eval_thunk('Partial_Unsafe_crashWith'));
-    $__res = ($__global_Partial_Unsafe__unsafePartial)((function() use ($__global_Partial_Unsafe_crashWith, $msg) {
-  $__fn = function($__dollar____unused) use ($__global_Partial_Unsafe_crashWith, $msg, &$__fn) {
+  $__global_Partial_Unsafe__unsafePartial = ($GLOBALS['Partial_Unsafe__unsafePartial'] ?? \Partial\Unsafe\phpurs_eval_thunk('Partial_Unsafe__unsafePartial'));
+  $__global_Partial_Unsafe_crashWith = ($GLOBALS['Partial_Unsafe_crashWith'] ?? \Partial\Unsafe\phpurs_eval_thunk('Partial_Unsafe_crashWith'));
+  $__res = ($__global_Partial_Unsafe__unsafePartial)(function($__dollar____unused) use ($__global_Partial_Unsafe_crashWith, $msg) {
   $__num = func_num_args();
-  if ($__num < 1) {
-    return phpurs_curry_fallback($__fn, func_get_args(), 1);
-  }
-    $__res = ($__global_Partial_Unsafe_crashWith)($msg);
+  $__res = ($__global_Partial_Unsafe_crashWith)($msg);
+  goto __end;;
+  __end:
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})());
-    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+});
+  goto __end;;
+  __end:
+  return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Partial_Unsafe_unsafeCrashWith'] = __NAMESPACE__ . '\\Partial_Unsafe_unsafeCrashWith';
 

@@ -105,8 +105,10 @@ function Control_Applicative_Applicative__dollar__Dict($x) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = $x;
-    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  $__res = $x;
+  goto __end;;
+  __end:
+  return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Control_Applicative_Applicative__dollar__Dict'] = __NAMESPACE__ . '\\Control_Applicative_Applicative__dollar__Dict';
 
@@ -117,17 +119,16 @@ function Control_Applicative_pure($dict) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-  $__body = function($dict) {
-    $__case_0 = $dict;
-    if (true) {
+  $__case_0 = $dict;
+  if (true) {
 $v = $__case_0;
-return ($v)->pure;
+$__res = ($v)->pure;
+goto __end;;
 } else {
 throw new \Exception("Pattern match failure");
 };
-  };
-    $__res = $__body($dict);
-    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  __end:
+  return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Control_Applicative_pure'] = __NAMESPACE__ . '\\Control_Applicative_pure';
 
@@ -138,22 +139,26 @@ function Control_Applicative_liftA1($dictApplicative) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$apply = ((($dictApplicative)->Apply0)($__global_Prim_undefined))->apply;
-$pure1 = ($dictApplicative)->pure;
-    $__res = (function() use ($apply, $pure1) {
+  $__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
+  $apply = ((($dictApplicative)->Apply0)($__global_Prim_undefined))->apply;
+  $pure1 = ($dictApplicative)->pure;
+  $__res = (function() use ($apply, $pure1, &$__fn) {
   $__fn = function($f, $a = null) use ($apply, $pure1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 2) {
     if ($__num === 1) return function($a) use ($f, &$__fn) { return $__fn($f, $a); };
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
-    $__res = ($apply)(($pure1)($f), $a);
+  $__res = ($apply)(($pure1)($f), $a);
+  goto __end;;
+  __end:
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
 })();
-    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  goto __end;;
+  __end:
+  return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Control_Applicative_liftA1'] = __NAMESPACE__ . '\\Control_Applicative_liftA1';
 

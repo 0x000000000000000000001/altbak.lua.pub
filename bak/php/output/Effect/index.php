@@ -7,6 +7,7 @@ require_once __DIR__ . '/../Control.Apply/index.php';
 require_once __DIR__ . '/../Control.Bind/index.php';
 require_once __DIR__ . '/../Control.Monad/index.php';
 require_once __DIR__ . '/../Data.Functor/index.php';
+require_once __DIR__ . '/../Data.Semigroup/index.php';
 require_once __DIR__ . '/../Effect/index.php';
 
 if (!class_exists(__NAMESPACE__ . '\\Phpurs_Data0')) {
@@ -90,66 +91,46 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Effect_monadEffect': $v = (object)["Applicative0" => (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
+      case 'Effect_monadEffect': $v = (object)["Applicative0" => function($__dollar____unused) {
   $__num = func_num_args();
-  if ($__num < 1) {
-    return phpurs_curry_fallback($__fn, func_get_args(), 1);
-  }
-$__global_Effect_applicativeEffect = ($GLOBALS['Effect_applicativeEffect'] ?? \Effect\phpurs_eval_thunk('Effect_applicativeEffect'));
-    $__res = $__global_Effect_applicativeEffect;
+  $__global_Effect_applicativeEffect = ($GLOBALS['Effect_applicativeEffect'] ?? \Effect\phpurs_eval_thunk('Effect_applicativeEffect'));
+  $__res = $__global_Effect_applicativeEffect;
+  goto __end;;
+  __end:
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})(), "Bind1" => (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
+}, "Bind1" => function($__dollar____unused) {
   $__num = func_num_args();
-  if ($__num < 1) {
-    return phpurs_curry_fallback($__fn, func_get_args(), 1);
-  }
-$__global_Effect_bindEffect = ($GLOBALS['Effect_bindEffect'] ?? \Effect\phpurs_eval_thunk('Effect_bindEffect'));
-    $__res = $__global_Effect_bindEffect;
+  $__global_Effect_bindEffect = ($GLOBALS['Effect_bindEffect'] ?? \Effect\phpurs_eval_thunk('Effect_bindEffect'));
+  $__res = $__global_Effect_bindEffect;
+  goto __end;;
+  __end:
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})()]; break;
-      case 'Effect_bindEffect': $v = (object)["bind" => ($GLOBALS['Effect_bindE'] ?? \Effect\phpurs_eval_thunk('Effect_bindE')), "Apply0" => (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
+}]; break;
+      case 'Effect_bindEffect': $v = (object)["bind" => ($GLOBALS['Effect_bindE'] ?? \Effect\phpurs_eval_thunk('Effect_bindE')), "Apply0" => function($__dollar____unused) {
   $__num = func_num_args();
-  if ($__num < 1) {
-    return phpurs_curry_fallback($__fn, func_get_args(), 1);
-  }
-$__global_Effect_applyEffect = ($GLOBALS['Effect_applyEffect'] ?? \Effect\phpurs_eval_thunk('Effect_applyEffect'));
-    $__res = $__global_Effect_applyEffect;
+  $__global_Effect_applyEffect = ($GLOBALS['Effect_applyEffect'] ?? \Effect\phpurs_eval_thunk('Effect_applyEffect'));
+  $__res = $__global_Effect_applyEffect;
+  goto __end;;
+  __end:
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})()]; break;
-      case 'Effect_applicativeEffect': $v = (object)["pure" => ($GLOBALS['Effect_pureE'] ?? \Effect\phpurs_eval_thunk('Effect_pureE')), "Apply0" => (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
+}]; break;
+      case 'Effect_applicativeEffect': $v = (object)["pure" => ($GLOBALS['Effect_pureE'] ?? \Effect\phpurs_eval_thunk('Effect_pureE')), "Apply0" => function($__dollar____unused) {
   $__num = func_num_args();
-  if ($__num < 1) {
-    return phpurs_curry_fallback($__fn, func_get_args(), 1);
-  }
-$__global_Effect_applyEffect = ($GLOBALS['Effect_applyEffect'] ?? \Effect\phpurs_eval_thunk('Effect_applyEffect'));
-    $__res = $__global_Effect_applyEffect;
+  $__global_Effect_applyEffect = ($GLOBALS['Effect_applyEffect'] ?? \Effect\phpurs_eval_thunk('Effect_applyEffect'));
+  $__res = $__global_Effect_applyEffect;
+  goto __end;;
+  __end:
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})()]; break;
-      case 'Effect_applyEffect': $v = (object)["apply" => (($GLOBALS['Control_Monad_ap'] ?? \Control\Monad\phpurs_eval_thunk('Control_Monad_ap')))(($GLOBALS['Effect_monadEffect'] ?? \Effect\phpurs_eval_thunk('Effect_monadEffect'))), "Functor0" => (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
+}]; break;
+      case 'Effect_applyEffect': $v = (object)["apply" => \Control\Monad\Control_Monad_ap(($GLOBALS['Effect_monadEffect'] ?? \Effect\phpurs_eval_thunk('Effect_monadEffect'))), "Functor0" => function($__dollar____unused) {
   $__num = func_num_args();
-  if ($__num < 1) {
-    return phpurs_curry_fallback($__fn, func_get_args(), 1);
-  }
-$__global_Effect_functorEffect = ($GLOBALS['Effect_functorEffect'] ?? \Effect\phpurs_eval_thunk('Effect_functorEffect'));
-    $__res = $__global_Effect_functorEffect;
+  $__global_Effect_functorEffect = ($GLOBALS['Effect_functorEffect'] ?? \Effect\phpurs_eval_thunk('Effect_functorEffect'));
+  $__res = $__global_Effect_functorEffect;
+  goto __end;;
+  __end:
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})()]; break;
-      case 'Effect_functorEffect': $v = (object)["map" => (($GLOBALS['Control_Applicative_liftA1'] ?? \Control\Applicative\phpurs_eval_thunk('Control_Applicative_liftA1')))(($GLOBALS['Effect_applicativeEffect'] ?? \Effect\phpurs_eval_thunk('Effect_applicativeEffect')))]; break;
+}]; break;
+      case 'Effect_functorEffect': $v = (object)["map" => \Control\Applicative\Control_Applicative_liftA1(($GLOBALS['Effect_applicativeEffect'] ?? \Effect\phpurs_eval_thunk('Effect_applicativeEffect')))]; break;
       default: throw new \Exception("Unknown thunk " . $id);
     }
     $GLOBALS[$id] = $v;

@@ -5,6 +5,8 @@ namespace Control\Bind;
 require_once __DIR__ . '/../Control.Applicative/index.php';
 require_once __DIR__ . '/../Control.Apply/index.php';
 require_once __DIR__ . '/../Control.Bind/index.php';
+require_once __DIR__ . '/../Control.Category/index.php';
+require_once __DIR__ . '/../Data.Function/index.php';
 require_once __DIR__ . '/../Data.Functor/index.php';
 require_once __DIR__ . '/../Data.Unit/index.php';
 
@@ -89,17 +91,13 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Control_Bind_discardUnit': $v = (object)["discard" => (function() {
-  $__fn = function($dictBind) use (&$__fn) {
+      case 'Control_Bind_discardUnit': $v = (object)["discard" => function($dictBind) {
   $__num = func_num_args();
-  if ($__num < 1) {
-    return phpurs_curry_fallback($__fn, func_get_args(), 1);
-  }
-    $__res = ($dictBind)->bind;
+  $__res = ($dictBind)->bind;
+  goto __end;;
+  __end:
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})()]; break;
+}]; break;
       default: throw new \Exception("Unknown thunk " . $id);
     }
     $GLOBALS[$id] = $v;
@@ -125,8 +123,10 @@ function Control_Bind_Bind__dollar__Dict($x) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = $x;
-    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  $__res = $x;
+  goto __end;;
+  __end:
+  return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Control_Bind_Bind__dollar__Dict'] = __NAMESPACE__ . '\\Control_Bind_Bind__dollar__Dict';
 
@@ -137,8 +137,10 @@ function Control_Bind_Discard__dollar__Dict($x) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = $x;
-    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  $__res = $x;
+  goto __end;;
+  __end:
+  return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Control_Bind_Discard__dollar__Dict'] = __NAMESPACE__ . '\\Control_Bind_Discard__dollar__Dict';
 
@@ -149,17 +151,16 @@ function Control_Bind_discard($dict) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-  $__body = function($dict) {
-    $__case_0 = $dict;
-    if (true) {
+  $__case_0 = $dict;
+  if (true) {
 $v = $__case_0;
-return ($v)->discard;
+$__res = ($v)->discard;
+goto __end;;
 } else {
 throw new \Exception("Pattern match failure");
 };
-  };
-    $__res = $__body($dict);
-    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  __end:
+  return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Control_Bind_discard'] = __NAMESPACE__ . '\\Control_Bind_discard';
 
@@ -170,17 +171,16 @@ function Control_Bind_bind($dict) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-  $__body = function($dict) {
-    $__case_0 = $dict;
-    if (true) {
+  $__case_0 = $dict;
+  if (true) {
 $v = $__case_0;
-return ($v)->bind;
+$__res = ($v)->bind;
+goto __end;;
 } else {
 throw new \Exception("Pattern match failure");
 };
-  };
-    $__res = $__body($dict);
-    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  __end:
+  return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Control_Bind_bind'] = __NAMESPACE__ . '\\Control_Bind_bind';
 

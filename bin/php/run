@@ -9,8 +9,6 @@ ln -s bak/php/spago .spago
 ln -s bak/php/spago.yaml spago.yaml
 touch bak/php/spago.lock && ln -s bak/php/spago.lock spago.lock
 
-# Note: phpurs is expected to be installed globally via `npm link`
-echo "Compiling via phpurs (expect this to fail if features are missing)..."
 npx spago build --backend-args "--main App --ffi bak/php/ffi" || echo "Compilation failed, but that's expected for now!"
 
 echo "=== Native PHP ==="

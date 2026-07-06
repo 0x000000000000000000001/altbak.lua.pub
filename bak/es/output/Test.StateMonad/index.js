@@ -5,7 +5,7 @@ const runState = v => s => v(s);
 const put = s => v => ({val: undefined, state: s});
 const pureState = a => s => ({val: a, state: s});
 const $$get = s => ({val: s, state: s});
-const describe = /* #__PURE__ */ Effect$dConsole.log("State Monad (12M Binds, 6k Stack Depth):");
+const describe = /* #__PURE__ */ Effect$dConsole.log("State Monad (1.2k Binds, 60 Stack Depth):");
 const bindState = v => g => s => {
   const r1 = v(s);
   return g(r1.val)(r1.state);

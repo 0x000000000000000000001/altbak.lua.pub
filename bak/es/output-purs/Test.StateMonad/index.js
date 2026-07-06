@@ -32,7 +32,7 @@ var get = function (s) {
         state: s
     };
 };
-var describe = /* #__PURE__ */ Effect_Console.log("State Monad (12M Binds, 6k Stack Depth):");
+var describe = /* #__PURE__ */ Effect_Console.log("State Monad (1.2k Binds, 60 Stack Depth):");
 var bindState = function (v) {
     return function (g) {
         return function (s) {

@@ -2,6 +2,7 @@
 
 namespace Test\Fib;
 
+require_once __DIR__ . '/../Data.Function/index.php';
 require_once __DIR__ . '/../Data.Ring/index.php';
 require_once __DIR__ . '/../Data.Semiring/index.php';
 require_once __DIR__ . '/../Data.Show/index.php';
@@ -93,7 +94,7 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
       case 'Test_Fib_add': $v = ($GLOBALS['Data_Semiring_intAdd'] ?? \Data\Semiring\phpurs_eval_thunk('Data_Semiring_intAdd')); break;
       case 'Test_Fib_sub': $v = ($GLOBALS['Data_Ring_intSub'] ?? \Data\Ring\phpurs_eval_thunk('Data_Ring_intSub')); break;
       case 'Test_Fib_describe': $v = (($GLOBALS['Effect_Console_log'] ?? \Effect\Console\phpurs_eval_thunk('Effect_Console_log')))("Fibonacci:"); break;
-      case 'Test_Fib_act': $v = (($GLOBALS['Effect_Console_logShow'] ?? \Effect\Console\phpurs_eval_thunk('Effect_Console_logShow')))(($GLOBALS['Data_Show_showInt'] ?? \Data\Show\phpurs_eval_thunk('Data_Show_showInt')), (($GLOBALS['Test_Fib_fib'] ?? \Test\Fib\phpurs_eval_thunk('Test_Fib_fib')))(10)); break;
+      case 'Test_Fib_act': $v = \Effect\Console\Effect_Console_logShow(($GLOBALS['Data_Show_showInt'] ?? \Data\Show\phpurs_eval_thunk('Data_Show_showInt')), \Test\Fib\Test_Fib_fib(10)); break;
       default: throw new \Exception("Unknown thunk " . $id);
     }
     $GLOBALS[$id] = $v;
@@ -112,23 +113,28 @@ function Test_Fib_fib($v) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-while (true) {
+  while (true) {
 $__case_0 = $v;
 switch ($__case_0) {
 case 0:
-return 0;
+$__res = 0;
+goto __end;;
 break;
 case 1:
-return 1;
+$__res = 1;
+goto __end;;
 break;
 default:
 $n = $__case_0;
-return ((($GLOBALS['Test_Fib_fib'] ?? \Test\Fib\phpurs_eval_thunk('Test_Fib_fib')))(($n - 1)) + (($GLOBALS['Test_Fib_fib'] ?? \Test\Fib\phpurs_eval_thunk('Test_Fib_fib')))(($n - 2)));
+$__res = (\Test\Fib\Test_Fib_fib(($n - 1)) + \Test\Fib\Test_Fib_fib(($n - 2)));
+goto __end;;
 break;
 };
 };
-    $__res = null;
-    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  $__res = null;
+  goto __end;;
+  __end:
+  return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Test_Fib_fib'] = __NAMESPACE__ . '\\Test_Fib_fib';
 

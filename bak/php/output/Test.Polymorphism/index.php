@@ -2,6 +2,7 @@
 
 namespace Test\Polymorphism;
 
+require_once __DIR__ . '/../Data.Function/index.php';
 require_once __DIR__ . '/../Data.Ring/index.php';
 require_once __DIR__ . '/../Data.Semiring/index.php';
 require_once __DIR__ . '/../Data.Show/index.php';
@@ -92,20 +93,22 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     switch ($id) {
       case 'Test_Polymorphism_sub': $v = ($GLOBALS['Data_Ring_intSub'] ?? \Data\Ring\phpurs_eval_thunk('Data_Ring_intSub')); break;
       case 'Test_Polymorphism_add': $v = ($GLOBALS['Data_Semiring_intAdd'] ?? \Data\Semiring\phpurs_eval_thunk('Data_Semiring_intAdd')); break;
-      case 'Test_Polymorphism_intMonoidish': $v = (object)["mempty_" => 1, "mappend_" => (function() {
+      case 'Test_Polymorphism_intMonoidish': $v = (object)["mempty_" => 1, "mappend_" => (function() use (&$__fn) {
   $__fn = function($x, $y = null) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 2) {
     if ($__num === 1) return function($y) use ($x, &$__fn) { return $__fn($x, $y); };
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
-    $__res = ($x + $y);
+  $__res = ($x + $y);
+  goto __end;;
+  __end:
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
 })()]; break;
       case 'Test_Polymorphism_describe': $v = (($GLOBALS['Effect_Console_log'] ?? \Effect\Console\phpurs_eval_thunk('Effect_Console_log')))("Polymorphism (10M Type Class Dict Lookups):"); break;
-      case 'Test_Polymorphism_act': $v = (($GLOBALS['Effect_Console_logShow'] ?? \Effect\Console\phpurs_eval_thunk('Effect_Console_logShow')))(($GLOBALS['Data_Show_showInt'] ?? \Data\Show\phpurs_eval_thunk('Data_Show_showInt')), (($GLOBALS['Test_Polymorphism_polyLoop'] ?? \Test\Polymorphism\phpurs_eval_thunk('Test_Polymorphism_polyLoop')))(($GLOBALS['Test_Polymorphism_intMonoidish'] ?? \Test\Polymorphism\phpurs_eval_thunk('Test_Polymorphism_intMonoidish')), 10000000, 0)); break;
+      case 'Test_Polymorphism_act': $v = \Effect\Console\Effect_Console_logShow(($GLOBALS['Data_Show_showInt'] ?? \Data\Show\phpurs_eval_thunk('Data_Show_showInt')), \Test\Polymorphism\Test_Polymorphism_polyLoop(($GLOBALS['Test_Polymorphism_intMonoidish'] ?? \Test\Polymorphism\phpurs_eval_thunk('Test_Polymorphism_intMonoidish')), 10000000, 0)); break;
       default: throw new \Exception("Unknown thunk " . $id);
     }
     $GLOBALS[$id] = $v;
@@ -124,8 +127,10 @@ function Test_Polymorphism_Monoidish__dollar__Dict($x) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = $x;
-    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  $__res = $x;
+  goto __end;;
+  __end:
+  return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Test_Polymorphism_Monoidish__dollar__Dict'] = __NAMESPACE__ . '\\Test_Polymorphism_Monoidish__dollar__Dict';
 
@@ -136,17 +141,16 @@ function Test_Polymorphism_mempty_($dict) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-  $__body = function($dict) {
-    $__case_0 = $dict;
-    if (true) {
+  $__case_0 = $dict;
+  if (true) {
 $v = $__case_0;
-return ($v)->mempty_;
+$__res = ($v)->mempty_;
+goto __end;;
 } else {
 throw new \Exception("Pattern match failure");
 };
-  };
-    $__res = $__body($dict);
-    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  __end:
+  return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Test_Polymorphism_mempty_'] = __NAMESPACE__ . '\\Test_Polymorphism_mempty_';
 
@@ -157,17 +161,16 @@ function Test_Polymorphism_mappend_($dict) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-  $__body = function($dict) {
-    $__case_0 = $dict;
-    if (true) {
+  $__case_0 = $dict;
+  if (true) {
 $v = $__case_0;
-return ($v)->mappend_;
+$__res = ($v)->mappend_;
+goto __end;;
 } else {
 throw new \Exception("Pattern match failure");
 };
-  };
-    $__res = $__body($dict);
-    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  __end:
+  return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Test_Polymorphism_mappend_'] = __NAMESPACE__ . '\\Test_Polymorphism_mappend_';
 
@@ -178,29 +181,30 @@ function Test_Polymorphism_polyLoop($dictMonoidish) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$mappend_1 = ($dictMonoidish)->mappend_;
-$mempty_1 = ($dictMonoidish)->mempty_;
-    $__res = (function() use ($mappend_1, $mempty_1) {
+  $mappend_1 = ($dictMonoidish)->mappend_;
+  $mempty_1 = ($dictMonoidish)->mempty_;
+  $__res = (function() use ($mappend_1, $mempty_1, &$__fn) {
   $__fn = function($n_init, $acc_init = null) use ($mappend_1, $mempty_1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 2) {
     if ($__num === 1) return function($acc_init) use ($n_init, &$__fn) { return $__fn($n_init, $acc_init); };
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
-$go = (function() use (&$go, $mappend_1, $mempty_1) {
+  $go = (function() use (&$go, $mappend_1, $mempty_1, &$__fn) {
   $__fn = function($v, $v1 = null) use (&$go, $mappend_1, $mempty_1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 2) {
     if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
-while (true) {
+  while (true) {
 $__case_0 = $v;
 $__case_1 = $v1;
 switch ($__case_0) {
 case 0:
 $acc = $__case_1;
-return $acc;
+$__res = $acc;
+goto __end;;
 break;
 default:
 $n = $__case_0;
@@ -213,17 +217,23 @@ continue 2;
 break;
 };
 };
-    $__res = null;
+  $__res = null;
+  goto __end;;
+  __end:
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
 })();
-    $__res = ($go)($n_init, $acc_init);
+  $__res = ($go)($n_init, $acc_init);
+  goto __end;;
+  __end:
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
 })();
-    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  goto __end;;
+  __end:
+  return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Test_Polymorphism_polyLoop'] = __NAMESPACE__ . '\\Test_Polymorphism_polyLoop';
 

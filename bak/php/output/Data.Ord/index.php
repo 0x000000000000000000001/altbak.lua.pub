@@ -90,18 +90,22 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Data_Ord_ordInt': $v = (object)["compare" => (($GLOBALS['Data_Ord_ordIntImpl'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordIntImpl')))(($GLOBALS['__phpurs_data0_LT'] ??= new Phpurs_Data0("LT")), ($GLOBALS['__phpurs_data0_EQ'] ??= new Phpurs_Data0("EQ")), ($GLOBALS['__phpurs_data0_GT'] ??= new Phpurs_Data0("GT"))), "Eq0" => (function() {
-  $__fn = function($__dollar____unused) use (&$__fn) {
+      case 'Data_Ord_ordInt': $v = (object)["compare" => (($GLOBALS['Data_Ord_ordIntImpl'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordIntImpl')))(($GLOBALS['__phpurs_data0_LT'] ??= new Phpurs_Data0("LT")), ($GLOBALS['__phpurs_data0_EQ'] ??= new Phpurs_Data0("EQ")), ($GLOBALS['__phpurs_data0_GT'] ??= new Phpurs_Data0("GT"))), "Eq0" => function($__dollar____unused) {
   $__num = func_num_args();
-  if ($__num < 1) {
-    return phpurs_curry_fallback($__fn, func_get_args(), 1);
-  }
-$__global_Data_Eq_eqInt = ($GLOBALS['Data_Eq_eqInt'] ?? \Data\Eq\phpurs_eval_thunk('Data_Eq_eqInt'));
-    $__res = $__global_Data_Eq_eqInt;
+  $__global_Data_Eq_eqInt = ($GLOBALS['Data_Eq_eqInt'] ?? \Data\Eq\phpurs_eval_thunk('Data_Eq_eqInt'));
+  $__res = $__global_Data_Eq_eqInt;
+  goto __end;;
+  __end:
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})()]; break;
+}]; break;
+      case 'Data_Ord_ordChar': $v = (object)["compare" => (($GLOBALS['Data_Ord_ordCharImpl'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordCharImpl')))(($GLOBALS['__phpurs_data0_LT'] ??= new Phpurs_Data0("LT")), ($GLOBALS['__phpurs_data0_EQ'] ??= new Phpurs_Data0("EQ")), ($GLOBALS['__phpurs_data0_GT'] ??= new Phpurs_Data0("GT"))), "Eq0" => function($__dollar____unused) {
+  $__num = func_num_args();
+  $__global_Data_Eq_eqChar = ($GLOBALS['Data_Eq_eqChar'] ?? \Data\Eq\phpurs_eval_thunk('Data_Eq_eqChar'));
+  $__res = $__global_Data_Eq_eqChar;
+  goto __end;;
+  __end:
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}]; break;
       default: throw new \Exception("Unknown thunk " . $id);
     }
     $GLOBALS[$id] = $v;
@@ -131,10 +135,13 @@ function Data_Ord_Ord__dollar__Dict($x) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = $x;
-    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  $__res = $x;
+  goto __end;;
+  __end:
+  return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Ord_Ord__dollar__Dict'] = __NAMESPACE__ . '\\Data_Ord_Ord__dollar__Dict';
+
 
 
 // Data_Ord_compare
@@ -144,17 +151,16 @@ function Data_Ord_compare($dict) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-  $__body = function($dict) {
-    $__case_0 = $dict;
-    if (true) {
+  $__case_0 = $dict;
+  if (true) {
 $v = $__case_0;
-return ($v)->compare;
+$__res = ($v)->compare;
+goto __end;;
 } else {
 throw new \Exception("Pattern match failure");
 };
-  };
-    $__res = $__body($dict);
-    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  __end:
+  return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Ord_compare'] = __NAMESPACE__ . '\\Data_Ord_compare';
 
@@ -165,32 +171,34 @@ function Data_Ord_greaterThan($dictOrd) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$compare3 = ($dictOrd)->compare;
-    $__res = (function() use ($compare3) {
-  $__body = function($a1, $a2) use ($compare3) {
-    $v = ($compare3)($a1, $a2);
-    $__case_0 = $v;
-    switch (($__case_0)->tag) {
-case "GT":
-return true;
-break;
-default:
-return false;
-break;
-};
-  };
-  $__fn = function($a1, $a2 = null) use ($compare3, $__body, &$__fn) {
+  $compare3 = ($dictOrd)->compare;
+  $__res = (function() use ($compare3, &$__fn) {
+  $__fn = function($a1, $a2 = null) use ($compare3, &$__fn) {
   $__num = func_num_args();
   if ($__num < 2) {
     if ($__num === 1) return function($a2) use ($a1, &$__fn) { return $__fn($a1, $a2); };
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
-    $__res = $__body($a1, $a2);
+  $v = ($compare3)($a1, $a2);
+  $__case_0 = $v;
+  switch (($__case_0)->tag) {
+case "GT":
+$__res = true;
+goto __end;;
+break;
+default:
+$__res = false;
+goto __end;;
+break;
+};
+  __end:
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
 })();
-    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  goto __end;;
+  __end:
+  return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Ord_greaterThan'] = __NAMESPACE__ . '\\Data_Ord_greaterThan';
 
@@ -201,32 +209,72 @@ function Data_Ord_lessThan($dictOrd) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$compare3 = ($dictOrd)->compare;
-    $__res = (function() use ($compare3) {
-  $__body = function($a1, $a2) use ($compare3) {
-    $v = ($compare3)($a1, $a2);
-    $__case_0 = $v;
-    switch (($__case_0)->tag) {
-case "LT":
-return true;
-break;
-default:
-return false;
-break;
-};
-  };
-  $__fn = function($a1, $a2 = null) use ($compare3, $__body, &$__fn) {
+  $compare3 = ($dictOrd)->compare;
+  $__res = (function() use ($compare3, &$__fn) {
+  $__fn = function($a1, $a2 = null) use ($compare3, &$__fn) {
   $__num = func_num_args();
   if ($__num < 2) {
     if ($__num === 1) return function($a2) use ($a1, &$__fn) { return $__fn($a1, $a2); };
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
-    $__res = $__body($a1, $a2);
+  $v = ($compare3)($a1, $a2);
+  $__case_0 = $v;
+  switch (($__case_0)->tag) {
+case "LT":
+$__res = true;
+goto __end;;
+break;
+default:
+$__res = false;
+goto __end;;
+break;
+};
+  __end:
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
 })();
-    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  goto __end;;
+  __end:
+  return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Ord_lessThan'] = __NAMESPACE__ . '\\Data_Ord_lessThan';
+
+// Data_Ord_lessThanOrEq
+function Data_Ord_lessThanOrEq($dictOrd) {
+  $__num = func_num_args();
+  $__fn = __NAMESPACE__ . '\\' . 'Data_Ord_lessThanOrEq';
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+  $compare3 = ($dictOrd)->compare;
+  $__res = (function() use ($compare3, &$__fn) {
+  $__fn = function($a1, $a2 = null) use ($compare3, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($a2) use ($a1, &$__fn) { return $__fn($a1, $a2); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+  $v = ($compare3)($a1, $a2);
+  $__case_0 = $v;
+  switch (($__case_0)->tag) {
+case "GT":
+$__res = false;
+goto __end;;
+break;
+default:
+$__res = true;
+goto __end;;
+break;
+};
+  __end:
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+  goto __end;;
+  __end:
+  return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+}
+$GLOBALS['Data_Ord_lessThanOrEq'] = __NAMESPACE__ . '\\Data_Ord_lessThanOrEq';
 

@@ -96,7 +96,7 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
       case 'Test_Records_mod': $v = ($GLOBALS['Data_EuclideanRing_intMod'] ?? \Data\EuclideanRing\phpurs_eval_thunk('Data_EuclideanRing_intMod')); break;
       case 'Test_Records_initial': $v = (object)["a" => 0, "b" => (object)["c" => 0, "d" => (object)["e" => 0, "f" => 0]]]; break;
       case 'Test_Records_describe': $v = (($GLOBALS['Effect_Console_log'] ?? \Effect\Console\phpurs_eval_thunk('Effect_Console_log')))("Deep Record Updates (10k iterations):"); break;
-      case 'Test_Records_act': $v = (($GLOBALS['Effect_Console_logShow'] ?? \Effect\Console\phpurs_eval_thunk('Effect_Console_logShow')))(($GLOBALS['Data_Show_showInt'] ?? \Data\Show\phpurs_eval_thunk('Data_Show_showInt')), ((((($GLOBALS['Test_Records_updateRec'] ?? \Test\Records\phpurs_eval_thunk('Test_Records_updateRec')))(10000, ($GLOBALS['Test_Records_initial'] ?? \Test\Records\phpurs_eval_thunk('Test_Records_initial'))))->b)->d)->f); break;
+      case 'Test_Records_act': $v = \Effect\Console\Effect_Console_logShow(($GLOBALS['Data_Show_showInt'] ?? \Data\Show\phpurs_eval_thunk('Data_Show_showInt')), (((\Test\Records\Test_Records_updateRec(10000, ($GLOBALS['Test_Records_initial'] ?? \Test\Records\phpurs_eval_thunk('Test_Records_initial'))))->b)->d)->f); break;
       default: throw new \Exception("Unknown thunk " . $id);
     }
     $GLOBALS[$id] = $v;
@@ -117,14 +117,15 @@ function Test_Records_updateRec($v, $v1 = null) {
     if ($__num === 1) return function($v1) use ($v, $__fn) { return $__fn($v, $v1); };
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
-$__global_Data_EuclideanRing_intMod = ($GLOBALS['Data_EuclideanRing_intMod'] ?? \Data\EuclideanRing\phpurs_eval_thunk('Data_EuclideanRing_intMod'));
-while (true) {
+  $__global_Data_EuclideanRing_intMod = ($GLOBALS['Data_EuclideanRing_intMod'] ?? \Data\EuclideanRing\phpurs_eval_thunk('Data_EuclideanRing_intMod'));
+  while (true) {
 $__case_0 = $v;
 $__case_1 = $v1;
 switch ($__case_0) {
 case 0:
 $r = $__case_1;
-return $r;
+$__res = $r;
+goto __end;;
 break;
 default:
 $n = $__case_0;
@@ -149,8 +150,10 @@ continue 2;
 break;
 };
 };
-    $__res = null;
-    return 2 < $__num ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  $__res = null;
+  goto __end;;
+  __end:
+  return 2 < $__num ? $__res(...array_slice(func_get_args(), 2)) : $__res;
 }
 $GLOBALS['Test_Records_updateRec'] = __NAMESPACE__ . '\\Test_Records_updateRec';
 

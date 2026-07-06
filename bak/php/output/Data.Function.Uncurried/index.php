@@ -114,27 +114,4 @@ $Data_Function_Uncurried_runFn3 = function($fn, $a = null, $b = null, $c = null)
     return $fn($a, $b, $c);
 };
 
-// Data_Function_Uncurried_runFn1
-function Data_Function_Uncurried_runFn1($f) {
-  $__num = func_num_args();
-  $__fn = __NAMESPACE__ . '\\' . 'Data_Function_Uncurried_runFn1';
-  if ($__num < 1) {
-    return phpurs_curry_fallback($__fn, func_get_args(), 1);
-  }
-    $__res = $f;
-    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-}
-$GLOBALS['Data_Function_Uncurried_runFn1'] = __NAMESPACE__ . '\\Data_Function_Uncurried_runFn1';
-
-// Data_Function_Uncurried_mkFn1
-function Data_Function_Uncurried_mkFn1($f) {
-  $__num = func_num_args();
-  $__fn = __NAMESPACE__ . '\\' . 'Data_Function_Uncurried_mkFn1';
-  if ($__num < 1) {
-    return phpurs_curry_fallback($__fn, func_get_args(), 1);
-  }
-    $__res = $f;
-    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-}
-$GLOBALS['Data_Function_Uncurried_mkFn1'] = __NAMESPACE__ . '\\Data_Function_Uncurried_mkFn1';
 

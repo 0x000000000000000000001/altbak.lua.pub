@@ -2,6 +2,7 @@
 
 namespace Test\Ackermann;
 
+require_once __DIR__ . '/../Data.Function/index.php';
 require_once __DIR__ . '/../Data.Ring/index.php';
 require_once __DIR__ . '/../Data.Semiring/index.php';
 require_once __DIR__ . '/../Data.Show/index.php';
@@ -93,7 +94,7 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
       case 'Test_Ackermann_add': $v = ($GLOBALS['Data_Semiring_intAdd'] ?? \Data\Semiring\phpurs_eval_thunk('Data_Semiring_intAdd')); break;
       case 'Test_Ackermann_sub': $v = ($GLOBALS['Data_Ring_intSub'] ?? \Data\Ring\phpurs_eval_thunk('Data_Ring_intSub')); break;
       case 'Test_Ackermann_describe': $v = (($GLOBALS['Effect_Console_log'] ?? \Effect\Console\phpurs_eval_thunk('Effect_Console_log')))("Ackermann (3, 4):"); break;
-      case 'Test_Ackermann_act': $v = (($GLOBALS['Effect_Console_logShow'] ?? \Effect\Console\phpurs_eval_thunk('Effect_Console_logShow')))(($GLOBALS['Data_Show_showInt'] ?? \Data\Show\phpurs_eval_thunk('Data_Show_showInt')), (($GLOBALS['Test_Ackermann_ackermann'] ?? \Test\Ackermann\phpurs_eval_thunk('Test_Ackermann_ackermann')))(3, 4)); break;
+      case 'Test_Ackermann_act': $v = \Effect\Console\Effect_Console_logShow(($GLOBALS['Data_Show_showInt'] ?? \Data\Show\phpurs_eval_thunk('Data_Show_showInt')), \Test\Ackermann\Test_Ackermann_ackermann(3, 4)); break;
       default: throw new \Exception("Unknown thunk " . $id);
     }
     $GLOBALS[$id] = $v;
@@ -114,12 +115,13 @@ function Test_Ackermann_ackermann($v, $v1 = null) {
     if ($__num === 1) return function($v1) use ($v, $__fn) { return $__fn($v, $v1); };
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
-while (true) {
+  while (true) {
 $__case_0 = $v;
 $__case_1 = $v1;
 if (($__case_0 === 0)) {
 $n = $__case_1;
-return ($n + 1);
+$__res = ($n + 1);
+goto __end;;
 } else {
 switch ($__case_1) {
 case 0:
@@ -134,7 +136,7 @@ default:
 $m = $__case_0;
 $n = $__case_1;
 $__tco_tmp_0 = ($m - 1);
-$__tco_tmp_1 = (($GLOBALS['Test_Ackermann_ackermann'] ?? \Test\Ackermann\phpurs_eval_thunk('Test_Ackermann_ackermann')))($m, ($n - 1));
+$__tco_tmp_1 = \Test\Ackermann\Test_Ackermann_ackermann($m, ($n - 1));
 $v = $__tco_tmp_0;
 $v1 = $__tco_tmp_1;
 continue 2;
@@ -142,8 +144,10 @@ break;
 };
 };
 };
-    $__res = null;
-    return 2 < $__num ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  $__res = null;
+  goto __end;;
+  __end:
+  return 2 < $__num ? $__res(...array_slice(func_get_args(), 2)) : $__res;
 }
 $GLOBALS['Test_Ackermann_ackermann'] = __NAMESPACE__ . '\\Test_Ackermann_ackermann';
 

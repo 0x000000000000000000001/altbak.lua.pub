@@ -85,7 +85,7 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Partial_crashWith1': $v = (($GLOBALS['Partial_crashWith'] ?? \Partial\phpurs_eval_thunk('Partial_crashWith')))(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))); break;
+
       default: throw new \Exception("Unknown thunk " . $id);
     }
     $GLOBALS[$id] = $v;
@@ -102,23 +102,11 @@ function Partial_crashWith($__dollar____unused) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Partial__crashWith = ($GLOBALS['Partial__crashWith'] ?? \Partial\phpurs_eval_thunk('Partial__crashWith'));
-    $__res = $__global_Partial__crashWith;
-    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  $__global_Partial__crashWith = ($GLOBALS['Partial__crashWith'] ?? \Partial\phpurs_eval_thunk('Partial__crashWith'));
+  $__res = $__global_Partial__crashWith;
+  goto __end;;
+  __end:
+  return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Partial_crashWith'] = __NAMESPACE__ . '\\Partial_crashWith';
-
-
-// Partial_crash
-function Partial_crash($__dollar____unused) {
-  $__num = func_num_args();
-  $__fn = __NAMESPACE__ . '\\' . 'Partial_crash';
-  if ($__num < 1) {
-    return phpurs_curry_fallback($__fn, func_get_args(), 1);
-  }
-$__global_Partial_crashWith1 = ($GLOBALS['Partial_crashWith1'] ?? \Partial\phpurs_eval_thunk('Partial_crashWith1'));
-    $__res = ($__global_Partial_crashWith1)("Partial.crash: partial function");
-    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-}
-$GLOBALS['Partial_crash'] = __NAMESPACE__ . '\\Partial_crash';
 

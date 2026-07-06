@@ -107,8 +107,10 @@ function Control_Monad_Monad__dollar__Dict($x) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = $x;
-    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  $__res = $x;
+  goto __end;;
+  __end:
+  return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Control_Monad_Monad__dollar__Dict'] = __NAMESPACE__ . '\\Control_Monad_Monad__dollar__Dict';
 
@@ -119,42 +121,38 @@ function Control_Monad_ap($dictMonad) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$bind = ((($dictMonad)->Bind1)($__global_Prim_undefined))->bind;
-$pure = ((($dictMonad)->Applicative0)($__global_Prim_undefined))->pure;
-    $__res = (function() use ($bind, $pure) {
+  $__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
+  $bind = ((($dictMonad)->Bind1)($__global_Prim_undefined))->bind;
+  $pure = ((($dictMonad)->Applicative0)($__global_Prim_undefined))->pure;
+  $__res = (function() use ($bind, $pure, &$__fn) {
   $__fn = function($f, $a = null) use ($bind, $pure, &$__fn) {
   $__num = func_num_args();
   if ($__num < 2) {
     if ($__num === 1) return function($a) use ($f, &$__fn) { return $__fn($f, $a); };
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
-    $__res = ($bind)($f, (function() use ($bind, $a, $pure) {
-  $__fn = function($f__prime__) use ($bind, $a, $pure, &$__fn) {
+  $__res = ($bind)($f, function($f__prime__) use ($bind, $a, $pure) {
   $__num = func_num_args();
-  if ($__num < 1) {
-    return phpurs_curry_fallback($__fn, func_get_args(), 1);
-  }
-    $__res = ($bind)($a, (function() use ($pure, $f__prime__) {
-  $__fn = function($a__prime__) use ($pure, $f__prime__, &$__fn) {
+  $__res = ($bind)($a, function($a__prime__) use ($pure, $f__prime__) {
   $__num = func_num_args();
-  if ($__num < 1) {
-    return phpurs_curry_fallback($__fn, func_get_args(), 1);
-  }
-    $__res = ($pure)(($f__prime__)($a__prime__));
+  $__res = ($pure)(($f__prime__)($a__prime__));
+  goto __end;;
+  __end:
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})());
+});
+  goto __end;;
+  __end:
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})());
+});
+  goto __end;;
+  __end:
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
 })();
-    return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  goto __end;;
+  __end:
+  return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Control_Monad_ap'] = __NAMESPACE__ . '\\Control_Monad_ap';
 
