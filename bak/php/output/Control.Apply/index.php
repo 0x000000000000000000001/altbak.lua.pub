@@ -3,7 +3,6 @@
 namespace Control\Apply;
 
 require_once __DIR__ . '/../Control.Apply/index.php';
-require_once __DIR__ . '/../Data.Function/index.php';
 require_once __DIR__ . '/../Data.Functor/index.php';
 
 if (!class_exists(__NAMESPACE__ . '\\Phpurs_Data0')) {

@@ -4,7 +4,6 @@ namespace Data\Ordering;
 
 require_once __DIR__ . '/../Data.Eq/index.php';
 require_once __DIR__ . '/../Data.Ordering/index.php';
-require_once __DIR__ . '/../Data.Semigroup/index.php';
 require_once __DIR__ . '/../Data.Show/index.php';
 
 if (!class_exists(__NAMESPACE__ . '\\Phpurs_Data0')) {

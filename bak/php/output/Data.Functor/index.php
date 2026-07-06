@@ -2,8 +2,6 @@
 
 namespace Data\Functor;
 
-require_once __DIR__ . '/../Control.Semigroupoid/index.php';
-require_once __DIR__ . '/../Data.Function/index.php';
 require_once __DIR__ . '/../Data.Functor/index.php';
 require_once __DIR__ . '/../Data.Unit/index.php';
 
@@ -120,40 +118,4 @@ function Data_Functor_Functor__dollar__Dict($x) {
   return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Functor_Functor__dollar__Dict'] = __NAMESPACE__ . '\\Data_Functor_Functor__dollar__Dict';
-
-// Data_Functor_map
-function Data_Functor_map($dict) {
-  $__num = func_num_args();
-  $__fn = __NAMESPACE__ . '\\' . 'Data_Functor_map';
-  if ($__num < 1) {
-    return phpurs_curry_fallback($__fn, func_get_args(), 1);
-  }
-  $__case_0 = $dict;
-  if (true) {
-$v = $__case_0;
-$__res = ($v)->map;
-goto __end;;
-} else {
-throw new \Exception("Pattern match failure");
-};
-  __end:
-  return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-}
-$GLOBALS['Data_Functor_map'] = __NAMESPACE__ . '\\Data_Functor_map';
-
-// Data_Functor_void
-function Data_Functor_void($dictFunctor) {
-  $__num = func_num_args();
-  $__fn = __NAMESPACE__ . '\\' . 'Data_Functor_void';
-  if ($__num < 1) {
-    return phpurs_curry_fallback($__fn, func_get_args(), 1);
-  }
-  $__global_Data_Function_const = ($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const'));
-  $__global_Data_Unit_unit = ($GLOBALS['Data_Unit_unit'] ?? \Data\Unit\phpurs_eval_thunk('Data_Unit_unit'));
-  $__res = (($dictFunctor)->map)(($__global_Data_Function_const)($__global_Data_Unit_unit));
-  goto __end;;
-  __end:
-  return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-}
-$GLOBALS['Data_Functor_void'] = __NAMESPACE__ . '\\Data_Functor_void';
 

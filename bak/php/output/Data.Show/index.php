@@ -2,7 +2,6 @@
 
 namespace Data\Show;
 
-require_once __DIR__ . '/../Data.Semigroup/index.php';
 require_once __DIR__ . '/../Data.Show/index.php';
 require_once __DIR__ . '/../Data.Unit/index.php';
 

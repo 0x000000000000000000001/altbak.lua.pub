@@ -3,7 +3,6 @@
 namespace Data\Eq;
 
 require_once __DIR__ . '/../Data.Eq/index.php';
-require_once __DIR__ . '/../Data.HeytingAlgebra/index.php';
 require_once __DIR__ . '/../Data.Unit/index.php';
 
 if (!class_exists(__NAMESPACE__ . '\\Phpurs_Data0')) {
@@ -88,7 +87,6 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
       case 'Data_Eq_eqInt': $v = (object)["eq" => ($GLOBALS['Data_Eq_eqIntImpl'] ?? \Data\Eq\phpurs_eval_thunk('Data_Eq_eqIntImpl'))]; break;
-      case 'Data_Eq_eqChar': $v = (object)["eq" => ($GLOBALS['Data_Eq_eqCharImpl'] ?? \Data\Eq\phpurs_eval_thunk('Data_Eq_eqCharImpl'))]; break;
       case 'Data_Eq_eqBoolean': $v = (object)["eq" => ($GLOBALS['Data_Eq_eqBooleanImpl'] ?? \Data\Eq\phpurs_eval_thunk('Data_Eq_eqBooleanImpl'))]; break;
       case 'Data_Eq_eq2': $v = ($GLOBALS['Data_Eq_eqBooleanImpl'] ?? \Data\Eq\phpurs_eval_thunk('Data_Eq_eqBooleanImpl')); break;
       default: throw new \Exception("Unknown thunk " . $id);
@@ -126,7 +124,6 @@ function Data_Eq_Eq__dollar__Dict($x) {
   return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Eq_Eq__dollar__Dict'] = __NAMESPACE__ . '\\Data_Eq_Eq__dollar__Dict';
-
 
 
 

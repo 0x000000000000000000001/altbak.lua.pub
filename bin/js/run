@@ -8,19 +8,7 @@ ln -s bak/js/output output
 ln -s bak/js/spago .spago
 ln -s bak/js/spago.yaml spago.yaml
 touch bak/js/spago.lock && ln -s bak/js/spago.lock spago.lock
-
-ENTRY_POINT="App"
-
-if [ "$1" == "--x" ]; then
-  ENTRY_POINT="AppX"
-  # Temporarily inject extended tests
-  cp -r srx/Test/* src/Test/
-  cp srx/AppX.purs src/
-  trap "rm -rf src/Test/STArray.purs src/Test/AffOperations.purs src/Test/StringOps.purs src/Test/FileOps src/AppX.purs" EXIT
-fi
-
-export PATH="$PWD/bak/js/node_modules/.bin:$PATH"
-spago build > /dev/null 2>&1
+npx spago build > /dev/null 2>&1
 
 echo "=== Native Node V8 ==="
-time node -e "import('./output/' + '$ENTRY_POINT' + '/index.js').then(m => m.main())"
+time node -e "import('./output/App/index.js').then(m => m.main())"
