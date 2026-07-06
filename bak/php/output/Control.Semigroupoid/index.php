@@ -153,7 +153,15 @@ function Control_Semigroupoid_composeFlipped($dictSemigroupoid) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$compose1 = ($dictSemigroupoid)->compose;
+$__case_0 = $dictSemigroupoid;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compose;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compose1 = $__case_res_0;
     $__res = (function() use ($compose1) {
   $__fn = function($f, $g = null) use ($compose1, &$__fn) {
   $__num = func_num_args();

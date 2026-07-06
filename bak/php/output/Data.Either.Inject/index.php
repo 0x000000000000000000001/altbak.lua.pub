@@ -91,8 +91,27 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Data_Either_Inject_compose': $v = (($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn')))->compose; break;
-      case 'Data_Either_Inject_injectReflexive': $v = (object)["inj" => (($GLOBALS['Control_Category_categoryFn'] ?? \Control\Category\phpurs_eval_thunk('Control_Category_categoryFn')))->identity, "prj" => (function() {
+      case 'Data_Either_Inject_compose': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compose;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Either_Inject_injectReflexive': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Category_categoryFn'] ?? \Control\Category\phpurs_eval_thunk('Control_Category_categoryFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->identity;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return (object)["inj" => $__case_res_0, "prj" => (function() {
   $__fn = function($value0) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
@@ -102,7 +121,8 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})()]; break;
+})()];
+})(); break;
       case 'Data_Either_Inject_injectLeft': $v = (object)["inj" => (function() {
   $__fn = function($value0) use (&$__fn) {
   $__num = func_num_args();
@@ -200,6 +220,22 @@ function Data_Either_Inject_injectRight($dictInject) {
 $__global_Data_Either_Inject_compose = ($GLOBALS['Data_Either_Inject_compose'] ?? \Data\Either\Inject\phpurs_eval_thunk('Data_Either_Inject_compose'));
 $__global_Data_Either_either = ($GLOBALS['Data_Either_either'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_either'));
 $__global_Data_Function_const = ($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const'));
+$__case_0 = $dictInject;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->inj;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$__case_0 = $dictInject;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->prj;
+} else {
+throw new \Exception("Pattern match failure");
+};
     $__res = (object)["inj" => ($__global_Data_Either_Inject_compose)((function() {
   $__fn = function($value0) use (&$__fn) {
   $__num = func_num_args();
@@ -210,7 +246,7 @@ $__global_Data_Function_const = ($GLOBALS['Data_Function_const'] ?? \Data\Functi
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})(), ($dictInject)->inj), "prj" => ($__global_Data_Either_either)(($__global_Data_Function_const)(($GLOBALS['__phpurs_data0_Nothing'] ??= new Phpurs_Data0("Nothing"))), ($dictInject)->prj)];
+})(), $__case_res_0), "prj" => ($__global_Data_Either_either)(($__global_Data_Function_const)(($GLOBALS['__phpurs_data0_Nothing'] ??= new Phpurs_Data0("Nothing"))), $__case_res_1)];
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Either_Inject_injectRight'] = __NAMESPACE__ . '\\Data_Either_Inject_injectRight';

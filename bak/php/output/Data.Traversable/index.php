@@ -111,16 +111,43 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Data_Traversable_identity': $v = (($GLOBALS['Control_Category_categoryFn'] ?? \Control\Category\phpurs_eval_thunk('Control_Category_categoryFn')))->identity; break;
-      case 'Data_Traversable_compose': $v = (($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn')))->compose; break;
-      case 'Data_Traversable_traversableTuple': $v = (object)["traverse" => (function() {
-  $__fn = function($dictApplicative) use (&$__fn) {
+      case 'Data_Traversable_identity': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Category_categoryFn'] ?? \Control\Category\phpurs_eval_thunk('Control_Category_categoryFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->identity;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Traversable_compose': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compose;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Traversable_traversableTuple': $v = (object)["traverse" => (function() use ($dict) {
+  $__fn = function($dictApplicative) use ($dict, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$map = ((((($dictApplicative)->Apply0)($__global_Prim_undefined))->Functor0)($__global_Prim_undefined))->map;
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_0;
     $__res = (function() use ($map) {
   $__body = function($f, $v) use ($map) {
     $__case_0 = $f;
@@ -162,14 +189,21 @@ break;
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})(), "sequence" => (function() {
-  $__fn = function($dictApplicative) use (&$__fn) {
+})(), "sequence" => (function() use ($dict) {
+  $__fn = function($dictApplicative) use ($dict, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$map = ((((($dictApplicative)->Apply0)($__global_Prim_undefined))->Functor0)($__global_Prim_undefined))->map;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_1;
     $__res = (function() use ($map) {
   $__body = function($v) use ($map) {
     $__case_0 = $v;
@@ -231,15 +265,22 @@ $__global_Data_Foldable_foldableTuple = ($GLOBALS['Data_Foldable_foldableTuple']
   };
   return $__fn;
 })()]; break;
-      case 'Data_Traversable_traversableMultiplicative': $v = (object)["traverse" => (function() {
-  $__fn = function($dictApplicative) use (&$__fn) {
+      case 'Data_Traversable_traversableMultiplicative': $v = (object)["traverse" => (function() use ($dict) {
+  $__fn = function($dictApplicative) use ($dict, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Monoid_Multiplicative_Multiplicative = ($GLOBALS['Data_Monoid_Multiplicative_Multiplicative'] ?? \Data\Monoid\Multiplicative\phpurs_eval_thunk('Data_Monoid_Multiplicative_Multiplicative'));
-$map = ((((($dictApplicative)->Apply0)($__global_Prim_undefined))->Functor0)($__global_Prim_undefined))->map;
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_0;
     $__res = (function() use ($map, $__global_Data_Monoid_Multiplicative_Multiplicative) {
   $__body = function($f, $v) use ($map, $__global_Data_Monoid_Multiplicative_Multiplicative) {
     $__case_0 = $f;
@@ -266,15 +307,22 @@ throw new \Exception("Pattern match failure");
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})(), "sequence" => (function() {
-  $__fn = function($dictApplicative) use (&$__fn) {
+})(), "sequence" => (function() use ($dict) {
+  $__fn = function($dictApplicative) use ($dict, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Monoid_Multiplicative_Multiplicative = ($GLOBALS['Data_Monoid_Multiplicative_Multiplicative'] ?? \Data\Monoid\Multiplicative\phpurs_eval_thunk('Data_Monoid_Multiplicative_Multiplicative'));
-$map = ((((($dictApplicative)->Apply0)($__global_Prim_undefined))->Functor0)($__global_Prim_undefined))->map;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_1;
     $__res = (function() use ($map, $__global_Data_Monoid_Multiplicative_Multiplicative) {
   $__body = function($v) use ($map, $__global_Data_Monoid_Multiplicative_Multiplicative) {
     $__case_0 = $v;
@@ -321,15 +369,30 @@ $__global_Data_Foldable_foldableMultiplicative = ($GLOBALS['Data_Foldable_foldab
   };
   return $__fn;
 })()]; break;
-      case 'Data_Traversable_traversableMaybe': $v = (object)["traverse" => (function() {
-  $__fn = function($dictApplicative) use (&$__fn) {
+      case 'Data_Traversable_traversableMaybe': $v = (object)["traverse" => (function() use ($dict) {
+  $__fn = function($dictApplicative) use ($dict, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$pure = ($dictApplicative)->pure;
-$map = ((((($dictApplicative)->Apply0)($__global_Prim_undefined))->Functor0)($__global_Prim_undefined))->map;
+$__case_0 = $dictApplicative;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pure = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_1;
     $__res = (function() use ($pure, $map) {
   $__body = function($v, $v1) use ($pure, $map) {
     $__case_0 = $v;
@@ -372,15 +435,30 @@ break;
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})(), "sequence" => (function() {
-  $__fn = function($dictApplicative) use (&$__fn) {
+})(), "sequence" => (function() use ($dict) {
+  $__fn = function($dictApplicative) use ($dict, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$pure = ($dictApplicative)->pure;
-$map = ((((($dictApplicative)->Apply0)($__global_Prim_undefined))->Functor0)($__global_Prim_undefined))->map;
+$__case_0 = $dictApplicative;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pure = $__case_res_2;
+$__case_0 = $dict;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_3;
     $__res = (function() use ($pure, $map) {
   $__body = function($v) use ($pure, $map) {
     $__case_0 = $v;
@@ -443,16 +521,33 @@ $__global_Data_Foldable_foldableMaybe = ($GLOBALS['Data_Foldable_foldableMaybe']
   };
   return $__fn;
 })()]; break;
-      case 'Data_Traversable_traverse1': $v = (($GLOBALS['Data_Traversable_traversableMaybe'] ?? \Data\Traversable\phpurs_eval_thunk('Data_Traversable_traversableMaybe')))->traverse; break;
-      case 'Data_Traversable_traversableIdentity': $v = (object)["traverse" => (function() {
-  $__fn = function($dictApplicative) use (&$__fn) {
+      case 'Data_Traversable_traverse1': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Traversable_traversableMaybe'] ?? \Data\Traversable\phpurs_eval_thunk('Data_Traversable_traversableMaybe'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->traverse;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Traversable_traversableIdentity': $v = (object)["traverse" => (function() use ($dict) {
+  $__fn = function($dictApplicative) use ($dict, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Identity_Identity = ($GLOBALS['Data_Identity_Identity'] ?? \Data\Identity\phpurs_eval_thunk('Data_Identity_Identity'));
-$map = ((((($dictApplicative)->Apply0)($__global_Prim_undefined))->Functor0)($__global_Prim_undefined))->map;
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_0;
     $__res = (function() use ($map, $__global_Data_Identity_Identity) {
   $__body = function($f, $v) use ($map, $__global_Data_Identity_Identity) {
     $__case_0 = $f;
@@ -479,15 +574,22 @@ throw new \Exception("Pattern match failure");
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})(), "sequence" => (function() {
-  $__fn = function($dictApplicative) use (&$__fn) {
+})(), "sequence" => (function() use ($dict) {
+  $__fn = function($dictApplicative) use ($dict, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Identity_Identity = ($GLOBALS['Data_Identity_Identity'] ?? \Data\Identity\phpurs_eval_thunk('Data_Identity_Identity'));
-$map = ((((($dictApplicative)->Apply0)($__global_Prim_undefined))->Functor0)($__global_Prim_undefined))->map;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_1;
     $__res = (function() use ($map, $__global_Data_Identity_Identity) {
   $__body = function($v) use ($map, $__global_Data_Identity_Identity) {
     $__case_0 = $v;
@@ -534,15 +636,30 @@ $__global_Data_Foldable_foldableIdentity = ($GLOBALS['Data_Foldable_foldableIden
   };
   return $__fn;
 })()]; break;
-      case 'Data_Traversable_traversableEither': $v = (object)["traverse" => (function() {
-  $__fn = function($dictApplicative) use (&$__fn) {
+      case 'Data_Traversable_traversableEither': $v = (object)["traverse" => (function() use ($dict) {
+  $__fn = function($dictApplicative) use ($dict, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$pure = ($dictApplicative)->pure;
-$map = ((((($dictApplicative)->Apply0)($__global_Prim_undefined))->Functor0)($__global_Prim_undefined))->map;
+$__case_0 = $dictApplicative;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pure = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_1;
     $__res = (function() use ($pure, $map) {
   $__body = function($v, $v1) use ($pure, $map) {
     $__case_0 = $v;
@@ -596,15 +713,30 @@ break;
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})(), "sequence" => (function() {
-  $__fn = function($dictApplicative) use (&$__fn) {
+})(), "sequence" => (function() use ($dict) {
+  $__fn = function($dictApplicative) use ($dict, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$pure = ($dictApplicative)->pure;
-$map = ((((($dictApplicative)->Apply0)($__global_Prim_undefined))->Functor0)($__global_Prim_undefined))->map;
+$__case_0 = $dictApplicative;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pure = $__case_res_2;
+$__case_0 = $dict;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_3;
     $__res = (function() use ($pure, $map) {
   $__body = function($v) use ($pure, $map) {
     $__case_0 = $v;
@@ -678,15 +810,22 @@ $__global_Data_Foldable_foldableEither = ($GLOBALS['Data_Foldable_foldableEither
   };
   return $__fn;
 })()]; break;
-      case 'Data_Traversable_traversableDual': $v = (object)["traverse" => (function() {
-  $__fn = function($dictApplicative) use (&$__fn) {
+      case 'Data_Traversable_traversableDual': $v = (object)["traverse" => (function() use ($dict) {
+  $__fn = function($dictApplicative) use ($dict, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Monoid_Dual_Dual = ($GLOBALS['Data_Monoid_Dual_Dual'] ?? \Data\Monoid\Dual\phpurs_eval_thunk('Data_Monoid_Dual_Dual'));
-$map = ((((($dictApplicative)->Apply0)($__global_Prim_undefined))->Functor0)($__global_Prim_undefined))->map;
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_0;
     $__res = (function() use ($map, $__global_Data_Monoid_Dual_Dual) {
   $__body = function($f, $v) use ($map, $__global_Data_Monoid_Dual_Dual) {
     $__case_0 = $f;
@@ -713,15 +852,22 @@ throw new \Exception("Pattern match failure");
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})(), "sequence" => (function() {
-  $__fn = function($dictApplicative) use (&$__fn) {
+})(), "sequence" => (function() use ($dict) {
+  $__fn = function($dictApplicative) use ($dict, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Monoid_Dual_Dual = ($GLOBALS['Data_Monoid_Dual_Dual'] ?? \Data\Monoid\Dual\phpurs_eval_thunk('Data_Monoid_Dual_Dual'));
-$map = ((((($dictApplicative)->Apply0)($__global_Prim_undefined))->Functor0)($__global_Prim_undefined))->map;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_1;
     $__res = (function() use ($map, $__global_Data_Monoid_Dual_Dual) {
   $__body = function($v) use ($map, $__global_Data_Monoid_Dual_Dual) {
     $__case_0 = $v;
@@ -768,15 +914,22 @@ $__global_Data_Foldable_foldableDual = ($GLOBALS['Data_Foldable_foldableDual'] ?
   };
   return $__fn;
 })()]; break;
-      case 'Data_Traversable_traversableDisj': $v = (object)["traverse" => (function() {
-  $__fn = function($dictApplicative) use (&$__fn) {
+      case 'Data_Traversable_traversableDisj': $v = (object)["traverse" => (function() use ($dict) {
+  $__fn = function($dictApplicative) use ($dict, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Monoid_Disj_Disj = ($GLOBALS['Data_Monoid_Disj_Disj'] ?? \Data\Monoid\Disj\phpurs_eval_thunk('Data_Monoid_Disj_Disj'));
-$map = ((((($dictApplicative)->Apply0)($__global_Prim_undefined))->Functor0)($__global_Prim_undefined))->map;
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_0;
     $__res = (function() use ($map, $__global_Data_Monoid_Disj_Disj) {
   $__body = function($f, $v) use ($map, $__global_Data_Monoid_Disj_Disj) {
     $__case_0 = $f;
@@ -803,15 +956,22 @@ throw new \Exception("Pattern match failure");
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})(), "sequence" => (function() {
-  $__fn = function($dictApplicative) use (&$__fn) {
+})(), "sequence" => (function() use ($dict) {
+  $__fn = function($dictApplicative) use ($dict, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Monoid_Disj_Disj = ($GLOBALS['Data_Monoid_Disj_Disj'] ?? \Data\Monoid\Disj\phpurs_eval_thunk('Data_Monoid_Disj_Disj'));
-$map = ((((($dictApplicative)->Apply0)($__global_Prim_undefined))->Functor0)($__global_Prim_undefined))->map;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_1;
     $__res = (function() use ($map, $__global_Data_Monoid_Disj_Disj) {
   $__body = function($v) use ($map, $__global_Data_Monoid_Disj_Disj) {
     $__case_0 = $v;
@@ -864,7 +1024,15 @@ $__global_Data_Foldable_foldableDisj = ($GLOBALS['Data_Foldable_foldableDisj'] ?
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$pure = ($dictApplicative)->pure;
+$__case_0 = $dictApplicative;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pure = $__case_res_0;
     $__res = (function() use ($pure) {
   $__body = function($v, $v1) use ($pure) {
     $__case_0 = $v;
@@ -896,7 +1064,15 @@ throw new \Exception("Pattern match failure");
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$pure = ($dictApplicative)->pure;
+$__case_0 = $dictApplicative;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pure = $__case_res_1;
     $__res = (function() use ($pure) {
   $__body = function($v) use ($pure) {
     $__case_0 = $v;
@@ -943,15 +1119,22 @@ $__global_Data_Foldable_foldableConst = ($GLOBALS['Data_Foldable_foldableConst']
   };
   return $__fn;
 })()]; break;
-      case 'Data_Traversable_traversableConj': $v = (object)["traverse" => (function() {
-  $__fn = function($dictApplicative) use (&$__fn) {
+      case 'Data_Traversable_traversableConj': $v = (object)["traverse" => (function() use ($dict) {
+  $__fn = function($dictApplicative) use ($dict, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Monoid_Conj_Conj = ($GLOBALS['Data_Monoid_Conj_Conj'] ?? \Data\Monoid\Conj\phpurs_eval_thunk('Data_Monoid_Conj_Conj'));
-$map = ((((($dictApplicative)->Apply0)($__global_Prim_undefined))->Functor0)($__global_Prim_undefined))->map;
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_0;
     $__res = (function() use ($map, $__global_Data_Monoid_Conj_Conj) {
   $__body = function($f, $v) use ($map, $__global_Data_Monoid_Conj_Conj) {
     $__case_0 = $f;
@@ -978,15 +1161,22 @@ throw new \Exception("Pattern match failure");
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})(), "sequence" => (function() {
-  $__fn = function($dictApplicative) use (&$__fn) {
+})(), "sequence" => (function() use ($dict) {
+  $__fn = function($dictApplicative) use ($dict, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Monoid_Conj_Conj = ($GLOBALS['Data_Monoid_Conj_Conj'] ?? \Data\Monoid\Conj\phpurs_eval_thunk('Data_Monoid_Conj_Conj'));
-$map = ((((($dictApplicative)->Apply0)($__global_Prim_undefined))->Functor0)($__global_Prim_undefined))->map;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_1;
     $__res = (function() use ($map, $__global_Data_Monoid_Conj_Conj) {
   $__body = function($v) use ($map, $__global_Data_Monoid_Conj_Conj) {
     $__case_0 = $v;
@@ -1033,15 +1223,22 @@ $__global_Data_Foldable_foldableConj = ($GLOBALS['Data_Foldable_foldableConj'] ?
   };
   return $__fn;
 })()]; break;
-      case 'Data_Traversable_traversableAdditive': $v = (object)["traverse" => (function() {
-  $__fn = function($dictApplicative) use (&$__fn) {
+      case 'Data_Traversable_traversableAdditive': $v = (object)["traverse" => (function() use ($dict) {
+  $__fn = function($dictApplicative) use ($dict, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Monoid_Additive_Additive = ($GLOBALS['Data_Monoid_Additive_Additive'] ?? \Data\Monoid\Additive\phpurs_eval_thunk('Data_Monoid_Additive_Additive'));
-$map = ((((($dictApplicative)->Apply0)($__global_Prim_undefined))->Functor0)($__global_Prim_undefined))->map;
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_0;
     $__res = (function() use ($map, $__global_Data_Monoid_Additive_Additive) {
   $__body = function($f, $v) use ($map, $__global_Data_Monoid_Additive_Additive) {
     $__case_0 = $f;
@@ -1068,15 +1265,22 @@ throw new \Exception("Pattern match failure");
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})(), "sequence" => (function() {
-  $__fn = function($dictApplicative) use (&$__fn) {
+})(), "sequence" => (function() use ($dict) {
+  $__fn = function($dictApplicative) use ($dict, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Monoid_Additive_Additive = ($GLOBALS['Data_Monoid_Additive_Additive'] ?? \Data\Monoid\Additive\phpurs_eval_thunk('Data_Monoid_Additive_Additive'));
-$map = ((((($dictApplicative)->Apply0)($__global_Prim_undefined))->Functor0)($__global_Prim_undefined))->map;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_1;
     $__res = (function() use ($map, $__global_Data_Monoid_Additive_Additive) {
   $__body = function($v) use ($map, $__global_Data_Monoid_Additive_Additive) {
     $__case_0 = $v;
@@ -1123,8 +1327,8 @@ $__global_Data_Foldable_foldableAdditive = ($GLOBALS['Data_Foldable_foldableAddi
   };
   return $__fn;
 })()]; break;
-      case 'Data_Traversable_traversableArray': $v = (object)["traverse" => (function() {
-  $__fn = function($dictApplicative) use (&$__fn) {
+      case 'Data_Traversable_traversableArray': $v = (object)["traverse" => (function() use ($dict) {
+  $__fn = function($dictApplicative) use ($dict, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
@@ -1132,7 +1336,31 @@ $__global_Data_Foldable_foldableAdditive = ($GLOBALS['Data_Foldable_foldableAddi
 $__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Traversable_traverseArrayImpl = ($GLOBALS['Data_Traversable_traverseArrayImpl'] ?? \Data\Traversable\phpurs_eval_thunk('Data_Traversable_traverseArrayImpl'));
 $Apply0 = (($dictApplicative)->Apply0)($__global_Prim_undefined);
-    $__res = ($__global_Data_Traversable_traverseArrayImpl)(($Apply0)->apply, ((($Apply0)->Functor0)($__global_Prim_undefined))->map, ($dictApplicative)->pure);
+$__case_0 = $Apply0;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$__case_0 = $dictApplicative;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__global_Data_Traversable_traverseArrayImpl)($__case_res_0, $__case_res_1, $__case_res_2);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -1142,9 +1370,28 @@ $Apply0 = (($dictApplicative)->Apply0)($__global_Prim_undefined);
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Traversable_sequenceDefault = ($GLOBALS['Data_Traversable_sequenceDefault'] ?? \Data\Traversable\phpurs_eval_thunk('Data_Traversable_sequenceDefault'));
 $__global_Data_Traversable_traversableArray = ($GLOBALS['Data_Traversable_traversableArray'] ?? \Data\Traversable\phpurs_eval_thunk('Data_Traversable_traversableArray'));
-    $__res = ($__global_Data_Traversable_sequenceDefault)($__global_Data_Traversable_traversableArray, $dictApplicative);
+$__global_Data_Traversable_identity = ($GLOBALS['Data_Traversable_identity'] ?? \Data\Traversable\phpurs_eval_thunk('Data_Traversable_identity'));
+$__case_0 = $__global_Data_Traversable_traversableArray;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->traverse;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$traverse2 = $__case_res_3;
+    $__res = ((function() use ($traverse2, $__global_Data_Traversable_identity) {
+  $__fn = function($dictApplicative) use ($traverse2, $__global_Data_Traversable_identity, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($traverse2)($dictApplicative, $__global_Data_Traversable_identity);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})())($dictApplicative);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -1171,17 +1418,34 @@ $__global_Data_Foldable_foldableArray = ($GLOBALS['Data_Foldable_foldableArray']
   };
   return $__fn;
 })()]; break;
-      case 'Data_Traversable_sequence1': $v = (($GLOBALS['Data_Traversable_traversableMaybe'] ?? \Data\Traversable\phpurs_eval_thunk('Data_Traversable_traversableMaybe')))->sequence; break;
-      case 'Data_Traversable_traversableFirst': $v = (object)["traverse" => (function() {
-  $__fn = function($dictApplicative) use (&$__fn) {
+      case 'Data_Traversable_sequence1': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Traversable_traversableMaybe'] ?? \Data\Traversable\phpurs_eval_thunk('Data_Traversable_traversableMaybe'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->sequence;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Traversable_traversableFirst': $v = (object)["traverse" => (function() use ($dict) {
+  $__fn = function($dictApplicative) use ($dict, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Traversable_traverse1 = ($GLOBALS['Data_Traversable_traverse1'] ?? \Data\Traversable\phpurs_eval_thunk('Data_Traversable_traverse1'));
 $__global_Data_Maybe_First_First = ($GLOBALS['Data_Maybe_First_First'] ?? \Data\Maybe\First\phpurs_eval_thunk('Data_Maybe_First_First'));
-$map = ((((($dictApplicative)->Apply0)($__global_Prim_undefined))->Functor0)($__global_Prim_undefined))->map;
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_0;
 $traverse2 = ($__global_Data_Traversable_traverse1)($dictApplicative);
     $__res = (function() use ($map, $__global_Data_Maybe_First_First, $traverse2) {
   $__body = function($f, $v) use ($map, $__global_Data_Maybe_First_First, $traverse2) {
@@ -1209,16 +1473,23 @@ throw new \Exception("Pattern match failure");
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})(), "sequence" => (function() {
-  $__fn = function($dictApplicative) use (&$__fn) {
+})(), "sequence" => (function() use ($dict) {
+  $__fn = function($dictApplicative) use ($dict, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Traversable_sequence1 = ($GLOBALS['Data_Traversable_sequence1'] ?? \Data\Traversable\phpurs_eval_thunk('Data_Traversable_sequence1'));
 $__global_Data_Maybe_First_First = ($GLOBALS['Data_Maybe_First_First'] ?? \Data\Maybe\First\phpurs_eval_thunk('Data_Maybe_First_First'));
-$map = ((((($dictApplicative)->Apply0)($__global_Prim_undefined))->Functor0)($__global_Prim_undefined))->map;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_1;
 $sequence2 = ($__global_Data_Traversable_sequence1)($dictApplicative);
     $__res = (function() use ($map, $__global_Data_Maybe_First_First, $sequence2) {
   $__body = function($v) use ($map, $__global_Data_Maybe_First_First, $sequence2) {
@@ -1266,16 +1537,23 @@ $__global_Data_Foldable_foldableFirst = ($GLOBALS['Data_Foldable_foldableFirst']
   };
   return $__fn;
 })()]; break;
-      case 'Data_Traversable_traversableLast': $v = (object)["traverse" => (function() {
-  $__fn = function($dictApplicative) use (&$__fn) {
+      case 'Data_Traversable_traversableLast': $v = (object)["traverse" => (function() use ($dict) {
+  $__fn = function($dictApplicative) use ($dict, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Traversable_traverse1 = ($GLOBALS['Data_Traversable_traverse1'] ?? \Data\Traversable\phpurs_eval_thunk('Data_Traversable_traverse1'));
 $__global_Data_Maybe_Last_Last = ($GLOBALS['Data_Maybe_Last_Last'] ?? \Data\Maybe\Last\phpurs_eval_thunk('Data_Maybe_Last_Last'));
-$map = ((((($dictApplicative)->Apply0)($__global_Prim_undefined))->Functor0)($__global_Prim_undefined))->map;
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_0;
 $traverse2 = ($__global_Data_Traversable_traverse1)($dictApplicative);
     $__res = (function() use ($map, $__global_Data_Maybe_Last_Last, $traverse2) {
   $__body = function($f, $v) use ($map, $__global_Data_Maybe_Last_Last, $traverse2) {
@@ -1303,16 +1581,23 @@ throw new \Exception("Pattern match failure");
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})(), "sequence" => (function() {
-  $__fn = function($dictApplicative) use (&$__fn) {
+})(), "sequence" => (function() use ($dict) {
+  $__fn = function($dictApplicative) use ($dict, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Traversable_sequence1 = ($GLOBALS['Data_Traversable_sequence1'] ?? \Data\Traversable\phpurs_eval_thunk('Data_Traversable_sequence1'));
 $__global_Data_Maybe_Last_Last = ($GLOBALS['Data_Maybe_Last_Last'] ?? \Data\Maybe\Last\phpurs_eval_thunk('Data_Maybe_Last_Last'));
-$map = ((((($dictApplicative)->Apply0)($__global_Prim_undefined))->Functor0)($__global_Prim_undefined))->map;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_1;
 $sequence2 = ($__global_Data_Traversable_sequence1)($dictApplicative);
     $__res = (function() use ($map, $__global_Data_Maybe_Last_Last, $sequence2) {
   $__body = function($v) use ($map, $__global_Data_Maybe_Last_Last, $sequence2) {
@@ -1421,32 +1706,262 @@ function Data_Traversable_traversableCompose($dictTraversable) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Functor_Compose_functorCompose = ($GLOBALS['Data_Functor_Compose_functorCompose'] ?? \Data\Functor\Compose\phpurs_eval_thunk('Data_Functor_Compose_functorCompose'));
+$__global_Data_Function_flip = ($GLOBALS['Data_Function_flip'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_flip'));
 $__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$__global_Data_Foldable_foldableCompose = ($GLOBALS['Data_Foldable_foldableCompose'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableCompose'));
 $__global_Data_Functor_Compose_Compose = ($GLOBALS['Data_Functor_Compose_Compose'] ?? \Data\Functor\Compose\phpurs_eval_thunk('Data_Functor_Compose_Compose'));
 $__global_Data_Traversable_identity = ($GLOBALS['Data_Traversable_identity'] ?? \Data\Traversable\phpurs_eval_thunk('Data_Traversable_identity'));
 while (true) {
-$traverse2 = ($dictTraversable)->traverse;
-$functorCompose = ($__global_Data_Functor_Compose_functorCompose)((($dictTraversable)->Functor0)($__global_Prim_undefined));
-$foldableCompose = ($__global_Data_Foldable_foldableCompose)((($dictTraversable)->Foldable1)($__global_Prim_undefined));
-return (function() use ($functorCompose, $__global_Prim_undefined, $foldableCompose, $traverse2, $__global_Data_Functor_Compose_Compose, $dictTraversable, $__global_Data_Traversable_identity) {
-  $__fn = function($dictTraversable1) use ($functorCompose, $__global_Prim_undefined, $foldableCompose, $traverse2, $__global_Data_Functor_Compose_Compose, $dictTraversable, $__global_Data_Traversable_identity, &$__fn) {
+$__case_0 = $dictTraversable;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->traverse;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$traverse2 = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_1;
+$functorCompose = (function() use ($map) {
+  $__fn = function($dictFunctor1) use ($map, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Traversable_traversableCompose = ($GLOBALS['Data_Traversable_traversableCompose'] ?? \Data\Traversable\phpurs_eval_thunk('Data_Traversable_traversableCompose'));
-$traverse3 = ($dictTraversable1)->traverse;
+$__case_0 = $dictFunctor1;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map1 = $__case_res_2;
+    $__res = (object)["map" => (function() use ($map, $map1) {
+  $__body = function($f, $v) use ($map, $map1) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    if (true) {
+$f1 = $__case_0;
+$fga = $__case_1;
+return ($map)(($map1)($f1), $fga);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $v = null) use ($map, $map1, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, &$__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($f, $v);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+$__case_0 = $dict;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->foldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldr3 = $__case_res_3;
+$__case_0 = $dict;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->foldl;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldl3 = $__case_res_4;
+$__case_0 = $dict;
+$__case_res_5 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_5 = ($v)->foldMap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldMap2 = $__case_res_5;
+$foldableCompose = (function() use ($foldr3, $__global_Data_Function_flip, $foldl3, $foldMap2) {
+  $__fn = function($dictFoldable1) use ($foldr3, $__global_Data_Function_flip, $foldl3, $foldMap2, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dictFoldable1;
+$__case_res_6 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_6 = ($v)->foldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldr4 = $__case_res_6;
+$__case_0 = $dictFoldable1;
+$__case_res_7 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_7 = ($v)->foldl;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldl4 = $__case_res_7;
+$__case_0 = $dictFoldable1;
+$__case_res_8 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_8 = ($v)->foldMap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldMap3 = $__case_res_8;
+    $__res = (object)["foldr" => (function() use ($foldr3, $__global_Data_Function_flip, $foldr4) {
+  $__body = function($f, $i, $v) use ($foldr3, $__global_Data_Function_flip, $foldr4) {
+    $__case_0 = $f;
+    $__case_1 = $i;
+    $__case_2 = $v;
+    if (true) {
+$f1 = $__case_0;
+$i1 = $__case_1;
+$fga = $__case_2;
+return ($foldr3)(($__global_Data_Function_flip)(($foldr4)($f1)), $i1, $fga);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $i = null, $v = null) use ($foldr3, $__global_Data_Function_flip, $foldr4, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($v) use ($f, $i, &$__fn) { return $__fn($f, $i, $v); };
+    if ($__num === 1) return function($i, $v = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $i, $v);
+      if ($__num2 === 1) return function($v) use ($f, $i, &$__fn) { return $__fn($f, $i, $v); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = $__body($f, $i, $v);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})(), "foldl" => (function() use ($foldl3, $foldl4) {
+  $__body = function($f, $i, $v) use ($foldl3, $foldl4) {
+    $__case_0 = $f;
+    $__case_1 = $i;
+    $__case_2 = $v;
+    if (true) {
+$f1 = $__case_0;
+$i1 = $__case_1;
+$fga = $__case_2;
+return ($foldl3)(($foldl4)($f1), $i1, $fga);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $i = null, $v = null) use ($foldl3, $foldl4, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($v) use ($f, $i, &$__fn) { return $__fn($f, $i, $v); };
+    if ($__num === 1) return function($i, $v = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $i, $v);
+      if ($__num2 === 1) return function($v) use ($f, $i, &$__fn) { return $__fn($f, $i, $v); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = $__body($f, $i, $v);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})(), "foldMap" => (function() use ($foldMap2, $foldMap3) {
+  $__fn = function($dictMonoid) use ($foldMap2, $foldMap3, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$foldMap4 = ($foldMap2)($dictMonoid);
+$foldMap5 = ($foldMap3)($dictMonoid);
+    $__res = (function() use ($foldMap4, $foldMap5) {
+  $__body = function($f, $v) use ($foldMap4, $foldMap5) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    if (true) {
+$f1 = $__case_0;
+$fga = $__case_1;
+return ($foldMap4)(($foldMap5)($f1), $fga);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $v = null) use ($foldMap4, $foldMap5, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, &$__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($f, $v);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+return (function() use ($functorCompose, $__global_Prim_undefined, $foldableCompose, $dict, $traverse2, $__global_Data_Functor_Compose_Compose, $__global_Data_Traversable_identity) {
+  $__fn = function($dictTraversable1) use ($functorCompose, $__global_Prim_undefined, $foldableCompose, $dict, $traverse2, $__global_Data_Functor_Compose_Compose, $__global_Data_Traversable_identity, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dictTraversable1;
+$__case_res_9 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_9 = ($v)->traverse;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$traverse3 = $__case_res_9;
 $functorCompose1 = ($functorCompose)((($dictTraversable1)->Functor0)($__global_Prim_undefined));
 $foldableCompose1 = ($foldableCompose)((($dictTraversable1)->Foldable1)($__global_Prim_undefined));
-    $__res = (object)["traverse" => (function() use ($__global_Prim_undefined, $traverse2, $traverse3, $__global_Data_Functor_Compose_Compose) {
-  $__fn = function($dictApplicative) use ($__global_Prim_undefined, $traverse2, $traverse3, $__global_Data_Functor_Compose_Compose, &$__fn) {
+    $__res = (object)["traverse" => (function() use ($dict, $traverse2, $traverse3, $__global_Data_Functor_Compose_Compose) {
+  $__fn = function($dictApplicative) use ($dict, $traverse2, $traverse3, $__global_Data_Functor_Compose_Compose, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$map = ((((($dictApplicative)->Apply0)($__global_Prim_undefined))->Functor0)($__global_Prim_undefined))->map;
+$__case_0 = $dict;
+$__case_res_10 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_10 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_10;
 $traverse4 = ($traverse2)($dictApplicative);
 $traverse5 = ($traverse3)($dictApplicative);
     $__res = (function() use ($map, $__global_Data_Functor_Compose_Compose, $traverse4, $traverse5) {
@@ -1475,13 +1990,21 @@ throw new \Exception("Pattern match failure");
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})(), "sequence" => (function() use ($__global_Data_Traversable_traversableCompose, $dictTraversable, $dictTraversable1, $__global_Data_Traversable_identity) {
-  $__fn = function($dictApplicative) use ($__global_Data_Traversable_traversableCompose, $dictTraversable, $dictTraversable1, $__global_Data_Traversable_identity, &$__fn) {
+})(), "sequence" => (function() use ($dict, $__global_Data_Traversable_identity) {
+  $__fn = function($dictApplicative) use ($dict, $__global_Data_Traversable_identity, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ((($__global_Data_Traversable_traversableCompose)($dictTraversable, $dictTraversable1))->traverse)($dictApplicative, $__global_Data_Traversable_identity);
+$__case_0 = $dict;
+$__case_res_11 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_11 = ($v)->traverse;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__case_res_11)($dictApplicative, $__global_Data_Traversable_identity);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -1525,7 +2048,15 @@ function Data_Traversable_sequenceDefault($dictTraversable) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_Traversable_identity = ($GLOBALS['Data_Traversable_identity'] ?? \Data\Traversable\phpurs_eval_thunk('Data_Traversable_identity'));
-$traverse2 = ($dictTraversable)->traverse;
+$__case_0 = $dictTraversable;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->traverse;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$traverse2 = $__case_res_0;
     $__res = (function() use ($traverse2, $__global_Data_Traversable_identity) {
   $__fn = function($dictApplicative) use ($traverse2, $__global_Data_Traversable_identity, &$__fn) {
   $__num = func_num_args();
@@ -1571,20 +2102,162 @@ function Data_Traversable_traversableApp($dictTraversable) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$__global_Data_Foldable_foldableApp = ($GLOBALS['Data_Foldable_foldableApp'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableApp'));
 $__global_Data_Functor_App_App = ($GLOBALS['Data_Functor_App_App'] ?? \Data\Functor\App\phpurs_eval_thunk('Data_Functor_App_App'));
-$traverse2 = ($dictTraversable)->traverse;
-$sequence2 = ($dictTraversable)->sequence;
-$functorApp = (($dictTraversable)->Functor0)($__global_Prim_undefined);
-$foldableApp = ($__global_Data_Foldable_foldableApp)((($dictTraversable)->Foldable1)($__global_Prim_undefined));
-    $__res = (object)["traverse" => (function() use ($__global_Prim_undefined, $traverse2, $__global_Data_Functor_App_App) {
-  $__fn = function($dictApplicative) use ($__global_Prim_undefined, $traverse2, $__global_Data_Functor_App_App, &$__fn) {
+$__case_0 = $dictTraversable;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->traverse;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$traverse2 = $__case_res_0;
+$__case_0 = $dictTraversable;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->sequence;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$sequence2 = $__case_res_1;
+$functorApp = $dictFunctor;
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->foldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldr3 = $__case_res_2;
+$__case_0 = $dict;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->foldl;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldl3 = $__case_res_3;
+$__case_0 = $dict;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->foldMap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldMap2 = $__case_res_4;
+$foldableApp = (object)["foldr" => (function() use ($foldr3) {
+  $__body = function($f, $i, $v) use ($foldr3) {
+    $__case_0 = $f;
+    $__case_1 = $i;
+    $__case_2 = $v;
+    if (true) {
+$f1 = $__case_0;
+$i1 = $__case_1;
+$x = $__case_2;
+return ($foldr3)($f1, $i1, $x);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $i = null, $v = null) use ($foldr3, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($v) use ($f, $i, &$__fn) { return $__fn($f, $i, $v); };
+    if ($__num === 1) return function($i, $v = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $i, $v);
+      if ($__num2 === 1) return function($v) use ($f, $i, &$__fn) { return $__fn($f, $i, $v); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = $__body($f, $i, $v);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})(), "foldl" => (function() use ($foldl3) {
+  $__body = function($f, $i, $v) use ($foldl3) {
+    $__case_0 = $f;
+    $__case_1 = $i;
+    $__case_2 = $v;
+    if (true) {
+$f1 = $__case_0;
+$i1 = $__case_1;
+$x = $__case_2;
+return ($foldl3)($f1, $i1, $x);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $i = null, $v = null) use ($foldl3, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($v) use ($f, $i, &$__fn) { return $__fn($f, $i, $v); };
+    if ($__num === 1) return function($i, $v = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $i, $v);
+      if ($__num2 === 1) return function($v) use ($f, $i, &$__fn) { return $__fn($f, $i, $v); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = $__body($f, $i, $v);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})(), "foldMap" => (function() use ($foldMap2) {
+  $__fn = function($dictMonoid) use ($foldMap2, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$map = ((((($dictApplicative)->Apply0)($__global_Prim_undefined))->Functor0)($__global_Prim_undefined))->map;
+$foldMap3 = ($foldMap2)($dictMonoid);
+    $__res = (function() use ($foldMap3) {
+  $__body = function($f, $v) use ($foldMap3) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    if (true) {
+$f1 = $__case_0;
+$x = $__case_1;
+return ($foldMap3)($f1, $x);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $v = null) use ($foldMap3, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, &$__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($f, $v);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+    $__res = (object)["traverse" => (function() use ($dict, $traverse2, $__global_Data_Functor_App_App) {
+  $__fn = function($dictApplicative) use ($dict, $traverse2, $__global_Data_Functor_App_App, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dict;
+$__case_res_5 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_5 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_5;
 $traverse3 = ($traverse2)($dictApplicative);
     $__res = (function() use ($map, $__global_Data_Functor_App_App, $traverse3) {
   $__body = function($f, $v) use ($map, $__global_Data_Functor_App_App, $traverse3) {
@@ -1612,13 +2285,21 @@ throw new \Exception("Pattern match failure");
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})(), "sequence" => (function() use ($__global_Prim_undefined, $sequence2, $__global_Data_Functor_App_App) {
-  $__fn = function($dictApplicative) use ($__global_Prim_undefined, $sequence2, $__global_Data_Functor_App_App, &$__fn) {
+})(), "sequence" => (function() use ($dict, $sequence2, $__global_Data_Functor_App_App) {
+  $__fn = function($dictApplicative) use ($dict, $sequence2, $__global_Data_Functor_App_App, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$map = ((((($dictApplicative)->Apply0)($__global_Prim_undefined))->Functor0)($__global_Prim_undefined))->map;
+$__case_0 = $dict;
+$__case_res_6 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_6 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_6;
 $sequence3 = ($sequence2)($dictApplicative);
     $__res = (function() use ($map, $__global_Data_Functor_App_App, $sequence3) {
   $__body = function($v) use ($map, $__global_Data_Functor_App_App, $sequence3) {
@@ -1643,13 +2324,13 @@ throw new \Exception("Pattern match failure");
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})(), "Functor0" => (function() use ($functorApp) {
-  $__fn = function($__dollar____unused) use ($functorApp, &$__fn) {
+})(), "Functor0" => (function() use ($dictFunctor) {
+  $__fn = function($__dollar____unused) use ($dictFunctor, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = $functorApp;
+    $__res = $dictFunctor;
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -1675,33 +2356,230 @@ function Data_Traversable_traversableCoproduct($dictTraversable) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Functor_Coproduct_functorCoproduct = ($GLOBALS['Data_Functor_Coproduct_functorCoproduct'] ?? \Data\Functor\Coproduct\phpurs_eval_thunk('Data_Functor_Coproduct_functorCoproduct'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$__global_Data_Foldable_foldableCoproduct = ($GLOBALS['Data_Foldable_foldableCoproduct'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableCoproduct'));
+$__global_Data_Functor_Coproduct_bimap = ($GLOBALS['Data_Functor_Coproduct_bimap'] ?? \Data\Functor\Coproduct\phpurs_eval_thunk('Data_Functor_Coproduct_bimap'));
 $__global_Data_Functor_Coproduct_coproduct = ($GLOBALS['Data_Functor_Coproduct_coproduct'] ?? \Data\Functor\Coproduct\phpurs_eval_thunk('Data_Functor_Coproduct_coproduct'));
+$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Traversable_compose = ($GLOBALS['Data_Traversable_compose'] ?? \Data\Traversable\phpurs_eval_thunk('Data_Traversable_compose'));
 $__global_Data_Functor_Coproduct_Coproduct = ($GLOBALS['Data_Functor_Coproduct_Coproduct'] ?? \Data\Functor\Coproduct\phpurs_eval_thunk('Data_Functor_Coproduct_Coproduct'));
-$traverse2 = ($dictTraversable)->traverse;
-$sequence2 = ($dictTraversable)->sequence;
-$functorCoproduct = ($__global_Data_Functor_Coproduct_functorCoproduct)((($dictTraversable)->Functor0)($__global_Prim_undefined));
-$foldableCoproduct = ($__global_Data_Foldable_foldableCoproduct)((($dictTraversable)->Foldable1)($__global_Prim_undefined));
-    $__res = (function() use ($functorCoproduct, $__global_Prim_undefined, $foldableCoproduct, $traverse2, $__global_Data_Functor_Coproduct_coproduct, $__global_Data_Traversable_compose, $__global_Data_Functor_Coproduct_Coproduct, $sequence2) {
-  $__fn = function($dictTraversable1) use ($functorCoproduct, $__global_Prim_undefined, $foldableCoproduct, $traverse2, $__global_Data_Functor_Coproduct_coproduct, $__global_Data_Traversable_compose, $__global_Data_Functor_Coproduct_Coproduct, $sequence2, &$__fn) {
+$__case_0 = $dictTraversable;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->traverse;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$traverse2 = $__case_res_0;
+$__case_0 = $dictTraversable;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->sequence;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$sequence2 = $__case_res_1;
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_2;
+$functorCoproduct = (function() use ($__global_Data_Functor_Coproduct_bimap, $map) {
+  $__fn = function($dictFunctor1) use ($__global_Data_Functor_Coproduct_bimap, $map, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$traverse3 = ($dictTraversable1)->traverse;
-$sequence3 = ($dictTraversable1)->sequence;
+$__case_0 = $dictFunctor1;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map1 = $__case_res_3;
+    $__res = (object)["map" => (function() use ($__global_Data_Functor_Coproduct_bimap, $map, $map1) {
+  $__body = function($f, $v) use ($__global_Data_Functor_Coproduct_bimap, $map, $map1) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    if (true) {
+$f1 = $__case_0;
+$e = $__case_1;
+return ($__global_Data_Functor_Coproduct_bimap)(($map)($f1), ($map1)($f1), $e);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $v = null) use ($__global_Data_Functor_Coproduct_bimap, $map, $map1, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, &$__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($f, $v);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+$__case_0 = $dict;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->foldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldr3 = $__case_res_4;
+$__case_0 = $dict;
+$__case_res_5 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_5 = ($v)->foldl;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldl3 = $__case_res_5;
+$__case_0 = $dict;
+$__case_res_6 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_6 = ($v)->foldMap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldMap2 = $__case_res_6;
+$foldableCoproduct = (function() use ($__global_Data_Functor_Coproduct_coproduct, $foldr3, $foldl3, $foldMap2) {
+  $__fn = function($dictFoldable1) use ($__global_Data_Functor_Coproduct_coproduct, $foldr3, $foldl3, $foldMap2, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dictFoldable1;
+$__case_res_7 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_7 = ($v)->foldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldr4 = $__case_res_7;
+$__case_0 = $dictFoldable1;
+$__case_res_8 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_8 = ($v)->foldl;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldl4 = $__case_res_8;
+$__case_0 = $dictFoldable1;
+$__case_res_9 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_9 = ($v)->foldMap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldMap3 = $__case_res_9;
+    $__res = (object)["foldr" => (function() use ($__global_Data_Functor_Coproduct_coproduct, $foldr3, $foldr4) {
+  $__fn = function($f, $z = null) use ($__global_Data_Functor_Coproduct_coproduct, $foldr3, $foldr4, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($z) use ($f, &$__fn) { return $__fn($f, $z); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($__global_Data_Functor_Coproduct_coproduct)(($foldr3)($f, $z), ($foldr4)($f, $z));
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "foldl" => (function() use ($__global_Data_Functor_Coproduct_coproduct, $foldl3, $foldl4) {
+  $__fn = function($f, $z = null) use ($__global_Data_Functor_Coproduct_coproduct, $foldl3, $foldl4, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($z) use ($f, &$__fn) { return $__fn($f, $z); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($__global_Data_Functor_Coproduct_coproduct)(($foldl3)($f, $z), ($foldl4)($f, $z));
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "foldMap" => (function() use ($foldMap2, $foldMap3, $__global_Data_Functor_Coproduct_coproduct) {
+  $__fn = function($dictMonoid) use ($foldMap2, $foldMap3, $__global_Data_Functor_Coproduct_coproduct, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$foldMap4 = ($foldMap2)($dictMonoid);
+$foldMap5 = ($foldMap3)($dictMonoid);
+    $__res = (function() use ($__global_Data_Functor_Coproduct_coproduct, $foldMap4, $foldMap5) {
+  $__fn = function($f) use ($__global_Data_Functor_Coproduct_coproduct, $foldMap4, $foldMap5, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($__global_Data_Functor_Coproduct_coproduct)(($foldMap4)($f), ($foldMap5)($f));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+    $__res = (function() use ($functorCoproduct, $__global_Prim_undefined, $foldableCoproduct, $dict, $traverse2, $__global_Data_Functor_Coproduct_coproduct, $__global_Data_Traversable_compose, $__global_Data_Functor_Coproduct_Coproduct, $sequence2) {
+  $__fn = function($dictTraversable1) use ($functorCoproduct, $__global_Prim_undefined, $foldableCoproduct, $dict, $traverse2, $__global_Data_Functor_Coproduct_coproduct, $__global_Data_Traversable_compose, $__global_Data_Functor_Coproduct_Coproduct, $sequence2, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dictTraversable1;
+$__case_res_10 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_10 = ($v)->traverse;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$traverse3 = $__case_res_10;
+$__case_0 = $dictTraversable1;
+$__case_res_11 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_11 = ($v)->sequence;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$sequence3 = $__case_res_11;
 $functorCoproduct1 = ($functorCoproduct)((($dictTraversable1)->Functor0)($__global_Prim_undefined));
 $foldableCoproduct1 = ($foldableCoproduct)((($dictTraversable1)->Foldable1)($__global_Prim_undefined));
-    $__res = (object)["traverse" => (function() use ($__global_Prim_undefined, $traverse2, $traverse3, $__global_Data_Functor_Coproduct_coproduct, $__global_Data_Traversable_compose, $__global_Data_Functor_Coproduct_Coproduct) {
-  $__fn = function($dictApplicative) use ($__global_Prim_undefined, $traverse2, $traverse3, $__global_Data_Functor_Coproduct_coproduct, $__global_Data_Traversable_compose, $__global_Data_Functor_Coproduct_Coproduct, &$__fn) {
+    $__res = (object)["traverse" => (function() use ($dict, $traverse2, $traverse3, $__global_Data_Functor_Coproduct_coproduct, $__global_Data_Traversable_compose, $__global_Data_Functor_Coproduct_Coproduct) {
+  $__fn = function($dictApplicative) use ($dict, $traverse2, $traverse3, $__global_Data_Functor_Coproduct_coproduct, $__global_Data_Traversable_compose, $__global_Data_Functor_Coproduct_Coproduct, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$map = ((((($dictApplicative)->Apply0)($__global_Prim_undefined))->Functor0)($__global_Prim_undefined))->map;
+$__case_0 = $dict;
+$__case_res_12 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_12 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_12;
 $traverse4 = ($traverse2)($dictApplicative);
 $traverse5 = ($traverse3)($dictApplicative);
     $__res = (function() use ($__global_Data_Functor_Coproduct_coproduct, $__global_Data_Traversable_compose, $map, $__global_Data_Functor_Coproduct_Coproduct, $traverse4, $traverse5) {
@@ -1738,13 +2616,21 @@ $traverse5 = ($traverse3)($dictApplicative);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})(), "sequence" => (function() use ($__global_Prim_undefined, $__global_Data_Functor_Coproduct_coproduct, $__global_Data_Traversable_compose, $__global_Data_Functor_Coproduct_Coproduct, $sequence2, $sequence3) {
-  $__fn = function($dictApplicative) use ($__global_Prim_undefined, $__global_Data_Functor_Coproduct_coproduct, $__global_Data_Traversable_compose, $__global_Data_Functor_Coproduct_Coproduct, $sequence2, $sequence3, &$__fn) {
+})(), "sequence" => (function() use ($dict, $__global_Data_Functor_Coproduct_coproduct, $__global_Data_Traversable_compose, $__global_Data_Functor_Coproduct_Coproduct, $sequence2, $sequence3) {
+  $__fn = function($dictApplicative) use ($dict, $__global_Data_Functor_Coproduct_coproduct, $__global_Data_Traversable_compose, $__global_Data_Functor_Coproduct_Coproduct, $sequence2, $sequence3, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$map = ((((($dictApplicative)->Apply0)($__global_Prim_undefined))->Functor0)($__global_Prim_undefined))->map;
+$__case_0 = $dict;
+$__case_res_13 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_13 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_13;
     $__res = ($__global_Data_Functor_Coproduct_coproduct)(($__global_Data_Traversable_compose)(($map)(($__global_Data_Traversable_compose)($__global_Data_Functor_Coproduct_Coproduct, (function() {
   $__fn = function($value0) use (&$__fn) {
   $__num = func_num_args();
@@ -1807,32 +2693,326 @@ function Data_Traversable_traversableProduct($dictTraversable) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Functor_Product_functorProduct = ($GLOBALS['Data_Functor_Product_functorProduct'] ?? \Data\Functor\Product\phpurs_eval_thunk('Data_Functor_Product_functorProduct'));
+$__global_Data_Functor_Product_bimap = ($GLOBALS['Data_Functor_Product_bimap'] ?? \Data\Functor\Product\phpurs_eval_thunk('Data_Functor_Product_bimap'));
 $__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$__global_Data_Foldable_foldableProduct = ($GLOBALS['Data_Foldable_foldableProduct'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableProduct'));
-$__global_Control_Apply_lift2 = ($GLOBALS['Control_Apply_lift2'] ?? \Control\Apply\phpurs_eval_thunk('Control_Apply_lift2'));
 $__global_Data_Functor_Product_product = ($GLOBALS['Data_Functor_Product_product'] ?? \Data\Functor\Product\phpurs_eval_thunk('Data_Functor_Product_product'));
-$traverse2 = ($dictTraversable)->traverse;
-$sequence2 = ($dictTraversable)->sequence;
-$functorProduct = ($__global_Data_Functor_Product_functorProduct)((($dictTraversable)->Functor0)($__global_Prim_undefined));
-$foldableProduct = ($__global_Data_Foldable_foldableProduct)((($dictTraversable)->Foldable1)($__global_Prim_undefined));
-    $__res = (function() use ($functorProduct, $__global_Prim_undefined, $foldableProduct, $__global_Control_Apply_lift2, $traverse2, $__global_Data_Functor_Product_product, $sequence2) {
-  $__fn = function($dictTraversable1) use ($functorProduct, $__global_Prim_undefined, $foldableProduct, $__global_Control_Apply_lift2, $traverse2, $__global_Data_Functor_Product_product, $sequence2, &$__fn) {
+$__case_0 = $dictTraversable;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->traverse;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$traverse2 = $__case_res_0;
+$__case_0 = $dictTraversable;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->sequence;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$sequence2 = $__case_res_1;
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_2;
+$functorProduct = (function() use ($__global_Data_Functor_Product_bimap, $map) {
+  $__fn = function($dictFunctor1) use ($__global_Data_Functor_Product_bimap, $map, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$traverse3 = ($dictTraversable1)->traverse;
-$sequence3 = ($dictTraversable1)->sequence;
+$__case_0 = $dictFunctor1;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map1 = $__case_res_3;
+    $__res = (object)["map" => (function() use ($__global_Data_Functor_Product_bimap, $map, $map1) {
+  $__body = function($f, $v) use ($__global_Data_Functor_Product_bimap, $map, $map1) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    if (true) {
+$f1 = $__case_0;
+$fga = $__case_1;
+return ($__global_Data_Functor_Product_bimap)(($map)($f1), ($map1)($f1), $fga);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $v = null) use ($__global_Data_Functor_Product_bimap, $map, $map1, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, &$__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($f, $v);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+$__case_0 = $dict;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->foldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldr3 = $__case_res_4;
+$__case_0 = $dict;
+$__case_res_5 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_5 = ($v)->foldl;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldl3 = $__case_res_5;
+$__case_0 = $dict;
+$__case_res_6 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_6 = ($v)->foldMap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldMap2 = $__case_res_6;
+$foldableProduct = (function() use ($foldr3, $foldl3, $dict, $foldMap2) {
+  $__fn = function($dictFoldable1) use ($foldr3, $foldl3, $dict, $foldMap2, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dictFoldable1;
+$__case_res_7 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_7 = ($v)->foldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldr4 = $__case_res_7;
+$__case_0 = $dictFoldable1;
+$__case_res_8 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_8 = ($v)->foldl;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldl4 = $__case_res_8;
+$__case_0 = $dictFoldable1;
+$__case_res_9 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_9 = ($v)->foldMap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldMap3 = $__case_res_9;
+    $__res = (object)["foldr" => (function() use ($foldr3, $foldr4) {
+  $__body = function($f, $z, $v) use ($foldr3, $foldr4) {
+    $__case_0 = $f;
+    $__case_1 = $z;
+    $__case_2 = $v;
+    switch (($__case_2)->tag) {
+case "Tuple":
+$f1 = $__case_0;
+$z1 = $__case_1;
+$fa = ($__case_2)->v0;
+$ga = ($__case_2)->v1;
+return ($foldr3)($f1, ($foldr4)($f1, $z1, $ga), $fa);
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($f, $z = null, $v = null) use ($foldr3, $foldr4, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($v) use ($f, $z, &$__fn) { return $__fn($f, $z, $v); };
+    if ($__num === 1) return function($z, $v = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $z, $v);
+      if ($__num2 === 1) return function($v) use ($f, $z, &$__fn) { return $__fn($f, $z, $v); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = $__body($f, $z, $v);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})(), "foldl" => (function() use ($foldl4, $foldl3) {
+  $__body = function($f, $z, $v) use ($foldl4, $foldl3) {
+    $__case_0 = $f;
+    $__case_1 = $z;
+    $__case_2 = $v;
+    switch (($__case_2)->tag) {
+case "Tuple":
+$f1 = $__case_0;
+$z1 = $__case_1;
+$fa = ($__case_2)->v0;
+$ga = ($__case_2)->v1;
+return ($foldl4)($f1, ($foldl3)($f1, $z1, $fa), $ga);
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($f, $z = null, $v = null) use ($foldl4, $foldl3, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($v) use ($f, $z, &$__fn) { return $__fn($f, $z, $v); };
+    if ($__num === 1) return function($z, $v = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $z, $v);
+      if ($__num2 === 1) return function($v) use ($f, $z, &$__fn) { return $__fn($f, $z, $v); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = $__body($f, $z, $v);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})(), "foldMap" => (function() use ($dict, $foldMap2, $foldMap3) {
+  $__fn = function($dictMonoid) use ($dict, $foldMap2, $foldMap3, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dict;
+$__case_res_10 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_10 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append = $__case_res_10;
+$foldMap4 = ($foldMap2)($dictMonoid);
+$foldMap5 = ($foldMap3)($dictMonoid);
+    $__res = (function() use ($append, $foldMap4, $foldMap5) {
+  $__body = function($f, $v) use ($append, $foldMap4, $foldMap5) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    switch (($__case_1)->tag) {
+case "Tuple":
+$f1 = $__case_0;
+$fa = ($__case_1)->v0;
+$ga = ($__case_1)->v1;
+return ($append)(($foldMap4)($f1, $fa), ($foldMap5)($f1, $ga));
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($f, $v = null) use ($append, $foldMap4, $foldMap5, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, &$__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($f, $v);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+    $__res = (function() use ($functorProduct, $__global_Prim_undefined, $foldableProduct, $dict, $traverse2, $__global_Data_Functor_Product_product, $sequence2) {
+  $__fn = function($dictTraversable1) use ($functorProduct, $__global_Prim_undefined, $foldableProduct, $dict, $traverse2, $__global_Data_Functor_Product_product, $sequence2, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dictTraversable1;
+$__case_res_11 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_11 = ($v)->traverse;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$traverse3 = $__case_res_11;
+$__case_0 = $dictTraversable1;
+$__case_res_12 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_12 = ($v)->sequence;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$sequence3 = $__case_res_12;
 $functorProduct1 = ($functorProduct)((($dictTraversable1)->Functor0)($__global_Prim_undefined));
 $foldableProduct1 = ($foldableProduct)((($dictTraversable1)->Foldable1)($__global_Prim_undefined));
-    $__res = (object)["traverse" => (function() use ($__global_Control_Apply_lift2, $__global_Prim_undefined, $traverse2, $traverse3, $__global_Data_Functor_Product_product) {
-  $__fn = function($dictApplicative) use ($__global_Control_Apply_lift2, $__global_Prim_undefined, $traverse2, $traverse3, $__global_Data_Functor_Product_product, &$__fn) {
+    $__res = (object)["traverse" => (function() use ($dict, $traverse2, $traverse3, $__global_Data_Functor_Product_product) {
+  $__fn = function($dictApplicative) use ($dict, $traverse2, $traverse3, $__global_Data_Functor_Product_product, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$lift2 = ($__global_Control_Apply_lift2)((($dictApplicative)->Apply0)($__global_Prim_undefined));
+$__case_0 = $dict;
+$__case_res_13 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_13 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$apply1 = $__case_res_13;
+$__case_0 = $dict;
+$__case_res_14 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_14 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_14;
+$lift2 = (function() use ($apply1, $map) {
+  $__fn = function($f, $a = null, $b = null) use ($apply1, $map, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($b) use ($f, $a, &$__fn) { return $__fn($f, $a, $b); };
+    if ($__num === 1) return function($a, $b = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $a, $b);
+      if ($__num2 === 1) return function($b) use ($f, $a, &$__fn) { return $__fn($f, $a, $b); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = ($apply1)(($map)($f, $a), $b);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})();
 $traverse4 = ($traverse2)($dictApplicative);
 $traverse5 = ($traverse3)($dictApplicative);
     $__res = (function() use ($lift2, $__global_Data_Functor_Product_product, $traverse4, $traverse5) {
@@ -1865,13 +3045,48 @@ break;
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})(), "sequence" => (function() use ($__global_Control_Apply_lift2, $__global_Prim_undefined, $sequence2, $sequence3, $__global_Data_Functor_Product_product) {
-  $__fn = function($dictApplicative) use ($__global_Control_Apply_lift2, $__global_Prim_undefined, $sequence2, $sequence3, $__global_Data_Functor_Product_product, &$__fn) {
+})(), "sequence" => (function() use ($dict, $sequence2, $sequence3, $__global_Data_Functor_Product_product) {
+  $__fn = function($dictApplicative) use ($dict, $sequence2, $sequence3, $__global_Data_Functor_Product_product, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$lift2 = ($__global_Control_Apply_lift2)((($dictApplicative)->Apply0)($__global_Prim_undefined));
+$__case_0 = $dict;
+$__case_res_15 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_15 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$apply1 = $__case_res_15;
+$__case_0 = $dict;
+$__case_res_16 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_16 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_16;
+$lift2 = (function() use ($apply1, $map) {
+  $__fn = function($f, $a = null, $b = null) use ($apply1, $map, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($b) use ($f, $a, &$__fn) { return $__fn($f, $a, $b); };
+    if ($__num === 1) return function($a, $b = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $a, $b);
+      if ($__num2 === 1) return function($b) use ($f, $a, &$__fn) { return $__fn($f, $a, $b); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = ($apply1)(($map)($f, $a), $b);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})();
 $sequence4 = ($sequence2)($dictApplicative);
 $sequence5 = ($sequence3)($dictApplicative);
     $__res = (function() use ($lift2, $__global_Data_Functor_Product_product, $sequence4, $sequence5) {
@@ -1937,9 +3152,24 @@ function Data_Traversable_traverseDefault($dictTraversable) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$sequence2 = ($dictTraversable)->sequence;
-$map = ((($dictTraversable)->Functor0)($__global_Prim_undefined))->map;
+$__case_0 = $dictTraversable;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->sequence;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$sequence2 = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_1;
     $__res = (function() use ($sequence2, $map) {
   $__fn = function($dictApplicative) use ($sequence2, $map, &$__fn) {
   $__num = func_num_args();
@@ -1976,7 +3206,15 @@ function Data_Traversable_mapAccumR($dictTraversable) {
   }
 $__global_Data_Traversable_Accum_Internal_applicativeStateR = ($GLOBALS['Data_Traversable_Accum_Internal_applicativeStateR'] ?? \Data\Traversable\Accum\Internal\phpurs_eval_thunk('Data_Traversable_Accum_Internal_applicativeStateR'));
 $__global_Data_Traversable_Accum_Internal_stateR = ($GLOBALS['Data_Traversable_Accum_Internal_stateR'] ?? \Data\Traversable\Accum\Internal\phpurs_eval_thunk('Data_Traversable_Accum_Internal_stateR'));
-$traverse2 = (($dictTraversable)->traverse)($__global_Data_Traversable_Accum_Internal_applicativeStateR);
+$__case_0 = $dictTraversable;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->traverse;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$traverse2 = ($__case_res_0)($__global_Data_Traversable_Accum_Internal_applicativeStateR);
     $__res = (function() use ($__global_Data_Traversable_Accum_Internal_stateR, $traverse2) {
   $__fn = function($f, $s0 = null, $xs = null) use ($__global_Data_Traversable_Accum_Internal_stateR, $traverse2, &$__fn) {
   $__num = func_num_args();
@@ -2017,8 +3255,46 @@ function Data_Traversable_scanr($dictTraversable) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Traversable_mapAccumR = ($GLOBALS['Data_Traversable_mapAccumR'] ?? \Data\Traversable\phpurs_eval_thunk('Data_Traversable_mapAccumR'));
-$mapAccumR1 = ($__global_Data_Traversable_mapAccumR)($dictTraversable);
+$__global_Data_Traversable_Accum_Internal_applicativeStateR = ($GLOBALS['Data_Traversable_Accum_Internal_applicativeStateR'] ?? \Data\Traversable\Accum\Internal\phpurs_eval_thunk('Data_Traversable_Accum_Internal_applicativeStateR'));
+$__global_Data_Traversable_Accum_Internal_stateR = ($GLOBALS['Data_Traversable_Accum_Internal_stateR'] ?? \Data\Traversable\Accum\Internal\phpurs_eval_thunk('Data_Traversable_Accum_Internal_stateR'));
+$__case_0 = $dictTraversable;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->traverse;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$traverse2 = ($__case_res_0)($__global_Data_Traversable_Accum_Internal_applicativeStateR);
+$mapAccumR1 = (function() use ($__global_Data_Traversable_Accum_Internal_stateR, $traverse2) {
+  $__fn = function($f, $s0 = null, $xs = null) use ($__global_Data_Traversable_Accum_Internal_stateR, $traverse2, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($xs) use ($f, $s0, &$__fn) { return $__fn($f, $s0, $xs); };
+    if ($__num === 1) return function($s0, $xs = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $s0, $xs);
+      if ($__num2 === 1) return function($xs) use ($f, $s0, &$__fn) { return $__fn($f, $s0, $xs); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = ($__global_Data_Traversable_Accum_Internal_stateR)(($traverse2)((function() use ($f) {
+  $__fn = function($a, $s = null) use ($f, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($s) use ($a, &$__fn) { return $__fn($a, $s); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($f)($s, $a);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), $xs), $s0);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})();
     $__res = (function() use ($mapAccumR1) {
   $__fn = function($f, $b0 = null, $xs = null) use ($mapAccumR1, &$__fn) {
   $__num = func_num_args();
@@ -2062,7 +3338,15 @@ function Data_Traversable_mapAccumL($dictTraversable) {
   }
 $__global_Data_Traversable_Accum_Internal_applicativeStateL = ($GLOBALS['Data_Traversable_Accum_Internal_applicativeStateL'] ?? \Data\Traversable\Accum\Internal\phpurs_eval_thunk('Data_Traversable_Accum_Internal_applicativeStateL'));
 $__global_Data_Traversable_Accum_Internal_stateL = ($GLOBALS['Data_Traversable_Accum_Internal_stateL'] ?? \Data\Traversable\Accum\Internal\phpurs_eval_thunk('Data_Traversable_Accum_Internal_stateL'));
-$traverse2 = (($dictTraversable)->traverse)($__global_Data_Traversable_Accum_Internal_applicativeStateL);
+$__case_0 = $dictTraversable;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->traverse;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$traverse2 = ($__case_res_0)($__global_Data_Traversable_Accum_Internal_applicativeStateL);
     $__res = (function() use ($__global_Data_Traversable_Accum_Internal_stateL, $traverse2) {
   $__fn = function($f, $s0 = null, $xs = null) use ($__global_Data_Traversable_Accum_Internal_stateL, $traverse2, &$__fn) {
   $__num = func_num_args();
@@ -2103,8 +3387,46 @@ function Data_Traversable_scanl($dictTraversable) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Traversable_mapAccumL = ($GLOBALS['Data_Traversable_mapAccumL'] ?? \Data\Traversable\phpurs_eval_thunk('Data_Traversable_mapAccumL'));
-$mapAccumL1 = ($__global_Data_Traversable_mapAccumL)($dictTraversable);
+$__global_Data_Traversable_Accum_Internal_applicativeStateL = ($GLOBALS['Data_Traversable_Accum_Internal_applicativeStateL'] ?? \Data\Traversable\Accum\Internal\phpurs_eval_thunk('Data_Traversable_Accum_Internal_applicativeStateL'));
+$__global_Data_Traversable_Accum_Internal_stateL = ($GLOBALS['Data_Traversable_Accum_Internal_stateL'] ?? \Data\Traversable\Accum\Internal\phpurs_eval_thunk('Data_Traversable_Accum_Internal_stateL'));
+$__case_0 = $dictTraversable;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->traverse;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$traverse2 = ($__case_res_0)($__global_Data_Traversable_Accum_Internal_applicativeStateL);
+$mapAccumL1 = (function() use ($__global_Data_Traversable_Accum_Internal_stateL, $traverse2) {
+  $__fn = function($f, $s0 = null, $xs = null) use ($__global_Data_Traversable_Accum_Internal_stateL, $traverse2, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($xs) use ($f, $s0, &$__fn) { return $__fn($f, $s0, $xs); };
+    if ($__num === 1) return function($s0, $xs = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $s0, $xs);
+      if ($__num2 === 1) return function($xs) use ($f, $s0, &$__fn) { return $__fn($f, $s0, $xs); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = ($__global_Data_Traversable_Accum_Internal_stateL)(($traverse2)((function() use ($f) {
+  $__fn = function($a, $s = null) use ($f, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($s) use ($a, &$__fn) { return $__fn($a, $s); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($f)($s, $a);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), $xs), $s0);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})();
     $__res = (function() use ($mapAccumL1) {
   $__fn = function($f, $b0 = null, $xs = null) use ($mapAccumL1, &$__fn) {
   $__num = func_num_args();
@@ -2147,7 +3469,15 @@ function Data_Traversable_for($dictApplicative, $dictTraversable = null) {
     if ($__num === 1) return function($dictTraversable) use ($dictApplicative, $__fn) { return $__fn($dictApplicative, $dictTraversable); };
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
-$traverse2 = (($dictTraversable)->traverse)($dictApplicative);
+$__case_0 = $dictTraversable;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->traverse;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$traverse2 = ($__case_res_0)($dictApplicative);
     $__res = (function() use ($traverse2) {
   $__fn = function($x, $f = null) use ($traverse2, &$__fn) {
   $__num = func_num_args();

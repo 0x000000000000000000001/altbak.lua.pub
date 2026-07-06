@@ -143,7 +143,15 @@ function Data_Ord_Generic_genericOrdArgument($dictOrd) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$compare = ($dictOrd)->compare;
+$__case_0 = $dictOrd;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare = $__case_res_0;
     $__res = (object)["genericCompare'" => (function() use ($compare) {
   $__body = function($v, $v1) use ($compare) {
     $__case_0 = $v;
@@ -199,7 +207,15 @@ function Data_Ord_Generic_genericOrdConstructor($dictGenericOrd) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$genericCompare__prime__1 = ($dictGenericOrd)->genericCompare__prime__;
+$__case_0 = $dictGenericOrd;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->genericCompare__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericCompare__prime__1 = $__case_res_0;
     $__res = (object)["genericCompare'" => (function() use ($genericCompare__prime__1) {
   $__body = function($v, $v1) use ($genericCompare__prime__1) {
     $__case_0 = $v;
@@ -234,14 +250,30 @@ function Data_Ord_Generic_genericOrdProduct($dictGenericOrd) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$genericCompare__prime__1 = ($dictGenericOrd)->genericCompare__prime__;
+$__case_0 = $dictGenericOrd;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->genericCompare__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericCompare__prime__1 = $__case_res_0;
     $__res = (function() use ($genericCompare__prime__1) {
   $__fn = function($dictGenericOrd1) use ($genericCompare__prime__1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$genericCompare__prime__2 = ($dictGenericOrd1)->genericCompare__prime__;
+$__case_0 = $dictGenericOrd1;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->genericCompare__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericCompare__prime__2 = $__case_res_1;
     $__res = (object)["genericCompare'" => (function() use ($genericCompare__prime__1, $genericCompare__prime__2) {
   $__body = function($v, $v1) use ($genericCompare__prime__1, $genericCompare__prime__2) {
     $__case_0 = $v;
@@ -292,14 +324,30 @@ function Data_Ord_Generic_genericOrdSum($dictGenericOrd) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$genericCompare__prime__1 = ($dictGenericOrd)->genericCompare__prime__;
+$__case_0 = $dictGenericOrd;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->genericCompare__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericCompare__prime__1 = $__case_res_0;
     $__res = (function() use ($genericCompare__prime__1) {
   $__fn = function($dictGenericOrd1) use ($genericCompare__prime__1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$genericCompare__prime__2 = ($dictGenericOrd1)->genericCompare__prime__;
+$__case_0 = $dictGenericOrd1;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->genericCompare__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericCompare__prime__2 = $__case_res_1;
     $__res = (object)["genericCompare'" => (function() use ($genericCompare__prime__1, $genericCompare__prime__2) {
   $__body = function($v, $v1) use ($genericCompare__prime__1, $genericCompare__prime__2) {
     $__case_0 = $v;
@@ -352,14 +400,30 @@ function Data_Ord_Generic_genericCompare($dictGeneric) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$from = ($dictGeneric)->from;
+$__case_0 = $dictGeneric;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->from;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$from = $__case_res_0;
     $__res = (function() use ($from) {
   $__fn = function($dictGenericOrd) use ($from, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$genericCompare__prime__1 = ($dictGenericOrd)->genericCompare__prime__;
+$__case_0 = $dictGenericOrd;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->genericCompare__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericCompare__prime__1 = $__case_res_1;
     $__res = (function() use ($genericCompare__prime__1, $from) {
   $__fn = function($x, $y = null) use ($genericCompare__prime__1, $from, &$__fn) {
   $__num = func_num_args();

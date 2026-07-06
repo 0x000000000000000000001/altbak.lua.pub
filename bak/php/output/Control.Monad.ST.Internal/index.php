@@ -98,8 +98,28 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     switch ($id) {
       case 'Control_Monad_ST_Internal_modify__prime__': $v = ($GLOBALS['Control_Monad_ST_Internal_modifyImpl'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_modifyImpl')); break;
       case 'Control_Monad_ST_Internal_functorST': $v = (object)["map" => ($GLOBALS['Control_Monad_ST_Internal_map_'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_map_'))]; break;
-      case 'Control_Monad_ST_Internal_map': $v = ($GLOBALS['Control_Monad_ST_Internal_map_'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_map_')); break;
-      case 'Control_Monad_ST_Internal_void': $v = (($GLOBALS['Data_Functor_void'] ?? \Data\Functor\phpurs_eval_thunk('Data_Functor_void')))(($GLOBALS['Control_Monad_ST_Internal_functorST'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_functorST'))); break;
+      case 'Control_Monad_ST_Internal_map': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Monad_ST_Internal_functorST'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_functorST'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Control_Monad_ST_Internal_void': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Monad_ST_Internal_functorST'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_functorST'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return ($__case_res_0)((($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const')))(($GLOBALS['Data_Unit_unit'] ?? \Data\Unit\phpurs_eval_thunk('Data_Unit_unit'))));
+})(); break;
       case 'Control_Monad_ST_Internal_monadST': $v = (object)["Applicative0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
@@ -147,7 +167,57 @@ $__global_Control_Monad_ST_Internal_applyST = ($GLOBALS['Control_Monad_ST_Intern
   };
   return $__fn;
 })()]; break;
-      case 'Control_Monad_ST_Internal_applyST': $v = (object)["apply" => (($GLOBALS['Control_Monad_ap'] ?? \Control\Monad\phpurs_eval_thunk('Control_Monad_ap')))(($GLOBALS['Control_Monad_ST_Internal_monadST'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_monadST'))), "Functor0" => (function() {
+      case 'Control_Monad_ST_Internal_applyST': $v = (function() {
+  $__case_0 = $dict;
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bind;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $bind = $__case_res_0;
+  $__case_0 = $dict;
+  $__case_res_1 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $pure = $__case_res_1;
+  return (object)["apply" => (function() use ($bind, $pure) {
+  $__fn = function($f, $a = null) use ($bind, $pure, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($a) use ($f, &$__fn) { return $__fn($f, $a); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($bind)($f, (function() use ($bind, $a, $pure) {
+  $__fn = function($f__prime__) use ($bind, $a, $pure, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($bind)($a, (function() use ($pure, $f__prime__) {
+  $__fn = function($a__prime__) use ($pure, $f__prime__, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($pure)(($f__prime__)($a__prime__));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})());
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})());
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "Functor0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
@@ -158,12 +228,90 @@ $__global_Control_Monad_ST_Internal_functorST = ($GLOBALS['Control_Monad_ST_Inte
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})()]; break;
-      case 'Control_Monad_ST_Internal_lift2': $v = (($GLOBALS['Control_Apply_lift2'] ?? \Control\Apply\phpurs_eval_thunk('Control_Apply_lift2')))(($GLOBALS['Control_Monad_ST_Internal_applyST'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_applyST'))); break;
-      case 'Control_Monad_ST_Internal_bind': $v = ($GLOBALS['Control_Monad_ST_Internal_bind_'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_bind_')); break;
-      case 'Control_Monad_ST_Internal_bindFlipped': $v = (($GLOBALS['Control_Bind_bindFlipped'] ?? \Control\Bind\phpurs_eval_thunk('Control_Bind_bindFlipped')))(($GLOBALS['Control_Monad_ST_Internal_bindST'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_bindST'))); break;
-      case 'Control_Monad_ST_Internal_discard': $v = ((($GLOBALS['Control_Bind_discardUnit'] ?? \Control\Bind\phpurs_eval_thunk('Control_Bind_discardUnit')))->discard)(($GLOBALS['Control_Monad_ST_Internal_bindST'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_bindST'))); break;
-      case 'Control_Monad_ST_Internal_pure': $v = ($GLOBALS['Control_Monad_ST_Internal_pure_'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_pure_')); break;
+})()];
+})(); break;
+      case 'Control_Monad_ST_Internal_lift2': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Monad_ST_Internal_applyST'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_applyST'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $apply1 = $__case_res_0;
+  $__case_0 = $dict;
+  $__case_res_1 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $map = $__case_res_1;
+  return (function() use ($apply1, $map) {
+  $__fn = function($f, $a = null, $b = null) use ($apply1, $map, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($b) use ($f, $a, &$__fn) { return $__fn($f, $a, $b); };
+    if ($__num === 1) return function($a, $b = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $a, $b);
+      if ($__num2 === 1) return function($b) use ($f, $a, &$__fn) { return $__fn($f, $a, $b); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = ($apply1)(($map)($f, $a), $b);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})();
+})(); break;
+      case 'Control_Monad_ST_Internal_bind': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Monad_ST_Internal_bindST'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_bindST'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bind;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Control_Monad_ST_Internal_bindFlipped': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Monad_ST_Internal_bindST'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_bindST'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bind;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return (($GLOBALS['Data_Function_flip'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_flip')))($__case_res_0);
+})(); break;
+      case 'Control_Monad_ST_Internal_discard': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Bind_discardUnit'] ?? \Control\Bind\phpurs_eval_thunk('Control_Bind_discardUnit'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->discard;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return ($__case_res_0)(($GLOBALS['Control_Monad_ST_Internal_bindST'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_bindST')));
+})(); break;
+      case 'Control_Monad_ST_Internal_pure': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Monad_ST_Internal_applicativeST'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_applicativeST'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Control_Monad_ST_Internal_monadRecST': $v = (object)["tailRecM" => (function() {
   $__fn = function($f, $a = null) use (&$__fn) {
   $__num = func_num_args();
@@ -172,17 +320,16 @@ $__global_Control_Monad_ST_Internal_functorST = ($GLOBALS['Control_Monad_ST_Inte
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
 $__global_Partial_Unsafe__unsafePartial = ($GLOBALS['Partial_Unsafe__unsafePartial'] ?? \Partial\Unsafe\phpurs_eval_thunk('Partial_Unsafe__unsafePartial'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$__global_Control_Monad_ST_Internal_bind_ = ($GLOBALS['Control_Monad_ST_Internal_bind_'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_bind_'));
+$__global_Control_Monad_ST_Internal_bind = ($GLOBALS['Control_Monad_ST_Internal_bind'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_bind'));
 $__global_Control_Monad_ST_Internal_bindFlipped = ($GLOBALS['Control_Monad_ST_Internal_bindFlipped'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_bindFlipped'));
 $__global_Control_Monad_ST_Internal_new = ($GLOBALS['Control_Monad_ST_Internal_new'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_new'));
 $__global_Control_Monad_ST_Internal_discard = ($GLOBALS['Control_Monad_ST_Internal_discard'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_discard'));
 $__global_Control_Monad_ST_Internal_while = ($GLOBALS['Control_Monad_ST_Internal_while'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_while'));
-$__global_Control_Monad_ST_Internal_map_ = ($GLOBALS['Control_Monad_ST_Internal_map_'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_map_'));
+$__global_Control_Monad_ST_Internal_map = ($GLOBALS['Control_Monad_ST_Internal_map'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_map'));
 $__global_Control_Monad_ST_Internal_read = ($GLOBALS['Control_Monad_ST_Internal_read'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_read'));
 $__global_Control_Monad_ST_Internal_void = ($GLOBALS['Control_Monad_ST_Internal_void'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_void'));
 $__global_Control_Monad_ST_Internal_write = ($GLOBALS['Control_Monad_ST_Internal_write'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_write'));
-$__global_Control_Monad_ST_Internal_pure_ = ($GLOBALS['Control_Monad_ST_Internal_pure_'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_pure_'));
+$__global_Control_Monad_ST_Internal_pure = ($GLOBALS['Control_Monad_ST_Internal_pure'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_pure'));
 $__global_Data_Unit_unit = ($GLOBALS['Data_Unit_unit'] ?? \Data\Unit\phpurs_eval_thunk('Data_Unit_unit'));
 $isLooping = (function() {
   $__body = function($v) {
@@ -206,15 +353,8 @@ break;
   };
   return $__fn;
 })();
-$fromDone = ($__global_Partial_Unsafe__unsafePartial)((function() use ($__global_Prim_undefined) {
-  $__fn = function($__dollar____unused, $v = null) use ($__global_Prim_undefined, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 2) {
-    if ($__num === 1) return function($v) use ($__dollar____unused, &$__fn) { return $__fn($__dollar____unused, $v); };
-    return phpurs_curry_fallback($__fn, func_get_args(), 2);
-  }
-    $__res = ((function() use ($v) {
-  $__body = function($__dollar____unused) use ($v) {
+$fromDone = ($__global_Partial_Unsafe__unsafePartial)((function() {
+  $__body = function($__dollar____unused, $v) {
     $__case_0 = $v;
     switch (($__case_0)->tag) {
 case "Done":
@@ -226,33 +366,30 @@ throw new \Exception("Pattern match failure");
 break;
 };
   };
-  $__fn = function($__dollar____unused) use ($v, $__body, &$__fn) {
+  $__fn = function($__dollar____unused, $v = null) use ($__body, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) {
-    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($__dollar____unused, &$__fn) { return $__fn($__dollar____unused, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
-    $__res = $__body($__dollar____unused);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})())($__global_Prim_undefined);
+    $__res = $__body($__dollar____unused, $v);
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
 })());
-    $__res = ($__global_Control_Monad_ST_Internal_bind_)(($__global_Control_Monad_ST_Internal_bindFlipped)($__global_Control_Monad_ST_Internal_new, ($f)($a)), (function() use ($__global_Control_Monad_ST_Internal_discard, $__global_Control_Monad_ST_Internal_while, $__global_Control_Monad_ST_Internal_map_, $isLooping, $__global_Control_Monad_ST_Internal_read, $__global_Control_Monad_ST_Internal_bind_, $f, $__global_Control_Monad_ST_Internal_void, $__global_Control_Monad_ST_Internal_write, $__global_Control_Monad_ST_Internal_pure_, $__global_Data_Unit_unit, $fromDone) {
-  $__fn = function($r) use ($__global_Control_Monad_ST_Internal_discard, $__global_Control_Monad_ST_Internal_while, $__global_Control_Monad_ST_Internal_map_, $isLooping, $__global_Control_Monad_ST_Internal_read, $__global_Control_Monad_ST_Internal_bind_, $f, $__global_Control_Monad_ST_Internal_void, $__global_Control_Monad_ST_Internal_write, $__global_Control_Monad_ST_Internal_pure_, $__global_Data_Unit_unit, $fromDone, &$__fn) {
+    $__res = ($__global_Control_Monad_ST_Internal_bind)(($__global_Control_Monad_ST_Internal_bindFlipped)($__global_Control_Monad_ST_Internal_new, ($f)($a)), (function() use ($__global_Control_Monad_ST_Internal_discard, $__global_Control_Monad_ST_Internal_while, $__global_Control_Monad_ST_Internal_map, $isLooping, $__global_Control_Monad_ST_Internal_read, $__global_Control_Monad_ST_Internal_bind, $f, $__global_Control_Monad_ST_Internal_void, $__global_Control_Monad_ST_Internal_write, $__global_Control_Monad_ST_Internal_pure, $__global_Data_Unit_unit, $fromDone) {
+  $__fn = function($r) use ($__global_Control_Monad_ST_Internal_discard, $__global_Control_Monad_ST_Internal_while, $__global_Control_Monad_ST_Internal_map, $isLooping, $__global_Control_Monad_ST_Internal_read, $__global_Control_Monad_ST_Internal_bind, $f, $__global_Control_Monad_ST_Internal_void, $__global_Control_Monad_ST_Internal_write, $__global_Control_Monad_ST_Internal_pure, $__global_Data_Unit_unit, $fromDone, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($__global_Control_Monad_ST_Internal_discard)(($__global_Control_Monad_ST_Internal_while)(($__global_Control_Monad_ST_Internal_map_)($isLooping, ($__global_Control_Monad_ST_Internal_read)($r)), ($__global_Control_Monad_ST_Internal_bind_)(($__global_Control_Monad_ST_Internal_read)($r), (function() use ($__global_Control_Monad_ST_Internal_bind_, $f, $__global_Control_Monad_ST_Internal_void, $__global_Control_Monad_ST_Internal_write, $r, $__global_Control_Monad_ST_Internal_pure_, $__global_Data_Unit_unit) {
-  $__body = function($v) use ($__global_Control_Monad_ST_Internal_bind_, $f, $__global_Control_Monad_ST_Internal_void, $__global_Control_Monad_ST_Internal_write, $r, $__global_Control_Monad_ST_Internal_pure_, $__global_Data_Unit_unit) {
+    $__res = ($__global_Control_Monad_ST_Internal_discard)(($__global_Control_Monad_ST_Internal_while)(($__global_Control_Monad_ST_Internal_map)($isLooping, ($__global_Control_Monad_ST_Internal_read)($r)), ($__global_Control_Monad_ST_Internal_bind)(($__global_Control_Monad_ST_Internal_read)($r), (function() use ($__global_Control_Monad_ST_Internal_bind, $f, $__global_Control_Monad_ST_Internal_void, $__global_Control_Monad_ST_Internal_write, $r, $__global_Control_Monad_ST_Internal_pure, $__global_Data_Unit_unit) {
+  $__body = function($v) use ($__global_Control_Monad_ST_Internal_bind, $f, $__global_Control_Monad_ST_Internal_void, $__global_Control_Monad_ST_Internal_write, $r, $__global_Control_Monad_ST_Internal_pure, $__global_Data_Unit_unit) {
     $__case_0 = $v;
     switch (($__case_0)->tag) {
 case "Loop":
 $a__prime__ = ($__case_0)->v0;
-return ($__global_Control_Monad_ST_Internal_bind_)(($f)($a__prime__), (function() use ($__global_Control_Monad_ST_Internal_void, $__global_Control_Monad_ST_Internal_write, $r) {
+return ($__global_Control_Monad_ST_Internal_bind)(($f)($a__prime__), (function() use ($__global_Control_Monad_ST_Internal_void, $__global_Control_Monad_ST_Internal_write, $r) {
   $__fn = function($e) use ($__global_Control_Monad_ST_Internal_void, $__global_Control_Monad_ST_Internal_write, $r, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
@@ -265,14 +402,14 @@ return ($__global_Control_Monad_ST_Internal_bind_)(($f)($a__prime__), (function(
 })());
 break;
 case "Done":
-return ($__global_Control_Monad_ST_Internal_pure_)($__global_Data_Unit_unit);
+return ($__global_Control_Monad_ST_Internal_pure)($__global_Data_Unit_unit);
 break;
 default:
 throw new \Exception("Pattern match failure");
 break;
 };
   };
-  $__fn = function($v) use ($__global_Control_Monad_ST_Internal_bind_, $f, $__global_Control_Monad_ST_Internal_void, $__global_Control_Monad_ST_Internal_write, $r, $__global_Control_Monad_ST_Internal_pure_, $__global_Data_Unit_unit, $__body, &$__fn) {
+  $__fn = function($v) use ($__global_Control_Monad_ST_Internal_bind, $f, $__global_Control_Monad_ST_Internal_void, $__global_Control_Monad_ST_Internal_write, $r, $__global_Control_Monad_ST_Internal_pure, $__global_Data_Unit_unit, $__body, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
@@ -281,13 +418,13 @@ break;
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})())), (function() use ($__global_Control_Monad_ST_Internal_map_, $fromDone, $__global_Control_Monad_ST_Internal_read, $r) {
-  $__fn = function($__dollar____unused) use ($__global_Control_Monad_ST_Internal_map_, $fromDone, $__global_Control_Monad_ST_Internal_read, $r, &$__fn) {
+})())), (function() use ($__global_Control_Monad_ST_Internal_map, $fromDone, $__global_Control_Monad_ST_Internal_read, $r) {
+  $__fn = function($__dollar____unused) use ($__global_Control_Monad_ST_Internal_map, $fromDone, $__global_Control_Monad_ST_Internal_read, $r, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($__global_Control_Monad_ST_Internal_map_)($fromDone, ($__global_Control_Monad_ST_Internal_read)($r));
+    $__res = ($__global_Control_Monad_ST_Internal_map)($fromDone, ($__global_Control_Monad_ST_Internal_read)($r));
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -438,7 +575,15 @@ function Control_Monad_ST_Internal_semigroupST($dictSemigroup) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Control_Monad_ST_Internal_lift2 = ($GLOBALS['Control_Monad_ST_Internal_lift2'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_lift2'));
-    $__res = (object)["append" => ($__global_Control_Monad_ST_Internal_lift2)(($dictSemigroup)->append)];
+$__case_0 = $dictSemigroup;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = (object)["append" => ($__global_Control_Monad_ST_Internal_lift2)($__case_res_0)];
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Control_Monad_ST_Internal_semigroupST'] = __NAMESPACE__ . '\\Control_Monad_ST_Internal_semigroupST';
@@ -451,11 +596,26 @@ function Control_Monad_ST_Internal_monoidST($dictMonoid) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Control_Monad_ST_Internal_semigroupST = ($GLOBALS['Control_Monad_ST_Internal_semigroupST'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_semigroupST'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$__global_Control_Monad_ST_Internal_pure_ = ($GLOBALS['Control_Monad_ST_Internal_pure_'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_pure_'));
-$semigroupST1 = ($__global_Control_Monad_ST_Internal_semigroupST)((($dictMonoid)->Semigroup0)($__global_Prim_undefined));
-    $__res = (object)["mempty" => ($__global_Control_Monad_ST_Internal_pure_)(($dictMonoid)->mempty), "Semigroup0" => (function() use ($semigroupST1) {
+$__global_Control_Monad_ST_Internal_lift2 = ($GLOBALS['Control_Monad_ST_Internal_lift2'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_lift2'));
+$__global_Control_Monad_ST_Internal_pure = ($GLOBALS['Control_Monad_ST_Internal_pure'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_pure'));
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$semigroupST1 = (object)["append" => ($__global_Control_Monad_ST_Internal_lift2)($__case_res_0)];
+$__case_0 = $dictMonoid;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->mempty;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = (object)["mempty" => ($__global_Control_Monad_ST_Internal_pure)($__case_res_1), "Semigroup0" => (function() use ($semigroupST1) {
   $__fn = function($__dollar____unused) use ($semigroupST1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {

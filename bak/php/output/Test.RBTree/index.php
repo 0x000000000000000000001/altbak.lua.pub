@@ -241,94 +241,7 @@ $y = ($__case_1)->v2;
 $c = ($__case_1)->v3;
 $z = $__case_2;
 $d = $__case_3;
-return ((function() {
-  $__fn = function($value0, $value1 = null, $value2 = null, $value3 = null) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 4) {
-    if ($__num === 3) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-    if ($__num === 2) return function($value2, $value3 = null) use ($value0, $value1, &$__fn) {
-      $__num2 = func_num_args();
-      if ($__num2 === 2) return $__fn($value0, $value1, $value2, $value3);
-      if ($__num2 === 1) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-      return phpurs_curry_fallback($__fn, [$value0, $value1], 4);
-    };
-    if ($__num === 1) return function($value1, $value2 = null, $value3 = null) use ($value0, &$__fn) {
-      $__num2 = func_num_args();
-      if ($__num2 === 3) return $__fn($value0, $value1, $value2, $value3);
-      if ($__num2 === 2) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-      if ($__num2 === 1) return function($value2, $value3 = null) use ($value0, $value1, &$__fn) {
-        $__num3 = func_num_args();
-        if ($__num3 === 2) return $__fn($value0, $value1, $value2, $value3);
-        if ($__num3 === 1) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-        return phpurs_curry_fallback($__fn, [$value0, $value1], 4);
-      };
-      return phpurs_curry_fallback($__fn, [$value0], 4);
-    };
-    return phpurs_curry_fallback($__fn, func_get_args(), 4);
-  }
-    $__res = new Phpurs_Data4("T", $value0, $value1, $value2, $value3);
-  return $__num > 4 ? $__res(...array_slice(func_get_args(), 4)) : $__res;
-  };
-  return $__fn;
-})())(($GLOBALS['__phpurs_data0_R'] ??= new Phpurs_Data0("R")), ((function() {
-  $__fn = function($value0, $value1 = null, $value2 = null, $value3 = null) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 4) {
-    if ($__num === 3) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-    if ($__num === 2) return function($value2, $value3 = null) use ($value0, $value1, &$__fn) {
-      $__num2 = func_num_args();
-      if ($__num2 === 2) return $__fn($value0, $value1, $value2, $value3);
-      if ($__num2 === 1) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-      return phpurs_curry_fallback($__fn, [$value0, $value1], 4);
-    };
-    if ($__num === 1) return function($value1, $value2 = null, $value3 = null) use ($value0, &$__fn) {
-      $__num2 = func_num_args();
-      if ($__num2 === 3) return $__fn($value0, $value1, $value2, $value3);
-      if ($__num2 === 2) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-      if ($__num2 === 1) return function($value2, $value3 = null) use ($value0, $value1, &$__fn) {
-        $__num3 = func_num_args();
-        if ($__num3 === 2) return $__fn($value0, $value1, $value2, $value3);
-        if ($__num3 === 1) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-        return phpurs_curry_fallback($__fn, [$value0, $value1], 4);
-      };
-      return phpurs_curry_fallback($__fn, [$value0], 4);
-    };
-    return phpurs_curry_fallback($__fn, func_get_args(), 4);
-  }
-    $__res = new Phpurs_Data4("T", $value0, $value1, $value2, $value3);
-  return $__num > 4 ? $__res(...array_slice(func_get_args(), 4)) : $__res;
-  };
-  return $__fn;
-})())(($GLOBALS['__phpurs_data0_B'] ??= new Phpurs_Data0("B")), $a, $x, $b), $y, ((function() {
-  $__fn = function($value0, $value1 = null, $value2 = null, $value3 = null) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 4) {
-    if ($__num === 3) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-    if ($__num === 2) return function($value2, $value3 = null) use ($value0, $value1, &$__fn) {
-      $__num2 = func_num_args();
-      if ($__num2 === 2) return $__fn($value0, $value1, $value2, $value3);
-      if ($__num2 === 1) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-      return phpurs_curry_fallback($__fn, [$value0, $value1], 4);
-    };
-    if ($__num === 1) return function($value1, $value2 = null, $value3 = null) use ($value0, &$__fn) {
-      $__num2 = func_num_args();
-      if ($__num2 === 3) return $__fn($value0, $value1, $value2, $value3);
-      if ($__num2 === 2) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-      if ($__num2 === 1) return function($value2, $value3 = null) use ($value0, $value1, &$__fn) {
-        $__num3 = func_num_args();
-        if ($__num3 === 2) return $__fn($value0, $value1, $value2, $value3);
-        if ($__num3 === 1) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-        return phpurs_curry_fallback($__fn, [$value0, $value1], 4);
-      };
-      return phpurs_curry_fallback($__fn, [$value0], 4);
-    };
-    return phpurs_curry_fallback($__fn, func_get_args(), 4);
-  }
-    $__res = new Phpurs_Data4("T", $value0, $value1, $value2, $value3);
-  return $__num > 4 ? $__res(...array_slice(func_get_args(), 4)) : $__res;
-  };
-  return $__fn;
-})())(($GLOBALS['__phpurs_data0_B'] ??= new Phpurs_Data0("B")), $c, $z, $d));
+return new Phpurs_Data4("T", ($GLOBALS['__phpurs_data0_R'] ??= new Phpurs_Data0("R")), new Phpurs_Data4("T", ($GLOBALS['__phpurs_data0_B'] ??= new Phpurs_Data0("B")), $a, $x, $b), $y, new Phpurs_Data4("T", ($GLOBALS['__phpurs_data0_B'] ??= new Phpurs_Data0("B")), $c, $z, $d));
 } else {
 if (((($__case_0)->tag === "B") && (((($__case_1)->tag === "T") && ((($__case_1)->v0)->tag === "R")) && (((($__case_1)->v3)->tag === "T") && (((($__case_1)->v3)->v0)->tag === "R"))))) {
 $a = ($__case_1)->v1;
@@ -338,94 +251,7 @@ $y = (($__case_1)->v3)->v2;
 $c = (($__case_1)->v3)->v3;
 $z = $__case_2;
 $d = $__case_3;
-return ((function() {
-  $__fn = function($value0, $value1 = null, $value2 = null, $value3 = null) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 4) {
-    if ($__num === 3) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-    if ($__num === 2) return function($value2, $value3 = null) use ($value0, $value1, &$__fn) {
-      $__num2 = func_num_args();
-      if ($__num2 === 2) return $__fn($value0, $value1, $value2, $value3);
-      if ($__num2 === 1) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-      return phpurs_curry_fallback($__fn, [$value0, $value1], 4);
-    };
-    if ($__num === 1) return function($value1, $value2 = null, $value3 = null) use ($value0, &$__fn) {
-      $__num2 = func_num_args();
-      if ($__num2 === 3) return $__fn($value0, $value1, $value2, $value3);
-      if ($__num2 === 2) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-      if ($__num2 === 1) return function($value2, $value3 = null) use ($value0, $value1, &$__fn) {
-        $__num3 = func_num_args();
-        if ($__num3 === 2) return $__fn($value0, $value1, $value2, $value3);
-        if ($__num3 === 1) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-        return phpurs_curry_fallback($__fn, [$value0, $value1], 4);
-      };
-      return phpurs_curry_fallback($__fn, [$value0], 4);
-    };
-    return phpurs_curry_fallback($__fn, func_get_args(), 4);
-  }
-    $__res = new Phpurs_Data4("T", $value0, $value1, $value2, $value3);
-  return $__num > 4 ? $__res(...array_slice(func_get_args(), 4)) : $__res;
-  };
-  return $__fn;
-})())(($GLOBALS['__phpurs_data0_R'] ??= new Phpurs_Data0("R")), ((function() {
-  $__fn = function($value0, $value1 = null, $value2 = null, $value3 = null) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 4) {
-    if ($__num === 3) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-    if ($__num === 2) return function($value2, $value3 = null) use ($value0, $value1, &$__fn) {
-      $__num2 = func_num_args();
-      if ($__num2 === 2) return $__fn($value0, $value1, $value2, $value3);
-      if ($__num2 === 1) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-      return phpurs_curry_fallback($__fn, [$value0, $value1], 4);
-    };
-    if ($__num === 1) return function($value1, $value2 = null, $value3 = null) use ($value0, &$__fn) {
-      $__num2 = func_num_args();
-      if ($__num2 === 3) return $__fn($value0, $value1, $value2, $value3);
-      if ($__num2 === 2) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-      if ($__num2 === 1) return function($value2, $value3 = null) use ($value0, $value1, &$__fn) {
-        $__num3 = func_num_args();
-        if ($__num3 === 2) return $__fn($value0, $value1, $value2, $value3);
-        if ($__num3 === 1) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-        return phpurs_curry_fallback($__fn, [$value0, $value1], 4);
-      };
-      return phpurs_curry_fallback($__fn, [$value0], 4);
-    };
-    return phpurs_curry_fallback($__fn, func_get_args(), 4);
-  }
-    $__res = new Phpurs_Data4("T", $value0, $value1, $value2, $value3);
-  return $__num > 4 ? $__res(...array_slice(func_get_args(), 4)) : $__res;
-  };
-  return $__fn;
-})())(($GLOBALS['__phpurs_data0_B'] ??= new Phpurs_Data0("B")), $a, $x, $b), $y, ((function() {
-  $__fn = function($value0, $value1 = null, $value2 = null, $value3 = null) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 4) {
-    if ($__num === 3) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-    if ($__num === 2) return function($value2, $value3 = null) use ($value0, $value1, &$__fn) {
-      $__num2 = func_num_args();
-      if ($__num2 === 2) return $__fn($value0, $value1, $value2, $value3);
-      if ($__num2 === 1) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-      return phpurs_curry_fallback($__fn, [$value0, $value1], 4);
-    };
-    if ($__num === 1) return function($value1, $value2 = null, $value3 = null) use ($value0, &$__fn) {
-      $__num2 = func_num_args();
-      if ($__num2 === 3) return $__fn($value0, $value1, $value2, $value3);
-      if ($__num2 === 2) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-      if ($__num2 === 1) return function($value2, $value3 = null) use ($value0, $value1, &$__fn) {
-        $__num3 = func_num_args();
-        if ($__num3 === 2) return $__fn($value0, $value1, $value2, $value3);
-        if ($__num3 === 1) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-        return phpurs_curry_fallback($__fn, [$value0, $value1], 4);
-      };
-      return phpurs_curry_fallback($__fn, [$value0], 4);
-    };
-    return phpurs_curry_fallback($__fn, func_get_args(), 4);
-  }
-    $__res = new Phpurs_Data4("T", $value0, $value1, $value2, $value3);
-  return $__num > 4 ? $__res(...array_slice(func_get_args(), 4)) : $__res;
-  };
-  return $__fn;
-})())(($GLOBALS['__phpurs_data0_B'] ??= new Phpurs_Data0("B")), $c, $z, $d));
+return new Phpurs_Data4("T", ($GLOBALS['__phpurs_data0_R'] ??= new Phpurs_Data0("R")), new Phpurs_Data4("T", ($GLOBALS['__phpurs_data0_B'] ??= new Phpurs_Data0("B")), $a, $x, $b), $y, new Phpurs_Data4("T", ($GLOBALS['__phpurs_data0_B'] ??= new Phpurs_Data0("B")), $c, $z, $d));
 } else {
 if (((($__case_0)->tag === "B") && (((($__case_3)->tag === "T") && ((($__case_3)->v0)->tag === "R")) && (((($__case_3)->v1)->tag === "T") && (((($__case_3)->v1)->v0)->tag === "R"))))) {
 $a = $__case_1;
@@ -435,94 +261,7 @@ $y = (($__case_3)->v1)->v2;
 $c = (($__case_3)->v1)->v3;
 $z = ($__case_3)->v2;
 $d = ($__case_3)->v3;
-return ((function() {
-  $__fn = function($value0, $value1 = null, $value2 = null, $value3 = null) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 4) {
-    if ($__num === 3) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-    if ($__num === 2) return function($value2, $value3 = null) use ($value0, $value1, &$__fn) {
-      $__num2 = func_num_args();
-      if ($__num2 === 2) return $__fn($value0, $value1, $value2, $value3);
-      if ($__num2 === 1) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-      return phpurs_curry_fallback($__fn, [$value0, $value1], 4);
-    };
-    if ($__num === 1) return function($value1, $value2 = null, $value3 = null) use ($value0, &$__fn) {
-      $__num2 = func_num_args();
-      if ($__num2 === 3) return $__fn($value0, $value1, $value2, $value3);
-      if ($__num2 === 2) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-      if ($__num2 === 1) return function($value2, $value3 = null) use ($value0, $value1, &$__fn) {
-        $__num3 = func_num_args();
-        if ($__num3 === 2) return $__fn($value0, $value1, $value2, $value3);
-        if ($__num3 === 1) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-        return phpurs_curry_fallback($__fn, [$value0, $value1], 4);
-      };
-      return phpurs_curry_fallback($__fn, [$value0], 4);
-    };
-    return phpurs_curry_fallback($__fn, func_get_args(), 4);
-  }
-    $__res = new Phpurs_Data4("T", $value0, $value1, $value2, $value3);
-  return $__num > 4 ? $__res(...array_slice(func_get_args(), 4)) : $__res;
-  };
-  return $__fn;
-})())(($GLOBALS['__phpurs_data0_R'] ??= new Phpurs_Data0("R")), ((function() {
-  $__fn = function($value0, $value1 = null, $value2 = null, $value3 = null) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 4) {
-    if ($__num === 3) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-    if ($__num === 2) return function($value2, $value3 = null) use ($value0, $value1, &$__fn) {
-      $__num2 = func_num_args();
-      if ($__num2 === 2) return $__fn($value0, $value1, $value2, $value3);
-      if ($__num2 === 1) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-      return phpurs_curry_fallback($__fn, [$value0, $value1], 4);
-    };
-    if ($__num === 1) return function($value1, $value2 = null, $value3 = null) use ($value0, &$__fn) {
-      $__num2 = func_num_args();
-      if ($__num2 === 3) return $__fn($value0, $value1, $value2, $value3);
-      if ($__num2 === 2) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-      if ($__num2 === 1) return function($value2, $value3 = null) use ($value0, $value1, &$__fn) {
-        $__num3 = func_num_args();
-        if ($__num3 === 2) return $__fn($value0, $value1, $value2, $value3);
-        if ($__num3 === 1) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-        return phpurs_curry_fallback($__fn, [$value0, $value1], 4);
-      };
-      return phpurs_curry_fallback($__fn, [$value0], 4);
-    };
-    return phpurs_curry_fallback($__fn, func_get_args(), 4);
-  }
-    $__res = new Phpurs_Data4("T", $value0, $value1, $value2, $value3);
-  return $__num > 4 ? $__res(...array_slice(func_get_args(), 4)) : $__res;
-  };
-  return $__fn;
-})())(($GLOBALS['__phpurs_data0_B'] ??= new Phpurs_Data0("B")), $a, $x, $b), $y, ((function() {
-  $__fn = function($value0, $value1 = null, $value2 = null, $value3 = null) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 4) {
-    if ($__num === 3) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-    if ($__num === 2) return function($value2, $value3 = null) use ($value0, $value1, &$__fn) {
-      $__num2 = func_num_args();
-      if ($__num2 === 2) return $__fn($value0, $value1, $value2, $value3);
-      if ($__num2 === 1) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-      return phpurs_curry_fallback($__fn, [$value0, $value1], 4);
-    };
-    if ($__num === 1) return function($value1, $value2 = null, $value3 = null) use ($value0, &$__fn) {
-      $__num2 = func_num_args();
-      if ($__num2 === 3) return $__fn($value0, $value1, $value2, $value3);
-      if ($__num2 === 2) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-      if ($__num2 === 1) return function($value2, $value3 = null) use ($value0, $value1, &$__fn) {
-        $__num3 = func_num_args();
-        if ($__num3 === 2) return $__fn($value0, $value1, $value2, $value3);
-        if ($__num3 === 1) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-        return phpurs_curry_fallback($__fn, [$value0, $value1], 4);
-      };
-      return phpurs_curry_fallback($__fn, [$value0], 4);
-    };
-    return phpurs_curry_fallback($__fn, func_get_args(), 4);
-  }
-    $__res = new Phpurs_Data4("T", $value0, $value1, $value2, $value3);
-  return $__num > 4 ? $__res(...array_slice(func_get_args(), 4)) : $__res;
-  };
-  return $__fn;
-})())(($GLOBALS['__phpurs_data0_B'] ??= new Phpurs_Data0("B")), $c, $z, $d));
+return new Phpurs_Data4("T", ($GLOBALS['__phpurs_data0_R'] ??= new Phpurs_Data0("R")), new Phpurs_Data4("T", ($GLOBALS['__phpurs_data0_B'] ??= new Phpurs_Data0("B")), $a, $x, $b), $y, new Phpurs_Data4("T", ($GLOBALS['__phpurs_data0_B'] ??= new Phpurs_Data0("B")), $c, $z, $d));
 } else {
 if (((($__case_0)->tag === "B") && (((($__case_3)->tag === "T") && ((($__case_3)->v0)->tag === "R")) && (((($__case_3)->v3)->tag === "T") && (((($__case_3)->v3)->v0)->tag === "R"))))) {
 $a = $__case_1;
@@ -532,130 +271,14 @@ $y = ($__case_3)->v2;
 $c = (($__case_3)->v3)->v1;
 $z = (($__case_3)->v3)->v2;
 $d = (($__case_3)->v3)->v3;
-return ((function() {
-  $__fn = function($value0, $value1 = null, $value2 = null, $value3 = null) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 4) {
-    if ($__num === 3) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-    if ($__num === 2) return function($value2, $value3 = null) use ($value0, $value1, &$__fn) {
-      $__num2 = func_num_args();
-      if ($__num2 === 2) return $__fn($value0, $value1, $value2, $value3);
-      if ($__num2 === 1) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-      return phpurs_curry_fallback($__fn, [$value0, $value1], 4);
-    };
-    if ($__num === 1) return function($value1, $value2 = null, $value3 = null) use ($value0, &$__fn) {
-      $__num2 = func_num_args();
-      if ($__num2 === 3) return $__fn($value0, $value1, $value2, $value3);
-      if ($__num2 === 2) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-      if ($__num2 === 1) return function($value2, $value3 = null) use ($value0, $value1, &$__fn) {
-        $__num3 = func_num_args();
-        if ($__num3 === 2) return $__fn($value0, $value1, $value2, $value3);
-        if ($__num3 === 1) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-        return phpurs_curry_fallback($__fn, [$value0, $value1], 4);
-      };
-      return phpurs_curry_fallback($__fn, [$value0], 4);
-    };
-    return phpurs_curry_fallback($__fn, func_get_args(), 4);
-  }
-    $__res = new Phpurs_Data4("T", $value0, $value1, $value2, $value3);
-  return $__num > 4 ? $__res(...array_slice(func_get_args(), 4)) : $__res;
-  };
-  return $__fn;
-})())(($GLOBALS['__phpurs_data0_R'] ??= new Phpurs_Data0("R")), ((function() {
-  $__fn = function($value0, $value1 = null, $value2 = null, $value3 = null) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 4) {
-    if ($__num === 3) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-    if ($__num === 2) return function($value2, $value3 = null) use ($value0, $value1, &$__fn) {
-      $__num2 = func_num_args();
-      if ($__num2 === 2) return $__fn($value0, $value1, $value2, $value3);
-      if ($__num2 === 1) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-      return phpurs_curry_fallback($__fn, [$value0, $value1], 4);
-    };
-    if ($__num === 1) return function($value1, $value2 = null, $value3 = null) use ($value0, &$__fn) {
-      $__num2 = func_num_args();
-      if ($__num2 === 3) return $__fn($value0, $value1, $value2, $value3);
-      if ($__num2 === 2) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-      if ($__num2 === 1) return function($value2, $value3 = null) use ($value0, $value1, &$__fn) {
-        $__num3 = func_num_args();
-        if ($__num3 === 2) return $__fn($value0, $value1, $value2, $value3);
-        if ($__num3 === 1) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-        return phpurs_curry_fallback($__fn, [$value0, $value1], 4);
-      };
-      return phpurs_curry_fallback($__fn, [$value0], 4);
-    };
-    return phpurs_curry_fallback($__fn, func_get_args(), 4);
-  }
-    $__res = new Phpurs_Data4("T", $value0, $value1, $value2, $value3);
-  return $__num > 4 ? $__res(...array_slice(func_get_args(), 4)) : $__res;
-  };
-  return $__fn;
-})())(($GLOBALS['__phpurs_data0_B'] ??= new Phpurs_Data0("B")), $a, $x, $b), $y, ((function() {
-  $__fn = function($value0, $value1 = null, $value2 = null, $value3 = null) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 4) {
-    if ($__num === 3) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-    if ($__num === 2) return function($value2, $value3 = null) use ($value0, $value1, &$__fn) {
-      $__num2 = func_num_args();
-      if ($__num2 === 2) return $__fn($value0, $value1, $value2, $value3);
-      if ($__num2 === 1) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-      return phpurs_curry_fallback($__fn, [$value0, $value1], 4);
-    };
-    if ($__num === 1) return function($value1, $value2 = null, $value3 = null) use ($value0, &$__fn) {
-      $__num2 = func_num_args();
-      if ($__num2 === 3) return $__fn($value0, $value1, $value2, $value3);
-      if ($__num2 === 2) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-      if ($__num2 === 1) return function($value2, $value3 = null) use ($value0, $value1, &$__fn) {
-        $__num3 = func_num_args();
-        if ($__num3 === 2) return $__fn($value0, $value1, $value2, $value3);
-        if ($__num3 === 1) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-        return phpurs_curry_fallback($__fn, [$value0, $value1], 4);
-      };
-      return phpurs_curry_fallback($__fn, [$value0], 4);
-    };
-    return phpurs_curry_fallback($__fn, func_get_args(), 4);
-  }
-    $__res = new Phpurs_Data4("T", $value0, $value1, $value2, $value3);
-  return $__num > 4 ? $__res(...array_slice(func_get_args(), 4)) : $__res;
-  };
-  return $__fn;
-})())(($GLOBALS['__phpurs_data0_B'] ??= new Phpurs_Data0("B")), $c, $z, $d));
+return new Phpurs_Data4("T", ($GLOBALS['__phpurs_data0_R'] ??= new Phpurs_Data0("R")), new Phpurs_Data4("T", ($GLOBALS['__phpurs_data0_B'] ??= new Phpurs_Data0("B")), $a, $x, $b), $y, new Phpurs_Data4("T", ($GLOBALS['__phpurs_data0_B'] ??= new Phpurs_Data0("B")), $c, $z, $d));
 } else {
 if (true) {
 $color = $__case_0;
 $a = $__case_1;
 $x = $__case_2;
 $b = $__case_3;
-return ((function() {
-  $__fn = function($value0, $value1 = null, $value2 = null, $value3 = null) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 4) {
-    if ($__num === 3) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-    if ($__num === 2) return function($value2, $value3 = null) use ($value0, $value1, &$__fn) {
-      $__num2 = func_num_args();
-      if ($__num2 === 2) return $__fn($value0, $value1, $value2, $value3);
-      if ($__num2 === 1) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-      return phpurs_curry_fallback($__fn, [$value0, $value1], 4);
-    };
-    if ($__num === 1) return function($value1, $value2 = null, $value3 = null) use ($value0, &$__fn) {
-      $__num2 = func_num_args();
-      if ($__num2 === 3) return $__fn($value0, $value1, $value2, $value3);
-      if ($__num2 === 2) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-      if ($__num2 === 1) return function($value2, $value3 = null) use ($value0, $value1, &$__fn) {
-        $__num3 = func_num_args();
-        if ($__num3 === 2) return $__fn($value0, $value1, $value2, $value3);
-        if ($__num3 === 1) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-        return phpurs_curry_fallback($__fn, [$value0, $value1], 4);
-      };
-      return phpurs_curry_fallback($__fn, [$value0], 4);
-    };
-    return phpurs_curry_fallback($__fn, func_get_args(), 4);
-  }
-    $__res = new Phpurs_Data4("T", $value0, $value1, $value2, $value3);
-  return $__num > 4 ? $__res(...array_slice(func_get_args(), 4)) : $__res;
-  };
-  return $__fn;
-})())($color, $a, $x, $b);
+return new Phpurs_Data4("T", $color, $a, $x, $b);
 } else {
 throw new \Exception("Pattern match failure");
 };
@@ -688,36 +311,7 @@ case "T":
 $a = ($__case_0)->v1;
 $y = ($__case_0)->v2;
 $b = ($__case_0)->v3;
-return ((function() {
-  $__fn = function($value0, $value1 = null, $value2 = null, $value3 = null) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 4) {
-    if ($__num === 3) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-    if ($__num === 2) return function($value2, $value3 = null) use ($value0, $value1, &$__fn) {
-      $__num2 = func_num_args();
-      if ($__num2 === 2) return $__fn($value0, $value1, $value2, $value3);
-      if ($__num2 === 1) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-      return phpurs_curry_fallback($__fn, [$value0, $value1], 4);
-    };
-    if ($__num === 1) return function($value1, $value2 = null, $value3 = null) use ($value0, &$__fn) {
-      $__num2 = func_num_args();
-      if ($__num2 === 3) return $__fn($value0, $value1, $value2, $value3);
-      if ($__num2 === 2) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-      if ($__num2 === 1) return function($value2, $value3 = null) use ($value0, $value1, &$__fn) {
-        $__num3 = func_num_args();
-        if ($__num3 === 2) return $__fn($value0, $value1, $value2, $value3);
-        if ($__num3 === 1) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-        return phpurs_curry_fallback($__fn, [$value0, $value1], 4);
-      };
-      return phpurs_curry_fallback($__fn, [$value0], 4);
-    };
-    return phpurs_curry_fallback($__fn, func_get_args(), 4);
-  }
-    $__res = new Phpurs_Data4("T", $value0, $value1, $value2, $value3);
-  return $__num > 4 ? $__res(...array_slice(func_get_args(), 4)) : $__res;
-  };
-  return $__fn;
-})())(($GLOBALS['__phpurs_data0_B'] ??= new Phpurs_Data0("B")), $a, $y, $b);
+return new Phpurs_Data4("T", ($GLOBALS['__phpurs_data0_B'] ??= new Phpurs_Data0("B")), $a, $y, $b);
 break;
 case "E":
 return ($GLOBALS['__phpurs_data0_E'] ??= new Phpurs_Data0("E"));
@@ -747,36 +341,7 @@ while (true) {
 $__case_0 = $v;
 switch (($__case_0)->tag) {
 case "E":
-return ((function() {
-  $__fn = function($value0, $value1 = null, $value2 = null, $value3 = null) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 4) {
-    if ($__num === 3) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-    if ($__num === 2) return function($value2, $value3 = null) use ($value0, $value1, &$__fn) {
-      $__num2 = func_num_args();
-      if ($__num2 === 2) return $__fn($value0, $value1, $value2, $value3);
-      if ($__num2 === 1) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-      return phpurs_curry_fallback($__fn, [$value0, $value1], 4);
-    };
-    if ($__num === 1) return function($value1, $value2 = null, $value3 = null) use ($value0, &$__fn) {
-      $__num2 = func_num_args();
-      if ($__num2 === 3) return $__fn($value0, $value1, $value2, $value3);
-      if ($__num2 === 2) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-      if ($__num2 === 1) return function($value2, $value3 = null) use ($value0, $value1, &$__fn) {
-        $__num3 = func_num_args();
-        if ($__num3 === 2) return $__fn($value0, $value1, $value2, $value3);
-        if ($__num3 === 1) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-        return phpurs_curry_fallback($__fn, [$value0, $value1], 4);
-      };
-      return phpurs_curry_fallback($__fn, [$value0], 4);
-    };
-    return phpurs_curry_fallback($__fn, func_get_args(), 4);
-  }
-    $__res = new Phpurs_Data4("T", $value0, $value1, $value2, $value3);
-  return $__num > 4 ? $__res(...array_slice(func_get_args(), 4)) : $__res;
-  };
-  return $__fn;
-})())(($GLOBALS['__phpurs_data0_R'] ??= new Phpurs_Data0("R")), ($GLOBALS['__phpurs_data0_E'] ??= new Phpurs_Data0("E")), $x, ($GLOBALS['__phpurs_data0_E'] ??= new Phpurs_Data0("E")));
+return new Phpurs_Data4("T", ($GLOBALS['__phpurs_data0_R'] ??= new Phpurs_Data0("R")), ($GLOBALS['__phpurs_data0_E'] ??= new Phpurs_Data0("E")), $x, ($GLOBALS['__phpurs_data0_E'] ??= new Phpurs_Data0("E")));
 break;
 case "T":
 $color = ($__case_0)->v0;
@@ -795,36 +360,7 @@ case true:
 return ($__global_Test_RBTree_balance)($color, $a, $y, ($ins)($b));
 break;
 default:
-return ((function() {
-  $__fn = function($value0, $value1 = null, $value2 = null, $value3 = null) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 4) {
-    if ($__num === 3) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-    if ($__num === 2) return function($value2, $value3 = null) use ($value0, $value1, &$__fn) {
-      $__num2 = func_num_args();
-      if ($__num2 === 2) return $__fn($value0, $value1, $value2, $value3);
-      if ($__num2 === 1) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-      return phpurs_curry_fallback($__fn, [$value0, $value1], 4);
-    };
-    if ($__num === 1) return function($value1, $value2 = null, $value3 = null) use ($value0, &$__fn) {
-      $__num2 = func_num_args();
-      if ($__num2 === 3) return $__fn($value0, $value1, $value2, $value3);
-      if ($__num2 === 2) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-      if ($__num2 === 1) return function($value2, $value3 = null) use ($value0, $value1, &$__fn) {
-        $__num3 = func_num_args();
-        if ($__num3 === 2) return $__fn($value0, $value1, $value2, $value3);
-        if ($__num3 === 1) return function($value3) use ($value0, $value1, $value2, &$__fn) { return $__fn($value0, $value1, $value2, $value3); };
-        return phpurs_curry_fallback($__fn, [$value0, $value1], 4);
-      };
-      return phpurs_curry_fallback($__fn, [$value0], 4);
-    };
-    return phpurs_curry_fallback($__fn, func_get_args(), 4);
-  }
-    $__res = new Phpurs_Data4("T", $value0, $value1, $value2, $value3);
-  return $__num > 4 ? $__res(...array_slice(func_get_args(), 4)) : $__res;
-  };
-  return $__fn;
-})())($color, $a, $y, $b);
+return new Phpurs_Data4("T", $color, $a, $y, $b);
 break;
 };
 break;

@@ -112,35 +112,383 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Data_Array_NonEmpty_compose': $v = (($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn')))->compose; break;
+      case 'Data_Array_NonEmpty_compose': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compose;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_Array_NonEmpty_coerce': $v = (($GLOBALS['Safe_Coerce_coerce'] ?? \Safe\Coerce\phpurs_eval_thunk('Safe_Coerce_coerce')))(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))); break;
-      case 'Data_Array_NonEmpty_max': $v = (($GLOBALS['Data_Ord_max'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_max')))(($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'))); break;
-      case 'Data_Array_NonEmpty_append': $v = ($GLOBALS['Data_Semigroup_concatArray'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_concatArray')); break;
-      case 'Data_Array_NonEmpty_intercalate1': $v = (($GLOBALS['Data_Semigroup_Foldable_intercalate'] ?? \Data\Semigroup\Foldable\phpurs_eval_thunk('Data_Semigroup_Foldable_intercalate')))(($GLOBALS['Data_Array_NonEmpty_Internal_foldable1NonEmptyArray'] ?? \Data\Array\NonEmpty\Internal\phpurs_eval_thunk('Data_Array_NonEmpty_Internal_foldable1NonEmptyArray'))); break;
-      case 'Data_Array_NonEmpty_greaterThan': $v = (($GLOBALS['Data_Ord_greaterThan'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_greaterThan')))(($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'))); break;
-      case 'Data_Array_NonEmpty_foldMap11': $v = (($GLOBALS['Data_Array_NonEmpty_Internal_foldable1NonEmptyArray'] ?? \Data\Array\NonEmpty\Internal\phpurs_eval_thunk('Data_Array_NonEmpty_Internal_foldable1NonEmptyArray')))->foldMap1; break;
-      case 'Data_Array_NonEmpty_fold11': $v = (($GLOBALS['Data_Semigroup_Foldable_fold1'] ?? \Data\Semigroup\Foldable\phpurs_eval_thunk('Data_Semigroup_Foldable_fold1')))(($GLOBALS['Data_Array_NonEmpty_Internal_foldable1NonEmptyArray'] ?? \Data\Array\NonEmpty\Internal\phpurs_eval_thunk('Data_Array_NonEmpty_Internal_foldable1NonEmptyArray'))); break;
+      case 'Data_Array_NonEmpty_max': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $compare3 = $__case_res_0;
+  return (function() use ($compare3) {
+  $__body = function($x, $y) use ($compare3) {
+    $v = ($compare3)($x, $y);
+    $__case_0 = $v;
+    switch (($__case_0)->tag) {
+case "LT":
+return $y;
+break;
+case "EQ":
+return $x;
+break;
+case "GT":
+return $x;
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($x, $y = null) use ($compare3, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($y) use ($x, &$__fn) { return $__fn($x, $y); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($x, $y);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+})(); break;
+      case 'Data_Array_NonEmpty_append': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Semigroup_semigroupArray'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_semigroupArray'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Array_NonEmpty_intercalate1': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Array_NonEmpty_Internal_foldable1NonEmptyArray'] ?? \Data\Array\NonEmpty\Internal\phpurs_eval_thunk('Data_Array_NonEmpty_Internal_foldable1NonEmptyArray'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldMap1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $foldMap11 = $__case_res_0;
+  $intercalateMap1 = (function() use ($foldMap11) {
+  $__fn = function($dictSemigroup) use ($foldMap11, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__global_Data_Semigroup_Foldable_joinee = ($GLOBALS['Data_Semigroup_Foldable_joinee'] ?? \Data\Semigroup\Foldable\phpurs_eval_thunk('Data_Semigroup_Foldable_joinee'));
+$__global_Data_Semigroup_Foldable_compose = ($GLOBALS['Data_Semigroup_Foldable_compose'] ?? \Data\Semigroup\Foldable\phpurs_eval_thunk('Data_Semigroup_Foldable_compose'));
+$__global_Data_Semigroup_Foldable_JoinWith = ($GLOBALS['Data_Semigroup_Foldable_JoinWith'] ?? \Data\Semigroup\Foldable\phpurs_eval_thunk('Data_Semigroup_Foldable_JoinWith'));
+$__global_Data_Function_const = ($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const'));
+$__case_0 = $dictSemigroup;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append = $__case_res_1;
+$foldMap12 = ($foldMap11)((object)["append" => (function() use ($append) {
+  $__body = function($v, $v1) use ($append) {
+    $__case_0 = $v;
+    $__case_1 = $v1;
+    if (true) {
+$a = $__case_0;
+$b = $__case_1;
+return (function() use ($append, $a, $b) {
+  $__fn = function($j) use ($append, $a, $b, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($append)(($a)($j), ($append)($j, ($b)($j)));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($v, $v1 = null) use ($append, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($v, $v1);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()]);
+    $__res = (function() use ($__global_Data_Semigroup_Foldable_joinee, $foldMap12, $__global_Data_Semigroup_Foldable_compose, $__global_Data_Semigroup_Foldable_JoinWith, $__global_Data_Function_const) {
+  $__fn = function($j, $f = null, $foldable = null) use ($__global_Data_Semigroup_Foldable_joinee, $foldMap12, $__global_Data_Semigroup_Foldable_compose, $__global_Data_Semigroup_Foldable_JoinWith, $__global_Data_Function_const, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($foldable) use ($j, $f, &$__fn) { return $__fn($j, $f, $foldable); };
+    if ($__num === 1) return function($f, $foldable = null) use ($j, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($j, $f, $foldable);
+      if ($__num2 === 1) return function($foldable) use ($j, $f, &$__fn) { return $__fn($j, $f, $foldable); };
+      return phpurs_curry_fallback($__fn, [$j], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = ($__global_Data_Semigroup_Foldable_joinee)(($foldMap12)(($__global_Data_Semigroup_Foldable_compose)($__global_Data_Semigroup_Foldable_JoinWith, ($__global_Data_Semigroup_Foldable_compose)($__global_Data_Function_const, $f)), $foldable), $j);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})();
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+  return (function() use ($intercalateMap1) {
+  $__fn = function($dictSemigroup) use ($intercalateMap1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__global_Data_Function_flip = ($GLOBALS['Data_Function_flip'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_flip'));
+$__global_Data_Semigroup_Foldable_identity = ($GLOBALS['Data_Semigroup_Foldable_identity'] ?? \Data\Semigroup\Foldable\phpurs_eval_thunk('Data_Semigroup_Foldable_identity'));
+    $__res = ($__global_Data_Function_flip)(($intercalateMap1)($dictSemigroup), $__global_Data_Semigroup_Foldable_identity);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+})(); break;
+      case 'Data_Array_NonEmpty_greaterThan': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $compare3 = $__case_res_0;
+  return (function() use ($compare3) {
+  $__body = function($a1, $a2) use ($compare3) {
+    $v = ($compare3)($a1, $a2);
+    $__case_0 = $v;
+    switch (($__case_0)->tag) {
+case "GT":
+return true;
+break;
+default:
+return false;
+break;
+};
+  };
+  $__fn = function($a1, $a2 = null) use ($compare3, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($a2) use ($a1, &$__fn) { return $__fn($a1, $a2); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($a1, $a2);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+})(); break;
+      case 'Data_Array_NonEmpty_foldMap11': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Array_NonEmpty_Internal_foldable1NonEmptyArray'] ?? \Data\Array\NonEmpty\Internal\phpurs_eval_thunk('Data_Array_NonEmpty_Internal_foldable1NonEmptyArray'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldMap1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Array_NonEmpty_fold11': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Array_NonEmpty_Internal_foldable1NonEmptyArray'] ?? \Data\Array\NonEmpty\Internal\phpurs_eval_thunk('Data_Array_NonEmpty_Internal_foldable1NonEmptyArray'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldMap1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $foldMap11 = $__case_res_0;
+  return (function() use ($foldMap11) {
+  $__fn = function($dictSemigroup) use ($foldMap11, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__global_Data_Semigroup_Foldable_identity = ($GLOBALS['Data_Semigroup_Foldable_identity'] ?? \Data\Semigroup\Foldable\phpurs_eval_thunk('Data_Semigroup_Foldable_identity'));
+    $__res = ($foldMap11)($dictSemigroup, $__global_Data_Semigroup_Foldable_identity);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+})(); break;
       case 'Data_Array_NonEmpty_fromJust': $v = (($GLOBALS['Data_Maybe_fromJust'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_fromJust')))(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))); break;
       case 'Data_Array_NonEmpty_unsafeIndex1': $v = (($GLOBALS['Data_Array_unsafeIndex'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_unsafeIndex')))(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))); break;
-      case 'Data_Array_NonEmpty_lessThan': $v = (($GLOBALS['Data_Ord_lessThan'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_lessThan')))(($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'))); break;
-      case 'Data_Array_NonEmpty_sub': $v = ($GLOBALS['Data_Ring_intSub'] ?? \Data\Ring\phpurs_eval_thunk('Data_Ring_intSub')); break;
-      case 'Data_Array_NonEmpty_add': $v = ($GLOBALS['Data_Semiring_intAdd'] ?? \Data\Semiring\phpurs_eval_thunk('Data_Semiring_intAdd')); break;
+      case 'Data_Array_NonEmpty_lessThan': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $compare3 = $__case_res_0;
+  return (function() use ($compare3) {
+  $__body = function($a1, $a2) use ($compare3) {
+    $v = ($compare3)($a1, $a2);
+    $__case_0 = $v;
+    switch (($__case_0)->tag) {
+case "LT":
+return true;
+break;
+default:
+return false;
+break;
+};
+  };
+  $__fn = function($a1, $a2 = null) use ($compare3, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($a2) use ($a1, &$__fn) { return $__fn($a1, $a2); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($a1, $a2);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+})(); break;
+      case 'Data_Array_NonEmpty_sub': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Ring_ringInt'] ?? \Data\Ring\phpurs_eval_thunk('Data_Ring_ringInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->sub;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Array_NonEmpty_add': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Semiring_semiringInt'] ?? \Data\Semiring\phpurs_eval_thunk('Data_Semiring_semiringInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->add;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_Array_NonEmpty_unsafeFromArrayF': $v = ($GLOBALS['Unsafe_Coerce_unsafeCoerce'] ?? \Unsafe\Coerce\phpurs_eval_thunk('Unsafe_Coerce_unsafeCoerce')); break;
       case 'Data_Array_NonEmpty_unsafeFromArray': $v = ($GLOBALS['Data_Array_NonEmpty_Internal_NonEmptyArray'] ?? \Data\Array\NonEmpty\Internal\phpurs_eval_thunk('Data_Array_NonEmpty_Internal_NonEmptyArray')); break;
       case 'Data_Array_NonEmpty_transpose': $v = (($GLOBALS['Data_Array_NonEmpty_compose'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_compose')))(($GLOBALS['Data_Array_NonEmpty_coerce'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_coerce')), (($GLOBALS['Data_Array_NonEmpty_compose'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_compose')))(($GLOBALS['Data_Array_transpose'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_transpose')), ($GLOBALS['Data_Array_NonEmpty_coerce'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_coerce')))); break;
-      case 'Data_Array_NonEmpty_unzip': $v = (($GLOBALS['Data_Array_NonEmpty_compose'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_compose')))(((($GLOBALS['Data_Bifunctor_bifunctorTuple'] ?? \Data\Bifunctor\phpurs_eval_thunk('Data_Bifunctor_bifunctorTuple')))->bimap)(($GLOBALS['Data_Array_NonEmpty_Internal_NonEmptyArray'] ?? \Data\Array\NonEmpty\Internal\phpurs_eval_thunk('Data_Array_NonEmpty_Internal_NonEmptyArray')), ($GLOBALS['Data_Array_NonEmpty_Internal_NonEmptyArray'] ?? \Data\Array\NonEmpty\Internal\phpurs_eval_thunk('Data_Array_NonEmpty_Internal_NonEmptyArray'))), (($GLOBALS['Data_Array_NonEmpty_compose'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_compose')))(($GLOBALS['Data_Array_unzip'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_unzip')), ($GLOBALS['Data_Array_NonEmpty_toArray'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_toArray')))); break;
+      case 'Data_Array_NonEmpty_unzip': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Bifunctor_bifunctorTuple'] ?? \Data\Bifunctor\phpurs_eval_thunk('Data_Bifunctor_bifunctorTuple'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bimap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return (($GLOBALS['Data_Array_NonEmpty_compose'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_compose')))(($__case_res_0)(($GLOBALS['Data_Array_NonEmpty_Internal_NonEmptyArray'] ?? \Data\Array\NonEmpty\Internal\phpurs_eval_thunk('Data_Array_NonEmpty_Internal_NonEmptyArray')), ($GLOBALS['Data_Array_NonEmpty_Internal_NonEmptyArray'] ?? \Data\Array\NonEmpty\Internal\phpurs_eval_thunk('Data_Array_NonEmpty_Internal_NonEmptyArray'))), (($GLOBALS['Data_Array_NonEmpty_compose'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_compose')))(($GLOBALS['Data_Array_unzip'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_unzip')), ($GLOBALS['Data_Array_NonEmpty_toArray'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_toArray'))));
+})(); break;
       case 'Data_Array_NonEmpty_singleton': $v = (($GLOBALS['Data_Array_NonEmpty_compose'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_compose')))(($GLOBALS['Data_Array_NonEmpty_Internal_NonEmptyArray'] ?? \Data\Array\NonEmpty\Internal\phpurs_eval_thunk('Data_Array_NonEmpty_Internal_NonEmptyArray')), ($GLOBALS['Data_Array_singleton'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_singleton'))); break;
       case 'Data_Array_NonEmpty_transpose__prime__': $v = (($GLOBALS['Data_Array_NonEmpty_compose'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_compose')))(($GLOBALS['Data_Array_NonEmpty_fromArray'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_fromArray')), (($GLOBALS['Data_Array_NonEmpty_compose'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_compose')))(($GLOBALS['Data_Array_transpose'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_transpose')), ($GLOBALS['Data_Array_NonEmpty_coerce'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_coerce')))); break;
-      case 'Data_Array_NonEmpty_foldr1': $v = (($GLOBALS['Data_Array_NonEmpty_Internal_foldable1NonEmptyArray'] ?? \Data\Array\NonEmpty\Internal\phpurs_eval_thunk('Data_Array_NonEmpty_Internal_foldable1NonEmptyArray')))->foldr1; break;
-      case 'Data_Array_NonEmpty_foldl1': $v = (($GLOBALS['Data_Array_NonEmpty_Internal_foldable1NonEmptyArray'] ?? \Data\Array\NonEmpty\Internal\phpurs_eval_thunk('Data_Array_NonEmpty_Internal_foldable1NonEmptyArray')))->foldl1; break;
-      case 'Data_Array_NonEmpty_concatMap': $v = (($GLOBALS['Data_Function_flip'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_flip')))(($GLOBALS['Control_Bind_arrayBind'] ?? \Control\Bind\phpurs_eval_thunk('Control_Bind_arrayBind'))); break;
-      case 'Data_Array_NonEmpty_concat': $v = (($GLOBALS['Data_Array_NonEmpty_compose'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_compose')))(($GLOBALS['Data_Array_NonEmpty_Internal_NonEmptyArray'] ?? \Data\Array\NonEmpty\Internal\phpurs_eval_thunk('Data_Array_NonEmpty_Internal_NonEmptyArray')), (($GLOBALS['Data_Array_NonEmpty_compose'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_compose')))(($GLOBALS['Data_Array_concat'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_concat')), (($GLOBALS['Data_Array_NonEmpty_compose'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_compose')))(($GLOBALS['Data_Array_NonEmpty_toArray'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_toArray')), (($GLOBALS['Data_Functor_arrayMap'] ?? \Data\Functor\phpurs_eval_thunk('Data_Functor_arrayMap')))(($GLOBALS['Data_Array_NonEmpty_toArray'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_toArray')))))); break;
+      case 'Data_Array_NonEmpty_foldr1': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Array_NonEmpty_Internal_foldable1NonEmptyArray'] ?? \Data\Array\NonEmpty\Internal\phpurs_eval_thunk('Data_Array_NonEmpty_Internal_foldable1NonEmptyArray'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldr1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Array_NonEmpty_foldl1': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Array_NonEmpty_Internal_foldable1NonEmptyArray'] ?? \Data\Array\NonEmpty\Internal\phpurs_eval_thunk('Data_Array_NonEmpty_Internal_foldable1NonEmptyArray'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldl1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Array_NonEmpty_concatMap': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Bind_bindArray'] ?? \Control\Bind\phpurs_eval_thunk('Control_Bind_bindArray'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bind;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return (($GLOBALS['Data_Function_flip'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_flip')))($__case_res_0);
+})(); break;
+      case 'Data_Array_NonEmpty_concat': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Functor_functorArray'] ?? \Data\Functor\phpurs_eval_thunk('Data_Functor_functorArray'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return (($GLOBALS['Data_Array_NonEmpty_compose'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_compose')))(($GLOBALS['Data_Array_NonEmpty_Internal_NonEmptyArray'] ?? \Data\Array\NonEmpty\Internal\phpurs_eval_thunk('Data_Array_NonEmpty_Internal_NonEmptyArray')), (($GLOBALS['Data_Array_NonEmpty_compose'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_compose')))(($GLOBALS['Data_Array_concat'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_concat')), (($GLOBALS['Data_Array_NonEmpty_compose'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_compose')))(($GLOBALS['Data_Array_NonEmpty_toArray'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_toArray')), ($__case_res_0)(($GLOBALS['Data_Array_NonEmpty_toArray'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_toArray'))))));
+})(); break;
       case 'Data_Array_NonEmpty_head': $v = (($GLOBALS['Data_Array_NonEmpty_adaptMaybe'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_adaptMaybe')))(($GLOBALS['Data_Array_head'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_head'))); break;
       case 'Data_Array_NonEmpty_init': $v = (($GLOBALS['Data_Array_NonEmpty_adaptMaybe'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_adaptMaybe')))(($GLOBALS['Data_Array_init'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_init'))); break;
       case 'Data_Array_NonEmpty_last': $v = (($GLOBALS['Data_Array_NonEmpty_adaptMaybe'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_adaptMaybe')))(($GLOBALS['Data_Array_last'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_last'))); break;
       case 'Data_Array_NonEmpty_tail': $v = (($GLOBALS['Data_Array_NonEmpty_adaptMaybe'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_adaptMaybe')))(($GLOBALS['Data_Array_tail'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_tail'))); break;
       case 'Data_Array_NonEmpty_uncons': $v = (($GLOBALS['Data_Array_NonEmpty_adaptMaybe'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_adaptMaybe')))(($GLOBALS['Data_Array_uncons'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_uncons'))); break;
-      case 'Data_Array_NonEmpty_toNonEmpty': $v = (($GLOBALS['Control_Semigroupoid_composeFlipped'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_composeFlipped')))(($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn')), ($GLOBALS['Data_Array_NonEmpty_uncons'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_uncons')), (function() {
+      case 'Data_Array_NonEmpty_toNonEmpty': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compose;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $compose1 = $__case_res_0;
+  return ((function() use ($compose1) {
+  $__fn = function($f, $g = null) use ($compose1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($g) use ($f, &$__fn) { return $__fn($f, $g); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($compose1)($g, $f);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})())(($GLOBALS['Data_Array_NonEmpty_uncons'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_uncons')), (function() {
   $__body = function($v) {
     $__case_0 = $v;
     if ((is_object)($__case_0)) {
@@ -171,7 +519,8 @@ throw new \Exception("Pattern match failure");
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})()); break;
+})());
+})(); break;
       case 'Data_Array_NonEmpty_unsnoc': $v = (($GLOBALS['Data_Array_NonEmpty_adaptMaybe'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_adaptMaybe')))(($GLOBALS['Data_Array_unsnoc'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_unsnoc'))); break;
       case 'Data_Array_NonEmpty_catMaybes': $v = (($GLOBALS['Data_Array_NonEmpty_adaptAny'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_adaptAny')))(($GLOBALS['Data_Array_catMaybes'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_catMaybes'))); break;
       case 'Data_Array_NonEmpty_index': $v = (($GLOBALS['Data_Array_NonEmpty_adaptAny'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_adaptAny')))(($GLOBALS['Data_Array_index'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_index'))); break;
@@ -249,7 +598,15 @@ function Data_Array_NonEmpty_union__prime__($dictEq) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_Array_NonEmpty_unionBy__prime__ = ($GLOBALS['Data_Array_NonEmpty_unionBy__prime__'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_unionBy__prime__'));
-    $__res = ($__global_Data_Array_NonEmpty_unionBy__prime__)(($dictEq)->eq);
+$__case_0 = $dictEq;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__global_Data_Array_NonEmpty_unionBy__prime__)($__case_res_0);
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Array_NonEmpty_union__prime__'] = __NAMESPACE__ . '\\Data_Array_NonEmpty_union__prime__';
@@ -278,7 +635,15 @@ function Data_Array_NonEmpty_union($dictEq) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_Array_NonEmpty_unionBy = ($GLOBALS['Data_Array_NonEmpty_unionBy'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_unionBy'));
-    $__res = ($__global_Data_Array_NonEmpty_unionBy)(($dictEq)->eq);
+$__case_0 = $dictEq;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__global_Data_Array_NonEmpty_unionBy)($__case_res_0);
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Array_NonEmpty_union'] = __NAMESPACE__ . '\\Data_Array_NonEmpty_union';
@@ -344,10 +709,29 @@ function Data_Array_NonEmpty_zipWithA($dictApplicative) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Array_zipWithA = ($GLOBALS['Data_Array_zipWithA'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_zipWithA'));
+$__global_Data_Array_sequence = ($GLOBALS['Data_Array_sequence'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_sequence'));
+$__global_Data_Array_zipWith = ($GLOBALS['Data_Array_zipWith'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_zipWith'));
 $__global_Unsafe_Coerce_unsafeCoerce = ($GLOBALS['Unsafe_Coerce_unsafeCoerce'] ?? \Unsafe\Coerce\phpurs_eval_thunk('Unsafe_Coerce_unsafeCoerce'));
 $__global_Data_Array_NonEmpty_toArray = ($GLOBALS['Data_Array_NonEmpty_toArray'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_toArray'));
-$zipWithA1 = ($__global_Data_Array_zipWithA)($dictApplicative);
+$sequence1 = ($__global_Data_Array_sequence)($dictApplicative);
+$zipWithA1 = (function() use ($sequence1, $__global_Data_Array_zipWith) {
+  $__fn = function($f, $xs = null, $ys = null) use ($sequence1, $__global_Data_Array_zipWith, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($ys) use ($f, $xs, &$__fn) { return $__fn($f, $xs, $ys); };
+    if ($__num === 1) return function($xs, $ys = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $xs, $ys);
+      if ($__num2 === 1) return function($ys) use ($f, $xs, &$__fn) { return $__fn($f, $xs, $ys); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = ($sequence1)(($__global_Data_Array_zipWith)($f, $xs, $ys));
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})();
     $__res = (function() use ($__global_Unsafe_Coerce_unsafeCoerce, $zipWithA1, $__global_Data_Array_NonEmpty_toArray) {
   $__fn = function($f, $xs = null, $ys = null) use ($__global_Unsafe_Coerce_unsafeCoerce, $zipWithA1, $__global_Data_Array_NonEmpty_toArray, &$__fn) {
   $__num = func_num_args();
@@ -392,10 +776,97 @@ function Data_Array_NonEmpty_some($dictAlternative) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
+$__global_Data_Array_cons = ($GLOBALS['Data_Array_cons'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_cons'));
 $__global_Data_Array_some = ($GLOBALS['Data_Array_some'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_some'));
 $__global_Data_Array_NonEmpty_compose = ($GLOBALS['Data_Array_NonEmpty_compose'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_compose'));
 $__global_Unsafe_Coerce_unsafeCoerce = ($GLOBALS['Unsafe_Coerce_unsafeCoerce'] ?? \Unsafe\Coerce\phpurs_eval_thunk('Unsafe_Coerce_unsafeCoerce'));
-$some1 = ($__global_Data_Array_some)($dictAlternative);
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$apply1 = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map3 = $__case_res_1;
+$some1 = (function() use ($apply1, $map3, $__global_Data_Array_cons, $dict, $__global_Data_Array_some, $dictAlternative) {
+  $__fn = function($dictLazy) use ($apply1, $map3, $__global_Data_Array_cons, $dict, $__global_Data_Array_some, $dictAlternative, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dictLazy;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->defer;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$defer = $__case_res_2;
+    $__res = (function() use ($apply1, $map3, $__global_Data_Array_cons, $defer, $dict, $__global_Data_Array_some, $dictAlternative, $dictLazy) {
+  $__fn = function($v) use ($apply1, $map3, $__global_Data_Array_cons, $defer, $dict, $__global_Data_Array_some, $dictAlternative, $dictLazy, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($apply1)(($map3)($__global_Data_Array_cons, $v), ($defer)((function() use ($dict, $__global_Data_Array_some, $dictAlternative, $dictLazy, $v) {
+  $__fn = function($v1) use ($dict, $__global_Data_Array_some, $dictAlternative, $dictLazy, $v, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dict;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->alt;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$alt = $__case_res_3;
+$__case_0 = $dict;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pure1 = $__case_res_4;
+    $__res = ((function() use ($alt, $__global_Data_Array_some, $dictAlternative, $pure1) {
+  $__fn = function($dictLazy, $v = null) use ($alt, $__global_Data_Array_some, $dictAlternative, $pure1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($dictLazy, &$__fn) { return $__fn($dictLazy, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($alt)(($__global_Data_Array_some)($dictAlternative, $dictLazy, $v), ($pure1)([]));
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})())($dictLazy, $v);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
     $__res = (function() use ($__global_Data_Array_NonEmpty_compose, $__global_Unsafe_Coerce_unsafeCoerce, $some1) {
   $__fn = function($dictLazy) use ($__global_Data_Array_NonEmpty_compose, $__global_Unsafe_Coerce_unsafeCoerce, $some1, &$__fn) {
   $__num = func_num_args();
@@ -478,9 +949,9 @@ function Data_Array_NonEmpty_prependArray($xs, $ys = null) {
     if ($__num === 1) return function($ys) use ($xs, $__fn) { return $__fn($xs, $ys); };
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
-$__global_Data_Semigroup_concatArray = ($GLOBALS['Data_Semigroup_concatArray'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_concatArray'));
+$__global_Data_Array_NonEmpty_append = ($GLOBALS['Data_Array_NonEmpty_append'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_append'));
 $__global_Data_Array_NonEmpty_toArray = ($GLOBALS['Data_Array_NonEmpty_toArray'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_toArray'));
-    $__res = ($__global_Data_Semigroup_concatArray)($xs, ($__global_Data_Array_NonEmpty_toArray)($ys));
+    $__res = ($__global_Data_Array_NonEmpty_append)($xs, ($__global_Data_Array_NonEmpty_toArray)($ys));
     return 2 < $__num ? $__res(...array_slice(func_get_args(), 2)) : $__res;
 }
 $GLOBALS['Data_Array_NonEmpty_prependArray'] = __NAMESPACE__ . '\\Data_Array_NonEmpty_prependArray';
@@ -541,7 +1012,15 @@ function Data_Array_NonEmpty_intersect__prime__($dictEq) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_Array_NonEmpty_intersectBy__prime__ = ($GLOBALS['Data_Array_NonEmpty_intersectBy__prime__'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_intersectBy__prime__'));
-    $__res = ($__global_Data_Array_NonEmpty_intersectBy__prime__)(($dictEq)->eq);
+$__case_0 = $dictEq;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__global_Data_Array_NonEmpty_intersectBy__prime__)($__case_res_0);
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Array_NonEmpty_intersect__prime__'] = __NAMESPACE__ . '\\Data_Array_NonEmpty_intersect__prime__';
@@ -554,7 +1033,15 @@ function Data_Array_NonEmpty_intersect($dictEq) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_Array_NonEmpty_intersectBy = ($GLOBALS['Data_Array_NonEmpty_intersectBy'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_intersectBy'));
-    $__res = ($__global_Data_Array_NonEmpty_intersectBy)(($dictEq)->eq);
+$__case_0 = $dictEq;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__global_Data_Array_NonEmpty_intersectBy)($__case_res_0);
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Array_NonEmpty_intersect'] = __NAMESPACE__ . '\\Data_Array_NonEmpty_intersect';
@@ -598,9 +1085,17 @@ function Data_Array_NonEmpty_fromFoldable1($dictFoldable1) {
   }
 $__global_Data_Array_NonEmpty_compose = ($GLOBALS['Data_Array_NonEmpty_compose'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_compose'));
 $__global_Data_Array_NonEmpty_Internal_NonEmptyArray = ($GLOBALS['Data_Array_NonEmpty_Internal_NonEmptyArray'] ?? \Data\Array\NonEmpty\Internal\phpurs_eval_thunk('Data_Array_NonEmpty_Internal_NonEmptyArray'));
-$__global_Data_Array_fromFoldable = ($GLOBALS['Data_Array_fromFoldable'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_fromFoldable'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-    $__res = ($__global_Data_Array_NonEmpty_compose)($__global_Data_Array_NonEmpty_Internal_NonEmptyArray, ($__global_Data_Array_fromFoldable)((($dictFoldable1)->Foldable0)($__global_Prim_undefined)));
+$__global_Data_Function_Uncurried_runFn2 = ($GLOBALS['Data_Function_Uncurried_runFn2'] ?? \Data\Function\Uncurried\phpurs_eval_thunk('Data_Function_Uncurried_runFn2'));
+$__global_Data_Array_fromFoldableImpl = ($GLOBALS['Data_Array_fromFoldableImpl'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_fromFoldableImpl'));
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__global_Data_Array_NonEmpty_compose)($__global_Data_Array_NonEmpty_Internal_NonEmptyArray, ($__global_Data_Function_Uncurried_runFn2)($__global_Data_Array_fromFoldableImpl, $__case_res_0));
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Array_NonEmpty_fromFoldable1'] = __NAMESPACE__ . '\\Data_Array_NonEmpty_fromFoldable1';
@@ -635,8 +1130,17 @@ function Data_Array_NonEmpty_fromFoldable($dictFoldable) {
   }
 $__global_Data_Array_NonEmpty_compose = ($GLOBALS['Data_Array_NonEmpty_compose'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_compose'));
 $__global_Data_Array_NonEmpty_fromArray = ($GLOBALS['Data_Array_NonEmpty_fromArray'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_fromArray'));
-$__global_Data_Array_fromFoldable = ($GLOBALS['Data_Array_fromFoldable'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_fromFoldable'));
-    $__res = ($__global_Data_Array_NonEmpty_compose)($__global_Data_Array_NonEmpty_fromArray, ($__global_Data_Array_fromFoldable)($dictFoldable));
+$__global_Data_Function_Uncurried_runFn2 = ($GLOBALS['Data_Function_Uncurried_runFn2'] ?? \Data\Function\Uncurried\phpurs_eval_thunk('Data_Function_Uncurried_runFn2'));
+$__global_Data_Array_fromFoldableImpl = ($GLOBALS['Data_Array_fromFoldableImpl'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_fromFoldableImpl'));
+$__case_0 = $dictFoldable;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__global_Data_Array_NonEmpty_compose)($__global_Data_Array_NonEmpty_fromArray, ($__global_Data_Function_Uncurried_runFn2)($__global_Data_Array_fromFoldableImpl, $__case_res_0));
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Array_NonEmpty_fromFoldable'] = __NAMESPACE__ . '\\Data_Array_NonEmpty_fromFoldable';
@@ -677,9 +1181,18 @@ function Data_Array_NonEmpty_difference__prime__($dictEq) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Array_difference = ($GLOBALS['Data_Array_difference'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_difference'));
+$__global_Data_Array_foldr = ($GLOBALS['Data_Array_foldr'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_foldr'));
+$__global_Data_Array_deleteBy = ($GLOBALS['Data_Array_deleteBy'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_deleteBy'));
 $__global_Data_Array_NonEmpty_toArray = ($GLOBALS['Data_Array_NonEmpty_toArray'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_toArray'));
-$difference1 = ($__global_Data_Array_difference)($dictEq);
+$__case_0 = $dictEq;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$difference1 = ($__global_Data_Array_foldr)(($__global_Data_Array_deleteBy)($__case_res_0));
     $__res = (function() use ($difference1, $__global_Data_Array_NonEmpty_toArray) {
   $__fn = function($xs) use ($difference1, $__global_Data_Array_NonEmpty_toArray, &$__fn) {
   $__num = func_num_args();
@@ -745,9 +1258,9 @@ function Data_Array_NonEmpty_appendArray($xs, $ys = null) {
     if ($__num === 1) return function($ys) use ($xs, $__fn) { return $__fn($xs, $ys); };
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
-$__global_Data_Semigroup_concatArray = ($GLOBALS['Data_Semigroup_concatArray'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_concatArray'));
+$__global_Data_Array_NonEmpty_append = ($GLOBALS['Data_Array_NonEmpty_append'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_append'));
 $__global_Data_Array_NonEmpty_toArray = ($GLOBALS['Data_Array_NonEmpty_toArray'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_toArray'));
-    $__res = ($__global_Data_Semigroup_concatArray)(($__global_Data_Array_NonEmpty_toArray)($xs), $ys);
+    $__res = ($__global_Data_Array_NonEmpty_append)(($__global_Data_Array_NonEmpty_toArray)($xs), $ys);
     return 2 < $__num ? $__res(...array_slice(func_get_args(), 2)) : $__res;
 }
 $GLOBALS['Data_Array_NonEmpty_appendArray'] = __NAMESPACE__ . '\\Data_Array_NonEmpty_appendArray';
@@ -851,9 +1364,17 @@ function Data_Array_NonEmpty_delete($dictEq) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Array_delete = ($GLOBALS['Data_Array_delete'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_delete'));
+$__global_Data_Array_deleteBy = ($GLOBALS['Data_Array_deleteBy'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_deleteBy'));
 $__global_Data_Array_NonEmpty_adaptAny = ($GLOBALS['Data_Array_NonEmpty_adaptAny'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_adaptAny'));
-$delete1 = ($__global_Data_Array_delete)($dictEq);
+$__case_0 = $dictEq;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$delete1 = ($__global_Data_Array_deleteBy)($__case_res_0);
     $__res = (function() use ($__global_Data_Array_NonEmpty_adaptAny, $delete1) {
   $__fn = function($x) use ($__global_Data_Array_NonEmpty_adaptAny, $delete1, &$__fn) {
   $__num = func_num_args();
@@ -905,9 +1426,30 @@ function Data_Array_NonEmpty_difference($dictEq) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Array_NonEmpty_difference__prime__ = ($GLOBALS['Data_Array_NonEmpty_difference__prime__'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_difference__prime__'));
+$__global_Data_Array_foldr = ($GLOBALS['Data_Array_foldr'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_foldr'));
+$__global_Data_Array_deleteBy = ($GLOBALS['Data_Array_deleteBy'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_deleteBy'));
+$__global_Data_Array_NonEmpty_toArray = ($GLOBALS['Data_Array_NonEmpty_toArray'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_toArray'));
 $__global_Data_Array_NonEmpty_adaptAny = ($GLOBALS['Data_Array_NonEmpty_adaptAny'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_adaptAny'));
-$difference__prime__1 = ($__global_Data_Array_NonEmpty_difference__prime__)($dictEq);
+$__case_0 = $dictEq;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$difference1 = ($__global_Data_Array_foldr)(($__global_Data_Array_deleteBy)($__case_res_0));
+$difference__prime__1 = (function() use ($difference1, $__global_Data_Array_NonEmpty_toArray) {
+  $__fn = function($xs) use ($difference1, $__global_Data_Array_NonEmpty_toArray, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($difference1)(($__global_Data_Array_NonEmpty_toArray)($xs));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
     $__res = (function() use ($__global_Data_Array_NonEmpty_adaptAny, $difference__prime__1) {
   $__fn = function($xs) use ($__global_Data_Array_NonEmpty_adaptAny, $difference__prime__1, &$__fn) {
   $__num = func_num_args();
@@ -972,9 +1514,51 @@ function Data_Array_NonEmpty_elem($dictEq) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Array_elem = ($GLOBALS['Data_Array_elem'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_elem'));
+$__global_Data_Array_findIndex = ($GLOBALS['Data_Array_findIndex'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_findIndex'));
+$__global_Data_Maybe_isJust = ($GLOBALS['Data_Maybe_isJust'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_isJust'));
 $__global_Data_Array_NonEmpty_adaptAny = ($GLOBALS['Data_Array_NonEmpty_adaptAny'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_adaptAny'));
-$elem1 = ($__global_Data_Array_elem)($dictEq);
+$__case_0 = $dictEq;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq2 = $__case_res_0;
+$elemIndex1 = (function() use ($__global_Data_Array_findIndex, $eq2) {
+  $__fn = function($x) use ($__global_Data_Array_findIndex, $eq2, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($__global_Data_Array_findIndex)((function() use ($eq2, $x) {
+  $__fn = function($v) use ($eq2, $x, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($eq2)($v, $x);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})());
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+$elem1 = (function() use ($__global_Data_Maybe_isJust, $elemIndex1) {
+  $__fn = function($a, $arr = null) use ($__global_Data_Maybe_isJust, $elemIndex1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($arr) use ($a, &$__fn) { return $__fn($a, $arr); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($__global_Data_Maybe_isJust)(($elemIndex1)($a, $arr));
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
     $__res = (function() use ($__global_Data_Array_NonEmpty_adaptAny, $elem1) {
   $__fn = function($x) use ($__global_Data_Array_NonEmpty_adaptAny, $elem1, &$__fn) {
   $__num = func_num_args();
@@ -997,9 +1581,38 @@ function Data_Array_NonEmpty_elemIndex($dictEq) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Array_elemIndex = ($GLOBALS['Data_Array_elemIndex'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_elemIndex'));
+$__global_Data_Array_findIndex = ($GLOBALS['Data_Array_findIndex'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_findIndex'));
 $__global_Data_Array_NonEmpty_adaptAny = ($GLOBALS['Data_Array_NonEmpty_adaptAny'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_adaptAny'));
-$elemIndex1 = ($__global_Data_Array_elemIndex)($dictEq);
+$__case_0 = $dictEq;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq2 = $__case_res_0;
+$elemIndex1 = (function() use ($__global_Data_Array_findIndex, $eq2) {
+  $__fn = function($x) use ($__global_Data_Array_findIndex, $eq2, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($__global_Data_Array_findIndex)((function() use ($eq2, $x) {
+  $__fn = function($v) use ($eq2, $x, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($eq2)($v, $x);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})());
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
     $__res = (function() use ($__global_Data_Array_NonEmpty_adaptAny, $elemIndex1) {
   $__fn = function($x) use ($__global_Data_Array_NonEmpty_adaptAny, $elemIndex1, &$__fn) {
   $__num = func_num_args();
@@ -1022,9 +1635,38 @@ function Data_Array_NonEmpty_elemLastIndex($dictEq) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Array_elemLastIndex = ($GLOBALS['Data_Array_elemLastIndex'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_elemLastIndex'));
+$__global_Data_Array_findLastIndex = ($GLOBALS['Data_Array_findLastIndex'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_findLastIndex'));
 $__global_Data_Array_NonEmpty_adaptAny = ($GLOBALS['Data_Array_NonEmpty_adaptAny'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_adaptAny'));
-$elemLastIndex1 = ($__global_Data_Array_elemLastIndex)($dictEq);
+$__case_0 = $dictEq;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq2 = $__case_res_0;
+$elemLastIndex1 = (function() use ($__global_Data_Array_findLastIndex, $eq2) {
+  $__fn = function($x) use ($__global_Data_Array_findLastIndex, $eq2, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($__global_Data_Array_findLastIndex)((function() use ($eq2, $x) {
+  $__fn = function($v) use ($eq2, $x, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($eq2)($v, $x);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})());
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
     $__res = (function() use ($__global_Data_Array_NonEmpty_adaptAny, $elemLastIndex1) {
   $__fn = function($x) use ($__global_Data_Array_NonEmpty_adaptAny, $elemLastIndex1, &$__fn) {
   $__num = func_num_args();
@@ -1061,9 +1703,93 @@ function Data_Array_NonEmpty_filterA($dictApplicative) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Array_filterA = ($GLOBALS['Data_Array_filterA'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_filterA'));
+$__global_Data_Array_traverse = ($GLOBALS['Data_Array_traverse'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_traverse'));
+$__global_Data_Array_composeFlipped = ($GLOBALS['Data_Array_composeFlipped'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_composeFlipped'));
+$__global_Data_Array_mapMaybe = ($GLOBALS['Data_Array_mapMaybe'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_mapMaybe'));
 $__global_Data_Array_NonEmpty_adaptAny = ($GLOBALS['Data_Array_NonEmpty_adaptAny'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_adaptAny'));
-$filterA1 = ($__global_Data_Array_filterA)($dictApplicative);
+$traverse1 = ($__global_Data_Array_traverse)($dictApplicative);
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map3 = $__case_res_0;
+$filterA1 = (function() use ($__global_Data_Array_composeFlipped, $traverse1, $map3, $__global_Data_Array_mapMaybe) {
+  $__fn = function($p) use ($__global_Data_Array_composeFlipped, $traverse1, $map3, $__global_Data_Array_mapMaybe, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($__global_Data_Array_composeFlipped)(($traverse1)((function() use ($map3, $p) {
+  $__fn = function($x) use ($map3, $p, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($map3)(((function() {
+  $__fn = function($value0, $value1 = null) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($value1) use ($value0, &$__fn) { return $__fn($value0, $value1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = new Phpurs_Data2("Tuple", $value0, $value1);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})())($x), ($p)($x));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()), ($map3)(($__global_Data_Array_mapMaybe)((function() {
+  $__body = function($v) {
+    $__case_0 = $v;
+    switch (($__case_0)->tag) {
+case "Tuple":
+$x = ($__case_0)->v0;
+$b = ($__case_0)->v1;
+$__case_0 = $b;
+switch ($__case_0) {
+case true:
+return ((function() {
+  $__fn = function($value0) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = new Phpurs_Data1("Just", $value0);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})())($x);
+break;
+default:
+return ($GLOBALS['__phpurs_data0_Nothing'] ??= new Phpurs_Data0("Nothing"));
+break;
+};
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($v) use ($__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $__body($v);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})())));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
     $__res = (function() use ($__global_Data_Array_NonEmpty_adaptAny, $filterA1) {
   $__fn = function($f) use ($__global_Data_Array_NonEmpty_adaptAny, $filterA1, &$__fn) {
   $__num = func_num_args();
@@ -1142,9 +1868,71 @@ function Data_Array_NonEmpty_foldM($dictMonad) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
+$__global_Data_Function_Uncurried_runFn3 = ($GLOBALS['Data_Function_Uncurried_runFn3'] ?? \Data\Function\Uncurried\phpurs_eval_thunk('Data_Function_Uncurried_runFn3'));
+$__global_Data_Array_unconsImpl = ($GLOBALS['Data_Array_unconsImpl'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_unconsImpl'));
 $__global_Data_Array_foldM = ($GLOBALS['Data_Array_foldM'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_foldM'));
 $__global_Data_Array_NonEmpty_adaptAny = ($GLOBALS['Data_Array_NonEmpty_adaptAny'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_adaptAny'));
-$foldM1 = ($__global_Data_Array_foldM)($dictMonad);
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pure1 = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->bind;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bind1 = $__case_res_1;
+$foldM1 = (function() use ($__global_Data_Function_Uncurried_runFn3, $__global_Data_Array_unconsImpl, $pure1, $bind1, $__global_Data_Array_foldM, $dictMonad) {
+  $__fn = function($f, $b = null) use ($__global_Data_Function_Uncurried_runFn3, $__global_Data_Array_unconsImpl, $pure1, $bind1, $__global_Data_Array_foldM, $dictMonad, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($b) use ($f, &$__fn) { return $__fn($f, $b); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($__global_Data_Function_Uncurried_runFn3)($__global_Data_Array_unconsImpl, (function() use ($pure1, $b) {
+  $__fn = function($v) use ($pure1, $b, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($pure1)($b);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})(), (function() use ($bind1, $f, $b, $__global_Data_Array_foldM, $dictMonad) {
+  $__fn = function($a, $as = null) use ($bind1, $f, $b, $__global_Data_Array_foldM, $dictMonad, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($as) use ($a, &$__fn) { return $__fn($a, $as); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($bind1)(($f)($b, $a), (function() use ($__global_Data_Array_foldM, $dictMonad, $f, $as) {
+  $__fn = function($b__prime__) use ($__global_Data_Array_foldM, $dictMonad, $f, $as, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($__global_Data_Array_foldM)($dictMonad, $f, $b__prime__, $as);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})());
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})());
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
     $__res = (function() use ($__global_Data_Array_NonEmpty_adaptAny, $foldM1) {
   $__fn = function($f, $acc = null) use ($__global_Data_Array_NonEmpty_adaptAny, $foldM1, &$__fn) {
   $__num = func_num_args();
@@ -1168,9 +1956,105 @@ function Data_Array_NonEmpty_foldRecM($dictMonadRec) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Array_foldRecM = ($GLOBALS['Data_Array_foldRecM'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_foldRecM'));
+$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Array_NonEmpty_adaptAny = ($GLOBALS['Data_Array_NonEmpty_adaptAny'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_adaptAny'));
-$foldRecM1 = ($__global_Data_Array_foldRecM)($dictMonadRec);
+$Monad0 = (($dictMonadRec)->Monad0)($__global_Prim_undefined);
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pure1 = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->bind;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bind1 = $__case_res_1;
+$__case_0 = $dictMonadRec;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->tailRecM;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$tailRecM1 = $__case_res_2;
+$tailRecM2 = (function() use ($tailRecM1) {
+  $__fn = function($f, $a = null, $b = null) use ($tailRecM1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($b) use ($f, $a, &$__fn) { return $__fn($f, $a, $b); };
+    if ($__num === 1) return function($a, $b = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $a, $b);
+      if ($__num2 === 1) return function($b) use ($f, $a, &$__fn) { return $__fn($f, $a, $b); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = ($tailRecM1)((function() use ($f) {
+  $__fn = function($o) use ($f, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($f)(($o)->a, ($o)->b);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})(), (object)["a" => $a, "b" => $b]);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})();
+$foldRecM1 = (function() use ($tailRecM2) {
+  $__fn = function($f, $b = null, $array = null) use ($tailRecM2, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($array) use ($f, $b, &$__fn) { return $__fn($f, $b, $array); };
+    if ($__num === 1) return function($b, $array = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $b, $array);
+      if ($__num2 === 1) return function($array) use ($f, $b, &$__fn) { return $__fn($f, $b, $array); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+$go = (function() {
+  $__body = function($res, $i) {
+    $__case_0 = $res;
+    $__case_1 = $i;
+    if (true) {
+$res1 = $__case_0;
+$i1 = $__case_1;
+return "/* Unsupported: Guards not supported */";
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($res, $i = null) use ($__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($i) use ($res, &$__fn) { return $__fn($res, $i); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($res, $i);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+    $__res = ($tailRecM2)($go, $b, 0);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})();
     $__res = (function() use ($__global_Data_Array_NonEmpty_adaptAny, $foldRecM1) {
   $__fn = function($f, $acc = null) use ($__global_Data_Array_NonEmpty_adaptAny, $foldRecM1, &$__fn) {
   $__num = func_num_args();
@@ -1210,9 +2094,51 @@ function Data_Array_NonEmpty_notElem($dictEq) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Array_notElem = ($GLOBALS['Data_Array_notElem'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_notElem'));
+$__global_Data_Array_findIndex = ($GLOBALS['Data_Array_findIndex'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_findIndex'));
+$__global_Data_Maybe_isNothing = ($GLOBALS['Data_Maybe_isNothing'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_isNothing'));
 $__global_Data_Array_NonEmpty_adaptAny = ($GLOBALS['Data_Array_NonEmpty_adaptAny'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_adaptAny'));
-$notElem1 = ($__global_Data_Array_notElem)($dictEq);
+$__case_0 = $dictEq;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq2 = $__case_res_0;
+$elemIndex1 = (function() use ($__global_Data_Array_findIndex, $eq2) {
+  $__fn = function($x) use ($__global_Data_Array_findIndex, $eq2, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($__global_Data_Array_findIndex)((function() use ($eq2, $x) {
+  $__fn = function($v) use ($eq2, $x, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($eq2)($v, $x);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})());
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+$notElem1 = (function() use ($__global_Data_Maybe_isNothing, $elemIndex1) {
+  $__fn = function($a, $arr = null) use ($__global_Data_Maybe_isNothing, $elemIndex1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($arr) use ($a, &$__fn) { return $__fn($a, $arr); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($__global_Data_Maybe_isNothing)(($elemIndex1)($a, $arr));
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
     $__res = (function() use ($__global_Data_Array_NonEmpty_adaptAny, $notElem1) {
   $__fn = function($x) use ($__global_Data_Array_NonEmpty_adaptAny, $notElem1, &$__fn) {
   $__num = func_num_args();
@@ -1321,8 +2247,48 @@ function Data_Array_NonEmpty_toUnfoldable($dictUnfoldable) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_Array_NonEmpty_adaptAny = ($GLOBALS['Data_Array_NonEmpty_adaptAny'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_adaptAny'));
-$__global_Data_Array_toUnfoldable = ($GLOBALS['Data_Array_toUnfoldable'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_toUnfoldable'));
-    $__res = ($__global_Data_Array_NonEmpty_adaptAny)(($__global_Data_Array_toUnfoldable)($dictUnfoldable));
+$__global_Data_Array_length = ($GLOBALS['Data_Array_length'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_length'));
+$__case_0 = $dictUnfoldable;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->unfoldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$unfoldr = $__case_res_0;
+    $__res = ($__global_Data_Array_NonEmpty_adaptAny)((function() use ($__global_Data_Array_length, $unfoldr) {
+  $__fn = function($xs) use ($__global_Data_Array_length, $unfoldr, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$len = ($__global_Data_Array_length)($xs);
+$f = (function() {
+  $__body = function($i) {
+    $__case_0 = $i;
+    if (true) {
+$i1 = $__case_0;
+return "/* Unsupported: Guards not supported */";
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($i) use ($__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $__body($i);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+    $__res = ($unfoldr)($f, 0);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})());
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Array_NonEmpty_toUnfoldable'] = __NAMESPACE__ . '\\Data_Array_NonEmpty_toUnfoldable';
@@ -1364,8 +2330,27 @@ function Data_Array_NonEmpty_group($dictEq) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_Array_NonEmpty_unsafeAdapt = ($GLOBALS['Data_Array_NonEmpty_unsafeAdapt'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_unsafeAdapt'));
-$__global_Data_Array_group = ($GLOBALS['Data_Array_group'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_group'));
-    $__res = ($__global_Data_Array_NonEmpty_unsafeAdapt)(($__global_Data_Array_group)($dictEq));
+$__global_Data_Array_groupBy = ($GLOBALS['Data_Array_groupBy'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_groupBy'));
+$__case_0 = $dictEq;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq2 = $__case_res_0;
+    $__res = ($__global_Data_Array_NonEmpty_unsafeAdapt)((function() use ($__global_Data_Array_groupBy, $eq2) {
+  $__fn = function($xs) use ($__global_Data_Array_groupBy, $eq2, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($__global_Data_Array_groupBy)($eq2, $xs);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})());
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Array_NonEmpty_group'] = __NAMESPACE__ . '\\Data_Array_NonEmpty_group';
@@ -1392,7 +2377,15 @@ function Data_Array_NonEmpty_groupAll($dictOrd) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_Array_NonEmpty_groupAllBy = ($GLOBALS['Data_Array_NonEmpty_groupAllBy'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_groupAllBy'));
-    $__res = ($__global_Data_Array_NonEmpty_groupAllBy)(($dictOrd)->compare);
+$__case_0 = $dictOrd;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__global_Data_Array_NonEmpty_groupAllBy)($__case_res_0);
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Array_NonEmpty_groupAll'] = __NAMESPACE__ . '\\Data_Array_NonEmpty_groupAll';
@@ -1418,9 +2411,17 @@ function Data_Array_NonEmpty_insert($dictOrd) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Array_insert = ($GLOBALS['Data_Array_insert'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_insert'));
+$__global_Data_Array_insertBy = ($GLOBALS['Data_Array_insertBy'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_insertBy'));
 $__global_Data_Array_NonEmpty_unsafeAdapt = ($GLOBALS['Data_Array_NonEmpty_unsafeAdapt'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_unsafeAdapt'));
-$insert1 = ($__global_Data_Array_insert)($dictOrd);
+$__case_0 = $dictOrd;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$insert1 = ($__global_Data_Array_insertBy)($__case_res_0);
     $__res = (function() use ($__global_Data_Array_NonEmpty_unsafeAdapt, $insert1) {
   $__fn = function($x) use ($__global_Data_Array_NonEmpty_unsafeAdapt, $insert1, &$__fn) {
   $__num = func_num_args();
@@ -1473,8 +2474,8 @@ function Data_Array_NonEmpty_mapWithIndex($f) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_Array_NonEmpty_unsafeAdapt = ($GLOBALS['Data_Array_NonEmpty_unsafeAdapt'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_unsafeAdapt'));
-$__global_Data_FunctorWithIndex_mapWithIndexArray = ($GLOBALS['Data_FunctorWithIndex_mapWithIndexArray'] ?? \Data\FunctorWithIndex\phpurs_eval_thunk('Data_FunctorWithIndex_mapWithIndexArray'));
-    $__res = ($__global_Data_Array_NonEmpty_unsafeAdapt)(($__global_Data_FunctorWithIndex_mapWithIndexArray)($f));
+$__global_Data_Array_mapWithIndex = ($GLOBALS['Data_Array_mapWithIndex'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_mapWithIndex'));
+    $__res = ($__global_Data_Array_NonEmpty_unsafeAdapt)(($__global_Data_Array_mapWithIndex)($f));
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Array_NonEmpty_mapWithIndex'] = __NAMESPACE__ . '\\Data_Array_NonEmpty_mapWithIndex';
@@ -1486,9 +2487,50 @@ function Data_Array_NonEmpty_modifyAtIndices($dictFoldable) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Array_modifyAtIndices = ($GLOBALS['Data_Array_modifyAtIndices'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_modifyAtIndices'));
+$__global_Data_Array_traverse_ = ($GLOBALS['Data_Array_traverse_'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_traverse_'));
+$__global_Control_Monad_ST_Internal_run = ($GLOBALS['Control_Monad_ST_Internal_run'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_run'));
+$__global_Data_Array_ST_withArray = ($GLOBALS['Data_Array_ST_withArray'] ?? \Data\Array\ST\phpurs_eval_thunk('Data_Array_ST_withArray'));
+$__global_Data_Array_ST_modify = ($GLOBALS['Data_Array_ST_modify'] ?? \Data\Array\ST\phpurs_eval_thunk('Data_Array_ST_modify'));
 $__global_Data_Array_NonEmpty_unsafeAdapt = ($GLOBALS['Data_Array_NonEmpty_unsafeAdapt'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_unsafeAdapt'));
-$modifyAtIndices1 = ($__global_Data_Array_modifyAtIndices)($dictFoldable);
+$traverse_1 = ($__global_Data_Array_traverse_)($dictFoldable);
+$modifyAtIndices1 = (function() use ($__global_Control_Monad_ST_Internal_run, $__global_Data_Array_ST_withArray, $traverse_1, $__global_Data_Array_ST_modify) {
+  $__fn = function($is, $f = null, $xs = null) use ($__global_Control_Monad_ST_Internal_run, $__global_Data_Array_ST_withArray, $traverse_1, $__global_Data_Array_ST_modify, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($xs) use ($is, $f, &$__fn) { return $__fn($is, $f, $xs); };
+    if ($__num === 1) return function($f, $xs = null) use ($is, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($is, $f, $xs);
+      if ($__num2 === 1) return function($xs) use ($is, $f, &$__fn) { return $__fn($is, $f, $xs); };
+      return phpurs_curry_fallback($__fn, [$is], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = ($__global_Control_Monad_ST_Internal_run)(($__global_Data_Array_ST_withArray)((function() use ($traverse_1, $__global_Data_Array_ST_modify, $f, $is) {
+  $__fn = function($res) use ($traverse_1, $__global_Data_Array_ST_modify, $f, $is, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($traverse_1)((function() use ($__global_Data_Array_ST_modify, $f, $res) {
+  $__fn = function($i) use ($__global_Data_Array_ST_modify, $f, $res, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($__global_Data_Array_ST_modify)($i, $f, $res);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})(), $is);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})(), $xs));
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})();
     $__res = (function() use ($__global_Data_Array_NonEmpty_unsafeAdapt, $modifyAtIndices1) {
   $__fn = function($is, $f = null) use ($__global_Data_Array_NonEmpty_unsafeAdapt, $modifyAtIndices1, &$__fn) {
   $__num = func_num_args();
@@ -1513,8 +2555,16 @@ function Data_Array_NonEmpty_nub($dictOrd) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_Array_NonEmpty_unsafeAdapt = ($GLOBALS['Data_Array_NonEmpty_unsafeAdapt'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_unsafeAdapt'));
-$__global_Data_Array_nub = ($GLOBALS['Data_Array_nub'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_nub'));
-    $__res = ($__global_Data_Array_NonEmpty_unsafeAdapt)(($__global_Data_Array_nub)($dictOrd));
+$__global_Data_Array_nubBy = ($GLOBALS['Data_Array_nubBy'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_nubBy'));
+$__case_0 = $dictOrd;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__global_Data_Array_NonEmpty_unsafeAdapt)(($__global_Data_Array_nubBy)($__case_res_0));
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Array_NonEmpty_nub'] = __NAMESPACE__ . '\\Data_Array_NonEmpty_nub';
@@ -1555,8 +2605,16 @@ function Data_Array_NonEmpty_nubEq($dictEq) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_Array_NonEmpty_unsafeAdapt = ($GLOBALS['Data_Array_NonEmpty_unsafeAdapt'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_unsafeAdapt'));
-$__global_Data_Array_nubEq = ($GLOBALS['Data_Array_nubEq'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_nubEq'));
-    $__res = ($__global_Data_Array_NonEmpty_unsafeAdapt)(($__global_Data_Array_nubEq)($dictEq));
+$__global_Data_Array_nubByEq = ($GLOBALS['Data_Array_nubByEq'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_nubByEq'));
+$__case_0 = $dictEq;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__global_Data_Array_NonEmpty_unsafeAdapt)(($__global_Data_Array_nubByEq)($__case_res_0));
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Array_NonEmpty_nubEq'] = __NAMESPACE__ . '\\Data_Array_NonEmpty_nubEq';
@@ -1600,8 +2658,27 @@ function Data_Array_NonEmpty_sort($dictOrd) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_Array_NonEmpty_unsafeAdapt = ($GLOBALS['Data_Array_NonEmpty_unsafeAdapt'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_unsafeAdapt'));
-$__global_Data_Array_sort = ($GLOBALS['Data_Array_sort'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_sort'));
-    $__res = ($__global_Data_Array_NonEmpty_unsafeAdapt)(($__global_Data_Array_sort)($dictOrd));
+$__global_Data_Array_sortBy = ($GLOBALS['Data_Array_sortBy'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_sortBy'));
+$__case_0 = $dictOrd;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare = $__case_res_0;
+    $__res = ($__global_Data_Array_NonEmpty_unsafeAdapt)((function() use ($__global_Data_Array_sortBy, $compare) {
+  $__fn = function($xs) use ($__global_Data_Array_sortBy, $compare, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($__global_Data_Array_sortBy)($compare, $xs);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})());
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Array_NonEmpty_sort'] = __NAMESPACE__ . '\\Data_Array_NonEmpty_sort';
@@ -1627,9 +2704,46 @@ function Data_Array_NonEmpty_sortWith($dictOrd) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Array_sortWith = ($GLOBALS['Data_Array_sortWith'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_sortWith'));
+$__global_Data_Array_sortBy = ($GLOBALS['Data_Array_sortBy'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_sortBy'));
 $__global_Data_Array_NonEmpty_unsafeAdapt = ($GLOBALS['Data_Array_NonEmpty_unsafeAdapt'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_unsafeAdapt'));
-$sortWith1 = ($__global_Data_Array_sortWith)($dictOrd);
+$__case_0 = $dictOrd;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare3 = $__case_res_0;
+$comparing = (function() use ($compare3) {
+  $__fn = function($f, $x = null, $y = null) use ($compare3, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($y) use ($f, $x, &$__fn) { return $__fn($f, $x, $y); };
+    if ($__num === 1) return function($x, $y = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $x, $y);
+      if ($__num2 === 1) return function($y) use ($f, $x, &$__fn) { return $__fn($f, $x, $y); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = ($compare3)(($f)($x), ($f)($y));
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})();
+$sortWith1 = (function() use ($__global_Data_Array_sortBy, $comparing) {
+  $__fn = function($f) use ($__global_Data_Array_sortBy, $comparing, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($__global_Data_Array_sortBy)(($comparing)($f));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
     $__res = (function() use ($__global_Data_Array_NonEmpty_unsafeAdapt, $sortWith1) {
   $__fn = function($f) use ($__global_Data_Array_NonEmpty_unsafeAdapt, $sortWith1, &$__fn) {
   $__num = func_num_args();
@@ -1652,9 +2766,57 @@ function Data_Array_NonEmpty_updateAtIndices($dictFoldable) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Array_updateAtIndices = ($GLOBALS['Data_Array_updateAtIndices'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_updateAtIndices'));
+$__global_Data_Array_traverse_ = ($GLOBALS['Data_Array_traverse_'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_traverse_'));
+$__global_Control_Monad_ST_Internal_run = ($GLOBALS['Control_Monad_ST_Internal_run'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_run'));
+$__global_Data_Array_ST_withArray = ($GLOBALS['Data_Array_ST_withArray'] ?? \Data\Array\ST\phpurs_eval_thunk('Data_Array_ST_withArray'));
+$__global_Data_Array_ST_poke = ($GLOBALS['Data_Array_ST_poke'] ?? \Data\Array\ST\phpurs_eval_thunk('Data_Array_ST_poke'));
 $__global_Data_Array_NonEmpty_unsafeAdapt = ($GLOBALS['Data_Array_NonEmpty_unsafeAdapt'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_unsafeAdapt'));
-$updateAtIndices1 = ($__global_Data_Array_updateAtIndices)($dictFoldable);
+$traverse_1 = ($__global_Data_Array_traverse_)($dictFoldable);
+$updateAtIndices1 = (function() use ($__global_Control_Monad_ST_Internal_run, $__global_Data_Array_ST_withArray, $traverse_1, $__global_Data_Array_ST_poke) {
+  $__fn = function($us, $xs = null) use ($__global_Control_Monad_ST_Internal_run, $__global_Data_Array_ST_withArray, $traverse_1, $__global_Data_Array_ST_poke, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($xs) use ($us, &$__fn) { return $__fn($us, $xs); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($__global_Control_Monad_ST_Internal_run)(($__global_Data_Array_ST_withArray)((function() use ($traverse_1, $__global_Data_Array_ST_poke, $us) {
+  $__fn = function($res) use ($traverse_1, $__global_Data_Array_ST_poke, $us, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($traverse_1)((function() use ($__global_Data_Array_ST_poke, $res) {
+  $__body = function($v) use ($__global_Data_Array_ST_poke, $res) {
+    $__case_0 = $v;
+    switch (($__case_0)->tag) {
+case "Tuple":
+$i = ($__case_0)->v0;
+$a = ($__case_0)->v1;
+return ($__global_Data_Array_ST_poke)($i, $a, $res);
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($v) use ($__global_Data_Array_ST_poke, $res, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $__body($v);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})(), $us);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})(), $xs));
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
     $__res = (function() use ($__global_Data_Array_NonEmpty_unsafeAdapt, $updateAtIndices1) {
   $__fn = function($pairs) use ($__global_Data_Array_NonEmpty_unsafeAdapt, $updateAtIndices1, &$__fn) {
   $__num = func_num_args();
@@ -1696,25 +2858,35 @@ $__global_Data_Array_NonEmpty_length = ($GLOBALS['Data_Array_NonEmpty_length'] ?
 $__global_Partial_Unsafe__unsafePartial = ($GLOBALS['Partial_Unsafe__unsafePartial'] ?? \Partial\Unsafe\phpurs_eval_thunk('Partial_Unsafe__unsafePartial'));
 $__global_Data_Array_NonEmpty_unsafeIndex2 = ($GLOBALS['Data_Array_NonEmpty_unsafeIndex2'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_unsafeIndex2'));
 $__global_Data_Array_NonEmpty_lessThan = ($GLOBALS['Data_Array_NonEmpty_lessThan'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_lessThan'));
-$unfoldr1 = ($dictUnfoldable1)->unfoldr1;
-    $__res = (function() use ($__global_Data_Array_NonEmpty_length, $__global_Partial_Unsafe__unsafePartial, $__global_Data_Array_NonEmpty_unsafeIndex2, $__global_Data_Array_NonEmpty_lessThan, $unfoldr1) {
-  $__fn = function($xs) use ($__global_Data_Array_NonEmpty_length, $__global_Partial_Unsafe__unsafePartial, $__global_Data_Array_NonEmpty_unsafeIndex2, $__global_Data_Array_NonEmpty_lessThan, $unfoldr1, &$__fn) {
+$__global_Data_Array_NonEmpty_sub = ($GLOBALS['Data_Array_NonEmpty_sub'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_sub'));
+$__global_Data_Array_NonEmpty_add = ($GLOBALS['Data_Array_NonEmpty_add'] ?? \Data\Array\NonEmpty\phpurs_eval_thunk('Data_Array_NonEmpty_add'));
+$__case_0 = $dictUnfoldable1;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->unfoldr1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$unfoldr1 = $__case_res_0;
+    $__res = (function() use ($__global_Data_Array_NonEmpty_length, $__global_Partial_Unsafe__unsafePartial, $__global_Data_Array_NonEmpty_unsafeIndex2, $__global_Data_Array_NonEmpty_lessThan, $__global_Data_Array_NonEmpty_sub, $__global_Data_Array_NonEmpty_add, $unfoldr1) {
+  $__fn = function($xs) use ($__global_Data_Array_NonEmpty_length, $__global_Partial_Unsafe__unsafePartial, $__global_Data_Array_NonEmpty_unsafeIndex2, $__global_Data_Array_NonEmpty_lessThan, $__global_Data_Array_NonEmpty_sub, $__global_Data_Array_NonEmpty_add, $unfoldr1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $len = ($__global_Data_Array_NonEmpty_length)($xs);
-$f = (function() use ($__global_Partial_Unsafe__unsafePartial, $__global_Data_Array_NonEmpty_unsafeIndex2, $xs, $__global_Data_Array_NonEmpty_lessThan, $len) {
-  $__fn = function($i) use ($__global_Partial_Unsafe__unsafePartial, $__global_Data_Array_NonEmpty_unsafeIndex2, $xs, $__global_Data_Array_NonEmpty_lessThan, $len, &$__fn) {
+$f = (function() use ($__global_Partial_Unsafe__unsafePartial, $__global_Data_Array_NonEmpty_unsafeIndex2, $xs, $__global_Data_Array_NonEmpty_lessThan, $__global_Data_Array_NonEmpty_sub, $len, $__global_Data_Array_NonEmpty_add) {
+  $__fn = function($i) use ($__global_Partial_Unsafe__unsafePartial, $__global_Data_Array_NonEmpty_unsafeIndex2, $xs, $__global_Data_Array_NonEmpty_lessThan, $__global_Data_Array_NonEmpty_sub, $len, $__global_Data_Array_NonEmpty_add, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__case_0 = ($__global_Data_Array_NonEmpty_lessThan)($i, ($len - 1));
-$__case_res_0 = null;
+$__case_0 = ($__global_Data_Array_NonEmpty_lessThan)($i, ($__global_Data_Array_NonEmpty_sub)($len, 1));
+$__case_res_1 = null;
 switch ($__case_0) {
 case true:
-$__case_res_0 = ((function() {
+$__case_res_1 = ((function() {
   $__fn = function($value0) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
@@ -1724,10 +2896,10 @@ $__case_res_0 = ((function() {
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})())(($i + 1));
+})())(($__global_Data_Array_NonEmpty_add)($i, 1));
 break;
 default:
-$__case_res_0 = ($GLOBALS['__phpurs_data0_Nothing'] ??= new Phpurs_Data0("Nothing"));
+$__case_res_1 = ($GLOBALS['__phpurs_data0_Nothing'] ??= new Phpurs_Data0("Nothing"));
 break;
 };
     $__res = ((function() {
@@ -1751,7 +2923,7 @@ break;
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})(), $xs, $i), $__case_res_0);
+})(), $xs, $i), $__case_res_1);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;

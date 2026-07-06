@@ -93,8 +93,28 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Control_Parallel_compose': $v = (($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn')))->compose; break;
-      case 'Control_Parallel_identity': $v = (($GLOBALS['Control_Category_categoryFn'] ?? \Control\Category\phpurs_eval_thunk('Control_Category_categoryFn')))->identity; break;
+      case 'Control_Parallel_compose': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compose;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Control_Parallel_identity': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Category_categoryFn'] ?? \Control\Category\phpurs_eval_thunk('Control_Category_categoryFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->identity;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       default: throw new \Exception("Unknown thunk " . $id);
     }
     $GLOBALS[$id] = $v;
@@ -113,17 +133,104 @@ function Control_Parallel_parTraverse_($dictParallel) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Foldable_traverse_ = ($GLOBALS['Data_Foldable_traverse_'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_traverse_'));
+$__global_Data_Function_const = ($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const'));
+$__global_Control_Apply_identity = ($GLOBALS['Control_Apply_identity'] ?? \Control\Apply\phpurs_eval_thunk('Control_Apply_identity'));
+$__global_Data_Foldable_compose = ($GLOBALS['Data_Foldable_compose'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_compose'));
+$__global_Data_Unit_unit = ($GLOBALS['Data_Unit_unit'] ?? \Data\Unit\phpurs_eval_thunk('Data_Unit_unit'));
 $__global_Control_Parallel_compose = ($GLOBALS['Control_Parallel_compose'] ?? \Control\Parallel\phpurs_eval_thunk('Control_Parallel_compose'));
-$sequential = ($dictParallel)->sequential;
-$parallel = ($dictParallel)->parallel;
-    $__res = (function() use ($__global_Data_Foldable_traverse_, $__global_Control_Parallel_compose, $sequential, $parallel) {
-  $__fn = function($dictApplicative) use ($__global_Data_Foldable_traverse_, $__global_Control_Parallel_compose, $sequential, $parallel, &$__fn) {
+$__case_0 = $dictParallel;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->sequential;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$sequential = $__case_res_0;
+$__case_0 = $dictParallel;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->parallel;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$parallel = $__case_res_1;
+    $__res = (function() use ($dict, $__global_Data_Function_const, $__global_Control_Apply_identity, $__global_Data_Foldable_compose, $__global_Data_Unit_unit, $__global_Control_Parallel_compose, $sequential, $parallel) {
+  $__fn = function($dictApplicative) use ($dict, $__global_Data_Function_const, $__global_Control_Apply_identity, $__global_Data_Foldable_compose, $__global_Data_Unit_unit, $__global_Control_Parallel_compose, $sequential, $parallel, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$traverse_ = ($__global_Data_Foldable_traverse_)($dictApplicative);
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$apply1 = $__case_res_2;
+$__case_0 = $dict;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_3;
+$applySecond = (function() use ($apply1, $map, $__global_Data_Function_const, $__global_Control_Apply_identity) {
+  $__fn = function($a, $b = null) use ($apply1, $map, $__global_Data_Function_const, $__global_Control_Apply_identity, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($b) use ($a, &$__fn) { return $__fn($a, $b); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($apply1)(($map)(($__global_Data_Function_const)($__global_Control_Apply_identity), $a), $b);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+$__case_0 = $dictApplicative;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pure = $__case_res_4;
+$traverse_ = (function() use ($__global_Data_Foldable_compose, $applySecond, $pure, $__global_Data_Unit_unit) {
+  $__fn = function($dictFoldable) use ($__global_Data_Foldable_compose, $applySecond, $pure, $__global_Data_Unit_unit, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dictFoldable;
+$__case_res_5 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_5 = ($v)->foldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldr3 = $__case_res_5;
+    $__res = (function() use ($foldr3, $__global_Data_Foldable_compose, $applySecond, $pure, $__global_Data_Unit_unit) {
+  $__fn = function($f) use ($foldr3, $__global_Data_Foldable_compose, $applySecond, $pure, $__global_Data_Unit_unit, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($foldr3)(($__global_Data_Foldable_compose)($applySecond, $f), ($pure)($__global_Data_Unit_unit));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
     $__res = (function() use ($traverse_, $__global_Control_Parallel_compose, $sequential, $parallel) {
   $__fn = function($dictFoldable) use ($traverse_, $__global_Control_Parallel_compose, $sequential, $parallel, &$__fn) {
   $__num = func_num_args();
@@ -162,8 +269,24 @@ function Control_Parallel_parTraverse($dictParallel) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Control_Parallel_compose = ($GLOBALS['Control_Parallel_compose'] ?? \Control\Parallel\phpurs_eval_thunk('Control_Parallel_compose'));
-$sequential = ($dictParallel)->sequential;
-$parallel = ($dictParallel)->parallel;
+$__case_0 = $dictParallel;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->sequential;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$sequential = $__case_res_0;
+$__case_0 = $dictParallel;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->parallel;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$parallel = $__case_res_1;
     $__res = (function() use ($__global_Control_Parallel_compose, $sequential, $parallel) {
   $__fn = function($dictApplicative, $dictTraversable = null) use ($__global_Control_Parallel_compose, $sequential, $parallel, &$__fn) {
   $__num = func_num_args();
@@ -171,7 +294,15 @@ $parallel = ($dictParallel)->parallel;
     if ($__num === 1) return function($dictTraversable) use ($dictApplicative, &$__fn) { return $__fn($dictApplicative, $dictTraversable); };
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
-$traverse = (($dictTraversable)->traverse)($dictApplicative);
+$__case_0 = $dictTraversable;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->traverse;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$traverse = ($__case_res_2)($dictApplicative);
     $__res = (function() use ($__global_Control_Parallel_compose, $sequential, $traverse, $parallel) {
   $__fn = function($f) use ($__global_Control_Parallel_compose, $sequential, $traverse, $parallel, &$__fn) {
   $__num = func_num_args();
@@ -198,9 +329,131 @@ function Control_Parallel_parSequence_($dictParallel) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Control_Parallel_parTraverse_ = ($GLOBALS['Control_Parallel_parTraverse_'] ?? \Control\Parallel\phpurs_eval_thunk('Control_Parallel_parTraverse_'));
+$__global_Data_Function_const = ($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const'));
+$__global_Control_Apply_identity = ($GLOBALS['Control_Apply_identity'] ?? \Control\Apply\phpurs_eval_thunk('Control_Apply_identity'));
+$__global_Data_Foldable_compose = ($GLOBALS['Data_Foldable_compose'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_compose'));
+$__global_Data_Unit_unit = ($GLOBALS['Data_Unit_unit'] ?? \Data\Unit\phpurs_eval_thunk('Data_Unit_unit'));
+$__global_Control_Parallel_compose = ($GLOBALS['Control_Parallel_compose'] ?? \Control\Parallel\phpurs_eval_thunk('Control_Parallel_compose'));
 $__global_Control_Parallel_identity = ($GLOBALS['Control_Parallel_identity'] ?? \Control\Parallel\phpurs_eval_thunk('Control_Parallel_identity'));
-$parTraverse_1 = ($__global_Control_Parallel_parTraverse_)($dictParallel);
+$__case_0 = $dictParallel;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->sequential;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$sequential = $__case_res_0;
+$__case_0 = $dictParallel;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->parallel;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$parallel = $__case_res_1;
+$parTraverse_1 = (function() use ($dict, $__global_Data_Function_const, $__global_Control_Apply_identity, $__global_Data_Foldable_compose, $__global_Data_Unit_unit, $__global_Control_Parallel_compose, $sequential, $parallel) {
+  $__fn = function($dictApplicative) use ($dict, $__global_Data_Function_const, $__global_Control_Apply_identity, $__global_Data_Foldable_compose, $__global_Data_Unit_unit, $__global_Control_Parallel_compose, $sequential, $parallel, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$apply1 = $__case_res_2;
+$__case_0 = $dict;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_3;
+$applySecond = (function() use ($apply1, $map, $__global_Data_Function_const, $__global_Control_Apply_identity) {
+  $__fn = function($a, $b = null) use ($apply1, $map, $__global_Data_Function_const, $__global_Control_Apply_identity, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($b) use ($a, &$__fn) { return $__fn($a, $b); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($apply1)(($map)(($__global_Data_Function_const)($__global_Control_Apply_identity), $a), $b);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+$__case_0 = $dictApplicative;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pure = $__case_res_4;
+$traverse_ = (function() use ($__global_Data_Foldable_compose, $applySecond, $pure, $__global_Data_Unit_unit) {
+  $__fn = function($dictFoldable) use ($__global_Data_Foldable_compose, $applySecond, $pure, $__global_Data_Unit_unit, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dictFoldable;
+$__case_res_5 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_5 = ($v)->foldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldr3 = $__case_res_5;
+    $__res = (function() use ($foldr3, $__global_Data_Foldable_compose, $applySecond, $pure, $__global_Data_Unit_unit) {
+  $__fn = function($f) use ($foldr3, $__global_Data_Foldable_compose, $applySecond, $pure, $__global_Data_Unit_unit, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($foldr3)(($__global_Data_Foldable_compose)($applySecond, $f), ($pure)($__global_Data_Unit_unit));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+    $__res = (function() use ($traverse_, $__global_Control_Parallel_compose, $sequential, $parallel) {
+  $__fn = function($dictFoldable) use ($traverse_, $__global_Control_Parallel_compose, $sequential, $parallel, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$traverse_1 = ($traverse_)($dictFoldable);
+    $__res = (function() use ($__global_Control_Parallel_compose, $sequential, $traverse_1, $parallel) {
+  $__fn = function($f) use ($__global_Control_Parallel_compose, $sequential, $traverse_1, $parallel, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($__global_Control_Parallel_compose)($sequential, ($traverse_1)(($__global_Control_Parallel_compose)($parallel, $f)));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
     $__res = (function() use ($parTraverse_1, $__global_Control_Parallel_identity) {
   $__fn = function($dictApplicative) use ($parTraverse_1, $__global_Control_Parallel_identity, &$__fn) {
   $__num = func_num_args();
@@ -234,9 +487,57 @@ function Control_Parallel_parSequence($dictParallel) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Control_Parallel_parTraverse = ($GLOBALS['Control_Parallel_parTraverse'] ?? \Control\Parallel\phpurs_eval_thunk('Control_Parallel_parTraverse'));
+$__global_Control_Parallel_compose = ($GLOBALS['Control_Parallel_compose'] ?? \Control\Parallel\phpurs_eval_thunk('Control_Parallel_compose'));
 $__global_Control_Parallel_identity = ($GLOBALS['Control_Parallel_identity'] ?? \Control\Parallel\phpurs_eval_thunk('Control_Parallel_identity'));
-$parTraverse1 = ($__global_Control_Parallel_parTraverse)($dictParallel);
+$__case_0 = $dictParallel;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->sequential;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$sequential = $__case_res_0;
+$__case_0 = $dictParallel;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->parallel;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$parallel = $__case_res_1;
+$parTraverse1 = (function() use ($__global_Control_Parallel_compose, $sequential, $parallel) {
+  $__fn = function($dictApplicative, $dictTraversable = null) use ($__global_Control_Parallel_compose, $sequential, $parallel, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($dictTraversable) use ($dictApplicative, &$__fn) { return $__fn($dictApplicative, $dictTraversable); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+$__case_0 = $dictTraversable;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->traverse;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$traverse = ($__case_res_2)($dictApplicative);
+    $__res = (function() use ($__global_Control_Parallel_compose, $sequential, $traverse, $parallel) {
+  $__fn = function($f) use ($__global_Control_Parallel_compose, $sequential, $traverse, $parallel, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($__global_Control_Parallel_compose)($sequential, ($traverse)(($__global_Control_Parallel_compose)($parallel, $f)));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
     $__res = (function() use ($parTraverse1, $__global_Control_Parallel_identity) {
   $__fn = function($dictApplicative) use ($parTraverse1, $__global_Control_Parallel_identity, &$__fn) {
   $__num = func_num_args();
@@ -271,24 +572,87 @@ function Control_Parallel_parOneOfMap($dictParallel) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$__global_Data_Foldable_oneOfMap = ($GLOBALS['Data_Foldable_oneOfMap'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_oneOfMap'));
+$__global_Data_Foldable_compose = ($GLOBALS['Data_Foldable_compose'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_compose'));
 $__global_Control_Parallel_compose = ($GLOBALS['Control_Parallel_compose'] ?? \Control\Parallel\phpurs_eval_thunk('Control_Parallel_compose'));
-$sequential = ($dictParallel)->sequential;
-$parallel = ($dictParallel)->parallel;
-    $__res = (function() use ($__global_Prim_undefined, $__global_Data_Foldable_oneOfMap, $__global_Control_Parallel_compose, $sequential, $parallel) {
-  $__fn = function($dictAlternative) use ($__global_Prim_undefined, $__global_Data_Foldable_oneOfMap, $__global_Control_Parallel_compose, $sequential, $parallel, &$__fn) {
+$__case_0 = $dictParallel;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->sequential;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$sequential = $__case_res_0;
+$__case_0 = $dictParallel;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->parallel;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$parallel = $__case_res_1;
+    $__res = (function() use ($__global_Prim_undefined, $dict, $__global_Data_Foldable_compose, $__global_Control_Parallel_compose, $sequential, $parallel) {
+  $__fn = function($dictAlternative) use ($__global_Prim_undefined, $dict, $__global_Data_Foldable_compose, $__global_Control_Parallel_compose, $sequential, $parallel, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $Plus1 = (($dictAlternative)->Plus1)($__global_Prim_undefined);
-    $__res = (function() use ($__global_Data_Foldable_oneOfMap, &$Plus1, $__global_Control_Parallel_compose, $sequential, $parallel) {
-  $__fn = function($dictFoldable) use ($__global_Data_Foldable_oneOfMap, &$Plus1, $__global_Control_Parallel_compose, $sequential, $parallel, &$__fn) {
+    $__res = (function() use ($dict, $__global_Data_Foldable_compose, &$Plus1, $__global_Control_Parallel_compose, $sequential, $parallel) {
+  $__fn = function($dictFoldable) use ($dict, $__global_Data_Foldable_compose, &$Plus1, $__global_Control_Parallel_compose, $sequential, $parallel, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$oneOfMap = ($__global_Data_Foldable_oneOfMap)($dictFoldable, $Plus1);
+$__case_0 = $dictFoldable;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->foldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldr3 = $__case_res_2;
+$oneOfMap = ((function() use ($dict, $foldr3, $__global_Data_Foldable_compose) {
+  $__fn = function($dictPlus) use ($dict, $foldr3, $__global_Data_Foldable_compose, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dict;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->alt;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$alt = $__case_res_3;
+$__case_0 = $dictPlus;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->empty;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$empty = $__case_res_4;
+    $__res = (function() use ($foldr3, $__global_Data_Foldable_compose, $alt, $empty) {
+  $__fn = function($f) use ($foldr3, $__global_Data_Foldable_compose, $alt, $empty, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($foldr3)(($__global_Data_Foldable_compose)($alt, $f), $empty);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})())($Plus1);
     $__res = (function() use ($__global_Control_Parallel_compose, $sequential, $oneOfMap, $parallel) {
   $__fn = function($dictFunctor, $f = null) use ($__global_Control_Parallel_compose, $sequential, $oneOfMap, $parallel, &$__fn) {
   $__num = func_num_args();
@@ -321,24 +685,87 @@ function Control_Parallel_parOneOf($dictParallel) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$__global_Data_Foldable_oneOfMap = ($GLOBALS['Data_Foldable_oneOfMap'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_oneOfMap'));
+$__global_Data_Foldable_compose = ($GLOBALS['Data_Foldable_compose'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_compose'));
 $__global_Control_Parallel_compose = ($GLOBALS['Control_Parallel_compose'] ?? \Control\Parallel\phpurs_eval_thunk('Control_Parallel_compose'));
-$sequential = ($dictParallel)->sequential;
-$parallel = ($dictParallel)->parallel;
-    $__res = (function() use ($__global_Prim_undefined, $__global_Data_Foldable_oneOfMap, $__global_Control_Parallel_compose, $sequential, $parallel) {
-  $__fn = function($dictAlternative) use ($__global_Prim_undefined, $__global_Data_Foldable_oneOfMap, $__global_Control_Parallel_compose, $sequential, $parallel, &$__fn) {
+$__case_0 = $dictParallel;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->sequential;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$sequential = $__case_res_0;
+$__case_0 = $dictParallel;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->parallel;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$parallel = $__case_res_1;
+    $__res = (function() use ($__global_Prim_undefined, $dict, $__global_Data_Foldable_compose, $__global_Control_Parallel_compose, $sequential, $parallel) {
+  $__fn = function($dictAlternative) use ($__global_Prim_undefined, $dict, $__global_Data_Foldable_compose, $__global_Control_Parallel_compose, $sequential, $parallel, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $Plus1 = (($dictAlternative)->Plus1)($__global_Prim_undefined);
-    $__res = (function() use ($__global_Data_Foldable_oneOfMap, &$Plus1, $__global_Control_Parallel_compose, $sequential, $parallel) {
-  $__fn = function($dictFoldable) use ($__global_Data_Foldable_oneOfMap, &$Plus1, $__global_Control_Parallel_compose, $sequential, $parallel, &$__fn) {
+    $__res = (function() use ($dict, $__global_Data_Foldable_compose, &$Plus1, $__global_Control_Parallel_compose, $sequential, $parallel) {
+  $__fn = function($dictFoldable) use ($dict, $__global_Data_Foldable_compose, &$Plus1, $__global_Control_Parallel_compose, $sequential, $parallel, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$oneOfMap = ($__global_Data_Foldable_oneOfMap)($dictFoldable, $Plus1);
+$__case_0 = $dictFoldable;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->foldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldr3 = $__case_res_2;
+$oneOfMap = ((function() use ($dict, $foldr3, $__global_Data_Foldable_compose) {
+  $__fn = function($dictPlus) use ($dict, $foldr3, $__global_Data_Foldable_compose, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dict;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->alt;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$alt = $__case_res_3;
+$__case_0 = $dictPlus;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->empty;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$empty = $__case_res_4;
+    $__res = (function() use ($foldr3, $__global_Data_Foldable_compose, $alt, $empty) {
+  $__fn = function($f) use ($foldr3, $__global_Data_Foldable_compose, $alt, $empty, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($foldr3)(($__global_Data_Foldable_compose)($alt, $f), $empty);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})())($Plus1);
     $__res = (function() use ($__global_Control_Parallel_compose, $sequential, $oneOfMap, $parallel) {
   $__fn = function($dictFunctor) use ($__global_Control_Parallel_compose, $sequential, $oneOfMap, $parallel, &$__fn) {
   $__num = func_num_args();
@@ -369,10 +796,33 @@ function Control_Parallel_parApply($dictParallel) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$sequential = ($dictParallel)->sequential;
-$apply = ((($dictParallel)->Apply1)($__global_Prim_undefined))->apply;
-$parallel = ($dictParallel)->parallel;
+$__case_0 = $dictParallel;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->sequential;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$sequential = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$apply = $__case_res_1;
+$__case_0 = $dictParallel;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->parallel;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$parallel = $__case_res_2;
     $__res = (function() use ($sequential, $apply, $parallel) {
   $__fn = function($mf, $ma = null) use ($sequential, $apply, $parallel, &$__fn) {
   $__num = func_num_args();

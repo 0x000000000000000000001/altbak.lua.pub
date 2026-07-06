@@ -24,9 +24,9 @@ BENCHMARK RESULTS
 ========================================================================================
 Node.js (V8)  | Arista ES (V8) | Chez Scheme (Native) | Erlang (BEAM) | PHP (experimental WIP)
 ------------------------------ | -------------------- | ------------- | ---------------
-real 0m0.569s | real 0m0.555s  | real 0m0.099s        | real 0m0.835s | real 0m2.867s
-user 0m0.203s | user 0m0.153s  | user 0m0.081s        | user 0m0.830s | user 0m2.315s
-sys  0m0.376s | sys  0m0.398s  | sys  0m0.016s        | sys  0m0.062s | sys  0m0.543s
+real 0m0.576s | real 0m0.661s  | real 0m0.093s        | real 0m0.751s | real 0m2.623s
+user 0m0.191s | user 0m0.156s  | user 0m0.076s        | user 0m0.767s | user 0m2.114s
+sys  0m0.396s | sys  0m0.456s  | sys  0m0.014s        | sys  0m0.926s | sys  0m0.497s
 ```
 
 > [!WARNING]

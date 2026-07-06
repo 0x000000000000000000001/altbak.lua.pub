@@ -89,8 +89,40 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Data_Profunctor_composeFlipped': $v = (($GLOBALS['Control_Semigroupoid_composeFlipped'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_composeFlipped')))(($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn'))); break;
-      case 'Data_Profunctor_identity': $v = (($GLOBALS['Control_Category_categoryFn'] ?? \Control\Category\phpurs_eval_thunk('Control_Category_categoryFn')))->identity; break;
+      case 'Data_Profunctor_composeFlipped': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compose;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $compose1 = $__case_res_0;
+  return (function() use ($compose1) {
+  $__fn = function($f, $g = null) use ($compose1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($g) use ($f, &$__fn) { return $__fn($f, $g); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($compose1)($g, $f);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+})(); break;
+      case 'Data_Profunctor_identity': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Category_categoryFn'] ?? \Control\Category\phpurs_eval_thunk('Control_Category_categoryFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->identity;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_Profunctor_wrap': $v = (($GLOBALS['Data_Newtype_wrap'] ?? \Data\Newtype\phpurs_eval_thunk('Data_Newtype_wrap')))(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))); break;
       case 'Data_Profunctor_unwrap': $v = (($GLOBALS['Data_Newtype_unwrap'] ?? \Data\Newtype\phpurs_eval_thunk('Data_Newtype_unwrap')))(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))); break;
       case 'Data_Profunctor_profunctorFn': $v = (object)["dimap" => (function() {
@@ -167,7 +199,15 @@ function Data_Profunctor_lcmap($dictProfunctor) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_Profunctor_identity = ($GLOBALS['Data_Profunctor_identity'] ?? \Data\Profunctor\phpurs_eval_thunk('Data_Profunctor_identity'));
-$dimap1 = ($dictProfunctor)->dimap;
+$__case_0 = $dictProfunctor;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->dimap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$dimap1 = $__case_res_0;
     $__res = (function() use ($dimap1, $__global_Data_Profunctor_identity) {
   $__fn = function($a2b) use ($dimap1, $__global_Data_Profunctor_identity, &$__fn) {
   $__num = func_num_args();
@@ -191,7 +231,15 @@ function Data_Profunctor_rmap($dictProfunctor) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_Profunctor_identity = ($GLOBALS['Data_Profunctor_identity'] ?? \Data\Profunctor\phpurs_eval_thunk('Data_Profunctor_identity'));
-$dimap1 = ($dictProfunctor)->dimap;
+$__case_0 = $dictProfunctor;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->dimap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$dimap1 = $__case_res_0;
     $__res = (function() use ($dimap1, $__global_Data_Profunctor_identity) {
   $__fn = function($b2c) use ($dimap1, $__global_Data_Profunctor_identity, &$__fn) {
   $__num = func_num_args();
@@ -216,7 +264,15 @@ function Data_Profunctor_unwrapIso($dictProfunctor) {
   }
 $__global_Data_Profunctor_wrap = ($GLOBALS['Data_Profunctor_wrap'] ?? \Data\Profunctor\phpurs_eval_thunk('Data_Profunctor_wrap'));
 $__global_Data_Profunctor_unwrap = ($GLOBALS['Data_Profunctor_unwrap'] ?? \Data\Profunctor\phpurs_eval_thunk('Data_Profunctor_unwrap'));
-$dimap1 = ($dictProfunctor)->dimap;
+$__case_0 = $dictProfunctor;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->dimap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$dimap1 = $__case_res_0;
     $__res = (function() use ($dimap1, $__global_Data_Profunctor_wrap, $__global_Data_Profunctor_unwrap) {
   $__fn = function($__dollar____unused) use ($dimap1, $__global_Data_Profunctor_wrap, $__global_Data_Profunctor_unwrap, &$__fn) {
   $__num = func_num_args();
@@ -241,7 +297,15 @@ function Data_Profunctor_wrapIso($dictProfunctor) {
   }
 $__global_Data_Profunctor_unwrap = ($GLOBALS['Data_Profunctor_unwrap'] ?? \Data\Profunctor\phpurs_eval_thunk('Data_Profunctor_unwrap'));
 $__global_Data_Profunctor_wrap = ($GLOBALS['Data_Profunctor_wrap'] ?? \Data\Profunctor\phpurs_eval_thunk('Data_Profunctor_wrap'));
-$dimap1 = ($dictProfunctor)->dimap;
+$__case_0 = $dictProfunctor;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->dimap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$dimap1 = $__case_res_0;
     $__res = (function() use ($dimap1, $__global_Data_Profunctor_unwrap, $__global_Data_Profunctor_wrap) {
   $__fn = function($__dollar____unused, $v = null) use ($dimap1, $__global_Data_Profunctor_unwrap, $__global_Data_Profunctor_wrap, &$__fn) {
   $__num = func_num_args();
@@ -265,15 +329,42 @@ function Data_Profunctor_arr($dictCategory) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Profunctor_rmap = ($GLOBALS['Data_Profunctor_rmap'] ?? \Data\Profunctor\phpurs_eval_thunk('Data_Profunctor_rmap'));
-$identity1 = ($dictCategory)->identity;
-    $__res = (function() use ($__global_Data_Profunctor_rmap, $identity1) {
-  $__fn = function($dictProfunctor) use ($__global_Data_Profunctor_rmap, $identity1, &$__fn) {
+$__global_Data_Profunctor_identity = ($GLOBALS['Data_Profunctor_identity'] ?? \Data\Profunctor\phpurs_eval_thunk('Data_Profunctor_identity'));
+$__case_0 = $dictCategory;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->identity;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$identity1 = $__case_res_0;
+    $__res = (function() use ($__global_Data_Profunctor_identity, $identity1) {
+  $__fn = function($dictProfunctor) use ($__global_Data_Profunctor_identity, $identity1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$rmap1 = ($__global_Data_Profunctor_rmap)($dictProfunctor);
+$__case_0 = $dictProfunctor;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->dimap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$dimap1 = $__case_res_1;
+$rmap1 = (function() use ($dimap1, $__global_Data_Profunctor_identity) {
+  $__fn = function($b2c) use ($dimap1, $__global_Data_Profunctor_identity, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($dimap1)($__global_Data_Profunctor_identity, $b2c);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
     $__res = (function() use ($rmap1, $identity1) {
   $__fn = function($f) use ($rmap1, $identity1, &$__fn) {
   $__num = func_num_args();

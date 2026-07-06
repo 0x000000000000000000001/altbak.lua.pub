@@ -112,7 +112,17 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Control_Monad_Identity_Trans_compose': $v = (($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn')))->compose; break;
+      case 'Control_Monad_Identity_Trans_compose': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compose;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Control_Monad_Identity_Trans_newtypeIdentityT': $v = (object)["Coercible0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
@@ -417,11 +427,18 @@ function Control_Monad_Identity_Trans_extendIdentityI($dictExtend) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Control_Monad_Identity_Trans_compose = ($GLOBALS['Control_Monad_Identity_Trans_compose'] ?? \Control\Monad\Identity\Trans\phpurs_eval_thunk('Control_Monad_Identity_Trans_compose'));
 $__global_Control_Monad_Identity_Trans_IdentityT = ($GLOBALS['Control_Monad_Identity_Trans_IdentityT'] ?? \Control\Monad\Identity\Trans\phpurs_eval_thunk('Control_Monad_Identity_Trans_IdentityT'));
-$extend = ($dictExtend)->extend;
-$functorIdentityT1 = (($dictExtend)->Functor0)($__global_Prim_undefined);
+$__case_0 = $dictExtend;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->extend;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$extend = $__case_res_0;
+$functorIdentityT1 = $dictFunctor;
     $__res = (object)["extend" => (function() use ($extend, $__global_Control_Monad_Identity_Trans_compose, $__global_Control_Monad_Identity_Trans_IdentityT) {
   $__body = function($f, $v) use ($extend, $__global_Control_Monad_Identity_Trans_compose, $__global_Control_Monad_Identity_Trans_IdentityT) {
     $__case_0 = $f;
@@ -444,13 +461,13 @@ throw new \Exception("Pattern match failure");
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
-})(), "Functor0" => (function() use ($functorIdentityT1) {
-  $__fn = function($__dollar____unused) use ($functorIdentityT1, &$__fn) {
+})(), "Functor0" => (function() use ($dictFunctor) {
+  $__fn = function($__dollar____unused) use ($dictFunctor, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = $functorIdentityT1;
+    $__res = $dictFunctor;
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -466,7 +483,15 @@ function Control_Monad_Identity_Trans_eqIdentityT($dictEq1) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$eq1 = ($dictEq1)->eq1;
+$__case_0 = $dictEq1;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq1 = $__case_res_0;
     $__res = (function() use ($eq1) {
   $__fn = function($dictEq) use ($eq1, &$__fn) {
   $__num = func_num_args();
@@ -512,10 +537,59 @@ function Control_Monad_Identity_Trans_ordIdentityT($dictOrd1) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Control_Monad_Identity_Trans_eqIdentityT = ($GLOBALS['Control_Monad_Identity_Trans_eqIdentityT'] ?? \Control\Monad\Identity\Trans\phpurs_eval_thunk('Control_Monad_Identity_Trans_eqIdentityT'));
 $__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$compare1 = ($dictOrd1)->compare1;
-$eqIdentityT1 = ($__global_Control_Monad_Identity_Trans_eqIdentityT)((($dictOrd1)->Eq10)($__global_Prim_undefined));
+$__case_0 = $dictOrd1;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare1 = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->eq1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq1 = $__case_res_1;
+$eqIdentityT1 = (function() use ($eq1) {
+  $__fn = function($dictEq) use ($eq1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$eq11 = ($eq1)($dictEq);
+    $__res = (object)["eq" => (function() use ($eq11) {
+  $__body = function($x, $y) use ($eq11) {
+    $__case_0 = $x;
+    $__case_1 = $y;
+    if (true) {
+$l = $__case_0;
+$r = $__case_1;
+return ($eq11)($l, $r);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($x, $y = null) use ($eq11, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($y) use ($x, &$__fn) { return $__fn($x, $y); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($x, $y);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
     $__res = (function() use ($compare1, $eqIdentityT1, $__global_Prim_undefined) {
   $__fn = function($dictOrd) use ($compare1, $eqIdentityT1, $__global_Prim_undefined, &$__fn) {
   $__num = func_num_args();
@@ -572,15 +646,65 @@ function Control_Monad_Identity_Trans_eq1IdentityT($dictEq1) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Control_Monad_Identity_Trans_eqIdentityT = ($GLOBALS['Control_Monad_Identity_Trans_eqIdentityT'] ?? \Control\Monad\Identity\Trans\phpurs_eval_thunk('Control_Monad_Identity_Trans_eqIdentityT'));
-$eqIdentityT1 = ($__global_Control_Monad_Identity_Trans_eqIdentityT)($dictEq1);
-    $__res = (object)["eq1" => (function() use ($eqIdentityT1) {
-  $__fn = function($dictEq) use ($eqIdentityT1, &$__fn) {
+$__case_0 = $dictEq1;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq1 = $__case_res_0;
+$eqIdentityT1 = (function() use ($eq1) {
+  $__fn = function($dictEq) use ($eq1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (($eqIdentityT1)($dictEq))->eq;
+$eq11 = ($eq1)($dictEq);
+    $__res = (object)["eq" => (function() use ($eq11) {
+  $__body = function($x, $y) use ($eq11) {
+    $__case_0 = $x;
+    $__case_1 = $y;
+    if (true) {
+$l = $__case_0;
+$r = $__case_1;
+return ($eq11)($l, $r);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($x, $y = null) use ($eq11, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($y) use ($x, &$__fn) { return $__fn($x, $y); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($x, $y);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+    $__res = (object)["eq1" => (function() use ($dict) {
+  $__body = function($dictEq) use ($dict) {
+    $__case_0 = $dict;
+    if (true) {
+$v = $__case_0;
+return ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($dictEq) use ($dict, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $__body($dictEq);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -596,18 +720,183 @@ function Control_Monad_Identity_Trans_ord1IdentityT($dictOrd1) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Control_Monad_Identity_Trans_ordIdentityT = ($GLOBALS['Control_Monad_Identity_Trans_ordIdentityT'] ?? \Control\Monad\Identity\Trans\phpurs_eval_thunk('Control_Monad_Identity_Trans_ordIdentityT'));
-$__global_Control_Monad_Identity_Trans_eq1IdentityT = ($GLOBALS['Control_Monad_Identity_Trans_eq1IdentityT'] ?? \Control\Monad\Identity\Trans\phpurs_eval_thunk('Control_Monad_Identity_Trans_eq1IdentityT'));
 $__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$ordIdentityT1 = ($__global_Control_Monad_Identity_Trans_ordIdentityT)($dictOrd1);
-$eq1IdentityT1 = ($__global_Control_Monad_Identity_Trans_eq1IdentityT)((($dictOrd1)->Eq10)($__global_Prim_undefined));
-    $__res = (object)["compare1" => (function() use ($ordIdentityT1) {
-  $__fn = function($dictOrd) use ($ordIdentityT1, &$__fn) {
+$__case_0 = $dictOrd1;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare1 = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->eq1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq1 = $__case_res_1;
+$eqIdentityT1 = (function() use ($eq1) {
+  $__fn = function($dictEq) use ($eq1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (($ordIdentityT1)($dictOrd))->compare;
+$eq11 = ($eq1)($dictEq);
+    $__res = (object)["eq" => (function() use ($eq11) {
+  $__body = function($x, $y) use ($eq11) {
+    $__case_0 = $x;
+    $__case_1 = $y;
+    if (true) {
+$l = $__case_0;
+$r = $__case_1;
+return ($eq11)($l, $r);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($x, $y = null) use ($eq11, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($y) use ($x, &$__fn) { return $__fn($x, $y); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($x, $y);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+$ordIdentityT1 = (function() use ($compare1, $eqIdentityT1, $__global_Prim_undefined) {
+  $__fn = function($dictOrd) use ($compare1, $eqIdentityT1, $__global_Prim_undefined, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$compare11 = ($compare1)($dictOrd);
+$eqIdentityT2 = ($eqIdentityT1)((($dictOrd)->Eq0)($__global_Prim_undefined));
+    $__res = (object)["compare" => (function() use ($compare11) {
+  $__body = function($x, $y) use ($compare11) {
+    $__case_0 = $x;
+    $__case_1 = $y;
+    if (true) {
+$l = $__case_0;
+$r = $__case_1;
+return ($compare11)($l, $r);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($x, $y = null) use ($compare11, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($y) use ($x, &$__fn) { return $__fn($x, $y); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($x, $y);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "Eq0" => (function() use ($eqIdentityT2) {
+  $__fn = function($__dollar____unused) use ($eqIdentityT2, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $eqIdentityT2;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->eq1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq1 = $__case_res_2;
+$eqIdentityT1 = (function() use ($eq1) {
+  $__fn = function($dictEq) use ($eq1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$eq11 = ($eq1)($dictEq);
+    $__res = (object)["eq" => (function() use ($eq11) {
+  $__body = function($x, $y) use ($eq11) {
+    $__case_0 = $x;
+    $__case_1 = $y;
+    if (true) {
+$l = $__case_0;
+$r = $__case_1;
+return ($eq11)($l, $r);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($x, $y = null) use ($eq11, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($y) use ($x, &$__fn) { return $__fn($x, $y); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($x, $y);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+$eq1IdentityT1 = (object)["eq1" => (function() use ($dict) {
+  $__body = function($dictEq) use ($dict) {
+    $__case_0 = $dict;
+    if (true) {
+$v = $__case_0;
+return ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($dictEq) use ($dict, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $__body($dictEq);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+    $__res = (object)["compare1" => (function() use ($dict) {
+  $__body = function($dictOrd) use ($dict) {
+    $__case_0 = $dict;
+    if (true) {
+$v = $__case_0;
+return ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($dictOrd) use ($dict, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $__body($dictOrd);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -633,12 +922,61 @@ function Control_Monad_Identity_Trans_comonadIdentityT($dictComonad) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Control_Monad_Identity_Trans_extendIdentityI = ($GLOBALS['Control_Monad_Identity_Trans_extendIdentityI'] ?? \Control\Monad\Identity\Trans\phpurs_eval_thunk('Control_Monad_Identity_Trans_extendIdentityI'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Control_Monad_Identity_Trans_compose = ($GLOBALS['Control_Monad_Identity_Trans_compose'] ?? \Control\Monad\Identity\Trans\phpurs_eval_thunk('Control_Monad_Identity_Trans_compose'));
+$__global_Control_Monad_Identity_Trans_IdentityT = ($GLOBALS['Control_Monad_Identity_Trans_IdentityT'] ?? \Control\Monad\Identity\Trans\phpurs_eval_thunk('Control_Monad_Identity_Trans_IdentityT'));
 $__global_Control_Monad_Identity_Trans_runIdentityT = ($GLOBALS['Control_Monad_Identity_Trans_runIdentityT'] ?? \Control\Monad\Identity\Trans\phpurs_eval_thunk('Control_Monad_Identity_Trans_runIdentityT'));
-$extendIdentityI1 = ($__global_Control_Monad_Identity_Trans_extendIdentityI)((($dictComonad)->Extend0)($__global_Prim_undefined));
-    $__res = (object)["extract" => ($__global_Control_Monad_Identity_Trans_compose)(($dictComonad)->extract, $__global_Control_Monad_Identity_Trans_runIdentityT), "Extend0" => (function() use ($extendIdentityI1) {
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->extend;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$extend = $__case_res_0;
+$functorIdentityT1 = $dictFunctor;
+$extendIdentityI1 = (object)["extend" => (function() use ($extend, $__global_Control_Monad_Identity_Trans_compose, $__global_Control_Monad_Identity_Trans_IdentityT) {
+  $__body = function($f, $v) use ($extend, $__global_Control_Monad_Identity_Trans_compose, $__global_Control_Monad_Identity_Trans_IdentityT) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    if (true) {
+$f1 = $__case_0;
+$m = $__case_1;
+return ($extend)(($__global_Control_Monad_Identity_Trans_compose)($f1, $__global_Control_Monad_Identity_Trans_IdentityT), $m);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $v = null) use ($extend, $__global_Control_Monad_Identity_Trans_compose, $__global_Control_Monad_Identity_Trans_IdentityT, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, &$__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($f, $v);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "Functor0" => (function() use ($dictFunctor) {
+  $__fn = function($__dollar____unused) use ($dictFunctor, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $dictFunctor;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+$__case_0 = $dictComonad;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->extract;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = (object)["extract" => ($__global_Control_Monad_Identity_Trans_compose)($__case_res_1, $__global_Control_Monad_Identity_Trans_runIdentityT), "Extend0" => (function() use ($extendIdentityI1) {
   $__fn = function($__dollar____unused) use ($extendIdentityI1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {

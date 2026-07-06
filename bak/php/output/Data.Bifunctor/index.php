@@ -91,7 +91,17 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Data_Bifunctor_identity': $v = (($GLOBALS['Control_Category_categoryFn'] ?? \Control\Category\phpurs_eval_thunk('Control_Category_categoryFn')))->identity; break;
+      case 'Data_Bifunctor_identity': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Category_categoryFn'] ?? \Control\Category\phpurs_eval_thunk('Control_Category_categoryFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->identity;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_Bifunctor_bifunctorTuple': $v = (object)["bimap" => (function() {
   $__body = function($f, $g, $v) {
     $__case_0 = $f;
@@ -278,7 +288,15 @@ function Data_Bifunctor_bivoid($dictBifunctor) {
   }
 $__global_Data_Function_const = ($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const'));
 $__global_Data_Unit_unit = ($GLOBALS['Data_Unit_unit'] ?? \Data\Unit\phpurs_eval_thunk('Data_Unit_unit'));
-    $__res = (($dictBifunctor)->bimap)(($__global_Data_Function_const)($__global_Data_Unit_unit), ($__global_Data_Function_const)($__global_Data_Unit_unit));
+$__case_0 = $dictBifunctor;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bimap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__case_res_0)(($__global_Data_Function_const)($__global_Data_Unit_unit), ($__global_Data_Function_const)($__global_Data_Unit_unit));
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Bifunctor_bivoid'] = __NAMESPACE__ . '\\Data_Bifunctor_bivoid';
@@ -291,7 +309,15 @@ function Data_Bifunctor_lmap($dictBifunctor) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_Bifunctor_identity = ($GLOBALS['Data_Bifunctor_identity'] ?? \Data\Bifunctor\phpurs_eval_thunk('Data_Bifunctor_identity'));
-$bimap1 = ($dictBifunctor)->bimap;
+$__case_0 = $dictBifunctor;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bimap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bimap1 = $__case_res_0;
     $__res = (function() use ($bimap1, $__global_Data_Bifunctor_identity) {
   $__fn = function($f) use ($bimap1, $__global_Data_Bifunctor_identity, &$__fn) {
   $__num = func_num_args();
@@ -315,7 +341,15 @@ function Data_Bifunctor_rmap($dictBifunctor) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_Bifunctor_identity = ($GLOBALS['Data_Bifunctor_identity'] ?? \Data\Bifunctor\phpurs_eval_thunk('Data_Bifunctor_identity'));
-    $__res = (($dictBifunctor)->bimap)($__global_Data_Bifunctor_identity);
+$__case_0 = $dictBifunctor;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bimap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__case_res_0)($__global_Data_Bifunctor_identity);
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Bifunctor_rmap'] = __NAMESPACE__ . '\\Data_Bifunctor_rmap';

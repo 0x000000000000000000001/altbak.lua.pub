@@ -99,7 +99,17 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Data_Functor_Clown_append': $v = ($GLOBALS['Data_Semigroup_concatString'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_concatString')); break;
+      case 'Data_Functor_Clown_append': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Semigroup_semigroupString'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_semigroupString'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_Functor_Clown_newtypeClown': $v = (object)["Coercible0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
@@ -163,18 +173,27 @@ function Data_Functor_Clown_showClown($dictShow) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$show = ($dictShow)->show;
-    $__res = (object)["show" => (function() use ($show) {
-  $__body = function($v) use ($show) {
+$__global_Data_Functor_Clown_append = ($GLOBALS['Data_Functor_Clown_append'] ?? \Data\Functor\Clown\phpurs_eval_thunk('Data_Functor_Clown_append'));
+$__case_0 = $dictShow;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->show;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$show = $__case_res_0;
+    $__res = (object)["show" => (function() use ($__global_Data_Functor_Clown_append, $show) {
+  $__body = function($v) use ($__global_Data_Functor_Clown_append, $show) {
     $__case_0 = $v;
     if (true) {
 $x = $__case_0;
-return ("(Clown " . (($show)($x) . ")"));
+return ($__global_Data_Functor_Clown_append)("(Clown ", ($__global_Data_Functor_Clown_append)(($show)($x), ")"));
 } else {
 throw new \Exception("Pattern match failure");
 };
   };
-  $__fn = function($v) use ($show, $__body, &$__fn) {
+  $__fn = function($v) use ($__global_Data_Functor_Clown_append, $show, $__body, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
@@ -195,7 +214,15 @@ function Data_Functor_Clown_profunctorClown($dictContravariant) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$cmap = ($dictContravariant)->cmap;
+$__case_0 = $dictContravariant;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->cmap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$cmap = $__case_res_0;
     $__res = (object)["dimap" => (function() use ($cmap) {
   $__body = function($f, $v, $v1) use ($cmap) {
     $__case_0 = $f;
@@ -287,7 +314,15 @@ function Data_Functor_Clown_bifunctorClown($dictFunctor) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$map = ($dictFunctor)->map;
+$__case_0 = $dictFunctor;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_0;
     $__res = (object)["bimap" => (function() use ($map) {
   $__body = function($f, $v, $v1) use ($map) {
     $__case_0 = $f;
@@ -329,10 +364,54 @@ function Data_Functor_Clown_biapplyClown($dictApply) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Functor_Clown_bifunctorClown = ($GLOBALS['Data_Functor_Clown_bifunctorClown'] ?? \Data\Functor\Clown\phpurs_eval_thunk('Data_Functor_Clown_bifunctorClown'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$apply = ($dictApply)->apply;
-$bifunctorClown1 = ($__global_Data_Functor_Clown_bifunctorClown)((($dictApply)->Functor0)($__global_Prim_undefined));
+$__case_0 = $dictApply;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$apply = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_1;
+$bifunctorClown1 = (object)["bimap" => (function() use ($map) {
+  $__body = function($f, $v, $v1) use ($map) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    $__case_2 = $v1;
+    if (true) {
+$f1 = $__case_0;
+$a = $__case_2;
+return ($map)($f1, $a);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $v = null, $v1 = null) use ($map, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($v1) use ($f, $v, &$__fn) { return $__fn($f, $v, $v1); };
+    if ($__num === 1) return function($v, $v1 = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $v, $v1);
+      if ($__num2 === 1) return function($v1) use ($f, $v, &$__fn) { return $__fn($f, $v, $v1); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = $__body($f, $v, $v1);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})()];
     $__res = (object)["biapply" => (function() use ($apply) {
   $__body = function($v, $v1) use ($apply) {
     $__case_0 = $v;
@@ -377,10 +456,96 @@ function Data_Functor_Clown_biapplicativeClown($dictApplicative) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Functor_Clown_biapplyClown = ($GLOBALS['Data_Functor_Clown_biapplyClown'] ?? \Data\Functor\Clown\phpurs_eval_thunk('Data_Functor_Clown_biapplyClown'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$pure = ($dictApplicative)->pure;
-$biapplyClown1 = ($__global_Data_Functor_Clown_biapplyClown)((($dictApplicative)->Apply0)($__global_Prim_undefined));
+$__case_0 = $dictApplicative;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pure = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$apply = $__case_res_1;
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_2;
+$bifunctorClown1 = (object)["bimap" => (function() use ($map) {
+  $__body = function($f, $v, $v1) use ($map) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    $__case_2 = $v1;
+    if (true) {
+$f1 = $__case_0;
+$a = $__case_2;
+return ($map)($f1, $a);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $v = null, $v1 = null) use ($map, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($v1) use ($f, $v, &$__fn) { return $__fn($f, $v, $v1); };
+    if ($__num === 1) return function($v, $v1 = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $v, $v1);
+      if ($__num2 === 1) return function($v1) use ($f, $v, &$__fn) { return $__fn($f, $v, $v1); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = $__body($f, $v, $v1);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})()];
+$biapplyClown1 = (object)["biapply" => (function() use ($apply) {
+  $__body = function($v, $v1) use ($apply) {
+    $__case_0 = $v;
+    $__case_1 = $v1;
+    if (true) {
+$fg = $__case_0;
+$xy = $__case_1;
+return ($apply)($fg, $xy);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($v, $v1 = null) use ($apply, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($v, $v1);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "Bifunctor0" => (function() use ($bifunctorClown1) {
+  $__fn = function($__dollar____unused) use ($bifunctorClown1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $bifunctorClown1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
     $__res = (object)["bipure" => (function() use ($pure) {
   $__fn = function($a, $v = null) use ($pure, &$__fn) {
   $__num = func_num_args();

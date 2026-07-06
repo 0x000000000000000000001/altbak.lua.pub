@@ -96,11 +96,211 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Control_Monad_RWS_pure': $v = ($GLOBALS['Data_Identity_Identity'] ?? \Data\Identity\phpurs_eval_thunk('Data_Identity_Identity')); break;
-      case 'Control_Monad_RWS_composeFlipped': $v = (($GLOBALS['Control_Semigroupoid_composeFlipped'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_composeFlipped')))(($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn'))); break;
+      case 'Control_Monad_RWS_pure': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Identity_applicativeIdentity'] ?? \Data\Identity\phpurs_eval_thunk('Data_Identity_applicativeIdentity'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Control_Monad_RWS_composeFlipped': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compose;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $compose1 = $__case_res_0;
+  return (function() use ($compose1) {
+  $__fn = function($f, $g = null) use ($compose1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($g) use ($f, &$__fn) { return $__fn($f, $g); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($compose1)($g, $f);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+})(); break;
       case 'Control_Monad_RWS_unwrap': $v = (($GLOBALS['Data_Newtype_unwrap'] ?? \Data\Newtype\phpurs_eval_thunk('Data_Newtype_unwrap')))(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))); break;
-      case 'Control_Monad_RWS_execRWST': $v = (($GLOBALS['Control_Monad_RWS_Trans_execRWST'] ?? \Control\Monad\RWS\Trans\phpurs_eval_thunk('Control_Monad_RWS_Trans_execRWST')))(($GLOBALS['Data_Identity_monadIdentity'] ?? \Data\Identity\phpurs_eval_thunk('Data_Identity_monadIdentity'))); break;
-      case 'Control_Monad_RWS_evalRWST': $v = (($GLOBALS['Control_Monad_RWS_Trans_evalRWST'] ?? \Control\Monad\RWS\Trans\phpurs_eval_thunk('Control_Monad_RWS_Trans_evalRWST')))(($GLOBALS['Data_Identity_monadIdentity'] ?? \Data\Identity\phpurs_eval_thunk('Data_Identity_monadIdentity'))); break;
+      case 'Control_Monad_RWS_execRWST': $v = (function() {
+  $__case_0 = $dict;
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bind;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $bind = $__case_res_0;
+  $__case_0 = $dict;
+  $__case_res_1 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $pure = $__case_res_1;
+  return (function() use ($bind, $pure) {
+  $__body = function($v, $r, $s) use ($bind, $pure) {
+    $__case_0 = $v;
+    $__case_1 = $r;
+    $__case_2 = $s;
+    if (true) {
+$m = $__case_0;
+$r1 = $__case_1;
+$s1 = $__case_2;
+return ($bind)(($m)($r1, $s1), (function() use ($pure) {
+  $__body = function($v1) use ($pure) {
+    $__case_0 = $v1;
+    switch (($__case_0)->tag) {
+case "RWSResult":
+$state = ($__case_0)->v0;
+$writer = ($__case_0)->v2;
+return ($pure)(((function() {
+  $__fn = function($value0, $value1 = null) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($value1) use ($value0, &$__fn) { return $__fn($value0, $value1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = new Phpurs_Data2("Tuple", $value0, $value1);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})())($state, $writer));
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($v1) use ($pure, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $__body($v1);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})());
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($v, $r = null, $s = null) use ($bind, $pure, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($s) use ($v, $r, &$__fn) { return $__fn($v, $r, $s); };
+    if ($__num === 1) return function($r, $s = null) use ($v, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($v, $r, $s);
+      if ($__num2 === 1) return function($s) use ($v, $r, &$__fn) { return $__fn($v, $r, $s); };
+      return phpurs_curry_fallback($__fn, [$v], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = $__body($v, $r, $s);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})();
+})(); break;
+      case 'Control_Monad_RWS_evalRWST': $v = (function() {
+  $__case_0 = $dict;
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bind;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $bind = $__case_res_0;
+  $__case_0 = $dict;
+  $__case_res_1 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $pure = $__case_res_1;
+  return (function() use ($bind, $pure) {
+  $__body = function($v, $r, $s) use ($bind, $pure) {
+    $__case_0 = $v;
+    $__case_1 = $r;
+    $__case_2 = $s;
+    if (true) {
+$m = $__case_0;
+$r1 = $__case_1;
+$s1 = $__case_2;
+return ($bind)(($m)($r1, $s1), (function() use ($pure) {
+  $__body = function($v1) use ($pure) {
+    $__case_0 = $v1;
+    switch (($__case_0)->tag) {
+case "RWSResult":
+$result = ($__case_0)->v1;
+$writer = ($__case_0)->v2;
+return ($pure)(((function() {
+  $__fn = function($value0, $value1 = null) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($value1) use ($value0, &$__fn) { return $__fn($value0, $value1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = new Phpurs_Data2("Tuple", $value0, $value1);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})())($result, $writer));
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($v1) use ($pure, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $__body($v1);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})());
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($v, $r = null, $s = null) use ($bind, $pure, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($s) use ($v, $r, &$__fn) { return $__fn($v, $r, $s); };
+    if ($__num === 1) return function($r, $s = null) use ($v, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($v, $r, $s);
+      if ($__num2 === 1) return function($s) use ($v, $r, &$__fn) { return $__fn($v, $r, $s); };
+      return phpurs_curry_fallback($__fn, [$v], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = $__body($v, $r, $s);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})();
+})(); break;
       case 'Control_Monad_RWS_withRWS': $v = ($GLOBALS['Control_Monad_RWS_Trans_withRWST'] ?? \Control\Monad\RWS\Trans\phpurs_eval_thunk('Control_Monad_RWS_Trans_withRWST')); break;
       default: throw new \Exception("Unknown thunk " . $id);
     }
@@ -131,7 +331,8 @@ function Control_Monad_RWS_rws($f, $r = null, $s = null) {
     };
     return phpurs_curry_fallback($__fn, func_get_args(), 3);
   }
-    $__res = ($f)($r, $s);
+$__global_Control_Monad_RWS_pure = ($GLOBALS['Control_Monad_RWS_pure'] ?? \Control\Monad\RWS\phpurs_eval_thunk('Control_Monad_RWS_pure'));
+    $__res = ($__global_Control_Monad_RWS_pure)(($f)($r, $s));
     return 3 < $__num ? $__res(...array_slice(func_get_args(), 3)) : $__res;
 }
 $GLOBALS['Control_Monad_RWS_rws'] = __NAMESPACE__ . '\\Control_Monad_RWS_rws';

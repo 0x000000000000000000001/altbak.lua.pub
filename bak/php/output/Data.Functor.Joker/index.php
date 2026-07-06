@@ -104,10 +104,52 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Data_Functor_Joker_append': $v = ($GLOBALS['Data_Semigroup_concatString'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_concatString')); break;
-      case 'Data_Functor_Joker_composeFlipped': $v = (($GLOBALS['Control_Semigroupoid_composeFlipped'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_composeFlipped')))(($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn'))); break;
+      case 'Data_Functor_Joker_append': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Semigroup_semigroupString'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_semigroupString'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Functor_Joker_composeFlipped': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compose;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $compose1 = $__case_res_0;
+  return (function() use ($compose1) {
+  $__fn = function($f, $g = null) use ($compose1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($g) use ($f, &$__fn) { return $__fn($f, $g); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($compose1)($g, $f);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+})(); break;
       case 'Data_Functor_Joker_un': $v = (($GLOBALS['Data_Newtype_un'] ?? \Data\Newtype\phpurs_eval_thunk('Data_Newtype_un')))(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))); break;
-      case 'Data_Functor_Joker_compose': $v = (($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn')))->compose; break;
+      case 'Data_Functor_Joker_compose': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compose;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_Functor_Joker_newtypeJoker': $v = (object)["Coercible0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
@@ -152,18 +194,27 @@ function Data_Functor_Joker_showJoker($dictShow) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$show = ($dictShow)->show;
-    $__res = (object)["show" => (function() use ($show) {
-  $__body = function($v) use ($show) {
+$__global_Data_Functor_Joker_append = ($GLOBALS['Data_Functor_Joker_append'] ?? \Data\Functor\Joker\phpurs_eval_thunk('Data_Functor_Joker_append'));
+$__case_0 = $dictShow;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->show;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$show = $__case_res_0;
+    $__res = (object)["show" => (function() use ($__global_Data_Functor_Joker_append, $show) {
+  $__body = function($v) use ($__global_Data_Functor_Joker_append, $show) {
     $__case_0 = $v;
     if (true) {
 $x = $__case_0;
-return ("(Joker " . (($show)($x) . ")"));
+return ($__global_Data_Functor_Joker_append)("(Joker ", ($__global_Data_Functor_Joker_append)(($show)($x), ")"));
 } else {
 throw new \Exception("Pattern match failure");
 };
   };
-  $__fn = function($v) use ($show, $__body, &$__fn) {
+  $__fn = function($v) use ($__global_Data_Functor_Joker_append, $show, $__body, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
@@ -184,7 +235,15 @@ function Data_Functor_Joker_profunctorJoker($dictFunctor) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$map = ($dictFunctor)->map;
+$__case_0 = $dictFunctor;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_0;
     $__res = (object)["dimap" => (function() use ($map) {
   $__body = function($v, $g, $v1) use ($map) {
     $__case_0 = $v;
@@ -263,7 +322,15 @@ function Data_Functor_Joker_functorJoker($dictFunctor) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$map = ($dictFunctor)->map;
+$__case_0 = $dictFunctor;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_0;
     $__res = (object)["map" => (function() use ($map) {
   $__body = function($f, $v) use ($map) {
     $__case_0 = $f;
@@ -310,9 +377,54 @@ function Data_Functor_Joker_choiceJoker($dictFunctor) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Functor_Joker_profunctorJoker = ($GLOBALS['Data_Functor_Joker_profunctorJoker'] ?? \Data\Functor\Joker\phpurs_eval_thunk('Data_Functor_Joker_profunctorJoker'));
-$map = ($dictFunctor)->map;
-$profunctorJoker1 = ($__global_Data_Functor_Joker_profunctorJoker)($dictFunctor);
+$__case_0 = $dictFunctor;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_0;
+$__case_0 = $dictFunctor;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_1;
+$profunctorJoker1 = (object)["dimap" => (function() use ($map) {
+  $__body = function($v, $g, $v1) use ($map) {
+    $__case_0 = $v;
+    $__case_1 = $g;
+    $__case_2 = $v1;
+    if (true) {
+$g1 = $__case_1;
+$a = $__case_2;
+return ($map)($g1, $a);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($v, $g = null, $v1 = null) use ($map, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($v1) use ($v, $g, &$__fn) { return $__fn($v, $g, $v1); };
+    if ($__num === 1) return function($g, $v1 = null) use ($v, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($v, $g, $v1);
+      if ($__num2 === 1) return function($v1) use ($v, $g, &$__fn) { return $__fn($v, $g, $v1); };
+      return phpurs_curry_fallback($__fn, [$v], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = $__body($v, $g, $v1);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})()];
     $__res = (object)["left" => (function() use ($map) {
   $__body = function($v) use ($map) {
     $__case_0 = $v;
@@ -393,7 +505,15 @@ function Data_Functor_Joker_bifunctorJoker($dictFunctor) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$map = ($dictFunctor)->map;
+$__case_0 = $dictFunctor;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_0;
     $__res = (object)["bimap" => (function() use ($map) {
   $__body = function($v, $g, $v1) use ($map) {
     $__case_0 = $v;
@@ -435,10 +555,54 @@ function Data_Functor_Joker_biapplyJoker($dictApply) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Functor_Joker_bifunctorJoker = ($GLOBALS['Data_Functor_Joker_bifunctorJoker'] ?? \Data\Functor\Joker\phpurs_eval_thunk('Data_Functor_Joker_bifunctorJoker'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$apply = ($dictApply)->apply;
-$bifunctorJoker1 = ($__global_Data_Functor_Joker_bifunctorJoker)((($dictApply)->Functor0)($__global_Prim_undefined));
+$__case_0 = $dictApply;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$apply = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_1;
+$bifunctorJoker1 = (object)["bimap" => (function() use ($map) {
+  $__body = function($v, $g, $v1) use ($map) {
+    $__case_0 = $v;
+    $__case_1 = $g;
+    $__case_2 = $v1;
+    if (true) {
+$g1 = $__case_1;
+$a = $__case_2;
+return ($map)($g1, $a);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($v, $g = null, $v1 = null) use ($map, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($v1) use ($v, $g, &$__fn) { return $__fn($v, $g, $v1); };
+    if ($__num === 1) return function($g, $v1 = null) use ($v, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($v, $g, $v1);
+      if ($__num2 === 1) return function($v1) use ($v, $g, &$__fn) { return $__fn($v, $g, $v1); };
+      return phpurs_curry_fallback($__fn, [$v], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = $__body($v, $g, $v1);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})()];
     $__res = (object)["biapply" => (function() use ($apply) {
   $__body = function($v, $v1) use ($apply) {
     $__case_0 = $v;
@@ -483,10 +647,96 @@ function Data_Functor_Joker_biapplicativeJoker($dictApplicative) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Functor_Joker_biapplyJoker = ($GLOBALS['Data_Functor_Joker_biapplyJoker'] ?? \Data\Functor\Joker\phpurs_eval_thunk('Data_Functor_Joker_biapplyJoker'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$pure = ($dictApplicative)->pure;
-$biapplyJoker1 = ($__global_Data_Functor_Joker_biapplyJoker)((($dictApplicative)->Apply0)($__global_Prim_undefined));
+$__case_0 = $dictApplicative;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pure = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$apply = $__case_res_1;
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_2;
+$bifunctorJoker1 = (object)["bimap" => (function() use ($map) {
+  $__body = function($v, $g, $v1) use ($map) {
+    $__case_0 = $v;
+    $__case_1 = $g;
+    $__case_2 = $v1;
+    if (true) {
+$g1 = $__case_1;
+$a = $__case_2;
+return ($map)($g1, $a);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($v, $g = null, $v1 = null) use ($map, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($v1) use ($v, $g, &$__fn) { return $__fn($v, $g, $v1); };
+    if ($__num === 1) return function($g, $v1 = null) use ($v, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($v, $g, $v1);
+      if ($__num2 === 1) return function($v1) use ($v, $g, &$__fn) { return $__fn($v, $g, $v1); };
+      return phpurs_curry_fallback($__fn, [$v], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = $__body($v, $g, $v1);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})()];
+$biapplyJoker1 = (object)["biapply" => (function() use ($apply) {
+  $__body = function($v, $v1) use ($apply) {
+    $__case_0 = $v;
+    $__case_1 = $v1;
+    if (true) {
+$fg = $__case_0;
+$xy = $__case_1;
+return ($apply)($fg, $xy);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($v, $v1 = null) use ($apply, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($v, $v1);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "Bifunctor0" => (function() use ($bifunctorJoker1) {
+  $__fn = function($__dollar____unused) use ($bifunctorJoker1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $bifunctorJoker1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
     $__res = (object)["bipure" => (function() use ($pure) {
   $__fn = function($v, $b = null) use ($pure, &$__fn) {
   $__num = func_num_args();
@@ -520,10 +770,47 @@ function Data_Functor_Joker_applyJoker($dictApply) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Functor_Joker_functorJoker = ($GLOBALS['Data_Functor_Joker_functorJoker'] ?? \Data\Functor\Joker\phpurs_eval_thunk('Data_Functor_Joker_functorJoker'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$apply = ($dictApply)->apply;
-$functorJoker1 = ($__global_Data_Functor_Joker_functorJoker)((($dictApply)->Functor0)($__global_Prim_undefined));
+$__case_0 = $dictApply;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$apply = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_1;
+$functorJoker1 = (object)["map" => (function() use ($map) {
+  $__body = function($f, $v) use ($map) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    if (true) {
+$f1 = $__case_0;
+$a = $__case_1;
+return ($map)($f1, $a);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $v = null) use ($map, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, &$__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($f, $v);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
     $__res = (object)["apply" => (function() use ($apply) {
   $__body = function($v, $v1) use ($apply) {
     $__case_0 = $v;
@@ -568,13 +855,92 @@ function Data_Functor_Joker_bindJoker($dictBind) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Functor_Joker_applyJoker = ($GLOBALS['Data_Functor_Joker_applyJoker'] ?? \Data\Functor\Joker\phpurs_eval_thunk('Data_Functor_Joker_applyJoker'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Functor_Joker_composeFlipped = ($GLOBALS['Data_Functor_Joker_composeFlipped'] ?? \Data\Functor\Joker\phpurs_eval_thunk('Data_Functor_Joker_composeFlipped'));
 $__global_Data_Functor_Joker_un = ($GLOBALS['Data_Functor_Joker_un'] ?? \Data\Functor\Joker\phpurs_eval_thunk('Data_Functor_Joker_un'));
 $__global_Data_Functor_Joker_Joker = ($GLOBALS['Data_Functor_Joker_Joker'] ?? \Data\Functor\Joker\phpurs_eval_thunk('Data_Functor_Joker_Joker'));
-$bind = ($dictBind)->bind;
-$applyJoker1 = ($__global_Data_Functor_Joker_applyJoker)((($dictBind)->Apply0)($__global_Prim_undefined));
+$__case_0 = $dictBind;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bind;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bind = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$apply = $__case_res_1;
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_2;
+$functorJoker1 = (object)["map" => (function() use ($map) {
+  $__body = function($f, $v) use ($map) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    if (true) {
+$f1 = $__case_0;
+$a = $__case_1;
+return ($map)($f1, $a);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $v = null) use ($map, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, &$__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($f, $v);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+$applyJoker1 = (object)["apply" => (function() use ($apply) {
+  $__body = function($v, $v1) use ($apply) {
+    $__case_0 = $v;
+    $__case_1 = $v1;
+    if (true) {
+$f = $__case_0;
+$g = $__case_1;
+return ($apply)($f, $g);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($v, $v1 = null) use ($apply, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($v, $v1);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "Functor0" => (function() use ($functorJoker1) {
+  $__fn = function($__dollar____unused) use ($functorJoker1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $functorJoker1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
     $__res = (object)["bind" => (function() use ($bind, $__global_Data_Functor_Joker_composeFlipped, $__global_Data_Functor_Joker_un, $__global_Data_Functor_Joker_Joker) {
   $__body = function($v, $amb) use ($bind, $__global_Data_Functor_Joker_composeFlipped, $__global_Data_Functor_Joker_un, $__global_Data_Functor_Joker_Joker) {
     $__case_0 = $v;
@@ -619,12 +985,91 @@ function Data_Functor_Joker_applicativeJoker($dictApplicative) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Functor_Joker_applyJoker = ($GLOBALS['Data_Functor_Joker_applyJoker'] ?? \Data\Functor\Joker\phpurs_eval_thunk('Data_Functor_Joker_applyJoker'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Functor_Joker_compose = ($GLOBALS['Data_Functor_Joker_compose'] ?? \Data\Functor\Joker\phpurs_eval_thunk('Data_Functor_Joker_compose'));
 $__global_Data_Functor_Joker_Joker = ($GLOBALS['Data_Functor_Joker_Joker'] ?? \Data\Functor\Joker\phpurs_eval_thunk('Data_Functor_Joker_Joker'));
-$applyJoker1 = ($__global_Data_Functor_Joker_applyJoker)((($dictApplicative)->Apply0)($__global_Prim_undefined));
-    $__res = (object)["pure" => ($__global_Data_Functor_Joker_compose)($__global_Data_Functor_Joker_Joker, ($dictApplicative)->pure), "Apply0" => (function() use ($applyJoker1) {
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$apply = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_1;
+$functorJoker1 = (object)["map" => (function() use ($map) {
+  $__body = function($f, $v) use ($map) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    if (true) {
+$f1 = $__case_0;
+$a = $__case_1;
+return ($map)($f1, $a);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $v = null) use ($map, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, &$__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($f, $v);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+$applyJoker1 = (object)["apply" => (function() use ($apply) {
+  $__body = function($v, $v1) use ($apply) {
+    $__case_0 = $v;
+    $__case_1 = $v1;
+    if (true) {
+$f = $__case_0;
+$g = $__case_1;
+return ($apply)($f, $g);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($v, $v1 = null) use ($apply, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($v, $v1);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "Functor0" => (function() use ($functorJoker1) {
+  $__fn = function($__dollar____unused) use ($functorJoker1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $functorJoker1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+$__case_0 = $dictApplicative;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = (object)["pure" => ($__global_Data_Functor_Joker_compose)($__global_Data_Functor_Joker_Joker, $__case_res_2), "Apply0" => (function() use ($applyJoker1) {
   $__fn = function($__dollar____unused) use ($applyJoker1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
@@ -646,11 +1091,219 @@ function Data_Functor_Joker_monadJoker($dictMonad) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Functor_Joker_applicativeJoker = ($GLOBALS['Data_Functor_Joker_applicativeJoker'] ?? \Data\Functor\Joker\phpurs_eval_thunk('Data_Functor_Joker_applicativeJoker'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$__global_Data_Functor_Joker_bindJoker = ($GLOBALS['Data_Functor_Joker_bindJoker'] ?? \Data\Functor\Joker\phpurs_eval_thunk('Data_Functor_Joker_bindJoker'));
-$applicativeJoker1 = ($__global_Data_Functor_Joker_applicativeJoker)((($dictMonad)->Applicative0)($__global_Prim_undefined));
-$bindJoker1 = ($__global_Data_Functor_Joker_bindJoker)((($dictMonad)->Bind1)($__global_Prim_undefined));
+$__global_Data_Functor_Joker_compose = ($GLOBALS['Data_Functor_Joker_compose'] ?? \Data\Functor\Joker\phpurs_eval_thunk('Data_Functor_Joker_compose'));
+$__global_Data_Functor_Joker_Joker = ($GLOBALS['Data_Functor_Joker_Joker'] ?? \Data\Functor\Joker\phpurs_eval_thunk('Data_Functor_Joker_Joker'));
+$__global_Data_Functor_Joker_composeFlipped = ($GLOBALS['Data_Functor_Joker_composeFlipped'] ?? \Data\Functor\Joker\phpurs_eval_thunk('Data_Functor_Joker_composeFlipped'));
+$__global_Data_Functor_Joker_un = ($GLOBALS['Data_Functor_Joker_un'] ?? \Data\Functor\Joker\phpurs_eval_thunk('Data_Functor_Joker_un'));
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$apply = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_1;
+$functorJoker1 = (object)["map" => (function() use ($map) {
+  $__body = function($f, $v) use ($map) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    if (true) {
+$f1 = $__case_0;
+$a = $__case_1;
+return ($map)($f1, $a);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $v = null) use ($map, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, &$__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($f, $v);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+$applyJoker1 = (object)["apply" => (function() use ($apply) {
+  $__body = function($v, $v1) use ($apply) {
+    $__case_0 = $v;
+    $__case_1 = $v1;
+    if (true) {
+$f = $__case_0;
+$g = $__case_1;
+return ($apply)($f, $g);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($v, $v1 = null) use ($apply, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($v, $v1);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "Functor0" => (function() use ($functorJoker1) {
+  $__fn = function($__dollar____unused) use ($functorJoker1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $functorJoker1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$applicativeJoker1 = (object)["pure" => ($__global_Data_Functor_Joker_compose)($__global_Data_Functor_Joker_Joker, $__case_res_2), "Apply0" => (function() use ($applyJoker1) {
+  $__fn = function($__dollar____unused) use ($applyJoker1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $applyJoker1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+$__case_0 = $dict;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->bind;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bind = $__case_res_3;
+$__case_0 = $dict;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$apply = $__case_res_4;
+$__case_0 = $dict;
+$__case_res_5 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_5 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_5;
+$functorJoker1 = (object)["map" => (function() use ($map) {
+  $__body = function($f, $v) use ($map) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    if (true) {
+$f1 = $__case_0;
+$a = $__case_1;
+return ($map)($f1, $a);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $v = null) use ($map, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, &$__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($f, $v);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+$applyJoker1 = (object)["apply" => (function() use ($apply) {
+  $__body = function($v, $v1) use ($apply) {
+    $__case_0 = $v;
+    $__case_1 = $v1;
+    if (true) {
+$f = $__case_0;
+$g = $__case_1;
+return ($apply)($f, $g);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($v, $v1 = null) use ($apply, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($v, $v1);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "Functor0" => (function() use ($functorJoker1) {
+  $__fn = function($__dollar____unused) use ($functorJoker1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $functorJoker1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+$bindJoker1 = (object)["bind" => (function() use ($bind, $__global_Data_Functor_Joker_composeFlipped, $__global_Data_Functor_Joker_un, $__global_Data_Functor_Joker_Joker) {
+  $__body = function($v, $amb) use ($bind, $__global_Data_Functor_Joker_composeFlipped, $__global_Data_Functor_Joker_un, $__global_Data_Functor_Joker_Joker) {
+    $__case_0 = $v;
+    $__case_1 = $amb;
+    if (true) {
+$ma = $__case_0;
+$amb1 = $__case_1;
+return ($bind)($ma, ($__global_Data_Functor_Joker_composeFlipped)($amb1, ($__global_Data_Functor_Joker_un)($__global_Data_Functor_Joker_Joker)));
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($v, $amb = null) use ($bind, $__global_Data_Functor_Joker_composeFlipped, $__global_Data_Functor_Joker_un, $__global_Data_Functor_Joker_Joker, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($amb) use ($v, &$__fn) { return $__fn($v, $amb); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($v, $amb);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "Apply0" => (function() use ($applyJoker1) {
+  $__fn = function($__dollar____unused) use ($applyJoker1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $applyJoker1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
     $__res = (object)["Applicative0" => (function() use ($applicativeJoker1) {
   $__fn = function($__dollar____unused) use ($applicativeJoker1, &$__fn) {
   $__num = func_num_args();

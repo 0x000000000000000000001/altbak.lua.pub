@@ -104,7 +104,17 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Data_Maybe_Last_append': $v = ($GLOBALS['Data_Semigroup_concatString'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_concatString')); break;
+      case 'Data_Maybe_Last_append': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Semigroup_semigroupString'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_semigroupString'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_Maybe_Last_semigroupLast': $v = (object)["append" => (function() {
   $__body = function($v, $v1) {
     $__case_0 = $v;
@@ -167,7 +177,16 @@ $__global_Data_Maybe_Last_semigroupLast = ($GLOBALS['Data_Maybe_Last_semigroupLa
       case 'Data_Maybe_Last_bindLast': $v = ($GLOBALS['Data_Maybe_bindMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_bindMaybe')); break;
       case 'Data_Maybe_Last_applyLast': $v = ($GLOBALS['Data_Maybe_applyMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_applyMaybe')); break;
       case 'Data_Maybe_Last_applicativeLast': $v = ($GLOBALS['Data_Maybe_applicativeMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_applicativeMaybe')); break;
-      case 'Data_Maybe_Last_altLast': $v = (object)["alt" => (($GLOBALS['Data_Maybe_Last_semigroupLast'] ?? \Data\Maybe\Last\phpurs_eval_thunk('Data_Maybe_Last_semigroupLast')))->append, "Functor0" => (function() {
+      case 'Data_Maybe_Last_altLast': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Maybe_Last_semigroupLast'] ?? \Data\Maybe\Last\phpurs_eval_thunk('Data_Maybe_Last_semigroupLast'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return (object)["alt" => $__case_res_0, "Functor0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
@@ -178,8 +197,18 @@ $__global_Data_Maybe_functorMaybe = ($GLOBALS['Data_Maybe_functorMaybe'] ?? \Dat
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})()]; break;
-      case 'Data_Maybe_Last_plusLast': $v = (object)["empty" => (($GLOBALS['Data_Maybe_Last_monoidLast'] ?? \Data\Maybe\Last\phpurs_eval_thunk('Data_Maybe_Last_monoidLast')))->mempty, "Alt0" => (function() {
+})()];
+})(); break;
+      case 'Data_Maybe_Last_plusLast': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Maybe_Last_monoidLast'] ?? \Data\Maybe\Last\phpurs_eval_thunk('Data_Maybe_Last_monoidLast'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->mempty;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return (object)["empty" => $__case_res_0, "Alt0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
@@ -190,7 +219,8 @@ $__global_Data_Maybe_Last_altLast = ($GLOBALS['Data_Maybe_Last_altLast'] ?? \Dat
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})()]; break;
+})()];
+})(); break;
       case 'Data_Maybe_Last_alternativeLast': $v = (object)["Applicative0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
@@ -243,19 +273,27 @@ function Data_Maybe_Last_showLast($dictShow) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Maybe_showMaybe = ($GLOBALS['Data_Maybe_showMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_showMaybe'));
-$show = (($__global_Data_Maybe_showMaybe)($dictShow))->show;
-    $__res = (object)["show" => (function() use ($show) {
-  $__body = function($v) use ($show) {
+$__global_Data_Maybe_Last_append = ($GLOBALS['Data_Maybe_Last_append'] ?? \Data\Maybe\Last\phpurs_eval_thunk('Data_Maybe_Last_append'));
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->show;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$show = $__case_res_0;
+    $__res = (object)["show" => (function() use ($__global_Data_Maybe_Last_append, $show) {
+  $__body = function($v) use ($__global_Data_Maybe_Last_append, $show) {
     $__case_0 = $v;
     if (true) {
 $a = $__case_0;
-return ("(Last " . (($show)($a) . ")"));
+return ($__global_Data_Maybe_Last_append)("(Last ", ($__global_Data_Maybe_Last_append)(($show)($a), ")"));
 } else {
 throw new \Exception("Pattern match failure");
 };
   };
-  $__fn = function($v) use ($show, $__body, &$__fn) {
+  $__fn = function($v) use ($__global_Data_Maybe_Last_append, $show, $__body, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
@@ -277,8 +315,100 @@ function Data_Maybe_Last_ordLast($dictOrd) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Maybe_ordMaybe = ($GLOBALS['Data_Maybe_ordMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_ordMaybe'));
-    $__res = ($__global_Data_Maybe_ordMaybe)($dictOrd);
+$__case_0 = $dictOrd;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq = $__case_res_1;
+$eqMaybe1 = (object)["eq" => (function() use ($eq) {
+  $__body = function($x, $y) use ($eq) {
+    $__case_0 = $x;
+    $__case_1 = $y;
+    if (((($__case_0)->tag === "Nothing") && (($__case_1)->tag === "Nothing"))) {
+return true;
+} else {
+if (((($__case_0)->tag === "Just") && (($__case_1)->tag === "Just"))) {
+$l = ($__case_0)->v0;
+$r = ($__case_1)->v0;
+return ($eq)($l, $r);
+} else {
+if (true) {
+return false;
+} else {
+throw new \Exception("Pattern match failure");
+};
+};
+};
+  };
+  $__fn = function($x, $y = null) use ($eq, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($y) use ($x, &$__fn) { return $__fn($x, $y); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($x, $y);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+    $__res = (object)["compare" => (function() use ($compare) {
+  $__body = function($x, $y) use ($compare) {
+    $__case_0 = $x;
+    $__case_1 = $y;
+    if (((($__case_0)->tag === "Nothing") && (($__case_1)->tag === "Nothing"))) {
+return ($GLOBALS['__phpurs_data0_EQ'] ??= new Phpurs_Data0("EQ"));
+} else {
+if ((($__case_0)->tag === "Nothing")) {
+return ($GLOBALS['__phpurs_data0_LT'] ??= new Phpurs_Data0("LT"));
+} else {
+if ((($__case_1)->tag === "Nothing")) {
+return ($GLOBALS['__phpurs_data0_GT'] ??= new Phpurs_Data0("GT"));
+} else {
+if (((($__case_0)->tag === "Just") && (($__case_1)->tag === "Just"))) {
+$l = ($__case_0)->v0;
+$r = ($__case_1)->v0;
+return ($compare)($l, $r);
+} else {
+throw new \Exception("Pattern match failure");
+};
+};
+};
+};
+  };
+  $__fn = function($x, $y = null) use ($compare, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($y) use ($x, &$__fn) { return $__fn($x, $y); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($x, $y);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "Eq0" => (function() use ($eqMaybe1) {
+  $__fn = function($__dollar____unused) use ($eqMaybe1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $eqMaybe1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Maybe_Last_ordLast'] = __NAMESPACE__ . '\\Data_Maybe_Last_ordLast';
@@ -297,8 +427,46 @@ function Data_Maybe_Last_eqLast($dictEq) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Maybe_eqMaybe = ($GLOBALS['Data_Maybe_eqMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_eqMaybe'));
-    $__res = ($__global_Data_Maybe_eqMaybe)($dictEq);
+$__case_0 = $dictEq;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq = $__case_res_0;
+    $__res = (object)["eq" => (function() use ($eq) {
+  $__body = function($x, $y) use ($eq) {
+    $__case_0 = $x;
+    $__case_1 = $y;
+    if (((($__case_0)->tag === "Nothing") && (($__case_1)->tag === "Nothing"))) {
+return true;
+} else {
+if (((($__case_0)->tag === "Just") && (($__case_1)->tag === "Just"))) {
+$l = ($__case_0)->v0;
+$r = ($__case_1)->v0;
+return ($eq)($l, $r);
+} else {
+if (true) {
+return false;
+} else {
+throw new \Exception("Pattern match failure");
+};
+};
+};
+  };
+  $__fn = function($x, $y = null) use ($eq, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($y) use ($x, &$__fn) { return $__fn($x, $y); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($x, $y);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Maybe_Last_eqLast'] = __NAMESPACE__ . '\\Data_Maybe_Last_eqLast';
@@ -311,8 +479,129 @@ function Data_Maybe_Last_boundedLast($dictBounded) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Maybe_boundedMaybe = ($GLOBALS['Data_Maybe_boundedMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_boundedMaybe'));
-    $__res = ($__global_Data_Maybe_boundedMaybe)($dictBounded);
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq = $__case_res_1;
+$eqMaybe1 = (object)["eq" => (function() use ($eq) {
+  $__body = function($x, $y) use ($eq) {
+    $__case_0 = $x;
+    $__case_1 = $y;
+    if (((($__case_0)->tag === "Nothing") && (($__case_1)->tag === "Nothing"))) {
+return true;
+} else {
+if (((($__case_0)->tag === "Just") && (($__case_1)->tag === "Just"))) {
+$l = ($__case_0)->v0;
+$r = ($__case_1)->v0;
+return ($eq)($l, $r);
+} else {
+if (true) {
+return false;
+} else {
+throw new \Exception("Pattern match failure");
+};
+};
+};
+  };
+  $__fn = function($x, $y = null) use ($eq, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($y) use ($x, &$__fn) { return $__fn($x, $y); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($x, $y);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+$ordMaybe1 = (object)["compare" => (function() use ($compare) {
+  $__body = function($x, $y) use ($compare) {
+    $__case_0 = $x;
+    $__case_1 = $y;
+    if (((($__case_0)->tag === "Nothing") && (($__case_1)->tag === "Nothing"))) {
+return ($GLOBALS['__phpurs_data0_EQ'] ??= new Phpurs_Data0("EQ"));
+} else {
+if ((($__case_0)->tag === "Nothing")) {
+return ($GLOBALS['__phpurs_data0_LT'] ??= new Phpurs_Data0("LT"));
+} else {
+if ((($__case_1)->tag === "Nothing")) {
+return ($GLOBALS['__phpurs_data0_GT'] ??= new Phpurs_Data0("GT"));
+} else {
+if (((($__case_0)->tag === "Just") && (($__case_1)->tag === "Just"))) {
+$l = ($__case_0)->v0;
+$r = ($__case_1)->v0;
+return ($compare)($l, $r);
+} else {
+throw new \Exception("Pattern match failure");
+};
+};
+};
+};
+  };
+  $__fn = function($x, $y = null) use ($compare, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($y) use ($x, &$__fn) { return $__fn($x, $y); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($x, $y);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "Eq0" => (function() use ($eqMaybe1) {
+  $__fn = function($__dollar____unused) use ($eqMaybe1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $eqMaybe1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+$__case_0 = $dictBounded;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->top;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = (object)["top" => ((function() {
+  $__fn = function($value0) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = new Phpurs_Data1("Just", $value0);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})())($__case_res_2), "bottom" => ($GLOBALS['__phpurs_data0_Nothing'] ??= new Phpurs_Data0("Nothing")), "Ord0" => (function() use ($ordMaybe1) {
+  $__fn = function($__dollar____unused) use ($ordMaybe1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $ordMaybe1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Maybe_Last_boundedLast'] = __NAMESPACE__ . '\\Data_Maybe_Last_boundedLast';

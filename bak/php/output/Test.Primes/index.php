@@ -203,18 +203,7 @@ $x = ($__case_0)->v0;
 $xs = ($__case_0)->v1;
 $acc = $__case_1;
 $__tco_tmp_0 = $xs;
-$__tco_tmp_1 = ((function() {
-  $__fn = function($value0, $value1 = null) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 2) {
-    if ($__num === 1) return function($value1) use ($value0, &$__fn) { return $__fn($value0, $value1); };
-    return phpurs_curry_fallback($__fn, func_get_args(), 2);
-  }
-    $__res = new Phpurs_Data2("Cons", $value0, $value1);
-  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
-  };
-  return $__fn;
-})())($x, $acc);
+$__tco_tmp_1 = new Phpurs_Data2("Cons", $x, $acc);
 $v = $__tco_tmp_0;
 $v1 = $__tco_tmp_1;
 continue 2;
@@ -258,18 +247,7 @@ return $acc;
 break;
 default:
 $__tco_tmp_0 = ($curr - 1);
-$__tco_tmp_1 = ((function() {
-  $__fn = function($value0, $value1 = null) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 2) {
-    if ($__num === 1) return function($value1) use ($value0, &$__fn) { return $__fn($value0, $value1); };
-    return phpurs_curry_fallback($__fn, func_get_args(), 2);
-  }
-    $__res = new Phpurs_Data2("Cons", $value0, $value1);
-  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
-  };
-  return $__fn;
-})())($curr, $acc);
+$__tco_tmp_1 = new Phpurs_Data2("Cons", $curr, $acc);
 $curr = $__tco_tmp_0;
 $acc = $__tco_tmp_1;
 continue 2;
@@ -318,18 +296,7 @@ $__case_0 = ($p)($x);
 switch ($__case_0) {
 case true:
 $__tco_tmp_0 = $xs;
-$__tco_tmp_1 = ((function() {
-  $__fn = function($value0, $value1 = null) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 2) {
-    if ($__num === 1) return function($value1) use ($value0, &$__fn) { return $__fn($value0, $value1); };
-    return phpurs_curry_fallback($__fn, func_get_args(), 2);
-  }
-    $__res = new Phpurs_Data2("Cons", $value0, $value1);
-  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
-  };
-  return $__fn;
-})())($x, $acc);
+$__tco_tmp_1 = new Phpurs_Data2("Cons", $x, $acc);
 $v = $__tco_tmp_0;
 $v1 = $__tco_tmp_1;
 continue 3;
@@ -377,18 +344,7 @@ break;
 case "Cons":
 $p = ($__case_0)->v0;
 $xs = ($__case_0)->v1;
-return ((function() {
-  $__fn = function($value0, $value1 = null) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 2) {
-    if ($__num === 1) return function($value1) use ($value0, &$__fn) { return $__fn($value0, $value1); };
-    return phpurs_curry_fallback($__fn, func_get_args(), 2);
-  }
-    $__res = new Phpurs_Data2("Cons", $value0, $value1);
-  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
-  };
-  return $__fn;
-})())($p, (($GLOBALS['Test_Primes_sieve'] ?? \Test\Primes\phpurs_eval_thunk('Test_Primes_sieve')))(($__global_Test_Primes_filter)((function() use ($__global_Test_Primes_notEq, $__global_Data_EuclideanRing_intMod, $p) {
+return new Phpurs_Data2("Cons", $p, (($GLOBALS['Test_Primes_sieve'] ?? \Test\Primes\phpurs_eval_thunk('Test_Primes_sieve')))(($__global_Test_Primes_filter)((function() use ($__global_Test_Primes_notEq, $__global_Data_EuclideanRing_intMod, $p) {
   $__fn = function($x) use ($__global_Test_Primes_notEq, $__global_Data_EuclideanRing_intMod, $p, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {

@@ -95,10 +95,50 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Effect_Aff_Compat_bind': $v = ($GLOBALS['Effect_bindE'] ?? \Effect\phpurs_eval_thunk('Effect_bindE')); break;
-      case 'Effect_Aff_Compat_compose': $v = (($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn')))->compose; break;
-      case 'Effect_Aff_Compat_pure': $v = ($GLOBALS['Effect_pureE'] ?? \Effect\phpurs_eval_thunk('Effect_pureE')); break;
-      case 'Effect_Aff_Compat_discard': $v = ((($GLOBALS['Control_Bind_discardUnit'] ?? \Control\Bind\phpurs_eval_thunk('Control_Bind_discardUnit')))->discard)(($GLOBALS['Effect_bindEffect'] ?? \Effect\phpurs_eval_thunk('Effect_bindEffect'))); break;
+      case 'Effect_Aff_Compat_bind': $v = (function() {
+  $__case_0 = ($GLOBALS['Effect_bindEffect'] ?? \Effect\phpurs_eval_thunk('Effect_bindEffect'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bind;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Effect_Aff_Compat_compose': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compose;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Effect_Aff_Compat_pure': $v = (function() {
+  $__case_0 = ($GLOBALS['Effect_applicativeEffect'] ?? \Effect\phpurs_eval_thunk('Effect_applicativeEffect'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Effect_Aff_Compat_discard': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Bind_discardUnit'] ?? \Control\Bind\phpurs_eval_thunk('Control_Bind_discardUnit'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->discard;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return ($__case_res_0)(($GLOBALS['Effect_bindEffect'] ?? \Effect\phpurs_eval_thunk('Effect_bindEffect')));
+})(); break;
       default: throw new \Exception("Unknown thunk " . $id);
     }
     $GLOBALS[$id] = $v;
@@ -145,24 +185,24 @@ function Effect_Aff_Compat_fromEffectFnAff($v) {
   }
   $__body = function($v) {
     $__global_Effect_Aff_makeAff = ($GLOBALS['Effect_Aff_makeAff'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_makeAff'));
-    $__global_Effect_bindE = ($GLOBALS['Effect_bindE'] ?? \Effect\phpurs_eval_thunk('Effect_bindE'));
+    $__global_Effect_Aff_Compat_bind = ($GLOBALS['Effect_Aff_Compat_bind'] ?? \Effect\Aff\Compat\phpurs_eval_thunk('Effect_Aff_Compat_bind'));
     $__global_Effect_Uncurried_runEffectFn2 = ($GLOBALS['Effect_Uncurried_runEffectFn2'] ?? \Effect\Uncurried\phpurs_eval_thunk('Effect_Uncurried_runEffectFn2'));
     $__global_Effect_Uncurried_mkEffectFn1 = ($GLOBALS['Effect_Uncurried_mkEffectFn1'] ?? \Effect\Uncurried\phpurs_eval_thunk('Effect_Uncurried_mkEffectFn1'));
     $__global_Effect_Aff_Compat_compose = ($GLOBALS['Effect_Aff_Compat_compose'] ?? \Effect\Aff\Compat\phpurs_eval_thunk('Effect_Aff_Compat_compose'));
-    $__global_Effect_pureE = ($GLOBALS['Effect_pureE'] ?? \Effect\phpurs_eval_thunk('Effect_pureE'));
+    $__global_Effect_Aff_Compat_pure = ($GLOBALS['Effect_Aff_Compat_pure'] ?? \Effect\Aff\Compat\phpurs_eval_thunk('Effect_Aff_Compat_pure'));
     $__global_Effect_Aff_Compat_discard = ($GLOBALS['Effect_Aff_Compat_discard'] ?? \Effect\Aff\Compat\phpurs_eval_thunk('Effect_Aff_Compat_discard'));
     $__global_Effect_Uncurried_runEffectFn3 = ($GLOBALS['Effect_Uncurried_runEffectFn3'] ?? \Effect\Uncurried\phpurs_eval_thunk('Effect_Uncurried_runEffectFn3'));
     $__global_Effect_Aff_nonCanceler = ($GLOBALS['Effect_Aff_nonCanceler'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_nonCanceler'));
     $__case_0 = $v;
     if (true) {
 $eff = $__case_0;
-return ($__global_Effect_Aff_makeAff)((function() use ($__global_Effect_bindE, $__global_Effect_Uncurried_runEffectFn2, $eff, $__global_Effect_Uncurried_mkEffectFn1, $__global_Effect_Aff_Compat_compose, $__global_Effect_pureE, $__global_Effect_Aff_makeAff, $__global_Effect_Aff_Compat_discard, $__global_Effect_Uncurried_runEffectFn3, $__global_Effect_Aff_nonCanceler) {
-  $__fn = function($k) use ($__global_Effect_bindE, $__global_Effect_Uncurried_runEffectFn2, $eff, $__global_Effect_Uncurried_mkEffectFn1, $__global_Effect_Aff_Compat_compose, $__global_Effect_pureE, $__global_Effect_Aff_makeAff, $__global_Effect_Aff_Compat_discard, $__global_Effect_Uncurried_runEffectFn3, $__global_Effect_Aff_nonCanceler, &$__fn) {
+return ($__global_Effect_Aff_makeAff)((function() use ($__global_Effect_Aff_Compat_bind, $__global_Effect_Uncurried_runEffectFn2, $eff, $__global_Effect_Uncurried_mkEffectFn1, $__global_Effect_Aff_Compat_compose, $__global_Effect_Aff_Compat_pure, $__global_Effect_Aff_makeAff, $__global_Effect_Aff_Compat_discard, $__global_Effect_Uncurried_runEffectFn3, $__global_Effect_Aff_nonCanceler) {
+  $__fn = function($k) use ($__global_Effect_Aff_Compat_bind, $__global_Effect_Uncurried_runEffectFn2, $eff, $__global_Effect_Uncurried_mkEffectFn1, $__global_Effect_Aff_Compat_compose, $__global_Effect_Aff_Compat_pure, $__global_Effect_Aff_makeAff, $__global_Effect_Aff_Compat_discard, $__global_Effect_Uncurried_runEffectFn3, $__global_Effect_Aff_nonCanceler, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($__global_Effect_bindE)(($__global_Effect_Uncurried_runEffectFn2)($eff, ($__global_Effect_Uncurried_mkEffectFn1)(($__global_Effect_Aff_Compat_compose)($k, (function() {
+    $__res = ($__global_Effect_Aff_Compat_bind)(($__global_Effect_Uncurried_runEffectFn2)($eff, ($__global_Effect_Uncurried_mkEffectFn1)(($__global_Effect_Aff_Compat_compose)($k, (function() {
   $__fn = function($value0) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
@@ -182,19 +222,19 @@ return ($__global_Effect_Aff_makeAff)((function() use ($__global_Effect_bindE, $
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})()))), (function() use ($__global_Effect_pureE, $__global_Effect_Aff_makeAff, $__global_Effect_Aff_Compat_discard, $__global_Effect_Uncurried_runEffectFn3, $__global_Effect_Uncurried_mkEffectFn1, $__global_Effect_Aff_Compat_compose, $__global_Effect_Aff_nonCanceler) {
-  $__body = function($v1) use ($__global_Effect_pureE, $__global_Effect_Aff_makeAff, $__global_Effect_Aff_Compat_discard, $__global_Effect_Uncurried_runEffectFn3, $__global_Effect_Uncurried_mkEffectFn1, $__global_Effect_Aff_Compat_compose, $__global_Effect_Aff_nonCanceler) {
+})()))), (function() use ($__global_Effect_Aff_Compat_pure, $__global_Effect_Aff_makeAff, $__global_Effect_Aff_Compat_discard, $__global_Effect_Uncurried_runEffectFn3, $__global_Effect_Uncurried_mkEffectFn1, $__global_Effect_Aff_Compat_compose, $__global_Effect_Aff_nonCanceler) {
+  $__body = function($v1) use ($__global_Effect_Aff_Compat_pure, $__global_Effect_Aff_makeAff, $__global_Effect_Aff_Compat_discard, $__global_Effect_Uncurried_runEffectFn3, $__global_Effect_Uncurried_mkEffectFn1, $__global_Effect_Aff_Compat_compose, $__global_Effect_Aff_nonCanceler) {
     $__case_0 = $v1;
     if (true) {
 $canceler = $__case_0;
-return ($__global_Effect_pureE)((function() use ($__global_Effect_Aff_makeAff, $__global_Effect_Aff_Compat_discard, $__global_Effect_Uncurried_runEffectFn3, $canceler, $__global_Effect_Uncurried_mkEffectFn1, $__global_Effect_Aff_Compat_compose, $__global_Effect_pureE, $__global_Effect_Aff_nonCanceler) {
-  $__fn = function($e) use ($__global_Effect_Aff_makeAff, $__global_Effect_Aff_Compat_discard, $__global_Effect_Uncurried_runEffectFn3, $canceler, $__global_Effect_Uncurried_mkEffectFn1, $__global_Effect_Aff_Compat_compose, $__global_Effect_pureE, $__global_Effect_Aff_nonCanceler, &$__fn) {
+return ($__global_Effect_Aff_Compat_pure)((function() use ($__global_Effect_Aff_makeAff, $__global_Effect_Aff_Compat_discard, $__global_Effect_Uncurried_runEffectFn3, $canceler, $__global_Effect_Uncurried_mkEffectFn1, $__global_Effect_Aff_Compat_compose, $__global_Effect_Aff_Compat_pure, $__global_Effect_Aff_nonCanceler) {
+  $__fn = function($e) use ($__global_Effect_Aff_makeAff, $__global_Effect_Aff_Compat_discard, $__global_Effect_Uncurried_runEffectFn3, $canceler, $__global_Effect_Uncurried_mkEffectFn1, $__global_Effect_Aff_Compat_compose, $__global_Effect_Aff_Compat_pure, $__global_Effect_Aff_nonCanceler, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($__global_Effect_Aff_makeAff)((function() use ($__global_Effect_Aff_Compat_discard, $__global_Effect_Uncurried_runEffectFn3, $canceler, $e, $__global_Effect_Uncurried_mkEffectFn1, $__global_Effect_Aff_Compat_compose, $__global_Effect_pureE, $__global_Effect_Aff_nonCanceler) {
-  $__fn = function($k2) use ($__global_Effect_Aff_Compat_discard, $__global_Effect_Uncurried_runEffectFn3, $canceler, $e, $__global_Effect_Uncurried_mkEffectFn1, $__global_Effect_Aff_Compat_compose, $__global_Effect_pureE, $__global_Effect_Aff_nonCanceler, &$__fn) {
+    $__res = ($__global_Effect_Aff_makeAff)((function() use ($__global_Effect_Aff_Compat_discard, $__global_Effect_Uncurried_runEffectFn3, $canceler, $e, $__global_Effect_Uncurried_mkEffectFn1, $__global_Effect_Aff_Compat_compose, $__global_Effect_Aff_Compat_pure, $__global_Effect_Aff_nonCanceler) {
+  $__fn = function($k2) use ($__global_Effect_Aff_Compat_discard, $__global_Effect_Uncurried_runEffectFn3, $canceler, $e, $__global_Effect_Uncurried_mkEffectFn1, $__global_Effect_Aff_Compat_compose, $__global_Effect_Aff_Compat_pure, $__global_Effect_Aff_nonCanceler, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
@@ -219,13 +259,13 @@ return ($__global_Effect_pureE)((function() use ($__global_Effect_Aff_makeAff, $
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})()))), (function() use ($__global_Effect_pureE, $__global_Effect_Aff_nonCanceler) {
-  $__fn = function($__dollar____unused) use ($__global_Effect_pureE, $__global_Effect_Aff_nonCanceler, &$__fn) {
+})()))), (function() use ($__global_Effect_Aff_Compat_pure, $__global_Effect_Aff_nonCanceler) {
+  $__fn = function($__dollar____unused) use ($__global_Effect_Aff_Compat_pure, $__global_Effect_Aff_nonCanceler, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($__global_Effect_pureE)($__global_Effect_Aff_nonCanceler);
+    $__res = ($__global_Effect_Aff_Compat_pure)($__global_Effect_Aff_nonCanceler);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -242,7 +282,7 @@ return ($__global_Effect_pureE)((function() use ($__global_Effect_Aff_makeAff, $
 throw new \Exception("Pattern match failure");
 };
   };
-  $__fn = function($v1) use ($__global_Effect_pureE, $__global_Effect_Aff_makeAff, $__global_Effect_Aff_Compat_discard, $__global_Effect_Uncurried_runEffectFn3, $__global_Effect_Uncurried_mkEffectFn1, $__global_Effect_Aff_Compat_compose, $__global_Effect_Aff_nonCanceler, $__body, &$__fn) {
+  $__fn = function($v1) use ($__global_Effect_Aff_Compat_pure, $__global_Effect_Aff_makeAff, $__global_Effect_Aff_Compat_discard, $__global_Effect_Uncurried_runEffectFn3, $__global_Effect_Uncurried_mkEffectFn1, $__global_Effect_Aff_Compat_compose, $__global_Effect_Aff_nonCanceler, $__body, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);

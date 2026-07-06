@@ -106,12 +106,72 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Data_Interval_append': $v = ($GLOBALS['Data_Semigroup_concatString'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_concatString')); break;
-      case 'Data_Interval_show': $v = ((($GLOBALS['Data_Maybe_showMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_showMaybe')))(($GLOBALS['Data_Show_showInt'] ?? \Data\Show\phpurs_eval_thunk('Data_Show_showInt'))))->show; break;
-      case 'Data_Interval_compose': $v = (($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn')))->compose; break;
-      case 'Data_Interval_conj': $v = ($GLOBALS['Data_HeytingAlgebra_boolConj'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_boolConj')); break;
-      case 'Data_Interval_eq': $v = ((($GLOBALS['Data_Maybe_eqMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_eqMaybe')))(($GLOBALS['Data_Eq_eqInt'] ?? \Data\Eq\phpurs_eval_thunk('Data_Eq_eqInt'))))->eq; break;
-      case 'Data_Interval_compare': $v = ((($GLOBALS['Data_Maybe_ordMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_ordMaybe')))(($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'))))->compare; break;
+      case 'Data_Interval_append': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Semigroup_semigroupString'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_semigroupString'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Interval_show': $v = (function() {
+  $__case_0 = $dict;
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->show;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Interval_compose': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compose;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Interval_conj': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_HeytingAlgebra_heytingAlgebraBoolean'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_heytingAlgebraBoolean'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->conj;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Interval_eq': $v = (function() {
+  $__case_0 = $dict;
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Interval_compare': $v = (function() {
+  $__case_0 = $dict;
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_Interval_foldableInterval': $v = (object)["foldl" => (function() {
   $__body = function($v, $v1, $v2) {
     $__case_0 = $v;
@@ -165,27 +225,141 @@ break;
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Foldable_foldrDefault = ($GLOBALS['Data_Foldable_foldrDefault'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldrDefault'));
 $__global_Data_Interval_foldableInterval = ($GLOBALS['Data_Interval_foldableInterval'] ?? \Data\Interval\phpurs_eval_thunk('Data_Interval_foldableInterval'));
-    $__res = ($__global_Data_Foldable_foldrDefault)($__global_Data_Interval_foldableInterval, $x);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})(), "foldMap" => (function() {
-  $__fn = function($dictMonoid) use (&$__fn) {
+$__global_Data_Foldable_monoidFreeMonoidTree = ($GLOBALS['Data_Foldable_monoidFreeMonoidTree'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_monoidFreeMonoidTree'));
+$__global_Data_Foldable_foldr2 = ($GLOBALS['Data_Foldable_foldr2'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldr2'));
+$__case_0 = $__global_Data_Interval_foldableInterval;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldMap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldMap2 = ($__case_res_0)($__global_Data_Foldable_monoidFreeMonoidTree);
+    $__res = ((function() use ($__global_Data_Foldable_foldr2, $foldMap2) {
+  $__fn = function($c, $u = null, $xs = null) use ($__global_Data_Foldable_foldr2, $foldMap2, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($xs) use ($c, $u, &$__fn) { return $__fn($c, $u, $xs); };
+    if ($__num === 1) return function($u, $xs = null) use ($c, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($c, $u, $xs);
+      if ($__num2 === 1) return function($xs) use ($c, $u, &$__fn) { return $__fn($c, $u, $xs); };
+      return phpurs_curry_fallback($__fn, [$c], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = ($__global_Data_Foldable_foldr2)($c, $u, ($foldMap2)((function() {
+  $__fn = function($value0) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Foldable_foldMapDefaultL = ($GLOBALS['Data_Foldable_foldMapDefaultL'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldMapDefaultL'));
+    $__res = new Phpurs_Data1("Node", $value0);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})(), $xs));
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})())($x);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})(), "foldMap" => (function() use ($dict) {
+  $__fn = function($dictMonoid) use ($dict, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
 $__global_Data_Interval_foldableInterval = ($GLOBALS['Data_Interval_foldableInterval'] ?? \Data\Interval\phpurs_eval_thunk('Data_Interval_foldableInterval'));
-    $__res = ($__global_Data_Foldable_foldMapDefaultL)($__global_Data_Interval_foldableInterval, $dictMonoid);
+$__case_0 = $__global_Data_Interval_foldableInterval;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->foldl;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldl3 = $__case_res_1;
+    $__res = ((function() use ($dict, $foldl3) {
+  $__fn = function($dictMonoid) use ($dict, $foldl3, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append = $__case_res_2;
+$__case_0 = $dictMonoid;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->mempty;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$mempty = $__case_res_3;
+    $__res = (function() use ($foldl3, $append, $mempty) {
+  $__fn = function($f) use ($foldl3, $append, $mempty, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($foldl3)((function() use ($append, $f) {
+  $__fn = function($acc, $x = null) use ($append, $f, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($x) use ($acc, &$__fn) { return $__fn($acc, $x); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($append)($acc, ($f)($x));
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), $mempty);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})())($dictMonoid);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
 })()]; break;
-      case 'Data_Interval_foldl': $v = (($GLOBALS['Data_Interval_foldableInterval'] ?? \Data\Interval\phpurs_eval_thunk('Data_Interval_foldableInterval')))->foldl; break;
-      case 'Data_Interval_foldr': $v = (($GLOBALS['Data_Interval_foldableInterval'] ?? \Data\Interval\phpurs_eval_thunk('Data_Interval_foldableInterval')))->foldr; break;
+      case 'Data_Interval_foldl': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Interval_foldableInterval'] ?? \Data\Interval\phpurs_eval_thunk('Data_Interval_foldableInterval'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldl;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Interval_foldr': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Interval_foldableInterval'] ?? \Data\Interval\phpurs_eval_thunk('Data_Interval_foldableInterval'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_Interval_foldableRecurringInterval': $v = (object)["foldl" => (function() {
   $__fn = function($f, $i = null) use (&$__fn) {
   $__num = func_num_args();
@@ -214,15 +388,72 @@ $__global_Data_Interval_interval = ($GLOBALS['Data_Interval_interval'] ?? \Data\
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
-})(), "foldMap" => (function() {
-  $__fn = function($dictMonoid) use (&$__fn) {
+})(), "foldMap" => (function() use ($dict) {
+  $__fn = function($dictMonoid) use ($dict, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Foldable_foldMapDefaultL = ($GLOBALS['Data_Foldable_foldMapDefaultL'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldMapDefaultL'));
 $__global_Data_Interval_foldableRecurringInterval = ($GLOBALS['Data_Interval_foldableRecurringInterval'] ?? \Data\Interval\phpurs_eval_thunk('Data_Interval_foldableRecurringInterval'));
-    $__res = ($__global_Data_Foldable_foldMapDefaultL)($__global_Data_Interval_foldableRecurringInterval, $dictMonoid);
+$__case_0 = $__global_Data_Interval_foldableRecurringInterval;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldl;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldl3 = $__case_res_0;
+    $__res = ((function() use ($dict, $foldl3) {
+  $__fn = function($dictMonoid) use ($dict, $foldl3, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append = $__case_res_1;
+$__case_0 = $dictMonoid;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->mempty;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$mempty = $__case_res_2;
+    $__res = (function() use ($foldl3, $append, $mempty) {
+  $__fn = function($f) use ($foldl3, $append, $mempty, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($foldl3)((function() use ($append, $f) {
+  $__fn = function($acc, $x = null) use ($append, $f, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($x) use ($acc, &$__fn) { return $__fn($acc, $x); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($append)($acc, ($f)($x));
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), $mempty);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})())($dictMonoid);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -323,7 +554,17 @@ break;
   };
   return $__fn;
 })()]; break;
-      case 'Data_Interval_bimap': $v = (($GLOBALS['Data_Interval_bifunctorInterval'] ?? \Data\Interval\phpurs_eval_thunk('Data_Interval_bifunctorInterval')))->bimap; break;
+      case 'Data_Interval_bimap': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Interval_bifunctorInterval'] ?? \Data\Interval\phpurs_eval_thunk('Data_Interval_bifunctorInterval'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bimap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_Interval_bifunctorRecurringInterval': $v = (object)["bimap" => (function() {
   $__body = function($f, $g, $v) {
     $__global_Data_Interval_bimap = ($GLOBALS['Data_Interval_bimap'] ?? \Data\Interval\phpurs_eval_thunk('Data_Interval_bimap'));
@@ -371,8 +612,28 @@ break;
   };
   return $__fn;
 })()]; break;
-      case 'Data_Interval_functorInterval': $v = (object)["map" => (($GLOBALS['Data_Interval_bimap'] ?? \Data\Interval\phpurs_eval_thunk('Data_Interval_bimap')))((($GLOBALS['Control_Category_categoryFn'] ?? \Control\Category\phpurs_eval_thunk('Control_Category_categoryFn')))->identity)]; break;
-      case 'Data_Interval_map': $v = (($GLOBALS['Data_Interval_functorInterval'] ?? \Data\Interval\phpurs_eval_thunk('Data_Interval_functorInterval')))->map; break;
+      case 'Data_Interval_functorInterval': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Category_categoryFn'] ?? \Control\Category\phpurs_eval_thunk('Control_Category_categoryFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->identity;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return (object)["map" => (($GLOBALS['Data_Interval_bimap'] ?? \Data\Interval\phpurs_eval_thunk('Data_Interval_bimap')))($__case_res_0)];
+})(); break;
+      case 'Data_Interval_map': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Interval_functorInterval'] ?? \Data\Interval\phpurs_eval_thunk('Data_Interval_functorInterval'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_Interval_extendInterval': $v = (object)["extend" => (function() {
   $__body = function($v, $v1) {
     $__case_0 = $v;
@@ -469,7 +730,17 @@ $__global_Data_Interval_functorInterval = ($GLOBALS['Data_Interval_functorInterv
   };
   return $__fn;
 })()]; break;
-      case 'Data_Interval_extend': $v = (($GLOBALS['Data_Interval_extendInterval'] ?? \Data\Interval\phpurs_eval_thunk('Data_Interval_extendInterval')))->extend; break;
+      case 'Data_Interval_extend': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Interval_extendInterval'] ?? \Data\Interval\phpurs_eval_thunk('Data_Interval_extendInterval'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->extend;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_Interval_functorRecurringInterval': $v = (object)["map" => (function() {
   $__body = function($f, $v) {
     $__global_Data_Interval_map = ($GLOBALS['Data_Interval_map'] ?? \Data\Interval\phpurs_eval_thunk('Data_Interval_map'));
@@ -568,13 +839,56 @@ $__global_Data_Interval_functorRecurringInterval = ($GLOBALS['Data_Interval_func
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$__global_Data_Functor_mapFlipped = ($GLOBALS['Data_Functor_mapFlipped'] ?? \Data\Functor\phpurs_eval_thunk('Data_Functor_mapFlipped'));
 $Apply0 = (($dictApplicative)->Apply0)($__global_Prim_undefined);
-$apply = ($Apply0)->apply;
+$__case_0 = $Apply0;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$apply = $__case_res_0;
 $Functor0 = (($Apply0)->Functor0)($__global_Prim_undefined);
-$map1 = ($Functor0)->map;
-$mapFlipped = ($__global_Data_Functor_mapFlipped)($Functor0);
-$pure = ($dictApplicative)->pure;
+$__case_0 = $Functor0;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map1 = $__case_res_1;
+$__case_0 = $Functor0;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map1 = $__case_res_2;
+$mapFlipped = (function() use ($map1) {
+  $__fn = function($fa, $f = null) use ($map1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($f) use ($fa, &$__fn) { return $__fn($fa, $f); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($map1)($f, $fa);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+$__case_0 = $dictApplicative;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pure = $__case_res_3;
     $__res = (function() use ($apply, $map1, $mapFlipped, $pure) {
   $__body = function($v, $v1) use ($apply, $map1, $mapFlipped, $pure) {
     $__case_0 = $v;
@@ -680,9 +994,28 @@ break;
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Traversable_sequenceDefault = ($GLOBALS['Data_Traversable_sequenceDefault'] ?? \Data\Traversable\phpurs_eval_thunk('Data_Traversable_sequenceDefault'));
 $__global_Data_Interval_traversableInterval = ($GLOBALS['Data_Interval_traversableInterval'] ?? \Data\Interval\phpurs_eval_thunk('Data_Interval_traversableInterval'));
-    $__res = ($__global_Data_Traversable_sequenceDefault)($__global_Data_Interval_traversableInterval, $dictApplicative);
+$__global_Data_Traversable_identity = ($GLOBALS['Data_Traversable_identity'] ?? \Data\Traversable\phpurs_eval_thunk('Data_Traversable_identity'));
+$__case_0 = $__global_Data_Interval_traversableInterval;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->traverse;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$traverse2 = $__case_res_4;
+    $__res = ((function() use ($traverse2, $__global_Data_Traversable_identity) {
+  $__fn = function($dictApplicative) use ($traverse2, $__global_Data_Traversable_identity, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($traverse2)($dictApplicative, $__global_Data_Traversable_identity);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})())($dictApplicative);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -709,17 +1042,71 @@ $__global_Data_Interval_foldableInterval = ($GLOBALS['Data_Interval_foldableInte
   };
   return $__fn;
 })()]; break;
-      case 'Data_Interval_traverse': $v = (($GLOBALS['Data_Interval_traversableInterval'] ?? \Data\Interval\phpurs_eval_thunk('Data_Interval_traversableInterval')))->traverse; break;
-      case 'Data_Interval_traversableRecurringInterval': $v = (object)["traverse" => (function() {
-  $__fn = function($dictApplicative) use (&$__fn) {
+      case 'Data_Interval_traverse': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Interval_traversableInterval'] ?? \Data\Interval\phpurs_eval_thunk('Data_Interval_traversableInterval'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->traverse;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Interval_traversableRecurringInterval': $v = (object)["traverse" => (function() use ($dict) {
+  $__fn = function($dictApplicative) use ($dict, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Interval_over = ($GLOBALS['Data_Interval_over'] ?? \Data\Interval\phpurs_eval_thunk('Data_Interval_over'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Interval_traverse = ($GLOBALS['Data_Interval_traverse'] ?? \Data\Interval\phpurs_eval_thunk('Data_Interval_traverse'));
-$over1 = ($__global_Data_Interval_over)((((($dictApplicative)->Apply0)($__global_Prim_undefined))->Functor0)($__global_Prim_undefined));
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map1 = $__case_res_0;
+$over1 = (function() use ($map1) {
+  $__body = function($f, $v) use ($map1) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    switch (($__case_1)->tag) {
+case "RecurringInterval":
+$f1 = $__case_0;
+$n = ($__case_1)->v0;
+$i = ($__case_1)->v1;
+return ($map1)(((function() {
+  $__fn = function($value0, $value1 = null) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($value1) use ($value0, &$__fn) { return $__fn($value0, $value1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = new Phpurs_Data2("RecurringInterval", $value0, $value1);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})())($n), ($f1)($i));
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($f, $v = null) use ($map1, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, &$__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($f, $v);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
 $traverse1 = ($__global_Data_Interval_traverse)($dictApplicative);
     $__res = (function() use ($over1, $traverse1) {
   $__fn = function($f, $i = null) use ($over1, $traverse1, &$__fn) {
@@ -742,9 +1129,28 @@ $traverse1 = ($__global_Data_Interval_traverse)($dictApplicative);
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Traversable_sequenceDefault = ($GLOBALS['Data_Traversable_sequenceDefault'] ?? \Data\Traversable\phpurs_eval_thunk('Data_Traversable_sequenceDefault'));
 $__global_Data_Interval_traversableRecurringInterval = ($GLOBALS['Data_Interval_traversableRecurringInterval'] ?? \Data\Interval\phpurs_eval_thunk('Data_Interval_traversableRecurringInterval'));
-    $__res = ($__global_Data_Traversable_sequenceDefault)($__global_Data_Interval_traversableRecurringInterval, $dictApplicative);
+$__global_Data_Traversable_identity = ($GLOBALS['Data_Traversable_identity'] ?? \Data\Traversable\phpurs_eval_thunk('Data_Traversable_identity'));
+$__case_0 = $__global_Data_Interval_traversableRecurringInterval;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->traverse;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$traverse2 = $__case_res_1;
+    $__res = ((function() use ($traverse2, $__global_Data_Traversable_identity) {
+  $__fn = function($dictApplicative) use ($traverse2, $__global_Data_Traversable_identity, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($traverse2)($dictApplicative, $__global_Data_Traversable_identity);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})())($dictApplicative);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -846,27 +1252,157 @@ break;
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Bifoldable_bifoldrDefault = ($GLOBALS['Data_Bifoldable_bifoldrDefault'] ?? \Data\Bifoldable\phpurs_eval_thunk('Data_Bifoldable_bifoldrDefault'));
 $__global_Data_Interval_bifoldableInterval = ($GLOBALS['Data_Interval_bifoldableInterval'] ?? \Data\Interval\phpurs_eval_thunk('Data_Interval_bifoldableInterval'));
-    $__res = ($__global_Data_Bifoldable_bifoldrDefault)($__global_Data_Interval_bifoldableInterval, $x);
+$__global_Data_Bifoldable_monoidEndo = ($GLOBALS['Data_Bifoldable_monoidEndo'] ?? \Data\Bifoldable\phpurs_eval_thunk('Data_Bifoldable_monoidEndo'));
+$__global_Data_Bifoldable_unwrap = ($GLOBALS['Data_Bifoldable_unwrap'] ?? \Data\Bifoldable\phpurs_eval_thunk('Data_Bifoldable_unwrap'));
+$__global_Data_Bifoldable_compose = ($GLOBALS['Data_Bifoldable_compose'] ?? \Data\Bifoldable\phpurs_eval_thunk('Data_Bifoldable_compose'));
+$__global_Data_Monoid_Endo_Endo = ($GLOBALS['Data_Monoid_Endo_Endo'] ?? \Data\Monoid\Endo\phpurs_eval_thunk('Data_Monoid_Endo_Endo'));
+$__case_0 = $__global_Data_Interval_bifoldableInterval;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bifoldMap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bifoldMap1 = ($__case_res_0)($__global_Data_Bifoldable_monoidEndo);
+    $__res = ((function() use ($__global_Data_Bifoldable_unwrap, $bifoldMap1, $__global_Data_Bifoldable_compose, $__global_Data_Monoid_Endo_Endo) {
+  $__fn = function($f, $g = null, $z = null, $p = null) use ($__global_Data_Bifoldable_unwrap, $bifoldMap1, $__global_Data_Bifoldable_compose, $__global_Data_Monoid_Endo_Endo, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 4) {
+    if ($__num === 3) return function($p) use ($f, $g, $z, &$__fn) { return $__fn($f, $g, $z, $p); };
+    if ($__num === 2) return function($z, $p = null) use ($f, $g, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $g, $z, $p);
+      if ($__num2 === 1) return function($p) use ($f, $g, $z, &$__fn) { return $__fn($f, $g, $z, $p); };
+      return phpurs_curry_fallback($__fn, [$f, $g], 4);
+    };
+    if ($__num === 1) return function($g, $z = null, $p = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 3) return $__fn($f, $g, $z, $p);
+      if ($__num2 === 2) return function($p) use ($f, $g, $z, &$__fn) { return $__fn($f, $g, $z, $p); };
+      if ($__num2 === 1) return function($z, $p = null) use ($f, $g, &$__fn) {
+        $__num3 = func_num_args();
+        if ($__num3 === 2) return $__fn($f, $g, $z, $p);
+        if ($__num3 === 1) return function($p) use ($f, $g, $z, &$__fn) { return $__fn($f, $g, $z, $p); };
+        return phpurs_curry_fallback($__fn, [$f, $g], 4);
+      };
+      return phpurs_curry_fallback($__fn, [$f], 4);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 4);
+  }
+    $__res = ($__global_Data_Bifoldable_unwrap)(($bifoldMap1)(($__global_Data_Bifoldable_compose)($__global_Data_Monoid_Endo_Endo, $f), ($__global_Data_Bifoldable_compose)($__global_Data_Monoid_Endo_Endo, $g), $p), $z);
+  return $__num > 4 ? $__res(...array_slice(func_get_args(), 4)) : $__res;
+  };
+  return $__fn;
+})())($x);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})(), "bifoldMap" => (function() {
-  $__fn = function($dictMonoid) use (&$__fn) {
+})(), "bifoldMap" => (function() use ($dict) {
+  $__fn = function($dictMonoid) use ($dict, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Bifoldable_bifoldMapDefaultL = ($GLOBALS['Data_Bifoldable_bifoldMapDefaultL'] ?? \Data\Bifoldable\phpurs_eval_thunk('Data_Bifoldable_bifoldMapDefaultL'));
 $__global_Data_Interval_bifoldableInterval = ($GLOBALS['Data_Interval_bifoldableInterval'] ?? \Data\Interval\phpurs_eval_thunk('Data_Interval_bifoldableInterval'));
-    $__res = ($__global_Data_Bifoldable_bifoldMapDefaultL)($__global_Data_Interval_bifoldableInterval, $dictMonoid);
+$__case_0 = $__global_Data_Interval_bifoldableInterval;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->bifoldl;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bifoldl1 = $__case_res_1;
+    $__res = ((function() use ($dict, $bifoldl1) {
+  $__fn = function($dictMonoid) use ($dict, $bifoldl1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append = $__case_res_2;
+$__case_0 = $dictMonoid;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->mempty;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$mempty = $__case_res_3;
+    $__res = (function() use ($bifoldl1, $append, $mempty) {
+  $__fn = function($f, $g = null) use ($bifoldl1, $append, $mempty, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($g) use ($f, &$__fn) { return $__fn($f, $g); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($bifoldl1)((function() use ($append, $f) {
+  $__fn = function($m, $a = null) use ($append, $f, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($a) use ($m, &$__fn) { return $__fn($m, $a); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($append)($m, ($f)($a));
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), (function() use ($append, $g) {
+  $__fn = function($m, $b = null) use ($append, $g, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($b) use ($m, &$__fn) { return $__fn($m, $b); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($append)($m, ($g)($b));
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), $mempty);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})())($dictMonoid);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
 })()]; break;
-      case 'Data_Interval_bifoldl': $v = (($GLOBALS['Data_Interval_bifoldableInterval'] ?? \Data\Interval\phpurs_eval_thunk('Data_Interval_bifoldableInterval')))->bifoldl; break;
-      case 'Data_Interval_bifoldr': $v = (($GLOBALS['Data_Interval_bifoldableInterval'] ?? \Data\Interval\phpurs_eval_thunk('Data_Interval_bifoldableInterval')))->bifoldr; break;
+      case 'Data_Interval_bifoldl': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Interval_bifoldableInterval'] ?? \Data\Interval\phpurs_eval_thunk('Data_Interval_bifoldableInterval'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bifoldl;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Interval_bifoldr': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Interval_bifoldableInterval'] ?? \Data\Interval\phpurs_eval_thunk('Data_Interval_bifoldableInterval'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bifoldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_Interval_bifoldableRecurringInterval': $v = (object)["bifoldl" => (function() {
   $__fn = function($f, $g = null, $i = null) use (&$__fn) {
   $__num = func_num_args();
@@ -907,29 +1443,114 @@ $__global_Data_Interval_interval = ($GLOBALS['Data_Interval_interval'] ?? \Data\
   return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
   };
   return $__fn;
-})(), "bifoldMap" => (function() {
-  $__fn = function($dictMonoid) use (&$__fn) {
+})(), "bifoldMap" => (function() use ($dict) {
+  $__fn = function($dictMonoid) use ($dict, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Bifoldable_bifoldMapDefaultL = ($GLOBALS['Data_Bifoldable_bifoldMapDefaultL'] ?? \Data\Bifoldable\phpurs_eval_thunk('Data_Bifoldable_bifoldMapDefaultL'));
 $__global_Data_Interval_bifoldableRecurringInterval = ($GLOBALS['Data_Interval_bifoldableRecurringInterval'] ?? \Data\Interval\phpurs_eval_thunk('Data_Interval_bifoldableRecurringInterval'));
-    $__res = ($__global_Data_Bifoldable_bifoldMapDefaultL)($__global_Data_Interval_bifoldableRecurringInterval, $dictMonoid);
+$__case_0 = $__global_Data_Interval_bifoldableRecurringInterval;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bifoldl;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bifoldl1 = $__case_res_0;
+    $__res = ((function() use ($dict, $bifoldl1) {
+  $__fn = function($dictMonoid) use ($dict, $bifoldl1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append = $__case_res_1;
+$__case_0 = $dictMonoid;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->mempty;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$mempty = $__case_res_2;
+    $__res = (function() use ($bifoldl1, $append, $mempty) {
+  $__fn = function($f, $g = null) use ($bifoldl1, $append, $mempty, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($g) use ($f, &$__fn) { return $__fn($f, $g); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($bifoldl1)((function() use ($append, $f) {
+  $__fn = function($m, $a = null) use ($append, $f, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($a) use ($m, &$__fn) { return $__fn($m, $a); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($append)($m, ($f)($a));
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), (function() use ($append, $g) {
+  $__fn = function($m, $b = null) use ($append, $g, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($b) use ($m, &$__fn) { return $__fn($m, $b); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($append)($m, ($g)($b));
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), $mempty);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})())($dictMonoid);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
 })()]; break;
-      case 'Data_Interval_bitraversableInterval': $v = (object)["bitraverse" => (function() {
-  $__fn = function($dictApplicative) use (&$__fn) {
+      case 'Data_Interval_bitraversableInterval': $v = (object)["bitraverse" => (function() use ($dict) {
+  $__fn = function($dictApplicative) use ($dict, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $Apply0 = (($dictApplicative)->Apply0)($__global_Prim_undefined);
-$apply = ($Apply0)->apply;
-$map1 = ((($Apply0)->Functor0)($__global_Prim_undefined))->map;
+$__case_0 = $Apply0;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$apply = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map1 = $__case_res_1;
     $__res = (function() use ($apply, $map1) {
   $__body = function($v, $v1, $v2) use ($apply, $map1) {
     $__case_0 = $v;
@@ -1035,9 +1656,28 @@ break;
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Bitraversable_bisequenceDefault = ($GLOBALS['Data_Bitraversable_bisequenceDefault'] ?? \Data\Bitraversable\phpurs_eval_thunk('Data_Bitraversable_bisequenceDefault'));
 $__global_Data_Interval_bitraversableInterval = ($GLOBALS['Data_Interval_bitraversableInterval'] ?? \Data\Interval\phpurs_eval_thunk('Data_Interval_bitraversableInterval'));
-    $__res = ($__global_Data_Bitraversable_bisequenceDefault)($__global_Data_Interval_bitraversableInterval, $dictApplicative);
+$__global_Data_Bitraversable_identity = ($GLOBALS['Data_Bitraversable_identity'] ?? \Data\Bitraversable\phpurs_eval_thunk('Data_Bitraversable_identity'));
+$__case_0 = $__global_Data_Interval_bitraversableInterval;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->bitraverse;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bitraverse1 = $__case_res_2;
+    $__res = ((function() use ($bitraverse1, $__global_Data_Bitraversable_identity) {
+  $__fn = function($dictApplicative) use ($bitraverse1, $__global_Data_Bitraversable_identity, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($bitraverse1)($dictApplicative, $__global_Data_Bitraversable_identity, $__global_Data_Bitraversable_identity);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})())($dictApplicative);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -1064,17 +1704,71 @@ $__global_Data_Interval_bifoldableInterval = ($GLOBALS['Data_Interval_bifoldable
   };
   return $__fn;
 })()]; break;
-      case 'Data_Interval_bitraverse': $v = (($GLOBALS['Data_Interval_bitraversableInterval'] ?? \Data\Interval\phpurs_eval_thunk('Data_Interval_bitraversableInterval')))->bitraverse; break;
-      case 'Data_Interval_bitraversableRecurringInterval': $v = (object)["bitraverse" => (function() {
-  $__fn = function($dictApplicative) use (&$__fn) {
+      case 'Data_Interval_bitraverse': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Interval_bitraversableInterval'] ?? \Data\Interval\phpurs_eval_thunk('Data_Interval_bitraversableInterval'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bitraverse;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Interval_bitraversableRecurringInterval': $v = (object)["bitraverse" => (function() use ($dict) {
+  $__fn = function($dictApplicative) use ($dict, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Interval_over = ($GLOBALS['Data_Interval_over'] ?? \Data\Interval\phpurs_eval_thunk('Data_Interval_over'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Interval_bitraverse = ($GLOBALS['Data_Interval_bitraverse'] ?? \Data\Interval\phpurs_eval_thunk('Data_Interval_bitraverse'));
-$over1 = ($__global_Data_Interval_over)((((($dictApplicative)->Apply0)($__global_Prim_undefined))->Functor0)($__global_Prim_undefined));
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map1 = $__case_res_0;
+$over1 = (function() use ($map1) {
+  $__body = function($f, $v) use ($map1) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    switch (($__case_1)->tag) {
+case "RecurringInterval":
+$f1 = $__case_0;
+$n = ($__case_1)->v0;
+$i = ($__case_1)->v1;
+return ($map1)(((function() {
+  $__fn = function($value0, $value1 = null) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($value1) use ($value0, &$__fn) { return $__fn($value0, $value1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = new Phpurs_Data2("RecurringInterval", $value0, $value1);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})())($n), ($f1)($i));
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($f, $v = null) use ($map1, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, &$__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($f, $v);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
 $bitraverse1 = ($__global_Data_Interval_bitraverse)($dictApplicative);
     $__res = (function() use ($over1, $bitraverse1) {
   $__fn = function($l, $r = null, $i = null) use ($over1, $bitraverse1, &$__fn) {
@@ -1103,9 +1797,28 @@ $bitraverse1 = ($__global_Data_Interval_bitraverse)($dictApplicative);
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Bitraversable_bisequenceDefault = ($GLOBALS['Data_Bitraversable_bisequenceDefault'] ?? \Data\Bitraversable\phpurs_eval_thunk('Data_Bitraversable_bisequenceDefault'));
 $__global_Data_Interval_bitraversableRecurringInterval = ($GLOBALS['Data_Interval_bitraversableRecurringInterval'] ?? \Data\Interval\phpurs_eval_thunk('Data_Interval_bitraversableRecurringInterval'));
-    $__res = ($__global_Data_Bitraversable_bisequenceDefault)($__global_Data_Interval_bitraversableRecurringInterval, $dictApplicative);
+$__global_Data_Bitraversable_identity = ($GLOBALS['Data_Bitraversable_identity'] ?? \Data\Bitraversable\phpurs_eval_thunk('Data_Bitraversable_identity'));
+$__case_0 = $__global_Data_Interval_bitraversableRecurringInterval;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->bitraverse;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bitraverse1 = $__case_res_1;
+    $__res = ((function() use ($bitraverse1, $__global_Data_Bitraversable_identity) {
+  $__fn = function($dictApplicative) use ($bitraverse1, $__global_Data_Bitraversable_identity, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($bitraverse1)($dictApplicative, $__global_Data_Bitraversable_identity, $__global_Data_Bitraversable_identity);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})())($dictApplicative);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -1218,43 +1931,60 @@ function Data_Interval_showInterval($dictShow) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$show1 = ($dictShow)->show;
-    $__res = (function() use ($show1) {
-  $__fn = function($dictShow1) use ($show1, &$__fn) {
+$__global_Data_Interval_append = ($GLOBALS['Data_Interval_append'] ?? \Data\Interval\phpurs_eval_thunk('Data_Interval_append'));
+$__case_0 = $dictShow;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->show;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$show1 = $__case_res_0;
+    $__res = (function() use ($__global_Data_Interval_append, $show1) {
+  $__fn = function($dictShow1) use ($__global_Data_Interval_append, $show1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$show2 = ($dictShow1)->show;
-    $__res = (object)["show" => (function() use ($show2, $show1) {
-  $__body = function($v) use ($show2, $show1) {
+$__case_0 = $dictShow1;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->show;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$show2 = $__case_res_1;
+    $__res = (object)["show" => (function() use ($__global_Data_Interval_append, $show2, $show1) {
+  $__body = function($v) use ($__global_Data_Interval_append, $show2, $show1) {
     $__case_0 = $v;
     switch (($__case_0)->tag) {
 case "StartEnd":
 $x = ($__case_0)->v0;
 $y = ($__case_0)->v1;
-return ("(StartEnd " . (($show2)($x) . (" " . (($show2)($y) . ")"))));
+return ($__global_Data_Interval_append)("(StartEnd ", ($__global_Data_Interval_append)(($show2)($x), ($__global_Data_Interval_append)(" ", ($__global_Data_Interval_append)(($show2)($y), ")"))));
 break;
 case "DurationEnd":
 $d = ($__case_0)->v0;
 $x = ($__case_0)->v1;
-return ("(DurationEnd " . (($show1)($d) . (" " . (($show2)($x) . ")"))));
+return ($__global_Data_Interval_append)("(DurationEnd ", ($__global_Data_Interval_append)(($show1)($d), ($__global_Data_Interval_append)(" ", ($__global_Data_Interval_append)(($show2)($x), ")"))));
 break;
 case "StartDuration":
 $x = ($__case_0)->v0;
 $d = ($__case_0)->v1;
-return ("(StartDuration " . (($show2)($x) . (" " . (($show1)($d) . ")"))));
+return ($__global_Data_Interval_append)("(StartDuration ", ($__global_Data_Interval_append)(($show2)($x), ($__global_Data_Interval_append)(" ", ($__global_Data_Interval_append)(($show1)($d), ")"))));
 break;
 case "DurationOnly":
 $d = ($__case_0)->v0;
-return ("(DurationOnly " . (($show1)($d) . ")"));
+return ($__global_Data_Interval_append)("(DurationOnly ", ($__global_Data_Interval_append)(($show1)($d), ")"));
 break;
 default:
 throw new \Exception("Pattern match failure");
 break;
 };
   };
-  $__fn = function($v) use ($show2, $show1, $__body, &$__fn) {
+  $__fn = function($v) use ($__global_Data_Interval_append, $show2, $show1, $__body, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
@@ -1279,31 +2009,104 @@ function Data_Interval_showRecurringInterval($dictShow) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Interval_showInterval = ($GLOBALS['Data_Interval_showInterval'] ?? \Data\Interval\phpurs_eval_thunk('Data_Interval_showInterval'));
+$__global_Data_Interval_append = ($GLOBALS['Data_Interval_append'] ?? \Data\Interval\phpurs_eval_thunk('Data_Interval_append'));
 $__global_Data_Interval_show = ($GLOBALS['Data_Interval_show'] ?? \Data\Interval\phpurs_eval_thunk('Data_Interval_show'));
-$showInterval1 = ($__global_Data_Interval_showInterval)($dictShow);
-    $__res = (function() use ($showInterval1, $__global_Data_Interval_show) {
-  $__fn = function($dictShow1) use ($showInterval1, $__global_Data_Interval_show, &$__fn) {
+$__case_0 = $dictShow;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->show;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$show1 = $__case_res_0;
+$showInterval1 = (function() use ($__global_Data_Interval_append, $show1) {
+  $__fn = function($dictShow1) use ($__global_Data_Interval_append, $show1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$show1 = (($showInterval1)($dictShow1))->show;
-    $__res = (object)["show" => (function() use ($__global_Data_Interval_show, $show1) {
-  $__body = function($v) use ($__global_Data_Interval_show, $show1) {
+$__case_0 = $dictShow1;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->show;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$show2 = $__case_res_1;
+    $__res = (object)["show" => (function() use ($__global_Data_Interval_append, $show2, $show1) {
+  $__body = function($v) use ($__global_Data_Interval_append, $show2, $show1) {
     $__case_0 = $v;
     switch (($__case_0)->tag) {
-case "RecurringInterval":
+case "StartEnd":
 $x = ($__case_0)->v0;
 $y = ($__case_0)->v1;
-return ("(RecurringInterval " . (($__global_Data_Interval_show)($x) . (" " . (($show1)($y) . ")"))));
+return ($__global_Data_Interval_append)("(StartEnd ", ($__global_Data_Interval_append)(($show2)($x), ($__global_Data_Interval_append)(" ", ($__global_Data_Interval_append)(($show2)($y), ")"))));
+break;
+case "DurationEnd":
+$d = ($__case_0)->v0;
+$x = ($__case_0)->v1;
+return ($__global_Data_Interval_append)("(DurationEnd ", ($__global_Data_Interval_append)(($show1)($d), ($__global_Data_Interval_append)(" ", ($__global_Data_Interval_append)(($show2)($x), ")"))));
+break;
+case "StartDuration":
+$x = ($__case_0)->v0;
+$d = ($__case_0)->v1;
+return ($__global_Data_Interval_append)("(StartDuration ", ($__global_Data_Interval_append)(($show2)($x), ($__global_Data_Interval_append)(" ", ($__global_Data_Interval_append)(($show1)($d), ")"))));
+break;
+case "DurationOnly":
+$d = ($__case_0)->v0;
+return ($__global_Data_Interval_append)("(DurationOnly ", ($__global_Data_Interval_append)(($show1)($d), ")"));
 break;
 default:
 throw new \Exception("Pattern match failure");
 break;
 };
   };
-  $__fn = function($v) use ($__global_Data_Interval_show, $show1, $__body, &$__fn) {
+  $__fn = function($v) use ($__global_Data_Interval_append, $show2, $show1, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $__body($v);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+    $__res = (function() use ($dict, $__global_Data_Interval_append, $__global_Data_Interval_show) {
+  $__fn = function($dictShow1) use ($dict, $__global_Data_Interval_append, $__global_Data_Interval_show, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->show;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$show1 = $__case_res_2;
+    $__res = (object)["show" => (function() use ($__global_Data_Interval_append, $__global_Data_Interval_show, $show1) {
+  $__body = function($v) use ($__global_Data_Interval_append, $__global_Data_Interval_show, $show1) {
+    $__case_0 = $v;
+    switch (($__case_0)->tag) {
+case "RecurringInterval":
+$x = ($__case_0)->v0;
+$y = ($__case_0)->v1;
+return ($__global_Data_Interval_append)("(RecurringInterval ", ($__global_Data_Interval_append)(($__global_Data_Interval_show)($x), ($__global_Data_Interval_append)(" ", ($__global_Data_Interval_append)(($show1)($y), ")"))));
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($v) use ($__global_Data_Interval_append, $__global_Data_Interval_show, $show1, $__body, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
@@ -1328,7 +2131,15 @@ function Data_Interval_over($dictFunctor) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$map1 = ($dictFunctor)->map;
+$__case_0 = $dictFunctor;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map1 = $__case_res_0;
     $__res = (function() use ($map1) {
   $__body = function($f, $v) use ($map1) {
     $__case_0 = $f;
@@ -1406,17 +2217,33 @@ function Data_Interval_eqInterval($dictEq) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_HeytingAlgebra_boolConj = ($GLOBALS['Data_HeytingAlgebra_boolConj'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_boolConj'));
-$eq1 = ($dictEq)->eq;
-    $__res = (function() use ($__global_Data_HeytingAlgebra_boolConj, $eq1) {
-  $__fn = function($dictEq1) use ($__global_Data_HeytingAlgebra_boolConj, $eq1, &$__fn) {
+$__global_Data_Interval_conj = ($GLOBALS['Data_Interval_conj'] ?? \Data\Interval\phpurs_eval_thunk('Data_Interval_conj'));
+$__case_0 = $dictEq;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq1 = $__case_res_0;
+    $__res = (function() use ($__global_Data_Interval_conj, $eq1) {
+  $__fn = function($dictEq1) use ($__global_Data_Interval_conj, $eq1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$eq2 = ($dictEq1)->eq;
-    $__res = (object)["eq" => (function() use ($__global_Data_HeytingAlgebra_boolConj, $eq2, $eq1) {
-  $__body = function($x, $y) use ($__global_Data_HeytingAlgebra_boolConj, $eq2, $eq1) {
+$__case_0 = $dictEq1;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq2 = $__case_res_1;
+    $__res = (object)["eq" => (function() use ($__global_Data_Interval_conj, $eq2, $eq1) {
+  $__body = function($x, $y) use ($__global_Data_Interval_conj, $eq2, $eq1) {
     $__case_0 = $x;
     $__case_1 = $y;
     if (((($__case_0)->tag === "StartEnd") && (($__case_1)->tag === "StartEnd"))) {
@@ -1424,21 +2251,21 @@ $l = ($__case_0)->v0;
 $l1 = ($__case_0)->v1;
 $r = ($__case_1)->v0;
 $r1 = ($__case_1)->v1;
-return ($__global_Data_HeytingAlgebra_boolConj)(($eq2)($l, $r), ($eq2)($l1, $r1));
+return ($__global_Data_Interval_conj)(($eq2)($l, $r), ($eq2)($l1, $r1));
 } else {
 if (((($__case_0)->tag === "DurationEnd") && (($__case_1)->tag === "DurationEnd"))) {
 $l = ($__case_0)->v0;
 $l1 = ($__case_0)->v1;
 $r = ($__case_1)->v0;
 $r1 = ($__case_1)->v1;
-return ($__global_Data_HeytingAlgebra_boolConj)(($eq1)($l, $r), ($eq2)($l1, $r1));
+return ($__global_Data_Interval_conj)(($eq1)($l, $r), ($eq2)($l1, $r1));
 } else {
 if (((($__case_0)->tag === "StartDuration") && (($__case_1)->tag === "StartDuration"))) {
 $l = ($__case_0)->v0;
 $l1 = ($__case_0)->v1;
 $r = ($__case_1)->v0;
 $r1 = ($__case_1)->v1;
-return ($__global_Data_HeytingAlgebra_boolConj)(($eq2)($l, $r), ($eq1)($l1, $r1));
+return ($__global_Data_Interval_conj)(($eq2)($l, $r), ($eq1)($l1, $r1));
 } else {
 if (((($__case_0)->tag === "DurationOnly") && (($__case_1)->tag === "DurationOnly"))) {
 $l = ($__case_0)->v0;
@@ -1455,7 +2282,7 @@ throw new \Exception("Pattern match failure");
 };
 };
   };
-  $__fn = function($x, $y = null) use ($__global_Data_HeytingAlgebra_boolConj, $eq2, $eq1, $__body, &$__fn) {
+  $__fn = function($x, $y = null) use ($__global_Data_Interval_conj, $eq2, $eq1, $__body, &$__fn) {
   $__num = func_num_args();
   if ($__num < 2) {
     if ($__num === 1) return function($y) use ($x, &$__fn) { return $__fn($x, $y); };
@@ -1481,19 +2308,104 @@ function Data_Interval_eqRecurringInterval($dictEq) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Interval_eqInterval = ($GLOBALS['Data_Interval_eqInterval'] ?? \Data\Interval\phpurs_eval_thunk('Data_Interval_eqInterval'));
-$__global_Data_HeytingAlgebra_boolConj = ($GLOBALS['Data_HeytingAlgebra_boolConj'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_boolConj'));
+$__global_Data_Interval_conj = ($GLOBALS['Data_Interval_conj'] ?? \Data\Interval\phpurs_eval_thunk('Data_Interval_conj'));
 $__global_Data_Interval_eq = ($GLOBALS['Data_Interval_eq'] ?? \Data\Interval\phpurs_eval_thunk('Data_Interval_eq'));
-$eqInterval1 = ($__global_Data_Interval_eqInterval)($dictEq);
-    $__res = (function() use ($eqInterval1, $__global_Data_HeytingAlgebra_boolConj, $__global_Data_Interval_eq) {
-  $__fn = function($dictEq1) use ($eqInterval1, $__global_Data_HeytingAlgebra_boolConj, $__global_Data_Interval_eq, &$__fn) {
+$__case_0 = $dictEq;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq1 = $__case_res_0;
+$eqInterval1 = (function() use ($__global_Data_Interval_conj, $eq1) {
+  $__fn = function($dictEq1) use ($__global_Data_Interval_conj, $eq1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$eq1 = (($eqInterval1)($dictEq1))->eq;
-    $__res = (object)["eq" => (function() use ($__global_Data_HeytingAlgebra_boolConj, $__global_Data_Interval_eq, $eq1) {
-  $__body = function($x, $y) use ($__global_Data_HeytingAlgebra_boolConj, $__global_Data_Interval_eq, $eq1) {
+$__case_0 = $dictEq1;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq2 = $__case_res_1;
+    $__res = (object)["eq" => (function() use ($__global_Data_Interval_conj, $eq2, $eq1) {
+  $__body = function($x, $y) use ($__global_Data_Interval_conj, $eq2, $eq1) {
+    $__case_0 = $x;
+    $__case_1 = $y;
+    if (((($__case_0)->tag === "StartEnd") && (($__case_1)->tag === "StartEnd"))) {
+$l = ($__case_0)->v0;
+$l1 = ($__case_0)->v1;
+$r = ($__case_1)->v0;
+$r1 = ($__case_1)->v1;
+return ($__global_Data_Interval_conj)(($eq2)($l, $r), ($eq2)($l1, $r1));
+} else {
+if (((($__case_0)->tag === "DurationEnd") && (($__case_1)->tag === "DurationEnd"))) {
+$l = ($__case_0)->v0;
+$l1 = ($__case_0)->v1;
+$r = ($__case_1)->v0;
+$r1 = ($__case_1)->v1;
+return ($__global_Data_Interval_conj)(($eq1)($l, $r), ($eq2)($l1, $r1));
+} else {
+if (((($__case_0)->tag === "StartDuration") && (($__case_1)->tag === "StartDuration"))) {
+$l = ($__case_0)->v0;
+$l1 = ($__case_0)->v1;
+$r = ($__case_1)->v0;
+$r1 = ($__case_1)->v1;
+return ($__global_Data_Interval_conj)(($eq2)($l, $r), ($eq1)($l1, $r1));
+} else {
+if (((($__case_0)->tag === "DurationOnly") && (($__case_1)->tag === "DurationOnly"))) {
+$l = ($__case_0)->v0;
+$r = ($__case_1)->v0;
+return ($eq1)($l, $r);
+} else {
+if (true) {
+return false;
+} else {
+throw new \Exception("Pattern match failure");
+};
+};
+};
+};
+};
+  };
+  $__fn = function($x, $y = null) use ($__global_Data_Interval_conj, $eq2, $eq1, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($y) use ($x, &$__fn) { return $__fn($x, $y); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($x, $y);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+    $__res = (function() use ($dict, $__global_Data_Interval_conj, $__global_Data_Interval_eq) {
+  $__fn = function($dictEq1) use ($dict, $__global_Data_Interval_conj, $__global_Data_Interval_eq, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq1 = $__case_res_2;
+    $__res = (object)["eq" => (function() use ($__global_Data_Interval_conj, $__global_Data_Interval_eq, $eq1) {
+  $__body = function($x, $y) use ($__global_Data_Interval_conj, $__global_Data_Interval_eq, $eq1) {
     $__case_0 = $x;
     $__case_1 = $y;
     if (((($__case_0)->tag === "RecurringInterval") && (($__case_1)->tag === "RecurringInterval"))) {
@@ -1501,12 +2413,12 @@ $l = ($__case_0)->v0;
 $l1 = ($__case_0)->v1;
 $r = ($__case_1)->v0;
 $r1 = ($__case_1)->v1;
-return ($__global_Data_HeytingAlgebra_boolConj)(($__global_Data_Interval_eq)($l, $r), ($eq1)($l1, $r1));
+return ($__global_Data_Interval_conj)(($__global_Data_Interval_eq)($l, $r), ($eq1)($l1, $r1));
 } else {
 throw new \Exception("Pattern match failure");
 };
   };
-  $__fn = function($x, $y = null) use ($__global_Data_HeytingAlgebra_boolConj, $__global_Data_Interval_eq, $eq1, $__body, &$__fn) {
+  $__fn = function($x, $y = null) use ($__global_Data_Interval_conj, $__global_Data_Interval_eq, $eq1, $__body, &$__fn) {
   $__num = func_num_args();
   if ($__num < 2) {
     if ($__num === 1) return function($y) use ($x, &$__fn) { return $__fn($x, $y); };
@@ -1532,17 +2444,111 @@ function Data_Interval_ordInterval($dictOrd) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Interval_eqInterval = ($GLOBALS['Data_Interval_eqInterval'] ?? \Data\Interval\phpurs_eval_thunk('Data_Interval_eqInterval'));
+$__global_Data_Interval_conj = ($GLOBALS['Data_Interval_conj'] ?? \Data\Interval\phpurs_eval_thunk('Data_Interval_conj'));
 $__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$compare1 = ($dictOrd)->compare;
-$eqInterval1 = ($__global_Data_Interval_eqInterval)((($dictOrd)->Eq0)($__global_Prim_undefined));
+$__case_0 = $dictOrd;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare1 = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq1 = $__case_res_1;
+$eqInterval1 = (function() use ($__global_Data_Interval_conj, $eq1) {
+  $__fn = function($dictEq1) use ($__global_Data_Interval_conj, $eq1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dictEq1;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq2 = $__case_res_2;
+    $__res = (object)["eq" => (function() use ($__global_Data_Interval_conj, $eq2, $eq1) {
+  $__body = function($x, $y) use ($__global_Data_Interval_conj, $eq2, $eq1) {
+    $__case_0 = $x;
+    $__case_1 = $y;
+    if (((($__case_0)->tag === "StartEnd") && (($__case_1)->tag === "StartEnd"))) {
+$l = ($__case_0)->v0;
+$l1 = ($__case_0)->v1;
+$r = ($__case_1)->v0;
+$r1 = ($__case_1)->v1;
+return ($__global_Data_Interval_conj)(($eq2)($l, $r), ($eq2)($l1, $r1));
+} else {
+if (((($__case_0)->tag === "DurationEnd") && (($__case_1)->tag === "DurationEnd"))) {
+$l = ($__case_0)->v0;
+$l1 = ($__case_0)->v1;
+$r = ($__case_1)->v0;
+$r1 = ($__case_1)->v1;
+return ($__global_Data_Interval_conj)(($eq1)($l, $r), ($eq2)($l1, $r1));
+} else {
+if (((($__case_0)->tag === "StartDuration") && (($__case_1)->tag === "StartDuration"))) {
+$l = ($__case_0)->v0;
+$l1 = ($__case_0)->v1;
+$r = ($__case_1)->v0;
+$r1 = ($__case_1)->v1;
+return ($__global_Data_Interval_conj)(($eq2)($l, $r), ($eq1)($l1, $r1));
+} else {
+if (((($__case_0)->tag === "DurationOnly") && (($__case_1)->tag === "DurationOnly"))) {
+$l = ($__case_0)->v0;
+$r = ($__case_1)->v0;
+return ($eq1)($l, $r);
+} else {
+if (true) {
+return false;
+} else {
+throw new \Exception("Pattern match failure");
+};
+};
+};
+};
+};
+  };
+  $__fn = function($x, $y = null) use ($__global_Data_Interval_conj, $eq2, $eq1, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($y) use ($x, &$__fn) { return $__fn($x, $y); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($x, $y);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
     $__res = (function() use ($eqInterval1, $__global_Prim_undefined, $compare1) {
   $__fn = function($dictOrd1) use ($eqInterval1, $__global_Prim_undefined, $compare1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$compare2 = ($dictOrd1)->compare;
+$__case_0 = $dictOrd1;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare2 = $__case_res_3;
 $eqInterval2 = ($eqInterval1)((($dictOrd1)->Eq0)($__global_Prim_undefined));
     $__res = (object)["compare" => (function() use ($compare2, $compare1) {
   $__body = function($x, $y) use ($compare2, $compare1) {
@@ -1676,19 +2682,373 @@ function Data_Interval_ordRecurringInterval($dictOrd) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Interval_ordInterval = ($GLOBALS['Data_Interval_ordInterval'] ?? \Data\Interval\phpurs_eval_thunk('Data_Interval_ordInterval'));
-$__global_Data_Interval_eqRecurringInterval = ($GLOBALS['Data_Interval_eqRecurringInterval'] ?? \Data\Interval\phpurs_eval_thunk('Data_Interval_eqRecurringInterval'));
+$__global_Data_Interval_conj = ($GLOBALS['Data_Interval_conj'] ?? \Data\Interval\phpurs_eval_thunk('Data_Interval_conj'));
 $__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
+$__global_Data_Interval_eq = ($GLOBALS['Data_Interval_eq'] ?? \Data\Interval\phpurs_eval_thunk('Data_Interval_eq'));
 $__global_Data_Interval_compare = ($GLOBALS['Data_Interval_compare'] ?? \Data\Interval\phpurs_eval_thunk('Data_Interval_compare'));
-$ordInterval1 = ($__global_Data_Interval_ordInterval)($dictOrd);
-$eqRecurringInterval1 = ($__global_Data_Interval_eqRecurringInterval)((($dictOrd)->Eq0)($__global_Prim_undefined));
-    $__res = (function() use ($ordInterval1, $eqRecurringInterval1, $__global_Prim_undefined, $__global_Data_Interval_compare) {
-  $__fn = function($dictOrd1) use ($ordInterval1, $eqRecurringInterval1, $__global_Prim_undefined, $__global_Data_Interval_compare, &$__fn) {
+$__case_0 = $dictOrd;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare1 = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq1 = $__case_res_1;
+$eqInterval1 = (function() use ($__global_Data_Interval_conj, $eq1) {
+  $__fn = function($dictEq1) use ($__global_Data_Interval_conj, $eq1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$compare1 = (($ordInterval1)($dictOrd1))->compare;
+$__case_0 = $dictEq1;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq2 = $__case_res_2;
+    $__res = (object)["eq" => (function() use ($__global_Data_Interval_conj, $eq2, $eq1) {
+  $__body = function($x, $y) use ($__global_Data_Interval_conj, $eq2, $eq1) {
+    $__case_0 = $x;
+    $__case_1 = $y;
+    if (((($__case_0)->tag === "StartEnd") && (($__case_1)->tag === "StartEnd"))) {
+$l = ($__case_0)->v0;
+$l1 = ($__case_0)->v1;
+$r = ($__case_1)->v0;
+$r1 = ($__case_1)->v1;
+return ($__global_Data_Interval_conj)(($eq2)($l, $r), ($eq2)($l1, $r1));
+} else {
+if (((($__case_0)->tag === "DurationEnd") && (($__case_1)->tag === "DurationEnd"))) {
+$l = ($__case_0)->v0;
+$l1 = ($__case_0)->v1;
+$r = ($__case_1)->v0;
+$r1 = ($__case_1)->v1;
+return ($__global_Data_Interval_conj)(($eq1)($l, $r), ($eq2)($l1, $r1));
+} else {
+if (((($__case_0)->tag === "StartDuration") && (($__case_1)->tag === "StartDuration"))) {
+$l = ($__case_0)->v0;
+$l1 = ($__case_0)->v1;
+$r = ($__case_1)->v0;
+$r1 = ($__case_1)->v1;
+return ($__global_Data_Interval_conj)(($eq2)($l, $r), ($eq1)($l1, $r1));
+} else {
+if (((($__case_0)->tag === "DurationOnly") && (($__case_1)->tag === "DurationOnly"))) {
+$l = ($__case_0)->v0;
+$r = ($__case_1)->v0;
+return ($eq1)($l, $r);
+} else {
+if (true) {
+return false;
+} else {
+throw new \Exception("Pattern match failure");
+};
+};
+};
+};
+};
+  };
+  $__fn = function($x, $y = null) use ($__global_Data_Interval_conj, $eq2, $eq1, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($y) use ($x, &$__fn) { return $__fn($x, $y); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($x, $y);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+$ordInterval1 = (function() use ($eqInterval1, $__global_Prim_undefined, $compare1) {
+  $__fn = function($dictOrd1) use ($eqInterval1, $__global_Prim_undefined, $compare1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dictOrd1;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare2 = $__case_res_3;
+$eqInterval2 = ($eqInterval1)((($dictOrd1)->Eq0)($__global_Prim_undefined));
+    $__res = (object)["compare" => (function() use ($compare2, $compare1) {
+  $__body = function($x, $y) use ($compare2, $compare1) {
+    $__case_0 = $x;
+    $__case_1 = $y;
+    if (((($__case_0)->tag === "StartEnd") && (($__case_1)->tag === "StartEnd"))) {
+$l = ($__case_0)->v0;
+$l1 = ($__case_0)->v1;
+$r = ($__case_1)->v0;
+$r1 = ($__case_1)->v1;
+$v = ($compare2)($l, $r);
+$__case_0 = $v;
+switch (($__case_0)->tag) {
+case "LT":
+return ($GLOBALS['__phpurs_data0_LT'] ??= new Phpurs_Data0("LT"));
+break;
+case "GT":
+return ($GLOBALS['__phpurs_data0_GT'] ??= new Phpurs_Data0("GT"));
+break;
+default:
+return ($compare2)($l1, $r1);
+break;
+};
+} else {
+if ((($__case_0)->tag === "StartEnd")) {
+return ($GLOBALS['__phpurs_data0_LT'] ??= new Phpurs_Data0("LT"));
+} else {
+if ((($__case_1)->tag === "StartEnd")) {
+return ($GLOBALS['__phpurs_data0_GT'] ??= new Phpurs_Data0("GT"));
+} else {
+if (((($__case_0)->tag === "DurationEnd") && (($__case_1)->tag === "DurationEnd"))) {
+$l = ($__case_0)->v0;
+$l1 = ($__case_0)->v1;
+$r = ($__case_1)->v0;
+$r1 = ($__case_1)->v1;
+$v = ($compare1)($l, $r);
+$__case_0 = $v;
+switch (($__case_0)->tag) {
+case "LT":
+return ($GLOBALS['__phpurs_data0_LT'] ??= new Phpurs_Data0("LT"));
+break;
+case "GT":
+return ($GLOBALS['__phpurs_data0_GT'] ??= new Phpurs_Data0("GT"));
+break;
+default:
+return ($compare2)($l1, $r1);
+break;
+};
+} else {
+if ((($__case_0)->tag === "DurationEnd")) {
+return ($GLOBALS['__phpurs_data0_LT'] ??= new Phpurs_Data0("LT"));
+} else {
+if ((($__case_1)->tag === "DurationEnd")) {
+return ($GLOBALS['__phpurs_data0_GT'] ??= new Phpurs_Data0("GT"));
+} else {
+if (((($__case_0)->tag === "StartDuration") && (($__case_1)->tag === "StartDuration"))) {
+$l = ($__case_0)->v0;
+$l1 = ($__case_0)->v1;
+$r = ($__case_1)->v0;
+$r1 = ($__case_1)->v1;
+$v = ($compare2)($l, $r);
+$__case_0 = $v;
+switch (($__case_0)->tag) {
+case "LT":
+return ($GLOBALS['__phpurs_data0_LT'] ??= new Phpurs_Data0("LT"));
+break;
+case "GT":
+return ($GLOBALS['__phpurs_data0_GT'] ??= new Phpurs_Data0("GT"));
+break;
+default:
+return ($compare1)($l1, $r1);
+break;
+};
+} else {
+if ((($__case_0)->tag === "StartDuration")) {
+return ($GLOBALS['__phpurs_data0_LT'] ??= new Phpurs_Data0("LT"));
+} else {
+if ((($__case_1)->tag === "StartDuration")) {
+return ($GLOBALS['__phpurs_data0_GT'] ??= new Phpurs_Data0("GT"));
+} else {
+if (((($__case_0)->tag === "DurationOnly") && (($__case_1)->tag === "DurationOnly"))) {
+$l = ($__case_0)->v0;
+$r = ($__case_1)->v0;
+return ($compare1)($l, $r);
+} else {
+throw new \Exception("Pattern match failure");
+};
+};
+};
+};
+};
+};
+};
+};
+};
+};
+  };
+  $__fn = function($x, $y = null) use ($compare2, $compare1, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($y) use ($x, &$__fn) { return $__fn($x, $y); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($x, $y);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "Eq0" => (function() use ($eqInterval2) {
+  $__fn = function($__dollar____unused) use ($eqInterval2, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $eqInterval2;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+$__case_0 = $dict;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq1 = $__case_res_4;
+$eqInterval1 = (function() use ($__global_Data_Interval_conj, $eq1) {
+  $__fn = function($dictEq1) use ($__global_Data_Interval_conj, $eq1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dictEq1;
+$__case_res_5 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_5 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq2 = $__case_res_5;
+    $__res = (object)["eq" => (function() use ($__global_Data_Interval_conj, $eq2, $eq1) {
+  $__body = function($x, $y) use ($__global_Data_Interval_conj, $eq2, $eq1) {
+    $__case_0 = $x;
+    $__case_1 = $y;
+    if (((($__case_0)->tag === "StartEnd") && (($__case_1)->tag === "StartEnd"))) {
+$l = ($__case_0)->v0;
+$l1 = ($__case_0)->v1;
+$r = ($__case_1)->v0;
+$r1 = ($__case_1)->v1;
+return ($__global_Data_Interval_conj)(($eq2)($l, $r), ($eq2)($l1, $r1));
+} else {
+if (((($__case_0)->tag === "DurationEnd") && (($__case_1)->tag === "DurationEnd"))) {
+$l = ($__case_0)->v0;
+$l1 = ($__case_0)->v1;
+$r = ($__case_1)->v0;
+$r1 = ($__case_1)->v1;
+return ($__global_Data_Interval_conj)(($eq1)($l, $r), ($eq2)($l1, $r1));
+} else {
+if (((($__case_0)->tag === "StartDuration") && (($__case_1)->tag === "StartDuration"))) {
+$l = ($__case_0)->v0;
+$l1 = ($__case_0)->v1;
+$r = ($__case_1)->v0;
+$r1 = ($__case_1)->v1;
+return ($__global_Data_Interval_conj)(($eq2)($l, $r), ($eq1)($l1, $r1));
+} else {
+if (((($__case_0)->tag === "DurationOnly") && (($__case_1)->tag === "DurationOnly"))) {
+$l = ($__case_0)->v0;
+$r = ($__case_1)->v0;
+return ($eq1)($l, $r);
+} else {
+if (true) {
+return false;
+} else {
+throw new \Exception("Pattern match failure");
+};
+};
+};
+};
+};
+  };
+  $__fn = function($x, $y = null) use ($__global_Data_Interval_conj, $eq2, $eq1, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($y) use ($x, &$__fn) { return $__fn($x, $y); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($x, $y);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+$eqRecurringInterval1 = (function() use ($dict, $__global_Data_Interval_conj, $__global_Data_Interval_eq) {
+  $__fn = function($dictEq1) use ($dict, $__global_Data_Interval_conj, $__global_Data_Interval_eq, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dict;
+$__case_res_6 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_6 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq1 = $__case_res_6;
+    $__res = (object)["eq" => (function() use ($__global_Data_Interval_conj, $__global_Data_Interval_eq, $eq1) {
+  $__body = function($x, $y) use ($__global_Data_Interval_conj, $__global_Data_Interval_eq, $eq1) {
+    $__case_0 = $x;
+    $__case_1 = $y;
+    if (((($__case_0)->tag === "RecurringInterval") && (($__case_1)->tag === "RecurringInterval"))) {
+$l = ($__case_0)->v0;
+$l1 = ($__case_0)->v1;
+$r = ($__case_1)->v0;
+$r1 = ($__case_1)->v1;
+return ($__global_Data_Interval_conj)(($__global_Data_Interval_eq)($l, $r), ($eq1)($l1, $r1));
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($x, $y = null) use ($__global_Data_Interval_conj, $__global_Data_Interval_eq, $eq1, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($y) use ($x, &$__fn) { return $__fn($x, $y); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($x, $y);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+    $__res = (function() use ($dict, $eqRecurringInterval1, $__global_Prim_undefined, $__global_Data_Interval_compare) {
+  $__fn = function($dictOrd1) use ($dict, $eqRecurringInterval1, $__global_Prim_undefined, $__global_Data_Interval_compare, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dict;
+$__case_res_7 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_7 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare1 = $__case_res_7;
 $eqRecurringInterval2 = ($eqRecurringInterval1)((($dictOrd1)->Eq0)($__global_Prim_undefined));
     $__res = (object)["compare" => (function() use ($__global_Data_Interval_compare, $compare1) {
   $__body = function($x, $y) use ($__global_Data_Interval_compare, $compare1) {

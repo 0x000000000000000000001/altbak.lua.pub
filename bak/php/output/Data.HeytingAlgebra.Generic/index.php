@@ -182,14 +182,30 @@ function Data_HeytingAlgebra_Generic_genericTT($dictGeneric) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$to = ($dictGeneric)->to;
+$__case_0 = $dictGeneric;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->to;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$to = $__case_res_0;
     $__res = (function() use ($to) {
   $__fn = function($dictGenericHeytingAlgebra) use ($to, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($to)(($dictGenericHeytingAlgebra)->genericTT__prime__);
+$__case_0 = $dictGenericHeytingAlgebra;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->genericTT__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($to)($__case_res_1);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -226,15 +242,39 @@ function Data_HeytingAlgebra_Generic_genericNot($dictGeneric) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$to = ($dictGeneric)->to;
-$from = ($dictGeneric)->from;
+$__case_0 = $dictGeneric;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->to;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$to = $__case_res_0;
+$__case_0 = $dictGeneric;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->from;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$from = $__case_res_1;
     $__res = (function() use ($to, $from) {
   $__fn = function($dictGenericHeytingAlgebra) use ($to, $from, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$genericNot__prime__1 = ($dictGenericHeytingAlgebra)->genericNot__prime__;
+$__case_0 = $dictGenericHeytingAlgebra;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->genericNot__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericNot__prime__1 = $__case_res_2;
     $__res = (function() use ($to, $genericNot__prime__1, $from) {
   $__fn = function($x) use ($to, $genericNot__prime__1, $from, &$__fn) {
   $__num = func_num_args();
@@ -282,15 +322,39 @@ function Data_HeytingAlgebra_Generic_genericImplies($dictGeneric) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$to = ($dictGeneric)->to;
-$from = ($dictGeneric)->from;
+$__case_0 = $dictGeneric;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->to;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$to = $__case_res_0;
+$__case_0 = $dictGeneric;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->from;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$from = $__case_res_1;
     $__res = (function() use ($to, $from) {
   $__fn = function($dictGenericHeytingAlgebra) use ($to, $from, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$genericImplies__prime__1 = ($dictGenericHeytingAlgebra)->genericImplies__prime__;
+$__case_0 = $dictGenericHeytingAlgebra;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->genericImplies__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericImplies__prime__1 = $__case_res_2;
     $__res = (function() use ($to, $genericImplies__prime__1, $from) {
   $__fn = function($x, $y = null) use ($to, $genericImplies__prime__1, $from, &$__fn) {
   $__num = func_num_args();
@@ -319,11 +383,59 @@ function Data_HeytingAlgebra_Generic_genericHeytingAlgebraArgument($dictHeytingA
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$implies = ($dictHeytingAlgebra)->implies;
-$conj = ($dictHeytingAlgebra)->conj;
-$disj = ($dictHeytingAlgebra)->disj;
-$not = ($dictHeytingAlgebra)->not;
-    $__res = (object)["genericFF'" => ($dictHeytingAlgebra)->ff, "genericTT'" => ($dictHeytingAlgebra)->tt, "genericImplies'" => (function() use ($implies) {
+$__case_0 = $dictHeytingAlgebra;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->implies;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$implies = $__case_res_0;
+$__case_0 = $dictHeytingAlgebra;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->conj;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$conj = $__case_res_1;
+$__case_0 = $dictHeytingAlgebra;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->disj;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$disj = $__case_res_2;
+$__case_0 = $dictHeytingAlgebra;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->not;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$not = $__case_res_3;
+$__case_0 = $dictHeytingAlgebra;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->ff;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$__case_0 = $dictHeytingAlgebra;
+$__case_res_5 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_5 = ($v)->tt;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = (object)["genericFF'" => $__case_res_4, "genericTT'" => $__case_res_5, "genericImplies'" => (function() use ($implies) {
   $__body = function($v, $v1) use ($implies) {
     $__case_0 = $v;
     $__case_1 = $v1;
@@ -441,14 +553,30 @@ function Data_HeytingAlgebra_Generic_genericFF($dictGeneric) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$to = ($dictGeneric)->to;
+$__case_0 = $dictGeneric;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->to;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$to = $__case_res_0;
     $__res = (function() use ($to) {
   $__fn = function($dictGenericHeytingAlgebra) use ($to, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($to)(($dictGenericHeytingAlgebra)->genericFF__prime__);
+$__case_0 = $dictGenericHeytingAlgebra;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->genericFF__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($to)($__case_res_1);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -485,15 +613,39 @@ function Data_HeytingAlgebra_Generic_genericDisj($dictGeneric) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$to = ($dictGeneric)->to;
-$from = ($dictGeneric)->from;
+$__case_0 = $dictGeneric;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->to;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$to = $__case_res_0;
+$__case_0 = $dictGeneric;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->from;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$from = $__case_res_1;
     $__res = (function() use ($to, $from) {
   $__fn = function($dictGenericHeytingAlgebra) use ($to, $from, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$genericDisj__prime__1 = ($dictGenericHeytingAlgebra)->genericDisj__prime__;
+$__case_0 = $dictGenericHeytingAlgebra;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->genericDisj__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericDisj__prime__1 = $__case_res_2;
     $__res = (function() use ($to, $genericDisj__prime__1, $from) {
   $__fn = function($x, $y = null) use ($to, $genericDisj__prime__1, $from, &$__fn) {
   $__num = func_num_args();
@@ -542,11 +694,59 @@ function Data_HeytingAlgebra_Generic_genericHeytingAlgebraConstructor($dictGener
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$genericImplies__prime__1 = ($dictGenericHeytingAlgebra)->genericImplies__prime__;
-$genericConj__prime__1 = ($dictGenericHeytingAlgebra)->genericConj__prime__;
-$genericDisj__prime__1 = ($dictGenericHeytingAlgebra)->genericDisj__prime__;
-$genericNot__prime__1 = ($dictGenericHeytingAlgebra)->genericNot__prime__;
-    $__res = (object)["genericFF'" => ($dictGenericHeytingAlgebra)->genericFF__prime__, "genericTT'" => ($dictGenericHeytingAlgebra)->genericTT__prime__, "genericImplies'" => (function() use ($genericImplies__prime__1) {
+$__case_0 = $dictGenericHeytingAlgebra;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->genericImplies__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericImplies__prime__1 = $__case_res_0;
+$__case_0 = $dictGenericHeytingAlgebra;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->genericConj__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericConj__prime__1 = $__case_res_1;
+$__case_0 = $dictGenericHeytingAlgebra;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->genericDisj__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericDisj__prime__1 = $__case_res_2;
+$__case_0 = $dictGenericHeytingAlgebra;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->genericNot__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericNot__prime__1 = $__case_res_3;
+$__case_0 = $dictGenericHeytingAlgebra;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->genericFF__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$__case_0 = $dictGenericHeytingAlgebra;
+$__case_res_5 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_5 = ($v)->genericTT__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = (object)["genericFF'" => $__case_res_4, "genericTT'" => $__case_res_5, "genericImplies'" => (function() use ($genericImplies__prime__1) {
   $__body = function($v, $v1) use ($genericImplies__prime__1) {
     $__case_0 = $v;
     $__case_1 = $v1;
@@ -643,22 +843,118 @@ function Data_HeytingAlgebra_Generic_genericHeytingAlgebraProduct($dictGenericHe
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$genericFF__prime__1 = ($dictGenericHeytingAlgebra)->genericFF__prime__;
-$genericTT__prime__1 = ($dictGenericHeytingAlgebra)->genericTT__prime__;
-$genericImplies__prime__1 = ($dictGenericHeytingAlgebra)->genericImplies__prime__;
-$genericConj__prime__1 = ($dictGenericHeytingAlgebra)->genericConj__prime__;
-$genericDisj__prime__1 = ($dictGenericHeytingAlgebra)->genericDisj__prime__;
-$genericNot__prime__1 = ($dictGenericHeytingAlgebra)->genericNot__prime__;
+$__case_0 = $dictGenericHeytingAlgebra;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->genericFF__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericFF__prime__1 = $__case_res_0;
+$__case_0 = $dictGenericHeytingAlgebra;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->genericTT__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericTT__prime__1 = $__case_res_1;
+$__case_0 = $dictGenericHeytingAlgebra;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->genericImplies__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericImplies__prime__1 = $__case_res_2;
+$__case_0 = $dictGenericHeytingAlgebra;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->genericConj__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericConj__prime__1 = $__case_res_3;
+$__case_0 = $dictGenericHeytingAlgebra;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->genericDisj__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericDisj__prime__1 = $__case_res_4;
+$__case_0 = $dictGenericHeytingAlgebra;
+$__case_res_5 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_5 = ($v)->genericNot__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericNot__prime__1 = $__case_res_5;
     $__res = (function() use ($genericFF__prime__1, $genericTT__prime__1, $genericImplies__prime__1, $genericConj__prime__1, $genericDisj__prime__1, $genericNot__prime__1) {
   $__fn = function($dictGenericHeytingAlgebra1) use ($genericFF__prime__1, $genericTT__prime__1, $genericImplies__prime__1, $genericConj__prime__1, $genericDisj__prime__1, $genericNot__prime__1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$genericImplies__prime__2 = ($dictGenericHeytingAlgebra1)->genericImplies__prime__;
-$genericConj__prime__2 = ($dictGenericHeytingAlgebra1)->genericConj__prime__;
-$genericDisj__prime__2 = ($dictGenericHeytingAlgebra1)->genericDisj__prime__;
-$genericNot__prime__2 = ($dictGenericHeytingAlgebra1)->genericNot__prime__;
+$__case_0 = $dictGenericHeytingAlgebra1;
+$__case_res_6 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_6 = ($v)->genericImplies__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericImplies__prime__2 = $__case_res_6;
+$__case_0 = $dictGenericHeytingAlgebra1;
+$__case_res_7 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_7 = ($v)->genericConj__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericConj__prime__2 = $__case_res_7;
+$__case_0 = $dictGenericHeytingAlgebra1;
+$__case_res_8 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_8 = ($v)->genericDisj__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericDisj__prime__2 = $__case_res_8;
+$__case_0 = $dictGenericHeytingAlgebra1;
+$__case_res_9 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_9 = ($v)->genericNot__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericNot__prime__2 = $__case_res_9;
+$__case_0 = $dictGenericHeytingAlgebra1;
+$__case_res_10 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_10 = ($v)->genericFF__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$__case_0 = $dictGenericHeytingAlgebra1;
+$__case_res_11 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_11 = ($v)->genericTT__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
     $__res = (object)["genericFF'" => ((function() {
   $__fn = function($value0, $value1 = null) use (&$__fn) {
   $__num = func_num_args();
@@ -670,7 +966,7 @@ $genericNot__prime__2 = ($dictGenericHeytingAlgebra1)->genericNot__prime__;
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
-})())($genericFF__prime__1, ($dictGenericHeytingAlgebra1)->genericFF__prime__), "genericTT'" => ((function() {
+})())($genericFF__prime__1, $__case_res_10), "genericTT'" => ((function() {
   $__fn = function($value0, $value1 = null) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 2) {
@@ -681,7 +977,7 @@ $genericNot__prime__2 = ($dictGenericHeytingAlgebra1)->genericNot__prime__;
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
-})())($genericTT__prime__1, ($dictGenericHeytingAlgebra1)->genericTT__prime__), "genericImplies'" => (function() use ($genericImplies__prime__1, $genericImplies__prime__2) {
+})())($genericTT__prime__1, $__case_res_11), "genericImplies'" => (function() use ($genericImplies__prime__1, $genericImplies__prime__2) {
   $__body = function($v, $v1) use ($genericImplies__prime__1, $genericImplies__prime__2) {
     $__case_0 = $v;
     $__case_1 = $v1;
@@ -836,15 +1132,39 @@ function Data_HeytingAlgebra_Generic_genericConj($dictGeneric) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$to = ($dictGeneric)->to;
-$from = ($dictGeneric)->from;
+$__case_0 = $dictGeneric;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->to;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$to = $__case_res_0;
+$__case_0 = $dictGeneric;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->from;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$from = $__case_res_1;
     $__res = (function() use ($to, $from) {
   $__fn = function($dictGenericHeytingAlgebra) use ($to, $from, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$genericConj__prime__1 = ($dictGenericHeytingAlgebra)->genericConj__prime__;
+$__case_0 = $dictGenericHeytingAlgebra;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->genericConj__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericConj__prime__1 = $__case_res_2;
     $__res = (function() use ($to, $genericConj__prime__1, $from) {
   $__fn = function($x, $y = null) use ($to, $genericConj__prime__1, $from, &$__fn) {
   $__num = func_num_args();

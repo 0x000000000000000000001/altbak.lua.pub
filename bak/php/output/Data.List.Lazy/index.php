@@ -116,34 +116,513 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Data_List_Lazy_apply': $v = (($GLOBALS['Data_Lazy_applyLazy'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_applyLazy')))->apply; break;
-      case 'Data_List_Lazy_map': $v = (($GLOBALS['Data_Lazy_functorLazy'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_functorLazy')))->map; break;
+      case 'Data_List_Lazy_apply': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Lazy_applyLazy'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_applyLazy'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_List_Lazy_map': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Lazy_functorLazy'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_functorLazy'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_List_Lazy_unwrap': $v = (($GLOBALS['Data_Newtype_unwrap'] ?? \Data\Newtype\phpurs_eval_thunk('Data_Newtype_unwrap')))(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))); break;
-      case 'Data_List_Lazy_sequence': $v = (($GLOBALS['Data_List_Lazy_Types_traversableList'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_traversableList')))->sequence; break;
-      case 'Data_List_Lazy_sub': $v = ($GLOBALS['Data_Ring_intSub'] ?? \Data\Ring\phpurs_eval_thunk('Data_Ring_intSub')); break;
-      case 'Data_List_Lazy_foldr': $v = (($GLOBALS['Data_List_Lazy_Types_foldableList'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_foldableList')))->foldr; break;
-      case 'Data_List_Lazy_map1': $v = (($GLOBALS['Data_Maybe_functorMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_functorMaybe')))->map; break;
-      case 'Data_List_Lazy_compose': $v = (($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn')))->compose; break;
-      case 'Data_List_Lazy_lessThanOrEq': $v = (($GLOBALS['Data_Ord_lessThanOrEq'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_lessThanOrEq')))(($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'))); break;
-      case 'Data_List_Lazy_tailRecM2': $v = (($GLOBALS['Control_Monad_Rec_Class_tailRecM2'] ?? \Control\Monad\Rec\Class\phpurs_eval_thunk('Control_Monad_Rec_Class_tailRecM2')))(($GLOBALS['Control_Monad_Rec_Class_monadRecMaybe'] ?? \Control\Monad\Rec\Class\phpurs_eval_thunk('Control_Monad_Rec_Class_monadRecMaybe'))); break;
-      case 'Data_List_Lazy_append': $v = ($GLOBALS['Data_Semigroup_concatString'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_concatString')); break;
-      case 'Data_List_Lazy_defer': $v = (($GLOBALS['Data_List_Lazy_Types_lazyList'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_lazyList')))->defer; break;
-      case 'Data_List_Lazy_foldl': $v = (($GLOBALS['Data_List_Lazy_Types_foldableList'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_foldableList')))->foldl; break;
-      case 'Data_List_Lazy_lessThan': $v = (($GLOBALS['Data_Ord_lessThan'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_lessThan')))(($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'))); break;
-      case 'Data_List_Lazy_one': $v = 1; break;
-      case 'Data_List_Lazy_fix': $v = (($GLOBALS['Control_Lazy_fix'] ?? \Control\Lazy\phpurs_eval_thunk('Control_Lazy_fix')))(($GLOBALS['Data_List_Lazy_Types_lazyList'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_lazyList'))); break;
-      case 'Data_List_Lazy_greaterThan': $v = (($GLOBALS['Data_Ord_greaterThan'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_greaterThan')))(($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'))); break;
-      case 'Data_List_Lazy_greaterThanOrEq': $v = (($GLOBALS['Data_Ord_greaterThanOrEq'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_greaterThanOrEq')))(($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'))); break;
-      case 'Data_List_Lazy_unfoldr': $v = (($GLOBALS['Data_List_Lazy_Types_unfoldableList'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_unfoldableList')))->unfoldr; break;
-      case 'Data_List_Lazy_add': $v = ($GLOBALS['Data_Semiring_intAdd'] ?? \Data\Semiring\phpurs_eval_thunk('Data_Semiring_intAdd')); break;
-      case 'Data_List_Lazy_map2': $v = (($GLOBALS['Data_List_Lazy_Types_functorList'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_functorList')))->map; break;
-      case 'Data_List_Lazy_bind': $v = (($GLOBALS['Data_Maybe_bindMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_bindMaybe')))->bind; break;
-      case 'Data_List_Lazy_pure': $v = ($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')); break;
-      case 'Data_List_Lazy_any': $v = (($GLOBALS['Data_Foldable_any'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_any')))(($GLOBALS['Data_List_Lazy_Types_foldableList'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_foldableList')), ($GLOBALS['Data_HeytingAlgebra_heytingAlgebraBoolean'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_heytingAlgebraBoolean'))); break;
-      case 'Data_List_Lazy_not': $v = ($GLOBALS['Data_HeytingAlgebra_boolNot'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_boolNot')); break;
-      case 'Data_List_Lazy_append1': $v = (($GLOBALS['Data_List_Lazy_Types_semigroupList'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_semigroupList')))->append; break;
-      case 'Data_List_Lazy_bind1': $v = (($GLOBALS['Data_List_Lazy_Types_bindList'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_bindList')))->bind; break;
-      case 'Data_List_Lazy_identity': $v = (($GLOBALS['Control_Category_categoryFn'] ?? \Control\Category\phpurs_eval_thunk('Control_Category_categoryFn')))->identity; break;
+      case 'Data_List_Lazy_sequence': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_List_Lazy_Types_traversableList'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_traversableList'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->sequence;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_List_Lazy_sub': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Ring_ringInt'] ?? \Data\Ring\phpurs_eval_thunk('Data_Ring_ringInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->sub;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_List_Lazy_foldr': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_List_Lazy_Types_foldableList'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_foldableList'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_List_Lazy_map1': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Maybe_functorMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_functorMaybe'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_List_Lazy_compose': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compose;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_List_Lazy_lessThanOrEq': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $compare3 = $__case_res_0;
+  return (function() use ($compare3) {
+  $__body = function($a1, $a2) use ($compare3) {
+    $v = ($compare3)($a1, $a2);
+    $__case_0 = $v;
+    switch (($__case_0)->tag) {
+case "GT":
+return false;
+break;
+default:
+return true;
+break;
+};
+  };
+  $__fn = function($a1, $a2 = null) use ($compare3, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($a2) use ($a1, &$__fn) { return $__fn($a1, $a2); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($a1, $a2);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+})(); break;
+      case 'Data_List_Lazy_tailRecM2': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Monad_Rec_Class_monadRecMaybe'] ?? \Control\Monad\Rec\Class\phpurs_eval_thunk('Control_Monad_Rec_Class_monadRecMaybe'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->tailRecM;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $tailRecM1 = $__case_res_0;
+  return (function() use ($tailRecM1) {
+  $__fn = function($f, $a = null, $b = null) use ($tailRecM1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($b) use ($f, $a, &$__fn) { return $__fn($f, $a, $b); };
+    if ($__num === 1) return function($a, $b = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $a, $b);
+      if ($__num2 === 1) return function($b) use ($f, $a, &$__fn) { return $__fn($f, $a, $b); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = ($tailRecM1)((function() use ($f) {
+  $__fn = function($o) use ($f, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($f)(($o)->a, ($o)->b);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})(), (object)["a" => $a, "b" => $b]);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})();
+})(); break;
+      case 'Data_List_Lazy_append': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Semigroup_semigroupString'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_semigroupString'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_List_Lazy_defer': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_List_Lazy_Types_lazyList'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_lazyList'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->defer;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_List_Lazy_foldl': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_List_Lazy_Types_foldableList'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_foldableList'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldl;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_List_Lazy_lessThan': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $compare3 = $__case_res_0;
+  return (function() use ($compare3) {
+  $__body = function($a1, $a2) use ($compare3) {
+    $v = ($compare3)($a1, $a2);
+    $__case_0 = $v;
+    switch (($__case_0)->tag) {
+case "LT":
+return true;
+break;
+default:
+return false;
+break;
+};
+  };
+  $__fn = function($a1, $a2 = null) use ($compare3, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($a2) use ($a1, &$__fn) { return $__fn($a1, $a2); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($a1, $a2);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+})(); break;
+      case 'Data_List_Lazy_one': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Semiring_semiringInt'] ?? \Data\Semiring\phpurs_eval_thunk('Data_Semiring_semiringInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->one;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_List_Lazy_fix': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_List_Lazy_Types_lazyList'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_lazyList'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->defer;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $defer1 = $__case_res_0;
+  return (function() use ($defer1) {
+  $__fn = function($f) use ($defer1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$go = ($defer1)((function() use ($f, &$go) {
+  $__fn = function($v) use ($f, &$go, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($f)($go);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})());
+    $__res = $go;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+})(); break;
+      case 'Data_List_Lazy_greaterThan': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $compare3 = $__case_res_0;
+  return (function() use ($compare3) {
+  $__body = function($a1, $a2) use ($compare3) {
+    $v = ($compare3)($a1, $a2);
+    $__case_0 = $v;
+    switch (($__case_0)->tag) {
+case "GT":
+return true;
+break;
+default:
+return false;
+break;
+};
+  };
+  $__fn = function($a1, $a2 = null) use ($compare3, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($a2) use ($a1, &$__fn) { return $__fn($a1, $a2); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($a1, $a2);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+})(); break;
+      case 'Data_List_Lazy_greaterThanOrEq': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $compare3 = $__case_res_0;
+  return (function() use ($compare3) {
+  $__body = function($a1, $a2) use ($compare3) {
+    $v = ($compare3)($a1, $a2);
+    $__case_0 = $v;
+    switch (($__case_0)->tag) {
+case "LT":
+return false;
+break;
+default:
+return true;
+break;
+};
+  };
+  $__fn = function($a1, $a2 = null) use ($compare3, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($a2) use ($a1, &$__fn) { return $__fn($a1, $a2); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($a1, $a2);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+})(); break;
+      case 'Data_List_Lazy_unfoldr': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_List_Lazy_Types_unfoldableList'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_unfoldableList'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->unfoldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_List_Lazy_add': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Semiring_semiringInt'] ?? \Data\Semiring\phpurs_eval_thunk('Data_Semiring_semiringInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->add;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_List_Lazy_map2': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_List_Lazy_Types_functorList'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_functorList'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_List_Lazy_bind': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Maybe_bindMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_bindMaybe'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bind;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_List_Lazy_pure': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Maybe_applicativeMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_applicativeMaybe'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_List_Lazy_any': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_List_Lazy_Types_foldableList'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_foldableList'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldMap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $foldMap2 = $__case_res_0;
+  return ((function() use ($foldMap2) {
+  $__fn = function($dictHeytingAlgebra) use ($foldMap2, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__global_Data_Foldable_alaF = ($GLOBALS['Data_Foldable_alaF'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_alaF'));
+$__global_Data_Monoid_Disj_Disj = ($GLOBALS['Data_Monoid_Disj_Disj'] ?? \Data\Monoid\Disj\phpurs_eval_thunk('Data_Monoid_Disj_Disj'));
+$__case_0 = $dictHeytingAlgebra;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->disj;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$disj = $__case_res_1;
+$semigroupDisj1 = (object)["append" => (function() use ($disj) {
+  $__body = function($v, $v1) use ($disj) {
+    $__case_0 = $v;
+    $__case_1 = $v1;
+    if (true) {
+$a = $__case_0;
+$b = $__case_1;
+return ($disj)($a, $b);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($v, $v1 = null) use ($disj, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($v, $v1);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+$__case_0 = $dictHeytingAlgebra;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->ff;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__global_Data_Foldable_alaF)($__global_Data_Monoid_Disj_Disj, ($foldMap2)((object)["mempty" => $__case_res_2, "Semigroup0" => (function() use ($semigroupDisj1) {
+  $__fn = function($__dollar____unused) use ($semigroupDisj1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $semigroupDisj1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()]));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})())(($GLOBALS['Data_HeytingAlgebra_heytingAlgebraBoolean'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_heytingAlgebraBoolean')));
+})(); break;
+      case 'Data_List_Lazy_not': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_HeytingAlgebra_heytingAlgebraBoolean'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_heytingAlgebraBoolean'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->not;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_List_Lazy_append1': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_List_Lazy_Types_semigroupList'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_semigroupList'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_List_Lazy_bind1': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_List_Lazy_Types_bindList'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_bindList'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bind;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_List_Lazy_identity': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Category_categoryFn'] ?? \Control\Category\phpurs_eval_thunk('Control_Category_categoryFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->identity;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_List_Lazy_zip': $v = (($GLOBALS['Data_List_Lazy_zipWith'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_zipWith')))((function() {
   $__fn = function($value0, $value1 = null) use (&$__fn) {
   $__num = func_num_args();
@@ -246,12 +725,14 @@ $__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thun
     if ($__num === 1) return function($v) use ($l, &$__fn) { return $__fn($l, $v); };
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
-    $__res = ($l + 1);
+$__global_Data_List_Lazy_add = ($GLOBALS['Data_List_Lazy_add'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_add'));
+    $__res = ($__global_Data_List_Lazy_add)($l, 1);
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
 })(), 0); break;
-      case 'Data_List_Lazy_last': $v = ($go = (function() {
+      case 'Data_List_Lazy_last': $v = (function() {
+  $go = (function() {
   $__fn = function($v) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
@@ -275,8 +756,10 @@ break;
   };
   return $__fn;
 })();
-return (($GLOBALS['Data_List_Lazy_compose'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_compose')))($go, ($GLOBALS['Data_List_Lazy_Types_step'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_step')));)(); break;
-      case 'Data_List_Lazy_init': $v = ($go = (function() {
+  return (($GLOBALS['Data_List_Lazy_compose'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_compose')))($go, ($GLOBALS['Data_List_Lazy_Types_step'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_step')));
+})(); break;
+      case 'Data_List_Lazy_init': $v = (function() {
+  $go = (function() {
   $__fn = function($v) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
@@ -300,8 +783,19 @@ break;
   };
   return $__fn;
 })();
-return (($GLOBALS['Data_List_Lazy_compose'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_compose')))($go, ($GLOBALS['Data_List_Lazy_Types_step'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_step')));)(); break;
-      case 'Data_List_Lazy_fromStep': $v = (($GLOBALS['Data_List_Lazy_compose'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_compose')))(($GLOBALS['Data_List_Lazy_Types_List'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_List')), (($GLOBALS['Data_Lazy_applicativeLazy'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_applicativeLazy')))->pure); break;
+  return (($GLOBALS['Data_List_Lazy_compose'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_compose')))($go, ($GLOBALS['Data_List_Lazy_Types_step'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_step')));
+})(); break;
+      case 'Data_List_Lazy_fromStep': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Lazy_applicativeLazy'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_applicativeLazy'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return (($GLOBALS['Data_List_Lazy_compose'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_compose')))(($GLOBALS['Data_List_Lazy_Types_List'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_List')), $__case_res_0);
+})(); break;
       case 'Data_List_Lazy_concatMap': $v = (($GLOBALS['Data_Function_flip'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_flip')))(($GLOBALS['Data_List_Lazy_bind1'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_bind1'))); break;
       case 'Data_List_Lazy_catMaybes': $v = (($GLOBALS['Data_List_Lazy_mapMaybe'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_mapMaybe')))(($GLOBALS['Data_List_Lazy_identity'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_identity'))); break;
       default: throw new \Exception("Unknown thunk " . $id);
@@ -470,11 +964,12 @@ function Data_List_Lazy_updateAt($n, $x = null, $xs = null) {
     };
     return phpurs_curry_fallback($__fn, func_get_args(), 3);
   }
+$__global_Data_List_Lazy_sub = ($GLOBALS['Data_List_Lazy_sub'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_sub'));
 $__global_Data_List_Lazy_map = ($GLOBALS['Data_List_Lazy_map'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_map'));
 $__global_Data_List_Lazy_unwrap = ($GLOBALS['Data_List_Lazy_unwrap'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_unwrap'));
 while (true) {
-$go = (function() use ($x) {
-  $__body = function($v, $v1) use ($x) {
+$go = (function() use ($x, $__global_Data_List_Lazy_sub) {
+  $__body = function($v, $v1) use ($x, $__global_Data_List_Lazy_sub) {
     $__global_Data_List_Lazy_updateAt = ($GLOBALS['Data_List_Lazy_updateAt'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_updateAt'));
     $__case_0 = $v;
     $__case_1 = $v1;
@@ -512,7 +1007,7 @@ return ((function() {
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
-})())($y, ($__global_Data_List_Lazy_updateAt)(($n__prime__ - 1), $x, $ys));
+})())($y, ($__global_Data_List_Lazy_updateAt)(($__global_Data_List_Lazy_sub)($n__prime__, 1), $x, $ys));
 break;
 default:
 throw new \Exception("Pattern match failure");
@@ -521,7 +1016,7 @@ break;
 };
 };
   };
-  $__fn = function($v, $v1 = null) use ($x, $__body, &$__fn) {
+  $__fn = function($v, $v1 = null) use ($x, $__global_Data_List_Lazy_sub, $__body, &$__fn) {
   $__num = func_num_args();
   if ($__num < 2) {
     if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
@@ -589,7 +1084,15 @@ function Data_List_Lazy_toUnfoldable($dictUnfoldable) {
   }
 $__global_Data_List_Lazy_map1 = ($GLOBALS['Data_List_Lazy_map1'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_map1'));
 $__global_Data_List_Lazy_uncons = ($GLOBALS['Data_List_Lazy_uncons'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_uncons'));
-    $__res = (($dictUnfoldable)->unfoldr)((function() use ($__global_Data_List_Lazy_map1, $__global_Data_List_Lazy_uncons) {
+$__case_0 = $dictUnfoldable;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->unfoldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__case_res_0)((function() use ($__global_Data_List_Lazy_map1, $__global_Data_List_Lazy_uncons) {
   $__fn = function($xs) use ($__global_Data_List_Lazy_map1, $__global_Data_List_Lazy_uncons, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
@@ -675,6 +1178,7 @@ function Data_List_Lazy_take($n) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
+$__global_Data_List_Lazy_sub = ($GLOBALS['Data_List_Lazy_sub'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_sub'));
 $__global_Data_List_Lazy_lessThanOrEq = ($GLOBALS['Data_List_Lazy_lessThanOrEq'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_lessThanOrEq'));
 $__global_Data_Function_const = ($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const'));
 $__global_Data_List_Lazy_Types_nil = ($GLOBALS['Data_List_Lazy_Types_nil'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_nil'));
@@ -683,8 +1187,8 @@ $__global_Data_List_Lazy_Types_List = ($GLOBALS['Data_List_Lazy_Types_List'] ?? 
 $__global_Data_List_Lazy_map = ($GLOBALS['Data_List_Lazy_map'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_map'));
 $__global_Data_List_Lazy_unwrap = ($GLOBALS['Data_List_Lazy_unwrap'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_unwrap'));
 while (true) {
-$go = (function() {
-  $__body = function($v, $v1) {
+$go = (function() use ($__global_Data_List_Lazy_sub) {
+  $__body = function($v, $v1) use ($__global_Data_List_Lazy_sub) {
     $__global_Data_List_Lazy_take = ($GLOBALS['Data_List_Lazy_take'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_take'));
     $__case_0 = $v;
     $__case_1 = $v1;
@@ -707,14 +1211,14 @@ return ((function() {
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
-})())($x, ($__global_Data_List_Lazy_take)(($n__prime__ - 1), $xs));
+})())($x, ($__global_Data_List_Lazy_take)(($__global_Data_List_Lazy_sub)($n__prime__, 1), $xs));
 break;
 default:
 throw new \Exception("Pattern match failure");
 break;
 };
   };
-  $__fn = function($v, $v1 = null) use ($__body, &$__fn) {
+  $__fn = function($v, $v1 = null) use ($__global_Data_List_Lazy_sub, $__body, &$__fn) {
   $__num = func_num_args();
   if ($__num < 2) {
     if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
@@ -773,7 +1277,15 @@ function Data_List_Lazy_stripPrefix($dictEq) {
   }
 $__global_Data_List_Lazy_Types_step = ($GLOBALS['Data_List_Lazy_Types_step'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_step'));
 $__global_Data_List_Lazy_tailRecM2 = ($GLOBALS['Data_List_Lazy_tailRecM2'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_tailRecM2'));
-$eq = ($dictEq)->eq;
+$__case_0 = $dictEq;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq = $__case_res_0;
     $__res = (function() use ($__global_Data_List_Lazy_Types_step, $__global_Data_List_Lazy_tailRecM2) {
   $__body = function($v, $s) use ($__global_Data_List_Lazy_Types_step, $__global_Data_List_Lazy_tailRecM2) {
     $__case_0 = $v;
@@ -928,19 +1440,27 @@ function Data_List_Lazy_showPattern($dictShow) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_List_Lazy_Types_showList = ($GLOBALS['Data_List_Lazy_Types_showList'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_showList'));
-$show = (($__global_Data_List_Lazy_Types_showList)($dictShow))->show;
-    $__res = (object)["show" => (function() use ($show) {
-  $__body = function($v) use ($show) {
+$__global_Data_List_Lazy_append = ($GLOBALS['Data_List_Lazy_append'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_append'));
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->show;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$show = $__case_res_0;
+    $__res = (object)["show" => (function() use ($__global_Data_List_Lazy_append, $show) {
+  $__body = function($v) use ($__global_Data_List_Lazy_append, $show) {
     $__case_0 = $v;
     if (true) {
 $s = $__case_0;
-return ("(Pattern " . (($show)($s) . ")"));
+return ($__global_Data_List_Lazy_append)("(Pattern ", ($__global_Data_List_Lazy_append)(($show)($s), ")"));
 } else {
 throw new \Exception("Pattern match failure");
 };
   };
-  $__fn = function($v) use ($show, $__body, &$__fn) {
+  $__fn = function($v) use ($__global_Data_List_Lazy_append, $show, $__body, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
@@ -1052,10 +1572,25 @@ function Data_List_Lazy_replicateM($dictMonad) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 while (true) {
-$pure1 = ((($dictMonad)->Applicative0)($__global_Prim_undefined))->pure;
-$bind2 = ((($dictMonad)->Bind1)($__global_Prim_undefined))->bind;
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pure1 = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->bind;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bind2 = $__case_res_1;
 return (function() {
   $__body = function($n, $m) {
     $__case_0 = $n;
@@ -1299,7 +1834,15 @@ function Data_List_Lazy_nub($dictOrd) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_List_Lazy_nubBy = ($GLOBALS['Data_List_Lazy_nubBy'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_nubBy'));
-    $__res = ($__global_Data_List_Lazy_nubBy)(($dictOrd)->compare);
+$__case_0 = $dictOrd;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__global_Data_List_Lazy_nubBy)($__case_res_0);
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_List_Lazy_nub'] = __NAMESPACE__ . '\\Data_List_Lazy_nub';
@@ -1386,19 +1929,113 @@ function Data_List_Lazy_some($dictAlternative) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_List_Lazy_Types_cons = ($GLOBALS['Data_List_Lazy_Types_cons'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_cons'));
 $__global_Data_List_Lazy_many = ($GLOBALS['Data_List_Lazy_many'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_many'));
+$__global_Data_List_Lazy_Types_nil = ($GLOBALS['Data_List_Lazy_Types_nil'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_nil'));
 while (true) {
-$apply1 = ((((($dictAlternative)->Applicative0)($__global_Prim_undefined))->Apply0)($__global_Prim_undefined))->apply;
-$map3 = ((((((($dictAlternative)->Plus1)($__global_Prim_undefined))->Alt0)($__global_Prim_undefined))->Functor0)($__global_Prim_undefined))->map;
-return (function() use ($apply1, $map3, $__global_Data_List_Lazy_Types_cons, $__global_Data_List_Lazy_many, $dictAlternative) {
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$apply1 = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map3 = $__case_res_1;
+return (function() use ($apply1, $map3, $__global_Data_List_Lazy_Types_cons, $dict, $__global_Data_List_Lazy_many, $dictAlternative, $__global_Data_List_Lazy_Types_nil) {
+  $__fn = function($dictLazy) use ($apply1, $map3, $__global_Data_List_Lazy_Types_cons, $dict, $__global_Data_List_Lazy_many, $dictAlternative, $__global_Data_List_Lazy_Types_nil, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dictLazy;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->defer;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$defer1 = $__case_res_2;
+    $__res = (function() use ($apply1, $map3, $__global_Data_List_Lazy_Types_cons, $defer1, $dict, $__global_Data_List_Lazy_many, $dictAlternative, $__global_Data_List_Lazy_Types_nil, $dictLazy) {
+  $__fn = function($v) use ($apply1, $map3, $__global_Data_List_Lazy_Types_cons, $defer1, $dict, $__global_Data_List_Lazy_many, $dictAlternative, $__global_Data_List_Lazy_Types_nil, $dictLazy, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($apply1)(($map3)($__global_Data_List_Lazy_Types_cons, $v), ($defer1)((function() use ($dict, $__global_Data_List_Lazy_Types_cons, $__global_Data_List_Lazy_many, $dictAlternative, $__global_Data_List_Lazy_Types_nil, $dictLazy, $v) {
+  $__fn = function($v1) use ($dict, $__global_Data_List_Lazy_Types_cons, $__global_Data_List_Lazy_many, $dictAlternative, $__global_Data_List_Lazy_Types_nil, $dictLazy, $v, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dict;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->alt;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$alt = $__case_res_3;
+$__case_0 = $dict;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pure1 = $__case_res_4;
+    $__res = ((function() use ($alt, $dict, $__global_Data_List_Lazy_Types_cons, $__global_Data_List_Lazy_many, $dictAlternative, $pure1, $__global_Data_List_Lazy_Types_nil) {
+  $__fn = function($dictLazy, $v = null) use ($alt, $dict, $__global_Data_List_Lazy_Types_cons, $__global_Data_List_Lazy_many, $dictAlternative, $pure1, $__global_Data_List_Lazy_Types_nil, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($dictLazy, &$__fn) { return $__fn($dictLazy, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+$__case_0 = $dict;
+$__case_res_5 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_5 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$apply1 = $__case_res_5;
+$__case_0 = $dict;
+$__case_res_6 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_6 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map3 = $__case_res_6;
+    $__res = ($alt)(((function() use ($apply1, $map3, $__global_Data_List_Lazy_Types_cons, $__global_Data_List_Lazy_many, $dictAlternative) {
   $__fn = function($dictLazy) use ($apply1, $map3, $__global_Data_List_Lazy_Types_cons, $__global_Data_List_Lazy_many, $dictAlternative, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$defer1 = ($dictLazy)->defer;
+$__case_0 = $dictLazy;
+$__case_res_7 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_7 = ($v)->defer;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$defer1 = $__case_res_7;
     $__res = (function() use ($apply1, $map3, $__global_Data_List_Lazy_Types_cons, $defer1, $__global_Data_List_Lazy_many, $dictAlternative, $dictLazy) {
   $__fn = function($v) use ($apply1, $map3, $__global_Data_List_Lazy_Types_cons, $defer1, $__global_Data_List_Lazy_many, $dictAlternative, $dictLazy, &$__fn) {
   $__num = func_num_args();
@@ -1412,6 +2049,22 @@ $defer1 = ($dictLazy)->defer;
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
     $__res = ($__global_Data_List_Lazy_many)($dictAlternative, $dictLazy, $v);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})())($dictLazy, $v), ($pure1)($__global_Data_List_Lazy_Types_nil));
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})())($dictLazy, $v);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -1437,13 +2090,99 @@ function Data_List_Lazy_many($dictAlternative) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
+$__global_Data_List_Lazy_Types_cons = ($GLOBALS['Data_List_Lazy_Types_cons'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_cons'));
 $__global_Data_List_Lazy_some = ($GLOBALS['Data_List_Lazy_some'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_some'));
 $__global_Data_List_Lazy_Types_nil = ($GLOBALS['Data_List_Lazy_Types_nil'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_nil'));
 while (true) {
-$alt = ((((($dictAlternative)->Plus1)($__global_Prim_undefined))->Alt0)($__global_Prim_undefined))->alt;
-$pure1 = ((($dictAlternative)->Applicative0)($__global_Prim_undefined))->pure;
-return (function() use ($alt, $__global_Data_List_Lazy_some, $dictAlternative, $pure1, $__global_Data_List_Lazy_Types_nil) {
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->alt;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$alt = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pure1 = $__case_res_1;
+return (function() use ($alt, $dict, $__global_Data_List_Lazy_Types_cons, $__global_Data_List_Lazy_some, $dictAlternative, $__global_Data_List_Lazy_Types_nil, $pure1) {
+  $__fn = function($dictLazy, $v = null) use ($alt, $dict, $__global_Data_List_Lazy_Types_cons, $__global_Data_List_Lazy_some, $dictAlternative, $__global_Data_List_Lazy_Types_nil, $pure1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($dictLazy, &$__fn) { return $__fn($dictLazy, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$apply1 = $__case_res_2;
+$__case_0 = $dict;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map3 = $__case_res_3;
+    $__res = ($alt)(((function() use ($apply1, $map3, $__global_Data_List_Lazy_Types_cons, $dict, $__global_Data_List_Lazy_some, $dictAlternative, $__global_Data_List_Lazy_Types_nil) {
+  $__fn = function($dictLazy) use ($apply1, $map3, $__global_Data_List_Lazy_Types_cons, $dict, $__global_Data_List_Lazy_some, $dictAlternative, $__global_Data_List_Lazy_Types_nil, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dictLazy;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->defer;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$defer1 = $__case_res_4;
+    $__res = (function() use ($apply1, $map3, $__global_Data_List_Lazy_Types_cons, $defer1, $dict, $__global_Data_List_Lazy_some, $dictAlternative, $__global_Data_List_Lazy_Types_nil, $dictLazy) {
+  $__fn = function($v) use ($apply1, $map3, $__global_Data_List_Lazy_Types_cons, $defer1, $dict, $__global_Data_List_Lazy_some, $dictAlternative, $__global_Data_List_Lazy_Types_nil, $dictLazy, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($apply1)(($map3)($__global_Data_List_Lazy_Types_cons, $v), ($defer1)((function() use ($dict, $__global_Data_List_Lazy_some, $dictAlternative, $__global_Data_List_Lazy_Types_nil, $dictLazy, $v) {
+  $__fn = function($v1) use ($dict, $__global_Data_List_Lazy_some, $dictAlternative, $__global_Data_List_Lazy_Types_nil, $dictLazy, $v, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dict;
+$__case_res_5 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_5 = ($v)->alt;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$alt = $__case_res_5;
+$__case_0 = $dict;
+$__case_res_6 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_6 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pure1 = $__case_res_6;
+    $__res = ((function() use ($alt, $__global_Data_List_Lazy_some, $dictAlternative, $pure1, $__global_Data_List_Lazy_Types_nil) {
   $__fn = function($dictLazy, $v = null) use ($alt, $__global_Data_List_Lazy_some, $dictAlternative, $pure1, $__global_Data_List_Lazy_Types_nil, &$__fn) {
   $__num = func_num_args();
   if ($__num < 2) {
@@ -1451,6 +2190,22 @@ return (function() use ($alt, $__global_Data_List_Lazy_some, $dictAlternative, $
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
     $__res = ($alt)(($__global_Data_List_Lazy_some)($dictAlternative, $dictLazy, $v), ($pure1)($__global_Data_List_Lazy_Types_nil));
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})())($dictLazy, $v);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})())($dictLazy, $v), ($pure1)($__global_Data_List_Lazy_Types_nil));
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
@@ -1505,6 +2260,7 @@ function Data_List_Lazy_insertAt($v, $v1 = null, $v2 = null) {
   }
 $__global_Data_List_Lazy_Types_cons = ($GLOBALS['Data_List_Lazy_Types_cons'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_cons'));
 $__global_Data_List_Lazy_Types_nil = ($GLOBALS['Data_List_Lazy_Types_nil'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_nil'));
+$__global_Data_List_Lazy_sub = ($GLOBALS['Data_List_Lazy_sub'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_sub'));
 $__global_Data_List_Lazy_map = ($GLOBALS['Data_List_Lazy_map'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_map'));
 $__global_Data_List_Lazy_unwrap = ($GLOBALS['Data_List_Lazy_unwrap'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_unwrap'));
 while (true) {
@@ -1521,8 +2277,8 @@ default:
 $n = $__case_0;
 $x = $__case_1;
 $xs = $__case_2;
-$go = (function() use ($x, $__global_Data_List_Lazy_Types_nil, $n) {
-  $__body = function($v3) use ($x, $__global_Data_List_Lazy_Types_nil, $n) {
+$go = (function() use ($x, $__global_Data_List_Lazy_Types_nil, $__global_Data_List_Lazy_sub, $n) {
+  $__body = function($v3) use ($x, $__global_Data_List_Lazy_Types_nil, $__global_Data_List_Lazy_sub, $n) {
     $__global_Data_List_Lazy_insertAt = ($GLOBALS['Data_List_Lazy_insertAt'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_insertAt'));
     $__case_0 = $v3;
     switch (($__case_0)->tag) {
@@ -1554,14 +2310,14 @@ return ((function() {
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
-})())($y, ($__global_Data_List_Lazy_insertAt)(($n - 1), $x, $ys));
+})())($y, ($__global_Data_List_Lazy_insertAt)(($__global_Data_List_Lazy_sub)($n, 1), $x, $ys));
 break;
 default:
 throw new \Exception("Pattern match failure");
 break;
 };
   };
-  $__fn = function($v3) use ($x, $__global_Data_List_Lazy_Types_nil, $n, $__body, &$__fn) {
+  $__fn = function($v3) use ($x, $__global_Data_List_Lazy_Types_nil, $__global_Data_List_Lazy_sub, $n, $__body, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
@@ -1589,8 +2345,9 @@ function Data_List_Lazy_index($xs) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_List_Lazy_Types_step = ($GLOBALS['Data_List_Lazy_Types_step'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_step'));
-$go = (function() use (&$go, $__global_Data_List_Lazy_Types_step) {
-  $__fn = function($v, $v1 = null) use (&$go, $__global_Data_List_Lazy_Types_step, &$__fn) {
+$__global_Data_List_Lazy_sub = ($GLOBALS['Data_List_Lazy_sub'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_sub'));
+$go = (function() use (&$go, $__global_Data_List_Lazy_Types_step, $__global_Data_List_Lazy_sub) {
+  $__fn = function($v, $v1 = null) use (&$go, $__global_Data_List_Lazy_Types_step, $__global_Data_List_Lazy_sub, &$__fn) {
   $__num = func_num_args();
   if ($__num < 2) {
     if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
@@ -1621,7 +2378,7 @@ case "Cons":
 $as = ($__case_0)->v1;
 $i = $__case_1;
 $__tco_tmp_0 = ($__global_Data_List_Lazy_Types_step)($as);
-$__tco_tmp_1 = ($i - 1);
+$__tco_tmp_1 = ($__global_Data_List_Lazy_sub)($i, 1);
 $v = $__tco_tmp_0;
 $v1 = $__tco_tmp_1;
 continue 2;
@@ -1810,7 +2567,15 @@ function Data_List_Lazy_group($dictEq) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_List_Lazy_groupBy = ($GLOBALS['Data_List_Lazy_groupBy'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_groupBy'));
-    $__res = ($__global_Data_List_Lazy_groupBy)(($dictEq)->eq);
+$__case_0 = $dictEq;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__global_Data_List_Lazy_groupBy)($__case_res_0);
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_List_Lazy_group'] = __NAMESPACE__ . '\\Data_List_Lazy_group';
@@ -1921,7 +2686,15 @@ function Data_List_Lazy_insert($dictOrd) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_List_Lazy_insertBy = ($GLOBALS['Data_List_Lazy_insertBy'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_insertBy'));
-    $__res = ($__global_Data_List_Lazy_insertBy)(($dictOrd)->compare);
+$__case_0 = $dictOrd;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__global_Data_List_Lazy_insertBy)($__case_res_0);
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_List_Lazy_insert'] = __NAMESPACE__ . '\\Data_List_Lazy_insert';
@@ -1935,7 +2708,15 @@ function Data_List_Lazy_fromFoldable($dictFoldable) {
   }
 $__global_Data_List_Lazy_Types_cons = ($GLOBALS['Data_List_Lazy_Types_cons'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_cons'));
 $__global_Data_List_Lazy_Types_nil = ($GLOBALS['Data_List_Lazy_Types_nil'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_nil'));
-    $__res = (($dictFoldable)->foldr)($__global_Data_List_Lazy_Types_cons, $__global_Data_List_Lazy_Types_nil);
+$__case_0 = $dictFoldable;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__case_res_0)($__global_Data_List_Lazy_Types_cons, $__global_Data_List_Lazy_Types_nil);
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_List_Lazy_fromFoldable'] = __NAMESPACE__ . '\\Data_List_Lazy_fromFoldable';
@@ -1948,7 +2729,15 @@ function Data_List_Lazy_foldrLazy($dictLazy) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_List_Lazy_Types_step = ($GLOBALS['Data_List_Lazy_Types_step'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_step'));
-$defer1 = ($dictLazy)->defer;
+$__case_0 = $dictLazy;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->defer;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$defer1 = $__case_res_0;
     $__res = (function() use ($__global_Data_List_Lazy_Types_step, $defer1) {
   $__fn = function($op, $z = null) use ($__global_Data_List_Lazy_Types_step, $defer1, &$__fn) {
   $__num = func_num_args();
@@ -2010,14 +2799,63 @@ function Data_List_Lazy_foldM($dictMonad) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_List_Lazy_uncons = ($GLOBALS['Data_List_Lazy_uncons'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_uncons'));
 while (true) {
-$pure1 = ((($dictMonad)->Applicative0)($__global_Prim_undefined))->pure;
-$bind2 = ((($dictMonad)->Bind1)($__global_Prim_undefined))->bind;
-return (function() use ($__global_Data_List_Lazy_uncons, $pure1, $bind2, $dictMonad) {
-  $__body = function($f, $b, $xs) use ($__global_Data_List_Lazy_uncons, $pure1, $bind2, $dictMonad) {
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pure1 = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->bind;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bind2 = $__case_res_1;
+return (function() use ($__global_Data_List_Lazy_uncons, $pure1, $bind2, $dict, $dictMonad) {
+  $__body = function($f, $b, $xs) use ($__global_Data_List_Lazy_uncons, $pure1, $bind2, $dict, $dictMonad) {
     $__global_Data_List_Lazy_foldM = ($GLOBALS['Data_List_Lazy_foldM'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_foldM'));
+    $v = ($__global_Data_List_Lazy_uncons)($xs);
+    $__case_0 = $v;
+    if ((($__case_0)->tag === "Nothing")) {
+return ($pure1)($b);
+} else {
+if (((($__case_0)->tag === "Just") && (is_object)(($__case_0)->v0))) {
+$a = (($__case_0)->v0)->head;
+$as = (($__case_0)->v0)->tail;
+return ($bind2)(($f)($b, $a), (function() use ($dict, $__global_Data_List_Lazy_uncons, $__global_Data_List_Lazy_foldM, $dictMonad, $f, $as) {
+  $__fn = function($b__prime__) use ($dict, $__global_Data_List_Lazy_uncons, $__global_Data_List_Lazy_foldM, $dictMonad, $f, $as, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pure1 = $__case_res_2;
+$__case_0 = $dict;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->bind;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bind2 = $__case_res_3;
+    $__res = ((function() use ($__global_Data_List_Lazy_uncons, $pure1, $bind2, $__global_Data_List_Lazy_foldM, $dictMonad) {
+  $__body = function($f, $b, $xs) use ($__global_Data_List_Lazy_uncons, $pure1, $bind2, $__global_Data_List_Lazy_foldM, $dictMonad) {
     $v = ($__global_Data_List_Lazy_uncons)($xs);
     $__case_0 = $v;
     if ((($__case_0)->tag === "Nothing")) {
@@ -2042,7 +2880,33 @@ throw new \Exception("Pattern match failure");
 };
 };
   };
-  $__fn = function($f, $b = null, $xs = null) use ($__global_Data_List_Lazy_uncons, $pure1, $bind2, $dictMonad, $__body, &$__fn) {
+  $__fn = function($f, $b = null, $xs = null) use ($__global_Data_List_Lazy_uncons, $pure1, $bind2, $__global_Data_List_Lazy_foldM, $dictMonad, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($xs) use ($f, $b, &$__fn) { return $__fn($f, $b, $xs); };
+    if ($__num === 1) return function($b, $xs = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $b, $xs);
+      if ($__num2 === 1) return function($xs) use ($f, $b, &$__fn) { return $__fn($f, $b, $xs); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = $__body($f, $b, $xs);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})())($f, $b__prime__, $as);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})());
+} else {
+throw new \Exception("Pattern match failure");
+};
+};
+  };
+  $__fn = function($f, $b = null, $xs = null) use ($__global_Data_List_Lazy_uncons, $pure1, $bind2, $dict, $dictMonad, $__body, &$__fn) {
   $__num = func_num_args();
   if ($__num < 3) {
     if ($__num === 2) return function($xs) use ($f, $b, &$__fn) { return $__fn($f, $b, $xs); };
@@ -2074,28 +2938,29 @@ function Data_List_Lazy_findIndex($fn) {
   }
 $__global_Data_List_Lazy_bind = ($GLOBALS['Data_List_Lazy_bind'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_bind'));
 $__global_Data_List_Lazy_uncons = ($GLOBALS['Data_List_Lazy_uncons'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_uncons'));
-$__global_Data_Maybe_Just = ($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just'));
-$go = (function() use ($__global_Data_List_Lazy_bind, $__global_Data_List_Lazy_uncons, $fn, $__global_Data_Maybe_Just, &$go) {
-  $__fn = function($n, $list = null) use ($__global_Data_List_Lazy_bind, $__global_Data_List_Lazy_uncons, $fn, $__global_Data_Maybe_Just, &$go, &$__fn) {
+$__global_Data_List_Lazy_pure = ($GLOBALS['Data_List_Lazy_pure'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_pure'));
+$__global_Data_List_Lazy_add = ($GLOBALS['Data_List_Lazy_add'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_add'));
+$go = (function() use ($__global_Data_List_Lazy_bind, $__global_Data_List_Lazy_uncons, $fn, $__global_Data_List_Lazy_pure, &$go, $__global_Data_List_Lazy_add) {
+  $__fn = function($n, $list = null) use ($__global_Data_List_Lazy_bind, $__global_Data_List_Lazy_uncons, $fn, $__global_Data_List_Lazy_pure, &$go, $__global_Data_List_Lazy_add, &$__fn) {
   $__num = func_num_args();
   if ($__num < 2) {
     if ($__num === 1) return function($list) use ($n, &$__fn) { return $__fn($n, $list); };
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
 while (true) {
-return ($__global_Data_List_Lazy_bind)(($__global_Data_List_Lazy_uncons)($list), (function() use ($fn, $__global_Data_Maybe_Just, $n, &$go) {
-  $__body = function($o) use ($fn, $__global_Data_Maybe_Just, $n, &$go) {
+return ($__global_Data_List_Lazy_bind)(($__global_Data_List_Lazy_uncons)($list), (function() use ($fn, $__global_Data_List_Lazy_pure, $n, &$go, $__global_Data_List_Lazy_add) {
+  $__body = function($o) use ($fn, $__global_Data_List_Lazy_pure, $n, &$go, $__global_Data_List_Lazy_add) {
     $__case_0 = ($fn)(($o)->head);
     switch ($__case_0) {
 case true:
-return ($__global_Data_Maybe_Just)($n);
+return ($__global_Data_List_Lazy_pure)($n);
 break;
 default:
-return ($go)(($n + 1), ($o)->tail);
+return ($go)(($__global_Data_List_Lazy_add)($n, 1), ($o)->tail);
 break;
 };
   };
-  $__fn = function($o) use ($fn, $__global_Data_Maybe_Just, $n, &$go, $__body, &$__fn) {
+  $__fn = function($o) use ($fn, $__global_Data_List_Lazy_pure, $n, &$go, $__global_Data_List_Lazy_add, $__body, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
@@ -2125,16 +2990,17 @@ function Data_List_Lazy_findLastIndex($fn, $xs = null) {
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
 $__global_Data_List_Lazy_map1 = ($GLOBALS['Data_List_Lazy_map1'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_map1'));
+$__global_Data_List_Lazy_sub = ($GLOBALS['Data_List_Lazy_sub'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_sub'));
 $__global_Data_List_Lazy_length = ($GLOBALS['Data_List_Lazy_length'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_length'));
 $__global_Data_List_Lazy_findIndex = ($GLOBALS['Data_List_Lazy_findIndex'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_findIndex'));
 $__global_Data_List_Lazy_reverse = ($GLOBALS['Data_List_Lazy_reverse'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_reverse'));
-    $__res = ($__global_Data_List_Lazy_map1)((function() use ($__global_Data_List_Lazy_length, $xs) {
-  $__fn = function($v) use ($__global_Data_List_Lazy_length, $xs, &$__fn) {
+    $__res = ($__global_Data_List_Lazy_map1)((function() use ($__global_Data_List_Lazy_sub, $__global_Data_List_Lazy_length, $xs) {
+  $__fn = function($v) use ($__global_Data_List_Lazy_sub, $__global_Data_List_Lazy_length, $xs, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ((($__global_Data_List_Lazy_length)($xs) - 1) - $v);
+    $__res = ($__global_Data_List_Lazy_sub)(($__global_Data_List_Lazy_sub)(($__global_Data_List_Lazy_length)($xs), 1), $v);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -2150,16 +3016,65 @@ function Data_List_Lazy_filterM($dictMonad) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_List_Lazy_uncons = ($GLOBALS['Data_List_Lazy_uncons'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_uncons'));
 $__global_Data_List_Lazy_Types_nil = ($GLOBALS['Data_List_Lazy_Types_nil'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_nil'));
 $__global_Data_List_Lazy_Types_cons = ($GLOBALS['Data_List_Lazy_Types_cons'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_cons'));
 while (true) {
-$pure1 = ((($dictMonad)->Applicative0)($__global_Prim_undefined))->pure;
-$bind2 = ((($dictMonad)->Bind1)($__global_Prim_undefined))->bind;
-return (function() use ($__global_Data_List_Lazy_uncons, $pure1, $__global_Data_List_Lazy_Types_nil, $bind2, $dictMonad, $__global_Data_List_Lazy_Types_cons) {
-  $__body = function($p, $list) use ($__global_Data_List_Lazy_uncons, $pure1, $__global_Data_List_Lazy_Types_nil, $bind2, $dictMonad, $__global_Data_List_Lazy_Types_cons) {
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pure1 = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->bind;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bind2 = $__case_res_1;
+return (function() use ($__global_Data_List_Lazy_uncons, $pure1, $__global_Data_List_Lazy_Types_nil, $bind2, $dict, $dictMonad, $__global_Data_List_Lazy_Types_cons) {
+  $__body = function($p, $list) use ($__global_Data_List_Lazy_uncons, $pure1, $__global_Data_List_Lazy_Types_nil, $bind2, $dict, $dictMonad, $__global_Data_List_Lazy_Types_cons) {
     $__global_Data_List_Lazy_filterM = ($GLOBALS['Data_List_Lazy_filterM'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_filterM'));
+    $v = ($__global_Data_List_Lazy_uncons)($list);
+    $__case_0 = $v;
+    if ((($__case_0)->tag === "Nothing")) {
+return ($pure1)($__global_Data_List_Lazy_Types_nil);
+} else {
+if (((($__case_0)->tag === "Just") && (is_object)(($__case_0)->v0))) {
+$x = (($__case_0)->v0)->head;
+$xs = (($__case_0)->v0)->tail;
+return ($bind2)(($p)($x), (function() use ($bind2, $dict, $__global_Data_List_Lazy_uncons, $__global_Data_List_Lazy_Types_nil, $__global_Data_List_Lazy_filterM, $dictMonad, $__global_Data_List_Lazy_Types_cons, $p, $xs, $pure1, $x) {
+  $__fn = function($b) use ($bind2, $dict, $__global_Data_List_Lazy_uncons, $__global_Data_List_Lazy_Types_nil, $__global_Data_List_Lazy_filterM, $dictMonad, $__global_Data_List_Lazy_Types_cons, $p, $xs, $pure1, $x, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pure1 = $__case_res_2;
+$__case_0 = $dict;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->bind;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bind2 = $__case_res_3;
+    $__res = ($bind2)(((function() use ($__global_Data_List_Lazy_uncons, $pure1, $__global_Data_List_Lazy_Types_nil, $bind2, $__global_Data_List_Lazy_filterM, $dictMonad, $__global_Data_List_Lazy_Types_cons) {
+  $__body = function($p, $list) use ($__global_Data_List_Lazy_uncons, $pure1, $__global_Data_List_Lazy_Types_nil, $bind2, $__global_Data_List_Lazy_filterM, $dictMonad, $__global_Data_List_Lazy_Types_cons) {
     $v = ($__global_Data_List_Lazy_uncons)($list);
     $__case_0 = $v;
     if ((($__case_0)->tag === "Nothing")) {
@@ -2181,16 +3096,16 @@ return ($bind2)(($p)($x), (function() use ($bind2, $__global_Data_List_Lazy_filt
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__case_0 = $b;
-$__case_res_0 = null;
+$__case_res_4 = null;
 switch ($__case_0) {
 case true:
-$__case_res_0 = ($__global_Data_List_Lazy_Types_cons)($x, $xs__prime__);
+$__case_res_4 = ($__global_Data_List_Lazy_Types_cons)($x, $xs__prime__);
 break;
 default:
-$__case_res_0 = $xs__prime__;
+$__case_res_4 = $xs__prime__;
 break;
 };
-    $__res = ($pure1)($__case_res_0);
+    $__res = ($pure1)($__case_res_4);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -2204,7 +3119,47 @@ throw new \Exception("Pattern match failure");
 };
 };
   };
-  $__fn = function($p, $list = null) use ($__global_Data_List_Lazy_uncons, $pure1, $__global_Data_List_Lazy_Types_nil, $bind2, $dictMonad, $__global_Data_List_Lazy_Types_cons, $__body, &$__fn) {
+  $__fn = function($p, $list = null) use ($__global_Data_List_Lazy_uncons, $pure1, $__global_Data_List_Lazy_Types_nil, $bind2, $__global_Data_List_Lazy_filterM, $dictMonad, $__global_Data_List_Lazy_Types_cons, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($list) use ($p, &$__fn) { return $__fn($p, $list); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($p, $list);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})())($p, $xs), (function() use ($pure1, $b, $__global_Data_List_Lazy_Types_cons, $x) {
+  $__fn = function($xs__prime__) use ($pure1, $b, $__global_Data_List_Lazy_Types_cons, $x, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $b;
+$__case_res_5 = null;
+switch ($__case_0) {
+case true:
+$__case_res_5 = ($__global_Data_List_Lazy_Types_cons)($x, $xs__prime__);
+break;
+default:
+$__case_res_5 = $xs__prime__;
+break;
+};
+    $__res = ($pure1)($__case_res_5);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})());
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})());
+} else {
+throw new \Exception("Pattern match failure");
+};
+};
+  };
+  $__fn = function($p, $list = null) use ($__global_Data_List_Lazy_uncons, $pure1, $__global_Data_List_Lazy_Types_nil, $bind2, $dict, $dictMonad, $__global_Data_List_Lazy_Types_cons, $__body, &$__fn) {
   $__num = func_num_args();
   if ($__num < 2) {
     if ($__num === 1) return function($list) use ($p, &$__fn) { return $__fn($p, $list); };
@@ -2306,7 +3261,15 @@ function Data_List_Lazy_intersect($dictEq) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_List_Lazy_intersectBy = ($GLOBALS['Data_List_Lazy_intersectBy'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_intersectBy'));
-    $__res = ($__global_Data_List_Lazy_intersectBy)(($dictEq)->eq);
+$__case_0 = $dictEq;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__global_Data_List_Lazy_intersectBy)($__case_res_0);
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_List_Lazy_intersect'] = __NAMESPACE__ . '\\Data_List_Lazy_intersect';
@@ -2319,14 +3282,14 @@ function Data_List_Lazy_nubByEq($eq) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_List_Lazy_filter = ($GLOBALS['Data_List_Lazy_filter'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_filter'));
-$__global_Data_HeytingAlgebra_boolNot = ($GLOBALS['Data_HeytingAlgebra_boolNot'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_boolNot'));
+$__global_Data_List_Lazy_not = ($GLOBALS['Data_List_Lazy_not'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_not'));
 $__global_Data_List_Lazy_compose = ($GLOBALS['Data_List_Lazy_compose'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_compose'));
 $__global_Data_List_Lazy_Types_List = ($GLOBALS['Data_List_Lazy_Types_List'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_List'));
 $__global_Data_List_Lazy_map = ($GLOBALS['Data_List_Lazy_map'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_map'));
 $__global_Data_List_Lazy_unwrap = ($GLOBALS['Data_List_Lazy_unwrap'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_unwrap'));
 while (true) {
-$go = (function() use ($eq, $__global_Data_List_Lazy_filter, $__global_Data_HeytingAlgebra_boolNot) {
-  $__body = function($v) use ($eq, $__global_Data_List_Lazy_filter, $__global_Data_HeytingAlgebra_boolNot) {
+$go = (function() use ($eq, $__global_Data_List_Lazy_filter, $__global_Data_List_Lazy_not) {
+  $__body = function($v) use ($eq, $__global_Data_List_Lazy_filter, $__global_Data_List_Lazy_not) {
     $__global_Data_List_Lazy_nubByEq = ($GLOBALS['Data_List_Lazy_nubByEq'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_nubByEq'));
     $__case_0 = $v;
     switch (($__case_0)->tag) {
@@ -2347,13 +3310,13 @@ return ((function() {
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
-})())($x, ($__global_Data_List_Lazy_nubByEq)($eq, ($__global_Data_List_Lazy_filter)((function() use ($__global_Data_HeytingAlgebra_boolNot, $eq, $x) {
-  $__fn = function($y) use ($__global_Data_HeytingAlgebra_boolNot, $eq, $x, &$__fn) {
+})())($x, ($__global_Data_List_Lazy_nubByEq)($eq, ($__global_Data_List_Lazy_filter)((function() use ($__global_Data_List_Lazy_not, $eq, $x) {
+  $__fn = function($y) use ($__global_Data_List_Lazy_not, $eq, $x, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($__global_Data_HeytingAlgebra_boolNot)(($eq)($x, $y));
+    $__res = ($__global_Data_List_Lazy_not)(($eq)($x, $y));
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -2364,7 +3327,7 @@ throw new \Exception("Pattern match failure");
 break;
 };
   };
-  $__fn = function($v) use ($eq, $__global_Data_List_Lazy_filter, $__global_Data_HeytingAlgebra_boolNot, $__body, &$__fn) {
+  $__fn = function($v) use ($eq, $__global_Data_List_Lazy_filter, $__global_Data_List_Lazy_not, $__body, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
@@ -2389,7 +3352,15 @@ function Data_List_Lazy_nubEq($dictEq) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_List_Lazy_nubByEq = ($GLOBALS['Data_List_Lazy_nubByEq'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_nubByEq'));
-    $__res = ($__global_Data_List_Lazy_nubByEq)(($dictEq)->eq);
+$__case_0 = $dictEq;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__global_Data_List_Lazy_nubByEq)($__case_res_0);
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_List_Lazy_nubEq'] = __NAMESPACE__ . '\\Data_List_Lazy_nubEq';
@@ -2401,8 +3372,15 @@ function Data_List_Lazy_eqPattern($dictEq) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_List_Lazy_Types_eqList = ($GLOBALS['Data_List_Lazy_Types_eqList'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_eqList'));
-$eq = (($__global_Data_List_Lazy_Types_eqList)($dictEq))->eq;
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq = $__case_res_0;
     $__res = (object)["eq" => (function() use ($eq) {
   $__body = function($x, $y) use ($eq) {
     $__case_0 = $x;
@@ -2437,11 +3415,47 @@ function Data_List_Lazy_ordPattern($dictOrd) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_List_Lazy_Types_ordList = ($GLOBALS['Data_List_Lazy_Types_ordList'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_ordList'));
-$__global_Data_List_Lazy_eqPattern = ($GLOBALS['Data_List_Lazy_eqPattern'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_eqPattern'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$compare = (($__global_Data_List_Lazy_Types_ordList)($dictOrd))->compare;
-$eqPattern1 = ($__global_Data_List_Lazy_eqPattern)((($dictOrd)->Eq0)($__global_Prim_undefined));
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq = $__case_res_1;
+$eqPattern1 = (object)["eq" => (function() use ($eq) {
+  $__body = function($x, $y) use ($eq) {
+    $__case_0 = $x;
+    $__case_1 = $y;
+    if (true) {
+$l = $__case_0;
+$r = $__case_1;
+return ($eq)($l, $r);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($x, $y = null) use ($eq, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($y) use ($x, &$__fn) { return $__fn($x, $y); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($x, $y);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
     $__res = (object)["compare" => (function() use ($compare) {
   $__body = function($x, $y) use ($compare) {
     $__case_0 = $x;
@@ -2487,7 +3501,15 @@ function Data_List_Lazy_elemLastIndex($dictEq) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_List_Lazy_findLastIndex = ($GLOBALS['Data_List_Lazy_findLastIndex'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_findLastIndex'));
-$eq = ($dictEq)->eq;
+$__case_0 = $dictEq;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq = $__case_res_0;
     $__res = (function() use ($__global_Data_List_Lazy_findLastIndex, $eq) {
   $__fn = function($x) use ($__global_Data_List_Lazy_findLastIndex, $eq, &$__fn) {
   $__num = func_num_args();
@@ -2521,7 +3543,15 @@ function Data_List_Lazy_elemIndex($dictEq) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_List_Lazy_findIndex = ($GLOBALS['Data_List_Lazy_findIndex'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_findIndex'));
-$eq = ($dictEq)->eq;
+$__case_0 = $dictEq;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq = $__case_res_0;
     $__res = (function() use ($__global_Data_List_Lazy_findIndex, $eq) {
   $__fn = function($x) use ($__global_Data_List_Lazy_findIndex, $eq, &$__fn) {
   $__num = func_num_args();
@@ -2594,13 +3624,14 @@ function Data_List_Lazy_drop($n) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
+$__global_Data_List_Lazy_sub = ($GLOBALS['Data_List_Lazy_sub'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_sub'));
 $__global_Data_List_Lazy_Types_step = ($GLOBALS['Data_List_Lazy_Types_step'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_step'));
 $__global_Data_List_Lazy_compose = ($GLOBALS['Data_List_Lazy_compose'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_compose'));
 $__global_Data_List_Lazy_Types_List = ($GLOBALS['Data_List_Lazy_Types_List'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_List'));
 $__global_Data_List_Lazy_map = ($GLOBALS['Data_List_Lazy_map'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_map'));
 $__global_Data_List_Lazy_unwrap = ($GLOBALS['Data_List_Lazy_unwrap'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_unwrap'));
-$go = (function() use (&$go, $__global_Data_List_Lazy_Types_step) {
-  $__fn = function($v, $v1 = null) use (&$go, $__global_Data_List_Lazy_Types_step, &$__fn) {
+$go = (function() use (&$go, $__global_Data_List_Lazy_sub, $__global_Data_List_Lazy_Types_step) {
+  $__fn = function($v, $v1 = null) use (&$go, $__global_Data_List_Lazy_sub, $__global_Data_List_Lazy_Types_step, &$__fn) {
   $__num = func_num_args();
   if ($__num < 2) {
     if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
@@ -2620,7 +3651,7 @@ break;
 case "Cons":
 $n__prime__ = $__case_0;
 $xs = ($__case_1)->v1;
-$__tco_tmp_0 = ($n__prime__ - 1);
+$__tco_tmp_0 = ($__global_Data_List_Lazy_sub)($n__prime__, 1);
 $__tco_tmp_1 = ($__global_Data_List_Lazy_Types_step)($xs);
 $v = $__tco_tmp_0;
 $v1 = $__tco_tmp_1;
@@ -2657,8 +3688,9 @@ function Data_List_Lazy_slice($start, $end = null, $xs = null) {
     return phpurs_curry_fallback($__fn, func_get_args(), 3);
   }
 $__global_Data_List_Lazy_take = ($GLOBALS['Data_List_Lazy_take'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_take'));
+$__global_Data_List_Lazy_sub = ($GLOBALS['Data_List_Lazy_sub'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_sub'));
 $__global_Data_List_Lazy_drop = ($GLOBALS['Data_List_Lazy_drop'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_drop'));
-    $__res = ($__global_Data_List_Lazy_take)(($end - $start), ($__global_Data_List_Lazy_drop)($start, $xs));
+    $__res = ($__global_Data_List_Lazy_take)(($__global_Data_List_Lazy_sub)($end, $start), ($__global_Data_List_Lazy_drop)($start, $xs));
     return 3 < $__num ? $__res(...array_slice(func_get_args(), 3)) : $__res;
 }
 $GLOBALS['Data_List_Lazy_slice'] = __NAMESPACE__ . '\\Data_List_Lazy_slice';
@@ -2746,7 +3778,15 @@ function Data_List_Lazy_union($dictEq) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_List_Lazy_unionBy = ($GLOBALS['Data_List_Lazy_unionBy'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_unionBy'));
-    $__res = ($__global_Data_List_Lazy_unionBy)(($dictEq)->eq);
+$__case_0 = $dictEq;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__global_Data_List_Lazy_unionBy)($__case_res_0);
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_List_Lazy_union'] = __NAMESPACE__ . '\\Data_List_Lazy_union';
@@ -2760,11 +3800,12 @@ function Data_List_Lazy_deleteAt($n, $xs = null) {
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
 $__global_Data_List_Lazy_Types_step = ($GLOBALS['Data_List_Lazy_Types_step'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_step'));
+$__global_Data_List_Lazy_sub = ($GLOBALS['Data_List_Lazy_sub'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_sub'));
 $__global_Data_List_Lazy_map = ($GLOBALS['Data_List_Lazy_map'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_map'));
 $__global_Data_List_Lazy_unwrap = ($GLOBALS['Data_List_Lazy_unwrap'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_unwrap'));
 while (true) {
-$go = (function() use ($__global_Data_List_Lazy_Types_step) {
-  $__body = function($v, $v1) use ($__global_Data_List_Lazy_Types_step) {
+$go = (function() use ($__global_Data_List_Lazy_Types_step, $__global_Data_List_Lazy_sub) {
+  $__body = function($v, $v1) use ($__global_Data_List_Lazy_Types_step, $__global_Data_List_Lazy_sub) {
     $__global_Data_List_Lazy_deleteAt = ($GLOBALS['Data_List_Lazy_deleteAt'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_deleteAt'));
     $__case_0 = $v;
     $__case_1 = $v1;
@@ -2791,7 +3832,7 @@ return ((function() {
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
-})())($y, ($__global_Data_List_Lazy_deleteAt)(($n__prime__ - 1), $ys));
+})())($y, ($__global_Data_List_Lazy_deleteAt)(($__global_Data_List_Lazy_sub)($n__prime__, 1), $ys));
 break;
 default:
 throw new \Exception("Pattern match failure");
@@ -2800,7 +3841,7 @@ break;
 };
 };
   };
-  $__fn = function($v, $v1 = null) use ($__global_Data_List_Lazy_Types_step, $__body, &$__fn) {
+  $__fn = function($v, $v1 = null) use ($__global_Data_List_Lazy_Types_step, $__global_Data_List_Lazy_sub, $__body, &$__fn) {
   $__num = func_num_args();
   if ($__num < 2) {
     if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
@@ -2826,7 +3867,15 @@ function Data_List_Lazy_delete($dictEq) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_List_Lazy_deleteBy = ($GLOBALS['Data_List_Lazy_deleteBy'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_deleteBy'));
-    $__res = ($__global_Data_List_Lazy_deleteBy)(($dictEq)->eq);
+$__case_0 = $dictEq;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__global_Data_List_Lazy_deleteBy)($__case_res_0);
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_List_Lazy_delete'] = __NAMESPACE__ . '\\Data_List_Lazy_delete';
@@ -2840,8 +3889,16 @@ function Data_List_Lazy_difference($dictEq) {
   }
 $__global_Data_List_Lazy_foldl = ($GLOBALS['Data_List_Lazy_foldl'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_foldl'));
 $__global_Data_Function_flip = ($GLOBALS['Data_Function_flip'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_flip'));
-$__global_Data_List_Lazy_delete = ($GLOBALS['Data_List_Lazy_delete'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_delete'));
-    $__res = ($__global_Data_List_Lazy_foldl)(($__global_Data_Function_flip)(($__global_Data_List_Lazy_delete)($dictEq)));
+$__global_Data_List_Lazy_deleteBy = ($GLOBALS['Data_List_Lazy_deleteBy'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_deleteBy'));
+$__case_0 = $dictEq;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__global_Data_List_Lazy_foldl)(($__global_Data_Function_flip)(($__global_Data_List_Lazy_deleteBy)($__case_res_0)));
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_List_Lazy_difference'] = __NAMESPACE__ . '\\Data_List_Lazy_difference';
@@ -2901,11 +3958,12 @@ function Data_List_Lazy_alterAt($n, $f = null, $xs = null) {
     return phpurs_curry_fallback($__fn, func_get_args(), 3);
   }
 $__global_Data_List_Lazy_Types_step = ($GLOBALS['Data_List_Lazy_Types_step'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_step'));
+$__global_Data_List_Lazy_sub = ($GLOBALS['Data_List_Lazy_sub'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_sub'));
 $__global_Data_List_Lazy_map = ($GLOBALS['Data_List_Lazy_map'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_map'));
 $__global_Data_List_Lazy_unwrap = ($GLOBALS['Data_List_Lazy_unwrap'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_unwrap'));
 while (true) {
-$go = (function() use ($f, $__global_Data_List_Lazy_Types_step) {
-  $__body = function($v, $v1) use ($f, $__global_Data_List_Lazy_Types_step) {
+$go = (function() use ($f, $__global_Data_List_Lazy_Types_step, $__global_Data_List_Lazy_sub) {
+  $__body = function($v, $v1) use ($f, $__global_Data_List_Lazy_Types_step, $__global_Data_List_Lazy_sub) {
     $__global_Data_List_Lazy_alterAt = ($GLOBALS['Data_List_Lazy_alterAt'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_alterAt'));
     $__case_0 = $v;
     $__case_1 = $v1;
@@ -2957,7 +4015,7 @@ return ((function() {
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
-})())($y, ($__global_Data_List_Lazy_alterAt)(($n__prime__ - 1), $f, $ys));
+})())($y, ($__global_Data_List_Lazy_alterAt)(($__global_Data_List_Lazy_sub)($n__prime__, 1), $f, $ys));
 break;
 default:
 throw new \Exception("Pattern match failure");
@@ -2966,7 +4024,7 @@ break;
 };
 };
   };
-  $__fn = function($v, $v1 = null) use ($f, $__global_Data_List_Lazy_Types_step, $__body, &$__fn) {
+  $__fn = function($v, $v1 = null) use ($f, $__global_Data_List_Lazy_Types_step, $__global_Data_List_Lazy_sub, $__body, &$__fn) {
   $__num = func_num_args();
   if ($__num < 2) {
     if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };

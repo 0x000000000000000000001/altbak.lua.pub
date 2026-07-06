@@ -106,9 +106,24 @@ function Data_Time_Duration_Gen_genSeconds($dictMonadGen) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Time_Duration_Seconds = ($GLOBALS['Data_Time_Duration_Seconds'] ?? \Data\Time\Duration\phpurs_eval_thunk('Data_Time_Duration_Seconds'));
-    $__res = (((((((((($dictMonadGen)->Monad0)($__global_Prim_undefined))->Bind1)($__global_Prim_undefined))->Apply0)($__global_Prim_undefined))->Functor0)($__global_Prim_undefined))->map)($__global_Data_Time_Duration_Seconds, (($dictMonadGen)->chooseFloat)(0.0, 600.0));
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$__case_0 = $dictMonadGen;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->chooseFloat;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__case_res_0)($__global_Data_Time_Duration_Seconds, ($__case_res_1)(0.0, 600.0));
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Time_Duration_Gen_genSeconds'] = __NAMESPACE__ . '\\Data_Time_Duration_Gen_genSeconds';
@@ -120,9 +135,24 @@ function Data_Time_Duration_Gen_genMinutes($dictMonadGen) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Time_Duration_Minutes = ($GLOBALS['Data_Time_Duration_Minutes'] ?? \Data\Time\Duration\phpurs_eval_thunk('Data_Time_Duration_Minutes'));
-    $__res = (((((((((($dictMonadGen)->Monad0)($__global_Prim_undefined))->Bind1)($__global_Prim_undefined))->Apply0)($__global_Prim_undefined))->Functor0)($__global_Prim_undefined))->map)($__global_Data_Time_Duration_Minutes, (($dictMonadGen)->chooseFloat)(0.0, 600.0));
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$__case_0 = $dictMonadGen;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->chooseFloat;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__case_res_0)($__global_Data_Time_Duration_Minutes, ($__case_res_1)(0.0, 600.0));
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Time_Duration_Gen_genMinutes'] = __NAMESPACE__ . '\\Data_Time_Duration_Gen_genMinutes';
@@ -134,9 +164,24 @@ function Data_Time_Duration_Gen_genMilliseconds($dictMonadGen) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Time_Duration_Milliseconds = ($GLOBALS['Data_Time_Duration_Milliseconds'] ?? \Data\Time\Duration\phpurs_eval_thunk('Data_Time_Duration_Milliseconds'));
-    $__res = (((((((((($dictMonadGen)->Monad0)($__global_Prim_undefined))->Bind1)($__global_Prim_undefined))->Apply0)($__global_Prim_undefined))->Functor0)($__global_Prim_undefined))->map)($__global_Data_Time_Duration_Milliseconds, (($dictMonadGen)->chooseFloat)(0.0, 600000.0));
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$__case_0 = $dictMonadGen;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->chooseFloat;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__case_res_0)($__global_Data_Time_Duration_Milliseconds, ($__case_res_1)(0.0, 600000.0));
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Time_Duration_Gen_genMilliseconds'] = __NAMESPACE__ . '\\Data_Time_Duration_Gen_genMilliseconds';
@@ -148,9 +193,24 @@ function Data_Time_Duration_Gen_genHours($dictMonadGen) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Time_Duration_Hours = ($GLOBALS['Data_Time_Duration_Hours'] ?? \Data\Time\Duration\phpurs_eval_thunk('Data_Time_Duration_Hours'));
-    $__res = (((((((((($dictMonadGen)->Monad0)($__global_Prim_undefined))->Bind1)($__global_Prim_undefined))->Apply0)($__global_Prim_undefined))->Functor0)($__global_Prim_undefined))->map)($__global_Data_Time_Duration_Hours, (($dictMonadGen)->chooseFloat)(0.0, 240.0));
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$__case_0 = $dictMonadGen;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->chooseFloat;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__case_res_0)($__global_Data_Time_Duration_Hours, ($__case_res_1)(0.0, 240.0));
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Time_Duration_Gen_genHours'] = __NAMESPACE__ . '\\Data_Time_Duration_Gen_genHours';
@@ -162,9 +222,24 @@ function Data_Time_Duration_Gen_genDays($dictMonadGen) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Time_Duration_Days = ($GLOBALS['Data_Time_Duration_Days'] ?? \Data\Time\Duration\phpurs_eval_thunk('Data_Time_Duration_Days'));
-    $__res = (((((((((($dictMonadGen)->Monad0)($__global_Prim_undefined))->Bind1)($__global_Prim_undefined))->Apply0)($__global_Prim_undefined))->Functor0)($__global_Prim_undefined))->map)($__global_Data_Time_Duration_Days, (($dictMonadGen)->chooseFloat)(0.0, 42.0));
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$__case_0 = $dictMonadGen;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->chooseFloat;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__case_res_0)($__global_Data_Time_Duration_Days, ($__case_res_1)(0.0, 42.0));
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Time_Duration_Gen_genDays'] = __NAMESPACE__ . '\\Data_Time_Duration_Gen_genDays';

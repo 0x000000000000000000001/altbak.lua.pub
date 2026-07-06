@@ -142,10 +142,25 @@ function Control_Alternative_guard($dictAlternative) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Unit_unit = ($GLOBALS['Data_Unit_unit'] ?? \Data\Unit\phpurs_eval_thunk('Data_Unit_unit'));
-$pure = ((($dictAlternative)->Applicative0)($__global_Prim_undefined))->pure;
-$empty = ((($dictAlternative)->Plus1)($__global_Prim_undefined))->empty;
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pure = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->empty;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$empty = $__case_res_1;
     $__res = (function() use ($pure, $__global_Data_Unit_unit, $empty) {
   $__body = function($v) use ($pure, $__global_Data_Unit_unit, $empty) {
     $__case_0 = $v;

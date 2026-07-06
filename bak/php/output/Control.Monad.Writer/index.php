@@ -93,9 +93,29 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Control_Monad_Writer_compose': $v = (($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn')))->compose; break;
+      case 'Control_Monad_Writer_compose': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compose;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Control_Monad_Writer_unwrap': $v = (($GLOBALS['Data_Newtype_unwrap'] ?? \Data\Newtype\phpurs_eval_thunk('Data_Newtype_unwrap')))(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))); break;
-      case 'Control_Monad_Writer_writer': $v = (($GLOBALS['Control_Monad_Writer_compose'] ?? \Control\Monad\Writer\phpurs_eval_thunk('Control_Monad_Writer_compose')))(($GLOBALS['Control_Monad_Writer_Trans_WriterT'] ?? \Control\Monad\Writer\Trans\phpurs_eval_thunk('Control_Monad_Writer_Trans_WriterT')), ($GLOBALS['Data_Identity_Identity'] ?? \Data\Identity\phpurs_eval_thunk('Data_Identity_Identity'))); break;
+      case 'Control_Monad_Writer_writer': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Identity_applicativeIdentity'] ?? \Data\Identity\phpurs_eval_thunk('Data_Identity_applicativeIdentity'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return (($GLOBALS['Control_Monad_Writer_compose'] ?? \Control\Monad\Writer\phpurs_eval_thunk('Control_Monad_Writer_compose')))(($GLOBALS['Control_Monad_Writer_Trans_WriterT'] ?? \Control\Monad\Writer\Trans\phpurs_eval_thunk('Control_Monad_Writer_Trans_WriterT')), $__case_res_0);
+})(); break;
       case 'Control_Monad_Writer_runWriter': $v = (($GLOBALS['Control_Monad_Writer_compose'] ?? \Control\Monad\Writer\phpurs_eval_thunk('Control_Monad_Writer_compose')))(($GLOBALS['Control_Monad_Writer_unwrap'] ?? \Control\Monad\Writer\phpurs_eval_thunk('Control_Monad_Writer_unwrap')), ($GLOBALS['Control_Monad_Writer_Trans_runWriterT'] ?? \Control\Monad\Writer\Trans\phpurs_eval_thunk('Control_Monad_Writer_Trans_runWriterT'))); break;
       default: throw new \Exception("Unknown thunk " . $id);
     }

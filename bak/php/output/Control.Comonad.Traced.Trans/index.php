@@ -156,7 +156,15 @@ function Control_Comonad_Traced_Trans_functorTracedT($dictFunctor) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$map = ($dictFunctor)->map;
+$__case_0 = $dictFunctor;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_0;
     $__res = (object)["map" => (function() use ($map) {
   $__body = function($f, $v) use ($map) {
     $__case_0 = $f;
@@ -203,18 +211,83 @@ function Control_Comonad_Traced_Trans_extendTracedT($dictExtend) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$__global_Control_Comonad_Traced_Trans_functorTracedT = ($GLOBALS['Control_Comonad_Traced_Trans_functorTracedT'] ?? \Control\Comonad\Traced\Trans\phpurs_eval_thunk('Control_Comonad_Traced_Trans_functorTracedT'));
-$extend = ($dictExtend)->extend;
+$__case_0 = $dictExtend;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->extend;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$extend = $__case_res_0;
 $Functor0 = (($dictExtend)->Functor0)($__global_Prim_undefined);
-$map = ($Functor0)->map;
-$functorTracedT1 = ($__global_Control_Comonad_Traced_Trans_functorTracedT)($Functor0);
+$__case_0 = $Functor0;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_1;
+$__case_0 = $Functor0;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_2;
+$functorTracedT1 = (object)["map" => (function() use ($map) {
+  $__body = function($f, $v) use ($map) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    if (true) {
+$f1 = $__case_0;
+$w = $__case_1;
+return ($map)((function() use ($f1) {
+  $__fn = function($g, $t = null) use ($f1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($t) use ($g, &$__fn) { return $__fn($g, $t); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($f1)(($g)($t));
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), $w);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $v = null) use ($map, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, &$__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($f, $v);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
     $__res = (function() use ($extend, $map, $functorTracedT1) {
   $__fn = function($dictSemigroup) use ($extend, $map, $functorTracedT1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$append = ($dictSemigroup)->append;
+$__case_0 = $dictSemigroup;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append = $__case_res_3;
     $__res = (object)["extend" => (function() use ($extend, $map, $append) {
   $__body = function($f, $v) use ($extend, $map, $append) {
     $__case_0 = $f;
@@ -285,15 +358,30 @@ function Control_Comonad_Traced_Trans_comonadTransTracedT($dictMonoid) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$mempty = ($dictMonoid)->mempty;
-    $__res = (object)["lower" => (function() use ($__global_Prim_undefined, $mempty) {
-  $__fn = function($dictComonad) use ($__global_Prim_undefined, $mempty, &$__fn) {
+$__case_0 = $dictMonoid;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->mempty;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$mempty = $__case_res_0;
+    $__res = (object)["lower" => (function() use ($dict, $mempty) {
+  $__fn = function($dictComonad) use ($dict, $mempty, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$map = ((((($dictComonad)->Extend0)($__global_Prim_undefined))->Functor0)($__global_Prim_undefined))->map;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_1;
     $__res = (function() use ($map, $mempty) {
   $__body = function($v) use ($map, $mempty) {
     $__case_0 = $v;
@@ -339,17 +427,167 @@ function Control_Comonad_Traced_Trans_comonadTracedT($dictComonad) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Control_Comonad_Traced_Trans_extendTracedT = ($GLOBALS['Control_Comonad_Traced_Trans_extendTracedT'] ?? \Control\Comonad\Traced\Trans\phpurs_eval_thunk('Control_Comonad_Traced_Trans_extendTracedT'));
 $__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$extract = ($dictComonad)->extract;
-$extendTracedT1 = ($__global_Control_Comonad_Traced_Trans_extendTracedT)((($dictComonad)->Extend0)($__global_Prim_undefined));
+$__case_0 = $dictComonad;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->extract;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$extract = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->extend;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$extend = $__case_res_1;
+$Functor0 = (($dictExtend)->Functor0)($__global_Prim_undefined);
+$__case_0 = $Functor0;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_2;
+$__case_0 = $Functor0;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_3;
+$functorTracedT1 = (object)["map" => (function() use ($map) {
+  $__body = function($f, $v) use ($map) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    if (true) {
+$f1 = $__case_0;
+$w = $__case_1;
+return ($map)((function() use ($f1) {
+  $__fn = function($g, $t = null) use ($f1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($t) use ($g, &$__fn) { return $__fn($g, $t); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($f1)(($g)($t));
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), $w);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $v = null) use ($map, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, &$__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($f, $v);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+$extendTracedT1 = (function() use ($extend, $map, $functorTracedT1) {
+  $__fn = function($dictSemigroup) use ($extend, $map, $functorTracedT1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dictSemigroup;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append = $__case_res_4;
+    $__res = (object)["extend" => (function() use ($extend, $map, $append) {
+  $__body = function($f, $v) use ($extend, $map, $append) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    if (true) {
+$f1 = $__case_0;
+$w = $__case_1;
+return ($extend)((function() use ($f1, $map, $append) {
+  $__fn = function($w__prime__, $t = null) use ($f1, $map, $append, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($t) use ($w__prime__, &$__fn) { return $__fn($w__prime__, $t); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($f1)(($map)((function() use ($append, $t) {
+  $__fn = function($h, $t__prime__ = null) use ($append, $t, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($t__prime__) use ($h, &$__fn) { return $__fn($h, $t__prime__); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($h)(($append)($t, $t__prime__));
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), $w__prime__));
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), $w);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $v = null) use ($extend, $map, $append, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, &$__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($f, $v);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "Functor0" => (function() use ($functorTracedT1) {
+  $__fn = function($__dollar____unused) use ($functorTracedT1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $functorTracedT1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
     $__res = (function() use ($extendTracedT1, $__global_Prim_undefined, $extract) {
   $__fn = function($dictMonoid) use ($extendTracedT1, $__global_Prim_undefined, $extract, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$mempty = ($dictMonoid)->mempty;
+$__case_0 = $dictMonoid;
+$__case_res_5 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_5 = ($v)->mempty;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$mempty = $__case_res_5;
 $extendTracedT2 = ($extendTracedT1)((($dictMonoid)->Semigroup0)($__global_Prim_undefined));
     $__res = (object)["extract" => (function() use ($extract, $mempty) {
   $__body = function($v) use ($extract, $mempty) {

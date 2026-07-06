@@ -95,9 +95,29 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Data_Distributive_compose': $v = (($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn')))->compose; break;
+      case 'Data_Distributive_compose': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compose;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_Distributive_unwrap': $v = (($GLOBALS['Data_Newtype_unwrap'] ?? \Data\Newtype\phpurs_eval_thunk('Data_Newtype_unwrap')))(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))); break;
-      case 'Data_Distributive_identity': $v = (($GLOBALS['Control_Category_categoryFn'] ?? \Control\Category\phpurs_eval_thunk('Control_Category_categoryFn')))->identity; break;
+      case 'Data_Distributive_identity': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Category_categoryFn'] ?? \Control\Category\phpurs_eval_thunk('Control_Category_categoryFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->identity;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_Distributive_distributiveIdentity': $v = (object)["distribute" => (function() {
   $__fn = function($dictFunctor) use (&$__fn) {
   $__num = func_num_args();
@@ -107,7 +127,15 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
 $__global_Data_Distributive_compose = ($GLOBALS['Data_Distributive_compose'] ?? \Data\Distributive\phpurs_eval_thunk('Data_Distributive_compose'));
 $__global_Data_Identity_Identity = ($GLOBALS['Data_Identity_Identity'] ?? \Data\Identity\phpurs_eval_thunk('Data_Identity_Identity'));
 $__global_Data_Distributive_unwrap = ($GLOBALS['Data_Distributive_unwrap'] ?? \Data\Distributive\phpurs_eval_thunk('Data_Distributive_unwrap'));
-    $__res = ($__global_Data_Distributive_compose)($__global_Data_Identity_Identity, (($dictFunctor)->map)($__global_Data_Distributive_unwrap));
+$__case_0 = $dictFunctor;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__global_Data_Distributive_compose)($__global_Data_Identity_Identity, ($__case_res_0)($__global_Data_Distributive_unwrap));
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -120,7 +148,15 @@ $__global_Data_Distributive_unwrap = ($GLOBALS['Data_Distributive_unwrap'] ?? \D
 $__global_Data_Distributive_compose = ($GLOBALS['Data_Distributive_compose'] ?? \Data\Distributive\phpurs_eval_thunk('Data_Distributive_compose'));
 $__global_Data_Identity_Identity = ($GLOBALS['Data_Identity_Identity'] ?? \Data\Identity\phpurs_eval_thunk('Data_Identity_Identity'));
 $__global_Data_Distributive_unwrap = ($GLOBALS['Data_Distributive_unwrap'] ?? \Data\Distributive\phpurs_eval_thunk('Data_Distributive_unwrap'));
-$map = ($dictFunctor)->map;
+$__case_0 = $dictFunctor;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_1;
     $__res = (function() use ($__global_Data_Distributive_compose, $__global_Data_Identity_Identity, $map, $__global_Data_Distributive_unwrap) {
   $__fn = function($f) use ($__global_Data_Distributive_compose, $__global_Data_Identity_Identity, $map, $__global_Data_Distributive_unwrap, &$__fn) {
   $__num = func_num_args();
@@ -153,7 +189,15 @@ $__global_Data_Identity_functorIdentity = ($GLOBALS['Data_Identity_functorIdenti
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$map = ($dictFunctor)->map;
+$__case_0 = $dictFunctor;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_0;
     $__res = (function() use ($map) {
   $__fn = function($a, $e = null) use ($map, &$__fn) {
   $__num = func_num_args();
@@ -187,14 +231,30 @@ $map = ($dictFunctor)->map;
   }
 $__global_Data_Distributive_compose = ($GLOBALS['Data_Distributive_compose'] ?? \Data\Distributive\phpurs_eval_thunk('Data_Distributive_compose'));
 $__global_Data_Distributive_distributiveFunction = ($GLOBALS['Data_Distributive_distributiveFunction'] ?? \Data\Distributive\phpurs_eval_thunk('Data_Distributive_distributiveFunction'));
-$map = ($dictFunctor)->map;
+$__case_0 = $dictFunctor;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_1;
     $__res = (function() use ($__global_Data_Distributive_compose, $__global_Data_Distributive_distributiveFunction, $dictFunctor, $map) {
   $__fn = function($f) use ($__global_Data_Distributive_compose, $__global_Data_Distributive_distributiveFunction, $dictFunctor, $map, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($__global_Data_Distributive_compose)((($__global_Data_Distributive_distributiveFunction)->distribute)($dictFunctor), ($map)($f));
+$__case_0 = $__global_Data_Distributive_distributiveFunction;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->distribute;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__global_Data_Distributive_compose)(($__case_res_2)($dictFunctor), ($map)($f));
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -268,10 +328,25 @@ function Data_Distributive_cotraverse($dictDistributive) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Distributive_compose = ($GLOBALS['Data_Distributive_compose'] ?? \Data\Distributive\phpurs_eval_thunk('Data_Distributive_compose'));
-$map = ((($dictDistributive)->Functor0)($__global_Prim_undefined))->map;
-$distribute1 = ($dictDistributive)->distribute;
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_0;
+$__case_0 = $dictDistributive;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->distribute;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$distribute1 = $__case_res_1;
     $__res = (function() use ($distribute1, $__global_Data_Distributive_compose, $map) {
   $__fn = function($dictFunctor) use ($distribute1, $__global_Data_Distributive_compose, $map, &$__fn) {
   $__num = func_num_args();
@@ -306,7 +381,15 @@ function Data_Distributive_collectDefault($dictDistributive) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_Distributive_compose = ($GLOBALS['Data_Distributive_compose'] ?? \Data\Distributive\phpurs_eval_thunk('Data_Distributive_compose'));
-$distribute1 = ($dictDistributive)->distribute;
+$__case_0 = $dictDistributive;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->distribute;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$distribute1 = $__case_res_0;
     $__res = (function() use ($distribute1, $__global_Data_Distributive_compose) {
   $__fn = function($dictFunctor) use ($distribute1, $__global_Data_Distributive_compose, &$__fn) {
   $__num = func_num_args();
@@ -314,7 +397,15 @@ $distribute1 = ($dictDistributive)->distribute;
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $distribute2 = ($distribute1)($dictFunctor);
-$map = ($dictFunctor)->map;
+$__case_0 = $dictFunctor;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_1;
     $__res = (function() use ($__global_Data_Distributive_compose, $distribute2, $map) {
   $__fn = function($f) use ($__global_Data_Distributive_compose, $distribute2, $map, &$__fn) {
   $__num = func_num_args();
@@ -341,22 +432,85 @@ function Data_Distributive_distributiveTuple($dictTypeEquals) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Type_Equality_from = ($GLOBALS['Type_Equality_from'] ?? \Type\Equality\phpurs_eval_thunk('Type_Equality_from'));
-$__global_Data_Distributive_collectDefault = ($GLOBALS['Data_Distributive_collectDefault'] ?? \Data\Distributive\phpurs_eval_thunk('Data_Distributive_collectDefault'));
 $__global_Data_Distributive_compose = ($GLOBALS['Data_Distributive_compose'] ?? \Data\Distributive\phpurs_eval_thunk('Data_Distributive_compose'));
 $__global_Data_Unit_unit = ($GLOBALS['Data_Unit_unit'] ?? \Data\Unit\phpurs_eval_thunk('Data_Unit_unit'));
 $__global_Data_Tuple_snd = ($GLOBALS['Data_Tuple_snd'] ?? \Data\Tuple\phpurs_eval_thunk('Data_Tuple_snd'));
 $__global_Data_Tuple_functorTuple = ($GLOBALS['Data_Tuple_functorTuple'] ?? \Data\Tuple\phpurs_eval_thunk('Data_Tuple_functorTuple'));
 while (true) {
-$from = ($__global_Type_Equality_from)($dictTypeEquals);
-return (object)["collect" => (function() use ($__global_Data_Distributive_collectDefault, $dictTypeEquals) {
-  $__fn = function($dictFunctor) use ($__global_Data_Distributive_collectDefault, $dictTypeEquals, &$__fn) {
+$__case_0 = $dictTypeEquals;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->proof;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$v = ($__case_res_0)((function() {
+  $__fn = function($a) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Distributive_distributiveTuple = ($GLOBALS['Data_Distributive_distributiveTuple'] ?? \Data\Distributive\phpurs_eval_thunk('Data_Distributive_distributiveTuple'));
-    $__res = ($__global_Data_Distributive_collectDefault)(($__global_Data_Distributive_distributiveTuple)($dictTypeEquals), $dictFunctor);
+    $__res = $a;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})());
+$__case_0 = $v;
+$__case_res_1 = null;
+if (true) {
+$f = $__case_0;
+$__case_res_1 = $f;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$from = $__case_res_1;
+return (object)["collect" => (function() use ($dict, $__global_Data_Distributive_compose) {
+  $__fn = function($dictFunctor) use ($dict, $__global_Data_Distributive_compose, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->distribute;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$distribute1 = $__case_res_2;
+    $__res = ((function() use ($distribute1, $__global_Data_Distributive_compose) {
+  $__fn = function($dictFunctor) use ($distribute1, $__global_Data_Distributive_compose, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$distribute2 = ($distribute1)($dictFunctor);
+$__case_0 = $dictFunctor;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_3;
+    $__res = (function() use ($__global_Data_Distributive_compose, $distribute2, $map) {
+  $__fn = function($f) use ($__global_Data_Distributive_compose, $distribute2, $map, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($__global_Data_Distributive_compose)($distribute2, ($map)($f));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})())($dictFunctor);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -366,6 +520,14 @@ $__global_Data_Distributive_distributiveTuple = ($GLOBALS['Data_Distributive_dis
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
+$__case_0 = $dictFunctor;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
     $__res = ($__global_Data_Distributive_compose)(((function() {
   $__fn = function($value0, $value1 = null) use (&$__fn) {
   $__num = func_num_args();
@@ -377,7 +539,7 @@ $__global_Data_Distributive_distributiveTuple = ($GLOBALS['Data_Distributive_dis
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
-})())(($from)($__global_Data_Unit_unit)), (($dictFunctor)->map)($__global_Data_Tuple_snd));
+})())(($from)($__global_Data_Unit_unit)), ($__case_res_4)($__global_Data_Tuple_snd));
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -427,7 +589,15 @@ function Data_Distributive_distributeDefault($dictDistributive) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_Distributive_identity = ($GLOBALS['Data_Distributive_identity'] ?? \Data\Distributive\phpurs_eval_thunk('Data_Distributive_identity'));
-$collect1 = ($dictDistributive)->collect;
+$__case_0 = $dictDistributive;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->collect;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$collect1 = $__case_res_0;
     $__res = (function() use ($collect1, $__global_Data_Distributive_identity) {
   $__fn = function($dictFunctor) use ($collect1, $__global_Data_Distributive_identity, &$__fn) {
   $__num = func_num_args();

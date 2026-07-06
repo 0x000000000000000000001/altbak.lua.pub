@@ -117,8 +117,28 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Data_Lazy_append': $v = ($GLOBALS['Data_Semigroup_concatString'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_concatString')); break;
-      case 'Data_Lazy_compose': $v = (($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn')))->compose; break;
+      case 'Data_Lazy_append': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Semigroup_semigroupString'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_semigroupString'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Lazy_compose': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compose;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_Lazy_lazyLazy': $v = (object)["defer" => (function() {
   $__fn = function($f) use (&$__fn) {
   $__num = func_num_args();
@@ -167,7 +187,17 @@ $__global_Data_Lazy_force = ($GLOBALS['Data_Lazy_force'] ?? \Data\Lazy\phpurs_ev
   };
   return $__fn;
 })()]; break;
-      case 'Data_Lazy_map': $v = (($GLOBALS['Data_Lazy_functorLazy'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_functorLazy')))->map; break;
+      case 'Data_Lazy_map': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Lazy_functorLazy'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_functorLazy'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_Lazy_functorWithIndexLazy': $v = (object)["mapWithIndex" => (function() {
   $__fn = function($f) use (&$__fn) {
   $__num = func_num_args();
@@ -192,7 +222,29 @@ $__global_Data_Lazy_functorLazy = ($GLOBALS['Data_Lazy_functorLazy'] ?? \Data\La
   };
   return $__fn;
 })()]; break;
-      case 'Data_Lazy_invariantLazy': $v = (object)["imap" => (($GLOBALS['Data_Functor_Invariant_imapF'] ?? \Data\Functor\Invariant\phpurs_eval_thunk('Data_Functor_Invariant_imapF')))(($GLOBALS['Data_Lazy_functorLazy'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_functorLazy')))]; break;
+      case 'Data_Lazy_invariantLazy': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Lazy_functorLazy'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_functorLazy'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $map = $__case_res_0;
+  return (object)["imap" => (function() use ($map) {
+  $__fn = function($f, $v = null) use ($map, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, &$__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($map)($f);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+})(); break;
       case 'Data_Lazy_foldableLazy': $v = (object)["foldr" => (function() {
   $__fn = function($f, $z = null, $l = null) use (&$__fn) {
   $__num = func_num_args();
@@ -248,9 +300,39 @@ $__global_Data_Lazy_force = ($GLOBALS['Data_Lazy_force'] ?? \Data\Lazy\phpurs_ev
   };
   return $__fn;
 })()]; break;
-      case 'Data_Lazy_foldr': $v = (($GLOBALS['Data_Lazy_foldableLazy'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_foldableLazy')))->foldr; break;
-      case 'Data_Lazy_foldl': $v = (($GLOBALS['Data_Lazy_foldableLazy'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_foldableLazy')))->foldl; break;
-      case 'Data_Lazy_foldMap': $v = (($GLOBALS['Data_Lazy_foldableLazy'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_foldableLazy')))->foldMap; break;
+      case 'Data_Lazy_foldr': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Lazy_foldableLazy'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_foldableLazy'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Lazy_foldl': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Lazy_foldableLazy'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_foldableLazy'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldl;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Lazy_foldMap': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Lazy_foldableLazy'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_foldableLazy'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldMap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_Lazy_foldableWithIndexLazy': $v = (object)["foldrWithIndex" => (function() {
   $__fn = function($f) use (&$__fn) {
   $__num = func_num_args();
@@ -310,18 +392,25 @@ $__global_Data_Lazy_foldableLazy = ($GLOBALS['Data_Lazy_foldableLazy'] ?? \Data\
   };
   return $__fn;
 })()]; break;
-      case 'Data_Lazy_traversableLazy': $v = (object)["traverse" => (function() {
-  $__fn = function($dictApplicative) use (&$__fn) {
+      case 'Data_Lazy_traversableLazy': $v = (object)["traverse" => (function() use ($dict) {
+  $__fn = function($dictApplicative) use ($dict, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Lazy_compose = ($GLOBALS['Data_Lazy_compose'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_compose'));
 $__global_Data_Lazy_defer = ($GLOBALS['Data_Lazy_defer'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_defer'));
 $__global_Data_Function_const = ($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const'));
 $__global_Data_Lazy_force = ($GLOBALS['Data_Lazy_force'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_force'));
-$map1 = ((((($dictApplicative)->Apply0)($__global_Prim_undefined))->Functor0)($__global_Prim_undefined))->map;
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map1 = $__case_res_0;
     $__res = (function() use ($map1, $__global_Data_Lazy_compose, $__global_Data_Lazy_defer, $__global_Data_Function_const, $__global_Data_Lazy_force) {
   $__fn = function($f, $l = null) use ($map1, $__global_Data_Lazy_compose, $__global_Data_Lazy_defer, $__global_Data_Function_const, $__global_Data_Lazy_force, &$__fn) {
   $__num = func_num_args();
@@ -337,18 +426,25 @@ $map1 = ((((($dictApplicative)->Apply0)($__global_Prim_undefined))->Functor0)($_
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})(), "sequence" => (function() {
-  $__fn = function($dictApplicative) use (&$__fn) {
+})(), "sequence" => (function() use ($dict) {
+  $__fn = function($dictApplicative) use ($dict, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Lazy_compose = ($GLOBALS['Data_Lazy_compose'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_compose'));
 $__global_Data_Lazy_defer = ($GLOBALS['Data_Lazy_defer'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_defer'));
 $__global_Data_Function_const = ($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const'));
 $__global_Data_Lazy_force = ($GLOBALS['Data_Lazy_force'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_force'));
-$map1 = ((((($dictApplicative)->Apply0)($__global_Prim_undefined))->Functor0)($__global_Prim_undefined))->map;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map1 = $__case_res_1;
     $__res = (function() use ($map1, $__global_Data_Lazy_compose, $__global_Data_Lazy_defer, $__global_Data_Function_const, $__global_Data_Lazy_force) {
   $__fn = function($l) use ($map1, $__global_Data_Lazy_compose, $__global_Data_Lazy_defer, $__global_Data_Function_const, $__global_Data_Lazy_force, &$__fn) {
   $__num = func_num_args();
@@ -386,7 +482,17 @@ $__global_Data_Lazy_foldableLazy = ($GLOBALS['Data_Lazy_foldableLazy'] ?? \Data\
   };
   return $__fn;
 })()]; break;
-      case 'Data_Lazy_traverse': $v = (($GLOBALS['Data_Lazy_traversableLazy'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_traversableLazy')))->traverse; break;
+      case 'Data_Lazy_traverse': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Lazy_traversableLazy'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_traversableLazy'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->traverse;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_Lazy_traversableWithIndexLazy': $v = (object)["traverseWithIndex" => (function() {
   $__fn = function($dictApplicative) use (&$__fn) {
   $__num = func_num_args();
@@ -498,18 +604,25 @@ $__global_Data_Lazy_foldableLazy = ($GLOBALS['Data_Lazy_foldableLazy'] ?? \Data\
   };
   return $__fn;
 })()]; break;
-      case 'Data_Lazy_traversable1Lazy': $v = (object)["traverse1" => (function() {
-  $__fn = function($dictApply) use (&$__fn) {
+      case 'Data_Lazy_traversable1Lazy': $v = (object)["traverse1" => (function() use ($dict) {
+  $__fn = function($dictApply) use ($dict, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Lazy_compose = ($GLOBALS['Data_Lazy_compose'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_compose'));
 $__global_Data_Lazy_defer = ($GLOBALS['Data_Lazy_defer'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_defer'));
 $__global_Data_Function_const = ($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const'));
 $__global_Data_Lazy_force = ($GLOBALS['Data_Lazy_force'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_force'));
-$map1 = ((($dictApply)->Functor0)($__global_Prim_undefined))->map;
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map1 = $__case_res_0;
     $__res = (function() use ($map1, $__global_Data_Lazy_compose, $__global_Data_Lazy_defer, $__global_Data_Function_const, $__global_Data_Lazy_force) {
   $__fn = function($f, $l = null) use ($map1, $__global_Data_Lazy_compose, $__global_Data_Lazy_defer, $__global_Data_Function_const, $__global_Data_Lazy_force, &$__fn) {
   $__num = func_num_args();
@@ -525,18 +638,25 @@ $map1 = ((($dictApply)->Functor0)($__global_Prim_undefined))->map;
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})(), "sequence1" => (function() {
-  $__fn = function($dictApply) use (&$__fn) {
+})(), "sequence1" => (function() use ($dict) {
+  $__fn = function($dictApply) use ($dict, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Lazy_compose = ($GLOBALS['Data_Lazy_compose'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_compose'));
 $__global_Data_Lazy_defer = ($GLOBALS['Data_Lazy_defer'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_defer'));
 $__global_Data_Function_const = ($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const'));
 $__global_Data_Lazy_force = ($GLOBALS['Data_Lazy_force'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_force'));
-$map1 = ((($dictApply)->Functor0)($__global_Prim_undefined))->map;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map1 = $__case_res_1;
     $__res = (function() use ($map1, $__global_Data_Lazy_compose, $__global_Data_Lazy_defer, $__global_Data_Function_const, $__global_Data_Lazy_force) {
   $__fn = function($l) use ($map1, $__global_Data_Lazy_compose, $__global_Data_Lazy_defer, $__global_Data_Function_const, $__global_Data_Lazy_force, &$__fn) {
   $__num = func_num_args();
@@ -608,26 +728,42 @@ $__global_Data_Lazy_functorLazy = ($GLOBALS['Data_Lazy_functorLazy'] ?? \Data\La
   };
   return $__fn;
 })()]; break;
-      case 'Data_Lazy_eq1Lazy': $v = (object)["eq1" => (function() {
-  $__fn = function($dictEq) use (&$__fn) {
+      case 'Data_Lazy_eq1Lazy': $v = (object)["eq1" => (function() use ($dict) {
+  $__body = function($dictEq) use ($dict) {
+    $__case_0 = $dict;
+    if (true) {
+$v = $__case_0;
+return ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($dictEq) use ($dict, $__body, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Lazy_eqLazy = ($GLOBALS['Data_Lazy_eqLazy'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_eqLazy'));
-    $__res = (($__global_Data_Lazy_eqLazy)($dictEq))->eq;
+    $__res = $__body($dictEq);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
 })()]; break;
-      case 'Data_Lazy_ord1Lazy': $v = (object)["compare1" => (function() {
-  $__fn = function($dictOrd) use (&$__fn) {
+      case 'Data_Lazy_ord1Lazy': $v = (object)["compare1" => (function() use ($dict) {
+  $__body = function($dictOrd) use ($dict) {
+    $__case_0 = $dict;
+    if (true) {
+$v = $__case_0;
+return ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($dictOrd) use ($dict, $__body, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Lazy_ordLazy = ($GLOBALS['Data_Lazy_ordLazy'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_ordLazy'));
-    $__res = (($__global_Data_Lazy_ordLazy)($dictOrd))->compare;
+    $__res = $__body($dictOrd);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -690,7 +826,17 @@ $__global_Data_Lazy_functorLazy = ($GLOBALS['Data_Lazy_functorLazy'] ?? \Data\La
   };
   return $__fn;
 })()]; break;
-      case 'Data_Lazy_apply': $v = (($GLOBALS['Data_Lazy_applyLazy'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_applyLazy')))->apply; break;
+      case 'Data_Lazy_apply': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Lazy_applyLazy'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_applyLazy'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_Lazy_bindLazy': $v = (object)["bind" => (function() {
   $__fn = function($l, $f = null) use (&$__fn) {
   $__num = func_num_args();
@@ -800,15 +946,24 @@ function Data_Lazy_showLazy($dictShow) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
+$__global_Data_Lazy_append = ($GLOBALS['Data_Lazy_append'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_append'));
 $__global_Data_Lazy_force = ($GLOBALS['Data_Lazy_force'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_force'));
-$show = ($dictShow)->show;
-    $__res = (object)["show" => (function() use ($show, $__global_Data_Lazy_force) {
-  $__fn = function($x) use ($show, $__global_Data_Lazy_force, &$__fn) {
+$__case_0 = $dictShow;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->show;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$show = $__case_res_0;
+    $__res = (object)["show" => (function() use ($__global_Data_Lazy_append, $show, $__global_Data_Lazy_force) {
+  $__fn = function($x) use ($__global_Data_Lazy_append, $show, $__global_Data_Lazy_force, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ("(defer \_ -> " . (($show)(($__global_Data_Lazy_force)($x)) . ")"));
+    $__res = ($__global_Data_Lazy_append)("(defer \_ -> ", ($__global_Data_Lazy_append)(($show)(($__global_Data_Lazy_force)($x)), ")"));
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -826,10 +981,42 @@ function Data_Lazy_semiringLazy($dictSemiring) {
   }
 $__global_Data_Lazy_defer = ($GLOBALS['Data_Lazy_defer'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_defer'));
 $__global_Data_Lazy_force = ($GLOBALS['Data_Lazy_force'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_force'));
-$add = ($dictSemiring)->add;
-$zero = ($dictSemiring)->zero;
-$mul = ($dictSemiring)->mul;
-$one = ($dictSemiring)->one;
+$__case_0 = $dictSemiring;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->add;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$add = $__case_res_0;
+$__case_0 = $dictSemiring;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->zero;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$zero = $__case_res_1;
+$__case_0 = $dictSemiring;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->mul;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$mul = $__case_res_2;
+$__case_0 = $dictSemiring;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->one;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$one = $__case_res_3;
     $__res = (object)["add" => (function() use ($__global_Data_Lazy_defer, $add, $__global_Data_Lazy_force) {
   $__fn = function($a, $b = null) use ($__global_Data_Lazy_defer, $add, $__global_Data_Lazy_force, &$__fn) {
   $__num = func_num_args();
@@ -906,7 +1093,15 @@ function Data_Lazy_semigroupLazy($dictSemigroup) {
   }
 $__global_Data_Lazy_defer = ($GLOBALS['Data_Lazy_defer'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_defer'));
 $__global_Data_Lazy_force = ($GLOBALS['Data_Lazy_force'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_force'));
-$append1 = ($dictSemigroup)->append;
+$__case_0 = $dictSemigroup;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append1 = $__case_res_0;
     $__res = (object)["append" => (function() use ($__global_Data_Lazy_defer, $append1, $__global_Data_Lazy_force) {
   $__fn = function($a, $b = null) use ($__global_Data_Lazy_defer, $append1, $__global_Data_Lazy_force, &$__fn) {
   $__num = func_num_args();
@@ -940,12 +1135,116 @@ function Data_Lazy_ringLazy($dictRing) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Lazy_semiringLazy = ($GLOBALS['Data_Lazy_semiringLazy'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_semiringLazy'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Lazy_defer = ($GLOBALS['Data_Lazy_defer'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_defer'));
 $__global_Data_Lazy_force = ($GLOBALS['Data_Lazy_force'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_force'));
-$sub = ($dictRing)->sub;
-$semiringLazy1 = ($__global_Data_Lazy_semiringLazy)((($dictRing)->Semiring0)($__global_Prim_undefined));
+$__case_0 = $dictRing;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->sub;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$sub = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->add;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$add = $__case_res_1;
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->zero;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$zero = $__case_res_2;
+$__case_0 = $dict;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->mul;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$mul = $__case_res_3;
+$__case_0 = $dict;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->one;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$one = $__case_res_4;
+$semiringLazy1 = (object)["add" => (function() use ($__global_Data_Lazy_defer, $add, $__global_Data_Lazy_force) {
+  $__fn = function($a, $b = null) use ($__global_Data_Lazy_defer, $add, $__global_Data_Lazy_force, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($b) use ($a, &$__fn) { return $__fn($a, $b); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($__global_Data_Lazy_defer)((function() use ($add, $__global_Data_Lazy_force, $a, $b) {
+  $__fn = function($v) use ($add, $__global_Data_Lazy_force, $a, $b, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($add)(($__global_Data_Lazy_force)($a), ($__global_Data_Lazy_force)($b));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})());
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "zero" => ($__global_Data_Lazy_defer)((function() use ($zero) {
+  $__fn = function($v) use ($zero, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $zero;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()), "mul" => (function() use ($__global_Data_Lazy_defer, $mul, $__global_Data_Lazy_force) {
+  $__fn = function($a, $b = null) use ($__global_Data_Lazy_defer, $mul, $__global_Data_Lazy_force, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($b) use ($a, &$__fn) { return $__fn($a, $b); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($__global_Data_Lazy_defer)((function() use ($mul, $__global_Data_Lazy_force, $a, $b) {
+  $__fn = function($v) use ($mul, $__global_Data_Lazy_force, $a, $b, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($mul)(($__global_Data_Lazy_force)($a), ($__global_Data_Lazy_force)($b));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})());
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "one" => ($__global_Data_Lazy_defer)((function() use ($one) {
+  $__fn = function($v) use ($one, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $one;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})())];
     $__res = (object)["sub" => (function() use ($__global_Data_Lazy_defer, $sub, $__global_Data_Lazy_force) {
   $__fn = function($a, $b = null) use ($__global_Data_Lazy_defer, $sub, $__global_Data_Lazy_force, &$__fn) {
   $__num = func_num_args();
@@ -989,11 +1288,48 @@ function Data_Lazy_monoidLazy($dictMonoid) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Lazy_semigroupLazy = ($GLOBALS['Data_Lazy_semigroupLazy'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_semigroupLazy'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Lazy_defer = ($GLOBALS['Data_Lazy_defer'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_defer'));
-$mempty = ($dictMonoid)->mempty;
-$semigroupLazy1 = ($__global_Data_Lazy_semigroupLazy)((($dictMonoid)->Semigroup0)($__global_Prim_undefined));
+$__global_Data_Lazy_force = ($GLOBALS['Data_Lazy_force'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_force'));
+$__case_0 = $dictMonoid;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->mempty;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$mempty = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append1 = $__case_res_1;
+$semigroupLazy1 = (object)["append" => (function() use ($__global_Data_Lazy_defer, $append1, $__global_Data_Lazy_force) {
+  $__fn = function($a, $b = null) use ($__global_Data_Lazy_defer, $append1, $__global_Data_Lazy_force, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($b) use ($a, &$__fn) { return $__fn($a, $b); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($__global_Data_Lazy_defer)((function() use ($append1, $__global_Data_Lazy_force, $a, $b) {
+  $__fn = function($v) use ($append1, $__global_Data_Lazy_force, $a, $b, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($append1)(($__global_Data_Lazy_force)($a), ($__global_Data_Lazy_force)($b));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})());
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
     $__res = (object)["mempty" => ($__global_Data_Lazy_defer)((function() use ($mempty) {
   $__fn = function($v) use ($mempty, &$__fn) {
   $__num = func_num_args();
@@ -1043,7 +1379,15 @@ function Data_Lazy_eqLazy($dictEq) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_Lazy_force = ($GLOBALS['Data_Lazy_force'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_force'));
-$eq = ($dictEq)->eq;
+$__case_0 = $dictEq;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq = $__case_res_0;
     $__res = (object)["eq" => (function() use ($eq, $__global_Data_Lazy_force) {
   $__fn = function($x, $y = null) use ($eq, $__global_Data_Lazy_force, &$__fn) {
   $__num = func_num_args();
@@ -1067,11 +1411,37 @@ function Data_Lazy_ordLazy($dictOrd) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Lazy_eqLazy = ($GLOBALS['Data_Lazy_eqLazy'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_eqLazy'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Lazy_force = ($GLOBALS['Data_Lazy_force'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_force'));
-$compare = ($dictOrd)->compare;
-$eqLazy1 = ($__global_Data_Lazy_eqLazy)((($dictOrd)->Eq0)($__global_Prim_undefined));
+$__case_0 = $dictOrd;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq = $__case_res_1;
+$eqLazy1 = (object)["eq" => (function() use ($eq, $__global_Data_Lazy_force) {
+  $__fn = function($x, $y = null) use ($eq, $__global_Data_Lazy_force, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($y) use ($x, &$__fn) { return $__fn($x, $y); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($eq)(($__global_Data_Lazy_force)($x), ($__global_Data_Lazy_force)($y));
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
     $__res = (object)["compare" => (function() use ($compare, $__global_Data_Lazy_force) {
   $__fn = function($x, $y = null) use ($compare, $__global_Data_Lazy_force, &$__fn) {
   $__num = func_num_args();
@@ -1108,9 +1478,148 @@ function Data_Lazy_commutativeRingLazy($dictCommutativeRing) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Lazy_ringLazy = ($GLOBALS['Data_Lazy_ringLazy'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_ringLazy'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$ringLazy1 = ($__global_Data_Lazy_ringLazy)((($dictCommutativeRing)->Ring0)($__global_Prim_undefined));
+$__global_Data_Lazy_defer = ($GLOBALS['Data_Lazy_defer'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_defer'));
+$__global_Data_Lazy_force = ($GLOBALS['Data_Lazy_force'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_force'));
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->sub;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$sub = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->add;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$add = $__case_res_1;
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->zero;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$zero = $__case_res_2;
+$__case_0 = $dict;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->mul;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$mul = $__case_res_3;
+$__case_0 = $dict;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->one;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$one = $__case_res_4;
+$semiringLazy1 = (object)["add" => (function() use ($__global_Data_Lazy_defer, $add, $__global_Data_Lazy_force) {
+  $__fn = function($a, $b = null) use ($__global_Data_Lazy_defer, $add, $__global_Data_Lazy_force, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($b) use ($a, &$__fn) { return $__fn($a, $b); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($__global_Data_Lazy_defer)((function() use ($add, $__global_Data_Lazy_force, $a, $b) {
+  $__fn = function($v) use ($add, $__global_Data_Lazy_force, $a, $b, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($add)(($__global_Data_Lazy_force)($a), ($__global_Data_Lazy_force)($b));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})());
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "zero" => ($__global_Data_Lazy_defer)((function() use ($zero) {
+  $__fn = function($v) use ($zero, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $zero;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()), "mul" => (function() use ($__global_Data_Lazy_defer, $mul, $__global_Data_Lazy_force) {
+  $__fn = function($a, $b = null) use ($__global_Data_Lazy_defer, $mul, $__global_Data_Lazy_force, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($b) use ($a, &$__fn) { return $__fn($a, $b); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($__global_Data_Lazy_defer)((function() use ($mul, $__global_Data_Lazy_force, $a, $b) {
+  $__fn = function($v) use ($mul, $__global_Data_Lazy_force, $a, $b, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($mul)(($__global_Data_Lazy_force)($a), ($__global_Data_Lazy_force)($b));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})());
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "one" => ($__global_Data_Lazy_defer)((function() use ($one) {
+  $__fn = function($v) use ($one, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $one;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})())];
+$ringLazy1 = (object)["sub" => (function() use ($__global_Data_Lazy_defer, $sub, $__global_Data_Lazy_force) {
+  $__fn = function($a, $b = null) use ($__global_Data_Lazy_defer, $sub, $__global_Data_Lazy_force, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($b) use ($a, &$__fn) { return $__fn($a, $b); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($__global_Data_Lazy_defer)((function() use ($sub, $__global_Data_Lazy_force, $a, $b) {
+  $__fn = function($v) use ($sub, $__global_Data_Lazy_force, $a, $b, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($sub)(($__global_Data_Lazy_force)($a), ($__global_Data_Lazy_force)($b));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})());
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "Semiring0" => (function() use ($semiringLazy1) {
+  $__fn = function($__dollar____unused) use ($semiringLazy1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $semiringLazy1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
     $__res = (object)["Ring0" => (function() use ($ringLazy1) {
   $__fn = function($__dollar____unused) use ($ringLazy1, &$__fn) {
   $__num = func_num_args();
@@ -1133,15 +1642,187 @@ function Data_Lazy_euclideanRingLazy($dictEuclideanRing) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Lazy_commutativeRingLazy = ($GLOBALS['Data_Lazy_commutativeRingLazy'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_commutativeRingLazy'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$__global_Data_Lazy_compose = ($GLOBALS['Data_Lazy_compose'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_compose'));
-$__global_Data_Lazy_force = ($GLOBALS['Data_Lazy_force'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_force'));
 $__global_Data_Lazy_defer = ($GLOBALS['Data_Lazy_defer'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_defer'));
-$div = ($dictEuclideanRing)->div;
-$mod = ($dictEuclideanRing)->mod;
-$commutativeRingLazy1 = ($__global_Data_Lazy_commutativeRingLazy)((($dictEuclideanRing)->CommutativeRing0)($__global_Prim_undefined));
-    $__res = (object)["degree" => ($__global_Data_Lazy_compose)(($dictEuclideanRing)->degree, $__global_Data_Lazy_force), "div" => (function() use ($__global_Data_Lazy_defer, $div, $__global_Data_Lazy_force) {
+$__global_Data_Lazy_force = ($GLOBALS['Data_Lazy_force'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_force'));
+$__global_Data_Lazy_compose = ($GLOBALS['Data_Lazy_compose'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_compose'));
+$__case_0 = $dictEuclideanRing;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->div;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$div = $__case_res_0;
+$__case_0 = $dictEuclideanRing;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->mod;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$mod = $__case_res_1;
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->sub;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$sub = $__case_res_2;
+$__case_0 = $dict;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->add;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$add = $__case_res_3;
+$__case_0 = $dict;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->zero;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$zero = $__case_res_4;
+$__case_0 = $dict;
+$__case_res_5 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_5 = ($v)->mul;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$mul = $__case_res_5;
+$__case_0 = $dict;
+$__case_res_6 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_6 = ($v)->one;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$one = $__case_res_6;
+$semiringLazy1 = (object)["add" => (function() use ($__global_Data_Lazy_defer, $add, $__global_Data_Lazy_force) {
+  $__fn = function($a, $b = null) use ($__global_Data_Lazy_defer, $add, $__global_Data_Lazy_force, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($b) use ($a, &$__fn) { return $__fn($a, $b); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($__global_Data_Lazy_defer)((function() use ($add, $__global_Data_Lazy_force, $a, $b) {
+  $__fn = function($v) use ($add, $__global_Data_Lazy_force, $a, $b, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($add)(($__global_Data_Lazy_force)($a), ($__global_Data_Lazy_force)($b));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})());
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "zero" => ($__global_Data_Lazy_defer)((function() use ($zero) {
+  $__fn = function($v) use ($zero, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $zero;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()), "mul" => (function() use ($__global_Data_Lazy_defer, $mul, $__global_Data_Lazy_force) {
+  $__fn = function($a, $b = null) use ($__global_Data_Lazy_defer, $mul, $__global_Data_Lazy_force, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($b) use ($a, &$__fn) { return $__fn($a, $b); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($__global_Data_Lazy_defer)((function() use ($mul, $__global_Data_Lazy_force, $a, $b) {
+  $__fn = function($v) use ($mul, $__global_Data_Lazy_force, $a, $b, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($mul)(($__global_Data_Lazy_force)($a), ($__global_Data_Lazy_force)($b));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})());
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "one" => ($__global_Data_Lazy_defer)((function() use ($one) {
+  $__fn = function($v) use ($one, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $one;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})())];
+$ringLazy1 = (object)["sub" => (function() use ($__global_Data_Lazy_defer, $sub, $__global_Data_Lazy_force) {
+  $__fn = function($a, $b = null) use ($__global_Data_Lazy_defer, $sub, $__global_Data_Lazy_force, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($b) use ($a, &$__fn) { return $__fn($a, $b); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($__global_Data_Lazy_defer)((function() use ($sub, $__global_Data_Lazy_force, $a, $b) {
+  $__fn = function($v) use ($sub, $__global_Data_Lazy_force, $a, $b, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($sub)(($__global_Data_Lazy_force)($a), ($__global_Data_Lazy_force)($b));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})());
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "Semiring0" => (function() use ($semiringLazy1) {
+  $__fn = function($__dollar____unused) use ($semiringLazy1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $semiringLazy1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+$commutativeRingLazy1 = (object)["Ring0" => (function() use ($ringLazy1) {
+  $__fn = function($__dollar____unused) use ($ringLazy1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $ringLazy1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+$__case_0 = $dictEuclideanRing;
+$__case_res_7 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_7 = ($v)->degree;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = (object)["degree" => ($__global_Data_Lazy_compose)($__case_res_7, $__global_Data_Lazy_force), "div" => (function() use ($__global_Data_Lazy_defer, $div, $__global_Data_Lazy_force) {
   $__fn = function($a, $b = null) use ($__global_Data_Lazy_defer, $div, $__global_Data_Lazy_force, &$__fn) {
   $__num = func_num_args();
   if ($__num < 2) {
@@ -1205,12 +1886,78 @@ function Data_Lazy_boundedLazy($dictBounded) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Lazy_ordLazy = ($GLOBALS['Data_Lazy_ordLazy'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_ordLazy'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
+$__global_Data_Lazy_force = ($GLOBALS['Data_Lazy_force'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_force'));
 $__global_Data_Lazy_defer = ($GLOBALS['Data_Lazy_defer'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_defer'));
-$top = ($dictBounded)->top;
-$bottom = ($dictBounded)->bottom;
-$ordLazy1 = ($__global_Data_Lazy_ordLazy)((($dictBounded)->Ord0)($__global_Prim_undefined));
+$__case_0 = $dictBounded;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->top;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$top = $__case_res_0;
+$__case_0 = $dictBounded;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->bottom;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bottom = $__case_res_1;
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare = $__case_res_2;
+$__case_0 = $dict;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq = $__case_res_3;
+$eqLazy1 = (object)["eq" => (function() use ($eq, $__global_Data_Lazy_force) {
+  $__fn = function($x, $y = null) use ($eq, $__global_Data_Lazy_force, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($y) use ($x, &$__fn) { return $__fn($x, $y); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($eq)(($__global_Data_Lazy_force)($x), ($__global_Data_Lazy_force)($y));
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+$ordLazy1 = (object)["compare" => (function() use ($compare, $__global_Data_Lazy_force) {
+  $__fn = function($x, $y = null) use ($compare, $__global_Data_Lazy_force, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($y) use ($x, &$__fn) { return $__fn($x, $y); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($compare)(($__global_Data_Lazy_force)($x), ($__global_Data_Lazy_force)($y));
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "Eq0" => (function() use ($eqLazy1) {
+  $__fn = function($__dollar____unused) use ($eqLazy1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $eqLazy1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
     $__res = (object)["top" => ($__global_Data_Lazy_defer)((function() use ($top) {
   $__fn = function($v) use ($top, &$__fn) {
   $__num = func_num_args();
@@ -1259,12 +2006,60 @@ function Data_Lazy_heytingAlgebraLazy($dictHeytingAlgebra) {
 $__global_Data_Lazy_defer = ($GLOBALS['Data_Lazy_defer'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_defer'));
 $__global_Data_Lazy_apply = ($GLOBALS['Data_Lazy_apply'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_apply'));
 $__global_Data_Lazy_map = ($GLOBALS['Data_Lazy_map'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_map'));
-$ff = ($dictHeytingAlgebra)->ff;
-$tt = ($dictHeytingAlgebra)->tt;
-$implies = ($dictHeytingAlgebra)->implies;
-$conj = ($dictHeytingAlgebra)->conj;
-$disj = ($dictHeytingAlgebra)->disj;
-$not = ($dictHeytingAlgebra)->not;
+$__case_0 = $dictHeytingAlgebra;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->ff;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$ff = $__case_res_0;
+$__case_0 = $dictHeytingAlgebra;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->tt;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$tt = $__case_res_1;
+$__case_0 = $dictHeytingAlgebra;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->implies;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$implies = $__case_res_2;
+$__case_0 = $dictHeytingAlgebra;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->conj;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$conj = $__case_res_3;
+$__case_0 = $dictHeytingAlgebra;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->disj;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$disj = $__case_res_4;
+$__case_0 = $dictHeytingAlgebra;
+$__case_res_5 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_5 = ($v)->not;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$not = $__case_res_5;
     $__res = (object)["ff" => ($__global_Data_Lazy_defer)((function() use ($ff) {
   $__fn = function($v) use ($ff, &$__fn) {
   $__num = func_num_args();
@@ -1340,9 +2135,127 @@ function Data_Lazy_booleanAlgebraLazy($dictBooleanAlgebra) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Lazy_heytingAlgebraLazy = ($GLOBALS['Data_Lazy_heytingAlgebraLazy'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_heytingAlgebraLazy'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$heytingAlgebraLazy1 = ($__global_Data_Lazy_heytingAlgebraLazy)((($dictBooleanAlgebra)->HeytingAlgebra0)($__global_Prim_undefined));
+$__global_Data_Lazy_defer = ($GLOBALS['Data_Lazy_defer'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_defer'));
+$__global_Data_Lazy_apply = ($GLOBALS['Data_Lazy_apply'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_apply'));
+$__global_Data_Lazy_map = ($GLOBALS['Data_Lazy_map'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_map'));
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->ff;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$ff = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->tt;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$tt = $__case_res_1;
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->implies;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$implies = $__case_res_2;
+$__case_0 = $dict;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->conj;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$conj = $__case_res_3;
+$__case_0 = $dict;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->disj;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$disj = $__case_res_4;
+$__case_0 = $dict;
+$__case_res_5 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_5 = ($v)->not;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$not = $__case_res_5;
+$heytingAlgebraLazy1 = (object)["ff" => ($__global_Data_Lazy_defer)((function() use ($ff) {
+  $__fn = function($v) use ($ff, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $ff;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()), "tt" => ($__global_Data_Lazy_defer)((function() use ($tt) {
+  $__fn = function($v) use ($tt, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $tt;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()), "implies" => (function() use ($__global_Data_Lazy_apply, $__global_Data_Lazy_map, $implies) {
+  $__fn = function($a, $b = null) use ($__global_Data_Lazy_apply, $__global_Data_Lazy_map, $implies, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($b) use ($a, &$__fn) { return $__fn($a, $b); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($__global_Data_Lazy_apply)(($__global_Data_Lazy_map)($implies, $a), $b);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "conj" => (function() use ($__global_Data_Lazy_apply, $__global_Data_Lazy_map, $conj) {
+  $__fn = function($a, $b = null) use ($__global_Data_Lazy_apply, $__global_Data_Lazy_map, $conj, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($b) use ($a, &$__fn) { return $__fn($a, $b); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($__global_Data_Lazy_apply)(($__global_Data_Lazy_map)($conj, $a), $b);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "disj" => (function() use ($__global_Data_Lazy_apply, $__global_Data_Lazy_map, $disj) {
+  $__fn = function($a, $b = null) use ($__global_Data_Lazy_apply, $__global_Data_Lazy_map, $disj, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($b) use ($a, &$__fn) { return $__fn($a, $b); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($__global_Data_Lazy_apply)(($__global_Data_Lazy_map)($disj, $a), $b);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "not" => (function() use ($__global_Data_Lazy_map, $not) {
+  $__fn = function($a) use ($__global_Data_Lazy_map, $not, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($__global_Data_Lazy_map)($not, $a);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
     $__res = (object)["HeytingAlgebra0" => (function() use ($heytingAlgebraLazy1) {
   $__fn = function($__dollar____unused) use ($heytingAlgebraLazy1, &$__fn) {
   $__num = func_num_args();

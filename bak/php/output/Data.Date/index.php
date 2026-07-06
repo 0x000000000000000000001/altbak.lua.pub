@@ -110,50 +110,503 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Data_Date_fromEnum': $v = (($GLOBALS['Data_Date_Component_boundedEnumMonth'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_boundedEnumMonth')))->fromEnum; break;
-      case 'Data_Date_eq': $v = ($GLOBALS['Data_Eq_eqIntImpl'] ?? \Data\Eq\phpurs_eval_thunk('Data_Eq_eqIntImpl')); break;
+      case 'Data_Date_fromEnum': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Date_Component_boundedEnumMonth'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_boundedEnumMonth'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->fromEnum;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Date_eq': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Eq_eqInt'] ?? \Data\Eq\phpurs_eval_thunk('Data_Eq_eqInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_Date_fromJust': $v = (($GLOBALS['Data_Maybe_fromJust'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_fromJust')))(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))); break;
-      case 'Data_Date_toEnum': $v = (($GLOBALS['Data_Date_Component_boundedEnumWeekday'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_boundedEnumWeekday')))->toEnum; break;
-      case 'Data_Date_append': $v = ($GLOBALS['Data_Semigroup_concatString'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_concatString')); break;
-      case 'Data_Date_show': $v = (($GLOBALS['Data_Date_Component_showYear'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_showYear')))->show; break;
-      case 'Data_Date_show1': $v = (($GLOBALS['Data_Date_Component_showMonth'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_showMonth')))->show; break;
-      case 'Data_Date_show2': $v = (($GLOBALS['Data_Date_Component_showDay'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_showDay')))->show; break;
-      case 'Data_Date_fromEnum1': $v = (($GLOBALS['Data_Date_Component_boundedEnumYear'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_boundedEnumYear')))->fromEnum; break;
-      case 'Data_Date_conj': $v = ($GLOBALS['Data_HeytingAlgebra_boolConj'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_boolConj')); break;
-      case 'Data_Date_mod': $v = ($GLOBALS['Data_EuclideanRing_intMod'] ?? \Data\EuclideanRing\phpurs_eval_thunk('Data_EuclideanRing_intMod')); break;
-      case 'Data_Date_disj': $v = ($GLOBALS['Data_HeytingAlgebra_boolDisj'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_boolDisj')); break;
-      case 'Data_Date_not': $v = ($GLOBALS['Data_HeytingAlgebra_boolNot'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_boolNot')); break;
-      case 'Data_Date_compose': $v = (($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn')))->compose; break;
-      case 'Data_Date_toEnum1': $v = (($GLOBALS['Data_Date_Component_boundedEnumDay'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_boundedEnumDay')))->toEnum; break;
-      case 'Data_Date_eq1': $v = ($GLOBALS['Data_Eq_eqIntImpl'] ?? \Data\Eq\phpurs_eval_thunk('Data_Eq_eqIntImpl')); break;
-      case 'Data_Date_eq2': $v = (($GLOBALS['Data_Date_Component_eqMonth'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_eqMonth')))->eq; break;
-      case 'Data_Date_eq3': $v = ($GLOBALS['Data_Eq_eqIntImpl'] ?? \Data\Eq\phpurs_eval_thunk('Data_Eq_eqIntImpl')); break;
-      case 'Data_Date_compare': $v = (($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt')))->compare; break;
-      case 'Data_Date_compare1': $v = (($GLOBALS['Data_Date_Component_ordMonth'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_ordMonth')))->compare; break;
-      case 'Data_Date_compare2': $v = (($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt')))->compare; break;
-      case 'Data_Date_succ': $v = (($GLOBALS['Data_Date_Component_enumMonth'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_enumMonth')))->succ; break;
-      case 'Data_Date_succ1': $v = (($GLOBALS['Data_Date_Component_enumDay'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_enumDay')))->succ; break;
-      case 'Data_Date_greaterThan': $v = (($GLOBALS['Data_Ord_greaterThan'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_greaterThan')))((($GLOBALS['Data_Maybe_ordMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_ordMaybe')))(($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt')))); break;
-      case 'Data_Date_succ2': $v = (($GLOBALS['Data_Date_Component_enumYear'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_enumYear')))->succ; break;
-      case 'Data_Date_apply': $v = (($GLOBALS['Data_Maybe_applyMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_applyMaybe')))->apply; break;
-      case 'Data_Date_map': $v = (($GLOBALS['Data_Maybe_functorMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_functorMaybe')))->map; break;
-      case 'Data_Date_pure': $v = ($GLOBALS['Data_Maybe_Just'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_Just')); break;
-      case 'Data_Date_pred': $v = (($GLOBALS['Data_Date_Component_enumMonth'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_enumMonth')))->pred; break;
-      case 'Data_Date_pred1': $v = (($GLOBALS['Data_Date_Component_enumDay'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_enumDay')))->pred; break;
-      case 'Data_Date_pred2': $v = (($GLOBALS['Data_Date_Component_enumYear'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_enumYear')))->pred; break;
-      case 'Data_Date_toEnum2': $v = (($GLOBALS['Data_Date_Component_boundedEnumMonth'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_boundedEnumMonth')))->toEnum; break;
-      case 'Data_Date_add': $v = ($GLOBALS['Data_Semiring_intAdd'] ?? \Data\Semiring\phpurs_eval_thunk('Data_Semiring_intAdd')); break;
-      case 'Data_Date_fromEnum2': $v = (($GLOBALS['Data_Date_Component_boundedEnumDay'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_boundedEnumDay')))->fromEnum; break;
-      case 'Data_Date_lessThan': $v = (($GLOBALS['Data_Ord_lessThan'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_lessThan')))(($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'))); break;
-      case 'Data_Date_greaterThan1': $v = (($GLOBALS['Data_Ord_greaterThan'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_greaterThan')))(($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'))); break;
-      case 'Data_Date_sub': $v = ($GLOBALS['Data_Ring_intSub'] ?? \Data\Ring\phpurs_eval_thunk('Data_Ring_intSub')); break;
-      case 'Data_Date_bindFlipped': $v = (($GLOBALS['Control_Bind_bindFlipped'] ?? \Control\Bind\phpurs_eval_thunk('Control_Bind_bindFlipped')))(($GLOBALS['Data_Maybe_bindMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_bindMaybe'))); break;
-      case 'Data_Date_bind': $v = (($GLOBALS['Data_Maybe_bindMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_bindMaybe')))->bind; break;
+      case 'Data_Date_toEnum': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Date_Component_boundedEnumWeekday'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_boundedEnumWeekday'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->toEnum;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Date_append': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Semigroup_semigroupString'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_semigroupString'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Date_show': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Date_Component_showYear'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_showYear'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->show;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Date_show1': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Date_Component_showMonth'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_showMonth'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->show;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Date_show2': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Date_Component_showDay'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_showDay'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->show;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Date_fromEnum1': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Date_Component_boundedEnumYear'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_boundedEnumYear'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->fromEnum;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Date_conj': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_HeytingAlgebra_heytingAlgebraBoolean'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_heytingAlgebraBoolean'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->conj;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Date_mod': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_EuclideanRing_euclideanRingInt'] ?? \Data\EuclideanRing\phpurs_eval_thunk('Data_EuclideanRing_euclideanRingInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->mod;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Date_disj': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_HeytingAlgebra_heytingAlgebraBoolean'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_heytingAlgebraBoolean'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->disj;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Date_not': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_HeytingAlgebra_heytingAlgebraBoolean'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_heytingAlgebraBoolean'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->not;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Date_compose': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compose;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Date_toEnum1': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Date_Component_boundedEnumDay'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_boundedEnumDay'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->toEnum;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Date_eq1': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Eq_eqInt'] ?? \Data\Eq\phpurs_eval_thunk('Data_Eq_eqInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Date_eq2': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Date_Component_eqMonth'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_eqMonth'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Date_eq3': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Eq_eqInt'] ?? \Data\Eq\phpurs_eval_thunk('Data_Eq_eqInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Date_compare': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Date_compare1': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Date_Component_ordMonth'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_ordMonth'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Date_compare2': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Date_succ': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Date_Component_enumMonth'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_enumMonth'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->succ;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Date_succ1': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Date_Component_enumDay'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_enumDay'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->succ;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Date_greaterThan': $v = (function() {
+  $__case_0 = $dict;
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $compare3 = $__case_res_0;
+  return (function() use ($compare3) {
+  $__body = function($a1, $a2) use ($compare3) {
+    $v = ($compare3)($a1, $a2);
+    $__case_0 = $v;
+    switch (($__case_0)->tag) {
+case "GT":
+return true;
+break;
+default:
+return false;
+break;
+};
+  };
+  $__fn = function($a1, $a2 = null) use ($compare3, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($a2) use ($a1, &$__fn) { return $__fn($a1, $a2); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($a1, $a2);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+})(); break;
+      case 'Data_Date_succ2': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Date_Component_enumYear'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_enumYear'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->succ;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Date_apply': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Maybe_applyMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_applyMaybe'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Date_map': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Maybe_functorMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_functorMaybe'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Date_pure': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Maybe_applicativeMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_applicativeMaybe'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Date_pred': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Date_Component_enumMonth'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_enumMonth'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->pred;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Date_pred1': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Date_Component_enumDay'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_enumDay'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->pred;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Date_pred2': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Date_Component_enumYear'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_enumYear'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->pred;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Date_toEnum2': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Date_Component_boundedEnumMonth'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_boundedEnumMonth'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->toEnum;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Date_add': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Semiring_semiringInt'] ?? \Data\Semiring\phpurs_eval_thunk('Data_Semiring_semiringInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->add;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Date_fromEnum2': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Date_Component_boundedEnumDay'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_boundedEnumDay'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->fromEnum;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Date_lessThan': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $compare3 = $__case_res_0;
+  return (function() use ($compare3) {
+  $__body = function($a1, $a2) use ($compare3) {
+    $v = ($compare3)($a1, $a2);
+    $__case_0 = $v;
+    switch (($__case_0)->tag) {
+case "LT":
+return true;
+break;
+default:
+return false;
+break;
+};
+  };
+  $__fn = function($a1, $a2 = null) use ($compare3, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($a2) use ($a1, &$__fn) { return $__fn($a1, $a2); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($a1, $a2);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+})(); break;
+      case 'Data_Date_greaterThan1': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $compare3 = $__case_res_0;
+  return (function() use ($compare3) {
+  $__body = function($a1, $a2) use ($compare3) {
+    $v = ($compare3)($a1, $a2);
+    $__case_0 = $v;
+    switch (($__case_0)->tag) {
+case "GT":
+return true;
+break;
+default:
+return false;
+break;
+};
+  };
+  $__fn = function($a1, $a2 = null) use ($compare3, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($a2) use ($a1, &$__fn) { return $__fn($a1, $a2); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($a1, $a2);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+})(); break;
+      case 'Data_Date_sub': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Ring_ringInt'] ?? \Data\Ring\phpurs_eval_thunk('Data_Ring_ringInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->sub;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Date_bindFlipped': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Maybe_bindMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_bindMaybe'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bind;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return (($GLOBALS['Data_Function_flip'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_flip')))($__case_res_0);
+})(); break;
+      case 'Data_Date_bind': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Maybe_bindMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_bindMaybe'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bind;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_Date_weekday': $v = (($GLOBALS['Partial_Unsafe__unsafePartial'] ?? \Partial\Unsafe\phpurs_eval_thunk('Partial_Unsafe__unsafePartial')))((function() {
   $__body = function($__dollar____unused, $v) {
     $__global_Data_Function_Uncurried_runFn3 = ($GLOBALS['Data_Function_Uncurried_runFn3'] ?? \Data\Function\Uncurried\phpurs_eval_thunk('Data_Function_Uncurried_runFn3'));
     $__global_Data_Date_calcWeekday = ($GLOBALS['Data_Date_calcWeekday'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_calcWeekday'));
     $__global_Data_Date_fromEnum = ($GLOBALS['Data_Date_fromEnum'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_fromEnum'));
+    $__global_Data_Date_eq = ($GLOBALS['Data_Date_eq'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_eq'));
     $__global_Data_Date_fromJust = ($GLOBALS['Data_Date_fromJust'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_fromJust'));
     $__global_Data_Date_toEnum = ($GLOBALS['Data_Date_toEnum'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_toEnum'));
     $__case_0 = $v;
@@ -163,7 +616,7 @@ $y = ($__case_0)->v0;
 $m = ($__case_0)->v1;
 $d = ($__case_0)->v2;
 $n = ($__global_Data_Function_Uncurried_runFn3)($__global_Data_Date_calcWeekday, $y, ($__global_Data_Date_fromEnum)($m), $d);
-$__case_0 = ($n === 0);
+$__case_0 = ($__global_Data_Date_eq)($n, 0);
 switch ($__case_0) {
 case true:
 return ($__global_Data_Date_fromJust)(($__global_Data_Date_toEnum)(7));
@@ -191,6 +644,7 @@ break;
 })()); break;
       case 'Data_Date_showDate': $v = (object)["show" => (function() {
   $__body = function($v) {
+    $__global_Data_Date_append = ($GLOBALS['Data_Date_append'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_append'));
     $__global_Data_Date_show = ($GLOBALS['Data_Date_show'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_show'));
     $__global_Data_Date_show1 = ($GLOBALS['Data_Date_show1'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_show1'));
     $__global_Data_Date_show2 = ($GLOBALS['Data_Date_show2'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_show2'));
@@ -200,7 +654,7 @@ case "Date":
 $y = ($__case_0)->v0;
 $m = ($__case_0)->v1;
 $d = ($__case_0)->v2;
-return ("(Date " . (($__global_Data_Date_show)($y) . (" " . (($__global_Data_Date_show1)($m) . (" " . (($__global_Data_Date_show2)($d) . ")"))))));
+return ($__global_Data_Date_append)("(Date ", ($__global_Data_Date_append)(($__global_Data_Date_show)($y), ($__global_Data_Date_append)(" ", ($__global_Data_Date_append)(($__global_Data_Date_show1)($m), ($__global_Data_Date_append)(" ", ($__global_Data_Date_append)(($__global_Data_Date_show2)($d), ")"))))));
 break;
 default:
 throw new \Exception("Pattern match failure");
@@ -219,8 +673,10 @@ break;
 })()]; break;
       case 'Data_Date_eqDate': $v = (object)["eq" => (function() {
   $__body = function($x, $y) {
-    $__global_Data_HeytingAlgebra_boolConj = ($GLOBALS['Data_HeytingAlgebra_boolConj'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_boolConj'));
+    $__global_Data_Date_conj = ($GLOBALS['Data_Date_conj'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_conj'));
+    $__global_Data_Date_eq1 = ($GLOBALS['Data_Date_eq1'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_eq1'));
     $__global_Data_Date_eq2 = ($GLOBALS['Data_Date_eq2'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_eq2'));
+    $__global_Data_Date_eq3 = ($GLOBALS['Data_Date_eq3'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_eq3'));
     $__case_0 = $x;
     $__case_1 = $y;
     if (((($__case_0)->tag === "Date") && (($__case_1)->tag === "Date"))) {
@@ -230,7 +686,7 @@ $l2 = ($__case_0)->v2;
 $r = ($__case_1)->v0;
 $r1 = ($__case_1)->v1;
 $r2 = ($__case_1)->v2;
-return ($__global_Data_HeytingAlgebra_boolConj)(($__global_Data_HeytingAlgebra_boolConj)(($l === $r), ($__global_Data_Date_eq2)($l1, $r1)), ($l2 === $r2));
+return ($__global_Data_Date_conj)(($__global_Data_Date_conj)(($__global_Data_Date_eq1)($l, $r), ($__global_Data_Date_eq2)($l1, $r1)), ($__global_Data_Date_eq3)($l2, $r2));
 } else {
 throw new \Exception("Pattern match failure");
 };
@@ -246,7 +702,17 @@ throw new \Exception("Pattern match failure");
   };
   return $__fn;
 })()]; break;
-      case 'Data_Date_eq4': $v = (($GLOBALS['Data_Date_eqDate'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_eqDate')))->eq; break;
+      case 'Data_Date_eq4': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Date_eqDate'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_eqDate'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_Date_ordDate': $v = (object)["compare" => (function() {
   $__body = function($x, $y) {
     $__global_Data_Date_compare = ($GLOBALS['Data_Date_compare'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_compare'));
@@ -320,11 +786,12 @@ $__global_Data_Date_eqDate = ($GLOBALS['Data_Date_eqDate'] ?? \Data\Date\phpurs_
     $__global_Data_Date_greaterThan = ($GLOBALS['Data_Date_greaterThan'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_greaterThan'));
     $__global_Data_Maybe_isNothing = ($GLOBALS['Data_Maybe_isNothing'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_isNothing'));
     $__global_Data_Maybe_fromMaybe = ($GLOBALS['Data_Maybe_fromMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_fromMaybe'));
-    $__global_Data_HeytingAlgebra_boolConj = ($GLOBALS['Data_HeytingAlgebra_boolConj'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_boolConj'));
+    $__global_Data_Date_conj = ($GLOBALS['Data_Date_conj'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_conj'));
     $__global_Data_Date_succ2 = ($GLOBALS['Data_Date_succ2'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_succ2'));
     $__global_Data_Date_toEnum1 = ($GLOBALS['Data_Date_toEnum1'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_toEnum1'));
     $__global_Data_Date_apply = ($GLOBALS['Data_Date_apply'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_apply'));
     $__global_Data_Date_map = ($GLOBALS['Data_Date_map'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_map'));
+    $__global_Data_Date_pure = ($GLOBALS['Data_Date_pure'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_pure'));
     $__case_0 = $v;
     switch (($__case_0)->tag) {
 case "Date":
@@ -366,7 +833,7 @@ $__case_res_1 = $m;
 break;
 };
 $m__prime__ = $__case_res_1;
-$__case_0 = ($__global_Data_HeytingAlgebra_boolConj)(($__global_Data_Maybe_isNothing)($sd), ($__global_Data_Maybe_isNothing)($sm));
+$__case_0 = ($__global_Data_Date_conj)(($__global_Data_Maybe_isNothing)($sd), ($__global_Data_Maybe_isNothing)($sm));
 $__case_res_2 = null;
 switch ($__case_0) {
 case true:
@@ -415,17 +882,7 @@ return ($__global_Data_Date_apply)(($__global_Data_Date_apply)(($__global_Data_D
   return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
   };
   return $__fn;
-})(), $y__prime__), ((function() {
-  $__fn = function($value0) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) {
-    return phpurs_curry_fallback($__fn, func_get_args(), 1);
-  }
-    $__res = new Phpurs_Data1("Just", $value0);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})())($m__prime__)), $d__prime__);
+})(), $y__prime__), ($__global_Data_Date_pure)($m__prime__)), $d__prime__);
 break;
 default:
 throw new \Exception("Pattern match failure");
@@ -445,13 +902,14 @@ break;
   $__body = function($v) {
     $__global_Data_Date_pred = ($GLOBALS['Data_Date_pred'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_pred'));
     $__global_Data_Date_pred1 = ($GLOBALS['Data_Date_pred1'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_pred1'));
-    $__global_Data_HeytingAlgebra_boolConj = ($GLOBALS['Data_HeytingAlgebra_boolConj'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_boolConj'));
+    $__global_Data_Date_conj = ($GLOBALS['Data_Date_conj'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_conj'));
     $__global_Data_Maybe_isNothing = ($GLOBALS['Data_Maybe_isNothing'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_isNothing'));
     $__global_Data_Date_pred2 = ($GLOBALS['Data_Date_pred2'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_pred2'));
     $__global_Data_Maybe_fromMaybe = ($GLOBALS['Data_Maybe_fromMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_fromMaybe'));
     $__global_Data_Date_lastDayOfMonth = ($GLOBALS['Data_Date_lastDayOfMonth'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_lastDayOfMonth'));
     $__global_Data_Date_apply = ($GLOBALS['Data_Date_apply'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_apply'));
     $__global_Data_Date_map = ($GLOBALS['Data_Date_map'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_map'));
+    $__global_Data_Date_pure = ($GLOBALS['Data_Date_pure'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_pure'));
     $__case_0 = $v;
     switch (($__case_0)->tag) {
 case "Date":
@@ -460,7 +918,7 @@ $m = ($__case_0)->v1;
 $d = ($__case_0)->v2;
 $pm = ($__global_Data_Date_pred)($m);
 $pd = ($__global_Data_Date_pred1)($d);
-$__case_0 = ($__global_Data_HeytingAlgebra_boolConj)(($__global_Data_Maybe_isNothing)($pd), ($__global_Data_Maybe_isNothing)($pm));
+$__case_0 = ($__global_Data_Date_conj)(($__global_Data_Maybe_isNothing)($pd), ($__global_Data_Maybe_isNothing)($pm));
 $__case_res_4 = null;
 switch ($__case_0) {
 case true:
@@ -531,17 +989,7 @@ return ($__global_Data_Date_apply)(($__global_Data_Date_apply)(($__global_Data_D
   return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
   };
   return $__fn;
-})(), $y__prime__), ((function() {
-  $__fn = function($value0) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) {
-    return phpurs_curry_fallback($__fn, func_get_args(), 1);
-  }
-    $__res = new Phpurs_Data1("Just", $value0);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})())($m__prime__)), $d__prime__);
+})(), $y__prime__), ($__global_Data_Date_pure)($m__prime__)), $d__prime__);
 break;
 default:
 throw new \Exception("Pattern match failure");
@@ -569,9 +1017,78 @@ $__global_Data_Date_ordDate = ($GLOBALS['Data_Date_ordDate'] ?? \Data\Date\phpur
   };
   return $__fn;
 })()]; break;
-      case 'Data_Date_pred3': $v = (($GLOBALS['Data_Date_enumDate'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_enumDate')))->pred; break;
-      case 'Data_Date_succ3': $v = (($GLOBALS['Data_Date_enumDate'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_enumDate')))->succ; break;
-      case 'Data_Date_boundedDate': $v = (object)["bottom" => ((function() {
+      case 'Data_Date_pred3': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Date_enumDate'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_enumDate'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->pred;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Date_succ3': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Date_enumDate'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_enumDate'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->succ;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Date_boundedDate': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Date_Component_boundedYear'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_boundedYear'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bottom;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $__case_0 = ($GLOBALS['Data_Date_Component_boundedMonth'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_boundedMonth'));
+  $__case_res_1 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->bottom;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $__case_0 = ($GLOBALS['Data_Date_Component_boundedDay'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_boundedDay'));
+  $__case_res_2 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->bottom;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $__case_0 = ($GLOBALS['Data_Date_Component_boundedYear'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_boundedYear'));
+  $__case_res_3 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->top;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $__case_0 = ($GLOBALS['Data_Date_Component_boundedMonth'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_boundedMonth'));
+  $__case_res_4 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->top;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $__case_0 = ($GLOBALS['Data_Date_Component_boundedDay'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_boundedDay'));
+  $__case_res_5 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_5 = ($v)->top;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return (object)["bottom" => ((function() {
   $__fn = function($value0, $value1 = null, $value2 = null) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 3) {
@@ -588,7 +1105,7 @@ $__global_Data_Date_ordDate = ($GLOBALS['Data_Date_ordDate'] ?? \Data\Date\phpur
   return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
   };
   return $__fn;
-})())((($GLOBALS['Data_Date_Component_boundedYear'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_boundedYear')))->bottom, ($GLOBALS['__phpurs_data0_January'] ??= new Phpurs_Data0("January")), (($GLOBALS['Data_Date_Component_boundedDay'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_boundedDay')))->bottom), "top" => ((function() {
+})())($__case_res_0, $__case_res_1, $__case_res_2), "top" => ((function() {
   $__fn = function($value0, $value1 = null, $value2 = null) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 3) {
@@ -605,7 +1122,7 @@ $__global_Data_Date_ordDate = ($GLOBALS['Data_Date_ordDate'] ?? \Data\Date\phpur
   return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
   };
   return $__fn;
-})())((($GLOBALS['Data_Date_Component_boundedYear'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_boundedYear')))->top, ($GLOBALS['__phpurs_data0_December'] ??= new Phpurs_Data0("December")), (($GLOBALS['Data_Date_Component_boundedDay'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_boundedDay')))->top), "Ord0" => (function() {
+})())($__case_res_3, $__case_res_4, $__case_res_5), "Ord0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
@@ -616,7 +1133,8 @@ $__global_Data_Date_ordDate = ($GLOBALS['Data_Date_ordDate'] ?? \Data\Date\phpur
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})()]; break;
+})()];
+})(); break;
       default: throw new \Exception("Unknown thunk " . $id);
     }
     $GLOBALS[$id] = $v;
@@ -742,12 +1260,13 @@ function Data_Date_isLeapYear($y) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_Date_fromEnum1 = ($GLOBALS['Data_Date_fromEnum1'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_fromEnum1'));
-$__global_Data_HeytingAlgebra_boolConj = ($GLOBALS['Data_HeytingAlgebra_boolConj'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_boolConj'));
-$__global_Data_EuclideanRing_intMod = ($GLOBALS['Data_EuclideanRing_intMod'] ?? \Data\EuclideanRing\phpurs_eval_thunk('Data_EuclideanRing_intMod'));
-$__global_Data_HeytingAlgebra_boolDisj = ($GLOBALS['Data_HeytingAlgebra_boolDisj'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_boolDisj'));
-$__global_Data_HeytingAlgebra_boolNot = ($GLOBALS['Data_HeytingAlgebra_boolNot'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_boolNot'));
+$__global_Data_Date_conj = ($GLOBALS['Data_Date_conj'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_conj'));
+$__global_Data_Date_eq = ($GLOBALS['Data_Date_eq'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_eq'));
+$__global_Data_Date_mod = ($GLOBALS['Data_Date_mod'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_mod'));
+$__global_Data_Date_disj = ($GLOBALS['Data_Date_disj'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_disj'));
+$__global_Data_Date_not = ($GLOBALS['Data_Date_not'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_not'));
 $y__prime__ = ($__global_Data_Date_fromEnum1)($y);
-    $__res = ($__global_Data_HeytingAlgebra_boolConj)((($__global_Data_EuclideanRing_intMod)($y__prime__, 4) === 0), ($__global_Data_HeytingAlgebra_boolDisj)((($__global_Data_EuclideanRing_intMod)($y__prime__, 400) === 0), ($__global_Data_HeytingAlgebra_boolNot)((($__global_Data_EuclideanRing_intMod)($y__prime__, 100) === 0))));
+    $__res = ($__global_Data_Date_conj)(($__global_Data_Date_eq)(($__global_Data_Date_mod)($y__prime__, 4), 0), ($__global_Data_Date_disj)(($__global_Data_Date_eq)(($__global_Data_Date_mod)($y__prime__, 400), 0), ($__global_Data_Date_not)(($__global_Data_Date_eq)(($__global_Data_Date_mod)($y__prime__, 100), 0))));
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Date_isLeapYear'] = __NAMESPACE__ . '\\Data_Date_isLeapYear';
@@ -840,7 +1359,15 @@ function Data_Date_diff($dictDuration) {
 $__global_Data_Function_Uncurried_runFn6 = ($GLOBALS['Data_Function_Uncurried_runFn6'] ?? \Data\Function\Uncurried\phpurs_eval_thunk('Data_Function_Uncurried_runFn6'));
 $__global_Data_Date_calcDiff = ($GLOBALS['Data_Date_calcDiff'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_calcDiff'));
 $__global_Data_Date_fromEnum = ($GLOBALS['Data_Date_fromEnum'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_fromEnum'));
-$toDuration = ($dictDuration)->toDuration;
+$__case_0 = $dictDuration;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->toDuration;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$toDuration = $__case_res_0;
     $__res = (function() use ($toDuration, $__global_Data_Function_Uncurried_runFn6, $__global_Data_Date_calcDiff, $__global_Data_Date_fromEnum) {
   $__body = function($v, $v1) use ($toDuration, $__global_Data_Function_Uncurried_runFn6, $__global_Data_Date_calcDiff, $__global_Data_Date_fromEnum) {
     $__case_0 = $v;
@@ -1038,6 +1565,7 @@ function Data_Date_adjust($v, $date = null) {
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
   $__body = function($v, $date) {
+    $__global_Data_Date_add = ($GLOBALS['Data_Date_add'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_add'));
     $__global_Data_Date_fromEnum2 = ($GLOBALS['Data_Date_fromEnum2'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_fromEnum2'));
     $__global_Data_Date_lessThan = ($GLOBALS['Data_Date_lessThan'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_lessThan'));
     $__global_Data_Date_lastDayOfMonth = ($GLOBALS['Data_Date_lastDayOfMonth'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_lastDayOfMonth'));
@@ -1053,8 +1581,8 @@ function Data_Date_adjust($v, $date = null) {
     if (true) {
 $n = $__case_0;
 $date1 = $__case_1;
-$adj = (function() use ($__global_Data_Date_fromEnum2, $__global_Data_Date_lessThan, $__global_Data_Date_lastDayOfMonth, $__global_Data_Maybe_fromMaybe, $__global_Data_Date_pred, $__global_Data_Date_greaterThan1, $__global_Data_Date_bindFlipped, &$adj) {
-  $__fn = function($v1, $v2 = null) use ($__global_Data_Date_fromEnum2, $__global_Data_Date_lessThan, $__global_Data_Date_lastDayOfMonth, $__global_Data_Maybe_fromMaybe, $__global_Data_Date_pred, $__global_Data_Date_greaterThan1, $__global_Data_Date_bindFlipped, &$adj, &$__fn) {
+$adj = (function() use ($__global_Data_Date_add, $__global_Data_Date_fromEnum2, $__global_Data_Date_lessThan, $__global_Data_Date_lastDayOfMonth, $__global_Data_Maybe_fromMaybe, $__global_Data_Date_pred, $__global_Data_Date_greaterThan1, $__global_Data_Date_bindFlipped, &$adj) {
+  $__fn = function($v1, $v2 = null) use ($__global_Data_Date_add, $__global_Data_Date_fromEnum2, $__global_Data_Date_lessThan, $__global_Data_Date_lastDayOfMonth, $__global_Data_Maybe_fromMaybe, $__global_Data_Date_pred, $__global_Data_Date_greaterThan1, $__global_Data_Date_bindFlipped, &$adj, &$__fn) {
   $__num = func_num_args();
   if ($__num < 2) {
     if ($__num === 1) return function($v2) use ($v1, &$__fn) { return $__fn($v1, $v2); };
@@ -1083,7 +1611,7 @@ $i = $__case_0;
 $y = ($__case_1)->v0;
 $m = ($__case_1)->v1;
 $d = ($__case_1)->v2;
-$j = ($i + ($__global_Data_Date_fromEnum2)($d));
+$j = ($__global_Data_Date_add)($i, ($__global_Data_Date_fromEnum2)($d));
 $low = ($__global_Data_Date_lessThan)($j, 1);
 $__case_0 = $low;
 $__case_res_0 = null;

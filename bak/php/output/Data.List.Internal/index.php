@@ -845,7 +845,7 @@ default:
 $c1 = $__case_0;
 $v3 = ($comp)($k, $k2);
 $v4 = $c1;
-$__case_0 = $v4;
+$__case_0 = $c1;
 $__case_1 = $v3;
 if ((($__case_1)->tag === "EQ")) {
 return (object)["found" => true, "result" => $orig];

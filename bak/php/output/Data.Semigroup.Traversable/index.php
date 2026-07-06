@@ -94,15 +94,32 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Data_Semigroup_Traversable_identity': $v = (($GLOBALS['Control_Category_categoryFn'] ?? \Control\Category\phpurs_eval_thunk('Control_Category_categoryFn')))->identity; break;
-      case 'Data_Semigroup_Traversable_traversableTuple': $v = (object)["traverse1" => (function() {
-  $__fn = function($dictApply) use (&$__fn) {
+      case 'Data_Semigroup_Traversable_identity': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Category_categoryFn'] ?? \Control\Category\phpurs_eval_thunk('Control_Category_categoryFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->identity;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Semigroup_Traversable_traversableTuple': $v = (object)["traverse1" => (function() use ($dict) {
+  $__fn = function($dictApply) use ($dict, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$map = ((($dictApply)->Functor0)($__global_Prim_undefined))->map;
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_0;
     $__res = (function() use ($map) {
   $__body = function($f, $v) use ($map) {
     $__case_0 = $f;
@@ -144,14 +161,21 @@ break;
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})(), "sequence1" => (function() {
-  $__fn = function($dictApply) use (&$__fn) {
+})(), "sequence1" => (function() use ($dict) {
+  $__fn = function($dictApply) use ($dict, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$map = ((($dictApply)->Functor0)($__global_Prim_undefined))->map;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_1;
     $__res = (function() use ($map) {
   $__body = function($v) use ($map) {
     $__case_0 = $v;
@@ -213,15 +237,22 @@ $__global_Data_Traversable_traversableTuple = ($GLOBALS['Data_Traversable_traver
   };
   return $__fn;
 })()]; break;
-      case 'Data_Semigroup_Traversable_traversableIdentity': $v = (object)["traverse1" => (function() {
-  $__fn = function($dictApply) use (&$__fn) {
+      case 'Data_Semigroup_Traversable_traversableIdentity': $v = (object)["traverse1" => (function() use ($dict) {
+  $__fn = function($dictApply) use ($dict, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Identity_Identity = ($GLOBALS['Data_Identity_Identity'] ?? \Data\Identity\phpurs_eval_thunk('Data_Identity_Identity'));
-$map = ((($dictApply)->Functor0)($__global_Prim_undefined))->map;
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_0;
     $__res = (function() use ($map, $__global_Data_Identity_Identity) {
   $__body = function($f, $v) use ($map, $__global_Data_Identity_Identity) {
     $__case_0 = $f;
@@ -248,15 +279,22 @@ throw new \Exception("Pattern match failure");
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})(), "sequence1" => (function() {
-  $__fn = function($dictApply) use (&$__fn) {
+})(), "sequence1" => (function() use ($dict) {
+  $__fn = function($dictApply) use ($dict, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Identity_Identity = ($GLOBALS['Data_Identity_Identity'] ?? \Data\Identity\phpurs_eval_thunk('Data_Identity_Identity'));
-$map = ((($dictApply)->Functor0)($__global_Prim_undefined))->map;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_1;
     $__res = (function() use ($map, $__global_Data_Identity_Identity) {
   $__body = function($v) use ($map, $__global_Data_Identity_Identity) {
     $__case_0 = $v;
@@ -303,15 +341,22 @@ $__global_Data_Traversable_traversableIdentity = ($GLOBALS['Data_Traversable_tra
   };
   return $__fn;
 })()]; break;
-      case 'Data_Semigroup_Traversable_traversableDual': $v = (object)["traverse1" => (function() {
-  $__fn = function($dictApply) use (&$__fn) {
+      case 'Data_Semigroup_Traversable_traversableDual': $v = (object)["traverse1" => (function() use ($dict) {
+  $__fn = function($dictApply) use ($dict, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Monoid_Dual_Dual = ($GLOBALS['Data_Monoid_Dual_Dual'] ?? \Data\Monoid\Dual\phpurs_eval_thunk('Data_Monoid_Dual_Dual'));
-$map = ((($dictApply)->Functor0)($__global_Prim_undefined))->map;
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_0;
     $__res = (function() use ($map, $__global_Data_Monoid_Dual_Dual) {
   $__body = function($f, $v) use ($map, $__global_Data_Monoid_Dual_Dual) {
     $__case_0 = $f;
@@ -344,9 +389,28 @@ throw new \Exception("Pattern match failure");
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Semigroup_Traversable_sequence1Default = ($GLOBALS['Data_Semigroup_Traversable_sequence1Default'] ?? \Data\Semigroup\Traversable\phpurs_eval_thunk('Data_Semigroup_Traversable_sequence1Default'));
 $__global_Data_Semigroup_Traversable_traversableDual = ($GLOBALS['Data_Semigroup_Traversable_traversableDual'] ?? \Data\Semigroup\Traversable\phpurs_eval_thunk('Data_Semigroup_Traversable_traversableDual'));
-    $__res = ($__global_Data_Semigroup_Traversable_sequence1Default)($__global_Data_Semigroup_Traversable_traversableDual, $dictApply);
+$__global_Data_Semigroup_Traversable_identity = ($GLOBALS['Data_Semigroup_Traversable_identity'] ?? \Data\Semigroup\Traversable\phpurs_eval_thunk('Data_Semigroup_Traversable_identity'));
+$__case_0 = $__global_Data_Semigroup_Traversable_traversableDual;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->traverse1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$traverse11 = $__case_res_1;
+    $__res = ((function() use ($traverse11, $__global_Data_Semigroup_Traversable_identity) {
+  $__fn = function($dictApply) use ($traverse11, $__global_Data_Semigroup_Traversable_identity, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($traverse11)($dictApply, $__global_Data_Semigroup_Traversable_identity);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})())($dictApply);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -373,15 +437,22 @@ $__global_Data_Traversable_traversableDual = ($GLOBALS['Data_Traversable_travers
   };
   return $__fn;
 })()]; break;
-      case 'Data_Semigroup_Traversable_traversableMultiplicative': $v = (object)["traverse1" => (function() {
-  $__fn = function($dictApply) use (&$__fn) {
+      case 'Data_Semigroup_Traversable_traversableMultiplicative': $v = (object)["traverse1" => (function() use ($dict) {
+  $__fn = function($dictApply) use ($dict, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Monoid_Multiplicative_Multiplicative = ($GLOBALS['Data_Monoid_Multiplicative_Multiplicative'] ?? \Data\Monoid\Multiplicative\phpurs_eval_thunk('Data_Monoid_Multiplicative_Multiplicative'));
-$map = ((($dictApply)->Functor0)($__global_Prim_undefined))->map;
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_0;
     $__res = (function() use ($map, $__global_Data_Monoid_Multiplicative_Multiplicative) {
   $__body = function($f, $v) use ($map, $__global_Data_Monoid_Multiplicative_Multiplicative) {
     $__case_0 = $f;
@@ -414,9 +485,28 @@ throw new \Exception("Pattern match failure");
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Semigroup_Traversable_sequence1Default = ($GLOBALS['Data_Semigroup_Traversable_sequence1Default'] ?? \Data\Semigroup\Traversable\phpurs_eval_thunk('Data_Semigroup_Traversable_sequence1Default'));
 $__global_Data_Semigroup_Traversable_traversableMultiplicative = ($GLOBALS['Data_Semigroup_Traversable_traversableMultiplicative'] ?? \Data\Semigroup\Traversable\phpurs_eval_thunk('Data_Semigroup_Traversable_traversableMultiplicative'));
-    $__res = ($__global_Data_Semigroup_Traversable_sequence1Default)($__global_Data_Semigroup_Traversable_traversableMultiplicative, $dictApply);
+$__global_Data_Semigroup_Traversable_identity = ($GLOBALS['Data_Semigroup_Traversable_identity'] ?? \Data\Semigroup\Traversable\phpurs_eval_thunk('Data_Semigroup_Traversable_identity'));
+$__case_0 = $__global_Data_Semigroup_Traversable_traversableMultiplicative;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->traverse1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$traverse11 = $__case_res_1;
+    $__res = ((function() use ($traverse11, $__global_Data_Semigroup_Traversable_identity) {
+  $__fn = function($dictApply) use ($traverse11, $__global_Data_Semigroup_Traversable_identity, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($traverse11)($dictApply, $__global_Data_Semigroup_Traversable_identity);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})())($dictApply);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -496,7 +586,15 @@ function Data_Semigroup_Traversable_sequence1Default($dictTraversable1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_Semigroup_Traversable_identity = ($GLOBALS['Data_Semigroup_Traversable_identity'] ?? \Data\Semigroup\Traversable\phpurs_eval_thunk('Data_Semigroup_Traversable_identity'));
-$traverse11 = ($dictTraversable1)->traverse1;
+$__case_0 = $dictTraversable1;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->traverse1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$traverse11 = $__case_res_0;
     $__res = (function() use ($traverse11, $__global_Data_Semigroup_Traversable_identity) {
   $__fn = function($dictApply) use ($traverse11, $__global_Data_Semigroup_Traversable_identity, &$__fn) {
   $__num = func_num_args();
@@ -542,9 +640,24 @@ function Data_Semigroup_Traversable_traverse1Default($dictTraversable1) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$sequence11 = ($dictTraversable1)->sequence1;
-$map = ((((($dictTraversable1)->Traversable1)($__global_Prim_undefined))->Functor0)($__global_Prim_undefined))->map;
+$__case_0 = $dictTraversable1;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->sequence1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$sequence11 = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_1;
     $__res = (function() use ($sequence11, $map) {
   $__fn = function($dictApply) use ($sequence11, $map, &$__fn) {
   $__num = func_num_args();

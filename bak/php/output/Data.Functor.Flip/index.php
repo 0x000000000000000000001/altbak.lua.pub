@@ -100,7 +100,17 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Data_Functor_Flip_append': $v = ($GLOBALS['Data_Semigroup_concatString'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_concatString')); break;
+      case 'Data_Functor_Flip_append': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Semigroup_semigroupString'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_semigroupString'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_Functor_Flip_newtypeFlip': $v = (object)["Coercible0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
@@ -142,18 +152,27 @@ function Data_Functor_Flip_showFlip($dictShow) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$show = ($dictShow)->show;
-    $__res = (object)["show" => (function() use ($show) {
-  $__body = function($v) use ($show) {
+$__global_Data_Functor_Flip_append = ($GLOBALS['Data_Functor_Flip_append'] ?? \Data\Functor\Flip\phpurs_eval_thunk('Data_Functor_Flip_append'));
+$__case_0 = $dictShow;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->show;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$show = $__case_res_0;
+    $__res = (object)["show" => (function() use ($__global_Data_Functor_Flip_append, $show) {
+  $__body = function($v) use ($__global_Data_Functor_Flip_append, $show) {
     $__case_0 = $v;
     if (true) {
 $x = $__case_0;
-return ("(Flip " . (($show)($x) . ")"));
+return ($__global_Data_Functor_Flip_append)("(Flip ", ($__global_Data_Functor_Flip_append)(($show)($x), ")"));
 } else {
 throw new \Exception("Pattern match failure");
 };
   };
-  $__fn = function($v) use ($show, $__body, &$__fn) {
+  $__fn = function($v) use ($__global_Data_Functor_Flip_append, $show, $__body, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
@@ -174,7 +193,15 @@ function Data_Functor_Flip_semigroupoidFlip($dictSemigroupoid) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$compose = ($dictSemigroupoid)->compose;
+$__case_0 = $dictSemigroupoid;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compose;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compose = $__case_res_0;
     $__res = (object)["compose" => (function() use ($compose) {
   $__body = function($v, $v1) use ($compose) {
     $__case_0 = $v;
@@ -222,8 +249,27 @@ function Data_Functor_Flip_functorFlip($dictBifunctor) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Bifunctor_lmap = ($GLOBALS['Data_Bifunctor_lmap'] ?? \Data\Bifunctor\phpurs_eval_thunk('Data_Bifunctor_lmap'));
-$lmap = ($__global_Data_Bifunctor_lmap)($dictBifunctor);
+$__global_Data_Bifunctor_identity = ($GLOBALS['Data_Bifunctor_identity'] ?? \Data\Bifunctor\phpurs_eval_thunk('Data_Bifunctor_identity'));
+$__case_0 = $dictBifunctor;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bimap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bimap1 = $__case_res_0;
+$lmap = (function() use ($bimap1, $__global_Data_Bifunctor_identity) {
+  $__fn = function($f) use ($bimap1, $__global_Data_Bifunctor_identity, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($bimap1)($f, $__global_Data_Bifunctor_identity);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
     $__res = (object)["map" => (function() use ($lmap) {
   $__body = function($f, $v) use ($lmap) {
     $__case_0 = $f;
@@ -270,8 +316,27 @@ function Data_Functor_Flip_contravariantFlip($dictProfunctor) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Profunctor_lcmap = ($GLOBALS['Data_Profunctor_lcmap'] ?? \Data\Profunctor\phpurs_eval_thunk('Data_Profunctor_lcmap'));
-$lcmap = ($__global_Data_Profunctor_lcmap)($dictProfunctor);
+$__global_Data_Profunctor_identity = ($GLOBALS['Data_Profunctor_identity'] ?? \Data\Profunctor\phpurs_eval_thunk('Data_Profunctor_identity'));
+$__case_0 = $dictProfunctor;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->dimap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$dimap1 = $__case_res_0;
+$lcmap = (function() use ($dimap1, $__global_Data_Profunctor_identity) {
+  $__fn = function($a2b) use ($dimap1, $__global_Data_Profunctor_identity, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($dimap1)($a2b, $__global_Data_Profunctor_identity);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
     $__res = (object)["cmap" => (function() use ($lcmap) {
   $__body = function($f, $v) use ($lcmap) {
     $__case_0 = $f;
@@ -306,10 +371,47 @@ function Data_Functor_Flip_categoryFlip($dictCategory) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Functor_Flip_semigroupoidFlip = ($GLOBALS['Data_Functor_Flip_semigroupoidFlip'] ?? \Data\Functor\Flip\phpurs_eval_thunk('Data_Functor_Flip_semigroupoidFlip'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$semigroupoidFlip1 = ($__global_Data_Functor_Flip_semigroupoidFlip)((($dictCategory)->Semigroupoid0)($__global_Prim_undefined));
-    $__res = (object)["identity" => ($dictCategory)->identity, "Semigroupoid0" => (function() use ($semigroupoidFlip1) {
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compose;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compose = $__case_res_0;
+$semigroupoidFlip1 = (object)["compose" => (function() use ($compose) {
+  $__body = function($v, $v1) use ($compose) {
+    $__case_0 = $v;
+    $__case_1 = $v1;
+    if (true) {
+$a = $__case_0;
+$b = $__case_1;
+return ($compose)($b, $a);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($v, $v1 = null) use ($compose, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($v, $v1);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+$__case_0 = $dictCategory;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->identity;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = (object)["identity" => $__case_res_1, "Semigroupoid0" => (function() use ($semigroupoidFlip1) {
   $__fn = function($__dollar____unused) use ($semigroupoidFlip1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
@@ -331,7 +433,15 @@ function Data_Functor_Flip_bifunctorFlip($dictBifunctor) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$bimap = ($dictBifunctor)->bimap;
+$__case_0 = $dictBifunctor;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bimap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bimap = $__case_res_0;
     $__res = (object)["bimap" => (function() use ($bimap) {
   $__body = function($f, $g, $v) use ($bimap) {
     $__case_0 = $f;
@@ -374,10 +484,55 @@ function Data_Functor_Flip_biapplyFlip($dictBiapply) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Functor_Flip_bifunctorFlip = ($GLOBALS['Data_Functor_Flip_bifunctorFlip'] ?? \Data\Functor\Flip\phpurs_eval_thunk('Data_Functor_Flip_bifunctorFlip'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$biapply = ($dictBiapply)->biapply;
-$bifunctorFlip1 = ($__global_Data_Functor_Flip_bifunctorFlip)((($dictBiapply)->Bifunctor0)($__global_Prim_undefined));
+$__case_0 = $dictBiapply;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->biapply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$biapply = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->bimap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bimap = $__case_res_1;
+$bifunctorFlip1 = (object)["bimap" => (function() use ($bimap) {
+  $__body = function($f, $g, $v) use ($bimap) {
+    $__case_0 = $f;
+    $__case_1 = $g;
+    $__case_2 = $v;
+    if (true) {
+$f1 = $__case_0;
+$g1 = $__case_1;
+$a = $__case_2;
+return ($bimap)($g1, $f1, $a);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $g = null, $v = null) use ($bimap, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($v) use ($f, $g, &$__fn) { return $__fn($f, $g, $v); };
+    if ($__num === 1) return function($g, $v = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $g, $v);
+      if ($__num2 === 1) return function($v) use ($f, $g, &$__fn) { return $__fn($f, $g, $v); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = $__body($f, $g, $v);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})()];
     $__res = (object)["biapply" => (function() use ($biapply) {
   $__body = function($v, $v1) use ($biapply) {
     $__case_0 = $v;
@@ -422,10 +577,97 @@ function Data_Functor_Flip_biapplicativeFlip($dictBiapplicative) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Functor_Flip_biapplyFlip = ($GLOBALS['Data_Functor_Flip_biapplyFlip'] ?? \Data\Functor\Flip\phpurs_eval_thunk('Data_Functor_Flip_biapplyFlip'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$bipure = ($dictBiapplicative)->bipure;
-$biapplyFlip1 = ($__global_Data_Functor_Flip_biapplyFlip)((($dictBiapplicative)->Biapply0)($__global_Prim_undefined));
+$__case_0 = $dictBiapplicative;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bipure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bipure = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->biapply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$biapply = $__case_res_1;
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->bimap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bimap = $__case_res_2;
+$bifunctorFlip1 = (object)["bimap" => (function() use ($bimap) {
+  $__body = function($f, $g, $v) use ($bimap) {
+    $__case_0 = $f;
+    $__case_1 = $g;
+    $__case_2 = $v;
+    if (true) {
+$f1 = $__case_0;
+$g1 = $__case_1;
+$a = $__case_2;
+return ($bimap)($g1, $f1, $a);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $g = null, $v = null) use ($bimap, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($v) use ($f, $g, &$__fn) { return $__fn($f, $g, $v); };
+    if ($__num === 1) return function($g, $v = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $g, $v);
+      if ($__num2 === 1) return function($v) use ($f, $g, &$__fn) { return $__fn($f, $g, $v); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = $__body($f, $g, $v);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})()];
+$biapplyFlip1 = (object)["biapply" => (function() use ($biapply) {
+  $__body = function($v, $v1) use ($biapply) {
+    $__case_0 = $v;
+    $__case_1 = $v1;
+    if (true) {
+$fg = $__case_0;
+$xy = $__case_1;
+return ($biapply)($fg, $xy);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($v, $v1 = null) use ($biapply, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($v, $v1);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "Bifunctor0" => (function() use ($bifunctorFlip1) {
+  $__fn = function($__dollar____unused) use ($bifunctorFlip1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $bifunctorFlip1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
     $__res = (object)["bipure" => (function() use ($bipure) {
   $__fn = function($a, $b = null) use ($bipure, &$__fn) {
   $__num = func_num_args();

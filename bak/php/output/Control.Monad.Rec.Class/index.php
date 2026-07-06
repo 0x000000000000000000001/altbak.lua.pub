@@ -102,12 +102,72 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Control_Monad_Rec_Class_compose': $v = (($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn')))->compose; break;
-      case 'Control_Monad_Rec_Class_bind': $v = ($GLOBALS['Effect_bindE'] ?? \Effect\phpurs_eval_thunk('Effect_bindE')); break;
-      case 'Control_Monad_Rec_Class_bindFlipped': $v = (($GLOBALS['Control_Bind_bindFlipped'] ?? \Control\Bind\phpurs_eval_thunk('Control_Bind_bindFlipped')))(($GLOBALS['Effect_bindEffect'] ?? \Effect\phpurs_eval_thunk('Effect_bindEffect'))); break;
-      case 'Control_Monad_Rec_Class_discard': $v = ((($GLOBALS['Control_Bind_discardUnit'] ?? \Control\Bind\phpurs_eval_thunk('Control_Bind_discardUnit')))->discard)(($GLOBALS['Effect_bindEffect'] ?? \Effect\phpurs_eval_thunk('Effect_bindEffect'))); break;
-      case 'Control_Monad_Rec_Class_pure': $v = ($GLOBALS['Effect_pureE'] ?? \Effect\phpurs_eval_thunk('Effect_pureE')); break;
-      case 'Control_Monad_Rec_Class_map': $v = (($GLOBALS['Effect_functorEffect'] ?? \Effect\phpurs_eval_thunk('Effect_functorEffect')))->map; break;
+      case 'Control_Monad_Rec_Class_compose': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compose;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Control_Monad_Rec_Class_bind': $v = (function() {
+  $__case_0 = ($GLOBALS['Effect_bindEffect'] ?? \Effect\phpurs_eval_thunk('Effect_bindEffect'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bind;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Control_Monad_Rec_Class_bindFlipped': $v = (function() {
+  $__case_0 = ($GLOBALS['Effect_bindEffect'] ?? \Effect\phpurs_eval_thunk('Effect_bindEffect'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bind;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return (($GLOBALS['Data_Function_flip'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_flip')))($__case_res_0);
+})(); break;
+      case 'Control_Monad_Rec_Class_discard': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Bind_discardUnit'] ?? \Control\Bind\phpurs_eval_thunk('Control_Bind_discardUnit'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->discard;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return ($__case_res_0)(($GLOBALS['Effect_bindEffect'] ?? \Effect\phpurs_eval_thunk('Effect_bindEffect')));
+})(); break;
+      case 'Control_Monad_Rec_Class_pure': $v = (function() {
+  $__case_0 = ($GLOBALS['Effect_applicativeEffect'] ?? \Effect\phpurs_eval_thunk('Effect_applicativeEffect'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Control_Monad_Rec_Class_map': $v = (function() {
+  $__case_0 = ($GLOBALS['Effect_functorEffect'] ?? \Effect\phpurs_eval_thunk('Effect_functorEffect'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Control_Monad_Rec_Class_monadRecMaybe': $v = (object)["tailRecM" => (function() {
   $__fn = function($f, $a0 = null) use (&$__fn) {
   $__num = func_num_args();
@@ -398,25 +458,17 @@ $__global_Data_Either_monadEither = ($GLOBALS['Data_Either_monadEither'] ?? \Dat
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
 $__global_Partial_Unsafe__unsafePartial = ($GLOBALS['Partial_Unsafe__unsafePartial'] ?? \Partial\Unsafe\phpurs_eval_thunk('Partial_Unsafe__unsafePartial'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$__global_Effect_bindE = ($GLOBALS['Effect_bindE'] ?? \Effect\phpurs_eval_thunk('Effect_bindE'));
+$__global_Control_Monad_Rec_Class_bind = ($GLOBALS['Control_Monad_Rec_Class_bind'] ?? \Control\Monad\Rec\Class\phpurs_eval_thunk('Control_Monad_Rec_Class_bind'));
 $__global_Control_Monad_Rec_Class_bindFlipped = ($GLOBALS['Control_Monad_Rec_Class_bindFlipped'] ?? \Control\Monad\Rec\Class\phpurs_eval_thunk('Control_Monad_Rec_Class_bindFlipped'));
 $__global_Effect_Ref__new = ($GLOBALS['Effect_Ref__new'] ?? \Effect\Ref\phpurs_eval_thunk('Effect_Ref__new'));
 $__global_Control_Monad_Rec_Class_discard = ($GLOBALS['Control_Monad_Rec_Class_discard'] ?? \Control\Monad\Rec\Class\phpurs_eval_thunk('Control_Monad_Rec_Class_discard'));
 $__global_Effect_untilE = ($GLOBALS['Effect_untilE'] ?? \Effect\phpurs_eval_thunk('Effect_untilE'));
 $__global_Effect_Ref_read = ($GLOBALS['Effect_Ref_read'] ?? \Effect\Ref\phpurs_eval_thunk('Effect_Ref_read'));
 $__global_Effect_Ref_write = ($GLOBALS['Effect_Ref_write'] ?? \Effect\Ref\phpurs_eval_thunk('Effect_Ref_write'));
-$__global_Effect_pureE = ($GLOBALS['Effect_pureE'] ?? \Effect\phpurs_eval_thunk('Effect_pureE'));
+$__global_Control_Monad_Rec_Class_pure = ($GLOBALS['Control_Monad_Rec_Class_pure'] ?? \Control\Monad\Rec\Class\phpurs_eval_thunk('Control_Monad_Rec_Class_pure'));
 $__global_Control_Monad_Rec_Class_map = ($GLOBALS['Control_Monad_Rec_Class_map'] ?? \Control\Monad\Rec\Class\phpurs_eval_thunk('Control_Monad_Rec_Class_map'));
-$fromDone = ($__global_Partial_Unsafe__unsafePartial)((function() use ($__global_Prim_undefined) {
-  $__fn = function($__dollar____unused, $v = null) use ($__global_Prim_undefined, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 2) {
-    if ($__num === 1) return function($v) use ($__dollar____unused, &$__fn) { return $__fn($__dollar____unused, $v); };
-    return phpurs_curry_fallback($__fn, func_get_args(), 2);
-  }
-    $__res = ((function() use ($v) {
-  $__body = function($__dollar____unused) use ($v) {
+$fromDone = ($__global_Partial_Unsafe__unsafePartial)((function() {
+  $__body = function($__dollar____unused, $v) {
     $__case_0 = $v;
     switch (($__case_0)->tag) {
 case "Done":
@@ -428,45 +480,42 @@ throw new \Exception("Pattern match failure");
 break;
 };
   };
-  $__fn = function($__dollar____unused) use ($v, $__body, &$__fn) {
+  $__fn = function($__dollar____unused, $v = null) use ($__body, &$__fn) {
   $__num = func_num_args();
-  if ($__num < 1) {
-    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($__dollar____unused, &$__fn) { return $__fn($__dollar____unused, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
-    $__res = $__body($__dollar____unused);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})())($__global_Prim_undefined);
+    $__res = $__body($__dollar____unused, $v);
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
 })());
-    $__res = ($__global_Effect_bindE)(($__global_Control_Monad_Rec_Class_bindFlipped)($__global_Effect_Ref__new, ($f)($a)), (function() use ($__global_Control_Monad_Rec_Class_discard, $__global_Effect_untilE, $__global_Effect_bindE, $__global_Effect_Ref_read, $f, $__global_Effect_Ref_write, $__global_Effect_pureE, $__global_Control_Monad_Rec_Class_map, $fromDone) {
-  $__fn = function($r) use ($__global_Control_Monad_Rec_Class_discard, $__global_Effect_untilE, $__global_Effect_bindE, $__global_Effect_Ref_read, $f, $__global_Effect_Ref_write, $__global_Effect_pureE, $__global_Control_Monad_Rec_Class_map, $fromDone, &$__fn) {
+    $__res = ($__global_Control_Monad_Rec_Class_bind)(($__global_Control_Monad_Rec_Class_bindFlipped)($__global_Effect_Ref__new, ($f)($a)), (function() use ($__global_Control_Monad_Rec_Class_discard, $__global_Effect_untilE, $__global_Control_Monad_Rec_Class_bind, $__global_Effect_Ref_read, $f, $__global_Effect_Ref_write, $__global_Control_Monad_Rec_Class_pure, $__global_Control_Monad_Rec_Class_map, $fromDone) {
+  $__fn = function($r) use ($__global_Control_Monad_Rec_Class_discard, $__global_Effect_untilE, $__global_Control_Monad_Rec_Class_bind, $__global_Effect_Ref_read, $f, $__global_Effect_Ref_write, $__global_Control_Monad_Rec_Class_pure, $__global_Control_Monad_Rec_Class_map, $fromDone, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($__global_Control_Monad_Rec_Class_discard)(($__global_Effect_untilE)(($__global_Effect_bindE)(($__global_Effect_Ref_read)($r), (function() use ($__global_Effect_bindE, $f, $__global_Effect_Ref_write, $r, $__global_Effect_pureE) {
-  $__body = function($v) use ($__global_Effect_bindE, $f, $__global_Effect_Ref_write, $r, $__global_Effect_pureE) {
+    $__res = ($__global_Control_Monad_Rec_Class_discard)(($__global_Effect_untilE)(($__global_Control_Monad_Rec_Class_bind)(($__global_Effect_Ref_read)($r), (function() use ($__global_Control_Monad_Rec_Class_bind, $f, $__global_Effect_Ref_write, $r, $__global_Control_Monad_Rec_Class_pure) {
+  $__body = function($v) use ($__global_Control_Monad_Rec_Class_bind, $f, $__global_Effect_Ref_write, $r, $__global_Control_Monad_Rec_Class_pure) {
     $__case_0 = $v;
     switch (($__case_0)->tag) {
 case "Loop":
 $a__prime__ = ($__case_0)->v0;
-return ($__global_Effect_bindE)(($f)($a__prime__), (function() use ($__global_Effect_bindE, $__global_Effect_Ref_write, $r, $__global_Effect_pureE) {
-  $__fn = function($e) use ($__global_Effect_bindE, $__global_Effect_Ref_write, $r, $__global_Effect_pureE, &$__fn) {
+return ($__global_Control_Monad_Rec_Class_bind)(($f)($a__prime__), (function() use ($__global_Control_Monad_Rec_Class_bind, $__global_Effect_Ref_write, $r, $__global_Control_Monad_Rec_Class_pure) {
+  $__fn = function($e) use ($__global_Control_Monad_Rec_Class_bind, $__global_Effect_Ref_write, $r, $__global_Control_Monad_Rec_Class_pure, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($__global_Effect_bindE)(($__global_Effect_Ref_write)($e, $r), (function() use ($__global_Effect_pureE) {
-  $__fn = function($__dollar____unused) use ($__global_Effect_pureE, &$__fn) {
+    $__res = ($__global_Control_Monad_Rec_Class_bind)(($__global_Effect_Ref_write)($e, $r), (function() use ($__global_Control_Monad_Rec_Class_pure) {
+  $__fn = function($__dollar____unused) use ($__global_Control_Monad_Rec_Class_pure, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($__global_Effect_pureE)(false);
+    $__res = ($__global_Control_Monad_Rec_Class_pure)(false);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -477,14 +526,14 @@ return ($__global_Effect_bindE)(($f)($a__prime__), (function() use ($__global_Ef
 })());
 break;
 case "Done":
-return ($__global_Effect_pureE)(true);
+return ($__global_Control_Monad_Rec_Class_pure)(true);
 break;
 default:
 throw new \Exception("Pattern match failure");
 break;
 };
   };
-  $__fn = function($v) use ($__global_Effect_bindE, $f, $__global_Effect_Ref_write, $r, $__global_Effect_pureE, $__body, &$__fn) {
+  $__fn = function($v) use ($__global_Control_Monad_Rec_Class_bind, $f, $__global_Effect_Ref_write, $r, $__global_Control_Monad_Rec_Class_pure, $__body, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
@@ -708,7 +757,15 @@ function Control_Monad_Rec_Class_tailRecM2($dictMonadRec) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$tailRecM1 = ($dictMonadRec)->tailRecM;
+$__case_0 = $dictMonadRec;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->tailRecM;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$tailRecM1 = $__case_res_0;
     $__res = (function() use ($tailRecM1) {
   $__fn = function($f, $a = null, $b = null) use ($tailRecM1, &$__fn) {
   $__num = func_num_args();
@@ -748,7 +805,15 @@ function Control_Monad_Rec_Class_tailRecM3($dictMonadRec) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$tailRecM1 = ($dictMonadRec)->tailRecM;
+$__case_0 = $dictMonadRec;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->tailRecM;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$tailRecM1 = $__case_res_0;
     $__res = (function() use ($tailRecM1) {
   $__fn = function($f, $a = null, $b = null, $c = null) use ($tailRecM1, &$__fn) {
   $__num = func_num_args();
@@ -800,11 +865,37 @@ function Control_Monad_Rec_Class_untilJust($dictMonadRec) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Functor_mapFlipped = ($GLOBALS['Data_Functor_mapFlipped'] ?? \Data\Functor\phpurs_eval_thunk('Data_Functor_mapFlipped'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Unit_unit = ($GLOBALS['Data_Unit_unit'] ?? \Data\Unit\phpurs_eval_thunk('Data_Unit_unit'));
-$tailRecM1 = ($dictMonadRec)->tailRecM;
-$mapFlipped = ($__global_Data_Functor_mapFlipped)((((((((($dictMonadRec)->Monad0)($__global_Prim_undefined))->Bind1)($__global_Prim_undefined))->Apply0)($__global_Prim_undefined))->Functor0)($__global_Prim_undefined));
+$__case_0 = $dictMonadRec;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->tailRecM;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$tailRecM1 = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map1 = $__case_res_1;
+$mapFlipped = (function() use ($map1) {
+  $__fn = function($fa, $f = null) use ($map1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($f) use ($fa, &$__fn) { return $__fn($fa, $f); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($map1)($f, $fa);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
     $__res = (function() use ($tailRecM1, $mapFlipped, $__global_Data_Unit_unit) {
   $__fn = function($m) use ($tailRecM1, $mapFlipped, $__global_Data_Unit_unit, &$__fn) {
   $__num = func_num_args();
@@ -882,18 +973,60 @@ function Control_Monad_Rec_Class_whileJust($dictMonoid) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$__global_Data_Functor_mapFlipped = ($GLOBALS['Data_Functor_mapFlipped'] ?? \Data\Functor\phpurs_eval_thunk('Data_Functor_mapFlipped'));
-$append = ((($dictMonoid)->Semigroup0)($__global_Prim_undefined))->append;
-$mempty = ($dictMonoid)->mempty;
-    $__res = (function() use ($__global_Data_Functor_mapFlipped, $__global_Prim_undefined, $append, $mempty) {
-  $__fn = function($dictMonadRec) use ($__global_Data_Functor_mapFlipped, $__global_Prim_undefined, $append, $mempty, &$__fn) {
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append = $__case_res_0;
+$__case_0 = $dictMonoid;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->mempty;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$mempty = $__case_res_1;
+    $__res = (function() use ($dict, $append, $mempty) {
+  $__fn = function($dictMonadRec) use ($dict, $append, $mempty, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$tailRecM1 = ($dictMonadRec)->tailRecM;
-$mapFlipped = ($__global_Data_Functor_mapFlipped)((((((((($dictMonadRec)->Monad0)($__global_Prim_undefined))->Bind1)($__global_Prim_undefined))->Apply0)($__global_Prim_undefined))->Functor0)($__global_Prim_undefined));
+$__case_0 = $dictMonadRec;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->tailRecM;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$tailRecM1 = $__case_res_2;
+$__case_0 = $dict;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map1 = $__case_res_3;
+$mapFlipped = (function() use ($map1) {
+  $__fn = function($fa, $f = null) use ($map1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($f) use ($fa, &$__fn) { return $__fn($fa, $f); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($map1)($f, $fa);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
     $__res = (function() use ($tailRecM1, $mapFlipped, $append, $mempty) {
   $__fn = function($m) use ($tailRecM1, $mapFlipped, $append, $mempty, &$__fn) {
   $__num = func_num_args();
@@ -1147,11 +1280,37 @@ function Control_Monad_Rec_Class_forever($dictMonadRec) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Functor_voidRight = ($GLOBALS['Data_Functor_voidRight'] ?? \Data\Functor\phpurs_eval_thunk('Data_Functor_voidRight'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
+$__global_Data_Function_const = ($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const'));
 $__global_Data_Unit_unit = ($GLOBALS['Data_Unit_unit'] ?? \Data\Unit\phpurs_eval_thunk('Data_Unit_unit'));
-$tailRecM1 = ($dictMonadRec)->tailRecM;
-$voidRight = ($__global_Data_Functor_voidRight)((((((((($dictMonadRec)->Monad0)($__global_Prim_undefined))->Bind1)($__global_Prim_undefined))->Apply0)($__global_Prim_undefined))->Functor0)($__global_Prim_undefined));
+$__case_0 = $dictMonadRec;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->tailRecM;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$tailRecM1 = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map1 = $__case_res_1;
+$voidRight = (function() use ($map1, $__global_Data_Function_const) {
+  $__fn = function($x) use ($map1, $__global_Data_Function_const, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($map1)(($__global_Data_Function_const)($x));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
     $__res = (function() use ($tailRecM1, $voidRight, $__global_Data_Unit_unit) {
   $__fn = function($ma) use ($tailRecM1, $voidRight, $__global_Data_Unit_unit, &$__fn) {
   $__num = func_num_args();

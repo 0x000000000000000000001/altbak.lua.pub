@@ -209,74 +209,11 @@ while (true) {
 $__case_0 = $v;
 switch ($__case_0) {
 case 0:
-return ((function() {
-  $__fn = function($value0) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) {
-    return phpurs_curry_fallback($__fn, func_get_args(), 1);
-  }
-    $__res = new Phpurs_Data1("Val", $value0);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})())(1);
+return new Phpurs_Data1("Val", 1);
 break;
 default:
 $n = $__case_0;
-return ((function() {
-  $__fn = function($value0, $value1 = null) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 2) {
-    if ($__num === 1) return function($value1) use ($value0, &$__fn) { return $__fn($value0, $value1); };
-    return phpurs_curry_fallback($__fn, func_get_args(), 2);
-  }
-    $__res = new Phpurs_Data2("Add", $value0, $value1);
-  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
-  };
-  return $__fn;
-})())(((function() {
-  $__fn = function($value0, $value1 = null) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 2) {
-    if ($__num === 1) return function($value1) use ($value0, &$__fn) { return $__fn($value0, $value1); };
-    return phpurs_curry_fallback($__fn, func_get_args(), 2);
-  }
-    $__res = new Phpurs_Data2("Mul", $value0, $value1);
-  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
-  };
-  return $__fn;
-})())(((function() {
-  $__fn = function($value0) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) {
-    return phpurs_curry_fallback($__fn, func_get_args(), 1);
-  }
-    $__res = new Phpurs_Data1("Val", $value0);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})())($n), (($GLOBALS['Test_AstTree_buildTree'] ?? \Test\AstTree\phpurs_eval_thunk('Test_AstTree_buildTree')))(($n - 1))), ((function() {
-  $__fn = function($value0, $value1 = null) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 2) {
-    if ($__num === 1) return function($value1) use ($value0, &$__fn) { return $__fn($value0, $value1); };
-    return phpurs_curry_fallback($__fn, func_get_args(), 2);
-  }
-    $__res = new Phpurs_Data2("Sub", $value0, $value1);
-  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
-  };
-  return $__fn;
-})())((($GLOBALS['Test_AstTree_buildTree'] ?? \Test\AstTree\phpurs_eval_thunk('Test_AstTree_buildTree')))(($n - 1)), ((function() {
-  $__fn = function($value0) use (&$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) {
-    return phpurs_curry_fallback($__fn, func_get_args(), 1);
-  }
-    $__res = new Phpurs_Data1("Val", $value0);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})())(1)));
+return new Phpurs_Data2("Add", new Phpurs_Data2("Mul", new Phpurs_Data1("Val", $n), (($GLOBALS['Test_AstTree_buildTree'] ?? \Test\AstTree\phpurs_eval_thunk('Test_AstTree_buildTree')))(($n - 1))), new Phpurs_Data2("Sub", (($GLOBALS['Test_AstTree_buildTree'] ?? \Test\AstTree\phpurs_eval_thunk('Test_AstTree_buildTree')))(($n - 1)), new Phpurs_Data1("Val", 1)));
 break;
 };
 };

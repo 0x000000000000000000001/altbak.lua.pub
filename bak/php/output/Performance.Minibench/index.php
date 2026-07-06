@@ -101,15 +101,129 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Performance_Minibench_lessThan': $v = (($GLOBALS['Data_Ord_lessThan'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_lessThan')))(($GLOBALS['Data_Ord_ordNumber'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordNumber'))); break;
-      case 'Performance_Minibench_append': $v = ($GLOBALS['Data_Semigroup_concatString'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_concatString')); break;
-      case 'Performance_Minibench_div': $v = ($GLOBALS['Data_EuclideanRing_numDiv'] ?? \Data\EuclideanRing\phpurs_eval_thunk('Data_EuclideanRing_numDiv')); break;
-      case 'Performance_Minibench_bind': $v = ($GLOBALS['Effect_bindE'] ?? \Effect\phpurs_eval_thunk('Effect_bindE')); break;
-      case 'Performance_Minibench_discard': $v = ((($GLOBALS['Control_Bind_discardUnit'] ?? \Control\Bind\phpurs_eval_thunk('Control_Bind_discardUnit')))->discard)(($GLOBALS['Effect_bindEffect'] ?? \Effect\phpurs_eval_thunk('Effect_bindEffect'))); break;
-      case 'Performance_Minibench_mul': $v = ($GLOBALS['Data_Semiring_numMul'] ?? \Data\Semiring\phpurs_eval_thunk('Data_Semiring_numMul')); break;
-      case 'Performance_Minibench_add': $v = ($GLOBALS['Data_Semiring_numAdd'] ?? \Data\Semiring\phpurs_eval_thunk('Data_Semiring_numAdd')); break;
-      case 'Performance_Minibench_pure': $v = ($GLOBALS['Effect_pureE'] ?? \Effect\phpurs_eval_thunk('Effect_pureE')); break;
-      case 'Performance_Minibench_sub': $v = ($GLOBALS['Data_Ring_numSub'] ?? \Data\Ring\phpurs_eval_thunk('Data_Ring_numSub')); break;
+      case 'Performance_Minibench_lessThan': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Ord_ordNumber'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordNumber'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $compare3 = $__case_res_0;
+  return (function() use ($compare3) {
+  $__body = function($a1, $a2) use ($compare3) {
+    $v = ($compare3)($a1, $a2);
+    $__case_0 = $v;
+    switch (($__case_0)->tag) {
+case "LT":
+return true;
+break;
+default:
+return false;
+break;
+};
+  };
+  $__fn = function($a1, $a2 = null) use ($compare3, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($a2) use ($a1, &$__fn) { return $__fn($a1, $a2); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($a1, $a2);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+})(); break;
+      case 'Performance_Minibench_append': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Semigroup_semigroupString'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_semigroupString'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Performance_Minibench_div': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_EuclideanRing_euclideanRingNumber'] ?? \Data\EuclideanRing\phpurs_eval_thunk('Data_EuclideanRing_euclideanRingNumber'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->div;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Performance_Minibench_bind': $v = (function() {
+  $__case_0 = ($GLOBALS['Effect_bindEffect'] ?? \Effect\phpurs_eval_thunk('Effect_bindEffect'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bind;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Performance_Minibench_discard': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Bind_discardUnit'] ?? \Control\Bind\phpurs_eval_thunk('Control_Bind_discardUnit'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->discard;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return ($__case_res_0)(($GLOBALS['Effect_bindEffect'] ?? \Effect\phpurs_eval_thunk('Effect_bindEffect')));
+})(); break;
+      case 'Performance_Minibench_mul': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Semiring_semiringNumber'] ?? \Data\Semiring\phpurs_eval_thunk('Data_Semiring_semiringNumber'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->mul;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Performance_Minibench_add': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Semiring_semiringNumber'] ?? \Data\Semiring\phpurs_eval_thunk('Data_Semiring_semiringNumber'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->add;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Performance_Minibench_pure': $v = (function() {
+  $__case_0 = ($GLOBALS['Effect_applicativeEffect'] ?? \Effect\phpurs_eval_thunk('Effect_applicativeEffect'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Performance_Minibench_sub': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Ring_ringNumber'] ?? \Data\Ring\phpurs_eval_thunk('Data_Ring_ringNumber'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->sub;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Performance_Minibench_bench': $v = (($GLOBALS['Performance_Minibench_benchWith'] ?? \Performance\Minibench\phpurs_eval_thunk('Performance_Minibench_benchWith')))(1000); break;
       default: throw new \Exception("Unknown thunk " . $id);
     }
@@ -158,7 +272,7 @@ function Performance_Minibench_benchWith__prime__($n, $f = null) {
     if ($__num === 1) return function($f) use ($n, $__fn) { return $__fn($n, $f); };
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
-$__global_Effect_bindE = ($GLOBALS['Effect_bindE'] ?? \Effect\phpurs_eval_thunk('Effect_bindE'));
+$__global_Performance_Minibench_bind = ($GLOBALS['Performance_Minibench_bind'] ?? \Performance\Minibench\phpurs_eval_thunk('Performance_Minibench_bind'));
 $__global_Effect_Ref__new = ($GLOBALS['Effect_Ref__new'] ?? \Effect\Ref\phpurs_eval_thunk('Effect_Ref__new'));
 $__global_Data_Number_infinity = ($GLOBALS['Data_Number_infinity'] ?? \Data\Number\phpurs_eval_thunk('Data_Number_infinity'));
 $__global_Performance_Minibench_discard = ($GLOBALS['Performance_Minibench_discard'] ?? \Performance\Minibench\phpurs_eval_thunk('Performance_Minibench_discard'));
@@ -166,90 +280,94 @@ $__global_Performance_Minibench_gc = ($GLOBALS['Performance_Minibench_gc'] ?? \P
 $__global_Effect_forE = ($GLOBALS['Effect_forE'] ?? \Effect\phpurs_eval_thunk('Effect_forE'));
 $__global_Effect_Uncurried_runEffectFn1 = ($GLOBALS['Effect_Uncurried_runEffectFn1'] ?? \Effect\Uncurried\phpurs_eval_thunk('Effect_Uncurried_runEffectFn1'));
 $__global_Performance_Minibench_timeNs = ($GLOBALS['Performance_Minibench_timeNs'] ?? \Performance\Minibench\phpurs_eval_thunk('Performance_Minibench_timeNs'));
+$__global_Performance_Minibench_mul = ($GLOBALS['Performance_Minibench_mul'] ?? \Performance\Minibench\phpurs_eval_thunk('Performance_Minibench_mul'));
 $__global_Effect_Ref_modify = ($GLOBALS['Effect_Ref_modify'] ?? \Effect\Ref\phpurs_eval_thunk('Effect_Ref_modify'));
+$__global_Performance_Minibench_add = ($GLOBALS['Performance_Minibench_add'] ?? \Performance\Minibench\phpurs_eval_thunk('Performance_Minibench_add'));
 $__global_Data_Number_min = ($GLOBALS['Data_Number_min'] ?? \Data\Number\phpurs_eval_thunk('Data_Number_min'));
 $__global_Data_Number_max = ($GLOBALS['Data_Number_max'] ?? \Data\Number\phpurs_eval_thunk('Data_Number_max'));
-$__global_Effect_pureE = ($GLOBALS['Effect_pureE'] ?? \Effect\phpurs_eval_thunk('Effect_pureE'));
+$__global_Performance_Minibench_pure = ($GLOBALS['Performance_Minibench_pure'] ?? \Performance\Minibench\phpurs_eval_thunk('Performance_Minibench_pure'));
 $__global_Data_Unit_unit = ($GLOBALS['Data_Unit_unit'] ?? \Data\Unit\phpurs_eval_thunk('Data_Unit_unit'));
 $__global_Effect_Ref_read = ($GLOBALS['Effect_Ref_read'] ?? \Effect\Ref\phpurs_eval_thunk('Effect_Ref_read'));
 $__global_Data_Int_toNumber = ($GLOBALS['Data_Int_toNumber'] ?? \Data\Int\phpurs_eval_thunk('Data_Int_toNumber'));
+$__global_Performance_Minibench_div = ($GLOBALS['Performance_Minibench_div'] ?? \Performance\Minibench\phpurs_eval_thunk('Performance_Minibench_div'));
 $__global_Data_Number_sqrt = ($GLOBALS['Data_Number_sqrt'] ?? \Data\Number\phpurs_eval_thunk('Data_Number_sqrt'));
-    $__res = ($__global_Effect_bindE)(($__global_Effect_Ref__new)(0.0), (function() use ($__global_Effect_bindE, $__global_Effect_Ref__new, $__global_Data_Number_infinity, $__global_Performance_Minibench_discard, $__global_Performance_Minibench_gc, $__global_Effect_forE, $n, $__global_Effect_Uncurried_runEffectFn1, $__global_Performance_Minibench_timeNs, $f, $__global_Effect_Ref_modify, $__global_Data_Number_min, $__global_Data_Number_max, $__global_Effect_pureE, $__global_Data_Unit_unit, $__global_Effect_Ref_read, $__global_Data_Int_toNumber, $__global_Data_Number_sqrt) {
-  $__fn = function($sumRef) use ($__global_Effect_bindE, $__global_Effect_Ref__new, $__global_Data_Number_infinity, $__global_Performance_Minibench_discard, $__global_Performance_Minibench_gc, $__global_Effect_forE, $n, $__global_Effect_Uncurried_runEffectFn1, $__global_Performance_Minibench_timeNs, $f, $__global_Effect_Ref_modify, $__global_Data_Number_min, $__global_Data_Number_max, $__global_Effect_pureE, $__global_Data_Unit_unit, $__global_Effect_Ref_read, $__global_Data_Int_toNumber, $__global_Data_Number_sqrt, &$__fn) {
+$__global_Performance_Minibench_sub = ($GLOBALS['Performance_Minibench_sub'] ?? \Performance\Minibench\phpurs_eval_thunk('Performance_Minibench_sub'));
+    $__res = ($__global_Performance_Minibench_bind)(($__global_Effect_Ref__new)(0.0), (function() use ($__global_Performance_Minibench_bind, $__global_Effect_Ref__new, $__global_Data_Number_infinity, $__global_Performance_Minibench_discard, $__global_Performance_Minibench_gc, $__global_Effect_forE, $n, $__global_Effect_Uncurried_runEffectFn1, $__global_Performance_Minibench_timeNs, $f, $__global_Performance_Minibench_mul, $__global_Effect_Ref_modify, $__global_Performance_Minibench_add, $__global_Data_Number_min, $__global_Data_Number_max, $__global_Performance_Minibench_pure, $__global_Data_Unit_unit, $__global_Effect_Ref_read, $__global_Data_Int_toNumber, $__global_Performance_Minibench_div, $__global_Data_Number_sqrt, $__global_Performance_Minibench_sub) {
+  $__fn = function($sumRef) use ($__global_Performance_Minibench_bind, $__global_Effect_Ref__new, $__global_Data_Number_infinity, $__global_Performance_Minibench_discard, $__global_Performance_Minibench_gc, $__global_Effect_forE, $n, $__global_Effect_Uncurried_runEffectFn1, $__global_Performance_Minibench_timeNs, $f, $__global_Performance_Minibench_mul, $__global_Effect_Ref_modify, $__global_Performance_Minibench_add, $__global_Data_Number_min, $__global_Data_Number_max, $__global_Performance_Minibench_pure, $__global_Data_Unit_unit, $__global_Effect_Ref_read, $__global_Data_Int_toNumber, $__global_Performance_Minibench_div, $__global_Data_Number_sqrt, $__global_Performance_Minibench_sub, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($__global_Effect_bindE)(($__global_Effect_Ref__new)(0.0), (function() use ($__global_Effect_bindE, $__global_Effect_Ref__new, $__global_Data_Number_infinity, $__global_Performance_Minibench_discard, $__global_Performance_Minibench_gc, $__global_Effect_forE, $n, $__global_Effect_Uncurried_runEffectFn1, $__global_Performance_Minibench_timeNs, $f, $__global_Effect_Ref_modify, $sumRef, $__global_Data_Number_min, $__global_Data_Number_max, $__global_Effect_pureE, $__global_Data_Unit_unit, $__global_Effect_Ref_read, $__global_Data_Int_toNumber, $__global_Data_Number_sqrt) {
-  $__fn = function($sum2Ref) use ($__global_Effect_bindE, $__global_Effect_Ref__new, $__global_Data_Number_infinity, $__global_Performance_Minibench_discard, $__global_Performance_Minibench_gc, $__global_Effect_forE, $n, $__global_Effect_Uncurried_runEffectFn1, $__global_Performance_Minibench_timeNs, $f, $__global_Effect_Ref_modify, $sumRef, $__global_Data_Number_min, $__global_Data_Number_max, $__global_Effect_pureE, $__global_Data_Unit_unit, $__global_Effect_Ref_read, $__global_Data_Int_toNumber, $__global_Data_Number_sqrt, &$__fn) {
+    $__res = ($__global_Performance_Minibench_bind)(($__global_Effect_Ref__new)(0.0), (function() use ($__global_Performance_Minibench_bind, $__global_Effect_Ref__new, $__global_Data_Number_infinity, $__global_Performance_Minibench_discard, $__global_Performance_Minibench_gc, $__global_Effect_forE, $n, $__global_Effect_Uncurried_runEffectFn1, $__global_Performance_Minibench_timeNs, $f, $__global_Performance_Minibench_mul, $__global_Effect_Ref_modify, $__global_Performance_Minibench_add, $sumRef, $__global_Data_Number_min, $__global_Data_Number_max, $__global_Performance_Minibench_pure, $__global_Data_Unit_unit, $__global_Effect_Ref_read, $__global_Data_Int_toNumber, $__global_Performance_Minibench_div, $__global_Data_Number_sqrt, $__global_Performance_Minibench_sub) {
+  $__fn = function($sum2Ref) use ($__global_Performance_Minibench_bind, $__global_Effect_Ref__new, $__global_Data_Number_infinity, $__global_Performance_Minibench_discard, $__global_Performance_Minibench_gc, $__global_Effect_forE, $n, $__global_Effect_Uncurried_runEffectFn1, $__global_Performance_Minibench_timeNs, $f, $__global_Performance_Minibench_mul, $__global_Effect_Ref_modify, $__global_Performance_Minibench_add, $sumRef, $__global_Data_Number_min, $__global_Data_Number_max, $__global_Performance_Minibench_pure, $__global_Data_Unit_unit, $__global_Effect_Ref_read, $__global_Data_Int_toNumber, $__global_Performance_Minibench_div, $__global_Data_Number_sqrt, $__global_Performance_Minibench_sub, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($__global_Effect_bindE)(($__global_Effect_Ref__new)($__global_Data_Number_infinity), (function() use ($__global_Effect_bindE, $__global_Effect_Ref__new, $__global_Performance_Minibench_discard, $__global_Performance_Minibench_gc, $__global_Effect_forE, $n, $__global_Effect_Uncurried_runEffectFn1, $__global_Performance_Minibench_timeNs, $f, $__global_Effect_Ref_modify, $sumRef, $sum2Ref, $__global_Data_Number_min, $__global_Data_Number_max, $__global_Effect_pureE, $__global_Data_Unit_unit, $__global_Effect_Ref_read, $__global_Data_Int_toNumber, $__global_Data_Number_sqrt) {
-  $__fn = function($minRef) use ($__global_Effect_bindE, $__global_Effect_Ref__new, $__global_Performance_Minibench_discard, $__global_Performance_Minibench_gc, $__global_Effect_forE, $n, $__global_Effect_Uncurried_runEffectFn1, $__global_Performance_Minibench_timeNs, $f, $__global_Effect_Ref_modify, $sumRef, $sum2Ref, $__global_Data_Number_min, $__global_Data_Number_max, $__global_Effect_pureE, $__global_Data_Unit_unit, $__global_Effect_Ref_read, $__global_Data_Int_toNumber, $__global_Data_Number_sqrt, &$__fn) {
+    $__res = ($__global_Performance_Minibench_bind)(($__global_Effect_Ref__new)($__global_Data_Number_infinity), (function() use ($__global_Performance_Minibench_bind, $__global_Effect_Ref__new, $__global_Performance_Minibench_discard, $__global_Performance_Minibench_gc, $__global_Effect_forE, $n, $__global_Effect_Uncurried_runEffectFn1, $__global_Performance_Minibench_timeNs, $f, $__global_Performance_Minibench_mul, $__global_Effect_Ref_modify, $__global_Performance_Minibench_add, $sumRef, $sum2Ref, $__global_Data_Number_min, $__global_Data_Number_max, $__global_Performance_Minibench_pure, $__global_Data_Unit_unit, $__global_Effect_Ref_read, $__global_Data_Int_toNumber, $__global_Performance_Minibench_div, $__global_Data_Number_sqrt, $__global_Performance_Minibench_sub) {
+  $__fn = function($minRef) use ($__global_Performance_Minibench_bind, $__global_Effect_Ref__new, $__global_Performance_Minibench_discard, $__global_Performance_Minibench_gc, $__global_Effect_forE, $n, $__global_Effect_Uncurried_runEffectFn1, $__global_Performance_Minibench_timeNs, $f, $__global_Performance_Minibench_mul, $__global_Effect_Ref_modify, $__global_Performance_Minibench_add, $sumRef, $sum2Ref, $__global_Data_Number_min, $__global_Data_Number_max, $__global_Performance_Minibench_pure, $__global_Data_Unit_unit, $__global_Effect_Ref_read, $__global_Data_Int_toNumber, $__global_Performance_Minibench_div, $__global_Data_Number_sqrt, $__global_Performance_Minibench_sub, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($__global_Effect_bindE)(($__global_Effect_Ref__new)(0.0), (function() use ($__global_Performance_Minibench_discard, $__global_Performance_Minibench_gc, $__global_Effect_forE, $n, $__global_Effect_bindE, $__global_Effect_Uncurried_runEffectFn1, $__global_Performance_Minibench_timeNs, $f, $__global_Effect_Ref_modify, $sumRef, $sum2Ref, $__global_Data_Number_min, $minRef, $__global_Data_Number_max, $__global_Effect_pureE, $__global_Data_Unit_unit, $__global_Effect_Ref_read, $__global_Data_Int_toNumber, $__global_Data_Number_sqrt) {
-  $__fn = function($maxRef) use ($__global_Performance_Minibench_discard, $__global_Performance_Minibench_gc, $__global_Effect_forE, $n, $__global_Effect_bindE, $__global_Effect_Uncurried_runEffectFn1, $__global_Performance_Minibench_timeNs, $f, $__global_Effect_Ref_modify, $sumRef, $sum2Ref, $__global_Data_Number_min, $minRef, $__global_Data_Number_max, $__global_Effect_pureE, $__global_Data_Unit_unit, $__global_Effect_Ref_read, $__global_Data_Int_toNumber, $__global_Data_Number_sqrt, &$__fn) {
+    $__res = ($__global_Performance_Minibench_bind)(($__global_Effect_Ref__new)(0.0), (function() use ($__global_Performance_Minibench_discard, $__global_Performance_Minibench_gc, $__global_Effect_forE, $n, $__global_Performance_Minibench_bind, $__global_Effect_Uncurried_runEffectFn1, $__global_Performance_Minibench_timeNs, $f, $__global_Performance_Minibench_mul, $__global_Effect_Ref_modify, $__global_Performance_Minibench_add, $sumRef, $sum2Ref, $__global_Data_Number_min, $minRef, $__global_Data_Number_max, $__global_Performance_Minibench_pure, $__global_Data_Unit_unit, $__global_Effect_Ref_read, $__global_Data_Int_toNumber, $__global_Performance_Minibench_div, $__global_Data_Number_sqrt, $__global_Performance_Minibench_sub) {
+  $__fn = function($maxRef) use ($__global_Performance_Minibench_discard, $__global_Performance_Minibench_gc, $__global_Effect_forE, $n, $__global_Performance_Minibench_bind, $__global_Effect_Uncurried_runEffectFn1, $__global_Performance_Minibench_timeNs, $f, $__global_Performance_Minibench_mul, $__global_Effect_Ref_modify, $__global_Performance_Minibench_add, $sumRef, $sum2Ref, $__global_Data_Number_min, $minRef, $__global_Data_Number_max, $__global_Performance_Minibench_pure, $__global_Data_Unit_unit, $__global_Effect_Ref_read, $__global_Data_Int_toNumber, $__global_Performance_Minibench_div, $__global_Data_Number_sqrt, $__global_Performance_Minibench_sub, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($__global_Performance_Minibench_discard)($__global_Performance_Minibench_gc, (function() use ($__global_Performance_Minibench_discard, $__global_Effect_forE, $n, $__global_Effect_bindE, $__global_Effect_Uncurried_runEffectFn1, $__global_Performance_Minibench_timeNs, $f, $__global_Effect_Ref_modify, $sumRef, $sum2Ref, $__global_Data_Number_min, $minRef, $__global_Data_Number_max, $maxRef, $__global_Effect_pureE, $__global_Data_Unit_unit, $__global_Effect_Ref_read, $__global_Data_Int_toNumber, $__global_Data_Number_sqrt) {
-  $__fn = function($__dollar____unused) use ($__global_Performance_Minibench_discard, $__global_Effect_forE, $n, $__global_Effect_bindE, $__global_Effect_Uncurried_runEffectFn1, $__global_Performance_Minibench_timeNs, $f, $__global_Effect_Ref_modify, $sumRef, $sum2Ref, $__global_Data_Number_min, $minRef, $__global_Data_Number_max, $maxRef, $__global_Effect_pureE, $__global_Data_Unit_unit, $__global_Effect_Ref_read, $__global_Data_Int_toNumber, $__global_Data_Number_sqrt, &$__fn) {
+    $__res = ($__global_Performance_Minibench_discard)($__global_Performance_Minibench_gc, (function() use ($__global_Performance_Minibench_discard, $__global_Effect_forE, $n, $__global_Performance_Minibench_bind, $__global_Effect_Uncurried_runEffectFn1, $__global_Performance_Minibench_timeNs, $f, $__global_Performance_Minibench_mul, $__global_Effect_Ref_modify, $__global_Performance_Minibench_add, $sumRef, $sum2Ref, $__global_Data_Number_min, $minRef, $__global_Data_Number_max, $maxRef, $__global_Performance_Minibench_pure, $__global_Data_Unit_unit, $__global_Effect_Ref_read, $__global_Data_Int_toNumber, $__global_Performance_Minibench_div, $__global_Data_Number_sqrt, $__global_Performance_Minibench_sub) {
+  $__fn = function($__dollar____unused) use ($__global_Performance_Minibench_discard, $__global_Effect_forE, $n, $__global_Performance_Minibench_bind, $__global_Effect_Uncurried_runEffectFn1, $__global_Performance_Minibench_timeNs, $f, $__global_Performance_Minibench_mul, $__global_Effect_Ref_modify, $__global_Performance_Minibench_add, $sumRef, $sum2Ref, $__global_Data_Number_min, $minRef, $__global_Data_Number_max, $maxRef, $__global_Performance_Minibench_pure, $__global_Data_Unit_unit, $__global_Effect_Ref_read, $__global_Data_Int_toNumber, $__global_Performance_Minibench_div, $__global_Data_Number_sqrt, $__global_Performance_Minibench_sub, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($__global_Performance_Minibench_discard)(($__global_Effect_forE)(0, $n, (function() use ($__global_Effect_bindE, $__global_Effect_Uncurried_runEffectFn1, $__global_Performance_Minibench_timeNs, $f, $__global_Effect_Ref_modify, $sumRef, $sum2Ref, $__global_Data_Number_min, $minRef, $__global_Data_Number_max, $maxRef, $__global_Effect_pureE, $__global_Data_Unit_unit) {
-  $__fn = function($v) use ($__global_Effect_bindE, $__global_Effect_Uncurried_runEffectFn1, $__global_Performance_Minibench_timeNs, $f, $__global_Effect_Ref_modify, $sumRef, $sum2Ref, $__global_Data_Number_min, $minRef, $__global_Data_Number_max, $maxRef, $__global_Effect_pureE, $__global_Data_Unit_unit, &$__fn) {
+    $__res = ($__global_Performance_Minibench_discard)(($__global_Effect_forE)(0, $n, (function() use ($__global_Performance_Minibench_bind, $__global_Effect_Uncurried_runEffectFn1, $__global_Performance_Minibench_timeNs, $f, $__global_Performance_Minibench_mul, $__global_Effect_Ref_modify, $__global_Performance_Minibench_add, $sumRef, $sum2Ref, $__global_Data_Number_min, $minRef, $__global_Data_Number_max, $maxRef, $__global_Performance_Minibench_pure, $__global_Data_Unit_unit) {
+  $__fn = function($v) use ($__global_Performance_Minibench_bind, $__global_Effect_Uncurried_runEffectFn1, $__global_Performance_Minibench_timeNs, $f, $__global_Performance_Minibench_mul, $__global_Effect_Ref_modify, $__global_Performance_Minibench_add, $sumRef, $sum2Ref, $__global_Data_Number_min, $minRef, $__global_Data_Number_max, $maxRef, $__global_Performance_Minibench_pure, $__global_Data_Unit_unit, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($__global_Effect_bindE)(($__global_Effect_Uncurried_runEffectFn1)($__global_Performance_Minibench_timeNs, $f), (function() use ($__global_Effect_bindE, $__global_Effect_Ref_modify, $sumRef, $sum2Ref, $__global_Data_Number_min, $minRef, $__global_Data_Number_max, $maxRef, $__global_Effect_pureE, $__global_Data_Unit_unit) {
-  $__fn = function($ns) use ($__global_Effect_bindE, $__global_Effect_Ref_modify, $sumRef, $sum2Ref, $__global_Data_Number_min, $minRef, $__global_Data_Number_max, $maxRef, $__global_Effect_pureE, $__global_Data_Unit_unit, &$__fn) {
+    $__res = ($__global_Performance_Minibench_bind)(($__global_Effect_Uncurried_runEffectFn1)($__global_Performance_Minibench_timeNs, $f), (function() use ($__global_Performance_Minibench_mul, $__global_Performance_Minibench_bind, $__global_Effect_Ref_modify, $__global_Performance_Minibench_add, $sumRef, $sum2Ref, $__global_Data_Number_min, $minRef, $__global_Data_Number_max, $maxRef, $__global_Performance_Minibench_pure, $__global_Data_Unit_unit) {
+  $__fn = function($ns) use ($__global_Performance_Minibench_mul, $__global_Performance_Minibench_bind, $__global_Effect_Ref_modify, $__global_Performance_Minibench_add, $sumRef, $sum2Ref, $__global_Data_Number_min, $minRef, $__global_Data_Number_max, $maxRef, $__global_Performance_Minibench_pure, $__global_Data_Unit_unit, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$square = ($ns * $ns);
-    $__res = ($__global_Effect_bindE)(($__global_Effect_Ref_modify)((function() use ($ns) {
-  $__fn = function($v1) use ($ns, &$__fn) {
+$square = ($__global_Performance_Minibench_mul)($ns, $ns);
+    $__res = ($__global_Performance_Minibench_bind)(($__global_Effect_Ref_modify)((function() use ($__global_Performance_Minibench_add, $ns) {
+  $__fn = function($v1) use ($__global_Performance_Minibench_add, $ns, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($v1 + $ns);
+    $__res = ($__global_Performance_Minibench_add)($v1, $ns);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})(), $sumRef), (function() use ($__global_Effect_bindE, $__global_Effect_Ref_modify, $square, $sum2Ref, $__global_Data_Number_min, $ns, $minRef, $__global_Data_Number_max, $maxRef, $__global_Effect_pureE, $__global_Data_Unit_unit) {
-  $__fn = function($__dollar____unused) use ($__global_Effect_bindE, $__global_Effect_Ref_modify, $square, $sum2Ref, $__global_Data_Number_min, $ns, $minRef, $__global_Data_Number_max, $maxRef, $__global_Effect_pureE, $__global_Data_Unit_unit, &$__fn) {
+})(), $sumRef), (function() use ($__global_Performance_Minibench_bind, $__global_Effect_Ref_modify, $__global_Performance_Minibench_add, $square, $sum2Ref, $__global_Data_Number_min, $ns, $minRef, $__global_Data_Number_max, $maxRef, $__global_Performance_Minibench_pure, $__global_Data_Unit_unit) {
+  $__fn = function($__dollar____unused) use ($__global_Performance_Minibench_bind, $__global_Effect_Ref_modify, $__global_Performance_Minibench_add, $square, $sum2Ref, $__global_Data_Number_min, $ns, $minRef, $__global_Data_Number_max, $maxRef, $__global_Performance_Minibench_pure, $__global_Data_Unit_unit, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($__global_Effect_bindE)(($__global_Effect_Ref_modify)((function() use ($square) {
-  $__fn = function($v1) use ($square, &$__fn) {
+    $__res = ($__global_Performance_Minibench_bind)(($__global_Effect_Ref_modify)((function() use ($__global_Performance_Minibench_add, $square) {
+  $__fn = function($v1) use ($__global_Performance_Minibench_add, $square, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($v1 + $square);
+    $__res = ($__global_Performance_Minibench_add)($v1, $square);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})(), $sum2Ref), (function() use ($__global_Effect_bindE, $__global_Effect_Ref_modify, $__global_Data_Number_min, $ns, $minRef, $__global_Data_Number_max, $maxRef, $__global_Effect_pureE, $__global_Data_Unit_unit) {
-  $__fn = function($__dollar____unused) use ($__global_Effect_bindE, $__global_Effect_Ref_modify, $__global_Data_Number_min, $ns, $minRef, $__global_Data_Number_max, $maxRef, $__global_Effect_pureE, $__global_Data_Unit_unit, &$__fn) {
+})(), $sum2Ref), (function() use ($__global_Performance_Minibench_bind, $__global_Effect_Ref_modify, $__global_Data_Number_min, $ns, $minRef, $__global_Data_Number_max, $maxRef, $__global_Performance_Minibench_pure, $__global_Data_Unit_unit) {
+  $__fn = function($__dollar____unused) use ($__global_Performance_Minibench_bind, $__global_Effect_Ref_modify, $__global_Data_Number_min, $ns, $minRef, $__global_Data_Number_max, $maxRef, $__global_Performance_Minibench_pure, $__global_Data_Unit_unit, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($__global_Effect_bindE)(($__global_Effect_Ref_modify)((function() use ($__global_Data_Number_min, $ns) {
+    $__res = ($__global_Performance_Minibench_bind)(($__global_Effect_Ref_modify)((function() use ($__global_Data_Number_min, $ns) {
   $__fn = function($v1) use ($__global_Data_Number_min, $ns, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
@@ -259,13 +377,13 @@ $square = ($ns * $ns);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})(), $minRef), (function() use ($__global_Effect_bindE, $__global_Effect_Ref_modify, $__global_Data_Number_max, $ns, $maxRef, $__global_Effect_pureE, $__global_Data_Unit_unit) {
-  $__fn = function($__dollar____unused) use ($__global_Effect_bindE, $__global_Effect_Ref_modify, $__global_Data_Number_max, $ns, $maxRef, $__global_Effect_pureE, $__global_Data_Unit_unit, &$__fn) {
+})(), $minRef), (function() use ($__global_Performance_Minibench_bind, $__global_Effect_Ref_modify, $__global_Data_Number_max, $ns, $maxRef, $__global_Performance_Minibench_pure, $__global_Data_Unit_unit) {
+  $__fn = function($__dollar____unused) use ($__global_Performance_Minibench_bind, $__global_Effect_Ref_modify, $__global_Data_Number_max, $ns, $maxRef, $__global_Performance_Minibench_pure, $__global_Data_Unit_unit, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($__global_Effect_bindE)(($__global_Effect_Ref_modify)((function() use ($__global_Data_Number_max, $ns) {
+    $__res = ($__global_Performance_Minibench_bind)(($__global_Effect_Ref_modify)((function() use ($__global_Data_Number_max, $ns) {
   $__fn = function($v1) use ($__global_Data_Number_max, $ns, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
@@ -275,13 +393,13 @@ $square = ($ns * $ns);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})(), $maxRef), (function() use ($__global_Effect_pureE, $__global_Data_Unit_unit) {
-  $__fn = function($__dollar____unused) use ($__global_Effect_pureE, $__global_Data_Unit_unit, &$__fn) {
+})(), $maxRef), (function() use ($__global_Performance_Minibench_pure, $__global_Data_Unit_unit) {
+  $__fn = function($__dollar____unused) use ($__global_Performance_Minibench_pure, $__global_Data_Unit_unit, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($__global_Effect_pureE)($__global_Data_Unit_unit);
+    $__res = ($__global_Performance_Minibench_pure)($__global_Data_Unit_unit);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -305,40 +423,40 @@ $square = ($ns * $ns);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})()), (function() use ($__global_Effect_bindE, $__global_Effect_Ref_read, $sumRef, $sum2Ref, $minRef, $maxRef, $__global_Data_Int_toNumber, $n, $__global_Data_Number_sqrt, $__global_Effect_pureE) {
-  $__fn = function($__dollar____unused) use ($__global_Effect_bindE, $__global_Effect_Ref_read, $sumRef, $sum2Ref, $minRef, $maxRef, $__global_Data_Int_toNumber, $n, $__global_Data_Number_sqrt, $__global_Effect_pureE, &$__fn) {
+})()), (function() use ($__global_Performance_Minibench_bind, $__global_Effect_Ref_read, $sumRef, $sum2Ref, $minRef, $maxRef, $__global_Data_Int_toNumber, $n, $__global_Performance_Minibench_div, $__global_Data_Number_sqrt, $__global_Performance_Minibench_sub, $__global_Performance_Minibench_mul, $__global_Performance_Minibench_pure) {
+  $__fn = function($__dollar____unused) use ($__global_Performance_Minibench_bind, $__global_Effect_Ref_read, $sumRef, $sum2Ref, $minRef, $maxRef, $__global_Data_Int_toNumber, $n, $__global_Performance_Minibench_div, $__global_Data_Number_sqrt, $__global_Performance_Minibench_sub, $__global_Performance_Minibench_mul, $__global_Performance_Minibench_pure, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($__global_Effect_bindE)(($__global_Effect_Ref_read)($sumRef), (function() use ($__global_Effect_bindE, $__global_Effect_Ref_read, $sum2Ref, $minRef, $maxRef, $__global_Data_Int_toNumber, $n, $__global_Data_Number_sqrt, $__global_Effect_pureE) {
-  $__fn = function($sum) use ($__global_Effect_bindE, $__global_Effect_Ref_read, $sum2Ref, $minRef, $maxRef, $__global_Data_Int_toNumber, $n, $__global_Data_Number_sqrt, $__global_Effect_pureE, &$__fn) {
+    $__res = ($__global_Performance_Minibench_bind)(($__global_Effect_Ref_read)($sumRef), (function() use ($__global_Performance_Minibench_bind, $__global_Effect_Ref_read, $sum2Ref, $minRef, $maxRef, $__global_Data_Int_toNumber, $n, $__global_Performance_Minibench_div, $__global_Data_Number_sqrt, $__global_Performance_Minibench_sub, $__global_Performance_Minibench_mul, $__global_Performance_Minibench_pure) {
+  $__fn = function($sum) use ($__global_Performance_Minibench_bind, $__global_Effect_Ref_read, $sum2Ref, $minRef, $maxRef, $__global_Data_Int_toNumber, $n, $__global_Performance_Minibench_div, $__global_Data_Number_sqrt, $__global_Performance_Minibench_sub, $__global_Performance_Minibench_mul, $__global_Performance_Minibench_pure, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($__global_Effect_bindE)(($__global_Effect_Ref_read)($sum2Ref), (function() use ($__global_Effect_bindE, $__global_Effect_Ref_read, $minRef, $maxRef, $__global_Data_Int_toNumber, $n, $sum, $__global_Data_Number_sqrt, $__global_Effect_pureE) {
-  $__fn = function($sum2) use ($__global_Effect_bindE, $__global_Effect_Ref_read, $minRef, $maxRef, $__global_Data_Int_toNumber, $n, $sum, $__global_Data_Number_sqrt, $__global_Effect_pureE, &$__fn) {
+    $__res = ($__global_Performance_Minibench_bind)(($__global_Effect_Ref_read)($sum2Ref), (function() use ($__global_Performance_Minibench_bind, $__global_Effect_Ref_read, $minRef, $maxRef, $__global_Data_Int_toNumber, $n, $__global_Performance_Minibench_div, $sum, $__global_Data_Number_sqrt, $__global_Performance_Minibench_sub, $__global_Performance_Minibench_mul, $__global_Performance_Minibench_pure) {
+  $__fn = function($sum2) use ($__global_Performance_Minibench_bind, $__global_Effect_Ref_read, $minRef, $maxRef, $__global_Data_Int_toNumber, $n, $__global_Performance_Minibench_div, $sum, $__global_Data_Number_sqrt, $__global_Performance_Minibench_sub, $__global_Performance_Minibench_mul, $__global_Performance_Minibench_pure, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($__global_Effect_bindE)(($__global_Effect_Ref_read)($minRef), (function() use ($__global_Effect_bindE, $__global_Effect_Ref_read, $maxRef, $__global_Data_Int_toNumber, $n, $sum, $__global_Data_Number_sqrt, $sum2, $__global_Effect_pureE) {
-  $__fn = function($min__prime__) use ($__global_Effect_bindE, $__global_Effect_Ref_read, $maxRef, $__global_Data_Int_toNumber, $n, $sum, $__global_Data_Number_sqrt, $sum2, $__global_Effect_pureE, &$__fn) {
+    $__res = ($__global_Performance_Minibench_bind)(($__global_Effect_Ref_read)($minRef), (function() use ($__global_Performance_Minibench_bind, $__global_Effect_Ref_read, $maxRef, $__global_Data_Int_toNumber, $n, $__global_Performance_Minibench_div, $sum, $__global_Data_Number_sqrt, $__global_Performance_Minibench_sub, $sum2, $__global_Performance_Minibench_mul, $__global_Performance_Minibench_pure) {
+  $__fn = function($min__prime__) use ($__global_Performance_Minibench_bind, $__global_Effect_Ref_read, $maxRef, $__global_Data_Int_toNumber, $n, $__global_Performance_Minibench_div, $sum, $__global_Data_Number_sqrt, $__global_Performance_Minibench_sub, $sum2, $__global_Performance_Minibench_mul, $__global_Performance_Minibench_pure, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($__global_Effect_bindE)(($__global_Effect_Ref_read)($maxRef), (function() use ($__global_Data_Int_toNumber, $n, $sum, $__global_Data_Number_sqrt, $sum2, $__global_Effect_pureE, $min__prime__) {
-  $__fn = function($max__prime__) use ($__global_Data_Int_toNumber, $n, $sum, $__global_Data_Number_sqrt, $sum2, $__global_Effect_pureE, $min__prime__, &$__fn) {
+    $__res = ($__global_Performance_Minibench_bind)(($__global_Effect_Ref_read)($maxRef), (function() use ($__global_Data_Int_toNumber, $n, $__global_Performance_Minibench_div, $sum, $__global_Data_Number_sqrt, $__global_Performance_Minibench_sub, $sum2, $__global_Performance_Minibench_mul, $__global_Performance_Minibench_pure, $min__prime__) {
+  $__fn = function($max__prime__) use ($__global_Data_Int_toNumber, $n, $__global_Performance_Minibench_div, $sum, $__global_Data_Number_sqrt, $__global_Performance_Minibench_sub, $sum2, $__global_Performance_Minibench_mul, $__global_Performance_Minibench_pure, $min__prime__, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $n__prime__ = ($__global_Data_Int_toNumber)($n);
-$mean = ($sum / $n__prime__);
-$stdDev = ($__global_Data_Number_sqrt)((($sum2 - (($n__prime__ * $mean) * $mean)) / ($n__prime__ - 1.0)));
-    $__res = ($__global_Effect_pureE)((object)["mean" => $mean, "stdDev" => $stdDev, "min" => $min__prime__, "max" => $max__prime__]);
+$mean = ($__global_Performance_Minibench_div)($sum, $n__prime__);
+$stdDev = ($__global_Data_Number_sqrt)(($__global_Performance_Minibench_div)(($__global_Performance_Minibench_sub)($sum2, ($__global_Performance_Minibench_mul)(($__global_Performance_Minibench_mul)($n__prime__, $mean), $mean)), ($__global_Performance_Minibench_sub)($n__prime__, 1.0)));
+    $__res = ($__global_Performance_Minibench_pure)((object)["mean" => $mean, "stdDev" => $stdDev, "min" => $min__prime__, "max" => $max__prime__]);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -391,36 +509,37 @@ function Performance_Minibench_benchWith($n, $f = null) {
     if ($__num === 1) return function($f) use ($n, $__fn) { return $__fn($n, $f); };
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
-$__global_Effect_bindE = ($GLOBALS['Effect_bindE'] ?? \Effect\phpurs_eval_thunk('Effect_bindE'));
+$__global_Performance_Minibench_bind = ($GLOBALS['Performance_Minibench_bind'] ?? \Performance\Minibench\phpurs_eval_thunk('Performance_Minibench_bind'));
 $__global_Performance_Minibench_benchWith__prime__ = ($GLOBALS['Performance_Minibench_benchWith__prime__'] ?? \Performance\Minibench\phpurs_eval_thunk('Performance_Minibench_benchWith__prime__'));
 $__global_Performance_Minibench_discard = ($GLOBALS['Performance_Minibench_discard'] ?? \Performance\Minibench\phpurs_eval_thunk('Performance_Minibench_discard'));
 $__global_Effect_Console_log = ($GLOBALS['Effect_Console_log'] ?? \Effect\Console\phpurs_eval_thunk('Effect_Console_log'));
+$__global_Performance_Minibench_append = ($GLOBALS['Performance_Minibench_append'] ?? \Performance\Minibench\phpurs_eval_thunk('Performance_Minibench_append'));
 $__global_Performance_Minibench_withUnits = ($GLOBALS['Performance_Minibench_withUnits'] ?? \Performance\Minibench\phpurs_eval_thunk('Performance_Minibench_withUnits'));
-    $__res = ($__global_Effect_bindE)(($__global_Performance_Minibench_benchWith__prime__)($n, $f), (function() use ($__global_Performance_Minibench_discard, $__global_Effect_Console_log, $__global_Performance_Minibench_withUnits) {
-  $__fn = function($res) use ($__global_Performance_Minibench_discard, $__global_Effect_Console_log, $__global_Performance_Minibench_withUnits, &$__fn) {
+    $__res = ($__global_Performance_Minibench_bind)(($__global_Performance_Minibench_benchWith__prime__)($n, $f), (function() use ($__global_Performance_Minibench_discard, $__global_Effect_Console_log, $__global_Performance_Minibench_append, $__global_Performance_Minibench_withUnits) {
+  $__fn = function($res) use ($__global_Performance_Minibench_discard, $__global_Effect_Console_log, $__global_Performance_Minibench_append, $__global_Performance_Minibench_withUnits, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($__global_Performance_Minibench_discard)(($__global_Effect_Console_log)(("mean   = " . ($__global_Performance_Minibench_withUnits)(($res)->mean))), (function() use ($__global_Performance_Minibench_discard, $__global_Effect_Console_log, $__global_Performance_Minibench_withUnits, $res) {
-  $__fn = function($__dollar____unused) use ($__global_Performance_Minibench_discard, $__global_Effect_Console_log, $__global_Performance_Minibench_withUnits, $res, &$__fn) {
+    $__res = ($__global_Performance_Minibench_discard)(($__global_Effect_Console_log)(($__global_Performance_Minibench_append)("mean   = ", ($__global_Performance_Minibench_withUnits)(($res)->mean))), (function() use ($__global_Performance_Minibench_discard, $__global_Effect_Console_log, $__global_Performance_Minibench_append, $__global_Performance_Minibench_withUnits, $res) {
+  $__fn = function($__dollar____unused) use ($__global_Performance_Minibench_discard, $__global_Effect_Console_log, $__global_Performance_Minibench_append, $__global_Performance_Minibench_withUnits, $res, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($__global_Performance_Minibench_discard)(($__global_Effect_Console_log)(("stddev = " . ($__global_Performance_Minibench_withUnits)(($res)->stdDev))), (function() use ($__global_Performance_Minibench_discard, $__global_Effect_Console_log, $__global_Performance_Minibench_withUnits, $res) {
-  $__fn = function($__dollar____unused) use ($__global_Performance_Minibench_discard, $__global_Effect_Console_log, $__global_Performance_Minibench_withUnits, $res, &$__fn) {
+    $__res = ($__global_Performance_Minibench_discard)(($__global_Effect_Console_log)(($__global_Performance_Minibench_append)("stddev = ", ($__global_Performance_Minibench_withUnits)(($res)->stdDev))), (function() use ($__global_Performance_Minibench_discard, $__global_Effect_Console_log, $__global_Performance_Minibench_append, $__global_Performance_Minibench_withUnits, $res) {
+  $__fn = function($__dollar____unused) use ($__global_Performance_Minibench_discard, $__global_Effect_Console_log, $__global_Performance_Minibench_append, $__global_Performance_Minibench_withUnits, $res, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($__global_Performance_Minibench_discard)(($__global_Effect_Console_log)(("min    = " . ($__global_Performance_Minibench_withUnits)(($res)->min))), (function() use ($__global_Effect_Console_log, $__global_Performance_Minibench_withUnits, $res) {
-  $__fn = function($__dollar____unused) use ($__global_Effect_Console_log, $__global_Performance_Minibench_withUnits, $res, &$__fn) {
+    $__res = ($__global_Performance_Minibench_discard)(($__global_Effect_Console_log)(($__global_Performance_Minibench_append)("min    = ", ($__global_Performance_Minibench_withUnits)(($res)->min))), (function() use ($__global_Effect_Console_log, $__global_Performance_Minibench_append, $__global_Performance_Minibench_withUnits, $res) {
+  $__fn = function($__dollar____unused) use ($__global_Effect_Console_log, $__global_Performance_Minibench_append, $__global_Performance_Minibench_withUnits, $res, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($__global_Effect_Console_log)(("max    = " . ($__global_Performance_Minibench_withUnits)(($res)->max)));
+    $__res = ($__global_Effect_Console_log)(($__global_Performance_Minibench_append)("max    = ", ($__global_Performance_Minibench_withUnits)(($res)->max)));
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;

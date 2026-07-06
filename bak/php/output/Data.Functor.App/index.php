@@ -105,7 +105,17 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Data_Functor_App_append': $v = ($GLOBALS['Data_Semigroup_concatString'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_concatString')); break;
+      case 'Data_Functor_App_append': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Semigroup_semigroupString'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_semigroupString'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_Functor_App_newtypeApp': $v = (object)["Coercible0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
@@ -149,18 +159,27 @@ function Data_Functor_App_showApp($dictShow) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$show = ($dictShow)->show;
-    $__res = (object)["show" => (function() use ($show) {
-  $__body = function($v) use ($show) {
+$__global_Data_Functor_App_append = ($GLOBALS['Data_Functor_App_append'] ?? \Data\Functor\App\phpurs_eval_thunk('Data_Functor_App_append'));
+$__case_0 = $dictShow;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->show;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$show = $__case_res_0;
+    $__res = (object)["show" => (function() use ($__global_Data_Functor_App_append, $show) {
+  $__body = function($v) use ($__global_Data_Functor_App_append, $show) {
     $__case_0 = $v;
     if (true) {
 $fa = $__case_0;
-return ("(App " . (($show)($fa) . ")"));
+return ($__global_Data_Functor_App_append)("(App ", ($__global_Data_Functor_App_append)(($show)($fa), ")"));
 } else {
 throw new \Exception("Pattern match failure");
 };
   };
-  $__fn = function($v) use ($show, $__body, &$__fn) {
+  $__fn = function($v) use ($__global_Data_Functor_App_append, $show, $__body, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
@@ -181,15 +200,57 @@ function Data_Functor_App_semigroupApp($dictApply) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Control_Apply_lift2 = ($GLOBALS['Control_Apply_lift2'] ?? \Control\Apply\phpurs_eval_thunk('Control_Apply_lift2'));
-$lift2 = ($__global_Control_Apply_lift2)($dictApply);
+$__case_0 = $dictApply;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$apply1 = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_1;
+$lift2 = (function() use ($apply1, $map) {
+  $__fn = function($f, $a = null, $b = null) use ($apply1, $map, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($b) use ($f, $a, &$__fn) { return $__fn($f, $a, $b); };
+    if ($__num === 1) return function($a, $b = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $a, $b);
+      if ($__num2 === 1) return function($b) use ($f, $a, &$__fn) { return $__fn($f, $a, $b); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = ($apply1)(($map)($f, $a), $b);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})();
     $__res = (function() use ($lift2) {
   $__fn = function($dictSemigroup) use ($lift2, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$append1 = ($dictSemigroup)->append;
+$__case_0 = $dictSemigroup;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append1 = $__case_res_2;
     $__res = (object)["append" => (function() use ($lift2, $append1) {
   $__body = function($v, $v1) use ($lift2, $append1) {
     $__case_0 = $v;
@@ -241,10 +302,94 @@ function Data_Functor_App_monoidApp($dictApplicative) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Functor_App_semigroupApp = ($GLOBALS['Data_Functor_App_semigroupApp'] ?? \Data\Functor\App\phpurs_eval_thunk('Data_Functor_App_semigroupApp'));
 $__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$pure = ($dictApplicative)->pure;
-$semigroupApp1 = ($__global_Data_Functor_App_semigroupApp)((($dictApplicative)->Apply0)($__global_Prim_undefined));
+$__case_0 = $dictApplicative;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pure = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$apply1 = $__case_res_1;
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_2;
+$lift2 = (function() use ($apply1, $map) {
+  $__fn = function($f, $a = null, $b = null) use ($apply1, $map, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($b) use ($f, $a, &$__fn) { return $__fn($f, $a, $b); };
+    if ($__num === 1) return function($a, $b = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $a, $b);
+      if ($__num2 === 1) return function($b) use ($f, $a, &$__fn) { return $__fn($f, $a, $b); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = ($apply1)(($map)($f, $a), $b);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})();
+$semigroupApp1 = (function() use ($lift2) {
+  $__fn = function($dictSemigroup) use ($lift2, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dictSemigroup;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append1 = $__case_res_3;
+    $__res = (object)["append" => (function() use ($lift2, $append1) {
+  $__body = function($v, $v1) use ($lift2, $append1) {
+    $__case_0 = $v;
+    $__case_1 = $v1;
+    if (true) {
+$fa1 = $__case_0;
+$fa2 = $__case_1;
+return ($lift2)($append1, $fa1, $fa2);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($v, $v1 = null) use ($lift2, $append1, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($v, $v1);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
     $__res = (function() use ($semigroupApp1, $__global_Prim_undefined, $pure) {
   $__fn = function($dictMonoid) use ($semigroupApp1, $__global_Prim_undefined, $pure, &$__fn) {
   $__num = func_num_args();
@@ -252,7 +397,15 @@ $semigroupApp1 = ($__global_Data_Functor_App_semigroupApp)((($dictApplicative)->
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $semigroupApp2 = ($semigroupApp1)((($dictMonoid)->Semigroup0)($__global_Prim_undefined));
-    $__res = (object)["mempty" => ($pure)(($dictMonoid)->mempty), "Semigroup0" => (function() use ($semigroupApp2) {
+$__case_0 = $dictMonoid;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->mempty;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = (object)["mempty" => ($pure)($__case_res_4), "Semigroup0" => (function() use ($semigroupApp2) {
   $__fn = function($__dollar____unused) use ($semigroupApp2, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
@@ -364,7 +517,15 @@ function Data_Functor_App_eqApp($dictEq1) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$eq1 = ($dictEq1)->eq1;
+$__case_0 = $dictEq1;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq1 = $__case_res_0;
     $__res = (function() use ($eq1) {
   $__fn = function($dictEq) use ($eq1, &$__fn) {
   $__num = func_num_args();
@@ -410,10 +571,59 @@ function Data_Functor_App_ordApp($dictOrd1) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Functor_App_eqApp = ($GLOBALS['Data_Functor_App_eqApp'] ?? \Data\Functor\App\phpurs_eval_thunk('Data_Functor_App_eqApp'));
 $__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$compare1 = ($dictOrd1)->compare1;
-$eqApp1 = ($__global_Data_Functor_App_eqApp)((($dictOrd1)->Eq10)($__global_Prim_undefined));
+$__case_0 = $dictOrd1;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare1 = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->eq1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq1 = $__case_res_1;
+$eqApp1 = (function() use ($eq1) {
+  $__fn = function($dictEq) use ($eq1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$eq11 = ($eq1)($dictEq);
+    $__res = (object)["eq" => (function() use ($eq11) {
+  $__body = function($x, $y) use ($eq11) {
+    $__case_0 = $x;
+    $__case_1 = $y;
+    if (true) {
+$l = $__case_0;
+$r = $__case_1;
+return ($eq11)($l, $r);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($x, $y = null) use ($eq11, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($y) use ($x, &$__fn) { return $__fn($x, $y); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($x, $y);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
     $__res = (function() use ($compare1, $eqApp1, $__global_Prim_undefined) {
   $__fn = function($dictOrd) use ($compare1, $eqApp1, $__global_Prim_undefined, &$__fn) {
   $__num = func_num_args();
@@ -470,15 +680,65 @@ function Data_Functor_App_eq1App($dictEq1) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Functor_App_eqApp = ($GLOBALS['Data_Functor_App_eqApp'] ?? \Data\Functor\App\phpurs_eval_thunk('Data_Functor_App_eqApp'));
-$eqApp1 = ($__global_Data_Functor_App_eqApp)($dictEq1);
-    $__res = (object)["eq1" => (function() use ($eqApp1) {
-  $__fn = function($dictEq) use ($eqApp1, &$__fn) {
+$__case_0 = $dictEq1;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq1 = $__case_res_0;
+$eqApp1 = (function() use ($eq1) {
+  $__fn = function($dictEq) use ($eq1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (($eqApp1)($dictEq))->eq;
+$eq11 = ($eq1)($dictEq);
+    $__res = (object)["eq" => (function() use ($eq11) {
+  $__body = function($x, $y) use ($eq11) {
+    $__case_0 = $x;
+    $__case_1 = $y;
+    if (true) {
+$l = $__case_0;
+$r = $__case_1;
+return ($eq11)($l, $r);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($x, $y = null) use ($eq11, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($y) use ($x, &$__fn) { return $__fn($x, $y); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($x, $y);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+    $__res = (object)["eq1" => (function() use ($dict) {
+  $__body = function($dictEq) use ($dict) {
+    $__case_0 = $dict;
+    if (true) {
+$v = $__case_0;
+return ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($dictEq) use ($dict, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $__body($dictEq);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -494,18 +754,183 @@ function Data_Functor_App_ord1App($dictOrd1) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Functor_App_ordApp = ($GLOBALS['Data_Functor_App_ordApp'] ?? \Data\Functor\App\phpurs_eval_thunk('Data_Functor_App_ordApp'));
-$__global_Data_Functor_App_eq1App = ($GLOBALS['Data_Functor_App_eq1App'] ?? \Data\Functor\App\phpurs_eval_thunk('Data_Functor_App_eq1App'));
 $__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$ordApp1 = ($__global_Data_Functor_App_ordApp)($dictOrd1);
-$eq1App1 = ($__global_Data_Functor_App_eq1App)((($dictOrd1)->Eq10)($__global_Prim_undefined));
-    $__res = (object)["compare1" => (function() use ($ordApp1) {
-  $__fn = function($dictOrd) use ($ordApp1, &$__fn) {
+$__case_0 = $dictOrd1;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare1 = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->eq1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq1 = $__case_res_1;
+$eqApp1 = (function() use ($eq1) {
+  $__fn = function($dictEq) use ($eq1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (($ordApp1)($dictOrd))->compare;
+$eq11 = ($eq1)($dictEq);
+    $__res = (object)["eq" => (function() use ($eq11) {
+  $__body = function($x, $y) use ($eq11) {
+    $__case_0 = $x;
+    $__case_1 = $y;
+    if (true) {
+$l = $__case_0;
+$r = $__case_1;
+return ($eq11)($l, $r);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($x, $y = null) use ($eq11, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($y) use ($x, &$__fn) { return $__fn($x, $y); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($x, $y);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+$ordApp1 = (function() use ($compare1, $eqApp1, $__global_Prim_undefined) {
+  $__fn = function($dictOrd) use ($compare1, $eqApp1, $__global_Prim_undefined, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$compare11 = ($compare1)($dictOrd);
+$eqApp2 = ($eqApp1)((($dictOrd)->Eq0)($__global_Prim_undefined));
+    $__res = (object)["compare" => (function() use ($compare11) {
+  $__body = function($x, $y) use ($compare11) {
+    $__case_0 = $x;
+    $__case_1 = $y;
+    if (true) {
+$l = $__case_0;
+$r = $__case_1;
+return ($compare11)($l, $r);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($x, $y = null) use ($compare11, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($y) use ($x, &$__fn) { return $__fn($x, $y); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($x, $y);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "Eq0" => (function() use ($eqApp2) {
+  $__fn = function($__dollar____unused) use ($eqApp2, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $eqApp2;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->eq1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq1 = $__case_res_2;
+$eqApp1 = (function() use ($eq1) {
+  $__fn = function($dictEq) use ($eq1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$eq11 = ($eq1)($dictEq);
+    $__res = (object)["eq" => (function() use ($eq11) {
+  $__body = function($x, $y) use ($eq11) {
+    $__case_0 = $x;
+    $__case_1 = $y;
+    if (true) {
+$l = $__case_0;
+$r = $__case_1;
+return ($eq11)($l, $r);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($x, $y = null) use ($eq11, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($y) use ($x, &$__fn) { return $__fn($x, $y); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($x, $y);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+$eq1App1 = (object)["eq1" => (function() use ($dict) {
+  $__body = function($dictEq) use ($dict) {
+    $__case_0 = $dict;
+    if (true) {
+$v = $__case_0;
+return ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($dictEq) use ($dict, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $__body($dictEq);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+    $__res = (object)["compare1" => (function() use ($dict) {
+  $__body = function($dictOrd) use ($dict) {
+    $__case_0 = $dict;
+    if (true) {
+$v = $__case_0;
+return ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($dictOrd) use ($dict, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $__body($dictOrd);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;

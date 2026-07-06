@@ -97,13 +97,175 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
       case 'Data_Unfoldable1_fromJust': $v = (($GLOBALS['Data_Maybe_fromJust'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_fromJust')))(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))); break;
-      case 'Data_Unfoldable1_lessThanOrEq': $v = (($GLOBALS['Data_Ord_lessThanOrEq'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_lessThanOrEq')))(($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'))); break;
-      case 'Data_Unfoldable1_sub': $v = ($GLOBALS['Data_Ring_intSub'] ?? \Data\Ring\phpurs_eval_thunk('Data_Ring_intSub')); break;
-      case 'Data_Unfoldable1_add': $v = ($GLOBALS['Data_Semiring_intAdd'] ?? \Data\Semiring\phpurs_eval_thunk('Data_Semiring_intAdd')); break;
-      case 'Data_Unfoldable1_eq': $v = ($GLOBALS['Data_Eq_eqIntImpl'] ?? \Data\Eq\phpurs_eval_thunk('Data_Eq_eqIntImpl')); break;
-      case 'Data_Unfoldable1_greaterThanOrEq': $v = (($GLOBALS['Data_Ord_greaterThanOrEq'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_greaterThanOrEq')))(($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'))); break;
-      case 'Data_Unfoldable1_negate': $v = (($GLOBALS['Data_Ring_negate'] ?? \Data\Ring\phpurs_eval_thunk('Data_Ring_negate')))(($GLOBALS['Data_Ring_ringInt'] ?? \Data\Ring\phpurs_eval_thunk('Data_Ring_ringInt'))); break;
-      case 'Data_Unfoldable1_greaterThan': $v = (($GLOBALS['Data_Ord_greaterThan'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_greaterThan')))(($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'))); break;
+      case 'Data_Unfoldable1_lessThanOrEq': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $compare3 = $__case_res_0;
+  return (function() use ($compare3) {
+  $__body = function($a1, $a2) use ($compare3) {
+    $v = ($compare3)($a1, $a2);
+    $__case_0 = $v;
+    switch (($__case_0)->tag) {
+case "GT":
+return false;
+break;
+default:
+return true;
+break;
+};
+  };
+  $__fn = function($a1, $a2 = null) use ($compare3, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($a2) use ($a1, &$__fn) { return $__fn($a1, $a2); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($a1, $a2);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+})(); break;
+      case 'Data_Unfoldable1_sub': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Ring_ringInt'] ?? \Data\Ring\phpurs_eval_thunk('Data_Ring_ringInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->sub;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Unfoldable1_add': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Semiring_semiringInt'] ?? \Data\Semiring\phpurs_eval_thunk('Data_Semiring_semiringInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->add;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Unfoldable1_eq': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Eq_eqInt'] ?? \Data\Eq\phpurs_eval_thunk('Data_Eq_eqInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Unfoldable1_greaterThanOrEq': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $compare3 = $__case_res_0;
+  return (function() use ($compare3) {
+  $__body = function($a1, $a2) use ($compare3) {
+    $v = ($compare3)($a1, $a2);
+    $__case_0 = $v;
+    switch (($__case_0)->tag) {
+case "LT":
+return false;
+break;
+default:
+return true;
+break;
+};
+  };
+  $__fn = function($a1, $a2 = null) use ($compare3, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($a2) use ($a1, &$__fn) { return $__fn($a1, $a2); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($a1, $a2);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+})(); break;
+      case 'Data_Unfoldable1_negate': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Ring_ringInt'] ?? \Data\Ring\phpurs_eval_thunk('Data_Ring_ringInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->sub;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $sub1 = $__case_res_0;
+  $__case_0 = $dict;
+  $__case_res_1 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->zero;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $zero = $__case_res_1;
+  return (function() use ($sub1, $zero) {
+  $__fn = function($a) use ($sub1, $zero, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($sub1)($zero, $a);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+})(); break;
+      case 'Data_Unfoldable1_greaterThan': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $compare3 = $__case_res_0;
+  return (function() use ($compare3) {
+  $__body = function($a1, $a2) use ($compare3) {
+    $v = ($compare3)($a1, $a2);
+    $__case_0 = $v;
+    switch (($__case_0)->tag) {
+case "GT":
+return true;
+break;
+default:
+return false;
+break;
+};
+  };
+  $__fn = function($a1, $a2 = null) use ($compare3, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($a2) use ($a1, &$__fn) { return $__fn($a1, $a2); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($a1, $a2);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+})(); break;
       case 'Data_Unfoldable1_unfoldable1Maybe': $v = (object)["unfoldr1" => (function() {
   $__fn = function($f, $b = null) use (&$__fn) {
   $__num = func_num_args();
@@ -198,9 +360,18 @@ function Data_Unfoldable1_replicate1($dictUnfoldable1) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$unfoldr11 = ($dictUnfoldable1)->unfoldr1;
-    $__res = (function() use ($unfoldr11) {
-  $__fn = function($n, $v = null) use ($unfoldr11, &$__fn) {
+$__global_Data_Unfoldable1_sub = ($GLOBALS['Data_Unfoldable1_sub'] ?? \Data\Unfoldable1\phpurs_eval_thunk('Data_Unfoldable1_sub'));
+$__case_0 = $dictUnfoldable1;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->unfoldr1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$unfoldr11 = $__case_res_0;
+    $__res = (function() use ($unfoldr11, $__global_Data_Unfoldable1_sub) {
+  $__fn = function($n, $v = null) use ($unfoldr11, $__global_Data_Unfoldable1_sub, &$__fn) {
   $__num = func_num_args();
   if ($__num < 2) {
     if ($__num === 1) return function($v) use ($n, &$__fn) { return $__fn($n, $v); };
@@ -226,7 +397,7 @@ throw new \Exception("Pattern match failure");
   };
   return $__fn;
 })();
-    $__res = ($unfoldr11)($step, ($n - 1));
+    $__res = ($unfoldr11)($step, ($__global_Data_Unfoldable1_sub)($n, 1));
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
@@ -243,15 +414,63 @@ function Data_Unfoldable1_replicate1A($dictApply, $dictUnfoldable1 = null) {
     if ($__num === 1) return function($dictUnfoldable1) use ($dictApply, $__fn) { return $__fn($dictApply, $dictUnfoldable1); };
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
-$__global_Data_Unfoldable1_replicate1 = ($GLOBALS['Data_Unfoldable1_replicate1'] ?? \Data\Unfoldable1\phpurs_eval_thunk('Data_Unfoldable1_replicate1'));
-$replicate11 = ($__global_Data_Unfoldable1_replicate1)($dictUnfoldable1);
+$__global_Data_Unfoldable1_sub = ($GLOBALS['Data_Unfoldable1_sub'] ?? \Data\Unfoldable1\phpurs_eval_thunk('Data_Unfoldable1_sub'));
+$__case_0 = $dictUnfoldable1;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->unfoldr1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$unfoldr11 = $__case_res_0;
+$replicate11 = (function() use ($unfoldr11, $__global_Data_Unfoldable1_sub) {
+  $__fn = function($n, $v = null) use ($unfoldr11, $__global_Data_Unfoldable1_sub, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($n, &$__fn) { return $__fn($n, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+$step = (function() {
+  $__body = function($i) {
+    $__case_0 = $i;
+    if (true) {
+$i1 = $__case_0;
+return "/* Unsupported: Guards not supported */";
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($i) use ($__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $__body($i);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+    $__res = ($unfoldr11)($step, ($__global_Data_Unfoldable1_sub)($n, 1));
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
     $__res = (function() use ($dictApply, $replicate11) {
   $__fn = function($dictTraversable1) use ($dictApply, $replicate11, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$sequence1 = (($dictTraversable1)->sequence1)($dictApply);
+$__case_0 = $dictTraversable1;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->sequence1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$sequence1 = ($__case_res_1)($dictApply);
     $__res = (function() use ($sequence1, $replicate11) {
   $__fn = function($n, $m = null) use ($sequence1, $replicate11, &$__fn) {
   $__num = func_num_args();
@@ -279,8 +498,48 @@ function Data_Unfoldable1_singleton($dictUnfoldable1) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Unfoldable1_replicate1 = ($GLOBALS['Data_Unfoldable1_replicate1'] ?? \Data\Unfoldable1\phpurs_eval_thunk('Data_Unfoldable1_replicate1'));
-    $__res = ($__global_Data_Unfoldable1_replicate1)($dictUnfoldable1, 1);
+$__global_Data_Unfoldable1_sub = ($GLOBALS['Data_Unfoldable1_sub'] ?? \Data\Unfoldable1\phpurs_eval_thunk('Data_Unfoldable1_sub'));
+$__case_0 = $dictUnfoldable1;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->unfoldr1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$unfoldr11 = $__case_res_0;
+    $__res = ((function() use ($unfoldr11, $__global_Data_Unfoldable1_sub) {
+  $__fn = function($n, $v = null) use ($unfoldr11, $__global_Data_Unfoldable1_sub, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($n, &$__fn) { return $__fn($n, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+$step = (function() {
+  $__body = function($i) {
+    $__case_0 = $i;
+    if (true) {
+$i1 = $__case_0;
+return "/* Unsupported: Guards not supported */";
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($i) use ($__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $__body($i);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+    $__res = ($unfoldr11)($step, ($__global_Data_Unfoldable1_sub)($n, 1));
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})())(1);
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Unfoldable1_singleton'] = __NAMESPACE__ . '\\Data_Unfoldable1_singleton';
@@ -292,32 +551,42 @@ function Data_Unfoldable1_range($dictUnfoldable1) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
+$__global_Data_Unfoldable1_add = ($GLOBALS['Data_Unfoldable1_add'] ?? \Data\Unfoldable1\phpurs_eval_thunk('Data_Unfoldable1_add'));
+$__global_Data_Unfoldable1_eq = ($GLOBALS['Data_Unfoldable1_eq'] ?? \Data\Unfoldable1\phpurs_eval_thunk('Data_Unfoldable1_eq'));
 $__global_Data_Unfoldable1_greaterThanOrEq = ($GLOBALS['Data_Unfoldable1_greaterThanOrEq'] ?? \Data\Unfoldable1\phpurs_eval_thunk('Data_Unfoldable1_greaterThanOrEq'));
 $__global_Data_Unfoldable1_negate = ($GLOBALS['Data_Unfoldable1_negate'] ?? \Data\Unfoldable1\phpurs_eval_thunk('Data_Unfoldable1_negate'));
-$unfoldr11 = ($dictUnfoldable1)->unfoldr1;
-    $__res = (function() use ($__global_Data_Unfoldable1_greaterThanOrEq, $__global_Data_Unfoldable1_negate, $unfoldr11) {
-  $__fn = function($start, $end = null) use ($__global_Data_Unfoldable1_greaterThanOrEq, $__global_Data_Unfoldable1_negate, $unfoldr11, &$__fn) {
+$__case_0 = $dictUnfoldable1;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->unfoldr1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$unfoldr11 = $__case_res_0;
+    $__res = (function() use ($__global_Data_Unfoldable1_add, $__global_Data_Unfoldable1_eq, $__global_Data_Unfoldable1_greaterThanOrEq, $__global_Data_Unfoldable1_negate, $unfoldr11) {
+  $__fn = function($start, $end = null) use ($__global_Data_Unfoldable1_add, $__global_Data_Unfoldable1_eq, $__global_Data_Unfoldable1_greaterThanOrEq, $__global_Data_Unfoldable1_negate, $unfoldr11, &$__fn) {
   $__num = func_num_args();
   if ($__num < 2) {
     if ($__num === 1) return function($end) use ($start, &$__fn) { return $__fn($start, $end); };
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
-$go = (function() use ($end) {
-  $__fn = function($delta, $i = null) use ($end, &$__fn) {
+$go = (function() use ($__global_Data_Unfoldable1_add, $__global_Data_Unfoldable1_eq, $end) {
+  $__fn = function($delta, $i = null) use ($__global_Data_Unfoldable1_add, $__global_Data_Unfoldable1_eq, $end, &$__fn) {
   $__num = func_num_args();
   if ($__num < 2) {
     if ($__num === 1) return function($i) use ($delta, &$__fn) { return $__fn($delta, $i); };
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
-$i__prime__ = ($i + $delta);
-$__case_0 = ($i === $end);
-$__case_res_0 = null;
+$i__prime__ = ($__global_Data_Unfoldable1_add)($i, $delta);
+$__case_0 = ($__global_Data_Unfoldable1_eq)($i, $end);
+$__case_res_1 = null;
 switch ($__case_0) {
 case true:
-$__case_res_0 = ($GLOBALS['__phpurs_data0_Nothing'] ??= new Phpurs_Data0("Nothing"));
+$__case_res_1 = ($GLOBALS['__phpurs_data0_Nothing'] ??= new Phpurs_Data0("Nothing"));
 break;
 default:
-$__case_res_0 = ((function() {
+$__case_res_1 = ((function() {
   $__fn = function($value0) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
@@ -341,22 +610,22 @@ break;
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
-})())($i, $__case_res_0);
+})())($i, $__case_res_1);
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
 })();
 $__case_0 = ($__global_Data_Unfoldable1_greaterThanOrEq)($end, $start);
-$__case_res_1 = null;
+$__case_res_2 = null;
 switch ($__case_0) {
 case true:
-$__case_res_1 = 1;
+$__case_res_2 = 1;
 break;
 default:
-$__case_res_1 = ($__global_Data_Unfoldable1_negate)(1);
+$__case_res_2 = ($__global_Data_Unfoldable1_negate)(1);
 break;
 };
-$delta = $__case_res_1;
+$delta = $__case_res_2;
     $__res = ($unfoldr11)(($go)($delta), $start);
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
@@ -374,9 +643,18 @@ function Data_Unfoldable1_iterateN($dictUnfoldable1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_Unfoldable1_greaterThan = ($GLOBALS['Data_Unfoldable1_greaterThan'] ?? \Data\Unfoldable1\phpurs_eval_thunk('Data_Unfoldable1_greaterThan'));
-$unfoldr11 = ($dictUnfoldable1)->unfoldr1;
-    $__res = (function() use ($__global_Data_Unfoldable1_greaterThan, $unfoldr11) {
-  $__fn = function($n, $f = null, $s = null) use ($__global_Data_Unfoldable1_greaterThan, $unfoldr11, &$__fn) {
+$__global_Data_Unfoldable1_sub = ($GLOBALS['Data_Unfoldable1_sub'] ?? \Data\Unfoldable1\phpurs_eval_thunk('Data_Unfoldable1_sub'));
+$__case_0 = $dictUnfoldable1;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->unfoldr1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$unfoldr11 = $__case_res_0;
+    $__res = (function() use ($__global_Data_Unfoldable1_greaterThan, $__global_Data_Unfoldable1_sub, $unfoldr11) {
+  $__fn = function($n, $f = null, $s = null) use ($__global_Data_Unfoldable1_greaterThan, $__global_Data_Unfoldable1_sub, $unfoldr11, &$__fn) {
   $__num = func_num_args();
   if ($__num < 3) {
     if ($__num === 2) return function($s) use ($n, $f, &$__fn) { return $__fn($n, $f, $s); };
@@ -388,18 +666,18 @@ $unfoldr11 = ($dictUnfoldable1)->unfoldr1;
     };
     return phpurs_curry_fallback($__fn, func_get_args(), 3);
   }
-$go = (function() use ($__global_Data_Unfoldable1_greaterThan, $f) {
-  $__body = function($v) use ($__global_Data_Unfoldable1_greaterThan, $f) {
+$go = (function() use ($__global_Data_Unfoldable1_greaterThan, $f, $__global_Data_Unfoldable1_sub) {
+  $__body = function($v) use ($__global_Data_Unfoldable1_greaterThan, $f, $__global_Data_Unfoldable1_sub) {
     $__case_0 = $v;
     switch (($__case_0)->tag) {
 case "Tuple":
 $x = ($__case_0)->v0;
 $n__prime__ = ($__case_0)->v1;
 $__case_0 = ($__global_Data_Unfoldable1_greaterThan)($n__prime__, 0);
-$__case_res_0 = null;
+$__case_res_1 = null;
 switch ($__case_0) {
 case true:
-$__case_res_0 = ((function() {
+$__case_res_1 = ((function() {
   $__fn = function($value0) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
@@ -420,10 +698,10 @@ $__case_res_0 = ((function() {
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
-})())(($f)($x), ($n__prime__ - 1)));
+})())(($f)($x), ($__global_Data_Unfoldable1_sub)($n__prime__, 1)));
 break;
 default:
-$__case_res_0 = ($GLOBALS['__phpurs_data0_Nothing'] ??= new Phpurs_Data0("Nothing"));
+$__case_res_1 = ($GLOBALS['__phpurs_data0_Nothing'] ??= new Phpurs_Data0("Nothing"));
 break;
 };
 return ((function() {
@@ -437,14 +715,14 @@ return ((function() {
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
-})())($x, $__case_res_0);
+})())($x, $__case_res_1);
 break;
 default:
 throw new \Exception("Pattern match failure");
 break;
 };
   };
-  $__fn = function($v) use ($__global_Data_Unfoldable1_greaterThan, $f, $__body, &$__fn) {
+  $__fn = function($v) use ($__global_Data_Unfoldable1_greaterThan, $f, $__global_Data_Unfoldable1_sub, $__body, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
@@ -465,7 +743,7 @@ break;
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
-})())($s, ($n - 1)));
+})())($s, ($__global_Data_Unfoldable1_sub)($n, 1)));
   return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
   };
   return $__fn;

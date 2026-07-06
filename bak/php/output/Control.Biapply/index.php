@@ -89,7 +89,17 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Control_Biapply_identity': $v = (($GLOBALS['Control_Category_categoryFn'] ?? \Control\Category\phpurs_eval_thunk('Control_Category_categoryFn')))->identity; break;
+      case 'Control_Biapply_identity': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Category_categoryFn'] ?? \Control\Category\phpurs_eval_thunk('Control_Category_categoryFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->identity;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Control_Biapply_biapplyTuple': $v = (object)["biapply" => (function() {
   $__body = function($v, $v1) {
     $__case_0 = $v;
@@ -188,11 +198,26 @@ function Control_Biapply_biapplyFirst($dictBiapply) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Control_Biapply_identity = ($GLOBALS['Control_Biapply_identity'] ?? \Control\Biapply\phpurs_eval_thunk('Control_Biapply_identity'));
 $__global_Data_Function_const = ($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const'));
-$biapply1 = ($dictBiapply)->biapply;
-$bimap = ((($dictBiapply)->Bifunctor0)($__global_Prim_undefined))->bimap;
+$__case_0 = $dictBiapply;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->biapply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$biapply1 = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->bimap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bimap = $__case_res_1;
     $__res = (function() use ($biapply1, $__global_Control_Biapply_identity, $bimap, $__global_Data_Function_const) {
   $__fn = function($a, $b = null) use ($biapply1, $__global_Control_Biapply_identity, $bimap, $__global_Data_Function_const, &$__fn) {
   $__num = func_num_args();
@@ -216,11 +241,26 @@ function Control_Biapply_biapplySecond($dictBiapply) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Control_Biapply_identity = ($GLOBALS['Control_Biapply_identity'] ?? \Control\Biapply\phpurs_eval_thunk('Control_Biapply_identity'));
 $__global_Data_Function_const = ($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const'));
-$biapply1 = ($dictBiapply)->biapply;
-$bimap = ((($dictBiapply)->Bifunctor0)($__global_Prim_undefined))->bimap;
+$__case_0 = $dictBiapply;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->biapply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$biapply1 = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->bimap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bimap = $__case_res_1;
     $__res = (function() use ($biapply1, $__global_Control_Biapply_identity, $bimap, $__global_Data_Function_const) {
   $__fn = function($a, $b = null) use ($biapply1, $__global_Control_Biapply_identity, $bimap, $__global_Data_Function_const, &$__fn) {
   $__num = func_num_args();
@@ -244,10 +284,25 @@ function Control_Biapply_bilift2($dictBiapply) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Control_Biapply_identity = ($GLOBALS['Control_Biapply_identity'] ?? \Control\Biapply\phpurs_eval_thunk('Control_Biapply_identity'));
-$biapply1 = ($dictBiapply)->biapply;
-$bimap = ((($dictBiapply)->Bifunctor0)($__global_Prim_undefined))->bimap;
+$__case_0 = $dictBiapply;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->biapply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$biapply1 = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->bimap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bimap = $__case_res_1;
     $__res = (function() use ($biapply1, $__global_Control_Biapply_identity, $bimap) {
   $__fn = function($f, $g = null, $a = null, $b = null) use ($biapply1, $__global_Control_Biapply_identity, $bimap, &$__fn) {
   $__num = func_num_args();
@@ -289,10 +344,25 @@ function Control_Biapply_bilift3($dictBiapply) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Control_Biapply_identity = ($GLOBALS['Control_Biapply_identity'] ?? \Control\Biapply\phpurs_eval_thunk('Control_Biapply_identity'));
-$biapply1 = ($dictBiapply)->biapply;
-$bimap = ((($dictBiapply)->Bifunctor0)($__global_Prim_undefined))->bimap;
+$__case_0 = $dictBiapply;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->biapply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$biapply1 = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->bimap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bimap = $__case_res_1;
     $__res = (function() use ($biapply1, $__global_Control_Biapply_identity, $bimap) {
   $__fn = function($f, $g = null, $a = null, $b = null, $c = null) use ($biapply1, $__global_Control_Biapply_identity, $bimap, &$__fn) {
   $__num = func_num_args();

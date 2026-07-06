@@ -88,7 +88,17 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Effect_Exception_Unsafe_compose': $v = (($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn')))->compose; break;
+      case 'Effect_Exception_Unsafe_compose': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compose;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Effect_Exception_Unsafe_unsafeThrowException': $v = (($GLOBALS['Effect_Exception_Unsafe_compose'] ?? \Effect\Exception\Unsafe\phpurs_eval_thunk('Effect_Exception_Unsafe_compose')))(($GLOBALS['Effect_Unsafe_unsafePerformEffect'] ?? \Effect\Unsafe\phpurs_eval_thunk('Effect_Unsafe_unsafePerformEffect')), ($GLOBALS['Effect_Exception_throwException'] ?? \Effect\Exception\phpurs_eval_thunk('Effect_Exception_throwException'))); break;
       case 'Effect_Exception_Unsafe_unsafeThrow': $v = (($GLOBALS['Effect_Exception_Unsafe_compose'] ?? \Effect\Exception\Unsafe\phpurs_eval_thunk('Effect_Exception_Unsafe_compose')))(($GLOBALS['Effect_Exception_Unsafe_unsafeThrowException'] ?? \Effect\Exception\Unsafe\phpurs_eval_thunk('Effect_Exception_Unsafe_unsafeThrowException')), ($GLOBALS['Effect_Exception_error'] ?? \Effect\Exception\phpurs_eval_thunk('Effect_Exception_error'))); break;
       default: throw new \Exception("Unknown thunk " . $id);

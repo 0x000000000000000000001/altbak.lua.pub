@@ -94,14 +94,270 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Test_Assert_append': $v = ($GLOBALS['Data_Semigroup_concatString'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_concatString')); break;
-      case 'Test_Assert_eq': $v = ($GLOBALS['Data_Eq_eqStringImpl'] ?? \Data\Eq\phpurs_eval_thunk('Data_Eq_eqStringImpl')); break;
-      case 'Test_Assert_discard': $v = ((($GLOBALS['Control_Bind_discardUnit'] ?? \Control\Bind\phpurs_eval_thunk('Control_Bind_discardUnit')))->discard)(($GLOBALS['Effect_bindEffect'] ?? \Effect\phpurs_eval_thunk('Effect_bindEffect'))); break;
-      case 'Test_Assert_unless': $v = (($GLOBALS['Control_Applicative_unless'] ?? \Control\Applicative\phpurs_eval_thunk('Control_Applicative_unless')))(($GLOBALS['Effect_applicativeEffect'] ?? \Effect\phpurs_eval_thunk('Effect_applicativeEffect'))); break;
-      case 'Test_Assert_bindFlipped': $v = (($GLOBALS['Control_Bind_bindFlipped'] ?? \Control\Bind\phpurs_eval_thunk('Control_Bind_bindFlipped')))(($GLOBALS['Effect_bindEffect'] ?? \Effect\phpurs_eval_thunk('Effect_bindEffect'))); break;
+      case 'Test_Assert_append': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Semigroup_semigroupString'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_semigroupString'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Test_Assert_eq': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Eq_eqString'] ?? \Data\Eq\phpurs_eval_thunk('Data_Eq_eqString'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Test_Assert_discard': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Bind_discardUnit'] ?? \Control\Bind\phpurs_eval_thunk('Control_Bind_discardUnit'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->discard;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return ($__case_res_0)(($GLOBALS['Effect_bindEffect'] ?? \Effect\phpurs_eval_thunk('Effect_bindEffect')));
+})(); break;
+      case 'Test_Assert_unless': $v = (function() {
+  $__case_0 = ($GLOBALS['Effect_applicativeEffect'] ?? \Effect\phpurs_eval_thunk('Effect_applicativeEffect'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $pure1 = $__case_res_0;
+  return (function() use ($pure1) {
+  $__body = function($v, $v1) use ($pure1) {
+    $__global_Data_Unit_unit = ($GLOBALS['Data_Unit_unit'] ?? \Data\Unit\phpurs_eval_thunk('Data_Unit_unit'));
+    $__case_0 = $v;
+    $__case_1 = $v1;
+    switch ($__case_0) {
+case false:
+$m = $__case_1;
+return $m;
+break;
+case true:
+return ($pure1)($__global_Data_Unit_unit);
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($v, $v1 = null) use ($pure1, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($v, $v1);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+})(); break;
+      case 'Test_Assert_bindFlipped': $v = (function() {
+  $__case_0 = ($GLOBALS['Effect_bindEffect'] ?? \Effect\phpurs_eval_thunk('Effect_bindEffect'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bind;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return (($GLOBALS['Data_Function_flip'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_flip')))($__case_res_0);
+})(); break;
       case 'Test_Assert_assert__prime__': $v = ($GLOBALS['Test_Assert_assertImpl'] ?? \Test\Assert\phpurs_eval_thunk('Test_Assert_assertImpl')); break;
-      case 'Test_Assert_assertEqual__prime__1': $v = (($GLOBALS['Test_Assert_assertEqual__prime__'] ?? \Test\Assert\phpurs_eval_thunk('Test_Assert_assertEqual__prime__')))(($GLOBALS['Data_Eq_eqBoolean'] ?? \Data\Eq\phpurs_eval_thunk('Data_Eq_eqBoolean')), ($GLOBALS['Data_Show_showBoolean'] ?? \Data\Show\phpurs_eval_thunk('Data_Show_showBoolean'))); break;
-      case 'Test_Assert_assertEqual1': $v = (($GLOBALS['Test_Assert_assertEqual'] ?? \Test\Assert\phpurs_eval_thunk('Test_Assert_assertEqual')))(($GLOBALS['Data_Eq_eqBoolean'] ?? \Data\Eq\phpurs_eval_thunk('Data_Eq_eqBoolean')), ($GLOBALS['Data_Show_showBoolean'] ?? \Data\Show\phpurs_eval_thunk('Data_Show_showBoolean'))); break;
+      case 'Test_Assert_assertEqual__prime__1': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Eq_eqBoolean'] ?? \Data\Eq\phpurs_eval_thunk('Data_Eq_eqBoolean'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $eq1 = $__case_res_0;
+  return ((function() use ($eq1) {
+  $__fn = function($dictShow) use ($eq1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__global_Test_Assert_append = ($GLOBALS['Test_Assert_append'] ?? \Test\Assert\phpurs_eval_thunk('Test_Assert_append'));
+$__global_Test_Assert_eq = ($GLOBALS['Test_Assert_eq'] ?? \Test\Assert\phpurs_eval_thunk('Test_Assert_eq'));
+$__global_Test_Assert_discard = ($GLOBALS['Test_Assert_discard'] ?? \Test\Assert\phpurs_eval_thunk('Test_Assert_discard'));
+$__global_Test_Assert_unless = ($GLOBALS['Test_Assert_unless'] ?? \Test\Assert\phpurs_eval_thunk('Test_Assert_unless'));
+$__global_Effect_Console_error = ($GLOBALS['Effect_Console_error'] ?? \Effect\Console\phpurs_eval_thunk('Effect_Console_error'));
+$__global_Test_Assert_assertImpl = ($GLOBALS['Test_Assert_assertImpl'] ?? \Test\Assert\phpurs_eval_thunk('Test_Assert_assertImpl'));
+$__case_0 = $dictShow;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->show;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$show = $__case_res_1;
+    $__res = (function() use ($eq1, $__global_Test_Assert_append, $__global_Test_Assert_eq, $show, $__global_Test_Assert_discard, $__global_Test_Assert_unless, $__global_Effect_Console_error, $__global_Test_Assert_assertImpl) {
+  $__body = function($userMessage, $v) use ($eq1, $__global_Test_Assert_append, $__global_Test_Assert_eq, $show, $__global_Test_Assert_discard, $__global_Test_Assert_unless, $__global_Effect_Console_error, $__global_Test_Assert_assertImpl) {
+    $__case_0 = $userMessage;
+    $__case_1 = $v;
+    if ((is_object)($__case_1)) {
+$userMessage1 = $__case_0;
+$actual = ($__case_1)->actual;
+$expected = ($__case_1)->expected;
+$result = ($eq1)($actual, $expected);
+$__case_0 = ($__global_Test_Assert_eq)($userMessage1, "");
+$__case_res_2 = null;
+switch ($__case_0) {
+case true:
+$__case_res_2 = "";
+break;
+default:
+$__case_res_2 = ($__global_Test_Assert_append)($userMessage1, "
+");
+break;
+};
+$message = ($__global_Test_Assert_append)($__case_res_2, ($__global_Test_Assert_append)("Expected: ", ($__global_Test_Assert_append)(($show)($expected), ($__global_Test_Assert_append)("
+Actual:   ", ($show)($actual)))));
+return ($__global_Test_Assert_discard)(($__global_Test_Assert_unless)($result, ($__global_Effect_Console_error)($message)), (function() use ($__global_Test_Assert_assertImpl, $message, $result) {
+  $__fn = function($__dollar____unused) use ($__global_Test_Assert_assertImpl, $message, $result, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($__global_Test_Assert_assertImpl)($message, $result);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})());
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($userMessage, $v = null) use ($eq1, $__global_Test_Assert_append, $__global_Test_Assert_eq, $show, $__global_Test_Assert_discard, $__global_Test_Assert_unless, $__global_Effect_Console_error, $__global_Test_Assert_assertImpl, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($userMessage, &$__fn) { return $__fn($userMessage, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($userMessage, $v);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})())(($GLOBALS['Data_Show_showBoolean'] ?? \Data\Show\phpurs_eval_thunk('Data_Show_showBoolean')));
+})(); break;
+      case 'Test_Assert_assertEqual1': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Eq_eqBoolean'] ?? \Data\Eq\phpurs_eval_thunk('Data_Eq_eqBoolean'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $eq1 = $__case_res_0;
+  $assertEqual__prime__2 = (function() use ($eq1) {
+  $__fn = function($dictShow) use ($eq1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__global_Test_Assert_append = ($GLOBALS['Test_Assert_append'] ?? \Test\Assert\phpurs_eval_thunk('Test_Assert_append'));
+$__global_Test_Assert_eq = ($GLOBALS['Test_Assert_eq'] ?? \Test\Assert\phpurs_eval_thunk('Test_Assert_eq'));
+$__global_Test_Assert_discard = ($GLOBALS['Test_Assert_discard'] ?? \Test\Assert\phpurs_eval_thunk('Test_Assert_discard'));
+$__global_Test_Assert_unless = ($GLOBALS['Test_Assert_unless'] ?? \Test\Assert\phpurs_eval_thunk('Test_Assert_unless'));
+$__global_Effect_Console_error = ($GLOBALS['Effect_Console_error'] ?? \Effect\Console\phpurs_eval_thunk('Effect_Console_error'));
+$__global_Test_Assert_assertImpl = ($GLOBALS['Test_Assert_assertImpl'] ?? \Test\Assert\phpurs_eval_thunk('Test_Assert_assertImpl'));
+$__case_0 = $dictShow;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->show;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$show = $__case_res_1;
+    $__res = (function() use ($eq1, $__global_Test_Assert_append, $__global_Test_Assert_eq, $show, $__global_Test_Assert_discard, $__global_Test_Assert_unless, $__global_Effect_Console_error, $__global_Test_Assert_assertImpl) {
+  $__body = function($userMessage, $v) use ($eq1, $__global_Test_Assert_append, $__global_Test_Assert_eq, $show, $__global_Test_Assert_discard, $__global_Test_Assert_unless, $__global_Effect_Console_error, $__global_Test_Assert_assertImpl) {
+    $__case_0 = $userMessage;
+    $__case_1 = $v;
+    if ((is_object)($__case_1)) {
+$userMessage1 = $__case_0;
+$actual = ($__case_1)->actual;
+$expected = ($__case_1)->expected;
+$result = ($eq1)($actual, $expected);
+$__case_0 = ($__global_Test_Assert_eq)($userMessage1, "");
+$__case_res_2 = null;
+switch ($__case_0) {
+case true:
+$__case_res_2 = "";
+break;
+default:
+$__case_res_2 = ($__global_Test_Assert_append)($userMessage1, "
+");
+break;
+};
+$message = ($__global_Test_Assert_append)($__case_res_2, ($__global_Test_Assert_append)("Expected: ", ($__global_Test_Assert_append)(($show)($expected), ($__global_Test_Assert_append)("
+Actual:   ", ($show)($actual)))));
+return ($__global_Test_Assert_discard)(($__global_Test_Assert_unless)($result, ($__global_Effect_Console_error)($message)), (function() use ($__global_Test_Assert_assertImpl, $message, $result) {
+  $__fn = function($__dollar____unused) use ($__global_Test_Assert_assertImpl, $message, $result, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($__global_Test_Assert_assertImpl)($message, $result);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})());
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($userMessage, $v = null) use ($eq1, $__global_Test_Assert_append, $__global_Test_Assert_eq, $show, $__global_Test_Assert_discard, $__global_Test_Assert_unless, $__global_Effect_Console_error, $__global_Test_Assert_assertImpl, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($userMessage, &$__fn) { return $__fn($userMessage, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($userMessage, $v);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+  return ((function() use ($assertEqual__prime__2) {
+  $__fn = function($dictShow) use ($assertEqual__prime__2, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($assertEqual__prime__2)($dictShow, "");
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})())(($GLOBALS['Data_Show_showBoolean'] ?? \Data\Show\phpurs_eval_thunk('Data_Show_showBoolean')));
+})(); break;
       case 'Test_Assert_assertThrows': $v = (($GLOBALS['Test_Assert_assertThrows__prime__'] ?? \Test\Assert\phpurs_eval_thunk('Test_Assert_assertThrows__prime__')))("Assertion failed: An error should have been thrown"); break;
       case 'Test_Assert_assert': $v = (($GLOBALS['Test_Assert_assertImpl'] ?? \Test\Assert\phpurs_eval_thunk('Test_Assert_assertImpl')))("Assertion failed"); break;
       default: throw new \Exception("Unknown thunk " . $id);
@@ -126,20 +382,38 @@ function Test_Assert_assertEqual__prime__($dictEq) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
+$__global_Test_Assert_append = ($GLOBALS['Test_Assert_append'] ?? \Test\Assert\phpurs_eval_thunk('Test_Assert_append'));
+$__global_Test_Assert_eq = ($GLOBALS['Test_Assert_eq'] ?? \Test\Assert\phpurs_eval_thunk('Test_Assert_eq'));
 $__global_Test_Assert_discard = ($GLOBALS['Test_Assert_discard'] ?? \Test\Assert\phpurs_eval_thunk('Test_Assert_discard'));
 $__global_Test_Assert_unless = ($GLOBALS['Test_Assert_unless'] ?? \Test\Assert\phpurs_eval_thunk('Test_Assert_unless'));
 $__global_Effect_Console_error = ($GLOBALS['Effect_Console_error'] ?? \Effect\Console\phpurs_eval_thunk('Effect_Console_error'));
 $__global_Test_Assert_assertImpl = ($GLOBALS['Test_Assert_assertImpl'] ?? \Test\Assert\phpurs_eval_thunk('Test_Assert_assertImpl'));
-$eq1 = ($dictEq)->eq;
-    $__res = (function() use ($eq1, $__global_Test_Assert_discard, $__global_Test_Assert_unless, $__global_Effect_Console_error, $__global_Test_Assert_assertImpl) {
-  $__fn = function($dictShow) use ($eq1, $__global_Test_Assert_discard, $__global_Test_Assert_unless, $__global_Effect_Console_error, $__global_Test_Assert_assertImpl, &$__fn) {
+$__case_0 = $dictEq;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq1 = $__case_res_0;
+    $__res = (function() use ($eq1, $__global_Test_Assert_append, $__global_Test_Assert_eq, $__global_Test_Assert_discard, $__global_Test_Assert_unless, $__global_Effect_Console_error, $__global_Test_Assert_assertImpl) {
+  $__fn = function($dictShow) use ($eq1, $__global_Test_Assert_append, $__global_Test_Assert_eq, $__global_Test_Assert_discard, $__global_Test_Assert_unless, $__global_Effect_Console_error, $__global_Test_Assert_assertImpl, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$show = ($dictShow)->show;
-    $__res = (function() use ($eq1, $show, $__global_Test_Assert_discard, $__global_Test_Assert_unless, $__global_Effect_Console_error, $__global_Test_Assert_assertImpl) {
-  $__body = function($userMessage, $v) use ($eq1, $show, $__global_Test_Assert_discard, $__global_Test_Assert_unless, $__global_Effect_Console_error, $__global_Test_Assert_assertImpl) {
+$__case_0 = $dictShow;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->show;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$show = $__case_res_1;
+    $__res = (function() use ($eq1, $__global_Test_Assert_append, $__global_Test_Assert_eq, $show, $__global_Test_Assert_discard, $__global_Test_Assert_unless, $__global_Effect_Console_error, $__global_Test_Assert_assertImpl) {
+  $__body = function($userMessage, $v) use ($eq1, $__global_Test_Assert_append, $__global_Test_Assert_eq, $show, $__global_Test_Assert_discard, $__global_Test_Assert_unless, $__global_Effect_Console_error, $__global_Test_Assert_assertImpl) {
     $__case_0 = $userMessage;
     $__case_1 = $v;
     if ((is_object)($__case_1)) {
@@ -147,19 +421,19 @@ $userMessage1 = $__case_0;
 $actual = ($__case_1)->actual;
 $expected = ($__case_1)->expected;
 $result = ($eq1)($actual, $expected);
-$__case_0 = ($userMessage1 === "");
-$__case_res_0 = null;
+$__case_0 = ($__global_Test_Assert_eq)($userMessage1, "");
+$__case_res_2 = null;
 switch ($__case_0) {
 case true:
-$__case_res_0 = "";
+$__case_res_2 = "";
 break;
 default:
-$__case_res_0 = ($userMessage1 . "
+$__case_res_2 = ($__global_Test_Assert_append)($userMessage1, "
 ");
 break;
 };
-$message = ($__case_res_0 . ("Expected: " . (($show)($expected) . ("
-Actual:   " . ($show)($actual)))));
+$message = ($__global_Test_Assert_append)($__case_res_2, ($__global_Test_Assert_append)("Expected: ", ($__global_Test_Assert_append)(($show)($expected), ($__global_Test_Assert_append)("
+Actual:   ", ($show)($actual)))));
 return ($__global_Test_Assert_discard)(($__global_Test_Assert_unless)($result, ($__global_Effect_Console_error)($message)), (function() use ($__global_Test_Assert_assertImpl, $message, $result) {
   $__fn = function($__dollar____unused) use ($__global_Test_Assert_assertImpl, $message, $result, &$__fn) {
   $__num = func_num_args();
@@ -175,7 +449,7 @@ return ($__global_Test_Assert_discard)(($__global_Test_Assert_unless)($result, (
 throw new \Exception("Pattern match failure");
 };
   };
-  $__fn = function($userMessage, $v = null) use ($eq1, $show, $__global_Test_Assert_discard, $__global_Test_Assert_unless, $__global_Effect_Console_error, $__global_Test_Assert_assertImpl, $__body, &$__fn) {
+  $__fn = function($userMessage, $v = null) use ($eq1, $__global_Test_Assert_append, $__global_Test_Assert_eq, $show, $__global_Test_Assert_discard, $__global_Test_Assert_unless, $__global_Effect_Console_error, $__global_Test_Assert_assertImpl, $__body, &$__fn) {
   $__num = func_num_args();
   if ($__num < 2) {
     if ($__num === 1) return function($v) use ($userMessage, &$__fn) { return $__fn($userMessage, $v); };
@@ -202,8 +476,88 @@ function Test_Assert_assertEqual($dictEq) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Test_Assert_assertEqual__prime__ = ($GLOBALS['Test_Assert_assertEqual__prime__'] ?? \Test\Assert\phpurs_eval_thunk('Test_Assert_assertEqual__prime__'));
-$assertEqual__prime__2 = ($__global_Test_Assert_assertEqual__prime__)($dictEq);
+$__global_Test_Assert_append = ($GLOBALS['Test_Assert_append'] ?? \Test\Assert\phpurs_eval_thunk('Test_Assert_append'));
+$__global_Test_Assert_eq = ($GLOBALS['Test_Assert_eq'] ?? \Test\Assert\phpurs_eval_thunk('Test_Assert_eq'));
+$__global_Test_Assert_discard = ($GLOBALS['Test_Assert_discard'] ?? \Test\Assert\phpurs_eval_thunk('Test_Assert_discard'));
+$__global_Test_Assert_unless = ($GLOBALS['Test_Assert_unless'] ?? \Test\Assert\phpurs_eval_thunk('Test_Assert_unless'));
+$__global_Effect_Console_error = ($GLOBALS['Effect_Console_error'] ?? \Effect\Console\phpurs_eval_thunk('Effect_Console_error'));
+$__global_Test_Assert_assertImpl = ($GLOBALS['Test_Assert_assertImpl'] ?? \Test\Assert\phpurs_eval_thunk('Test_Assert_assertImpl'));
+$__case_0 = $dictEq;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq1 = $__case_res_0;
+$assertEqual__prime__2 = (function() use ($eq1, $__global_Test_Assert_append, $__global_Test_Assert_eq, $__global_Test_Assert_discard, $__global_Test_Assert_unless, $__global_Effect_Console_error, $__global_Test_Assert_assertImpl) {
+  $__fn = function($dictShow) use ($eq1, $__global_Test_Assert_append, $__global_Test_Assert_eq, $__global_Test_Assert_discard, $__global_Test_Assert_unless, $__global_Effect_Console_error, $__global_Test_Assert_assertImpl, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dictShow;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->show;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$show = $__case_res_1;
+    $__res = (function() use ($eq1, $__global_Test_Assert_append, $__global_Test_Assert_eq, $show, $__global_Test_Assert_discard, $__global_Test_Assert_unless, $__global_Effect_Console_error, $__global_Test_Assert_assertImpl) {
+  $__body = function($userMessage, $v) use ($eq1, $__global_Test_Assert_append, $__global_Test_Assert_eq, $show, $__global_Test_Assert_discard, $__global_Test_Assert_unless, $__global_Effect_Console_error, $__global_Test_Assert_assertImpl) {
+    $__case_0 = $userMessage;
+    $__case_1 = $v;
+    if ((is_object)($__case_1)) {
+$userMessage1 = $__case_0;
+$actual = ($__case_1)->actual;
+$expected = ($__case_1)->expected;
+$result = ($eq1)($actual, $expected);
+$__case_0 = ($__global_Test_Assert_eq)($userMessage1, "");
+$__case_res_2 = null;
+switch ($__case_0) {
+case true:
+$__case_res_2 = "";
+break;
+default:
+$__case_res_2 = ($__global_Test_Assert_append)($userMessage1, "
+");
+break;
+};
+$message = ($__global_Test_Assert_append)($__case_res_2, ($__global_Test_Assert_append)("Expected: ", ($__global_Test_Assert_append)(($show)($expected), ($__global_Test_Assert_append)("
+Actual:   ", ($show)($actual)))));
+return ($__global_Test_Assert_discard)(($__global_Test_Assert_unless)($result, ($__global_Effect_Console_error)($message)), (function() use ($__global_Test_Assert_assertImpl, $message, $result) {
+  $__fn = function($__dollar____unused) use ($__global_Test_Assert_assertImpl, $message, $result, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($__global_Test_Assert_assertImpl)($message, $result);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})());
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($userMessage, $v = null) use ($eq1, $__global_Test_Assert_append, $__global_Test_Assert_eq, $show, $__global_Test_Assert_discard, $__global_Test_Assert_unless, $__global_Effect_Console_error, $__global_Test_Assert_assertImpl, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($userMessage, &$__fn) { return $__fn($userMessage, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($userMessage, $v);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
     $__res = (function() use ($assertEqual__prime__2) {
   $__fn = function($dictShow) use ($assertEqual__prime__2, &$__fn) {
   $__num = func_num_args();

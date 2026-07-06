@@ -115,37 +115,421 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Data_FoldableWithIndex_compose': $v = (($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn')))->compose; break;
-      case 'Data_FoldableWithIndex_foldr': $v = (($GLOBALS['Data_Foldable_foldableMultiplicative'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableMultiplicative')))->foldr; break;
-      case 'Data_FoldableWithIndex_foldl': $v = (($GLOBALS['Data_Foldable_foldableMultiplicative'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableMultiplicative')))->foldl; break;
-      case 'Data_FoldableWithIndex_foldMap': $v = (($GLOBALS['Data_Foldable_foldableMultiplicative'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableMultiplicative')))->foldMap; break;
-      case 'Data_FoldableWithIndex_foldr1': $v = (($GLOBALS['Data_Foldable_foldableMaybe'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableMaybe')))->foldr; break;
-      case 'Data_FoldableWithIndex_foldl1': $v = (($GLOBALS['Data_Foldable_foldableMaybe'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableMaybe')))->foldl; break;
-      case 'Data_FoldableWithIndex_foldMap1': $v = (($GLOBALS['Data_Foldable_foldableMaybe'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableMaybe')))->foldMap; break;
-      case 'Data_FoldableWithIndex_foldr2': $v = (($GLOBALS['Data_Foldable_foldableLast'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableLast')))->foldr; break;
-      case 'Data_FoldableWithIndex_foldl2': $v = (($GLOBALS['Data_Foldable_foldableLast'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableLast')))->foldl; break;
-      case 'Data_FoldableWithIndex_foldMap2': $v = (($GLOBALS['Data_Foldable_foldableLast'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableLast')))->foldMap; break;
-      case 'Data_FoldableWithIndex_foldr3': $v = (($GLOBALS['Data_Foldable_foldableFirst'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableFirst')))->foldr; break;
-      case 'Data_FoldableWithIndex_foldl3': $v = (($GLOBALS['Data_Foldable_foldableFirst'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableFirst')))->foldl; break;
-      case 'Data_FoldableWithIndex_foldMap3': $v = (($GLOBALS['Data_Foldable_foldableFirst'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableFirst')))->foldMap; break;
-      case 'Data_FoldableWithIndex_foldr4': $v = (($GLOBALS['Data_Foldable_foldableDual'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableDual')))->foldr; break;
-      case 'Data_FoldableWithIndex_foldl4': $v = (($GLOBALS['Data_Foldable_foldableDual'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableDual')))->foldl; break;
-      case 'Data_FoldableWithIndex_foldMap4': $v = (($GLOBALS['Data_Foldable_foldableDual'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableDual')))->foldMap; break;
-      case 'Data_FoldableWithIndex_foldr5': $v = (($GLOBALS['Data_Foldable_foldableDisj'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableDisj')))->foldr; break;
-      case 'Data_FoldableWithIndex_foldl5': $v = (($GLOBALS['Data_Foldable_foldableDisj'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableDisj')))->foldl; break;
-      case 'Data_FoldableWithIndex_foldMap5': $v = (($GLOBALS['Data_Foldable_foldableDisj'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableDisj')))->foldMap; break;
-      case 'Data_FoldableWithIndex_foldr6': $v = (($GLOBALS['Data_Foldable_foldableConj'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableConj')))->foldr; break;
-      case 'Data_FoldableWithIndex_foldl6': $v = (($GLOBALS['Data_Foldable_foldableConj'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableConj')))->foldl; break;
-      case 'Data_FoldableWithIndex_foldMap6': $v = (($GLOBALS['Data_Foldable_foldableConj'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableConj')))->foldMap; break;
-      case 'Data_FoldableWithIndex_foldr7': $v = (($GLOBALS['Data_Foldable_foldableAdditive'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableAdditive')))->foldr; break;
-      case 'Data_FoldableWithIndex_foldl7': $v = (($GLOBALS['Data_Foldable_foldableAdditive'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableAdditive')))->foldl; break;
-      case 'Data_FoldableWithIndex_foldMap7': $v = (($GLOBALS['Data_Foldable_foldableAdditive'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableAdditive')))->foldMap; break;
-      case 'Data_FoldableWithIndex_foldr8': $v = ($GLOBALS['Data_Foldable_foldrArray'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldrArray')); break;
-      case 'Data_FoldableWithIndex_mapWithIndex': $v = ($GLOBALS['Data_FunctorWithIndex_mapWithIndexArray'] ?? \Data\FunctorWithIndex\phpurs_eval_thunk('Data_FunctorWithIndex_mapWithIndexArray')); break;
-      case 'Data_FoldableWithIndex_foldl8': $v = ($GLOBALS['Data_Foldable_foldlArray'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldlArray')); break;
+      case 'Data_FoldableWithIndex_compose': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compose;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_FoldableWithIndex_foldr': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Foldable_foldableMultiplicative'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableMultiplicative'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_FoldableWithIndex_foldl': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Foldable_foldableMultiplicative'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableMultiplicative'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldl;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_FoldableWithIndex_foldMap': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Foldable_foldableMultiplicative'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableMultiplicative'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldMap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_FoldableWithIndex_foldr1': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Foldable_foldableMaybe'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableMaybe'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_FoldableWithIndex_foldl1': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Foldable_foldableMaybe'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableMaybe'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldl;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_FoldableWithIndex_foldMap1': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Foldable_foldableMaybe'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableMaybe'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldMap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_FoldableWithIndex_foldr2': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Foldable_foldableLast'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableLast'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_FoldableWithIndex_foldl2': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Foldable_foldableLast'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableLast'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldl;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_FoldableWithIndex_foldMap2': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Foldable_foldableLast'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableLast'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldMap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_FoldableWithIndex_foldr3': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Foldable_foldableFirst'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableFirst'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_FoldableWithIndex_foldl3': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Foldable_foldableFirst'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableFirst'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldl;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_FoldableWithIndex_foldMap3': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Foldable_foldableFirst'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableFirst'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldMap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_FoldableWithIndex_foldr4': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Foldable_foldableDual'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableDual'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_FoldableWithIndex_foldl4': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Foldable_foldableDual'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableDual'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldl;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_FoldableWithIndex_foldMap4': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Foldable_foldableDual'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableDual'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldMap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_FoldableWithIndex_foldr5': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Foldable_foldableDisj'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableDisj'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_FoldableWithIndex_foldl5': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Foldable_foldableDisj'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableDisj'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldl;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_FoldableWithIndex_foldMap5': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Foldable_foldableDisj'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableDisj'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldMap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_FoldableWithIndex_foldr6': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Foldable_foldableConj'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableConj'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_FoldableWithIndex_foldl6': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Foldable_foldableConj'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableConj'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldl;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_FoldableWithIndex_foldMap6': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Foldable_foldableConj'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableConj'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldMap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_FoldableWithIndex_foldr7': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Foldable_foldableAdditive'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableAdditive'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_FoldableWithIndex_foldl7': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Foldable_foldableAdditive'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableAdditive'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldl;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_FoldableWithIndex_foldMap7': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Foldable_foldableAdditive'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableAdditive'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldMap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_FoldableWithIndex_foldr8': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Foldable_foldableArray'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableArray'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_FoldableWithIndex_mapWithIndex': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_FunctorWithIndex_functorWithIndexArray'] ?? \Data\FunctorWithIndex\phpurs_eval_thunk('Data_FunctorWithIndex_functorWithIndexArray'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->mapWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_FoldableWithIndex_foldl8': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Foldable_foldableArray'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableArray'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldl;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_FoldableWithIndex_unwrap': $v = (($GLOBALS['Data_Newtype_unwrap'] ?? \Data\Newtype\phpurs_eval_thunk('Data_Newtype_unwrap')))(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))); break;
-      case 'Data_FoldableWithIndex_monoidEndo': $v = (($GLOBALS['Data_Monoid_Endo_monoidEndo'] ?? \Data\Monoid\Endo\phpurs_eval_thunk('Data_Monoid_Endo_monoidEndo')))(($GLOBALS['Control_Category_categoryFn'] ?? \Control\Category\phpurs_eval_thunk('Control_Category_categoryFn'))); break;
-      case 'Data_FoldableWithIndex_monoidDual': $v = (($GLOBALS['Data_Monoid_Dual_monoidDual'] ?? \Data\Monoid\Dual\phpurs_eval_thunk('Data_Monoid_Dual_monoidDual')))(($GLOBALS['Data_FoldableWithIndex_monoidEndo'] ?? \Data\FoldableWithIndex\phpurs_eval_thunk('Data_FoldableWithIndex_monoidEndo'))); break;
+      case 'Data_FoldableWithIndex_monoidEndo': $v = (function() {
+  $__case_0 = $dict;
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compose;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $compose = $__case_res_0;
+  $semigroupEndo1 = (object)["append" => (function() use ($compose) {
+  $__body = function($v, $v1) use ($compose) {
+    $__case_0 = $v;
+    $__case_1 = $v1;
+    if (true) {
+$a = $__case_0;
+$b = $__case_1;
+return ($compose)($a, $b);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($v, $v1 = null) use ($compose, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($v, $v1);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+  $__case_0 = ($GLOBALS['Control_Category_categoryFn'] ?? \Control\Category\phpurs_eval_thunk('Control_Category_categoryFn'));
+  $__case_res_1 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->identity;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return (object)["mempty" => $__case_res_1, "Semigroup0" => (function() use ($semigroupEndo1) {
+  $__fn = function($__dollar____unused) use ($semigroupEndo1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $semigroupEndo1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+})(); break;
+      case 'Data_FoldableWithIndex_monoidDual': $v = (function() {
+  $__case_0 = $dict;
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $append1 = $__case_res_0;
+  $semigroupDual1 = (object)["append" => (function() use ($append1) {
+  $__body = function($v, $v1) use ($append1) {
+    $__case_0 = $v;
+    $__case_1 = $v1;
+    if (true) {
+$x = $__case_0;
+$y = $__case_1;
+return ($append1)($y, $x);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($v, $v1 = null) use ($append1, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($v, $v1);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+  $__case_0 = ($GLOBALS['Data_FoldableWithIndex_monoidEndo'] ?? \Data\FoldableWithIndex\phpurs_eval_thunk('Data_FoldableWithIndex_monoidEndo'));
+  $__case_res_1 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->mempty;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return (object)["mempty" => $__case_res_1, "Semigroup0" => (function() use ($semigroupDual1) {
+  $__fn = function($__dollar____unused) use ($semigroupDual1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $semigroupDual1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+})(); break;
       case 'Data_FoldableWithIndex_foldableWithIndexTuple': $v = (object)["foldrWithIndex" => (function() {
   $__body = function($f, $z, $v) {
     $__global_Data_Unit_unit = ($GLOBALS['Data_Unit_unit'] ?? \Data\Unit\phpurs_eval_thunk('Data_Unit_unit'));
@@ -680,7 +1064,15 @@ break;
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_Unit_unit = ($GLOBALS['Data_Unit_unit'] ?? \Data\Unit\phpurs_eval_thunk('Data_Unit_unit'));
-$mempty = ($dictMonoid)->mempty;
+$__case_0 = $dictMonoid;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->mempty;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$mempty = $__case_res_0;
     $__res = (function() use ($mempty, $__global_Data_Unit_unit) {
   $__body = function($v, $v1) use ($mempty, $__global_Data_Unit_unit) {
     $__case_0 = $v;
@@ -883,7 +1275,15 @@ $__global_Data_Foldable_foldableDisj = ($GLOBALS['Data_Foldable_foldableDisj'] ?
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$mempty = ($dictMonoid)->mempty;
+$__case_0 = $dictMonoid;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->mempty;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$mempty = $__case_res_0;
     $__res = (function() use ($mempty) {
   $__fn = function($v, $v1 = null) use ($mempty, &$__fn) {
   $__num = func_num_args();
@@ -1037,9 +1437,9 @@ $__global_Data_Foldable_foldableAdditive = ($GLOBALS['Data_Foldable_foldableAddi
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
 $__global_Data_FoldableWithIndex_compose = ($GLOBALS['Data_FoldableWithIndex_compose'] ?? \Data\FoldableWithIndex\phpurs_eval_thunk('Data_FoldableWithIndex_compose'));
-$__global_Data_Foldable_foldrArray = ($GLOBALS['Data_Foldable_foldrArray'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldrArray'));
-$__global_Data_FunctorWithIndex_mapWithIndexArray = ($GLOBALS['Data_FunctorWithIndex_mapWithIndexArray'] ?? \Data\FunctorWithIndex\phpurs_eval_thunk('Data_FunctorWithIndex_mapWithIndexArray'));
-    $__res = ($__global_Data_FoldableWithIndex_compose)(($__global_Data_Foldable_foldrArray)((function() use ($f) {
+$__global_Data_FoldableWithIndex_foldr8 = ($GLOBALS['Data_FoldableWithIndex_foldr8'] ?? \Data\FoldableWithIndex\phpurs_eval_thunk('Data_FoldableWithIndex_foldr8'));
+$__global_Data_FoldableWithIndex_mapWithIndex = ($GLOBALS['Data_FoldableWithIndex_mapWithIndex'] ?? \Data\FoldableWithIndex\phpurs_eval_thunk('Data_FoldableWithIndex_mapWithIndex'));
+    $__res = ($__global_Data_FoldableWithIndex_compose)(($__global_Data_FoldableWithIndex_foldr8)((function() use ($f) {
   $__body = function($v) use ($f) {
     $__case_0 = $v;
     switch (($__case_0)->tag) {
@@ -1072,7 +1472,7 @@ break;
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})(), $z), ($__global_Data_FunctorWithIndex_mapWithIndexArray)((function() {
+})(), $z), ($__global_Data_FoldableWithIndex_mapWithIndex)((function() {
   $__fn = function($value0, $value1 = null) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 2) {
@@ -1095,9 +1495,9 @@ break;
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
 $__global_Data_FoldableWithIndex_compose = ($GLOBALS['Data_FoldableWithIndex_compose'] ?? \Data\FoldableWithIndex\phpurs_eval_thunk('Data_FoldableWithIndex_compose'));
-$__global_Data_Foldable_foldlArray = ($GLOBALS['Data_Foldable_foldlArray'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldlArray'));
-$__global_Data_FunctorWithIndex_mapWithIndexArray = ($GLOBALS['Data_FunctorWithIndex_mapWithIndexArray'] ?? \Data\FunctorWithIndex\phpurs_eval_thunk('Data_FunctorWithIndex_mapWithIndexArray'));
-    $__res = ($__global_Data_FoldableWithIndex_compose)(($__global_Data_Foldable_foldlArray)((function() use ($f) {
+$__global_Data_FoldableWithIndex_foldl8 = ($GLOBALS['Data_FoldableWithIndex_foldl8'] ?? \Data\FoldableWithIndex\phpurs_eval_thunk('Data_FoldableWithIndex_foldl8'));
+$__global_Data_FoldableWithIndex_mapWithIndex = ($GLOBALS['Data_FoldableWithIndex_mapWithIndex'] ?? \Data\FoldableWithIndex\phpurs_eval_thunk('Data_FoldableWithIndex_mapWithIndex'));
+    $__res = ($__global_Data_FoldableWithIndex_compose)(($__global_Data_FoldableWithIndex_foldl8)((function() use ($f) {
   $__body = function($y, $v) use ($f) {
     $__case_0 = $v;
     switch (($__case_0)->tag) {
@@ -1121,7 +1521,7 @@ break;
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
-})(), $z), ($__global_Data_FunctorWithIndex_mapWithIndexArray)((function() {
+})(), $z), ($__global_Data_FoldableWithIndex_mapWithIndex)((function() {
   $__fn = function($value0, $value1 = null) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 2) {
@@ -1136,15 +1536,78 @@ break;
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
-})(), "foldMapWithIndex" => (function() {
-  $__fn = function($dictMonoid) use (&$__fn) {
+})(), "foldMapWithIndex" => (function() use ($dict) {
+  $__fn = function($dictMonoid) use ($dict, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_FoldableWithIndex_foldMapWithIndexDefaultR = ($GLOBALS['Data_FoldableWithIndex_foldMapWithIndexDefaultR'] ?? \Data\FoldableWithIndex\phpurs_eval_thunk('Data_FoldableWithIndex_foldMapWithIndexDefaultR'));
 $__global_Data_FoldableWithIndex_foldableWithIndexArray = ($GLOBALS['Data_FoldableWithIndex_foldableWithIndexArray'] ?? \Data\FoldableWithIndex\phpurs_eval_thunk('Data_FoldableWithIndex_foldableWithIndexArray'));
-    $__res = ($__global_Data_FoldableWithIndex_foldMapWithIndexDefaultR)($__global_Data_FoldableWithIndex_foldableWithIndexArray, $dictMonoid);
+$__case_0 = $__global_Data_FoldableWithIndex_foldableWithIndexArray;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldrWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldrWithIndex1 = $__case_res_0;
+    $__res = ((function() use ($dict, $foldrWithIndex1) {
+  $__fn = function($dictMonoid) use ($dict, $foldrWithIndex1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append = $__case_res_1;
+$__case_0 = $dictMonoid;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->mempty;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$mempty = $__case_res_2;
+    $__res = (function() use ($foldrWithIndex1, $append, $mempty) {
+  $__fn = function($f) use ($foldrWithIndex1, $append, $mempty, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($foldrWithIndex1)((function() use ($append, $f) {
+  $__fn = function($i, $x = null, $acc = null) use ($append, $f, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($acc) use ($i, $x, &$__fn) { return $__fn($i, $x, $acc); };
+    if ($__num === 1) return function($x, $acc = null) use ($i, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($i, $x, $acc);
+      if ($__num2 === 1) return function($acc) use ($i, $x, &$__fn) { return $__fn($i, $x, $acc); };
+      return phpurs_curry_fallback($__fn, [$i], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = ($append)(($f)($i, $x), $acc);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})(), $mempty);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})())($dictMonoid);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -1240,19 +1703,64 @@ function Data_FoldableWithIndex_traverseWithIndex_($dictApplicative) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Control_Apply_applySecond = ($GLOBALS['Control_Apply_applySecond'] ?? \Control\Apply\phpurs_eval_thunk('Control_Apply_applySecond'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
+$__global_Data_Function_const = ($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const'));
+$__global_Control_Apply_identity = ($GLOBALS['Control_Apply_identity'] ?? \Control\Apply\phpurs_eval_thunk('Control_Apply_identity'));
 $__global_Data_FoldableWithIndex_compose = ($GLOBALS['Data_FoldableWithIndex_compose'] ?? \Data\FoldableWithIndex\phpurs_eval_thunk('Data_FoldableWithIndex_compose'));
 $__global_Data_Unit_unit = ($GLOBALS['Data_Unit_unit'] ?? \Data\Unit\phpurs_eval_thunk('Data_Unit_unit'));
-$applySecond = ($__global_Control_Apply_applySecond)((($dictApplicative)->Apply0)($__global_Prim_undefined));
-$pure = ($dictApplicative)->pure;
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$apply1 = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_1;
+$applySecond = (function() use ($apply1, $map, $__global_Data_Function_const, $__global_Control_Apply_identity) {
+  $__fn = function($a, $b = null) use ($apply1, $map, $__global_Data_Function_const, $__global_Control_Apply_identity, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($b) use ($a, &$__fn) { return $__fn($a, $b); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($apply1)(($map)(($__global_Data_Function_const)($__global_Control_Apply_identity), $a), $b);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+$__case_0 = $dictApplicative;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pure = $__case_res_2;
     $__res = (function() use ($__global_Data_FoldableWithIndex_compose, $applySecond, $pure, $__global_Data_Unit_unit) {
   $__fn = function($dictFoldableWithIndex) use ($__global_Data_FoldableWithIndex_compose, $applySecond, $pure, $__global_Data_Unit_unit, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$foldrWithIndex1 = ($dictFoldableWithIndex)->foldrWithIndex;
+$__case_0 = $dictFoldableWithIndex;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->foldrWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldrWithIndex1 = $__case_res_3;
     $__res = (function() use ($foldrWithIndex1, $__global_Data_FoldableWithIndex_compose, $applySecond, $pure, $__global_Data_Unit_unit) {
   $__fn = function($f) use ($foldrWithIndex1, $__global_Data_FoldableWithIndex_compose, $applySecond, $pure, $__global_Data_Unit_unit, &$__fn) {
   $__num = func_num_args();
@@ -1289,9 +1797,90 @@ function Data_FoldableWithIndex_forWithIndex_($dictApplicative) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_FoldableWithIndex_traverseWithIndex_ = ($GLOBALS['Data_FoldableWithIndex_traverseWithIndex_'] ?? \Data\FoldableWithIndex\phpurs_eval_thunk('Data_FoldableWithIndex_traverseWithIndex_'));
+$__global_Data_Function_const = ($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const'));
+$__global_Control_Apply_identity = ($GLOBALS['Control_Apply_identity'] ?? \Control\Apply\phpurs_eval_thunk('Control_Apply_identity'));
+$__global_Data_FoldableWithIndex_compose = ($GLOBALS['Data_FoldableWithIndex_compose'] ?? \Data\FoldableWithIndex\phpurs_eval_thunk('Data_FoldableWithIndex_compose'));
+$__global_Data_Unit_unit = ($GLOBALS['Data_Unit_unit'] ?? \Data\Unit\phpurs_eval_thunk('Data_Unit_unit'));
 $__global_Data_Function_flip = ($GLOBALS['Data_Function_flip'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_flip'));
-$traverseWithIndex_1 = ($__global_Data_FoldableWithIndex_traverseWithIndex_)($dictApplicative);
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$apply1 = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_1;
+$applySecond = (function() use ($apply1, $map, $__global_Data_Function_const, $__global_Control_Apply_identity) {
+  $__fn = function($a, $b = null) use ($apply1, $map, $__global_Data_Function_const, $__global_Control_Apply_identity, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($b) use ($a, &$__fn) { return $__fn($a, $b); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($apply1)(($map)(($__global_Data_Function_const)($__global_Control_Apply_identity), $a), $b);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+$__case_0 = $dictApplicative;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pure = $__case_res_2;
+$traverseWithIndex_1 = (function() use ($__global_Data_FoldableWithIndex_compose, $applySecond, $pure, $__global_Data_Unit_unit) {
+  $__fn = function($dictFoldableWithIndex) use ($__global_Data_FoldableWithIndex_compose, $applySecond, $pure, $__global_Data_Unit_unit, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dictFoldableWithIndex;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->foldrWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldrWithIndex1 = $__case_res_3;
+    $__res = (function() use ($foldrWithIndex1, $__global_Data_FoldableWithIndex_compose, $applySecond, $pure, $__global_Data_Unit_unit) {
+  $__fn = function($f) use ($foldrWithIndex1, $__global_Data_FoldableWithIndex_compose, $applySecond, $pure, $__global_Data_Unit_unit, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($foldrWithIndex1)((function() use ($__global_Data_FoldableWithIndex_compose, $applySecond, $f) {
+  $__fn = function($i) use ($__global_Data_FoldableWithIndex_compose, $applySecond, $f, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($__global_Data_FoldableWithIndex_compose)($applySecond, ($f)($i));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})(), ($pure)($__global_Data_Unit_unit));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
     $__res = (function() use ($__global_Data_Function_flip, $traverseWithIndex_1) {
   $__fn = function($dictFoldableWithIndex) use ($__global_Data_Function_flip, $traverseWithIndex_1, &$__fn) {
   $__num = func_num_args();
@@ -1315,7 +1904,15 @@ function Data_FoldableWithIndex_foldrDefault($dictFoldableWithIndex) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_Function_const = ($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const'));
-$foldrWithIndex1 = ($dictFoldableWithIndex)->foldrWithIndex;
+$__case_0 = $dictFoldableWithIndex;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldrWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldrWithIndex1 = $__case_res_0;
     $__res = (function() use ($foldrWithIndex1, $__global_Data_Function_const) {
   $__fn = function($f) use ($foldrWithIndex1, $__global_Data_Function_const, &$__fn) {
   $__num = func_num_args();
@@ -1360,7 +1957,15 @@ function Data_FoldableWithIndex_foldlDefault($dictFoldableWithIndex) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_Function_const = ($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const'));
-$foldlWithIndex1 = ($dictFoldableWithIndex)->foldlWithIndex;
+$__case_0 = $dictFoldableWithIndex;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldlWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldlWithIndex1 = $__case_res_0;
     $__res = (function() use ($foldlWithIndex1, $__global_Data_Function_const) {
   $__fn = function($f) use ($foldlWithIndex1, $__global_Data_Function_const, &$__fn) {
   $__num = func_num_args();
@@ -1395,17 +2000,40 @@ function Data_FoldableWithIndex_foldWithIndexM($dictFoldableWithIndex) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Function_flip = ($GLOBALS['Data_Function_flip'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_flip'));
-$foldlWithIndex1 = ($dictFoldableWithIndex)->foldlWithIndex;
-    $__res = (function() use ($__global_Prim_undefined, $foldlWithIndex1, $__global_Data_Function_flip) {
-  $__fn = function($dictMonad) use ($__global_Prim_undefined, $foldlWithIndex1, $__global_Data_Function_flip, &$__fn) {
+$__case_0 = $dictFoldableWithIndex;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldlWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldlWithIndex1 = $__case_res_0;
+    $__res = (function() use ($dict, $foldlWithIndex1, $__global_Data_Function_flip) {
+  $__fn = function($dictMonad) use ($dict, $foldlWithIndex1, $__global_Data_Function_flip, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$bind = ((($dictMonad)->Bind1)($__global_Prim_undefined))->bind;
-$pure = ((($dictMonad)->Applicative0)($__global_Prim_undefined))->pure;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->bind;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bind = $__case_res_1;
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pure = $__case_res_2;
     $__res = (function() use ($foldlWithIndex1, $bind, $__global_Data_Function_flip, $pure) {
   $__fn = function($f, $a0 = null) use ($foldlWithIndex1, $bind, $__global_Data_Function_flip, $pure, &$__fn) {
   $__num = func_num_args();
@@ -1450,16 +2078,39 @@ function Data_FoldableWithIndex_foldMapWithIndexDefaultR($dictFoldableWithIndex)
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$foldrWithIndex1 = ($dictFoldableWithIndex)->foldrWithIndex;
-    $__res = (function() use ($__global_Prim_undefined, $foldrWithIndex1) {
-  $__fn = function($dictMonoid) use ($__global_Prim_undefined, $foldrWithIndex1, &$__fn) {
+$__case_0 = $dictFoldableWithIndex;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldrWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldrWithIndex1 = $__case_res_0;
+    $__res = (function() use ($dict, $foldrWithIndex1) {
+  $__fn = function($dictMonoid) use ($dict, $foldrWithIndex1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$append = ((($dictMonoid)->Semigroup0)($__global_Prim_undefined))->append;
-$mempty = ($dictMonoid)->mempty;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append = $__case_res_1;
+$__case_0 = $dictMonoid;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->mempty;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$mempty = $__case_res_2;
     $__res = (function() use ($foldrWithIndex1, $append, $mempty) {
   $__fn = function($f) use ($foldrWithIndex1, $append, $mempty, &$__fn) {
   $__num = func_num_args();
@@ -1504,16 +2155,39 @@ function Data_FoldableWithIndex_foldMapWithIndexDefaultL($dictFoldableWithIndex)
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$foldlWithIndex1 = ($dictFoldableWithIndex)->foldlWithIndex;
-    $__res = (function() use ($__global_Prim_undefined, $foldlWithIndex1) {
-  $__fn = function($dictMonoid) use ($__global_Prim_undefined, $foldlWithIndex1, &$__fn) {
+$__case_0 = $dictFoldableWithIndex;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldlWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldlWithIndex1 = $__case_res_0;
+    $__res = (function() use ($dict, $foldlWithIndex1) {
+  $__fn = function($dictMonoid) use ($dict, $foldlWithIndex1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$append = ((($dictMonoid)->Semigroup0)($__global_Prim_undefined))->append;
-$mempty = ($dictMonoid)->mempty;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append = $__case_res_1;
+$__case_0 = $dictMonoid;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->mempty;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$mempty = $__case_res_2;
     $__res = (function() use ($foldlWithIndex1, $append, $mempty) {
   $__fn = function($f) use ($foldlWithIndex1, $append, $mempty, &$__fn) {
   $__num = func_num_args();
@@ -1578,12 +2252,154 @@ function Data_FoldableWithIndex_foldableWithIndexApp($dictFoldableWithIndex) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Foldable_foldableApp = ($GLOBALS['Data_Foldable_foldableApp'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableApp'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$foldrWithIndex1 = ($dictFoldableWithIndex)->foldrWithIndex;
-$foldlWithIndex1 = ($dictFoldableWithIndex)->foldlWithIndex;
-$foldMapWithIndex1 = ($dictFoldableWithIndex)->foldMapWithIndex;
-$foldableApp = ($__global_Data_Foldable_foldableApp)((($dictFoldableWithIndex)->Foldable0)($__global_Prim_undefined));
+$__case_0 = $dictFoldableWithIndex;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldrWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldrWithIndex1 = $__case_res_0;
+$__case_0 = $dictFoldableWithIndex;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->foldlWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldlWithIndex1 = $__case_res_1;
+$__case_0 = $dictFoldableWithIndex;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->foldMapWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldMapWithIndex1 = $__case_res_2;
+$__case_0 = $dict;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->foldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldr3 = $__case_res_3;
+$__case_0 = $dict;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->foldl;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldl3 = $__case_res_4;
+$__case_0 = $dict;
+$__case_res_5 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_5 = ($v)->foldMap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldMap2 = $__case_res_5;
+$foldableApp = (object)["foldr" => (function() use ($foldr3) {
+  $__body = function($f, $i, $v) use ($foldr3) {
+    $__case_0 = $f;
+    $__case_1 = $i;
+    $__case_2 = $v;
+    if (true) {
+$f1 = $__case_0;
+$i1 = $__case_1;
+$x = $__case_2;
+return ($foldr3)($f1, $i1, $x);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $i = null, $v = null) use ($foldr3, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($v) use ($f, $i, &$__fn) { return $__fn($f, $i, $v); };
+    if ($__num === 1) return function($i, $v = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $i, $v);
+      if ($__num2 === 1) return function($v) use ($f, $i, &$__fn) { return $__fn($f, $i, $v); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = $__body($f, $i, $v);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})(), "foldl" => (function() use ($foldl3) {
+  $__body = function($f, $i, $v) use ($foldl3) {
+    $__case_0 = $f;
+    $__case_1 = $i;
+    $__case_2 = $v;
+    if (true) {
+$f1 = $__case_0;
+$i1 = $__case_1;
+$x = $__case_2;
+return ($foldl3)($f1, $i1, $x);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $i = null, $v = null) use ($foldl3, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($v) use ($f, $i, &$__fn) { return $__fn($f, $i, $v); };
+    if ($__num === 1) return function($i, $v = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $i, $v);
+      if ($__num2 === 1) return function($v) use ($f, $i, &$__fn) { return $__fn($f, $i, $v); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = $__body($f, $i, $v);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})(), "foldMap" => (function() use ($foldMap2) {
+  $__fn = function($dictMonoid) use ($foldMap2, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$foldMap3 = ($foldMap2)($dictMonoid);
+    $__res = (function() use ($foldMap3) {
+  $__body = function($f, $v) use ($foldMap3) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    if (true) {
+$f1 = $__case_0;
+$x = $__case_1;
+return ($foldMap3)($f1, $x);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $v = null) use ($foldMap3, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, &$__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($f, $v);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
     $__res = (object)["foldrWithIndex" => (function() use ($foldrWithIndex1) {
   $__body = function($f, $z, $v) use ($foldrWithIndex1) {
     $__case_0 = $f;
@@ -1699,24 +2515,229 @@ function Data_FoldableWithIndex_foldableWithIndexCompose($dictFoldableWithIndex)
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Foldable_foldableCompose = ($GLOBALS['Data_Foldable_foldableCompose'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableCompose'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Function_flip = ($GLOBALS['Data_Function_flip'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_flip'));
+$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Tuple_curry = ($GLOBALS['Data_Tuple_curry'] ?? \Data\Tuple\phpurs_eval_thunk('Data_Tuple_curry'));
 $__global_Data_FoldableWithIndex_compose = ($GLOBALS['Data_FoldableWithIndex_compose'] ?? \Data\FoldableWithIndex\phpurs_eval_thunk('Data_FoldableWithIndex_compose'));
-$foldrWithIndex1 = ($dictFoldableWithIndex)->foldrWithIndex;
-$foldlWithIndex1 = ($dictFoldableWithIndex)->foldlWithIndex;
-$foldMapWithIndex1 = ($dictFoldableWithIndex)->foldMapWithIndex;
-$foldableCompose = ($__global_Data_Foldable_foldableCompose)((($dictFoldableWithIndex)->Foldable0)($__global_Prim_undefined));
+$__case_0 = $dictFoldableWithIndex;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldrWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldrWithIndex1 = $__case_res_0;
+$__case_0 = $dictFoldableWithIndex;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->foldlWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldlWithIndex1 = $__case_res_1;
+$__case_0 = $dictFoldableWithIndex;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->foldMapWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldMapWithIndex1 = $__case_res_2;
+$__case_0 = $dict;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->foldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldr3 = $__case_res_3;
+$__case_0 = $dict;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->foldl;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldl3 = $__case_res_4;
+$__case_0 = $dict;
+$__case_res_5 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_5 = ($v)->foldMap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldMap2 = $__case_res_5;
+$foldableCompose = (function() use ($foldr3, $__global_Data_Function_flip, $foldl3, $foldMap2) {
+  $__fn = function($dictFoldable1) use ($foldr3, $__global_Data_Function_flip, $foldl3, $foldMap2, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dictFoldable1;
+$__case_res_6 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_6 = ($v)->foldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldr4 = $__case_res_6;
+$__case_0 = $dictFoldable1;
+$__case_res_7 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_7 = ($v)->foldl;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldl4 = $__case_res_7;
+$__case_0 = $dictFoldable1;
+$__case_res_8 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_8 = ($v)->foldMap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldMap3 = $__case_res_8;
+    $__res = (object)["foldr" => (function() use ($foldr3, $__global_Data_Function_flip, $foldr4) {
+  $__body = function($f, $i, $v) use ($foldr3, $__global_Data_Function_flip, $foldr4) {
+    $__case_0 = $f;
+    $__case_1 = $i;
+    $__case_2 = $v;
+    if (true) {
+$f1 = $__case_0;
+$i1 = $__case_1;
+$fga = $__case_2;
+return ($foldr3)(($__global_Data_Function_flip)(($foldr4)($f1)), $i1, $fga);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $i = null, $v = null) use ($foldr3, $__global_Data_Function_flip, $foldr4, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($v) use ($f, $i, &$__fn) { return $__fn($f, $i, $v); };
+    if ($__num === 1) return function($i, $v = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $i, $v);
+      if ($__num2 === 1) return function($v) use ($f, $i, &$__fn) { return $__fn($f, $i, $v); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = $__body($f, $i, $v);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})(), "foldl" => (function() use ($foldl3, $foldl4) {
+  $__body = function($f, $i, $v) use ($foldl3, $foldl4) {
+    $__case_0 = $f;
+    $__case_1 = $i;
+    $__case_2 = $v;
+    if (true) {
+$f1 = $__case_0;
+$i1 = $__case_1;
+$fga = $__case_2;
+return ($foldl3)(($foldl4)($f1), $i1, $fga);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $i = null, $v = null) use ($foldl3, $foldl4, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($v) use ($f, $i, &$__fn) { return $__fn($f, $i, $v); };
+    if ($__num === 1) return function($i, $v = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $i, $v);
+      if ($__num2 === 1) return function($v) use ($f, $i, &$__fn) { return $__fn($f, $i, $v); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = $__body($f, $i, $v);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})(), "foldMap" => (function() use ($foldMap2, $foldMap3) {
+  $__fn = function($dictMonoid) use ($foldMap2, $foldMap3, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$foldMap4 = ($foldMap2)($dictMonoid);
+$foldMap5 = ($foldMap3)($dictMonoid);
+    $__res = (function() use ($foldMap4, $foldMap5) {
+  $__body = function($f, $v) use ($foldMap4, $foldMap5) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    if (true) {
+$f1 = $__case_0;
+$fga = $__case_1;
+return ($foldMap4)(($foldMap5)($f1), $fga);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $v = null) use ($foldMap4, $foldMap5, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, &$__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($f, $v);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
     $__res = (function() use ($foldableCompose, $__global_Prim_undefined, $foldrWithIndex1, $__global_Data_Function_flip, $__global_Data_Tuple_curry, $foldlWithIndex1, $__global_Data_FoldableWithIndex_compose, $foldMapWithIndex1) {
   $__fn = function($dictFoldableWithIndex1) use ($foldableCompose, $__global_Prim_undefined, $foldrWithIndex1, $__global_Data_Function_flip, $__global_Data_Tuple_curry, $foldlWithIndex1, $__global_Data_FoldableWithIndex_compose, $foldMapWithIndex1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$foldrWithIndex2 = ($dictFoldableWithIndex1)->foldrWithIndex;
-$foldlWithIndex2 = ($dictFoldableWithIndex1)->foldlWithIndex;
-$foldMapWithIndex2 = ($dictFoldableWithIndex1)->foldMapWithIndex;
+$__case_0 = $dictFoldableWithIndex1;
+$__case_res_9 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_9 = ($v)->foldrWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldrWithIndex2 = $__case_res_9;
+$__case_0 = $dictFoldableWithIndex1;
+$__case_res_10 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_10 = ($v)->foldlWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldlWithIndex2 = $__case_res_10;
+$__case_0 = $dictFoldableWithIndex1;
+$__case_res_11 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_11 = ($v)->foldMapWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldMapWithIndex2 = $__case_res_11;
 $foldableCompose1 = ($foldableCompose)((($dictFoldableWithIndex1)->Foldable0)($__global_Prim_undefined));
     $__res = (object)["foldrWithIndex" => (function() use ($foldrWithIndex1, $__global_Data_Function_flip, $foldrWithIndex2, $__global_Data_Tuple_curry) {
   $__body = function($f, $i, $v) use ($foldrWithIndex1, $__global_Data_Function_flip, $foldrWithIndex2, $__global_Data_Tuple_curry) {
@@ -1848,23 +2869,178 @@ function Data_FoldableWithIndex_foldableWithIndexCoproduct($dictFoldableWithInde
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Foldable_foldableCoproduct = ($GLOBALS['Data_Foldable_foldableCoproduct'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableCoproduct'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Functor_Coproduct_coproduct = ($GLOBALS['Data_Functor_Coproduct_coproduct'] ?? \Data\Functor\Coproduct\phpurs_eval_thunk('Data_Functor_Coproduct_coproduct'));
+$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_FoldableWithIndex_compose = ($GLOBALS['Data_FoldableWithIndex_compose'] ?? \Data\FoldableWithIndex\phpurs_eval_thunk('Data_FoldableWithIndex_compose'));
-$foldrWithIndex1 = ($dictFoldableWithIndex)->foldrWithIndex;
-$foldlWithIndex1 = ($dictFoldableWithIndex)->foldlWithIndex;
-$foldMapWithIndex1 = ($dictFoldableWithIndex)->foldMapWithIndex;
-$foldableCoproduct = ($__global_Data_Foldable_foldableCoproduct)((($dictFoldableWithIndex)->Foldable0)($__global_Prim_undefined));
+$__case_0 = $dictFoldableWithIndex;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldrWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldrWithIndex1 = $__case_res_0;
+$__case_0 = $dictFoldableWithIndex;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->foldlWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldlWithIndex1 = $__case_res_1;
+$__case_0 = $dictFoldableWithIndex;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->foldMapWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldMapWithIndex1 = $__case_res_2;
+$__case_0 = $dict;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->foldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldr3 = $__case_res_3;
+$__case_0 = $dict;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->foldl;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldl3 = $__case_res_4;
+$__case_0 = $dict;
+$__case_res_5 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_5 = ($v)->foldMap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldMap2 = $__case_res_5;
+$foldableCoproduct = (function() use ($__global_Data_Functor_Coproduct_coproduct, $foldr3, $foldl3, $foldMap2) {
+  $__fn = function($dictFoldable1) use ($__global_Data_Functor_Coproduct_coproduct, $foldr3, $foldl3, $foldMap2, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dictFoldable1;
+$__case_res_6 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_6 = ($v)->foldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldr4 = $__case_res_6;
+$__case_0 = $dictFoldable1;
+$__case_res_7 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_7 = ($v)->foldl;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldl4 = $__case_res_7;
+$__case_0 = $dictFoldable1;
+$__case_res_8 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_8 = ($v)->foldMap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldMap3 = $__case_res_8;
+    $__res = (object)["foldr" => (function() use ($__global_Data_Functor_Coproduct_coproduct, $foldr3, $foldr4) {
+  $__fn = function($f, $z = null) use ($__global_Data_Functor_Coproduct_coproduct, $foldr3, $foldr4, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($z) use ($f, &$__fn) { return $__fn($f, $z); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($__global_Data_Functor_Coproduct_coproduct)(($foldr3)($f, $z), ($foldr4)($f, $z));
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "foldl" => (function() use ($__global_Data_Functor_Coproduct_coproduct, $foldl3, $foldl4) {
+  $__fn = function($f, $z = null) use ($__global_Data_Functor_Coproduct_coproduct, $foldl3, $foldl4, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($z) use ($f, &$__fn) { return $__fn($f, $z); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($__global_Data_Functor_Coproduct_coproduct)(($foldl3)($f, $z), ($foldl4)($f, $z));
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "foldMap" => (function() use ($foldMap2, $foldMap3, $__global_Data_Functor_Coproduct_coproduct) {
+  $__fn = function($dictMonoid) use ($foldMap2, $foldMap3, $__global_Data_Functor_Coproduct_coproduct, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$foldMap4 = ($foldMap2)($dictMonoid);
+$foldMap5 = ($foldMap3)($dictMonoid);
+    $__res = (function() use ($__global_Data_Functor_Coproduct_coproduct, $foldMap4, $foldMap5) {
+  $__fn = function($f) use ($__global_Data_Functor_Coproduct_coproduct, $foldMap4, $foldMap5, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($__global_Data_Functor_Coproduct_coproduct)(($foldMap4)($f), ($foldMap5)($f));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
     $__res = (function() use ($foldableCoproduct, $__global_Prim_undefined, $__global_Data_Functor_Coproduct_coproduct, $foldrWithIndex1, $__global_Data_FoldableWithIndex_compose, $foldlWithIndex1, $foldMapWithIndex1) {
   $__fn = function($dictFoldableWithIndex1) use ($foldableCoproduct, $__global_Prim_undefined, $__global_Data_Functor_Coproduct_coproduct, $foldrWithIndex1, $__global_Data_FoldableWithIndex_compose, $foldlWithIndex1, $foldMapWithIndex1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$foldrWithIndex2 = ($dictFoldableWithIndex1)->foldrWithIndex;
-$foldlWithIndex2 = ($dictFoldableWithIndex1)->foldlWithIndex;
-$foldMapWithIndex2 = ($dictFoldableWithIndex1)->foldMapWithIndex;
+$__case_0 = $dictFoldableWithIndex1;
+$__case_res_9 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_9 = ($v)->foldrWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldrWithIndex2 = $__case_res_9;
+$__case_0 = $dictFoldableWithIndex1;
+$__case_res_10 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_10 = ($v)->foldlWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldlWithIndex2 = $__case_res_10;
+$__case_0 = $dictFoldableWithIndex1;
+$__case_res_11 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_11 = ($v)->foldMapWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldMapWithIndex2 = $__case_res_11;
 $foldableCoproduct1 = ($foldableCoproduct)((($dictFoldableWithIndex1)->Foldable0)($__global_Prim_undefined));
     $__res = (object)["foldrWithIndex" => (function() use ($__global_Data_Functor_Coproduct_coproduct, $foldrWithIndex1, $__global_Data_FoldableWithIndex_compose, $foldrWithIndex2) {
   $__fn = function($f, $z = null) use ($__global_Data_Functor_Coproduct_coproduct, $foldrWithIndex1, $__global_Data_FoldableWithIndex_compose, $foldrWithIndex2, &$__fn) {
@@ -1996,22 +3172,248 @@ function Data_FoldableWithIndex_foldableWithIndexProduct($dictFoldableWithIndex)
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Foldable_foldableProduct = ($GLOBALS['Data_Foldable_foldableProduct'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableProduct'));
 $__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_FoldableWithIndex_compose = ($GLOBALS['Data_FoldableWithIndex_compose'] ?? \Data\FoldableWithIndex\phpurs_eval_thunk('Data_FoldableWithIndex_compose'));
-$foldrWithIndex1 = ($dictFoldableWithIndex)->foldrWithIndex;
-$foldlWithIndex1 = ($dictFoldableWithIndex)->foldlWithIndex;
-$foldMapWithIndex1 = ($dictFoldableWithIndex)->foldMapWithIndex;
-$foldableProduct = ($__global_Data_Foldable_foldableProduct)((($dictFoldableWithIndex)->Foldable0)($__global_Prim_undefined));
-    $__res = (function() use ($foldableProduct, $__global_Prim_undefined, $foldrWithIndex1, $__global_Data_FoldableWithIndex_compose, $foldlWithIndex1, $foldMapWithIndex1) {
-  $__fn = function($dictFoldableWithIndex1) use ($foldableProduct, $__global_Prim_undefined, $foldrWithIndex1, $__global_Data_FoldableWithIndex_compose, $foldlWithIndex1, $foldMapWithIndex1, &$__fn) {
+$__case_0 = $dictFoldableWithIndex;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldrWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldrWithIndex1 = $__case_res_0;
+$__case_0 = $dictFoldableWithIndex;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->foldlWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldlWithIndex1 = $__case_res_1;
+$__case_0 = $dictFoldableWithIndex;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->foldMapWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldMapWithIndex1 = $__case_res_2;
+$__case_0 = $dict;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->foldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldr3 = $__case_res_3;
+$__case_0 = $dict;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->foldl;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldl3 = $__case_res_4;
+$__case_0 = $dict;
+$__case_res_5 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_5 = ($v)->foldMap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldMap2 = $__case_res_5;
+$foldableProduct = (function() use ($foldr3, $foldl3, $dict, $foldMap2) {
+  $__fn = function($dictFoldable1) use ($foldr3, $foldl3, $dict, $foldMap2, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$foldrWithIndex2 = ($dictFoldableWithIndex1)->foldrWithIndex;
-$foldlWithIndex2 = ($dictFoldableWithIndex1)->foldlWithIndex;
-$foldMapWithIndex2 = ($dictFoldableWithIndex1)->foldMapWithIndex;
+$__case_0 = $dictFoldable1;
+$__case_res_6 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_6 = ($v)->foldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldr4 = $__case_res_6;
+$__case_0 = $dictFoldable1;
+$__case_res_7 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_7 = ($v)->foldl;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldl4 = $__case_res_7;
+$__case_0 = $dictFoldable1;
+$__case_res_8 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_8 = ($v)->foldMap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldMap3 = $__case_res_8;
+    $__res = (object)["foldr" => (function() use ($foldr3, $foldr4) {
+  $__body = function($f, $z, $v) use ($foldr3, $foldr4) {
+    $__case_0 = $f;
+    $__case_1 = $z;
+    $__case_2 = $v;
+    switch (($__case_2)->tag) {
+case "Tuple":
+$f1 = $__case_0;
+$z1 = $__case_1;
+$fa = ($__case_2)->v0;
+$ga = ($__case_2)->v1;
+return ($foldr3)($f1, ($foldr4)($f1, $z1, $ga), $fa);
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($f, $z = null, $v = null) use ($foldr3, $foldr4, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($v) use ($f, $z, &$__fn) { return $__fn($f, $z, $v); };
+    if ($__num === 1) return function($z, $v = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $z, $v);
+      if ($__num2 === 1) return function($v) use ($f, $z, &$__fn) { return $__fn($f, $z, $v); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = $__body($f, $z, $v);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})(), "foldl" => (function() use ($foldl4, $foldl3) {
+  $__body = function($f, $z, $v) use ($foldl4, $foldl3) {
+    $__case_0 = $f;
+    $__case_1 = $z;
+    $__case_2 = $v;
+    switch (($__case_2)->tag) {
+case "Tuple":
+$f1 = $__case_0;
+$z1 = $__case_1;
+$fa = ($__case_2)->v0;
+$ga = ($__case_2)->v1;
+return ($foldl4)($f1, ($foldl3)($f1, $z1, $fa), $ga);
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($f, $z = null, $v = null) use ($foldl4, $foldl3, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($v) use ($f, $z, &$__fn) { return $__fn($f, $z, $v); };
+    if ($__num === 1) return function($z, $v = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $z, $v);
+      if ($__num2 === 1) return function($v) use ($f, $z, &$__fn) { return $__fn($f, $z, $v); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = $__body($f, $z, $v);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})(), "foldMap" => (function() use ($dict, $foldMap2, $foldMap3) {
+  $__fn = function($dictMonoid) use ($dict, $foldMap2, $foldMap3, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dict;
+$__case_res_9 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_9 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append = $__case_res_9;
+$foldMap4 = ($foldMap2)($dictMonoid);
+$foldMap5 = ($foldMap3)($dictMonoid);
+    $__res = (function() use ($append, $foldMap4, $foldMap5) {
+  $__body = function($f, $v) use ($append, $foldMap4, $foldMap5) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    switch (($__case_1)->tag) {
+case "Tuple":
+$f1 = $__case_0;
+$fa = ($__case_1)->v0;
+$ga = ($__case_1)->v1;
+return ($append)(($foldMap4)($f1, $fa), ($foldMap5)($f1, $ga));
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($f, $v = null) use ($append, $foldMap4, $foldMap5, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, &$__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($f, $v);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+    $__res = (function() use ($foldableProduct, $__global_Prim_undefined, $foldrWithIndex1, $__global_Data_FoldableWithIndex_compose, $foldlWithIndex1, $dict, $foldMapWithIndex1) {
+  $__fn = function($dictFoldableWithIndex1) use ($foldableProduct, $__global_Prim_undefined, $foldrWithIndex1, $__global_Data_FoldableWithIndex_compose, $foldlWithIndex1, $dict, $foldMapWithIndex1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dictFoldableWithIndex1;
+$__case_res_10 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_10 = ($v)->foldrWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldrWithIndex2 = $__case_res_10;
+$__case_0 = $dictFoldableWithIndex1;
+$__case_res_11 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_11 = ($v)->foldlWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldlWithIndex2 = $__case_res_11;
+$__case_0 = $dictFoldableWithIndex1;
+$__case_res_12 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_12 = ($v)->foldMapWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldMapWithIndex2 = $__case_res_12;
 $foldableProduct1 = ($foldableProduct)((($dictFoldableWithIndex1)->Foldable0)($__global_Prim_undefined));
     $__res = (object)["foldrWithIndex" => (function() use ($foldrWithIndex1, $__global_Data_FoldableWithIndex_compose, $foldrWithIndex2) {
   $__body = function($f, $z, $v) use ($foldrWithIndex1, $__global_Data_FoldableWithIndex_compose, $foldrWithIndex2) {
@@ -2121,13 +3523,21 @@ break;
   return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
   };
   return $__fn;
-})(), "foldMapWithIndex" => (function() use ($__global_Prim_undefined, $foldMapWithIndex1, $foldMapWithIndex2, $__global_Data_FoldableWithIndex_compose) {
-  $__fn = function($dictMonoid) use ($__global_Prim_undefined, $foldMapWithIndex1, $foldMapWithIndex2, $__global_Data_FoldableWithIndex_compose, &$__fn) {
+})(), "foldMapWithIndex" => (function() use ($dict, $foldMapWithIndex1, $foldMapWithIndex2, $__global_Data_FoldableWithIndex_compose) {
+  $__fn = function($dictMonoid) use ($dict, $foldMapWithIndex1, $foldMapWithIndex2, $__global_Data_FoldableWithIndex_compose, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$append = ((($dictMonoid)->Semigroup0)($__global_Prim_undefined))->append;
+$__case_0 = $dict;
+$__case_res_13 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_13 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append = $__case_res_13;
 $foldMapWithIndex3 = ($foldMapWithIndex1)($dictMonoid);
 $foldMapWithIndex4 = ($foldMapWithIndex2)($dictMonoid);
     $__res = (function() use ($append, $foldMapWithIndex3, $__global_Data_FoldableWithIndex_compose, $foldMapWithIndex4) {
@@ -2212,7 +3622,15 @@ $__global_Data_FoldableWithIndex_compose = ($GLOBALS['Data_FoldableWithIndex_com
 $__global_Data_Monoid_Dual_Dual = ($GLOBALS['Data_Monoid_Dual_Dual'] ?? \Data\Monoid\Dual\phpurs_eval_thunk('Data_Monoid_Dual_Dual'));
 $__global_Data_Monoid_Endo_Endo = ($GLOBALS['Data_Monoid_Endo_Endo'] ?? \Data\Monoid\Endo\phpurs_eval_thunk('Data_Monoid_Endo_Endo'));
 $__global_Data_Function_flip = ($GLOBALS['Data_Function_flip'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_flip'));
-$foldMapWithIndex1 = (($dictFoldableWithIndex)->foldMapWithIndex)($__global_Data_FoldableWithIndex_monoidDual);
+$__case_0 = $dictFoldableWithIndex;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldMapWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldMapWithIndex1 = ($__case_res_0)($__global_Data_FoldableWithIndex_monoidDual);
     $__res = (function() use ($__global_Data_FoldableWithIndex_unwrap, $foldMapWithIndex1, $__global_Data_FoldableWithIndex_compose, $__global_Data_Monoid_Dual_Dual, $__global_Data_Monoid_Endo_Endo, $__global_Data_Function_flip) {
   $__fn = function($c, $u = null, $xs = null) use ($__global_Data_FoldableWithIndex_unwrap, $foldMapWithIndex1, $__global_Data_FoldableWithIndex_compose, $__global_Data_Monoid_Dual_Dual, $__global_Data_Monoid_Endo_Endo, $__global_Data_Function_flip, &$__fn) {
   $__num = func_num_args();
@@ -2256,7 +3674,15 @@ $__global_Data_FoldableWithIndex_monoidEndo = ($GLOBALS['Data_FoldableWithIndex_
 $__global_Data_FoldableWithIndex_unwrap = ($GLOBALS['Data_FoldableWithIndex_unwrap'] ?? \Data\FoldableWithIndex\phpurs_eval_thunk('Data_FoldableWithIndex_unwrap'));
 $__global_Data_FoldableWithIndex_compose = ($GLOBALS['Data_FoldableWithIndex_compose'] ?? \Data\FoldableWithIndex\phpurs_eval_thunk('Data_FoldableWithIndex_compose'));
 $__global_Data_Monoid_Endo_Endo = ($GLOBALS['Data_Monoid_Endo_Endo'] ?? \Data\Monoid\Endo\phpurs_eval_thunk('Data_Monoid_Endo_Endo'));
-$foldMapWithIndex1 = (($dictFoldableWithIndex)->foldMapWithIndex)($__global_Data_FoldableWithIndex_monoidEndo);
+$__case_0 = $dictFoldableWithIndex;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldMapWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldMapWithIndex1 = ($__case_res_0)($__global_Data_FoldableWithIndex_monoidEndo);
     $__res = (function() use ($__global_Data_FoldableWithIndex_unwrap, $foldMapWithIndex1, $__global_Data_FoldableWithIndex_compose, $__global_Data_Monoid_Endo_Endo) {
   $__fn = function($c, $u = null, $xs = null) use ($__global_Data_FoldableWithIndex_unwrap, $foldMapWithIndex1, $__global_Data_FoldableWithIndex_compose, $__global_Data_Monoid_Endo_Endo, &$__fn) {
   $__num = func_num_args();
@@ -2298,14 +3724,30 @@ function Data_FoldableWithIndex_surroundMapWithIndex($dictFoldableWithIndex) {
   }
 $__global_Data_FoldableWithIndex_monoidEndo = ($GLOBALS['Data_FoldableWithIndex_monoidEndo'] ?? \Data\FoldableWithIndex\phpurs_eval_thunk('Data_FoldableWithIndex_monoidEndo'));
 $__global_Data_FoldableWithIndex_unwrap = ($GLOBALS['Data_FoldableWithIndex_unwrap'] ?? \Data\FoldableWithIndex\phpurs_eval_thunk('Data_FoldableWithIndex_unwrap'));
-$foldMapWithIndex1 = (($dictFoldableWithIndex)->foldMapWithIndex)($__global_Data_FoldableWithIndex_monoidEndo);
+$__case_0 = $dictFoldableWithIndex;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldMapWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldMapWithIndex1 = ($__case_res_0)($__global_Data_FoldableWithIndex_monoidEndo);
     $__res = (function() use ($__global_Data_FoldableWithIndex_unwrap, $foldMapWithIndex1) {
   $__fn = function($dictSemigroup) use ($__global_Data_FoldableWithIndex_unwrap, $foldMapWithIndex1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$append = ($dictSemigroup)->append;
+$__case_0 = $dictSemigroup;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append = $__case_res_1;
     $__res = (function() use ($append, $__global_Data_FoldableWithIndex_unwrap, $foldMapWithIndex1) {
   $__fn = function($d, $t = null, $f = null) use ($append, $__global_Data_FoldableWithIndex_unwrap, $foldMapWithIndex1, &$__fn) {
   $__num = func_num_args();
@@ -2358,7 +3800,15 @@ function Data_FoldableWithIndex_foldMapDefault($dictFoldableWithIndex) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_Function_const = ($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const'));
-$foldMapWithIndex1 = ($dictFoldableWithIndex)->foldMapWithIndex;
+$__case_0 = $dictFoldableWithIndex;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldMapWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldMapWithIndex1 = $__case_res_0;
     $__res = (function() use ($foldMapWithIndex1, $__global_Data_Function_const) {
   $__fn = function($dictMonoid) use ($foldMapWithIndex1, $__global_Data_Function_const, &$__fn) {
   $__num = func_num_args();
@@ -2392,7 +3842,15 @@ function Data_FoldableWithIndex_findWithIndex($dictFoldableWithIndex) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$foldlWithIndex1 = ($dictFoldableWithIndex)->foldlWithIndex;
+$__case_0 = $dictFoldableWithIndex;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldlWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldlWithIndex1 = $__case_res_0;
     $__res = (function() use ($foldlWithIndex1) {
   $__fn = function($p) use ($foldlWithIndex1, &$__fn) {
   $__num = func_num_args();
@@ -2449,7 +3907,15 @@ function Data_FoldableWithIndex_findMapWithIndex($dictFoldableWithIndex) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$foldlWithIndex1 = ($dictFoldableWithIndex)->foldlWithIndex;
+$__case_0 = $dictFoldableWithIndex;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldlWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldlWithIndex1 = $__case_res_0;
     $__res = (function() use ($foldlWithIndex1) {
   $__fn = function($f) use ($foldlWithIndex1, &$__fn) {
   $__num = func_num_args();
@@ -2506,18 +3972,75 @@ function Data_FoldableWithIndex_anyWithIndex($dictFoldableWithIndex) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Monoid_Disj_monoidDisj = ($GLOBALS['Data_Monoid_Disj_monoidDisj'] ?? \Data\Monoid\Disj\phpurs_eval_thunk('Data_Monoid_Disj_monoidDisj'));
 $__global_Data_FoldableWithIndex_compose = ($GLOBALS['Data_FoldableWithIndex_compose'] ?? \Data\FoldableWithIndex\phpurs_eval_thunk('Data_FoldableWithIndex_compose'));
 $__global_Data_FoldableWithIndex_unwrap = ($GLOBALS['Data_FoldableWithIndex_unwrap'] ?? \Data\FoldableWithIndex\phpurs_eval_thunk('Data_FoldableWithIndex_unwrap'));
 $__global_Data_Monoid_Disj_Disj = ($GLOBALS['Data_Monoid_Disj_Disj'] ?? \Data\Monoid\Disj\phpurs_eval_thunk('Data_Monoid_Disj_Disj'));
-$foldMapWithIndex1 = ($dictFoldableWithIndex)->foldMapWithIndex;
-    $__res = (function() use ($foldMapWithIndex1, $__global_Data_Monoid_Disj_monoidDisj, $__global_Data_FoldableWithIndex_compose, $__global_Data_FoldableWithIndex_unwrap, $__global_Data_Monoid_Disj_Disj) {
-  $__fn = function($dictHeytingAlgebra) use ($foldMapWithIndex1, $__global_Data_Monoid_Disj_monoidDisj, $__global_Data_FoldableWithIndex_compose, $__global_Data_FoldableWithIndex_unwrap, $__global_Data_Monoid_Disj_Disj, &$__fn) {
+$__case_0 = $dictFoldableWithIndex;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldMapWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldMapWithIndex1 = $__case_res_0;
+    $__res = (function() use ($foldMapWithIndex1, $__global_Data_FoldableWithIndex_compose, $__global_Data_FoldableWithIndex_unwrap, $__global_Data_Monoid_Disj_Disj) {
+  $__fn = function($dictHeytingAlgebra) use ($foldMapWithIndex1, $__global_Data_FoldableWithIndex_compose, $__global_Data_FoldableWithIndex_unwrap, $__global_Data_Monoid_Disj_Disj, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$foldMapWithIndex2 = ($foldMapWithIndex1)(($__global_Data_Monoid_Disj_monoidDisj)($dictHeytingAlgebra));
+$__case_0 = $dictHeytingAlgebra;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->disj;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$disj = $__case_res_1;
+$semigroupDisj1 = (object)["append" => (function() use ($disj) {
+  $__body = function($v, $v1) use ($disj) {
+    $__case_0 = $v;
+    $__case_1 = $v1;
+    if (true) {
+$a = $__case_0;
+$b = $__case_1;
+return ($disj)($a, $b);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($v, $v1 = null) use ($disj, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($v, $v1);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+$__case_0 = $dictHeytingAlgebra;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->ff;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldMapWithIndex2 = ($foldMapWithIndex1)((object)["mempty" => $__case_res_2, "Semigroup0" => (function() use ($semigroupDisj1) {
+  $__fn = function($__dollar____unused) use ($semigroupDisj1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $semigroupDisj1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()]);
     $__res = (function() use ($__global_Data_FoldableWithIndex_compose, $__global_Data_FoldableWithIndex_unwrap, $foldMapWithIndex2, $__global_Data_Monoid_Disj_Disj) {
   $__fn = function($t) use ($__global_Data_FoldableWithIndex_compose, $__global_Data_FoldableWithIndex_unwrap, $foldMapWithIndex2, $__global_Data_Monoid_Disj_Disj, &$__fn) {
   $__num = func_num_args();
@@ -2554,18 +4077,75 @@ function Data_FoldableWithIndex_allWithIndex($dictFoldableWithIndex) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Monoid_Conj_monoidConj = ($GLOBALS['Data_Monoid_Conj_monoidConj'] ?? \Data\Monoid\Conj\phpurs_eval_thunk('Data_Monoid_Conj_monoidConj'));
 $__global_Data_FoldableWithIndex_compose = ($GLOBALS['Data_FoldableWithIndex_compose'] ?? \Data\FoldableWithIndex\phpurs_eval_thunk('Data_FoldableWithIndex_compose'));
 $__global_Data_FoldableWithIndex_unwrap = ($GLOBALS['Data_FoldableWithIndex_unwrap'] ?? \Data\FoldableWithIndex\phpurs_eval_thunk('Data_FoldableWithIndex_unwrap'));
 $__global_Data_Monoid_Conj_Conj = ($GLOBALS['Data_Monoid_Conj_Conj'] ?? \Data\Monoid\Conj\phpurs_eval_thunk('Data_Monoid_Conj_Conj'));
-$foldMapWithIndex1 = ($dictFoldableWithIndex)->foldMapWithIndex;
-    $__res = (function() use ($foldMapWithIndex1, $__global_Data_Monoid_Conj_monoidConj, $__global_Data_FoldableWithIndex_compose, $__global_Data_FoldableWithIndex_unwrap, $__global_Data_Monoid_Conj_Conj) {
-  $__fn = function($dictHeytingAlgebra) use ($foldMapWithIndex1, $__global_Data_Monoid_Conj_monoidConj, $__global_Data_FoldableWithIndex_compose, $__global_Data_FoldableWithIndex_unwrap, $__global_Data_Monoid_Conj_Conj, &$__fn) {
+$__case_0 = $dictFoldableWithIndex;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldMapWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldMapWithIndex1 = $__case_res_0;
+    $__res = (function() use ($foldMapWithIndex1, $__global_Data_FoldableWithIndex_compose, $__global_Data_FoldableWithIndex_unwrap, $__global_Data_Monoid_Conj_Conj) {
+  $__fn = function($dictHeytingAlgebra) use ($foldMapWithIndex1, $__global_Data_FoldableWithIndex_compose, $__global_Data_FoldableWithIndex_unwrap, $__global_Data_Monoid_Conj_Conj, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$foldMapWithIndex2 = ($foldMapWithIndex1)(($__global_Data_Monoid_Conj_monoidConj)($dictHeytingAlgebra));
+$__case_0 = $dictHeytingAlgebra;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->conj;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$conj = $__case_res_1;
+$semigroupConj1 = (object)["append" => (function() use ($conj) {
+  $__body = function($v, $v1) use ($conj) {
+    $__case_0 = $v;
+    $__case_1 = $v1;
+    if (true) {
+$a = $__case_0;
+$b = $__case_1;
+return ($conj)($a, $b);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($v, $v1 = null) use ($conj, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($v, $v1);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+$__case_0 = $dictHeytingAlgebra;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->tt;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldMapWithIndex2 = ($foldMapWithIndex1)((object)["mempty" => $__case_res_2, "Semigroup0" => (function() use ($semigroupConj1) {
+  $__fn = function($__dollar____unused) use ($semigroupConj1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $semigroupConj1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()]);
     $__res = (function() use ($__global_Data_FoldableWithIndex_compose, $__global_Data_FoldableWithIndex_unwrap, $foldMapWithIndex2, $__global_Data_Monoid_Conj_Conj) {
   $__fn = function($t) use ($__global_Data_FoldableWithIndex_compose, $__global_Data_FoldableWithIndex_unwrap, $foldMapWithIndex2, $__global_Data_Monoid_Conj_Conj, &$__fn) {
   $__num = func_num_args();

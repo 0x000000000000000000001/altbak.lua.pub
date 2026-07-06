@@ -139,7 +139,15 @@ function Control_Monad_State_Class_put($dictMonadState) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_Unit_unit = ($GLOBALS['Data_Unit_unit'] ?? \Data\Unit\phpurs_eval_thunk('Data_Unit_unit'));
-$state1 = ($dictMonadState)->state;
+$__case_0 = $dictMonadState;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->state;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$state1 = $__case_res_0;
     $__res = (function() use ($state1, $__global_Data_Unit_unit) {
   $__fn = function($s) use ($state1, $__global_Data_Unit_unit, &$__fn) {
   $__num = func_num_args();
@@ -184,7 +192,15 @@ function Control_Monad_State_Class_modify_($dictMonadState) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_Unit_unit = ($GLOBALS['Data_Unit_unit'] ?? \Data\Unit\phpurs_eval_thunk('Data_Unit_unit'));
-$state1 = ($dictMonadState)->state;
+$__case_0 = $dictMonadState;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->state;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$state1 = $__case_res_0;
     $__res = (function() use ($state1, $__global_Data_Unit_unit) {
   $__fn = function($f) use ($state1, $__global_Data_Unit_unit, &$__fn) {
   $__num = func_num_args();
@@ -228,7 +244,15 @@ function Control_Monad_State_Class_modify($dictMonadState) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$state1 = ($dictMonadState)->state;
+$__case_0 = $dictMonadState;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->state;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$state1 = $__case_res_0;
     $__res = (function() use ($state1) {
   $__fn = function($f) use ($state1, &$__fn) {
   $__num = func_num_args();
@@ -273,7 +297,15 @@ function Control_Monad_State_Class_gets($dictMonadState) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$state1 = ($dictMonadState)->state;
+$__case_0 = $dictMonadState;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->state;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$state1 = $__case_res_0;
     $__res = (function() use ($state1) {
   $__fn = function($f) use ($state1, &$__fn) {
   $__num = func_num_args();
@@ -317,7 +349,15 @@ function Control_Monad_State_Class_get($dictMonadState) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (($dictMonadState)->state)((function() {
+$__case_0 = $dictMonadState;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->state;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__case_res_0)((function() {
   $__fn = function($s) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {

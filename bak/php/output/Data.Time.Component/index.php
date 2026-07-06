@@ -98,21 +98,150 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Data_Time_Component_append': $v = ($GLOBALS['Data_Semigroup_concatString'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_concatString')); break;
-      case 'Data_Time_Component_show': $v = ($GLOBALS['Data_Show_showIntImpl'] ?? \Data\Show\phpurs_eval_thunk('Data_Show_showIntImpl')); break;
-      case 'Data_Time_Component_conj': $v = ($GLOBALS['Data_HeytingAlgebra_boolConj'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_boolConj')); break;
-      case 'Data_Time_Component_greaterThanOrEq': $v = (($GLOBALS['Data_Ord_greaterThanOrEq'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_greaterThanOrEq')))(($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'))); break;
-      case 'Data_Time_Component_lessThanOrEq': $v = (($GLOBALS['Data_Ord_lessThanOrEq'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_lessThanOrEq')))(($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'))); break;
-      case 'Data_Time_Component_compose': $v = (($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn')))->compose; break;
-      case 'Data_Time_Component_add': $v = ($GLOBALS['Data_Semiring_intAdd'] ?? \Data\Semiring\phpurs_eval_thunk('Data_Semiring_intAdd')); break;
-      case 'Data_Time_Component_sub': $v = ($GLOBALS['Data_Ring_intSub'] ?? \Data\Ring\phpurs_eval_thunk('Data_Ring_intSub')); break;
+      case 'Data_Time_Component_append': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Semigroup_semigroupString'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_semigroupString'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Time_Component_show': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Show_showInt'] ?? \Data\Show\phpurs_eval_thunk('Data_Show_showInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->show;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Time_Component_conj': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_HeytingAlgebra_heytingAlgebraBoolean'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_heytingAlgebraBoolean'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->conj;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Time_Component_greaterThanOrEq': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $compare3 = $__case_res_0;
+  return (function() use ($compare3) {
+  $__body = function($a1, $a2) use ($compare3) {
+    $v = ($compare3)($a1, $a2);
+    $__case_0 = $v;
+    switch (($__case_0)->tag) {
+case "LT":
+return false;
+break;
+default:
+return true;
+break;
+};
+  };
+  $__fn = function($a1, $a2 = null) use ($compare3, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($a2) use ($a1, &$__fn) { return $__fn($a1, $a2); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($a1, $a2);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+})(); break;
+      case 'Data_Time_Component_lessThanOrEq': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $compare3 = $__case_res_0;
+  return (function() use ($compare3) {
+  $__body = function($a1, $a2) use ($compare3) {
+    $v = ($compare3)($a1, $a2);
+    $__case_0 = $v;
+    switch (($__case_0)->tag) {
+case "GT":
+return false;
+break;
+default:
+return true;
+break;
+};
+  };
+  $__fn = function($a1, $a2 = null) use ($compare3, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($a2) use ($a1, &$__fn) { return $__fn($a1, $a2); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($a1, $a2);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+})(); break;
+      case 'Data_Time_Component_compose': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compose;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Time_Component_add': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Semiring_semiringInt'] ?? \Data\Semiring\phpurs_eval_thunk('Data_Semiring_semiringInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->add;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Time_Component_sub': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Ring_ringInt'] ?? \Data\Ring\phpurs_eval_thunk('Data_Ring_ringInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->sub;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_Time_Component_showSecond': $v = (object)["show" => (function() {
   $__body = function($v) {
-    $__global_Data_Show_showIntImpl = ($GLOBALS['Data_Show_showIntImpl'] ?? \Data\Show\phpurs_eval_thunk('Data_Show_showIntImpl'));
+    $__global_Data_Time_Component_append = ($GLOBALS['Data_Time_Component_append'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_append'));
+    $__global_Data_Time_Component_show = ($GLOBALS['Data_Time_Component_show'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_show'));
     $__case_0 = $v;
     if (true) {
 $m = $__case_0;
-return ("(Second " . (($__global_Data_Show_showIntImpl)($m) . ")"));
+return ($__global_Data_Time_Component_append)("(Second ", ($__global_Data_Time_Component_append)(($__global_Data_Time_Component_show)($m), ")"));
 } else {
 throw new \Exception("Pattern match failure");
 };
@@ -129,11 +258,12 @@ throw new \Exception("Pattern match failure");
 })()]; break;
       case 'Data_Time_Component_showMinute': $v = (object)["show" => (function() {
   $__body = function($v) {
-    $__global_Data_Show_showIntImpl = ($GLOBALS['Data_Show_showIntImpl'] ?? \Data\Show\phpurs_eval_thunk('Data_Show_showIntImpl'));
+    $__global_Data_Time_Component_append = ($GLOBALS['Data_Time_Component_append'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_append'));
+    $__global_Data_Time_Component_show = ($GLOBALS['Data_Time_Component_show'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_show'));
     $__case_0 = $v;
     if (true) {
 $m = $__case_0;
-return ("(Minute " . (($__global_Data_Show_showIntImpl)($m) . ")"));
+return ($__global_Data_Time_Component_append)("(Minute ", ($__global_Data_Time_Component_append)(($__global_Data_Time_Component_show)($m), ")"));
 } else {
 throw new \Exception("Pattern match failure");
 };
@@ -150,11 +280,12 @@ throw new \Exception("Pattern match failure");
 })()]; break;
       case 'Data_Time_Component_showMillisecond': $v = (object)["show" => (function() {
   $__body = function($v) {
-    $__global_Data_Show_showIntImpl = ($GLOBALS['Data_Show_showIntImpl'] ?? \Data\Show\phpurs_eval_thunk('Data_Show_showIntImpl'));
+    $__global_Data_Time_Component_append = ($GLOBALS['Data_Time_Component_append'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_append'));
+    $__global_Data_Time_Component_show = ($GLOBALS['Data_Time_Component_show'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_show'));
     $__case_0 = $v;
     if (true) {
 $m = $__case_0;
-return ("(Millisecond " . (($__global_Data_Show_showIntImpl)($m) . ")"));
+return ($__global_Data_Time_Component_append)("(Millisecond ", ($__global_Data_Time_Component_append)(($__global_Data_Time_Component_show)($m), ")"));
 } else {
 throw new \Exception("Pattern match failure");
 };
@@ -171,11 +302,12 @@ throw new \Exception("Pattern match failure");
 })()]; break;
       case 'Data_Time_Component_showHour': $v = (object)["show" => (function() {
   $__body = function($v) {
-    $__global_Data_Show_showIntImpl = ($GLOBALS['Data_Show_showIntImpl'] ?? \Data\Show\phpurs_eval_thunk('Data_Show_showIntImpl'));
+    $__global_Data_Time_Component_append = ($GLOBALS['Data_Time_Component_append'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_append'));
+    $__global_Data_Time_Component_show = ($GLOBALS['Data_Time_Component_show'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_show'));
     $__case_0 = $v;
     if (true) {
 $h = $__case_0;
-return ("(Hour " . (($__global_Data_Show_showIntImpl)($h) . ")"));
+return ($__global_Data_Time_Component_append)("(Hour ", ($__global_Data_Time_Component_append)(($__global_Data_Time_Component_show)($h), ")"));
 } else {
 throw new \Exception("Pattern match failure");
 };
@@ -307,27 +439,62 @@ $__global_Data_Time_Component_enumSecond = ($GLOBALS['Data_Time_Component_enumSe
   };
   return $__fn;
 })()]; break;
-      case 'Data_Time_Component_enumSecond': $v = (object)["succ" => (($GLOBALS['Data_Time_Component_compose'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_compose')))((($GLOBALS['Data_Time_Component_boundedEnumSecond'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_boundedEnumSecond')))->toEnum, (($GLOBALS['Data_Time_Component_compose'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_compose')))((function() {
+      case 'Data_Time_Component_enumSecond': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Time_Component_boundedEnumSecond'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_boundedEnumSecond'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->toEnum;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $__case_0 = ($GLOBALS['Data_Time_Component_boundedEnumSecond'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_boundedEnumSecond'));
+  $__case_res_1 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->fromEnum;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $__case_0 = ($GLOBALS['Data_Time_Component_boundedEnumSecond'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_boundedEnumSecond'));
+  $__case_res_2 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->toEnum;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $__case_0 = ($GLOBALS['Data_Time_Component_boundedEnumSecond'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_boundedEnumSecond'));
+  $__case_res_3 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->fromEnum;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return (object)["succ" => (($GLOBALS['Data_Time_Component_compose'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_compose')))($__case_res_0, (($GLOBALS['Data_Time_Component_compose'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_compose')))((function() {
   $__fn = function($v) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($v + 1);
+$__global_Data_Time_Component_add = ($GLOBALS['Data_Time_Component_add'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_add'));
+    $__res = ($__global_Data_Time_Component_add)($v, 1);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})(), (($GLOBALS['Data_Time_Component_boundedEnumSecond'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_boundedEnumSecond')))->fromEnum)), "pred" => (($GLOBALS['Data_Time_Component_compose'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_compose')))((($GLOBALS['Data_Time_Component_boundedEnumSecond'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_boundedEnumSecond')))->toEnum, (($GLOBALS['Data_Time_Component_compose'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_compose')))((function() {
+})(), $__case_res_1)), "pred" => (($GLOBALS['Data_Time_Component_compose'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_compose')))($__case_res_2, (($GLOBALS['Data_Time_Component_compose'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_compose')))((function() {
   $__fn = function($v) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($v - 1);
+$__global_Data_Time_Component_sub = ($GLOBALS['Data_Time_Component_sub'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_sub'));
+    $__res = ($__global_Data_Time_Component_sub)($v, 1);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})(), (($GLOBALS['Data_Time_Component_boundedEnumSecond'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_boundedEnumSecond')))->fromEnum)), "Ord0" => (function() {
+})(), $__case_res_3)), "Ord0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
@@ -338,7 +505,8 @@ $__global_Data_Ord_ordInt = ($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eva
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})()]; break;
+})()];
+})(); break;
       case 'Data_Time_Component_boundedEnumMinute': $v = (object)["cardinality" => 60, "toEnum" => (function() {
   $__body = function($n) {
     $__case_0 = $n;
@@ -400,27 +568,62 @@ $__global_Data_Time_Component_enumMinute = ($GLOBALS['Data_Time_Component_enumMi
   };
   return $__fn;
 })()]; break;
-      case 'Data_Time_Component_enumMinute': $v = (object)["succ" => (($GLOBALS['Data_Time_Component_compose'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_compose')))((($GLOBALS['Data_Time_Component_boundedEnumMinute'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_boundedEnumMinute')))->toEnum, (($GLOBALS['Data_Time_Component_compose'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_compose')))((function() {
+      case 'Data_Time_Component_enumMinute': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Time_Component_boundedEnumMinute'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_boundedEnumMinute'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->toEnum;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $__case_0 = ($GLOBALS['Data_Time_Component_boundedEnumMinute'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_boundedEnumMinute'));
+  $__case_res_1 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->fromEnum;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $__case_0 = ($GLOBALS['Data_Time_Component_boundedEnumMinute'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_boundedEnumMinute'));
+  $__case_res_2 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->toEnum;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $__case_0 = ($GLOBALS['Data_Time_Component_boundedEnumMinute'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_boundedEnumMinute'));
+  $__case_res_3 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->fromEnum;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return (object)["succ" => (($GLOBALS['Data_Time_Component_compose'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_compose')))($__case_res_0, (($GLOBALS['Data_Time_Component_compose'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_compose')))((function() {
   $__fn = function($v) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($v + 1);
+$__global_Data_Time_Component_add = ($GLOBALS['Data_Time_Component_add'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_add'));
+    $__res = ($__global_Data_Time_Component_add)($v, 1);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})(), (($GLOBALS['Data_Time_Component_boundedEnumMinute'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_boundedEnumMinute')))->fromEnum)), "pred" => (($GLOBALS['Data_Time_Component_compose'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_compose')))((($GLOBALS['Data_Time_Component_boundedEnumMinute'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_boundedEnumMinute')))->toEnum, (($GLOBALS['Data_Time_Component_compose'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_compose')))((function() {
+})(), $__case_res_1)), "pred" => (($GLOBALS['Data_Time_Component_compose'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_compose')))($__case_res_2, (($GLOBALS['Data_Time_Component_compose'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_compose')))((function() {
   $__fn = function($v) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($v - 1);
+$__global_Data_Time_Component_sub = ($GLOBALS['Data_Time_Component_sub'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_sub'));
+    $__res = ($__global_Data_Time_Component_sub)($v, 1);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})(), (($GLOBALS['Data_Time_Component_boundedEnumMinute'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_boundedEnumMinute')))->fromEnum)), "Ord0" => (function() {
+})(), $__case_res_3)), "Ord0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
@@ -431,7 +634,8 @@ $__global_Data_Ord_ordInt = ($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eva
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})()]; break;
+})()];
+})(); break;
       case 'Data_Time_Component_boundedEnumMillisecond': $v = (object)["cardinality" => 1000, "toEnum" => (function() {
   $__body = function($n) {
     $__case_0 = $n;
@@ -493,27 +697,62 @@ $__global_Data_Time_Component_enumMillisecond = ($GLOBALS['Data_Time_Component_e
   };
   return $__fn;
 })()]; break;
-      case 'Data_Time_Component_enumMillisecond': $v = (object)["succ" => (($GLOBALS['Data_Time_Component_compose'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_compose')))((($GLOBALS['Data_Time_Component_boundedEnumMillisecond'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_boundedEnumMillisecond')))->toEnum, (($GLOBALS['Data_Time_Component_compose'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_compose')))((function() {
+      case 'Data_Time_Component_enumMillisecond': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Time_Component_boundedEnumMillisecond'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_boundedEnumMillisecond'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->toEnum;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $__case_0 = ($GLOBALS['Data_Time_Component_boundedEnumMillisecond'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_boundedEnumMillisecond'));
+  $__case_res_1 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->fromEnum;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $__case_0 = ($GLOBALS['Data_Time_Component_boundedEnumMillisecond'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_boundedEnumMillisecond'));
+  $__case_res_2 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->toEnum;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $__case_0 = ($GLOBALS['Data_Time_Component_boundedEnumMillisecond'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_boundedEnumMillisecond'));
+  $__case_res_3 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->fromEnum;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return (object)["succ" => (($GLOBALS['Data_Time_Component_compose'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_compose')))($__case_res_0, (($GLOBALS['Data_Time_Component_compose'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_compose')))((function() {
   $__fn = function($v) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($v + 1);
+$__global_Data_Time_Component_add = ($GLOBALS['Data_Time_Component_add'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_add'));
+    $__res = ($__global_Data_Time_Component_add)($v, 1);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})(), (($GLOBALS['Data_Time_Component_boundedEnumMillisecond'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_boundedEnumMillisecond')))->fromEnum)), "pred" => (($GLOBALS['Data_Time_Component_compose'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_compose')))((($GLOBALS['Data_Time_Component_boundedEnumMillisecond'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_boundedEnumMillisecond')))->toEnum, (($GLOBALS['Data_Time_Component_compose'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_compose')))((function() {
+})(), $__case_res_1)), "pred" => (($GLOBALS['Data_Time_Component_compose'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_compose')))($__case_res_2, (($GLOBALS['Data_Time_Component_compose'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_compose')))((function() {
   $__fn = function($v) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($v - 1);
+$__global_Data_Time_Component_sub = ($GLOBALS['Data_Time_Component_sub'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_sub'));
+    $__res = ($__global_Data_Time_Component_sub)($v, 1);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})(), (($GLOBALS['Data_Time_Component_boundedEnumMillisecond'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_boundedEnumMillisecond')))->fromEnum)), "Ord0" => (function() {
+})(), $__case_res_3)), "Ord0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
@@ -524,7 +763,8 @@ $__global_Data_Ord_ordInt = ($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eva
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})()]; break;
+})()];
+})(); break;
       case 'Data_Time_Component_boundedEnumHour': $v = (object)["cardinality" => 24, "toEnum" => (function() {
   $__body = function($n) {
     $__case_0 = $n;
@@ -586,27 +826,62 @@ $__global_Data_Time_Component_enumHour = ($GLOBALS['Data_Time_Component_enumHour
   };
   return $__fn;
 })()]; break;
-      case 'Data_Time_Component_enumHour': $v = (object)["succ" => (($GLOBALS['Data_Time_Component_compose'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_compose')))((($GLOBALS['Data_Time_Component_boundedEnumHour'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_boundedEnumHour')))->toEnum, (($GLOBALS['Data_Time_Component_compose'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_compose')))((function() {
+      case 'Data_Time_Component_enumHour': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Time_Component_boundedEnumHour'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_boundedEnumHour'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->toEnum;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $__case_0 = ($GLOBALS['Data_Time_Component_boundedEnumHour'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_boundedEnumHour'));
+  $__case_res_1 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->fromEnum;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $__case_0 = ($GLOBALS['Data_Time_Component_boundedEnumHour'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_boundedEnumHour'));
+  $__case_res_2 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->toEnum;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $__case_0 = ($GLOBALS['Data_Time_Component_boundedEnumHour'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_boundedEnumHour'));
+  $__case_res_3 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->fromEnum;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return (object)["succ" => (($GLOBALS['Data_Time_Component_compose'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_compose')))($__case_res_0, (($GLOBALS['Data_Time_Component_compose'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_compose')))((function() {
   $__fn = function($v) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($v + 1);
+$__global_Data_Time_Component_add = ($GLOBALS['Data_Time_Component_add'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_add'));
+    $__res = ($__global_Data_Time_Component_add)($v, 1);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})(), (($GLOBALS['Data_Time_Component_boundedEnumHour'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_boundedEnumHour')))->fromEnum)), "pred" => (($GLOBALS['Data_Time_Component_compose'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_compose')))((($GLOBALS['Data_Time_Component_boundedEnumHour'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_boundedEnumHour')))->toEnum, (($GLOBALS['Data_Time_Component_compose'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_compose')))((function() {
+})(), $__case_res_1)), "pred" => (($GLOBALS['Data_Time_Component_compose'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_compose')))($__case_res_2, (($GLOBALS['Data_Time_Component_compose'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_compose')))((function() {
   $__fn = function($v) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($v - 1);
+$__global_Data_Time_Component_sub = ($GLOBALS['Data_Time_Component_sub'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_sub'));
+    $__res = ($__global_Data_Time_Component_sub)($v, 1);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})(), (($GLOBALS['Data_Time_Component_boundedEnumHour'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_boundedEnumHour')))->fromEnum)), "Ord0" => (function() {
+})(), $__case_res_3)), "Ord0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
@@ -617,7 +892,8 @@ $__global_Data_Ord_ordInt = ($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eva
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})()]; break;
+})()];
+})(); break;
       default: throw new \Exception("Unknown thunk " . $id);
     }
     $GLOBALS[$id] = $v;

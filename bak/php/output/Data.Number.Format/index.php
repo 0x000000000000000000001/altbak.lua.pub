@@ -88,8 +88,115 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Data_Number_Format_compose': $v = (($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn')))->compose; break;
-      case 'Data_Number_Format_clamp': $v = (($GLOBALS['Data_Ord_clamp'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_clamp')))(($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'))); break;
+      case 'Data_Number_Format_compose': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compose;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Number_Format_clamp': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $compare3 = $__case_res_0;
+  $min1 = (function() use ($compare3) {
+  $__body = function($x, $y) use ($compare3) {
+    $v = ($compare3)($x, $y);
+    $__case_0 = $v;
+    switch (($__case_0)->tag) {
+case "LT":
+return $x;
+break;
+case "EQ":
+return $x;
+break;
+case "GT":
+return $y;
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($x, $y = null) use ($compare3, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($y) use ($x, &$__fn) { return $__fn($x, $y); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($x, $y);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+  $__case_0 = ($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'));
+  $__case_res_1 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $compare3 = $__case_res_1;
+  $max1 = (function() use ($compare3) {
+  $__body = function($x, $y) use ($compare3) {
+    $v = ($compare3)($x, $y);
+    $__case_0 = $v;
+    switch (($__case_0)->tag) {
+case "LT":
+return $y;
+break;
+case "EQ":
+return $x;
+break;
+case "GT":
+return $x;
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($x, $y = null) use ($compare3, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($y) use ($x, &$__fn) { return $__fn($x, $y); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($x, $y);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+  return (function() use ($min1, $max1) {
+  $__fn = function($low, $hi = null, $x = null) use ($min1, $max1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($x) use ($low, $hi, &$__fn) { return $__fn($low, $hi, $x); };
+    if ($__num === 1) return function($hi, $x = null) use ($low, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($low, $hi, $x);
+      if ($__num2 === 1) return function($x) use ($low, $hi, &$__fn) { return $__fn($low, $hi, $x); };
+      return phpurs_curry_fallback($__fn, [$low], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = ($min1)($hi, ($max1)($low, $x));
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})();
+})(); break;
       case 'Data_Number_Format_precision': $v = (($GLOBALS['Data_Number_Format_compose'] ?? \Data\Number\Format\phpurs_eval_thunk('Data_Number_Format_compose')))((function() {
   $__fn = function($value0) use (&$__fn) {
   $__num = func_num_args();

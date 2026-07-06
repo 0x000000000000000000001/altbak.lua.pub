@@ -93,8 +93,28 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Effect_Class_Console_compose': $v = (($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn')))->compose; break;
-      case 'Effect_Class_Console_discard': $v = (($GLOBALS['Control_Bind_discardUnit'] ?? \Control\Bind\phpurs_eval_thunk('Control_Bind_discardUnit')))->discard; break;
+      case 'Effect_Class_Console_compose': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compose;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Effect_Class_Console_discard': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Bind_discardUnit'] ?? \Control\Bind\phpurs_eval_thunk('Control_Bind_discardUnit'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->discard;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       default: throw new \Exception("Unknown thunk " . $id);
     }
     $GLOBALS[$id] = $v;
@@ -114,15 +134,42 @@ function Effect_Class_Console_warnShow($dictMonadEffect) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Effect_Class_Console_compose = ($GLOBALS['Effect_Class_Console_compose'] ?? \Effect\Class\Console\phpurs_eval_thunk('Effect_Class_Console_compose'));
-$__global_Effect_Console_warnShow = ($GLOBALS['Effect_Console_warnShow'] ?? \Effect\Console\phpurs_eval_thunk('Effect_Console_warnShow'));
-$liftEffect = ($dictMonadEffect)->liftEffect;
-    $__res = (function() use ($__global_Effect_Class_Console_compose, $liftEffect, $__global_Effect_Console_warnShow) {
-  $__fn = function($dictShow) use ($__global_Effect_Class_Console_compose, $liftEffect, $__global_Effect_Console_warnShow, &$__fn) {
+$__global_Effect_Console_warn = ($GLOBALS['Effect_Console_warn'] ?? \Effect\Console\phpurs_eval_thunk('Effect_Console_warn'));
+$__case_0 = $dictMonadEffect;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->liftEffect;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$liftEffect = $__case_res_0;
+    $__res = (function() use ($__global_Effect_Class_Console_compose, $liftEffect, $__global_Effect_Console_warn) {
+  $__fn = function($dictShow) use ($__global_Effect_Class_Console_compose, $liftEffect, $__global_Effect_Console_warn, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($__global_Effect_Class_Console_compose)($liftEffect, ($__global_Effect_Console_warnShow)($dictShow));
+$__case_0 = $dictShow;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->show;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$show = $__case_res_1;
+    $__res = ($__global_Effect_Class_Console_compose)($liftEffect, (function() use ($__global_Effect_Console_warn, $show) {
+  $__fn = function($a) use ($__global_Effect_Console_warn, $show, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($__global_Effect_Console_warn)(($show)($a));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})());
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -140,7 +187,15 @@ function Effect_Class_Console_warn($dictMonadEffect) {
   }
 $__global_Effect_Class_Console_compose = ($GLOBALS['Effect_Class_Console_compose'] ?? \Effect\Class\Console\phpurs_eval_thunk('Effect_Class_Console_compose'));
 $__global_Effect_Console_warn = ($GLOBALS['Effect_Console_warn'] ?? \Effect\Console\phpurs_eval_thunk('Effect_Console_warn'));
-    $__res = ($__global_Effect_Class_Console_compose)(($dictMonadEffect)->liftEffect, $__global_Effect_Console_warn);
+$__case_0 = $dictMonadEffect;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->liftEffect;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__global_Effect_Class_Console_compose)($__case_res_0, $__global_Effect_Console_warn);
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Effect_Class_Console_warn'] = __NAMESPACE__ . '\\Effect_Class_Console_warn';
@@ -154,7 +209,15 @@ function Effect_Class_Console_timeLog($dictMonadEffect) {
   }
 $__global_Effect_Class_Console_compose = ($GLOBALS['Effect_Class_Console_compose'] ?? \Effect\Class\Console\phpurs_eval_thunk('Effect_Class_Console_compose'));
 $__global_Effect_Console_timeLog = ($GLOBALS['Effect_Console_timeLog'] ?? \Effect\Console\phpurs_eval_thunk('Effect_Console_timeLog'));
-    $__res = ($__global_Effect_Class_Console_compose)(($dictMonadEffect)->liftEffect, $__global_Effect_Console_timeLog);
+$__case_0 = $dictMonadEffect;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->liftEffect;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__global_Effect_Class_Console_compose)($__case_res_0, $__global_Effect_Console_timeLog);
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Effect_Class_Console_timeLog'] = __NAMESPACE__ . '\\Effect_Class_Console_timeLog';
@@ -168,7 +231,15 @@ function Effect_Class_Console_timeEnd($dictMonadEffect) {
   }
 $__global_Effect_Class_Console_compose = ($GLOBALS['Effect_Class_Console_compose'] ?? \Effect\Class\Console\phpurs_eval_thunk('Effect_Class_Console_compose'));
 $__global_Effect_Console_timeEnd = ($GLOBALS['Effect_Console_timeEnd'] ?? \Effect\Console\phpurs_eval_thunk('Effect_Console_timeEnd'));
-    $__res = ($__global_Effect_Class_Console_compose)(($dictMonadEffect)->liftEffect, $__global_Effect_Console_timeEnd);
+$__case_0 = $dictMonadEffect;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->liftEffect;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__global_Effect_Class_Console_compose)($__case_res_0, $__global_Effect_Console_timeEnd);
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Effect_Class_Console_timeEnd'] = __NAMESPACE__ . '\\Effect_Class_Console_timeEnd';
@@ -182,7 +253,15 @@ function Effect_Class_Console_time($dictMonadEffect) {
   }
 $__global_Effect_Class_Console_compose = ($GLOBALS['Effect_Class_Console_compose'] ?? \Effect\Class\Console\phpurs_eval_thunk('Effect_Class_Console_compose'));
 $__global_Effect_Console_time = ($GLOBALS['Effect_Console_time'] ?? \Effect\Console\phpurs_eval_thunk('Effect_Console_time'));
-    $__res = ($__global_Effect_Class_Console_compose)(($dictMonadEffect)->liftEffect, $__global_Effect_Console_time);
+$__case_0 = $dictMonadEffect;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->liftEffect;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__global_Effect_Class_Console_compose)($__case_res_0, $__global_Effect_Console_time);
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Effect_Class_Console_time'] = __NAMESPACE__ . '\\Effect_Class_Console_time';
@@ -195,15 +274,42 @@ function Effect_Class_Console_logShow($dictMonadEffect) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Effect_Class_Console_compose = ($GLOBALS['Effect_Class_Console_compose'] ?? \Effect\Class\Console\phpurs_eval_thunk('Effect_Class_Console_compose'));
-$__global_Effect_Console_logShow = ($GLOBALS['Effect_Console_logShow'] ?? \Effect\Console\phpurs_eval_thunk('Effect_Console_logShow'));
-$liftEffect = ($dictMonadEffect)->liftEffect;
-    $__res = (function() use ($__global_Effect_Class_Console_compose, $liftEffect, $__global_Effect_Console_logShow) {
-  $__fn = function($dictShow) use ($__global_Effect_Class_Console_compose, $liftEffect, $__global_Effect_Console_logShow, &$__fn) {
+$__global_Effect_Console_log = ($GLOBALS['Effect_Console_log'] ?? \Effect\Console\phpurs_eval_thunk('Effect_Console_log'));
+$__case_0 = $dictMonadEffect;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->liftEffect;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$liftEffect = $__case_res_0;
+    $__res = (function() use ($__global_Effect_Class_Console_compose, $liftEffect, $__global_Effect_Console_log) {
+  $__fn = function($dictShow) use ($__global_Effect_Class_Console_compose, $liftEffect, $__global_Effect_Console_log, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($__global_Effect_Class_Console_compose)($liftEffect, ($__global_Effect_Console_logShow)($dictShow));
+$__case_0 = $dictShow;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->show;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$show = $__case_res_1;
+    $__res = ($__global_Effect_Class_Console_compose)($liftEffect, (function() use ($__global_Effect_Console_log, $show) {
+  $__fn = function($a) use ($__global_Effect_Console_log, $show, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($__global_Effect_Console_log)(($show)($a));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})());
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -221,7 +327,15 @@ function Effect_Class_Console_log($dictMonadEffect) {
   }
 $__global_Effect_Class_Console_compose = ($GLOBALS['Effect_Class_Console_compose'] ?? \Effect\Class\Console\phpurs_eval_thunk('Effect_Class_Console_compose'));
 $__global_Effect_Console_log = ($GLOBALS['Effect_Console_log'] ?? \Effect\Console\phpurs_eval_thunk('Effect_Console_log'));
-    $__res = ($__global_Effect_Class_Console_compose)(($dictMonadEffect)->liftEffect, $__global_Effect_Console_log);
+$__case_0 = $dictMonadEffect;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->liftEffect;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__global_Effect_Class_Console_compose)($__case_res_0, $__global_Effect_Console_log);
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Effect_Class_Console_log'] = __NAMESPACE__ . '\\Effect_Class_Console_log';
@@ -234,15 +348,42 @@ function Effect_Class_Console_infoShow($dictMonadEffect) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Effect_Class_Console_compose = ($GLOBALS['Effect_Class_Console_compose'] ?? \Effect\Class\Console\phpurs_eval_thunk('Effect_Class_Console_compose'));
-$__global_Effect_Console_infoShow = ($GLOBALS['Effect_Console_infoShow'] ?? \Effect\Console\phpurs_eval_thunk('Effect_Console_infoShow'));
-$liftEffect = ($dictMonadEffect)->liftEffect;
-    $__res = (function() use ($__global_Effect_Class_Console_compose, $liftEffect, $__global_Effect_Console_infoShow) {
-  $__fn = function($dictShow) use ($__global_Effect_Class_Console_compose, $liftEffect, $__global_Effect_Console_infoShow, &$__fn) {
+$__global_Effect_Console_info = ($GLOBALS['Effect_Console_info'] ?? \Effect\Console\phpurs_eval_thunk('Effect_Console_info'));
+$__case_0 = $dictMonadEffect;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->liftEffect;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$liftEffect = $__case_res_0;
+    $__res = (function() use ($__global_Effect_Class_Console_compose, $liftEffect, $__global_Effect_Console_info) {
+  $__fn = function($dictShow) use ($__global_Effect_Class_Console_compose, $liftEffect, $__global_Effect_Console_info, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($__global_Effect_Class_Console_compose)($liftEffect, ($__global_Effect_Console_infoShow)($dictShow));
+$__case_0 = $dictShow;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->show;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$show = $__case_res_1;
+    $__res = ($__global_Effect_Class_Console_compose)($liftEffect, (function() use ($__global_Effect_Console_info, $show) {
+  $__fn = function($a) use ($__global_Effect_Console_info, $show, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($__global_Effect_Console_info)(($show)($a));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})());
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -260,7 +401,15 @@ function Effect_Class_Console_info($dictMonadEffect) {
   }
 $__global_Effect_Class_Console_compose = ($GLOBALS['Effect_Class_Console_compose'] ?? \Effect\Class\Console\phpurs_eval_thunk('Effect_Class_Console_compose'));
 $__global_Effect_Console_info = ($GLOBALS['Effect_Console_info'] ?? \Effect\Console\phpurs_eval_thunk('Effect_Console_info'));
-    $__res = ($__global_Effect_Class_Console_compose)(($dictMonadEffect)->liftEffect, $__global_Effect_Console_info);
+$__case_0 = $dictMonadEffect;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->liftEffect;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__global_Effect_Class_Console_compose)($__case_res_0, $__global_Effect_Console_info);
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Effect_Class_Console_info'] = __NAMESPACE__ . '\\Effect_Class_Console_info';
@@ -273,7 +422,15 @@ function Effect_Class_Console_groupEnd($dictMonadEffect) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Effect_Console_groupEnd = ($GLOBALS['Effect_Console_groupEnd'] ?? \Effect\Console\phpurs_eval_thunk('Effect_Console_groupEnd'));
-    $__res = (($dictMonadEffect)->liftEffect)($__global_Effect_Console_groupEnd);
+$__case_0 = $dictMonadEffect;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->liftEffect;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__case_res_0)($__global_Effect_Console_groupEnd);
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Effect_Class_Console_groupEnd'] = __NAMESPACE__ . '\\Effect_Class_Console_groupEnd';
@@ -287,7 +444,15 @@ function Effect_Class_Console_groupCollapsed($dictMonadEffect) {
   }
 $__global_Effect_Class_Console_compose = ($GLOBALS['Effect_Class_Console_compose'] ?? \Effect\Class\Console\phpurs_eval_thunk('Effect_Class_Console_compose'));
 $__global_Effect_Console_groupCollapsed = ($GLOBALS['Effect_Console_groupCollapsed'] ?? \Effect\Console\phpurs_eval_thunk('Effect_Console_groupCollapsed'));
-    $__res = ($__global_Effect_Class_Console_compose)(($dictMonadEffect)->liftEffect, $__global_Effect_Console_groupCollapsed);
+$__case_0 = $dictMonadEffect;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->liftEffect;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__global_Effect_Class_Console_compose)($__case_res_0, $__global_Effect_Console_groupCollapsed);
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Effect_Class_Console_groupCollapsed'] = __NAMESPACE__ . '\\Effect_Class_Console_groupCollapsed';
@@ -301,7 +466,15 @@ function Effect_Class_Console_group($dictMonadEffect) {
   }
 $__global_Effect_Class_Console_compose = ($GLOBALS['Effect_Class_Console_compose'] ?? \Effect\Class\Console\phpurs_eval_thunk('Effect_Class_Console_compose'));
 $__global_Effect_Console_group = ($GLOBALS['Effect_Console_group'] ?? \Effect\Console\phpurs_eval_thunk('Effect_Console_group'));
-    $__res = ($__global_Effect_Class_Console_compose)(($dictMonadEffect)->liftEffect, $__global_Effect_Console_group);
+$__case_0 = $dictMonadEffect;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->liftEffect;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__global_Effect_Class_Console_compose)($__case_res_0, $__global_Effect_Console_group);
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Effect_Class_Console_group'] = __NAMESPACE__ . '\\Effect_Class_Console_group';
@@ -315,15 +488,48 @@ function Effect_Class_Console_grouped($dictMonadEffect) {
   }
 $__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Effect_Class_Console_discard = ($GLOBALS['Effect_Class_Console_discard'] ?? \Effect\Class\Console\phpurs_eval_thunk('Effect_Class_Console_discard'));
-$__global_Effect_Class_Console_group = ($GLOBALS['Effect_Class_Console_group'] ?? \Effect\Class\Console\phpurs_eval_thunk('Effect_Class_Console_group'));
-$__global_Effect_Class_Console_groupEnd = ($GLOBALS['Effect_Class_Console_groupEnd'] ?? \Effect\Class\Console\phpurs_eval_thunk('Effect_Class_Console_groupEnd'));
+$__global_Effect_Class_Console_compose = ($GLOBALS['Effect_Class_Console_compose'] ?? \Effect\Class\Console\phpurs_eval_thunk('Effect_Class_Console_compose'));
+$__global_Effect_Console_group = ($GLOBALS['Effect_Console_group'] ?? \Effect\Console\phpurs_eval_thunk('Effect_Console_group'));
+$__global_Effect_Console_groupEnd = ($GLOBALS['Effect_Console_groupEnd'] ?? \Effect\Console\phpurs_eval_thunk('Effect_Console_groupEnd'));
 $Monad0 = (($dictMonadEffect)->Monad0)($__global_Prim_undefined);
 $Bind1 = (($Monad0)->Bind1)($__global_Prim_undefined);
 $discard1 = ($__global_Effect_Class_Console_discard)($Bind1);
-$group1 = ($__global_Effect_Class_Console_group)($dictMonadEffect);
-$bind = ($Bind1)->bind;
-$groupEnd1 = ($__global_Effect_Class_Console_groupEnd)($dictMonadEffect);
-$pure = ((($Monad0)->Applicative0)($__global_Prim_undefined))->pure;
+$__case_0 = $dictMonadEffect;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->liftEffect;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$group1 = ($__global_Effect_Class_Console_compose)($__case_res_0, $__global_Effect_Console_group);
+$__case_0 = $Bind1;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->bind;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bind = $__case_res_1;
+$__case_0 = $dictMonadEffect;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->liftEffect;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$groupEnd1 = ($__case_res_2)($__global_Effect_Console_groupEnd);
+$__case_0 = $dict;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pure = $__case_res_3;
     $__res = (function() use ($discard1, $group1, $bind, $groupEnd1, $pure) {
   $__fn = function($name, $inner = null) use ($discard1, $group1, $bind, $groupEnd1, $pure, &$__fn) {
   $__num = func_num_args();
@@ -378,15 +584,42 @@ function Effect_Class_Console_errorShow($dictMonadEffect) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Effect_Class_Console_compose = ($GLOBALS['Effect_Class_Console_compose'] ?? \Effect\Class\Console\phpurs_eval_thunk('Effect_Class_Console_compose'));
-$__global_Effect_Console_errorShow = ($GLOBALS['Effect_Console_errorShow'] ?? \Effect\Console\phpurs_eval_thunk('Effect_Console_errorShow'));
-$liftEffect = ($dictMonadEffect)->liftEffect;
-    $__res = (function() use ($__global_Effect_Class_Console_compose, $liftEffect, $__global_Effect_Console_errorShow) {
-  $__fn = function($dictShow) use ($__global_Effect_Class_Console_compose, $liftEffect, $__global_Effect_Console_errorShow, &$__fn) {
+$__global_Effect_Console_error = ($GLOBALS['Effect_Console_error'] ?? \Effect\Console\phpurs_eval_thunk('Effect_Console_error'));
+$__case_0 = $dictMonadEffect;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->liftEffect;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$liftEffect = $__case_res_0;
+    $__res = (function() use ($__global_Effect_Class_Console_compose, $liftEffect, $__global_Effect_Console_error) {
+  $__fn = function($dictShow) use ($__global_Effect_Class_Console_compose, $liftEffect, $__global_Effect_Console_error, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($__global_Effect_Class_Console_compose)($liftEffect, ($__global_Effect_Console_errorShow)($dictShow));
+$__case_0 = $dictShow;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->show;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$show = $__case_res_1;
+    $__res = ($__global_Effect_Class_Console_compose)($liftEffect, (function() use ($__global_Effect_Console_error, $show) {
+  $__fn = function($a) use ($__global_Effect_Console_error, $show, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($__global_Effect_Console_error)(($show)($a));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})());
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -404,7 +637,15 @@ function Effect_Class_Console_error($dictMonadEffect) {
   }
 $__global_Effect_Class_Console_compose = ($GLOBALS['Effect_Class_Console_compose'] ?? \Effect\Class\Console\phpurs_eval_thunk('Effect_Class_Console_compose'));
 $__global_Effect_Console_error = ($GLOBALS['Effect_Console_error'] ?? \Effect\Console\phpurs_eval_thunk('Effect_Console_error'));
-    $__res = ($__global_Effect_Class_Console_compose)(($dictMonadEffect)->liftEffect, $__global_Effect_Console_error);
+$__case_0 = $dictMonadEffect;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->liftEffect;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__global_Effect_Class_Console_compose)($__case_res_0, $__global_Effect_Console_error);
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Effect_Class_Console_error'] = __NAMESPACE__ . '\\Effect_Class_Console_error';
@@ -417,15 +658,42 @@ function Effect_Class_Console_debugShow($dictMonadEffect) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Effect_Class_Console_compose = ($GLOBALS['Effect_Class_Console_compose'] ?? \Effect\Class\Console\phpurs_eval_thunk('Effect_Class_Console_compose'));
-$__global_Effect_Console_debugShow = ($GLOBALS['Effect_Console_debugShow'] ?? \Effect\Console\phpurs_eval_thunk('Effect_Console_debugShow'));
-$liftEffect = ($dictMonadEffect)->liftEffect;
-    $__res = (function() use ($__global_Effect_Class_Console_compose, $liftEffect, $__global_Effect_Console_debugShow) {
-  $__fn = function($dictShow) use ($__global_Effect_Class_Console_compose, $liftEffect, $__global_Effect_Console_debugShow, &$__fn) {
+$__global_Effect_Console_debug = ($GLOBALS['Effect_Console_debug'] ?? \Effect\Console\phpurs_eval_thunk('Effect_Console_debug'));
+$__case_0 = $dictMonadEffect;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->liftEffect;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$liftEffect = $__case_res_0;
+    $__res = (function() use ($__global_Effect_Class_Console_compose, $liftEffect, $__global_Effect_Console_debug) {
+  $__fn = function($dictShow) use ($__global_Effect_Class_Console_compose, $liftEffect, $__global_Effect_Console_debug, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($__global_Effect_Class_Console_compose)($liftEffect, ($__global_Effect_Console_debugShow)($dictShow));
+$__case_0 = $dictShow;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->show;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$show = $__case_res_1;
+    $__res = ($__global_Effect_Class_Console_compose)($liftEffect, (function() use ($__global_Effect_Console_debug, $show) {
+  $__fn = function($a) use ($__global_Effect_Console_debug, $show, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($__global_Effect_Console_debug)(($show)($a));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})());
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -443,7 +711,15 @@ function Effect_Class_Console_debug($dictMonadEffect) {
   }
 $__global_Effect_Class_Console_compose = ($GLOBALS['Effect_Class_Console_compose'] ?? \Effect\Class\Console\phpurs_eval_thunk('Effect_Class_Console_compose'));
 $__global_Effect_Console_debug = ($GLOBALS['Effect_Console_debug'] ?? \Effect\Console\phpurs_eval_thunk('Effect_Console_debug'));
-    $__res = ($__global_Effect_Class_Console_compose)(($dictMonadEffect)->liftEffect, $__global_Effect_Console_debug);
+$__case_0 = $dictMonadEffect;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->liftEffect;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__global_Effect_Class_Console_compose)($__case_res_0, $__global_Effect_Console_debug);
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Effect_Class_Console_debug'] = __NAMESPACE__ . '\\Effect_Class_Console_debug';
@@ -456,7 +732,15 @@ function Effect_Class_Console_clear($dictMonadEffect) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Effect_Console_clear = ($GLOBALS['Effect_Console_clear'] ?? \Effect\Console\phpurs_eval_thunk('Effect_Console_clear'));
-    $__res = (($dictMonadEffect)->liftEffect)($__global_Effect_Console_clear);
+$__case_0 = $dictMonadEffect;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->liftEffect;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__case_res_0)($__global_Effect_Console_clear);
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Effect_Class_Console_clear'] = __NAMESPACE__ . '\\Effect_Class_Console_clear';

@@ -273,9 +273,24 @@ $__global_Data_Unit_unit = ($GLOBALS['Data_Unit_unit'] ?? \Data\Unit\phpurs_eval
     if ($__num === 1) return function($b) use ($a, &$__fn) { return $__fn($a, $b); };
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
-$__global_Data_HeytingAlgebra_boolDisj = ($GLOBALS['Data_HeytingAlgebra_boolDisj'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_boolDisj'));
-$__global_Data_HeytingAlgebra_boolNot = ($GLOBALS['Data_HeytingAlgebra_boolNot'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_boolNot'));
-    $__res = ($__global_Data_HeytingAlgebra_boolDisj)(($__global_Data_HeytingAlgebra_boolNot)($a), $b);
+$__global_Data_HeytingAlgebra_heytingAlgebraBoolean = ($GLOBALS['Data_HeytingAlgebra_heytingAlgebraBoolean'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_heytingAlgebraBoolean'));
+$__case_0 = $__global_Data_HeytingAlgebra_heytingAlgebraBoolean;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->disj;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$__case_0 = $__global_Data_HeytingAlgebra_heytingAlgebraBoolean;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->not;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__case_res_0)(($__case_res_1)($a), $b);
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
@@ -576,7 +591,55 @@ function Data_HeytingAlgebra_heytingAlgebraRecord($__dollar____unused, $dictHeyt
     if ($__num === 1) return function($dictHeytingAlgebraRecord) use ($__dollar____unused, $__fn) { return $__fn($__dollar____unused, $dictHeytingAlgebraRecord); };
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
-    $__res = (object)["ff" => (($dictHeytingAlgebraRecord)->ffRecord)(($GLOBALS['__phpurs_data0_Proxy'] ??= new Phpurs_Data0("Proxy")), ($GLOBALS['__phpurs_data0_Proxy'] ??= new Phpurs_Data0("Proxy"))), "tt" => (($dictHeytingAlgebraRecord)->ttRecord)(($GLOBALS['__phpurs_data0_Proxy'] ??= new Phpurs_Data0("Proxy")), ($GLOBALS['__phpurs_data0_Proxy'] ??= new Phpurs_Data0("Proxy"))), "conj" => (($dictHeytingAlgebraRecord)->conjRecord)(($GLOBALS['__phpurs_data0_Proxy'] ??= new Phpurs_Data0("Proxy"))), "disj" => (($dictHeytingAlgebraRecord)->disjRecord)(($GLOBALS['__phpurs_data0_Proxy'] ??= new Phpurs_Data0("Proxy"))), "implies" => (($dictHeytingAlgebraRecord)->impliesRecord)(($GLOBALS['__phpurs_data0_Proxy'] ??= new Phpurs_Data0("Proxy"))), "not" => (($dictHeytingAlgebraRecord)->notRecord)(($GLOBALS['__phpurs_data0_Proxy'] ??= new Phpurs_Data0("Proxy")))];
+$__case_0 = $dictHeytingAlgebraRecord;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->ffRecord;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$__case_0 = $dictHeytingAlgebraRecord;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->ttRecord;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$__case_0 = $dictHeytingAlgebraRecord;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->conjRecord;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$__case_0 = $dictHeytingAlgebraRecord;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->disjRecord;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$__case_0 = $dictHeytingAlgebraRecord;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->impliesRecord;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$__case_0 = $dictHeytingAlgebraRecord;
+$__case_res_5 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_5 = ($v)->notRecord;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = (object)["ff" => ($__case_res_0)(($GLOBALS['__phpurs_data0_Proxy'] ??= new Phpurs_Data0("Proxy")), ($GLOBALS['__phpurs_data0_Proxy'] ??= new Phpurs_Data0("Proxy"))), "tt" => ($__case_res_1)(($GLOBALS['__phpurs_data0_Proxy'] ??= new Phpurs_Data0("Proxy")), ($GLOBALS['__phpurs_data0_Proxy'] ??= new Phpurs_Data0("Proxy"))), "conj" => ($__case_res_2)(($GLOBALS['__phpurs_data0_Proxy'] ??= new Phpurs_Data0("Proxy"))), "disj" => ($__case_res_3)(($GLOBALS['__phpurs_data0_Proxy'] ??= new Phpurs_Data0("Proxy"))), "implies" => ($__case_res_4)(($GLOBALS['__phpurs_data0_Proxy'] ??= new Phpurs_Data0("Proxy"))), "not" => ($__case_res_5)(($GLOBALS['__phpurs_data0_Proxy'] ??= new Phpurs_Data0("Proxy")))];
     return 2 < $__num ? $__res(...array_slice(func_get_args(), 2)) : $__res;
 }
 $GLOBALS['Data_HeytingAlgebra_heytingAlgebraRecord'] = __NAMESPACE__ . '\\Data_HeytingAlgebra_heytingAlgebraRecord';
@@ -609,12 +672,60 @@ function Data_HeytingAlgebra_heytingAlgebraFunction($dictHeytingAlgebra) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$ff1 = ($dictHeytingAlgebra)->ff;
-$tt1 = ($dictHeytingAlgebra)->tt;
-$implies1 = ($dictHeytingAlgebra)->implies;
-$conj1 = ($dictHeytingAlgebra)->conj;
-$disj1 = ($dictHeytingAlgebra)->disj;
-$not1 = ($dictHeytingAlgebra)->not;
+$__case_0 = $dictHeytingAlgebra;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->ff;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$ff1 = $__case_res_0;
+$__case_0 = $dictHeytingAlgebra;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->tt;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$tt1 = $__case_res_1;
+$__case_0 = $dictHeytingAlgebra;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->implies;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$implies1 = $__case_res_2;
+$__case_0 = $dictHeytingAlgebra;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->conj;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$conj1 = $__case_res_3;
+$__case_0 = $dictHeytingAlgebra;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->disj;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$disj1 = $__case_res_4;
+$__case_0 = $dictHeytingAlgebra;
+$__case_res_5 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_5 = ($v)->not;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$not1 = $__case_res_5;
     $__res = (object)["ff" => (function() use ($ff1) {
   $__fn = function($v) use ($ff1, &$__fn) {
   $__num = func_num_args();
@@ -711,7 +822,15 @@ function Data_HeytingAlgebra_heytingAlgebraRecordCons($dictIsSymbol) {
   }
 $__global_Record_Unsafe_unsafeSet = ($GLOBALS['Record_Unsafe_unsafeSet'] ?? \Record\Unsafe\phpurs_eval_thunk('Record_Unsafe_unsafeSet'));
 $__global_Record_Unsafe_unsafeGet = ($GLOBALS['Record_Unsafe_unsafeGet'] ?? \Record\Unsafe\phpurs_eval_thunk('Record_Unsafe_unsafeGet'));
-$reflectSymbol = ($dictIsSymbol)->reflectSymbol;
+$__case_0 = $dictIsSymbol;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->reflectSymbol;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$reflectSymbol = $__case_res_0;
     $__res = (function() use ($reflectSymbol, $__global_Record_Unsafe_unsafeSet, $__global_Record_Unsafe_unsafeGet) {
   $__fn = function($__dollar____unused, $dictHeytingAlgebraRecord = null) use ($reflectSymbol, $__global_Record_Unsafe_unsafeSet, $__global_Record_Unsafe_unsafeGet, &$__fn) {
   $__num = func_num_args();
@@ -719,24 +838,120 @@ $reflectSymbol = ($dictIsSymbol)->reflectSymbol;
     if ($__num === 1) return function($dictHeytingAlgebraRecord) use ($__dollar____unused, &$__fn) { return $__fn($__dollar____unused, $dictHeytingAlgebraRecord); };
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
-$conjRecord1 = ($dictHeytingAlgebraRecord)->conjRecord;
-$disjRecord1 = ($dictHeytingAlgebraRecord)->disjRecord;
-$impliesRecord1 = ($dictHeytingAlgebraRecord)->impliesRecord;
-$ffRecord1 = ($dictHeytingAlgebraRecord)->ffRecord;
-$notRecord1 = ($dictHeytingAlgebraRecord)->notRecord;
-$ttRecord1 = ($dictHeytingAlgebraRecord)->ttRecord;
+$__case_0 = $dictHeytingAlgebraRecord;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->conjRecord;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$conjRecord1 = $__case_res_1;
+$__case_0 = $dictHeytingAlgebraRecord;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->disjRecord;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$disjRecord1 = $__case_res_2;
+$__case_0 = $dictHeytingAlgebraRecord;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->impliesRecord;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$impliesRecord1 = $__case_res_3;
+$__case_0 = $dictHeytingAlgebraRecord;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->ffRecord;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$ffRecord1 = $__case_res_4;
+$__case_0 = $dictHeytingAlgebraRecord;
+$__case_res_5 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_5 = ($v)->notRecord;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$notRecord1 = $__case_res_5;
+$__case_0 = $dictHeytingAlgebraRecord;
+$__case_res_6 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_6 = ($v)->ttRecord;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$ttRecord1 = $__case_res_6;
     $__res = (function() use ($conjRecord1, $reflectSymbol, $__global_Record_Unsafe_unsafeSet, $__global_Record_Unsafe_unsafeGet, $disjRecord1, $impliesRecord1, $ffRecord1, $notRecord1, $ttRecord1) {
   $__fn = function($dictHeytingAlgebra) use ($conjRecord1, $reflectSymbol, $__global_Record_Unsafe_unsafeSet, $__global_Record_Unsafe_unsafeGet, $disjRecord1, $impliesRecord1, $ffRecord1, $notRecord1, $ttRecord1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$conj1 = ($dictHeytingAlgebra)->conj;
-$disj1 = ($dictHeytingAlgebra)->disj;
-$implies1 = ($dictHeytingAlgebra)->implies;
-$ff1 = ($dictHeytingAlgebra)->ff;
-$not1 = ($dictHeytingAlgebra)->not;
-$tt1 = ($dictHeytingAlgebra)->tt;
+$__case_0 = $dictHeytingAlgebra;
+$__case_res_7 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_7 = ($v)->conj;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$conj1 = $__case_res_7;
+$__case_0 = $dictHeytingAlgebra;
+$__case_res_8 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_8 = ($v)->disj;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$disj1 = $__case_res_8;
+$__case_0 = $dictHeytingAlgebra;
+$__case_res_9 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_9 = ($v)->implies;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$implies1 = $__case_res_9;
+$__case_0 = $dictHeytingAlgebra;
+$__case_res_10 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_10 = ($v)->ff;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$ff1 = $__case_res_10;
+$__case_0 = $dictHeytingAlgebra;
+$__case_res_11 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_11 = ($v)->not;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$not1 = $__case_res_11;
+$__case_0 = $dictHeytingAlgebra;
+$__case_res_12 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_12 = ($v)->tt;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$tt1 = $__case_res_12;
     $__res = (object)["conjRecord" => (function() use ($conjRecord1, $reflectSymbol, $__global_Record_Unsafe_unsafeSet, $__global_Record_Unsafe_unsafeGet, $conj1) {
   $__fn = function($v, $ra = null, $rb = null) use ($conjRecord1, $reflectSymbol, $__global_Record_Unsafe_unsafeSet, $__global_Record_Unsafe_unsafeGet, $conj1, &$__fn) {
   $__num = func_num_args();

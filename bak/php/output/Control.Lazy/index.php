@@ -162,7 +162,15 @@ function Control_Lazy_fix($dictLazy) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$defer1 = ($dictLazy)->defer;
+$__case_0 = $dictLazy;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->defer;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$defer1 = $__case_res_0;
     $__res = (function() use ($defer1) {
   $__fn = function($f) use ($defer1, &$__fn) {
   $__num = func_num_args();

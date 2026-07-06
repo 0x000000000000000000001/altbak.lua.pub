@@ -105,34 +105,307 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Data_DateTime_fromEnum': $v = (($GLOBALS['Data_Date_Component_boundedEnumYear'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_boundedEnumYear')))->fromEnum; break;
-      case 'Data_DateTime_fromEnum1': $v = (($GLOBALS['Data_Date_Component_boundedEnumMonth'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_boundedEnumMonth')))->fromEnum; break;
-      case 'Data_DateTime_fromEnum2': $v = (($GLOBALS['Data_Date_Component_boundedEnumDay'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_boundedEnumDay')))->fromEnum; break;
-      case 'Data_DateTime_fromEnum3': $v = (($GLOBALS['Data_Time_Component_boundedEnumHour'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_boundedEnumHour')))->fromEnum; break;
-      case 'Data_DateTime_fromEnum4': $v = (($GLOBALS['Data_Time_Component_boundedEnumMinute'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_boundedEnumMinute')))->fromEnum; break;
-      case 'Data_DateTime_fromEnum5': $v = (($GLOBALS['Data_Time_Component_boundedEnumSecond'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_boundedEnumSecond')))->fromEnum; break;
-      case 'Data_DateTime_fromEnum6': $v = (($GLOBALS['Data_Time_Component_boundedEnumMillisecond'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_boundedEnumMillisecond')))->fromEnum; break;
-      case 'Data_DateTime_append': $v = ($GLOBALS['Data_Semigroup_concatString'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_concatString')); break;
-      case 'Data_DateTime_show': $v = (($GLOBALS['Data_Date_showDate'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_showDate')))->show; break;
-      case 'Data_DateTime_show1': $v = (($GLOBALS['Data_Time_showTime'] ?? \Data\Time\phpurs_eval_thunk('Data_Time_showTime')))->show; break;
-      case 'Data_DateTime_conj': $v = ($GLOBALS['Data_HeytingAlgebra_boolConj'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_boolConj')); break;
-      case 'Data_DateTime_eq': $v = (($GLOBALS['Data_Date_eqDate'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_eqDate')))->eq; break;
-      case 'Data_DateTime_eq1': $v = (($GLOBALS['Data_Time_eqTime'] ?? \Data\Time\phpurs_eval_thunk('Data_Time_eqTime')))->eq; break;
-      case 'Data_DateTime_compare': $v = (($GLOBALS['Data_Date_ordDate'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_ordDate')))->compare; break;
-      case 'Data_DateTime_compare1': $v = (($GLOBALS['Data_Time_ordTime'] ?? \Data\Time\phpurs_eval_thunk('Data_Time_ordTime')))->compare; break;
-      case 'Data_DateTime_bind': $v = (($GLOBALS['Data_Maybe_bindMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_bindMaybe')))->bind; break;
-      case 'Data_DateTime_apply': $v = (($GLOBALS['Data_Maybe_applyMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_applyMaybe')))->apply; break;
-      case 'Data_DateTime_map': $v = (($GLOBALS['Data_Maybe_functorMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_functorMaybe')))->map; break;
-      case 'Data_DateTime_join': $v = (($GLOBALS['Control_Bind_join'] ?? \Control\Bind\phpurs_eval_thunk('Control_Bind_join')))(($GLOBALS['Data_Maybe_bindMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_bindMaybe'))); break;
-      case 'Data_DateTime_toEnum': $v = (($GLOBALS['Data_Date_Component_boundedEnumYear'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_boundedEnumYear')))->toEnum; break;
-      case 'Data_DateTime_toEnum1': $v = (($GLOBALS['Data_Date_Component_boundedEnumMonth'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_boundedEnumMonth')))->toEnum; break;
-      case 'Data_DateTime_toEnum2': $v = (($GLOBALS['Data_Date_Component_boundedEnumDay'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_boundedEnumDay')))->toEnum; break;
-      case 'Data_DateTime_toEnum3': $v = (($GLOBALS['Data_Time_Component_boundedEnumHour'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_boundedEnumHour')))->toEnum; break;
-      case 'Data_DateTime_toEnum4': $v = (($GLOBALS['Data_Time_Component_boundedEnumMinute'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_boundedEnumMinute')))->toEnum; break;
-      case 'Data_DateTime_toEnum5': $v = (($GLOBALS['Data_Time_Component_boundedEnumSecond'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_boundedEnumSecond')))->toEnum; break;
-      case 'Data_DateTime_toEnum6': $v = (($GLOBALS['Data_Time_Component_boundedEnumMillisecond'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_boundedEnumMillisecond')))->toEnum; break;
+      case 'Data_DateTime_fromEnum': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Date_Component_boundedEnumYear'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_boundedEnumYear'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->fromEnum;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_DateTime_fromEnum1': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Date_Component_boundedEnumMonth'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_boundedEnumMonth'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->fromEnum;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_DateTime_fromEnum2': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Date_Component_boundedEnumDay'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_boundedEnumDay'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->fromEnum;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_DateTime_fromEnum3': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Time_Component_boundedEnumHour'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_boundedEnumHour'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->fromEnum;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_DateTime_fromEnum4': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Time_Component_boundedEnumMinute'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_boundedEnumMinute'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->fromEnum;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_DateTime_fromEnum5': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Time_Component_boundedEnumSecond'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_boundedEnumSecond'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->fromEnum;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_DateTime_fromEnum6': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Time_Component_boundedEnumMillisecond'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_boundedEnumMillisecond'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->fromEnum;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_DateTime_append': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Semigroup_semigroupString'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_semigroupString'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_DateTime_show': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Date_showDate'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_showDate'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->show;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_DateTime_show1': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Time_showTime'] ?? \Data\Time\phpurs_eval_thunk('Data_Time_showTime'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->show;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_DateTime_conj': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_HeytingAlgebra_heytingAlgebraBoolean'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_heytingAlgebraBoolean'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->conj;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_DateTime_eq': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Date_eqDate'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_eqDate'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_DateTime_eq1': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Time_eqTime'] ?? \Data\Time\phpurs_eval_thunk('Data_Time_eqTime'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_DateTime_compare': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Date_ordDate'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_ordDate'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_DateTime_compare1': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Time_ordTime'] ?? \Data\Time\phpurs_eval_thunk('Data_Time_ordTime'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_DateTime_bind': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Maybe_bindMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_bindMaybe'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bind;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_DateTime_apply': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Maybe_applyMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_applyMaybe'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_DateTime_map': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Maybe_functorMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_functorMaybe'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_DateTime_join': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Maybe_bindMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_bindMaybe'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bind;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $bind1 = $__case_res_0;
+  return (function() use ($bind1) {
+  $__fn = function($m) use ($bind1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__global_Control_Bind_identity = ($GLOBALS['Control_Bind_identity'] ?? \Control\Bind\phpurs_eval_thunk('Control_Bind_identity'));
+    $__res = ($bind1)($m, $__global_Control_Bind_identity);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+})(); break;
+      case 'Data_DateTime_toEnum': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Date_Component_boundedEnumYear'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_boundedEnumYear'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->toEnum;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_DateTime_toEnum1': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Date_Component_boundedEnumMonth'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_boundedEnumMonth'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->toEnum;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_DateTime_toEnum2': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Date_Component_boundedEnumDay'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_boundedEnumDay'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->toEnum;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_DateTime_toEnum3': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Time_Component_boundedEnumHour'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_boundedEnumHour'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->toEnum;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_DateTime_toEnum4': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Time_Component_boundedEnumMinute'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_boundedEnumMinute'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->toEnum;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_DateTime_toEnum5': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Time_Component_boundedEnumSecond'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_boundedEnumSecond'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->toEnum;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_DateTime_toEnum6': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Time_Component_boundedEnumMillisecond'] ?? \Data\Time\Component\phpurs_eval_thunk('Data_Time_Component_boundedEnumMillisecond'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->toEnum;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_DateTime_showDateTime': $v = (object)["show" => (function() {
   $__body = function($v) {
+    $__global_Data_DateTime_append = ($GLOBALS['Data_DateTime_append'] ?? \Data\DateTime\phpurs_eval_thunk('Data_DateTime_append'));
     $__global_Data_DateTime_show = ($GLOBALS['Data_DateTime_show'] ?? \Data\DateTime\phpurs_eval_thunk('Data_DateTime_show'));
     $__global_Data_DateTime_show1 = ($GLOBALS['Data_DateTime_show1'] ?? \Data\DateTime\phpurs_eval_thunk('Data_DateTime_show1'));
     $__case_0 = $v;
@@ -140,7 +413,7 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
 case "DateTime":
 $d = ($__case_0)->v0;
 $t = ($__case_0)->v1;
-return ("(DateTime " . (($__global_Data_DateTime_show)($d) . (" " . (($__global_Data_DateTime_show1)($t) . ")"))));
+return ($__global_Data_DateTime_append)("(DateTime ", ($__global_Data_DateTime_append)(($__global_Data_DateTime_show)($d), ($__global_Data_DateTime_append)(" ", ($__global_Data_DateTime_append)(($__global_Data_DateTime_show1)($t), ")"))));
 break;
 default:
 throw new \Exception("Pattern match failure");
@@ -159,7 +432,7 @@ break;
 })()]; break;
       case 'Data_DateTime_eqDateTime': $v = (object)["eq" => (function() {
   $__body = function($x, $y) {
-    $__global_Data_HeytingAlgebra_boolConj = ($GLOBALS['Data_HeytingAlgebra_boolConj'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_boolConj'));
+    $__global_Data_DateTime_conj = ($GLOBALS['Data_DateTime_conj'] ?? \Data\DateTime\phpurs_eval_thunk('Data_DateTime_conj'));
     $__global_Data_DateTime_eq = ($GLOBALS['Data_DateTime_eq'] ?? \Data\DateTime\phpurs_eval_thunk('Data_DateTime_eq'));
     $__global_Data_DateTime_eq1 = ($GLOBALS['Data_DateTime_eq1'] ?? \Data\DateTime\phpurs_eval_thunk('Data_DateTime_eq1'));
     $__case_0 = $x;
@@ -169,7 +442,7 @@ $l = ($__case_0)->v0;
 $l1 = ($__case_0)->v1;
 $r = ($__case_1)->v0;
 $r1 = ($__case_1)->v1;
-return ($__global_Data_HeytingAlgebra_boolConj)(($__global_Data_DateTime_eq)($l, $r), ($__global_Data_DateTime_eq1)($l1, $r1));
+return ($__global_Data_DateTime_conj)(($__global_Data_DateTime_eq)($l, $r), ($__global_Data_DateTime_eq1)($l1, $r1));
 } else {
 throw new \Exception("Pattern match failure");
 };
@@ -235,7 +508,40 @@ $__global_Data_DateTime_eqDateTime = ($GLOBALS['Data_DateTime_eqDateTime'] ?? \D
   };
   return $__fn;
 })()]; break;
-      case 'Data_DateTime_boundedDateTime': $v = (object)["bottom" => ((function() {
+      case 'Data_DateTime_boundedDateTime': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Date_boundedDate'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_boundedDate'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bottom;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $__case_0 = ($GLOBALS['Data_Time_boundedTime'] ?? \Data\Time\phpurs_eval_thunk('Data_Time_boundedTime'));
+  $__case_res_1 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->bottom;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $__case_0 = ($GLOBALS['Data_Date_boundedDate'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_boundedDate'));
+  $__case_res_2 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->top;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $__case_0 = ($GLOBALS['Data_Time_boundedTime'] ?? \Data\Time\phpurs_eval_thunk('Data_Time_boundedTime'));
+  $__case_res_3 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->top;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return (object)["bottom" => ((function() {
   $__fn = function($value0, $value1 = null) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 2) {
@@ -246,7 +552,7 @@ $__global_Data_DateTime_eqDateTime = ($GLOBALS['Data_DateTime_eqDateTime'] ?? \D
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
-})())((($GLOBALS['Data_Date_boundedDate'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_boundedDate')))->bottom, (($GLOBALS['Data_Time_boundedTime'] ?? \Data\Time\phpurs_eval_thunk('Data_Time_boundedTime')))->bottom), "top" => ((function() {
+})())($__case_res_0, $__case_res_1), "top" => ((function() {
   $__fn = function($value0, $value1 = null) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 2) {
@@ -257,7 +563,7 @@ $__global_Data_DateTime_eqDateTime = ($GLOBALS['Data_DateTime_eqDateTime'] ?? \D
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
-})())((($GLOBALS['Data_Date_boundedDate'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_boundedDate')))->top, (($GLOBALS['Data_Time_boundedTime'] ?? \Data\Time\phpurs_eval_thunk('Data_Time_boundedTime')))->top), "Ord0" => (function() {
+})())($__case_res_2, $__case_res_3), "Ord0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
@@ -268,7 +574,8 @@ $__global_Data_DateTime_ordDateTime = ($GLOBALS['Data_DateTime_ordDateTime'] ?? 
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})()]; break;
+})()];
+})(); break;
       default: throw new \Exception("Unknown thunk " . $id);
     }
     $GLOBALS[$id] = $v;
@@ -388,7 +695,15 @@ function Data_DateTime_modifyTimeF($dictFunctor) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$map1 = ($dictFunctor)->map;
+$__case_0 = $dictFunctor;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map1 = $__case_res_0;
     $__res = (function() use ($map1) {
   $__body = function($f, $v) use ($map1) {
     $__case_0 = $f;
@@ -478,7 +793,15 @@ function Data_DateTime_modifyDateF($dictFunctor) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_Function_flip = ($GLOBALS['Data_Function_flip'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_flip'));
-$map1 = ($dictFunctor)->map;
+$__case_0 = $dictFunctor;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map1 = $__case_res_0;
     $__res = (function() use ($map1, $__global_Data_Function_flip) {
   $__body = function($f, $v) use ($map1, $__global_Data_Function_flip) {
     $__case_0 = $f;
@@ -572,7 +895,15 @@ function Data_DateTime_diff($dictDuration) {
 $__global_Data_Function_Uncurried_runFn2 = ($GLOBALS['Data_Function_Uncurried_runFn2'] ?? \Data\Function\Uncurried\phpurs_eval_thunk('Data_Function_Uncurried_runFn2'));
 $__global_Data_DateTime_calcDiff = ($GLOBALS['Data_DateTime_calcDiff'] ?? \Data\DateTime\phpurs_eval_thunk('Data_DateTime_calcDiff'));
 $__global_Data_DateTime_toRecord = ($GLOBALS['Data_DateTime_toRecord'] ?? \Data\DateTime\phpurs_eval_thunk('Data_DateTime_toRecord'));
-$toDuration = ($dictDuration)->toDuration;
+$__case_0 = $dictDuration;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->toDuration;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$toDuration = $__case_res_0;
     $__res = (function() use ($toDuration, $__global_Data_Function_Uncurried_runFn2, $__global_Data_DateTime_calcDiff, $__global_Data_DateTime_toRecord) {
   $__fn = function($dt1, $dt2 = null) use ($toDuration, $__global_Data_Function_Uncurried_runFn2, $__global_Data_DateTime_calcDiff, $__global_Data_DateTime_toRecord, &$__fn) {
   $__num = func_num_args();
@@ -635,7 +966,15 @@ $__global_Data_DateTime_toEnum3 = ($GLOBALS['Data_DateTime_toEnum3'] ?? \Data\Da
 $__global_Data_DateTime_toEnum4 = ($GLOBALS['Data_DateTime_toEnum4'] ?? \Data\DateTime\phpurs_eval_thunk('Data_DateTime_toEnum4'));
 $__global_Data_DateTime_toEnum5 = ($GLOBALS['Data_DateTime_toEnum5'] ?? \Data\DateTime\phpurs_eval_thunk('Data_DateTime_toEnum5'));
 $__global_Data_DateTime_toEnum6 = ($GLOBALS['Data_DateTime_toEnum6'] ?? \Data\DateTime\phpurs_eval_thunk('Data_DateTime_toEnum6'));
-$fromDuration = ($dictDuration)->fromDuration;
+$__case_0 = $dictDuration;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->fromDuration;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$fromDuration = $__case_res_0;
     $__res = (function() use ($__global_Data_DateTime_bind, $__global_Data_DateTime_adjustImpl, $fromDuration, $__global_Data_DateTime_toRecord, $__global_Data_DateTime_apply, $__global_Data_DateTime_map, $__global_Data_DateTime_join, $__global_Data_Date_exactDate, $__global_Data_DateTime_toEnum, $__global_Data_DateTime_toEnum1, $__global_Data_DateTime_toEnum2, $__global_Data_DateTime_toEnum3, $__global_Data_DateTime_toEnum4, $__global_Data_DateTime_toEnum5, $__global_Data_DateTime_toEnum6) {
   $__fn = function($d, $dt = null) use ($__global_Data_DateTime_bind, $__global_Data_DateTime_adjustImpl, $fromDuration, $__global_Data_DateTime_toRecord, $__global_Data_DateTime_apply, $__global_Data_DateTime_map, $__global_Data_DateTime_join, $__global_Data_Date_exactDate, $__global_Data_DateTime_toEnum, $__global_Data_DateTime_toEnum1, $__global_Data_DateTime_toEnum2, $__global_Data_DateTime_toEnum3, $__global_Data_DateTime_toEnum4, $__global_Data_DateTime_toEnum5, $__global_Data_DateTime_toEnum6, &$__fn) {
   $__num = func_num_args();

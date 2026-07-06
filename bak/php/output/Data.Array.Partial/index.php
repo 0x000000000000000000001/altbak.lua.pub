@@ -88,7 +88,17 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
       case 'Data_Array_Partial_unsafeIndex': $v = (($GLOBALS['Data_Array_unsafeIndex'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_unsafeIndex')))(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))); break;
-      case 'Data_Array_Partial_sub': $v = ($GLOBALS['Data_Ring_intSub'] ?? \Data\Ring\phpurs_eval_thunk('Data_Ring_intSub')); break;
+      case 'Data_Array_Partial_sub': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Ring_ringInt'] ?? \Data\Ring\phpurs_eval_thunk('Data_Ring_ringInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->sub;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       default: throw new \Exception("Unknown thunk " . $id);
     }
     $GLOBALS[$id] = $v;
@@ -124,8 +134,9 @@ function Data_Array_Partial_last($__dollar____unused, $xs = null) {
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
 $__global_Data_Array_Partial_unsafeIndex = ($GLOBALS['Data_Array_Partial_unsafeIndex'] ?? \Data\Array\Partial\phpurs_eval_thunk('Data_Array_Partial_unsafeIndex'));
+$__global_Data_Array_Partial_sub = ($GLOBALS['Data_Array_Partial_sub'] ?? \Data\Array\Partial\phpurs_eval_thunk('Data_Array_Partial_sub'));
 $__global_Data_Array_length = ($GLOBALS['Data_Array_length'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_length'));
-    $__res = ($__global_Data_Array_Partial_unsafeIndex)($xs, (($__global_Data_Array_length)($xs) - 1));
+    $__res = ($__global_Data_Array_Partial_unsafeIndex)($xs, ($__global_Data_Array_Partial_sub)(($__global_Data_Array_length)($xs), 1));
     return 2 < $__num ? $__res(...array_slice(func_get_args(), 2)) : $__res;
 }
 $GLOBALS['Data_Array_Partial_last'] = __NAMESPACE__ . '\\Data_Array_Partial_last';
@@ -139,8 +150,9 @@ function Data_Array_Partial_init($__dollar____unused, $xs = null) {
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
 $__global_Data_Array_slice = ($GLOBALS['Data_Array_slice'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_slice'));
+$__global_Data_Array_Partial_sub = ($GLOBALS['Data_Array_Partial_sub'] ?? \Data\Array\Partial\phpurs_eval_thunk('Data_Array_Partial_sub'));
 $__global_Data_Array_length = ($GLOBALS['Data_Array_length'] ?? \Data\Array\phpurs_eval_thunk('Data_Array_length'));
-    $__res = ($__global_Data_Array_slice)(0, (($__global_Data_Array_length)($xs) - 1), $xs);
+    $__res = ($__global_Data_Array_slice)(0, ($__global_Data_Array_Partial_sub)(($__global_Data_Array_length)($xs), 1), $xs);
     return 2 < $__num ? $__res(...array_slice(func_get_args(), 2)) : $__res;
 }
 $GLOBALS['Data_Array_Partial_init'] = __NAMESPACE__ . '\\Data_Array_Partial_init';

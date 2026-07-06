@@ -92,7 +92,17 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Data_Op_compose': $v = (($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn')))->compose; break;
+      case 'Data_Op_compose': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compose;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_Op_semigroupoidOp': $v = (object)["compose" => (function() {
   $__body = function($v, $v1) {
     $__global_Data_Op_compose = ($GLOBALS['Data_Op_compose'] ?? \Data\Op\phpurs_eval_thunk('Data_Op_compose'));
@@ -153,7 +163,16 @@ throw new \Exception("Pattern match failure");
   };
   return $__fn;
 })()]; break;
-      case 'Data_Op_categoryOp': $v = (object)["identity" => (($GLOBALS['Control_Category_categoryFn'] ?? \Control\Category\phpurs_eval_thunk('Control_Category_categoryFn')))->identity, "Semigroupoid0" => (function() {
+      case 'Data_Op_categoryOp': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Category_categoryFn'] ?? \Control\Category\phpurs_eval_thunk('Control_Category_categoryFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->identity;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return (object)["identity" => $__case_res_0, "Semigroupoid0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
@@ -164,7 +183,8 @@ $__global_Data_Op_semigroupoidOp = ($GLOBALS['Data_Op_semigroupoidOp'] ?? \Data\
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})()]; break;
+})()];
+})(); break;
       default: throw new \Exception("Unknown thunk " . $id);
     }
     $GLOBALS[$id] = $v;
@@ -195,8 +215,33 @@ function Data_Op_semigroupOp($dictSemigroup) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Semigroup_semigroupFn = ($GLOBALS['Data_Semigroup_semigroupFn'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_semigroupFn'));
-    $__res = ($__global_Data_Semigroup_semigroupFn)($dictSemigroup);
+$__case_0 = $dictSemigroup;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append1 = $__case_res_0;
+    $__res = (object)["append" => (function() use ($append1) {
+  $__fn = function($f, $g = null, $x = null) use ($append1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($x) use ($f, $g, &$__fn) { return $__fn($f, $g, $x); };
+    if ($__num === 1) return function($g, $x = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $g, $x);
+      if ($__num2 === 1) return function($x) use ($f, $g, &$__fn) { return $__fn($f, $g, $x); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = ($append1)(($f)($x), ($g)($x));
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})()];
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Op_semigroupOp'] = __NAMESPACE__ . '\\Data_Op_semigroupOp';
@@ -209,8 +254,63 @@ function Data_Op_monoidOp($dictMonoid) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Monoid_monoidFn = ($GLOBALS['Data_Monoid_monoidFn'] ?? \Data\Monoid\phpurs_eval_thunk('Data_Monoid_monoidFn'));
-    $__res = ($__global_Data_Monoid_monoidFn)($dictMonoid);
+$__case_0 = $dictMonoid;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->mempty;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$mempty1 = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append1 = $__case_res_1;
+$semigroupFn = (object)["append" => (function() use ($append1) {
+  $__fn = function($f, $g = null, $x = null) use ($append1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($x) use ($f, $g, &$__fn) { return $__fn($f, $g, $x); };
+    if ($__num === 1) return function($g, $x = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $g, $x);
+      if ($__num2 === 1) return function($x) use ($f, $g, &$__fn) { return $__fn($f, $g, $x); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = ($append1)(($f)($x), ($g)($x));
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})()];
+    $__res = (object)["mempty" => (function() use ($mempty1) {
+  $__fn = function($v) use ($mempty1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $mempty1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})(), "Semigroup0" => (function() use ($semigroupFn) {
+  $__fn = function($__dollar____unused) use ($semigroupFn, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $semigroupFn;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Op_monoidOp'] = __NAMESPACE__ . '\\Data_Op_monoidOp';

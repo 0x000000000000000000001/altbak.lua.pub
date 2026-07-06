@@ -90,7 +90,16 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Data_Profunctor_Strong_strongFn': $v = (object)["first" => (function() {
+      case 'Data_Profunctor_Strong_strongFn': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Tuple_functorTuple'] ?? \Data\Tuple\phpurs_eval_thunk('Data_Tuple_functorTuple'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return (object)["first" => (function() {
   $__body = function($a2b, $v) {
     $__case_0 = $a2b;
     $__case_1 = $v;
@@ -127,7 +136,7 @@ break;
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
-})(), "second" => (($GLOBALS['Data_Tuple_functorTuple'] ?? \Data\Tuple\phpurs_eval_thunk('Data_Tuple_functorTuple')))->map, "Profunctor0" => (function() {
+})(), "second" => $__case_res_0, "Profunctor0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
@@ -138,7 +147,8 @@ $__global_Data_Profunctor_profunctorFn = ($GLOBALS['Data_Profunctor_profunctorFn
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})()]; break;
+})()];
+})(); break;
       default: throw new \Exception("Unknown thunk " . $id);
     }
     $GLOBALS[$id] = $v;
@@ -210,16 +220,51 @@ function Data_Profunctor_Strong_splitStrong($dictSemigroupoid) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Control_Semigroupoid_composeFlipped = ($GLOBALS['Control_Semigroupoid_composeFlipped'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_composeFlipped'));
-$composeFlipped = ($__global_Control_Semigroupoid_composeFlipped)($dictSemigroupoid);
+$__case_0 = $dictSemigroupoid;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compose;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compose1 = $__case_res_0;
+$composeFlipped = (function() use ($compose1) {
+  $__fn = function($f, $g = null) use ($compose1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($g) use ($f, &$__fn) { return $__fn($f, $g); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($compose1)($g, $f);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
     $__res = (function() use ($composeFlipped) {
   $__fn = function($dictStrong) use ($composeFlipped, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$first1 = ($dictStrong)->first;
-$second1 = ($dictStrong)->second;
+$__case_0 = $dictStrong;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->first;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$first1 = $__case_res_1;
+$__case_0 = $dictStrong;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->second;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$second1 = $__case_res_2;
     $__res = (function() use ($composeFlipped, $first1, $second1) {
   $__fn = function($l, $r = null) use ($composeFlipped, $first1, $second1, &$__fn) {
   $__num = func_num_args();
@@ -247,17 +292,94 @@ function Data_Profunctor_Strong_fanout($dictSemigroupoid) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Profunctor_Strong_splitStrong = ($GLOBALS['Data_Profunctor_Strong_splitStrong'] ?? \Data\Profunctor\Strong\phpurs_eval_thunk('Data_Profunctor_Strong_splitStrong'));
-$__global_Data_Profunctor_lcmap = ($GLOBALS['Data_Profunctor_lcmap'] ?? \Data\Profunctor\phpurs_eval_thunk('Data_Profunctor_lcmap'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$splitStrong1 = ($__global_Data_Profunctor_Strong_splitStrong)($dictSemigroupoid);
-    $__res = (function() use ($__global_Data_Profunctor_lcmap, $__global_Prim_undefined, $splitStrong1) {
-  $__fn = function($dictStrong) use ($__global_Data_Profunctor_lcmap, $__global_Prim_undefined, $splitStrong1, &$__fn) {
+$__global_Data_Profunctor_identity = ($GLOBALS['Data_Profunctor_identity'] ?? \Data\Profunctor\phpurs_eval_thunk('Data_Profunctor_identity'));
+$__case_0 = $dictSemigroupoid;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compose;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compose1 = $__case_res_0;
+$composeFlipped = (function() use ($compose1) {
+  $__fn = function($f, $g = null) use ($compose1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($g) use ($f, &$__fn) { return $__fn($f, $g); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($compose1)($g, $f);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+$splitStrong1 = (function() use ($composeFlipped) {
+  $__fn = function($dictStrong) use ($composeFlipped, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$lcmap = ($__global_Data_Profunctor_lcmap)((($dictStrong)->Profunctor0)($__global_Prim_undefined));
+$__case_0 = $dictStrong;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->first;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$first1 = $__case_res_1;
+$__case_0 = $dictStrong;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->second;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$second1 = $__case_res_2;
+    $__res = (function() use ($composeFlipped, $first1, $second1) {
+  $__fn = function($l, $r = null) use ($composeFlipped, $first1, $second1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($r) use ($l, &$__fn) { return $__fn($l, $r); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($composeFlipped)(($first1)($l), ($second1)($r));
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+    $__res = (function() use ($dict, $__global_Data_Profunctor_identity, $splitStrong1) {
+  $__fn = function($dictStrong) use ($dict, $__global_Data_Profunctor_identity, $splitStrong1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dict;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->dimap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$dimap1 = $__case_res_3;
+$lcmap = (function() use ($dimap1, $__global_Data_Profunctor_identity) {
+  $__fn = function($a2b) use ($dimap1, $__global_Data_Profunctor_identity, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($dimap1)($a2b, $__global_Data_Profunctor_identity);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
 $splitStrong2 = ($splitStrong1)($dictStrong);
     $__res = (function() use ($lcmap, $splitStrong2) {
   $__fn = function($l, $r = null) use ($lcmap, $splitStrong2, &$__fn) {

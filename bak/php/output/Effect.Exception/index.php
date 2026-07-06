@@ -93,9 +93,39 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Effect_Exception_compose': $v = (($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn')))->compose; break;
-      case 'Effect_Exception_pure': $v = ($GLOBALS['Effect_pureE'] ?? \Effect\phpurs_eval_thunk('Effect_pureE')); break;
-      case 'Effect_Exception_map': $v = (($GLOBALS['Effect_functorEffect'] ?? \Effect\phpurs_eval_thunk('Effect_functorEffect')))->map; break;
+      case 'Effect_Exception_compose': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compose;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Effect_Exception_pure': $v = (function() {
+  $__case_0 = ($GLOBALS['Effect_applicativeEffect'] ?? \Effect\phpurs_eval_thunk('Effect_applicativeEffect'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Effect_Exception_map': $v = (function() {
+  $__case_0 = ($GLOBALS['Effect_functorEffect'] ?? \Effect\phpurs_eval_thunk('Effect_functorEffect'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Effect_Exception_throw': $v = (($GLOBALS['Effect_Exception_compose'] ?? \Effect\Exception\phpurs_eval_thunk('Effect_Exception_compose')))(($GLOBALS['Effect_Exception_throwException'] ?? \Effect\Exception\phpurs_eval_thunk('Effect_Exception_throwException')), ($GLOBALS['Effect_Exception_error'] ?? \Effect\Exception\phpurs_eval_thunk('Effect_Exception_error'))); break;
       case 'Effect_Exception_stack': $v = (($GLOBALS['Effect_Exception_stackImpl'] ?? \Effect\Exception\phpurs_eval_thunk('Effect_Exception_stackImpl')))((function() {
   $__fn = function($value0) use (&$__fn) {
@@ -145,9 +175,9 @@ function Effect_Exception_try($action) {
   }
 $__global_Effect_Exception_catchException = ($GLOBALS['Effect_Exception_catchException'] ?? \Effect\Exception\phpurs_eval_thunk('Effect_Exception_catchException'));
 $__global_Effect_Exception_compose = ($GLOBALS['Effect_Exception_compose'] ?? \Effect\Exception\phpurs_eval_thunk('Effect_Exception_compose'));
-$__global_Effect_pureE = ($GLOBALS['Effect_pureE'] ?? \Effect\phpurs_eval_thunk('Effect_pureE'));
+$__global_Effect_Exception_pure = ($GLOBALS['Effect_Exception_pure'] ?? \Effect\Exception\phpurs_eval_thunk('Effect_Exception_pure'));
 $__global_Effect_Exception_map = ($GLOBALS['Effect_Exception_map'] ?? \Effect\Exception\phpurs_eval_thunk('Effect_Exception_map'));
-    $__res = ($__global_Effect_Exception_catchException)(($__global_Effect_Exception_compose)($__global_Effect_pureE, (function() {
+    $__res = ($__global_Effect_Exception_catchException)(($__global_Effect_Exception_compose)($__global_Effect_Exception_pure, (function() {
   $__fn = function($value0) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {

@@ -97,7 +97,17 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Data_Bifunctor_Join_append': $v = ($GLOBALS['Data_Semigroup_concatString'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_concatString')); break;
+      case 'Data_Bifunctor_Join_append': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Semigroup_semigroupString'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_semigroupString'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_Bifunctor_Join_newtypeJoin': $v = (object)["Coercible0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
@@ -139,18 +149,27 @@ function Data_Bifunctor_Join_showJoin($dictShow) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$show = ($dictShow)->show;
-    $__res = (object)["show" => (function() use ($show) {
-  $__body = function($v) use ($show) {
+$__global_Data_Bifunctor_Join_append = ($GLOBALS['Data_Bifunctor_Join_append'] ?? \Data\Bifunctor\Join\phpurs_eval_thunk('Data_Bifunctor_Join_append'));
+$__case_0 = $dictShow;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->show;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$show = $__case_res_0;
+    $__res = (object)["show" => (function() use ($__global_Data_Bifunctor_Join_append, $show) {
+  $__body = function($v) use ($__global_Data_Bifunctor_Join_append, $show) {
     $__case_0 = $v;
     if (true) {
 $x = $__case_0;
-return ("(Join " . (($show)($x) . ")"));
+return ($__global_Data_Bifunctor_Join_append)("(Join ", ($__global_Data_Bifunctor_Join_append)(($show)($x), ")"));
 } else {
 throw new \Exception("Pattern match failure");
 };
   };
-  $__fn = function($v) use ($show, $__body, &$__fn) {
+  $__fn = function($v) use ($__global_Data_Bifunctor_Join_append, $show, $__body, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
@@ -196,7 +215,15 @@ function Data_Bifunctor_Join_bifunctorJoin($dictBifunctor) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$bimap = ($dictBifunctor)->bimap;
+$__case_0 = $dictBifunctor;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bimap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bimap = $__case_res_0;
     $__res = (object)["map" => (function() use ($bimap) {
   $__body = function($f, $v) use ($bimap) {
     $__case_0 = $f;
@@ -231,10 +258,47 @@ function Data_Bifunctor_Join_biapplyJoin($dictBiapply) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Bifunctor_Join_bifunctorJoin = ($GLOBALS['Data_Bifunctor_Join_bifunctorJoin'] ?? \Data\Bifunctor\Join\phpurs_eval_thunk('Data_Bifunctor_Join_bifunctorJoin'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$biapply = ($dictBiapply)->biapply;
-$bifunctorJoin1 = ($__global_Data_Bifunctor_Join_bifunctorJoin)((($dictBiapply)->Bifunctor0)($__global_Prim_undefined));
+$__case_0 = $dictBiapply;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->biapply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$biapply = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->bimap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bimap = $__case_res_1;
+$bifunctorJoin1 = (object)["map" => (function() use ($bimap) {
+  $__body = function($f, $v) use ($bimap) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    if (true) {
+$f1 = $__case_0;
+$a = $__case_1;
+return ($bimap)($f1, $f1, $a);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $v = null) use ($bimap, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, &$__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($f, $v);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
     $__res = (object)["apply" => (function() use ($biapply) {
   $__body = function($v, $v1) use ($biapply) {
     $__case_0 = $v;
@@ -279,10 +343,89 @@ function Data_Bifunctor_Join_biapplicativeJoin($dictBiapplicative) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Bifunctor_Join_biapplyJoin = ($GLOBALS['Data_Bifunctor_Join_biapplyJoin'] ?? \Data\Bifunctor\Join\phpurs_eval_thunk('Data_Bifunctor_Join_biapplyJoin'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$bipure = ($dictBiapplicative)->bipure;
-$biapplyJoin1 = ($__global_Data_Bifunctor_Join_biapplyJoin)((($dictBiapplicative)->Biapply0)($__global_Prim_undefined));
+$__case_0 = $dictBiapplicative;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bipure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bipure = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->biapply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$biapply = $__case_res_1;
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->bimap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bimap = $__case_res_2;
+$bifunctorJoin1 = (object)["map" => (function() use ($bimap) {
+  $__body = function($f, $v) use ($bimap) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    if (true) {
+$f1 = $__case_0;
+$a = $__case_1;
+return ($bimap)($f1, $f1, $a);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $v = null) use ($bimap, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, &$__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($f, $v);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+$biapplyJoin1 = (object)["apply" => (function() use ($biapply) {
+  $__body = function($v, $v1) use ($biapply) {
+    $__case_0 = $v;
+    $__case_1 = $v1;
+    if (true) {
+$f = $__case_0;
+$a = $__case_1;
+return ($biapply)($f, $a);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($v, $v1 = null) use ($biapply, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($v, $v1);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "Functor0" => (function() use ($bifunctorJoin1) {
+  $__fn = function($__dollar____unused) use ($bifunctorJoin1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $bifunctorJoin1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
     $__res = (object)["pure" => (function() use ($bipure) {
   $__fn = function($a) use ($bipure, &$__fn) {
   $__num = func_num_args();

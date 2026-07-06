@@ -142,7 +142,15 @@ function Data_Semigroup_Generic_genericSemigroupArgument($dictSemigroup) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$append = ($dictSemigroup)->append;
+$__case_0 = $dictSemigroup;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append = $__case_res_0;
     $__res = (object)["genericAppend'" => (function() use ($append) {
   $__body = function($v, $v1) use ($append) {
     $__case_0 = $v;
@@ -198,7 +206,15 @@ function Data_Semigroup_Generic_genericSemigroupConstructor($dictGenericSemigrou
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$genericAppend__prime__1 = ($dictGenericSemigroup)->genericAppend__prime__;
+$__case_0 = $dictGenericSemigroup;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->genericAppend__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericAppend__prime__1 = $__case_res_0;
     $__res = (object)["genericAppend'" => (function() use ($genericAppend__prime__1) {
   $__body = function($v, $v1) use ($genericAppend__prime__1) {
     $__case_0 = $v;
@@ -233,14 +249,30 @@ function Data_Semigroup_Generic_genericSemigroupProduct($dictGenericSemigroup) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$genericAppend__prime__1 = ($dictGenericSemigroup)->genericAppend__prime__;
+$__case_0 = $dictGenericSemigroup;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->genericAppend__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericAppend__prime__1 = $__case_res_0;
     $__res = (function() use ($genericAppend__prime__1) {
   $__fn = function($dictGenericSemigroup1) use ($genericAppend__prime__1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$genericAppend__prime__2 = ($dictGenericSemigroup1)->genericAppend__prime__;
+$__case_0 = $dictGenericSemigroup1;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->genericAppend__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericAppend__prime__2 = $__case_res_1;
     $__res = (object)["genericAppend'" => (function() use ($genericAppend__prime__1, $genericAppend__prime__2) {
   $__body = function($v, $v1) use ($genericAppend__prime__1, $genericAppend__prime__2) {
     $__case_0 = $v;
@@ -292,15 +324,39 @@ function Data_Semigroup_Generic_genericAppend($dictGeneric) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$to = ($dictGeneric)->to;
-$from = ($dictGeneric)->from;
+$__case_0 = $dictGeneric;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->to;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$to = $__case_res_0;
+$__case_0 = $dictGeneric;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->from;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$from = $__case_res_1;
     $__res = (function() use ($to, $from) {
   $__fn = function($dictGenericSemigroup) use ($to, $from, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$genericAppend__prime__1 = ($dictGenericSemigroup)->genericAppend__prime__;
+$__case_0 = $dictGenericSemigroup;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->genericAppend__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericAppend__prime__1 = $__case_res_2;
     $__res = (function() use ($to, $genericAppend__prime__1, $from) {
   $__fn = function($x, $y = null) use ($to, $genericAppend__prime__1, $from, &$__fn) {
   $__num = func_num_args();

@@ -86,20 +86,33 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'TestClosure_add': $v = ($GLOBALS['Data_Semiring_intAdd'] ?? \Data\Semiring\phpurs_eval_thunk('Data_Semiring_intAdd')); break;
-      case 'TestClosure_test': $v = ($f = (function() {
+      case 'TestClosure_add': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Semiring_semiringInt'] ?? \Data\Semiring\phpurs_eval_thunk('Data_Semiring_semiringInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->add;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'TestClosure_test': $v = (function() {
+  $f = (function() {
   $__fn = function($x, $y = null) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 2) {
     if ($__num === 1) return function($y) use ($x, &$__fn) { return $__fn($x, $y); };
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
-    $__res = ($x + $y);
+$__global_TestClosure_add = ($GLOBALS['TestClosure_add'] ?? \TestClosure\phpurs_eval_thunk('TestClosure_add'));
+    $__res = ($__global_TestClosure_add)($x, $y);
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
 })();
-return ($f)(1, 2);)(); break;
+  return ($f)(1, 2);
+})(); break;
       default: throw new \Exception("Unknown thunk " . $id);
     }
     $GLOBALS[$id] = $v;

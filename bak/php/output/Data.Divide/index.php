@@ -96,12 +96,42 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Data_Divide_conj': $v = ($GLOBALS['Data_HeytingAlgebra_boolConj'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_boolConj')); break;
-      case 'Data_Divide_append': $v = (($GLOBALS['Data_Ordering_semigroupOrdering'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_semigroupOrdering')))->append; break;
-      case 'Data_Divide_identity': $v = (($GLOBALS['Control_Category_categoryFn'] ?? \Control\Category\phpurs_eval_thunk('Control_Category_categoryFn')))->identity; break;
+      case 'Data_Divide_conj': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_HeytingAlgebra_heytingAlgebraBoolean'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_heytingAlgebraBoolean'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->conj;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Divide_append': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Ordering_semigroupOrdering'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_semigroupOrdering'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Divide_identity': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Category_categoryFn'] ?? \Control\Category\phpurs_eval_thunk('Control_Category_categoryFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->identity;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_Divide_dividePredicate': $v = (object)["divide" => (function() {
   $__body = function($f, $v, $v1) {
-    $__global_Data_HeytingAlgebra_boolConj = ($GLOBALS['Data_HeytingAlgebra_boolConj'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_boolConj'));
+    $__global_Data_Divide_conj = ($GLOBALS['Data_Divide_conj'] ?? \Data\Divide\phpurs_eval_thunk('Data_Divide_conj'));
     $__case_0 = $f;
     $__case_1 = $v;
     $__case_2 = $v1;
@@ -109,22 +139,22 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
 $f1 = $__case_0;
 $g = $__case_1;
 $h = $__case_2;
-return (function() use ($f1, $__global_Data_HeytingAlgebra_boolConj, $g, $h) {
-  $__body = function($a) use ($f1, $__global_Data_HeytingAlgebra_boolConj, $g, $h) {
+return (function() use ($f1, $__global_Data_Divide_conj, $g, $h) {
+  $__body = function($a) use ($f1, $__global_Data_Divide_conj, $g, $h) {
     $v2 = ($f1)($a);
     $__case_0 = $v2;
     switch (($__case_0)->tag) {
 case "Tuple":
 $b = ($__case_0)->v0;
 $c = ($__case_0)->v1;
-return ($__global_Data_HeytingAlgebra_boolConj)(($g)($b), ($h)($c));
+return ($__global_Data_Divide_conj)(($g)($b), ($h)($c));
 break;
 default:
 throw new \Exception("Pattern match failure");
 break;
 };
   };
-  $__fn = function($a) use ($f1, $__global_Data_HeytingAlgebra_boolConj, $g, $h, $__body, &$__fn) {
+  $__fn = function($a) use ($f1, $__global_Data_Divide_conj, $g, $h, $__body, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
@@ -168,7 +198,7 @@ $__global_Data_Predicate_contravariantPredicate = ($GLOBALS['Data_Predicate_cont
 })()]; break;
       case 'Data_Divide_divideEquivalence': $v = (object)["divide" => (function() {
   $__body = function($f, $v, $v1) {
-    $__global_Data_HeytingAlgebra_boolConj = ($GLOBALS['Data_HeytingAlgebra_boolConj'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_boolConj'));
+    $__global_Data_Divide_conj = ($GLOBALS['Data_Divide_conj'] ?? \Data\Divide\phpurs_eval_thunk('Data_Divide_conj'));
     $__case_0 = $f;
     $__case_1 = $v;
     $__case_2 = $v1;
@@ -176,8 +206,8 @@ $__global_Data_Predicate_contravariantPredicate = ($GLOBALS['Data_Predicate_cont
 $f1 = $__case_0;
 $g = $__case_1;
 $h = $__case_2;
-return (function() use ($f1, $__global_Data_HeytingAlgebra_boolConj, $g, $h) {
-  $__body = function($a, $b) use ($f1, $__global_Data_HeytingAlgebra_boolConj, $g, $h) {
+return (function() use ($f1, $__global_Data_Divide_conj, $g, $h) {
+  $__body = function($a, $b) use ($f1, $__global_Data_Divide_conj, $g, $h) {
     $v2 = ($f1)($a);
     $__case_0 = $v2;
     switch (($__case_0)->tag) {
@@ -190,7 +220,7 @@ switch (($__case_0)->tag) {
 case "Tuple":
 $b__prime__ = ($__case_0)->v0;
 $b__prime____prime__ = ($__case_0)->v1;
-return ($__global_Data_HeytingAlgebra_boolConj)(($g)($a__prime__, $b__prime__), ($h)($a__prime____prime__, $b__prime____prime__));
+return ($__global_Data_Divide_conj)(($g)($a__prime__, $b__prime__), ($h)($a__prime____prime__, $b__prime____prime__));
 break;
 default:
 throw new \Exception("Pattern match failure");
@@ -202,7 +232,7 @@ throw new \Exception("Pattern match failure");
 break;
 };
   };
-  $__fn = function($a, $b = null) use ($f1, $__global_Data_HeytingAlgebra_boolConj, $g, $h, $__body, &$__fn) {
+  $__fn = function($a, $b = null) use ($f1, $__global_Data_Divide_conj, $g, $h, $__body, &$__fn) {
   $__num = func_num_args();
   if ($__num < 2) {
     if ($__num === 1) return function($b) use ($a, &$__fn) { return $__fn($a, $b); };
@@ -357,7 +387,15 @@ function Data_Divide_divideOp($dictSemigroup) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_Op_contravariantOp = ($GLOBALS['Data_Op_contravariantOp'] ?? \Data\Op\phpurs_eval_thunk('Data_Op_contravariantOp'));
-$append1 = ($dictSemigroup)->append;
+$__case_0 = $dictSemigroup;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append1 = $__case_res_0;
     $__res = (object)["divide" => (function() use ($append1) {
   $__body = function($f, $v, $v1) use ($append1) {
     $__case_0 = $f;
@@ -458,7 +496,15 @@ function Data_Divide_divided($dictDivide) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_Divide_identity = ($GLOBALS['Data_Divide_identity'] ?? \Data\Divide\phpurs_eval_thunk('Data_Divide_identity'));
-    $__res = (($dictDivide)->divide)($__global_Data_Divide_identity);
+$__case_0 = $dictDivide;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->divide;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__case_res_0)($__global_Data_Divide_identity);
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Divide_divided'] = __NAMESPACE__ . '\\Data_Divide_divided';

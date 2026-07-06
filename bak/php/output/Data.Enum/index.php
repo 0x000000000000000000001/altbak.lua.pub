@@ -111,35 +111,402 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Data_Enum_apply': $v = (($GLOBALS['Control_Apply_applyFn'] ?? \Control\Apply\phpurs_eval_thunk('Control_Apply_applyFn')))->apply; break;
-      case 'Data_Enum_append': $v = ($GLOBALS['Data_Semigroup_concatString'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_concatString')); break;
-      case 'Data_Enum_show': $v = ($GLOBALS['Data_Show_showIntImpl'] ?? \Data\Show\phpurs_eval_thunk('Data_Show_showIntImpl')); break;
-      case 'Data_Enum_lessThan': $v = (($GLOBALS['Data_Ord_lessThan'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_lessThan')))(($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'))); break;
-      case 'Data_Enum_map': $v = (($GLOBALS['Data_Maybe_functorMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_functorMaybe')))->map; break;
-      case 'Data_Enum_compose': $v = (($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn')))->compose; break;
-      case 'Data_Enum_top': $v = ($GLOBALS['Data_Bounded_topInt'] ?? \Data\Bounded\phpurs_eval_thunk('Data_Bounded_topInt')); break;
-      case 'Data_Enum_add': $v = ($GLOBALS['Data_Semiring_intAdd'] ?? \Data\Semiring\phpurs_eval_thunk('Data_Semiring_intAdd')); break;
-      case 'Data_Enum_greaterThan': $v = (($GLOBALS['Data_Ord_greaterThan'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_greaterThan')))(($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'))); break;
-      case 'Data_Enum_bottom': $v = ($GLOBALS['Data_Bounded_bottomInt'] ?? \Data\Bounded\phpurs_eval_thunk('Data_Bounded_bottomInt')); break;
-      case 'Data_Enum_sub': $v = ($GLOBALS['Data_Ring_intSub'] ?? \Data\Ring\phpurs_eval_thunk('Data_Ring_intSub')); break;
-      case 'Data_Enum_bind': $v = (($GLOBALS['Data_Maybe_bindMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_bindMaybe')))->bind; break;
-      case 'Data_Enum_voidLeft': $v = (($GLOBALS['Data_Functor_voidLeft'] ?? \Data\Functor\phpurs_eval_thunk('Data_Functor_voidLeft')))(($GLOBALS['Data_Maybe_functorMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_functorMaybe'))); break;
-      case 'Data_Enum_guard': $v = (($GLOBALS['Control_Alternative_guard'] ?? \Control\Alternative\phpurs_eval_thunk('Control_Alternative_guard')))(($GLOBALS['Data_Maybe_alternativeMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_alternativeMaybe'))); break;
-      case 'Data_Enum_lessThanOrEq': $v = (($GLOBALS['Data_Ord_lessThanOrEq'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_lessThanOrEq')))(($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'))); break;
-      case 'Data_Enum_composeFlipped': $v = (($GLOBALS['Control_Semigroupoid_composeFlipped'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_composeFlipped')))(($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn'))); break;
+      case 'Data_Enum_apply': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Apply_applyFn'] ?? \Control\Apply\phpurs_eval_thunk('Control_Apply_applyFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Enum_append': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Semigroup_semigroupString'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_semigroupString'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Enum_show': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Show_showInt'] ?? \Data\Show\phpurs_eval_thunk('Data_Show_showInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->show;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Enum_lessThan': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $compare3 = $__case_res_0;
+  return (function() use ($compare3) {
+  $__body = function($a1, $a2) use ($compare3) {
+    $v = ($compare3)($a1, $a2);
+    $__case_0 = $v;
+    switch (($__case_0)->tag) {
+case "LT":
+return true;
+break;
+default:
+return false;
+break;
+};
+  };
+  $__fn = function($a1, $a2 = null) use ($compare3, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($a2) use ($a1, &$__fn) { return $__fn($a1, $a2); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($a1, $a2);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+})(); break;
+      case 'Data_Enum_map': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Maybe_functorMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_functorMaybe'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Enum_compose': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compose;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Enum_top': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Bounded_boundedInt'] ?? \Data\Bounded\phpurs_eval_thunk('Data_Bounded_boundedInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->top;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Enum_add': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Semiring_semiringInt'] ?? \Data\Semiring\phpurs_eval_thunk('Data_Semiring_semiringInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->add;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Enum_greaterThan': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $compare3 = $__case_res_0;
+  return (function() use ($compare3) {
+  $__body = function($a1, $a2) use ($compare3) {
+    $v = ($compare3)($a1, $a2);
+    $__case_0 = $v;
+    switch (($__case_0)->tag) {
+case "GT":
+return true;
+break;
+default:
+return false;
+break;
+};
+  };
+  $__fn = function($a1, $a2 = null) use ($compare3, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($a2) use ($a1, &$__fn) { return $__fn($a1, $a2); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($a1, $a2);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+})(); break;
+      case 'Data_Enum_bottom': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Bounded_boundedInt'] ?? \Data\Bounded\phpurs_eval_thunk('Data_Bounded_boundedInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bottom;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Enum_sub': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Ring_ringInt'] ?? \Data\Ring\phpurs_eval_thunk('Data_Ring_ringInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->sub;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Enum_bind': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Maybe_bindMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_bindMaybe'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bind;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Enum_voidLeft': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Maybe_functorMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_functorMaybe'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $map1 = $__case_res_0;
+  return (function() use ($map1) {
+  $__fn = function($f, $x = null) use ($map1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($x) use ($f, &$__fn) { return $__fn($f, $x); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+$__global_Data_Function_const = ($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const'));
+    $__res = ($map1)(($__global_Data_Function_const)($x), $f);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+})(); break;
+      case 'Data_Enum_guard': $v = (function() {
+  $__case_0 = $dict;
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $pure = $__case_res_0;
+  $__case_0 = $dict;
+  $__case_res_1 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->empty;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $empty = $__case_res_1;
+  return (function() use ($pure, $empty) {
+  $__body = function($v) use ($pure, $empty) {
+    $__global_Data_Unit_unit = ($GLOBALS['Data_Unit_unit'] ?? \Data\Unit\phpurs_eval_thunk('Data_Unit_unit'));
+    $__case_0 = $v;
+    switch ($__case_0) {
+case true:
+return ($pure)($__global_Data_Unit_unit);
+break;
+case false:
+return $empty;
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($v) use ($pure, $empty, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $__body($v);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+})(); break;
+      case 'Data_Enum_lessThanOrEq': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $compare3 = $__case_res_0;
+  return (function() use ($compare3) {
+  $__body = function($a1, $a2) use ($compare3) {
+    $v = ($compare3)($a1, $a2);
+    $__case_0 = $v;
+    switch (($__case_0)->tag) {
+case "GT":
+return false;
+break;
+default:
+return true;
+break;
+};
+  };
+  $__fn = function($a1, $a2 = null) use ($compare3, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($a2) use ($a1, &$__fn) { return $__fn($a1, $a2); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($a1, $a2);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+})(); break;
+      case 'Data_Enum_composeFlipped': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compose;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $compose1 = $__case_res_0;
+  return (function() use ($compose1) {
+  $__fn = function($f, $g = null) use ($compose1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($g) use ($f, &$__fn) { return $__fn($f, $g); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($compose1)($g, $f);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+})(); break;
       case 'Data_Enum_fromJust': $v = (($GLOBALS['Data_Maybe_fromJust'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_fromJust')))(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))); break;
-      case 'Data_Enum_eq': $v = ($GLOBALS['Data_Eq_eqIntImpl'] ?? \Data\Eq\phpurs_eval_thunk('Data_Eq_eqIntImpl')); break;
-      case 'Data_Enum_conj': $v = ($GLOBALS['Data_HeytingAlgebra_boolConj'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_boolConj')); break;
-      case 'Data_Enum_greaterThanOrEq': $v = (($GLOBALS['Data_Ord_greaterThanOrEq'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_greaterThanOrEq')))(($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'))); break;
-      case 'Data_Enum_bottom1': $v = ($GLOBALS['Data_Bounded_bottomChar'] ?? \Data\Bounded\phpurs_eval_thunk('Data_Bounded_bottomChar')); break;
-      case 'Data_Enum_top1': $v = ($GLOBALS['Data_Bounded_topChar'] ?? \Data\Bounded\phpurs_eval_thunk('Data_Bounded_topChar')); break;
+      case 'Data_Enum_eq': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Eq_eqInt'] ?? \Data\Eq\phpurs_eval_thunk('Data_Eq_eqInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Enum_conj': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_HeytingAlgebra_heytingAlgebraBoolean'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_heytingAlgebraBoolean'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->conj;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Enum_greaterThanOrEq': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $compare3 = $__case_res_0;
+  return (function() use ($compare3) {
+  $__body = function($a1, $a2) use ($compare3) {
+    $v = ($compare3)($a1, $a2);
+    $__case_0 = $v;
+    switch (($__case_0)->tag) {
+case "LT":
+return false;
+break;
+default:
+return true;
+break;
+};
+  };
+  $__fn = function($a1, $a2 = null) use ($compare3, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($a2) use ($a1, &$__fn) { return $__fn($a1, $a2); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($a1, $a2);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+})(); break;
+      case 'Data_Enum_bottom1': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Bounded_boundedChar'] ?? \Data\Bounded\phpurs_eval_thunk('Data_Bounded_boundedChar'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bottom;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Enum_top1': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Bounded_boundedChar'] ?? \Data\Bounded\phpurs_eval_thunk('Data_Bounded_boundedChar'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->top;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_Enum_showCardinality': $v = (object)["show" => (function() {
   $__body = function($v) {
-    $__global_Data_Show_showIntImpl = ($GLOBALS['Data_Show_showIntImpl'] ?? \Data\Show\phpurs_eval_thunk('Data_Show_showIntImpl'));
+    $__global_Data_Enum_append = ($GLOBALS['Data_Enum_append'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_append'));
+    $__global_Data_Enum_show = ($GLOBALS['Data_Enum_show'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_show'));
     $__case_0 = $v;
     if (true) {
 $n = $__case_0;
-return ("(Cardinality " . (($__global_Data_Show_showIntImpl)($n) . ")"));
+return ($__global_Data_Enum_append)("(Cardinality ", ($__global_Data_Enum_append)(($__global_Data_Enum_show)($n), ")"));
 } else {
 throw new \Exception("Pattern match failure");
 };
@@ -289,8 +656,9 @@ $__global_Data_Ord_ordOrdering = ($GLOBALS['Data_Ord_ordOrdering'] ?? \Data\Ord\
       case 'Data_Enum_enumInt': $v = (object)["succ" => (function() {
   $__body = function($n) {
     $__global_Data_Enum_lessThan = ($GLOBALS['Data_Enum_lessThan'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_lessThan'));
-    $__global_Data_Bounded_topInt = ($GLOBALS['Data_Bounded_topInt'] ?? \Data\Bounded\phpurs_eval_thunk('Data_Bounded_topInt'));
-    $__case_0 = ($__global_Data_Enum_lessThan)($n, $__global_Data_Bounded_topInt);
+    $__global_Data_Enum_top = ($GLOBALS['Data_Enum_top'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_top'));
+    $__global_Data_Enum_add = ($GLOBALS['Data_Enum_add'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_add'));
+    $__case_0 = ($__global_Data_Enum_lessThan)($n, $__global_Data_Enum_top);
     switch ($__case_0) {
 case true:
 return ((function() {
@@ -303,7 +671,7 @@ return ((function() {
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})())(($n + 1));
+})())(($__global_Data_Enum_add)($n, 1));
 break;
 default:
 return ($GLOBALS['__phpurs_data0_Nothing'] ??= new Phpurs_Data0("Nothing"));
@@ -322,8 +690,9 @@ break;
 })(), "pred" => (function() {
   $__body = function($n) {
     $__global_Data_Enum_greaterThan = ($GLOBALS['Data_Enum_greaterThan'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_greaterThan'));
-    $__global_Data_Bounded_bottomInt = ($GLOBALS['Data_Bounded_bottomInt'] ?? \Data\Bounded\phpurs_eval_thunk('Data_Bounded_bottomInt'));
-    $__case_0 = ($__global_Data_Enum_greaterThan)($n, $__global_Data_Bounded_bottomInt);
+    $__global_Data_Enum_bottom = ($GLOBALS['Data_Enum_bottom'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_bottom'));
+    $__global_Data_Enum_sub = ($GLOBALS['Data_Enum_sub'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_sub'));
+    $__case_0 = ($__global_Data_Enum_greaterThan)($n, $__global_Data_Enum_bottom);
     switch ($__case_0) {
 case true:
 return ((function() {
@@ -336,7 +705,7 @@ return ((function() {
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})())(($n - 1));
+})())(($__global_Data_Enum_sub)($n, 1));
 break;
 default:
 return ($GLOBALS['__phpurs_data0_Nothing'] ??= new Phpurs_Data0("Nothing"));
@@ -612,7 +981,7 @@ $__global_Data_Enum_enumOrdering = ($GLOBALS['Data_Enum_enumOrdering'] ?? \Data\
   };
   return $__fn;
 })()]; break;
-      case 'Data_Enum_boundedEnumChar': $v = (object)["cardinality" => ((($GLOBALS['Data_Enum_toCharCode'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_toCharCode')))(($GLOBALS['Data_Bounded_topChar'] ?? \Data\Bounded\phpurs_eval_thunk('Data_Bounded_topChar'))) - (($GLOBALS['Data_Enum_toCharCode'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_toCharCode')))(($GLOBALS['Data_Bounded_bottomChar'] ?? \Data\Bounded\phpurs_eval_thunk('Data_Bounded_bottomChar')))), "toEnum" => ($GLOBALS['Data_Enum_charToEnum'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_charToEnum')), "fromEnum" => ($GLOBALS['Data_Enum_toCharCode'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_toCharCode')), "Bounded0" => (function() {
+      case 'Data_Enum_boundedEnumChar': $v = (object)["cardinality" => (($GLOBALS['Data_Enum_sub'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_sub')))((($GLOBALS['Data_Enum_toCharCode'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_toCharCode')))(($GLOBALS['Data_Enum_top1'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_top1'))), (($GLOBALS['Data_Enum_toCharCode'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_toCharCode')))(($GLOBALS['Data_Enum_bottom1'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_bottom1')))), "toEnum" => ($GLOBALS['Data_Enum_charToEnum'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_charToEnum')), "fromEnum" => ($GLOBALS['Data_Enum_toCharCode'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_toCharCode')), "Bounded0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
@@ -843,14 +1212,30 @@ function Data_Enum_upFromIncluding($dictEnum) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_Enum_apply = ($GLOBALS['Data_Enum_apply'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_apply'));
-$succ1 = ($dictEnum)->succ;
+$__case_0 = $dictEnum;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->succ;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$succ1 = $__case_res_0;
     $__res = (function() use ($__global_Data_Enum_apply, $succ1) {
   $__fn = function($dictUnfoldable1) use ($__global_Data_Enum_apply, $succ1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (($dictUnfoldable1)->unfoldr1)(($__global_Data_Enum_apply)((function() {
+$__case_0 = $dictUnfoldable1;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->unfoldr1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__case_res_1)(($__global_Data_Enum_apply)((function() {
   $__fn = function($value0, $value1 = null) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 2) {
@@ -922,11 +1307,34 @@ function Data_Enum_toEnumWithDefaults($dictBoundedEnum) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Enum_lessThan = ($GLOBALS['Data_Enum_lessThan'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_lessThan'));
-$toEnum1 = ($dictBoundedEnum)->toEnum;
-$fromEnum1 = ($dictBoundedEnum)->fromEnum;
-$bottom2 = ((($dictBoundedEnum)->Bounded0)($__global_Prim_undefined))->bottom;
+$__case_0 = $dictBoundedEnum;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->toEnum;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$toEnum1 = $__case_res_0;
+$__case_0 = $dictBoundedEnum;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->fromEnum;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$fromEnum1 = $__case_res_1;
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->bottom;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bottom2 = $__case_res_2;
     $__res = (function() use ($toEnum1, $__global_Data_Enum_lessThan, $fromEnum1, $bottom2) {
   $__body = function($low, $high, $x) use ($toEnum1, $__global_Data_Enum_lessThan, $fromEnum1, $bottom2) {
     $v = ($toEnum1)($x);
@@ -982,15 +1390,159 @@ function Data_Enum_enumTuple($dictEnum) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Tuple_ordTuple = ($GLOBALS['Data_Tuple_ordTuple'] ?? \Data\Tuple\phpurs_eval_thunk('Data_Tuple_ordTuple'));
+$__global_Data_Tuple_conj = ($GLOBALS['Data_Tuple_conj'] ?? \Data\Tuple\phpurs_eval_thunk('Data_Tuple_conj'));
 $__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Maybe_maybe = ($GLOBALS['Data_Maybe_maybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_maybe'));
 $__global_Data_Enum_map = ($GLOBALS['Data_Enum_map'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_map'));
 $__global_Data_Function_flip = ($GLOBALS['Data_Function_flip'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_flip'));
 $__global_Data_Enum_compose = ($GLOBALS['Data_Enum_compose'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_compose'));
-$succ1 = ($dictEnum)->succ;
-$pred1 = ($dictEnum)->pred;
-$ordTuple = ($__global_Data_Tuple_ordTuple)((($dictEnum)->Ord0)($__global_Prim_undefined));
+$__case_0 = $dictEnum;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->succ;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$succ1 = $__case_res_0;
+$__case_0 = $dictEnum;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->pred;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pred1 = $__case_res_1;
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare = $__case_res_2;
+$__case_0 = $dict;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq = $__case_res_3;
+$eqTuple1 = (function() use ($__global_Data_Tuple_conj, $eq) {
+  $__fn = function($dictEq1) use ($__global_Data_Tuple_conj, $eq, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dictEq1;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq1 = $__case_res_4;
+    $__res = (object)["eq" => (function() use ($__global_Data_Tuple_conj, $eq, $eq1) {
+  $__body = function($x, $y) use ($__global_Data_Tuple_conj, $eq, $eq1) {
+    $__case_0 = $x;
+    $__case_1 = $y;
+    if (((($__case_0)->tag === "Tuple") && (($__case_1)->tag === "Tuple"))) {
+$l = ($__case_0)->v0;
+$l1 = ($__case_0)->v1;
+$r = ($__case_1)->v0;
+$r1 = ($__case_1)->v1;
+return ($__global_Data_Tuple_conj)(($eq)($l, $r), ($eq1)($l1, $r1));
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($x, $y = null) use ($__global_Data_Tuple_conj, $eq, $eq1, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($y) use ($x, &$__fn) { return $__fn($x, $y); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($x, $y);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+$ordTuple = (function() use ($eqTuple1, $__global_Prim_undefined, $compare) {
+  $__fn = function($dictOrd1) use ($eqTuple1, $__global_Prim_undefined, $compare, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dictOrd1;
+$__case_res_5 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_5 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare1 = $__case_res_5;
+$eqTuple2 = ($eqTuple1)((($dictOrd1)->Eq0)($__global_Prim_undefined));
+    $__res = (object)["compare" => (function() use ($compare, $compare1) {
+  $__body = function($x, $y) use ($compare, $compare1) {
+    $__case_0 = $x;
+    $__case_1 = $y;
+    if (((($__case_0)->tag === "Tuple") && (($__case_1)->tag === "Tuple"))) {
+$l = ($__case_0)->v0;
+$l1 = ($__case_0)->v1;
+$r = ($__case_1)->v0;
+$r1 = ($__case_1)->v1;
+$v = ($compare)($l, $r);
+$__case_0 = $v;
+switch (($__case_0)->tag) {
+case "LT":
+return ($GLOBALS['__phpurs_data0_LT'] ??= new Phpurs_Data0("LT"));
+break;
+case "GT":
+return ($GLOBALS['__phpurs_data0_GT'] ??= new Phpurs_Data0("GT"));
+break;
+default:
+return ($compare1)($l1, $r1);
+break;
+};
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($x, $y = null) use ($compare, $compare1, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($y) use ($x, &$__fn) { return $__fn($x, $y); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($x, $y);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "Eq0" => (function() use ($eqTuple2) {
+  $__fn = function($__dollar____unused) use ($eqTuple2, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $eqTuple2;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
     $__res = (function() use ($__global_Prim_undefined, $ordTuple, $__global_Data_Maybe_maybe, $__global_Data_Enum_map, $__global_Data_Function_flip, $succ1, $__global_Data_Enum_compose, $pred1) {
   $__fn = function($dictBoundedEnum) use ($__global_Prim_undefined, $ordTuple, $__global_Data_Maybe_maybe, $__global_Data_Enum_map, $__global_Data_Function_flip, $succ1, $__global_Data_Enum_compose, $pred1, &$__fn) {
   $__num = func_num_args();
@@ -998,11 +1550,43 @@ $ordTuple = ($__global_Data_Tuple_ordTuple)((($dictEnum)->Ord0)($__global_Prim_u
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $Bounded0 = (($dictBoundedEnum)->Bounded0)($__global_Prim_undefined);
-$bottom2 = ($Bounded0)->bottom;
+$__case_0 = $Bounded0;
+$__case_res_6 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_6 = ($v)->bottom;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bottom2 = $__case_res_6;
 $Enum1 = (($dictBoundedEnum)->Enum1)($__global_Prim_undefined);
-$succ2 = ($Enum1)->succ;
-$top2 = ($Bounded0)->top;
-$pred2 = ($Enum1)->pred;
+$__case_0 = $Enum1;
+$__case_res_7 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_7 = ($v)->succ;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$succ2 = $__case_res_7;
+$__case_0 = $Bounded0;
+$__case_res_8 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_8 = ($v)->top;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$top2 = $__case_res_8;
+$__case_0 = $Enum1;
+$__case_res_9 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_9 = ($v)->pred;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pred2 = $__case_res_9;
 $ordTuple1 = ($ordTuple)((($Enum1)->Ord0)($__global_Prim_undefined));
     $__res = (object)["succ" => (function() use ($__global_Data_Maybe_maybe, $__global_Data_Enum_map, $__global_Data_Function_flip, $bottom2, $succ1, $__global_Data_Enum_compose, $succ2) {
   $__body = function($v) use ($__global_Data_Maybe_maybe, $__global_Data_Enum_map, $__global_Data_Function_flip, $bottom2, $succ1, $__global_Data_Enum_compose, $succ2) {
@@ -1142,13 +1726,129 @@ function Data_Enum_enumMaybe($dictBoundedEnum) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$__global_Data_Maybe_ordMaybe = ($GLOBALS['Data_Maybe_ordMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_ordMaybe'));
 $__global_Data_Enum_map = ($GLOBALS['Data_Enum_map'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_map'));
-$bottom2 = ((($dictBoundedEnum)->Bounded0)($__global_Prim_undefined))->bottom;
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bottom;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bottom2 = $__case_res_0;
 $Enum1 = (($dictBoundedEnum)->Enum1)($__global_Prim_undefined);
-$succ1 = ($Enum1)->succ;
-$pred1 = ($Enum1)->pred;
-$ordMaybe = ($__global_Data_Maybe_ordMaybe)((($Enum1)->Ord0)($__global_Prim_undefined));
+$__case_0 = $Enum1;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->succ;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$succ1 = $__case_res_1;
+$__case_0 = $Enum1;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->pred;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pred1 = $__case_res_2;
+$__case_0 = $dict;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare = $__case_res_3;
+$__case_0 = $dict;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq = $__case_res_4;
+$eqMaybe1 = (object)["eq" => (function() use ($eq) {
+  $__body = function($x, $y) use ($eq) {
+    $__case_0 = $x;
+    $__case_1 = $y;
+    if (((($__case_0)->tag === "Nothing") && (($__case_1)->tag === "Nothing"))) {
+return true;
+} else {
+if (((($__case_0)->tag === "Just") && (($__case_1)->tag === "Just"))) {
+$l = ($__case_0)->v0;
+$r = ($__case_1)->v0;
+return ($eq)($l, $r);
+} else {
+if (true) {
+return false;
+} else {
+throw new \Exception("Pattern match failure");
+};
+};
+};
+  };
+  $__fn = function($x, $y = null) use ($eq, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($y) use ($x, &$__fn) { return $__fn($x, $y); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($x, $y);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+$ordMaybe = (object)["compare" => (function() use ($compare) {
+  $__body = function($x, $y) use ($compare) {
+    $__case_0 = $x;
+    $__case_1 = $y;
+    if (((($__case_0)->tag === "Nothing") && (($__case_1)->tag === "Nothing"))) {
+return ($GLOBALS['__phpurs_data0_EQ'] ??= new Phpurs_Data0("EQ"));
+} else {
+if ((($__case_0)->tag === "Nothing")) {
+return ($GLOBALS['__phpurs_data0_LT'] ??= new Phpurs_Data0("LT"));
+} else {
+if ((($__case_1)->tag === "Nothing")) {
+return ($GLOBALS['__phpurs_data0_GT'] ??= new Phpurs_Data0("GT"));
+} else {
+if (((($__case_0)->tag === "Just") && (($__case_1)->tag === "Just"))) {
+$l = ($__case_0)->v0;
+$r = ($__case_1)->v0;
+return ($compare)($l, $r);
+} else {
+throw new \Exception("Pattern match failure");
+};
+};
+};
+};
+  };
+  $__fn = function($x, $y = null) use ($compare, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($y) use ($x, &$__fn) { return $__fn($x, $y); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($x, $y);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "Eq0" => (function() use ($eqMaybe1) {
+  $__fn = function($__dollar____unused) use ($eqMaybe1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $eqMaybe1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
     $__res = (object)["succ" => (function() use ($bottom2, $__global_Data_Enum_map, $succ1) {
   $__body = function($v) use ($bottom2, $__global_Data_Enum_map, $succ1) {
     $__case_0 = $v;
@@ -1263,28 +1963,193 @@ function Data_Enum_enumFromTo($dictEnum) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$__global_Data_Ord_lessThan = ($GLOBALS['Data_Ord_lessThan'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_lessThan'));
-$__global_Data_Ord_lessThanOrEq = ($GLOBALS['Data_Ord_lessThanOrEq'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_lessThanOrEq'));
-$__global_Data_Ord_greaterThanOrEq = ($GLOBALS['Data_Ord_greaterThanOrEq'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_greaterThanOrEq'));
-$__global_Data_Unfoldable1_singleton = ($GLOBALS['Data_Unfoldable1_singleton'] ?? \Data\Unfoldable1\phpurs_eval_thunk('Data_Unfoldable1_singleton'));
+$__global_Data_Unfoldable1_sub = ($GLOBALS['Data_Unfoldable1_sub'] ?? \Data\Unfoldable1\phpurs_eval_thunk('Data_Unfoldable1_sub'));
 $__global_Data_Enum_bind = ($GLOBALS['Data_Enum_bind'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_bind'));
 $__global_Data_Enum_voidLeft = ($GLOBALS['Data_Enum_voidLeft'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_voidLeft'));
 $__global_Data_Enum_guard = ($GLOBALS['Data_Enum_guard'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_guard'));
 $Ord0 = (($dictEnum)->Ord0)($__global_Prim_undefined);
-$eq1 = ((($Ord0)->Eq0)($__global_Prim_undefined))->eq;
-$lessThan1 = ($__global_Data_Ord_lessThan)($Ord0);
-$succ1 = ($dictEnum)->succ;
-$lessThanOrEq1 = ($__global_Data_Ord_lessThanOrEq)($Ord0);
-$pred1 = ($dictEnum)->pred;
-$greaterThanOrEq1 = ($__global_Data_Ord_greaterThanOrEq)($Ord0);
-    $__res = (function() use ($__global_Data_Unfoldable1_singleton, $__global_Data_Enum_bind, $__global_Data_Enum_voidLeft, $__global_Data_Enum_guard) {
-  $__fn = function($dictUnfoldable1) use ($__global_Data_Unfoldable1_singleton, $__global_Data_Enum_bind, $__global_Data_Enum_voidLeft, $__global_Data_Enum_guard, &$__fn) {
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq1 = $__case_res_0;
+$__case_0 = $Ord0;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare3 = $__case_res_1;
+$lessThan1 = (function() use ($compare3) {
+  $__body = function($a1, $a2) use ($compare3) {
+    $v = ($compare3)($a1, $a2);
+    $__case_0 = $v;
+    switch (($__case_0)->tag) {
+case "LT":
+return true;
+break;
+default:
+return false;
+break;
+};
+  };
+  $__fn = function($a1, $a2 = null) use ($compare3, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($a2) use ($a1, &$__fn) { return $__fn($a1, $a2); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($a1, $a2);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+$__case_0 = $dictEnum;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->succ;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$succ1 = $__case_res_2;
+$__case_0 = $Ord0;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare3 = $__case_res_3;
+$lessThanOrEq1 = (function() use ($compare3) {
+  $__body = function($a1, $a2) use ($compare3) {
+    $v = ($compare3)($a1, $a2);
+    $__case_0 = $v;
+    switch (($__case_0)->tag) {
+case "GT":
+return false;
+break;
+default:
+return true;
+break;
+};
+  };
+  $__fn = function($a1, $a2 = null) use ($compare3, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($a2) use ($a1, &$__fn) { return $__fn($a1, $a2); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($a1, $a2);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+$__case_0 = $dictEnum;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->pred;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pred1 = $__case_res_4;
+$__case_0 = $Ord0;
+$__case_res_5 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_5 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare3 = $__case_res_5;
+$greaterThanOrEq1 = (function() use ($compare3) {
+  $__body = function($a1, $a2) use ($compare3) {
+    $v = ($compare3)($a1, $a2);
+    $__case_0 = $v;
+    switch (($__case_0)->tag) {
+case "LT":
+return false;
+break;
+default:
+return true;
+break;
+};
+  };
+  $__fn = function($a1, $a2 = null) use ($compare3, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($a2) use ($a1, &$__fn) { return $__fn($a1, $a2); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($a1, $a2);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+    $__res = (function() use ($__global_Data_Unfoldable1_sub, $__global_Data_Enum_bind, $__global_Data_Enum_voidLeft, $__global_Data_Enum_guard) {
+  $__fn = function($dictUnfoldable1) use ($__global_Data_Unfoldable1_sub, $__global_Data_Enum_bind, $__global_Data_Enum_voidLeft, $__global_Data_Enum_guard, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$singleton = ($__global_Data_Unfoldable1_singleton)($dictUnfoldable1);
-$unfoldr1 = ($dictUnfoldable1)->unfoldr1;
+$__case_0 = $dictUnfoldable1;
+$__case_res_6 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_6 = ($v)->unfoldr1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$unfoldr11 = $__case_res_6;
+$singleton = ((function() use ($unfoldr11, $__global_Data_Unfoldable1_sub) {
+  $__fn = function($n, $v = null) use ($unfoldr11, $__global_Data_Unfoldable1_sub, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($n, &$__fn) { return $__fn($n, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+$step = (function() {
+  $__body = function($i) {
+    $__case_0 = $i;
+    if (true) {
+$i1 = $__case_0;
+return "/* Unsupported: Guards not supported */";
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($i) use ($__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $__body($i);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+    $__res = ($unfoldr11)($step, ($__global_Data_Unfoldable1_sub)($n, 1));
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})())(1);
+$__case_0 = $dictUnfoldable1;
+$__case_res_7 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_7 = ($v)->unfoldr1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$unfoldr1 = $__case_res_7;
 $go = (function() use ($__global_Data_Enum_bind, $__global_Data_Enum_voidLeft, $__global_Data_Enum_guard) {
   $__fn = function($step, $op = null, $to = null, $a = null) use ($__global_Data_Enum_bind, $__global_Data_Enum_voidLeft, $__global_Data_Enum_guard, &$__fn) {
   $__num = func_num_args();
@@ -1377,22 +2242,55 @@ function Data_Enum_enumFromThenTo($dictUnfoldable) {
 $__global_Partial_Unsafe__unsafePartial = ($GLOBALS['Partial_Unsafe__unsafePartial'] ?? \Partial\Unsafe\phpurs_eval_thunk('Partial_Unsafe__unsafePartial'));
 $__global_Data_Enum_composeFlipped = ($GLOBALS['Data_Enum_composeFlipped'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_composeFlipped'));
 $__global_Data_Enum_fromJust = ($GLOBALS['Data_Enum_fromJust'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_fromJust'));
-$unfoldr = ($dictUnfoldable)->unfoldr;
-    $__res = (function() use ($__global_Partial_Unsafe__unsafePartial, $__global_Data_Enum_composeFlipped, $__global_Data_Enum_fromJust, $unfoldr) {
-  $__fn = function($dictFunctor) use ($__global_Partial_Unsafe__unsafePartial, $__global_Data_Enum_composeFlipped, $__global_Data_Enum_fromJust, $unfoldr, &$__fn) {
+$__global_Data_Enum_sub = ($GLOBALS['Data_Enum_sub'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_sub'));
+$__case_0 = $dictUnfoldable;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->unfoldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$unfoldr = $__case_res_0;
+    $__res = (function() use ($__global_Partial_Unsafe__unsafePartial, $__global_Data_Enum_composeFlipped, $__global_Data_Enum_fromJust, $unfoldr, $__global_Data_Enum_sub) {
+  $__fn = function($dictFunctor) use ($__global_Partial_Unsafe__unsafePartial, $__global_Data_Enum_composeFlipped, $__global_Data_Enum_fromJust, $unfoldr, $__global_Data_Enum_sub, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$map1 = ($dictFunctor)->map;
-    $__res = (function() use ($__global_Partial_Unsafe__unsafePartial, $map1, $__global_Data_Enum_composeFlipped, $__global_Data_Enum_fromJust, $unfoldr) {
-  $__fn = function($dictBoundedEnum) use ($__global_Partial_Unsafe__unsafePartial, $map1, $__global_Data_Enum_composeFlipped, $__global_Data_Enum_fromJust, $unfoldr, &$__fn) {
+$__case_0 = $dictFunctor;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map1 = $__case_res_1;
+    $__res = (function() use ($__global_Partial_Unsafe__unsafePartial, $map1, $__global_Data_Enum_composeFlipped, $__global_Data_Enum_fromJust, $unfoldr, $__global_Data_Enum_sub) {
+  $__fn = function($dictBoundedEnum) use ($__global_Partial_Unsafe__unsafePartial, $map1, $__global_Data_Enum_composeFlipped, $__global_Data_Enum_fromJust, $unfoldr, $__global_Data_Enum_sub, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$fromEnum1 = ($dictBoundedEnum)->fromEnum;
-$toEnum1 = ($dictBoundedEnum)->toEnum;
+$__case_0 = $dictBoundedEnum;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->fromEnum;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$fromEnum1 = $__case_res_2;
+$__case_0 = $dictBoundedEnum;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->toEnum;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$toEnum1 = $__case_res_3;
 $go = (function() {
   $__body = function($step, $to, $e) {
     $__case_0 = $step;
@@ -1424,8 +2322,8 @@ throw new \Exception("Pattern match failure");
   };
   return $__fn;
 })();
-    $__res = ($__global_Partial_Unsafe__unsafePartial)((function() use ($fromEnum1, $map1, $__global_Data_Enum_composeFlipped, $toEnum1, $__global_Data_Enum_fromJust, $unfoldr, $go) {
-  $__fn = function($__dollar____unused, $a = null, $b = null, $c = null) use ($fromEnum1, $map1, $__global_Data_Enum_composeFlipped, $toEnum1, $__global_Data_Enum_fromJust, $unfoldr, $go, &$__fn) {
+    $__res = ($__global_Partial_Unsafe__unsafePartial)((function() use ($fromEnum1, $map1, $__global_Data_Enum_composeFlipped, $toEnum1, $__global_Data_Enum_fromJust, $unfoldr, $go, $__global_Data_Enum_sub) {
+  $__fn = function($__dollar____unused, $a = null, $b = null, $c = null) use ($fromEnum1, $map1, $__global_Data_Enum_composeFlipped, $toEnum1, $__global_Data_Enum_fromJust, $unfoldr, $go, $__global_Data_Enum_sub, &$__fn) {
   $__num = func_num_args();
   if ($__num < 4) {
     if ($__num === 3) return function($c) use ($__dollar____unused, $a, $b, &$__fn) { return $__fn($__dollar____unused, $a, $b, $c); };
@@ -1452,7 +2350,7 @@ throw new \Exception("Pattern match failure");
 $c__prime__ = ($fromEnum1)($c);
 $b__prime__ = ($fromEnum1)($b);
 $a__prime__ = ($fromEnum1)($a);
-    $__res = ($map1)(($__global_Data_Enum_composeFlipped)($toEnum1, $__global_Data_Enum_fromJust), ($unfoldr)(($go)(($b__prime__ - $a__prime__), $c__prime__), $a__prime__));
+    $__res = ($map1)(($__global_Data_Enum_composeFlipped)($toEnum1, $__global_Data_Enum_fromJust), ($unfoldr)(($go)(($__global_Data_Enum_sub)($b__prime__, $a__prime__), $c__prime__), $a__prime__));
   return $__num > 4 ? $__res(...array_slice(func_get_args(), 4)) : $__res;
   };
   return $__fn;
@@ -1477,24 +2375,207 @@ function Data_Enum_enumEither($dictBoundedEnum) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$__global_Data_Either_ordEither = ($GLOBALS['Data_Either_ordEither'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_ordEither'));
 $__global_Data_Maybe_maybe = ($GLOBALS['Data_Maybe_maybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_maybe'));
 $__global_Data_Enum_compose = ($GLOBALS['Data_Enum_compose'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_compose'));
 $Enum1 = (($dictBoundedEnum)->Enum1)($__global_Prim_undefined);
-$succ1 = ($Enum1)->succ;
-$pred1 = ($Enum1)->pred;
-$top2 = ((($dictBoundedEnum)->Bounded0)($__global_Prim_undefined))->top;
-$ordEither = ($__global_Data_Either_ordEither)((($Enum1)->Ord0)($__global_Prim_undefined));
-    $__res = (function() use ($__global_Prim_undefined, $ordEither, $__global_Data_Maybe_maybe, $__global_Data_Enum_compose, $succ1, $pred1, $top2) {
-  $__fn = function($dictBoundedEnum1) use ($__global_Prim_undefined, $ordEither, $__global_Data_Maybe_maybe, $__global_Data_Enum_compose, $succ1, $pred1, $top2, &$__fn) {
+$__case_0 = $Enum1;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->succ;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$succ1 = $__case_res_0;
+$__case_0 = $Enum1;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->pred;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pred1 = $__case_res_1;
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->top;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$top2 = $__case_res_2;
+$__case_0 = $dict;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare = $__case_res_3;
+$__case_0 = $dict;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq = $__case_res_4;
+$eqEither1 = (function() use ($eq) {
+  $__fn = function($dictEq1) use ($eq, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$bottom2 = ((($dictBoundedEnum1)->Bounded0)($__global_Prim_undefined))->bottom;
+$__case_0 = $dictEq1;
+$__case_res_5 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_5 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq1 = $__case_res_5;
+    $__res = (object)["eq" => (function() use ($eq, $eq1) {
+  $__body = function($x, $y) use ($eq, $eq1) {
+    $__case_0 = $x;
+    $__case_1 = $y;
+    if (((($__case_0)->tag === "Left") && (($__case_1)->tag === "Left"))) {
+$l = ($__case_0)->v0;
+$r = ($__case_1)->v0;
+return ($eq)($l, $r);
+} else {
+if (((($__case_0)->tag === "Right") && (($__case_1)->tag === "Right"))) {
+$l = ($__case_0)->v0;
+$r = ($__case_1)->v0;
+return ($eq1)($l, $r);
+} else {
+if (true) {
+return false;
+} else {
+throw new \Exception("Pattern match failure");
+};
+};
+};
+  };
+  $__fn = function($x, $y = null) use ($eq, $eq1, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($y) use ($x, &$__fn) { return $__fn($x, $y); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($x, $y);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+$ordEither = (function() use ($eqEither1, $__global_Prim_undefined, $compare) {
+  $__fn = function($dictOrd1) use ($eqEither1, $__global_Prim_undefined, $compare, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dictOrd1;
+$__case_res_6 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_6 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare1 = $__case_res_6;
+$eqEither2 = ($eqEither1)((($dictOrd1)->Eq0)($__global_Prim_undefined));
+    $__res = (object)["compare" => (function() use ($compare, $compare1) {
+  $__body = function($x, $y) use ($compare, $compare1) {
+    $__case_0 = $x;
+    $__case_1 = $y;
+    if (((($__case_0)->tag === "Left") && (($__case_1)->tag === "Left"))) {
+$l = ($__case_0)->v0;
+$r = ($__case_1)->v0;
+return ($compare)($l, $r);
+} else {
+if ((($__case_0)->tag === "Left")) {
+return ($GLOBALS['__phpurs_data0_LT'] ??= new Phpurs_Data0("LT"));
+} else {
+if ((($__case_1)->tag === "Left")) {
+return ($GLOBALS['__phpurs_data0_GT'] ??= new Phpurs_Data0("GT"));
+} else {
+if (((($__case_0)->tag === "Right") && (($__case_1)->tag === "Right"))) {
+$l = ($__case_0)->v0;
+$r = ($__case_1)->v0;
+return ($compare1)($l, $r);
+} else {
+throw new \Exception("Pattern match failure");
+};
+};
+};
+};
+  };
+  $__fn = function($x, $y = null) use ($compare, $compare1, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($y) use ($x, &$__fn) { return $__fn($x, $y); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($x, $y);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "Eq0" => (function() use ($eqEither2) {
+  $__fn = function($__dollar____unused) use ($eqEither2, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $eqEither2;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+    $__res = (function() use ($dict, $__global_Prim_undefined, $ordEither, $__global_Data_Maybe_maybe, $__global_Data_Enum_compose, $succ1, $pred1, $top2) {
+  $__fn = function($dictBoundedEnum1) use ($dict, $__global_Prim_undefined, $ordEither, $__global_Data_Maybe_maybe, $__global_Data_Enum_compose, $succ1, $pred1, $top2, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dict;
+$__case_res_7 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_7 = ($v)->bottom;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bottom2 = $__case_res_7;
 $Enum11 = (($dictBoundedEnum1)->Enum1)($__global_Prim_undefined);
-$succ2 = ($Enum11)->succ;
-$pred2 = ($Enum11)->pred;
+$__case_0 = $Enum11;
+$__case_res_8 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_8 = ($v)->succ;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$succ2 = $__case_res_8;
+$__case_0 = $Enum11;
+$__case_res_9 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_9 = ($v)->pred;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pred2 = $__case_res_9;
 $ordEither1 = ($ordEither)((($Enum11)->Ord0)($__global_Prim_undefined));
     $__res = (object)["succ" => (function() use ($__global_Data_Maybe_maybe, $bottom2, $__global_Data_Enum_compose, $succ1, $succ2) {
   $__body = function($v) use ($__global_Data_Maybe_maybe, $bottom2, $__global_Data_Enum_compose, $succ1, $succ2) {
@@ -1696,14 +2777,30 @@ function Data_Enum_downFromIncluding($dictEnum) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_Enum_apply = ($GLOBALS['Data_Enum_apply'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_apply'));
-$pred1 = ($dictEnum)->pred;
+$__case_0 = $dictEnum;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->pred;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pred1 = $__case_res_0;
     $__res = (function() use ($__global_Data_Enum_apply, $pred1) {
   $__fn = function($dictUnfoldable1) use ($__global_Data_Enum_apply, $pred1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (($dictUnfoldable1)->unfoldr1)(($__global_Data_Enum_apply)((function() {
+$__case_0 = $dictUnfoldable1;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->unfoldr1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__case_res_1)(($__global_Data_Enum_apply)((function() {
   $__fn = function($value0, $value1 = null) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 2) {
@@ -1756,14 +2853,30 @@ function Data_Enum_downFrom($dictEnum) {
 $__global_Data_Enum_compose = ($GLOBALS['Data_Enum_compose'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_compose'));
 $__global_Data_Enum_map = ($GLOBALS['Data_Enum_map'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_map'));
 $__global_Data_Enum_diag = ($GLOBALS['Data_Enum_diag'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_diag'));
-$pred1 = ($dictEnum)->pred;
+$__case_0 = $dictEnum;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->pred;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pred1 = $__case_res_0;
     $__res = (function() use ($__global_Data_Enum_compose, $__global_Data_Enum_map, $__global_Data_Enum_diag, $pred1) {
   $__fn = function($dictUnfoldable) use ($__global_Data_Enum_compose, $__global_Data_Enum_map, $__global_Data_Enum_diag, $pred1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (($dictUnfoldable)->unfoldr)(($__global_Data_Enum_compose)(($__global_Data_Enum_map)($__global_Data_Enum_diag), $pred1));
+$__case_0 = $dictUnfoldable;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->unfoldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__case_res_1)(($__global_Data_Enum_compose)(($__global_Data_Enum_map)($__global_Data_Enum_diag), $pred1));
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -1782,14 +2895,30 @@ function Data_Enum_upFrom($dictEnum) {
 $__global_Data_Enum_compose = ($GLOBALS['Data_Enum_compose'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_compose'));
 $__global_Data_Enum_map = ($GLOBALS['Data_Enum_map'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_map'));
 $__global_Data_Enum_diag = ($GLOBALS['Data_Enum_diag'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_diag'));
-$succ1 = ($dictEnum)->succ;
+$__case_0 = $dictEnum;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->succ;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$succ1 = $__case_res_0;
     $__res = (function() use ($__global_Data_Enum_compose, $__global_Data_Enum_map, $__global_Data_Enum_diag, $succ1) {
   $__fn = function($dictUnfoldable) use ($__global_Data_Enum_compose, $__global_Data_Enum_map, $__global_Data_Enum_diag, $succ1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (($dictUnfoldable)->unfoldr)(($__global_Data_Enum_compose)(($__global_Data_Enum_map)($__global_Data_Enum_diag), $succ1));
+$__case_0 = $dictUnfoldable;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->unfoldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__case_res_1)(($__global_Data_Enum_compose)(($__global_Data_Enum_map)($__global_Data_Enum_diag), $succ1));
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -1805,26 +2934,44 @@ function Data_Enum_defaultToEnum($dictBounded) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
+$__global_Data_Enum_eq = ($GLOBALS['Data_Enum_eq'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_eq'));
+$__global_Data_Enum_sub = ($GLOBALS['Data_Enum_sub'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_sub'));
 $__global_Data_Enum_lessThan = ($GLOBALS['Data_Enum_lessThan'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_lessThan'));
-$bottom2 = ($dictBounded)->bottom;
-    $__res = (function() use ($__global_Data_Enum_lessThan, $bottom2) {
-  $__fn = function($dictEnum) use ($__global_Data_Enum_lessThan, $bottom2, &$__fn) {
+$__case_0 = $dictBounded;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bottom;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bottom2 = $__case_res_0;
+    $__res = (function() use ($__global_Data_Enum_eq, $__global_Data_Enum_sub, $__global_Data_Enum_lessThan, $bottom2) {
+  $__fn = function($dictEnum) use ($__global_Data_Enum_eq, $__global_Data_Enum_sub, $__global_Data_Enum_lessThan, $bottom2, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$succ1 = ($dictEnum)->succ;
-    $__res = (function() use ($succ1, $__global_Data_Enum_lessThan, $bottom2) {
-  $__body = function($i__prime__) use ($succ1, $__global_Data_Enum_lessThan, $bottom2) {
-    $go = (function() use ($succ1, &$go) {
-  $__fn = function($i, $x = null) use ($succ1, &$go, &$__fn) {
+$__case_0 = $dictEnum;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->succ;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$succ1 = $__case_res_1;
+    $__res = (function() use ($__global_Data_Enum_eq, $succ1, $__global_Data_Enum_sub, $__global_Data_Enum_lessThan, $bottom2) {
+  $__body = function($i__prime__) use ($__global_Data_Enum_eq, $succ1, $__global_Data_Enum_sub, $__global_Data_Enum_lessThan, $bottom2) {
+    $go = (function() use ($__global_Data_Enum_eq, $succ1, &$go, $__global_Data_Enum_sub) {
+  $__fn = function($i, $x = null) use ($__global_Data_Enum_eq, $succ1, &$go, $__global_Data_Enum_sub, &$__fn) {
   $__num = func_num_args();
   if ($__num < 2) {
     if ($__num === 1) return function($x) use ($i, &$__fn) { return $__fn($i, $x); };
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
 while (true) {
-$__case_0 = ($i === 0);
+$__case_0 = ($__global_Data_Enum_eq)($i, 0);
 switch ($__case_0) {
 case true:
 return ((function() {
@@ -1845,7 +2992,7 @@ $__case_0 = $v;
 switch (($__case_0)->tag) {
 case "Just":
 $x__prime__ = ($__case_0)->v0;
-$__tco_tmp_0 = ($i - 1);
+$__tco_tmp_0 = ($__global_Data_Enum_sub)($i, 1);
 $__tco_tmp_1 = $x__prime__;
 $i = $__tco_tmp_0;
 $x = $__tco_tmp_1;
@@ -1876,7 +3023,7 @@ return ($go)($i__prime__, $bottom2);
 break;
 };
   };
-  $__fn = function($i__prime__) use ($succ1, $__global_Data_Enum_lessThan, $bottom2, $__body, &$__fn) {
+  $__fn = function($i__prime__) use ($__global_Data_Enum_eq, $succ1, $__global_Data_Enum_sub, $__global_Data_Enum_lessThan, $bottom2, $__body, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
@@ -1908,7 +3055,8 @@ function Data_Enum_defaultSucc($toEnum__prime__, $fromEnum__prime__ = null, $a =
     };
     return phpurs_curry_fallback($__fn, func_get_args(), 3);
   }
-    $__res = ($toEnum__prime__)((($fromEnum__prime__)($a) + 1));
+$__global_Data_Enum_add = ($GLOBALS['Data_Enum_add'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_add'));
+    $__res = ($toEnum__prime__)(($__global_Data_Enum_add)(($fromEnum__prime__)($a), 1));
     return 3 < $__num ? $__res(...array_slice(func_get_args(), 3)) : $__res;
 }
 $GLOBALS['Data_Enum_defaultSucc'] = __NAMESPACE__ . '\\Data_Enum_defaultSucc';
@@ -1927,7 +3075,8 @@ function Data_Enum_defaultPred($toEnum__prime__, $fromEnum__prime__ = null, $a =
     };
     return phpurs_curry_fallback($__fn, func_get_args(), 3);
   }
-    $__res = ($toEnum__prime__)((($fromEnum__prime__)($a) - 1));
+$__global_Data_Enum_sub = ($GLOBALS['Data_Enum_sub'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_sub'));
+    $__res = ($toEnum__prime__)(($__global_Data_Enum_sub)(($fromEnum__prime__)($a), 1));
     return 3 < $__num ? $__res(...array_slice(func_get_args(), 3)) : $__res;
 }
 $GLOBALS['Data_Enum_defaultPred'] = __NAMESPACE__ . '\\Data_Enum_defaultPred';
@@ -1939,9 +3088,18 @@ function Data_Enum_defaultFromEnum($dictEnum) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$pred1 = ($dictEnum)->pred;
-$go = (function() use ($pred1, &$go) {
-  $__fn = function($i, $x = null) use ($pred1, &$go, &$__fn) {
+$__global_Data_Enum_add = ($GLOBALS['Data_Enum_add'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_add'));
+$__case_0 = $dictEnum;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->pred;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pred1 = $__case_res_0;
+$go = (function() use ($pred1, &$go, $__global_Data_Enum_add) {
+  $__fn = function($i, $x = null) use ($pred1, &$go, $__global_Data_Enum_add, &$__fn) {
   $__num = func_num_args();
   if ($__num < 2) {
     if ($__num === 1) return function($x) use ($i, &$__fn) { return $__fn($i, $x); };
@@ -1953,7 +3111,7 @@ $__case_0 = $v;
 switch (($__case_0)->tag) {
 case "Just":
 $x__prime__ = ($__case_0)->v0;
-$__tco_tmp_0 = ($i + 1);
+$__tco_tmp_0 = ($__global_Data_Enum_add)($i, 1);
 $__tco_tmp_1 = $x__prime__;
 $i = $__tco_tmp_0;
 $x = $__tco_tmp_1;
@@ -1984,16 +3142,33 @@ function Data_Enum_defaultCardinality($dictBounded) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$bottom2 = ($dictBounded)->bottom;
-    $__res = (function() use ($bottom2) {
-  $__fn = function($dictEnum) use ($bottom2, &$__fn) {
+$__global_Data_Enum_add = ($GLOBALS['Data_Enum_add'] ?? \Data\Enum\phpurs_eval_thunk('Data_Enum_add'));
+$__case_0 = $dictBounded;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bottom;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bottom2 = $__case_res_0;
+    $__res = (function() use ($__global_Data_Enum_add, $bottom2) {
+  $__fn = function($dictEnum) use ($__global_Data_Enum_add, $bottom2, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$succ1 = ($dictEnum)->succ;
-$go = (function() use ($succ1, &$go) {
-  $__fn = function($i, $x = null) use ($succ1, &$go, &$__fn) {
+$__case_0 = $dictEnum;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->succ;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$succ1 = $__case_res_1;
+$go = (function() use ($succ1, &$go, $__global_Data_Enum_add) {
+  $__fn = function($i, $x = null) use ($succ1, &$go, $__global_Data_Enum_add, &$__fn) {
   $__num = func_num_args();
   if ($__num < 2) {
     if ($__num === 1) return function($x) use ($i, &$__fn) { return $__fn($i, $x); };
@@ -2005,7 +3180,7 @@ $__case_0 = $v;
 switch (($__case_0)->tag) {
 case "Just":
 $x__prime__ = ($__case_0)->v0;
-$__tco_tmp_0 = ($i + 1);
+$__tco_tmp_0 = ($__global_Data_Enum_add)($i, 1);
 $__tco_tmp_1 = $x__prime__;
 $i = $__tco_tmp_0;
 $x = $__tco_tmp_1;

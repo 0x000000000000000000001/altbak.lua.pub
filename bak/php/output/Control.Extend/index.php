@@ -88,7 +88,17 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Control_Extend_identity': $v = (($GLOBALS['Control_Category_categoryFn'] ?? \Control\Category\phpurs_eval_thunk('Control_Category_categoryFn')))->identity; break;
+      case 'Control_Extend_identity': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Category_categoryFn'] ?? \Control\Category\phpurs_eval_thunk('Control_Category_categoryFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->identity;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Control_Extend_extendArray': $v = (object)["extend" => ($GLOBALS['Control_Extend_arrayExtend'] ?? \Control\Extend\phpurs_eval_thunk('Control_Extend_arrayExtend')), "Functor0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
@@ -131,7 +141,15 @@ function Control_Extend_extendFn($dictSemigroup) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_Functor_functorFn = ($GLOBALS['Data_Functor_functorFn'] ?? \Data\Functor\phpurs_eval_thunk('Data_Functor_functorFn'));
-$append = ($dictSemigroup)->append;
+$__case_0 = $dictSemigroup;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append = $__case_res_0;
     $__res = (object)["extend" => (function() use ($append) {
   $__fn = function($f, $g = null, $w = null) use ($append, &$__fn) {
   $__num = func_num_args();
@@ -203,7 +221,15 @@ function Control_Extend_extendFlipped($dictExtend) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$extend1 = ($dictExtend)->extend;
+$__case_0 = $dictExtend;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->extend;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$extend1 = $__case_res_0;
     $__res = (function() use ($extend1) {
   $__fn = function($w, $f = null) use ($extend1, &$__fn) {
   $__num = func_num_args();
@@ -228,7 +254,15 @@ function Control_Extend_duplicate($dictExtend) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Control_Extend_identity = ($GLOBALS['Control_Extend_identity'] ?? \Control\Extend\phpurs_eval_thunk('Control_Extend_identity'));
-    $__res = (($dictExtend)->extend)($__global_Control_Extend_identity);
+$__case_0 = $dictExtend;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->extend;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__case_res_0)($__global_Control_Extend_identity);
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Control_Extend_duplicate'] = __NAMESPACE__ . '\\Control_Extend_duplicate';
@@ -240,7 +274,15 @@ function Control_Extend_composeCoKleisliFlipped($dictExtend) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$extend1 = ($dictExtend)->extend;
+$__case_0 = $dictExtend;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->extend;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$extend1 = $__case_res_0;
     $__res = (function() use ($extend1) {
   $__fn = function($f, $g = null, $w = null) use ($extend1, &$__fn) {
   $__num = func_num_args();
@@ -270,7 +312,15 @@ function Control_Extend_composeCoKleisli($dictExtend) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$extend1 = ($dictExtend)->extend;
+$__case_0 = $dictExtend;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->extend;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$extend1 = $__case_res_0;
     $__res = (function() use ($extend1) {
   $__fn = function($f, $g = null, $w = null) use ($extend1, &$__fn) {
   $__num = func_num_args();

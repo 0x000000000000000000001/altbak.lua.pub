@@ -90,8 +90,28 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Data_Generic_Rep_append': $v = ($GLOBALS['Data_Semigroup_concatString'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_concatString')); break;
-      case 'Data_Generic_Rep_show': $v = ($GLOBALS['Data_Show_showStringImpl'] ?? \Data\Show\phpurs_eval_thunk('Data_Show_showStringImpl')); break;
+      case 'Data_Generic_Rep_append': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Semigroup_semigroupString'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_semigroupString'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Generic_Rep_show': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Show_showString'] ?? \Data\Show\phpurs_eval_thunk('Data_Show_showString'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->show;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_Generic_Rep_NoArguments': $v = ($GLOBALS['__phpurs_data0_NoArguments'] ??= new Phpurs_Data0("NoArguments")); break;
       case 'Data_Generic_Rep_showNoArguments': $v = (object)["show" => (function() {
   $__fn = function($v) use (&$__fn) {
@@ -229,32 +249,49 @@ function Data_Generic_Rep_showSum($dictShow) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$show1 = ($dictShow)->show;
-    $__res = (function() use ($show1) {
-  $__fn = function($dictShow1) use ($show1, &$__fn) {
+$__global_Data_Generic_Rep_append = ($GLOBALS['Data_Generic_Rep_append'] ?? \Data\Generic\Rep\phpurs_eval_thunk('Data_Generic_Rep_append'));
+$__case_0 = $dictShow;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->show;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$show1 = $__case_res_0;
+    $__res = (function() use ($__global_Data_Generic_Rep_append, $show1) {
+  $__fn = function($dictShow1) use ($__global_Data_Generic_Rep_append, $show1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$show2 = ($dictShow1)->show;
-    $__res = (object)["show" => (function() use ($show1, $show2) {
-  $__body = function($v) use ($show1, $show2) {
+$__case_0 = $dictShow1;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->show;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$show2 = $__case_res_1;
+    $__res = (object)["show" => (function() use ($__global_Data_Generic_Rep_append, $show1, $show2) {
+  $__body = function($v) use ($__global_Data_Generic_Rep_append, $show1, $show2) {
     $__case_0 = $v;
     switch (($__case_0)->tag) {
 case "Inl":
 $a = ($__case_0)->v0;
-return ("(Inl " . (($show1)($a) . ")"));
+return ($__global_Data_Generic_Rep_append)("(Inl ", ($__global_Data_Generic_Rep_append)(($show1)($a), ")"));
 break;
 case "Inr":
 $b = ($__case_0)->v0;
-return ("(Inr " . (($show2)($b) . ")"));
+return ($__global_Data_Generic_Rep_append)("(Inr ", ($__global_Data_Generic_Rep_append)(($show2)($b), ")"));
 break;
 default:
 throw new \Exception("Pattern match failure");
 break;
 };
   };
-  $__fn = function($v) use ($show1, $show2, $__body, &$__fn) {
+  $__fn = function($v) use ($__global_Data_Generic_Rep_append, $show1, $show2, $__body, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
@@ -279,29 +316,46 @@ function Data_Generic_Rep_showProduct($dictShow) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$show1 = ($dictShow)->show;
-    $__res = (function() use ($show1) {
-  $__fn = function($dictShow1) use ($show1, &$__fn) {
+$__global_Data_Generic_Rep_append = ($GLOBALS['Data_Generic_Rep_append'] ?? \Data\Generic\Rep\phpurs_eval_thunk('Data_Generic_Rep_append'));
+$__case_0 = $dictShow;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->show;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$show1 = $__case_res_0;
+    $__res = (function() use ($__global_Data_Generic_Rep_append, $show1) {
+  $__fn = function($dictShow1) use ($__global_Data_Generic_Rep_append, $show1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$show2 = ($dictShow1)->show;
-    $__res = (object)["show" => (function() use ($show1, $show2) {
-  $__body = function($v) use ($show1, $show2) {
+$__case_0 = $dictShow1;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->show;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$show2 = $__case_res_1;
+    $__res = (object)["show" => (function() use ($__global_Data_Generic_Rep_append, $show1, $show2) {
+  $__body = function($v) use ($__global_Data_Generic_Rep_append, $show1, $show2) {
     $__case_0 = $v;
     switch (($__case_0)->tag) {
 case "Product":
 $a = ($__case_0)->v0;
 $b = ($__case_0)->v1;
-return ("(Product " . (($show1)($a) . (" " . (($show2)($b) . ")"))));
+return ($__global_Data_Generic_Rep_append)("(Product ", ($__global_Data_Generic_Rep_append)(($show1)($a), ($__global_Data_Generic_Rep_append)(" ", ($__global_Data_Generic_Rep_append)(($show2)($b), ")"))));
 break;
 default:
 throw new \Exception("Pattern match failure");
 break;
 };
   };
-  $__fn = function($v) use ($show1, $show2, $__body, &$__fn) {
+  $__fn = function($v) use ($__global_Data_Generic_Rep_append, $show1, $show2, $__body, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
@@ -327,26 +381,43 @@ function Data_Generic_Rep_showConstructor($dictIsSymbol) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Show_showStringImpl = ($GLOBALS['Data_Show_showStringImpl'] ?? \Data\Show\phpurs_eval_thunk('Data_Show_showStringImpl'));
-$reflectSymbol = ($dictIsSymbol)->reflectSymbol;
-    $__res = (function() use ($__global_Data_Show_showStringImpl, $reflectSymbol) {
-  $__fn = function($dictShow) use ($__global_Data_Show_showStringImpl, $reflectSymbol, &$__fn) {
+$__global_Data_Generic_Rep_append = ($GLOBALS['Data_Generic_Rep_append'] ?? \Data\Generic\Rep\phpurs_eval_thunk('Data_Generic_Rep_append'));
+$__global_Data_Generic_Rep_show = ($GLOBALS['Data_Generic_Rep_show'] ?? \Data\Generic\Rep\phpurs_eval_thunk('Data_Generic_Rep_show'));
+$__case_0 = $dictIsSymbol;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->reflectSymbol;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$reflectSymbol = $__case_res_0;
+    $__res = (function() use ($__global_Data_Generic_Rep_append, $__global_Data_Generic_Rep_show, $reflectSymbol) {
+  $__fn = function($dictShow) use ($__global_Data_Generic_Rep_append, $__global_Data_Generic_Rep_show, $reflectSymbol, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$show1 = ($dictShow)->show;
-    $__res = (object)["show" => (function() use ($__global_Data_Show_showStringImpl, $reflectSymbol, $show1) {
-  $__body = function($v) use ($__global_Data_Show_showStringImpl, $reflectSymbol, $show1) {
+$__case_0 = $dictShow;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->show;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$show1 = $__case_res_1;
+    $__res = (object)["show" => (function() use ($__global_Data_Generic_Rep_append, $__global_Data_Generic_Rep_show, $reflectSymbol, $show1) {
+  $__body = function($v) use ($__global_Data_Generic_Rep_append, $__global_Data_Generic_Rep_show, $reflectSymbol, $show1) {
     $__case_0 = $v;
     if (true) {
 $a = $__case_0;
-return ("(Constructor @" . (($__global_Data_Show_showStringImpl)(($reflectSymbol)(($GLOBALS['__phpurs_data0_Proxy'] ??= new Phpurs_Data0("Proxy")))) . (" " . (($show1)($a) . ")"))));
+return ($__global_Data_Generic_Rep_append)("(Constructor @", ($__global_Data_Generic_Rep_append)(($__global_Data_Generic_Rep_show)(($reflectSymbol)(($GLOBALS['__phpurs_data0_Proxy'] ??= new Phpurs_Data0("Proxy")))), ($__global_Data_Generic_Rep_append)(" ", ($__global_Data_Generic_Rep_append)(($show1)($a), ")"))));
 } else {
 throw new \Exception("Pattern match failure");
 };
   };
-  $__fn = function($v) use ($__global_Data_Show_showStringImpl, $reflectSymbol, $show1, $__body, &$__fn) {
+  $__fn = function($v) use ($__global_Data_Generic_Rep_append, $__global_Data_Generic_Rep_show, $reflectSymbol, $show1, $__body, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
@@ -371,18 +442,27 @@ function Data_Generic_Rep_showArgument($dictShow) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$show1 = ($dictShow)->show;
-    $__res = (object)["show" => (function() use ($show1) {
-  $__body = function($v) use ($show1) {
+$__global_Data_Generic_Rep_append = ($GLOBALS['Data_Generic_Rep_append'] ?? \Data\Generic\Rep\phpurs_eval_thunk('Data_Generic_Rep_append'));
+$__case_0 = $dictShow;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->show;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$show1 = $__case_res_0;
+    $__res = (object)["show" => (function() use ($__global_Data_Generic_Rep_append, $show1) {
+  $__body = function($v) use ($__global_Data_Generic_Rep_append, $show1) {
     $__case_0 = $v;
     if (true) {
 $a = $__case_0;
-return ("(Argument " . (($show1)($a) . ")"));
+return ($__global_Data_Generic_Rep_append)("(Argument ", ($__global_Data_Generic_Rep_append)(($show1)($a), ")"));
 } else {
 throw new \Exception("Pattern match failure");
 };
   };
-  $__fn = function($v) use ($show1, $__body, &$__fn) {
+  $__fn = function($v) use ($__global_Data_Generic_Rep_append, $show1, $__body, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);

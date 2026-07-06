@@ -95,24 +95,44 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Data_Equivalence_conj': $v = ($GLOBALS['Data_HeytingAlgebra_boolConj'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_boolConj')); break;
-      case 'Data_Equivalence_eq': $v = (($GLOBALS['Data_Ordering_eqOrdering'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_eqOrdering')))->eq; break;
+      case 'Data_Equivalence_conj': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_HeytingAlgebra_heytingAlgebraBoolean'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_heytingAlgebraBoolean'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->conj;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Equivalence_eq': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Ordering_eqOrdering'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_eqOrdering'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_Equivalence_semigroupEquivalence': $v = (object)["append" => (function() {
   $__body = function($v, $v1) {
-    $__global_Data_HeytingAlgebra_boolConj = ($GLOBALS['Data_HeytingAlgebra_boolConj'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_boolConj'));
+    $__global_Data_Equivalence_conj = ($GLOBALS['Data_Equivalence_conj'] ?? \Data\Equivalence\phpurs_eval_thunk('Data_Equivalence_conj'));
     $__case_0 = $v;
     $__case_1 = $v1;
     if (true) {
 $p = $__case_0;
 $q = $__case_1;
-return (function() use ($__global_Data_HeytingAlgebra_boolConj, $p, $q) {
-  $__fn = function($a, $b = null) use ($__global_Data_HeytingAlgebra_boolConj, $p, $q, &$__fn) {
+return (function() use ($__global_Data_Equivalence_conj, $p, $q) {
+  $__fn = function($a, $b = null) use ($__global_Data_Equivalence_conj, $p, $q, &$__fn) {
   $__num = func_num_args();
   if ($__num < 2) {
     if ($__num === 1) return function($b) use ($a, &$__fn) { return $__fn($a, $b); };
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
-    $__res = ($__global_Data_HeytingAlgebra_boolConj)(($p)($a, $b), ($q)($a, $b));
+    $__res = ($__global_Data_Equivalence_conj)(($p)($a, $b), ($q)($a, $b));
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
@@ -224,7 +244,16 @@ function Data_Equivalence_defaultEquivalence($dictEq) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($dictEq)->eq;
+  $__body = function($dictEq) {
+    $__case_0 = $dictEq;
+    if (true) {
+$v = $__case_0;
+return ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+    $__res = $__body($dictEq);
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Equivalence_defaultEquivalence'] = __NAMESPACE__ . '\\Data_Equivalence_defaultEquivalence';

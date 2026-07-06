@@ -107,19 +107,149 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Data_FunctorWithIndex_map': $v = (($GLOBALS['Data_Tuple_functorTuple'] ?? \Data\Tuple\phpurs_eval_thunk('Data_Tuple_functorTuple')))->map; break;
-      case 'Data_FunctorWithIndex_bimap': $v = (($GLOBALS['Data_Bifunctor_bifunctorTuple'] ?? \Data\Bifunctor\phpurs_eval_thunk('Data_Bifunctor_bifunctorTuple')))->bimap; break;
-      case 'Data_FunctorWithIndex_compose': $v = (($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn')))->compose; break;
-      case 'Data_FunctorWithIndex_map1': $v = (($GLOBALS['Data_Monoid_Multiplicative_functorMultiplicative'] ?? \Data\Monoid\Multiplicative\phpurs_eval_thunk('Data_Monoid_Multiplicative_functorMultiplicative')))->map; break;
-      case 'Data_FunctorWithIndex_map2': $v = (($GLOBALS['Data_Maybe_functorMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_functorMaybe')))->map; break;
-      case 'Data_FunctorWithIndex_map3': $v = (($GLOBALS['Data_Maybe_functorMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_functorMaybe')))->map; break;
-      case 'Data_FunctorWithIndex_map4': $v = (($GLOBALS['Data_Maybe_functorMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_functorMaybe')))->map; break;
-      case 'Data_FunctorWithIndex_map5': $v = (($GLOBALS['Data_Either_functorEither'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_functorEither')))->map; break;
-      case 'Data_FunctorWithIndex_map6': $v = (($GLOBALS['Data_Monoid_Dual_functorDual'] ?? \Data\Monoid\Dual\phpurs_eval_thunk('Data_Monoid_Dual_functorDual')))->map; break;
-      case 'Data_FunctorWithIndex_map7': $v = (($GLOBALS['Data_Monoid_Disj_functorDisj'] ?? \Data\Monoid\Disj\phpurs_eval_thunk('Data_Monoid_Disj_functorDisj')))->map; break;
-      case 'Data_FunctorWithIndex_bimap1': $v = (($GLOBALS['Data_Bifunctor_bifunctorEither'] ?? \Data\Bifunctor\phpurs_eval_thunk('Data_Bifunctor_bifunctorEither')))->bimap; break;
-      case 'Data_FunctorWithIndex_map8': $v = (($GLOBALS['Data_Monoid_Conj_functorConj'] ?? \Data\Monoid\Conj\phpurs_eval_thunk('Data_Monoid_Conj_functorConj')))->map; break;
-      case 'Data_FunctorWithIndex_map9': $v = (($GLOBALS['Data_Monoid_Additive_functorAdditive'] ?? \Data\Monoid\Additive\phpurs_eval_thunk('Data_Monoid_Additive_functorAdditive')))->map; break;
+      case 'Data_FunctorWithIndex_map': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Tuple_functorTuple'] ?? \Data\Tuple\phpurs_eval_thunk('Data_Tuple_functorTuple'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_FunctorWithIndex_bimap': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Bifunctor_bifunctorTuple'] ?? \Data\Bifunctor\phpurs_eval_thunk('Data_Bifunctor_bifunctorTuple'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bimap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_FunctorWithIndex_compose': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compose;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_FunctorWithIndex_map1': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Monoid_Multiplicative_functorMultiplicative'] ?? \Data\Monoid\Multiplicative\phpurs_eval_thunk('Data_Monoid_Multiplicative_functorMultiplicative'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_FunctorWithIndex_map2': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Maybe_functorMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_functorMaybe'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_FunctorWithIndex_map3': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Maybe_functorMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_functorMaybe'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_FunctorWithIndex_map4': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Maybe_functorMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_functorMaybe'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_FunctorWithIndex_map5': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Either_functorEither'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_functorEither'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_FunctorWithIndex_map6': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Monoid_Dual_functorDual'] ?? \Data\Monoid\Dual\phpurs_eval_thunk('Data_Monoid_Dual_functorDual'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_FunctorWithIndex_map7': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Monoid_Disj_functorDisj'] ?? \Data\Monoid\Disj\phpurs_eval_thunk('Data_Monoid_Disj_functorDisj'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_FunctorWithIndex_bimap1': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Bifunctor_bifunctorEither'] ?? \Data\Bifunctor\phpurs_eval_thunk('Data_Bifunctor_bifunctorEither'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bimap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_FunctorWithIndex_map8': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Monoid_Conj_functorConj'] ?? \Data\Monoid\Conj\phpurs_eval_thunk('Data_Monoid_Conj_functorConj'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_FunctorWithIndex_map9': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Monoid_Additive_functorAdditive'] ?? \Data\Monoid\Additive\phpurs_eval_thunk('Data_Monoid_Additive_functorAdditive'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_FunctorWithIndex_functorWithIndexTuple': $v = (object)["mapWithIndex" => (function() {
   $__fn = function($f) use (&$__fn) {
   $__num = func_num_args();
@@ -503,7 +633,15 @@ function Data_FunctorWithIndex_mapDefault($dictFunctorWithIndex) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_Function_const = ($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const'));
-$mapWithIndex1 = ($dictFunctorWithIndex)->mapWithIndex;
+$__case_0 = $dictFunctorWithIndex;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->mapWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$mapWithIndex1 = $__case_res_0;
     $__res = (function() use ($mapWithIndex1, $__global_Data_Function_const) {
   $__fn = function($f) use ($mapWithIndex1, $__global_Data_Function_const, &$__fn) {
   $__num = func_num_args();
@@ -527,19 +665,85 @@ function Data_FunctorWithIndex_functorWithIndexProduct($dictFunctorWithIndex) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Functor_Product_functorProduct = ($GLOBALS['Data_Functor_Product_functorProduct'] ?? \Data\Functor\Product\phpurs_eval_thunk('Data_Functor_Product_functorProduct'));
+$__global_Data_Functor_Product_bimap = ($GLOBALS['Data_Functor_Product_bimap'] ?? \Data\Functor\Product\phpurs_eval_thunk('Data_Functor_Product_bimap'));
 $__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_FunctorWithIndex_bimap = ($GLOBALS['Data_FunctorWithIndex_bimap'] ?? \Data\FunctorWithIndex\phpurs_eval_thunk('Data_FunctorWithIndex_bimap'));
 $__global_Data_FunctorWithIndex_compose = ($GLOBALS['Data_FunctorWithIndex_compose'] ?? \Data\FunctorWithIndex\phpurs_eval_thunk('Data_FunctorWithIndex_compose'));
-$mapWithIndex1 = ($dictFunctorWithIndex)->mapWithIndex;
-$functorProduct = ($__global_Data_Functor_Product_functorProduct)((($dictFunctorWithIndex)->Functor0)($__global_Prim_undefined));
+$__case_0 = $dictFunctorWithIndex;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->mapWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$mapWithIndex1 = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_1;
+$functorProduct = (function() use ($__global_Data_Functor_Product_bimap, $map) {
+  $__fn = function($dictFunctor1) use ($__global_Data_Functor_Product_bimap, $map, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dictFunctor1;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map1 = $__case_res_2;
+    $__res = (object)["map" => (function() use ($__global_Data_Functor_Product_bimap, $map, $map1) {
+  $__body = function($f, $v) use ($__global_Data_Functor_Product_bimap, $map, $map1) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    if (true) {
+$f1 = $__case_0;
+$fga = $__case_1;
+return ($__global_Data_Functor_Product_bimap)(($map)($f1), ($map1)($f1), $fga);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $v = null) use ($__global_Data_Functor_Product_bimap, $map, $map1, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, &$__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($f, $v);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
     $__res = (function() use ($functorProduct, $__global_Prim_undefined, $__global_Data_FunctorWithIndex_bimap, $mapWithIndex1, $__global_Data_FunctorWithIndex_compose) {
   $__fn = function($dictFunctorWithIndex1) use ($functorProduct, $__global_Prim_undefined, $__global_Data_FunctorWithIndex_bimap, $mapWithIndex1, $__global_Data_FunctorWithIndex_compose, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$mapWithIndex2 = ($dictFunctorWithIndex1)->mapWithIndex;
+$__case_0 = $dictFunctorWithIndex1;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->mapWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$mapWithIndex2 = $__case_res_3;
 $functorProduct1 = ($functorProduct)((($dictFunctorWithIndex1)->Functor0)($__global_Prim_undefined));
     $__res = (object)["mapWithIndex" => (function() use ($__global_Data_FunctorWithIndex_bimap, $mapWithIndex1, $__global_Data_FunctorWithIndex_compose, $mapWithIndex2) {
   $__body = function($f, $v) use ($__global_Data_FunctorWithIndex_bimap, $mapWithIndex1, $__global_Data_FunctorWithIndex_compose, $mapWithIndex2) {
@@ -617,19 +821,85 @@ function Data_FunctorWithIndex_functorWithIndexCoproduct($dictFunctorWithIndex) 
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Functor_Coproduct_functorCoproduct = ($GLOBALS['Data_Functor_Coproduct_functorCoproduct'] ?? \Data\Functor\Coproduct\phpurs_eval_thunk('Data_Functor_Coproduct_functorCoproduct'));
+$__global_Data_Functor_Coproduct_bimap = ($GLOBALS['Data_Functor_Coproduct_bimap'] ?? \Data\Functor\Coproduct\phpurs_eval_thunk('Data_Functor_Coproduct_bimap'));
 $__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_FunctorWithIndex_bimap1 = ($GLOBALS['Data_FunctorWithIndex_bimap1'] ?? \Data\FunctorWithIndex\phpurs_eval_thunk('Data_FunctorWithIndex_bimap1'));
 $__global_Data_FunctorWithIndex_compose = ($GLOBALS['Data_FunctorWithIndex_compose'] ?? \Data\FunctorWithIndex\phpurs_eval_thunk('Data_FunctorWithIndex_compose'));
-$mapWithIndex1 = ($dictFunctorWithIndex)->mapWithIndex;
-$functorCoproduct = ($__global_Data_Functor_Coproduct_functorCoproduct)((($dictFunctorWithIndex)->Functor0)($__global_Prim_undefined));
+$__case_0 = $dictFunctorWithIndex;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->mapWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$mapWithIndex1 = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_1;
+$functorCoproduct = (function() use ($__global_Data_Functor_Coproduct_bimap, $map) {
+  $__fn = function($dictFunctor1) use ($__global_Data_Functor_Coproduct_bimap, $map, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dictFunctor1;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map1 = $__case_res_2;
+    $__res = (object)["map" => (function() use ($__global_Data_Functor_Coproduct_bimap, $map, $map1) {
+  $__body = function($f, $v) use ($__global_Data_Functor_Coproduct_bimap, $map, $map1) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    if (true) {
+$f1 = $__case_0;
+$e = $__case_1;
+return ($__global_Data_Functor_Coproduct_bimap)(($map)($f1), ($map1)($f1), $e);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $v = null) use ($__global_Data_Functor_Coproduct_bimap, $map, $map1, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, &$__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($f, $v);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
     $__res = (function() use ($functorCoproduct, $__global_Prim_undefined, $__global_Data_FunctorWithIndex_bimap1, $mapWithIndex1, $__global_Data_FunctorWithIndex_compose) {
   $__fn = function($dictFunctorWithIndex1) use ($functorCoproduct, $__global_Prim_undefined, $__global_Data_FunctorWithIndex_bimap1, $mapWithIndex1, $__global_Data_FunctorWithIndex_compose, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$mapWithIndex2 = ($dictFunctorWithIndex1)->mapWithIndex;
+$__case_0 = $dictFunctorWithIndex1;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->mapWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$mapWithIndex2 = $__case_res_3;
 $functorCoproduct1 = ($functorCoproduct)((($dictFunctorWithIndex1)->Functor0)($__global_Prim_undefined));
     $__res = (object)["mapWithIndex" => (function() use ($__global_Data_FunctorWithIndex_bimap1, $mapWithIndex1, $__global_Data_FunctorWithIndex_compose, $mapWithIndex2) {
   $__body = function($f, $v) use ($__global_Data_FunctorWithIndex_bimap1, $mapWithIndex1, $__global_Data_FunctorWithIndex_compose, $mapWithIndex2) {
@@ -701,19 +971,84 @@ function Data_FunctorWithIndex_functorWithIndexCompose($dictFunctorWithIndex) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Functor_Compose_functorCompose = ($GLOBALS['Data_Functor_Compose_functorCompose'] ?? \Data\Functor\Compose\phpurs_eval_thunk('Data_Functor_Compose_functorCompose'));
 $__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_FunctorWithIndex_compose = ($GLOBALS['Data_FunctorWithIndex_compose'] ?? \Data\FunctorWithIndex\phpurs_eval_thunk('Data_FunctorWithIndex_compose'));
 $__global_Data_Tuple_curry = ($GLOBALS['Data_Tuple_curry'] ?? \Data\Tuple\phpurs_eval_thunk('Data_Tuple_curry'));
-$mapWithIndex1 = ($dictFunctorWithIndex)->mapWithIndex;
-$functorCompose = ($__global_Data_Functor_Compose_functorCompose)((($dictFunctorWithIndex)->Functor0)($__global_Prim_undefined));
+$__case_0 = $dictFunctorWithIndex;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->mapWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$mapWithIndex1 = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_1;
+$functorCompose = (function() use ($map) {
+  $__fn = function($dictFunctor1) use ($map, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dictFunctor1;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map1 = $__case_res_2;
+    $__res = (object)["map" => (function() use ($map, $map1) {
+  $__body = function($f, $v) use ($map, $map1) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    if (true) {
+$f1 = $__case_0;
+$fga = $__case_1;
+return ($map)(($map1)($f1), $fga);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $v = null) use ($map, $map1, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, &$__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($f, $v);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
     $__res = (function() use ($functorCompose, $__global_Prim_undefined, $mapWithIndex1, $__global_Data_FunctorWithIndex_compose, $__global_Data_Tuple_curry) {
   $__fn = function($dictFunctorWithIndex1) use ($functorCompose, $__global_Prim_undefined, $mapWithIndex1, $__global_Data_FunctorWithIndex_compose, $__global_Data_Tuple_curry, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$mapWithIndex2 = ($dictFunctorWithIndex1)->mapWithIndex;
+$__case_0 = $dictFunctorWithIndex1;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->mapWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$mapWithIndex2 = $__case_res_3;
 $functorCompose1 = ($functorCompose)((($dictFunctorWithIndex1)->Functor0)($__global_Prim_undefined));
     $__res = (object)["mapWithIndex" => (function() use ($mapWithIndex1, $__global_Data_FunctorWithIndex_compose, $mapWithIndex2, $__global_Data_Tuple_curry) {
   $__body = function($f, $v) use ($mapWithIndex1, $__global_Data_FunctorWithIndex_compose, $mapWithIndex2, $__global_Data_Tuple_curry) {
@@ -764,9 +1099,16 @@ function Data_FunctorWithIndex_functorWithIndexApp($dictFunctorWithIndex) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$mapWithIndex1 = ($dictFunctorWithIndex)->mapWithIndex;
-$functorApp = (($dictFunctorWithIndex)->Functor0)($__global_Prim_undefined);
+$__case_0 = $dictFunctorWithIndex;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->mapWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$mapWithIndex1 = $__case_res_0;
+$functorApp = $dictFunctor;
     $__res = (object)["mapWithIndex" => (function() use ($mapWithIndex1) {
   $__body = function($f, $v) use ($mapWithIndex1) {
     $__case_0 = $f;
@@ -789,13 +1131,13 @@ throw new \Exception("Pattern match failure");
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
-})(), "Functor0" => (function() use ($functorApp) {
-  $__fn = function($__dollar____unused) use ($functorApp, &$__fn) {
+})(), "Functor0" => (function() use ($dictFunctor) {
+  $__fn = function($__dollar____unused) use ($dictFunctor, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = $functorApp;
+    $__res = $dictFunctor;
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;

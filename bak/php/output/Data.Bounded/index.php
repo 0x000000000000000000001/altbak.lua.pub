@@ -331,7 +331,23 @@ function Data_Bounded_boundedRecord($__dollar____unused, $dictBoundedRecord = nu
 $__global_Data_Bounded_ordRecord = ($GLOBALS['Data_Bounded_ordRecord'] ?? \Data\Bounded\phpurs_eval_thunk('Data_Bounded_ordRecord'));
 $__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $ordRecord1 = ($__global_Data_Bounded_ordRecord)((($dictBoundedRecord)->OrdRecord0)($__global_Prim_undefined));
-    $__res = (object)["top" => (($dictBoundedRecord)->topRecord)(($GLOBALS['__phpurs_data0_Proxy'] ??= new Phpurs_Data0("Proxy")), ($GLOBALS['__phpurs_data0_Proxy'] ??= new Phpurs_Data0("Proxy"))), "bottom" => (($dictBoundedRecord)->bottomRecord)(($GLOBALS['__phpurs_data0_Proxy'] ??= new Phpurs_Data0("Proxy")), ($GLOBALS['__phpurs_data0_Proxy'] ??= new Phpurs_Data0("Proxy"))), "Ord0" => (function() use ($ordRecord1) {
+$__case_0 = $dictBoundedRecord;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->topRecord;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$__case_0 = $dictBoundedRecord;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->bottomRecord;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = (object)["top" => ($__case_res_0)(($GLOBALS['__phpurs_data0_Proxy'] ??= new Phpurs_Data0("Proxy")), ($GLOBALS['__phpurs_data0_Proxy'] ??= new Phpurs_Data0("Proxy"))), "bottom" => ($__case_res_1)(($GLOBALS['__phpurs_data0_Proxy'] ??= new Phpurs_Data0("Proxy")), ($GLOBALS['__phpurs_data0_Proxy'] ??= new Phpurs_Data0("Proxy"))), "Ord0" => (function() use ($ordRecord1) {
   $__fn = function($__dollar____unused) use ($ordRecord1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
@@ -375,20 +391,46 @@ function Data_Bounded_boundedRecordCons($dictIsSymbol) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$__global_Data_Ord_ordRecordCons = ($GLOBALS['Data_Ord_ordRecordCons'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordRecordCons'));
+$__global_Record_Unsafe_unsafeGet = ($GLOBALS['Record_Unsafe_unsafeGet'] ?? \Record\Unsafe\phpurs_eval_thunk('Record_Unsafe_unsafeGet'));
+$__global_Data_Eq_conj = ($GLOBALS['Data_Eq_conj'] ?? \Data\Eq\phpurs_eval_thunk('Data_Eq_conj'));
+$__global_Data_Ord_notEq = ($GLOBALS['Data_Ord_notEq'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_notEq'));
 $__global_Record_Unsafe_unsafeSet = ($GLOBALS['Record_Unsafe_unsafeSet'] ?? \Record\Unsafe\phpurs_eval_thunk('Record_Unsafe_unsafeSet'));
-$reflectSymbol = ($dictIsSymbol)->reflectSymbol;
-    $__res = (function() use ($__global_Prim_undefined, $__global_Data_Ord_ordRecordCons, $dictIsSymbol, $reflectSymbol, $__global_Record_Unsafe_unsafeSet) {
-  $__fn = function($dictBounded) use ($__global_Prim_undefined, $__global_Data_Ord_ordRecordCons, $dictIsSymbol, $reflectSymbol, $__global_Record_Unsafe_unsafeSet, &$__fn) {
+$__case_0 = $dictIsSymbol;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->reflectSymbol;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$reflectSymbol = $__case_res_0;
+    $__res = (function() use ($__global_Prim_undefined, $dict, $__global_Record_Unsafe_unsafeGet, $__global_Data_Eq_conj, $__global_Data_Ord_notEq, $dictIsSymbol, $reflectSymbol, $__global_Record_Unsafe_unsafeSet) {
+  $__fn = function($dictBounded) use ($__global_Prim_undefined, $dict, $__global_Record_Unsafe_unsafeGet, $__global_Data_Eq_conj, $__global_Data_Ord_notEq, $dictIsSymbol, $reflectSymbol, $__global_Record_Unsafe_unsafeSet, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$top1 = ($dictBounded)->top;
-$bottom1 = ($dictBounded)->bottom;
+$__case_0 = $dictBounded;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->top;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$top1 = $__case_res_1;
+$__case_0 = $dictBounded;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->bottom;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bottom1 = $__case_res_2;
 $Ord0 = (($dictBounded)->Ord0)($__global_Prim_undefined);
-    $__res = (function() use ($__global_Data_Ord_ordRecordCons, $__global_Prim_undefined, $dictIsSymbol, &$Ord0, $reflectSymbol, $__global_Record_Unsafe_unsafeSet, $top1, $bottom1) {
-  $__fn = function($__dollar____unused_, $__dollar____unused = null, $dictBoundedRecord = null) use ($__global_Data_Ord_ordRecordCons, $__global_Prim_undefined, $dictIsSymbol, &$Ord0, $reflectSymbol, $__global_Record_Unsafe_unsafeSet, $top1, $bottom1, &$__fn) {
+    $__res = (function() use ($dict, $__global_Record_Unsafe_unsafeGet, $__global_Data_Eq_conj, $__global_Prim_undefined, $__global_Data_Ord_notEq, $dictIsSymbol, &$Ord0, $reflectSymbol, $__global_Record_Unsafe_unsafeSet, $top1, $bottom1) {
+  $__fn = function($__dollar____unused_, $__dollar____unused = null, $dictBoundedRecord = null) use ($dict, $__global_Record_Unsafe_unsafeGet, $__global_Data_Eq_conj, $__global_Prim_undefined, $__global_Data_Ord_notEq, $dictIsSymbol, &$Ord0, $reflectSymbol, $__global_Record_Unsafe_unsafeSet, $top1, $bottom1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 3) {
     if ($__num === 2) return function($dictBoundedRecord) use ($__dollar____unused_, $__dollar____unused, &$__fn) { return $__fn($__dollar____unused_, $__dollar____unused, $dictBoundedRecord); };
@@ -400,9 +442,185 @@ $Ord0 = (($dictBounded)->Ord0)($__global_Prim_undefined);
     };
     return phpurs_curry_fallback($__fn, func_get_args(), 3);
   }
-$topRecord1 = ($dictBoundedRecord)->topRecord;
-$bottomRecord1 = ($dictBoundedRecord)->bottomRecord;
-$ordRecordCons = ($__global_Data_Ord_ordRecordCons)((($dictBoundedRecord)->OrdRecord0)($__global_Prim_undefined), $__global_Prim_undefined, $dictIsSymbol, $Ord0);
+$__case_0 = $dictBoundedRecord;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->topRecord;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$topRecord1 = $__case_res_3;
+$__case_0 = $dictBoundedRecord;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->bottomRecord;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bottomRecord1 = $__case_res_4;
+$__case_0 = $dict;
+$__case_res_5 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_5 = ($v)->compareRecord;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compareRecord1 = $__case_res_5;
+$__case_0 = $dict;
+$__case_res_6 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_6 = ($v)->eqRecord;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eqRecord1 = $__case_res_6;
+$eqRowCons = ((function() use ($eqRecord1, $__global_Record_Unsafe_unsafeGet, $__global_Data_Eq_conj) {
+  $__fn = function($__dollar____unused, $dictIsSymbol = null) use ($eqRecord1, $__global_Record_Unsafe_unsafeGet, $__global_Data_Eq_conj, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($dictIsSymbol) use ($__dollar____unused, &$__fn) { return $__fn($__dollar____unused, $dictIsSymbol); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+$__case_0 = $dictIsSymbol;
+$__case_res_7 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_7 = ($v)->reflectSymbol;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$reflectSymbol = $__case_res_7;
+    $__res = (function() use ($eqRecord1, $reflectSymbol, $__global_Record_Unsafe_unsafeGet, $__global_Data_Eq_conj) {
+  $__fn = function($dictEq) use ($eqRecord1, $reflectSymbol, $__global_Record_Unsafe_unsafeGet, $__global_Data_Eq_conj, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dictEq;
+$__case_res_8 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_8 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq3 = $__case_res_8;
+    $__res = (object)["eqRecord" => (function() use ($eqRecord1, $reflectSymbol, $__global_Record_Unsafe_unsafeGet, $__global_Data_Eq_conj, $eq3) {
+  $__fn = function($v, $ra = null, $rb = null) use ($eqRecord1, $reflectSymbol, $__global_Record_Unsafe_unsafeGet, $__global_Data_Eq_conj, $eq3, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($rb) use ($v, $ra, &$__fn) { return $__fn($v, $ra, $rb); };
+    if ($__num === 1) return function($ra, $rb = null) use ($v, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($v, $ra, $rb);
+      if ($__num2 === 1) return function($rb) use ($v, $ra, &$__fn) { return $__fn($v, $ra, $rb); };
+      return phpurs_curry_fallback($__fn, [$v], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+$tail = ($eqRecord1)(($GLOBALS['__phpurs_data0_Proxy'] ??= new Phpurs_Data0("Proxy")), $ra, $rb);
+$key = ($reflectSymbol)(($GLOBALS['__phpurs_data0_Proxy'] ??= new Phpurs_Data0("Proxy")));
+$get = ($__global_Record_Unsafe_unsafeGet)($key);
+    $__res = ($__global_Data_Eq_conj)(($eq3)(($get)($ra), ($get)($rb)), $tail);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})())($__global_Prim_undefined);
+$ordRecordCons = ((function() use ($eqRowCons, $__global_Prim_undefined, $__global_Record_Unsafe_unsafeGet, $__global_Data_Ord_notEq, $compareRecord1) {
+  $__fn = function($__dollar____unused, $dictIsSymbol = null) use ($eqRowCons, $__global_Prim_undefined, $__global_Record_Unsafe_unsafeGet, $__global_Data_Ord_notEq, $compareRecord1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($dictIsSymbol) use ($__dollar____unused, &$__fn) { return $__fn($__dollar____unused, $dictIsSymbol); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+$__case_0 = $dictIsSymbol;
+$__case_res_9 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_9 = ($v)->reflectSymbol;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$reflectSymbol = $__case_res_9;
+$eqRowCons1 = ($eqRowCons)($dictIsSymbol);
+    $__res = (function() use ($eqRowCons1, $__global_Prim_undefined, $__global_Record_Unsafe_unsafeGet, $reflectSymbol, $__global_Data_Ord_notEq, $compareRecord1) {
+  $__fn = function($dictOrd) use ($eqRowCons1, $__global_Prim_undefined, $__global_Record_Unsafe_unsafeGet, $reflectSymbol, $__global_Data_Ord_notEq, $compareRecord1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dictOrd;
+$__case_res_10 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_10 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare3 = $__case_res_10;
+$eqRowCons2 = ($eqRowCons1)((($dictOrd)->Eq0)($__global_Prim_undefined));
+    $__res = (object)["compareRecord" => (function() use ($__global_Record_Unsafe_unsafeGet, $reflectSymbol, $compare3, $__global_Data_Ord_notEq, $compareRecord1) {
+  $__body = function($v, $ra, $rb) use ($__global_Record_Unsafe_unsafeGet, $reflectSymbol, $compare3, $__global_Data_Ord_notEq, $compareRecord1) {
+    $unsafeGet__prime__ = $__global_Record_Unsafe_unsafeGet;
+    $key = ($reflectSymbol)(($GLOBALS['__phpurs_data0_Proxy'] ??= new Phpurs_Data0("Proxy")));
+    $left = ($compare3)(($__global_Record_Unsafe_unsafeGet)($key, $ra), ($__global_Record_Unsafe_unsafeGet)($key, $rb));
+    $__case_0 = ($__global_Data_Ord_notEq)($left, ($GLOBALS['__phpurs_data0_EQ'] ??= new Phpurs_Data0("EQ")));
+    switch ($__case_0) {
+case true:
+return $left;
+break;
+default:
+return ($compareRecord1)(($GLOBALS['__phpurs_data0_Proxy'] ??= new Phpurs_Data0("Proxy")), $ra, $rb);
+break;
+};
+  };
+  $__fn = function($v, $ra = null, $rb = null) use ($__global_Record_Unsafe_unsafeGet, $reflectSymbol, $compare3, $__global_Data_Ord_notEq, $compareRecord1, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($rb) use ($v, $ra, &$__fn) { return $__fn($v, $ra, $rb); };
+    if ($__num === 1) return function($ra, $rb = null) use ($v, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($v, $ra, $rb);
+      if ($__num2 === 1) return function($rb) use ($v, $ra, &$__fn) { return $__fn($v, $ra, $rb); };
+      return phpurs_curry_fallback($__fn, [$v], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = $__body($v, $ra, $rb);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})(), "EqRecord0" => (function() use ($eqRowCons2) {
+  $__fn = function($__dollar____unused) use ($eqRowCons2, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $eqRowCons2;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})())($__global_Prim_undefined, $dictIsSymbol, $Ord0);
     $__res = (object)["topRecord" => (function() use ($topRecord1, $reflectSymbol, $__global_Record_Unsafe_unsafeSet, $top1) {
   $__fn = function($v, $rowProxy = null) use ($topRecord1, $reflectSymbol, $__global_Record_Unsafe_unsafeSet, $top1, &$__fn) {
   $__num = func_num_args();

@@ -96,10 +96,74 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
       case 'Data_Monoid_semigroupRecord': $v = (($GLOBALS['Data_Semigroup_semigroupRecord'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_semigroupRecord')))(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))); break;
-      case 'Data_Monoid_lessThanOrEq': $v = (($GLOBALS['Data_Ord_lessThanOrEq'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_lessThanOrEq')))(($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'))); break;
-      case 'Data_Monoid_eq': $v = ($GLOBALS['Data_Eq_eqIntImpl'] ?? \Data\Eq\phpurs_eval_thunk('Data_Eq_eqIntImpl')); break;
-      case 'Data_Monoid_mod': $v = ($GLOBALS['Data_EuclideanRing_intMod'] ?? \Data\EuclideanRing\phpurs_eval_thunk('Data_EuclideanRing_intMod')); break;
-      case 'Data_Monoid_div': $v = ($GLOBALS['Data_EuclideanRing_intDiv'] ?? \Data\EuclideanRing\phpurs_eval_thunk('Data_EuclideanRing_intDiv')); break;
+      case 'Data_Monoid_lessThanOrEq': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $compare3 = $__case_res_0;
+  return (function() use ($compare3) {
+  $__body = function($a1, $a2) use ($compare3) {
+    $v = ($compare3)($a1, $a2);
+    $__case_0 = $v;
+    switch (($__case_0)->tag) {
+case "GT":
+return false;
+break;
+default:
+return true;
+break;
+};
+  };
+  $__fn = function($a1, $a2 = null) use ($compare3, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($a2) use ($a1, &$__fn) { return $__fn($a1, $a2); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($a1, $a2);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+})(); break;
+      case 'Data_Monoid_eq': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Eq_eqInt'] ?? \Data\Eq\phpurs_eval_thunk('Data_Eq_eqInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Monoid_mod': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_EuclideanRing_euclideanRingInt'] ?? \Data\EuclideanRing\phpurs_eval_thunk('Data_EuclideanRing_euclideanRingInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->mod;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Monoid_div': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_EuclideanRing_euclideanRingInt'] ?? \Data\EuclideanRing\phpurs_eval_thunk('Data_EuclideanRing_euclideanRingInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->div;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_Monoid_monoidUnit': $v = (object)["mempty" => ($GLOBALS['Data_Unit_unit'] ?? \Data\Unit\phpurs_eval_thunk('Data_Unit_unit')), "Semigroup0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
@@ -245,7 +309,15 @@ function Data_Monoid_monoidRecord($__dollar____unused, $dictMonoidRecord = null)
 $__global_Data_Monoid_semigroupRecord = ($GLOBALS['Data_Monoid_semigroupRecord'] ?? \Data\Monoid\phpurs_eval_thunk('Data_Monoid_semigroupRecord'));
 $__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $semigroupRecord1 = ($__global_Data_Monoid_semigroupRecord)((($dictMonoidRecord)->SemigroupRecord0)($__global_Prim_undefined));
-    $__res = (object)["mempty" => (($dictMonoidRecord)->memptyRecord)(($GLOBALS['__phpurs_data0_Proxy'] ??= new Phpurs_Data0("Proxy"))), "Semigroup0" => (function() use ($semigroupRecord1) {
+$__case_0 = $dictMonoidRecord;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->memptyRecord;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = (object)["mempty" => ($__case_res_0)(($GLOBALS['__phpurs_data0_Proxy'] ??= new Phpurs_Data0("Proxy"))), "Semigroup0" => (function() use ($semigroupRecord1) {
   $__fn = function($__dollar____unused) use ($semigroupRecord1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
@@ -288,10 +360,42 @@ function Data_Monoid_monoidFn($dictMonoid) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Semigroup_semigroupFn = ($GLOBALS['Data_Semigroup_semigroupFn'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_semigroupFn'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$mempty1 = ($dictMonoid)->mempty;
-$semigroupFn = ($__global_Data_Semigroup_semigroupFn)((($dictMonoid)->Semigroup0)($__global_Prim_undefined));
+$__case_0 = $dictMonoid;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->mempty;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$mempty1 = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append1 = $__case_res_1;
+$semigroupFn = (object)["append" => (function() use ($append1) {
+  $__fn = function($f, $g = null, $x = null) use ($append1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($x) use ($f, $g, &$__fn) { return $__fn($f, $g, $x); };
+    if ($__num === 1) return function($g, $x = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $g, $x);
+      if ($__num2 === 1) return function($x) use ($f, $g, &$__fn) { return $__fn($f, $g, $x); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = ($append1)(($f)($x), ($g)($x));
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})()];
     $__res = (object)["mempty" => (function() use ($mempty1) {
   $__fn = function($v) use ($mempty1, &$__fn) {
   $__num = func_num_args();
@@ -324,18 +428,103 @@ function Data_Monoid_monoidRecordCons($dictIsSymbol) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Semigroup_semigroupRecordCons = ($GLOBALS['Data_Semigroup_semigroupRecordCons'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_semigroupRecordCons'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Record_Unsafe_unsafeSet = ($GLOBALS['Record_Unsafe_unsafeSet'] ?? \Record\Unsafe\phpurs_eval_thunk('Record_Unsafe_unsafeSet'));
-$reflectSymbol = ($dictIsSymbol)->reflectSymbol;
-$semigroupRecordCons = ($__global_Data_Semigroup_semigroupRecordCons)($dictIsSymbol, $__global_Prim_undefined);
+$__global_Record_Unsafe_unsafeGet = ($GLOBALS['Record_Unsafe_unsafeGet'] ?? \Record\Unsafe\phpurs_eval_thunk('Record_Unsafe_unsafeGet'));
+$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
+$__case_0 = $dictIsSymbol;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->reflectSymbol;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$reflectSymbol = $__case_res_0;
+$__case_0 = $dictIsSymbol;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->reflectSymbol;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$reflectSymbol = $__case_res_1;
+$semigroupRecordCons = ((function() use ($reflectSymbol, $__global_Record_Unsafe_unsafeSet, $__global_Record_Unsafe_unsafeGet) {
+  $__fn = function($__dollar____unused, $dictSemigroupRecord = null) use ($reflectSymbol, $__global_Record_Unsafe_unsafeSet, $__global_Record_Unsafe_unsafeGet, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($dictSemigroupRecord) use ($__dollar____unused, &$__fn) { return $__fn($__dollar____unused, $dictSemigroupRecord); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+$__case_0 = $dictSemigroupRecord;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->appendRecord;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$appendRecord1 = $__case_res_2;
+    $__res = (function() use ($appendRecord1, $reflectSymbol, $__global_Record_Unsafe_unsafeSet, $__global_Record_Unsafe_unsafeGet) {
+  $__fn = function($dictSemigroup) use ($appendRecord1, $reflectSymbol, $__global_Record_Unsafe_unsafeSet, $__global_Record_Unsafe_unsafeGet, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dictSemigroup;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append1 = $__case_res_3;
+    $__res = (object)["appendRecord" => (function() use ($appendRecord1, $reflectSymbol, $__global_Record_Unsafe_unsafeSet, $__global_Record_Unsafe_unsafeGet, $append1) {
+  $__fn = function($v, $ra = null, $rb = null) use ($appendRecord1, $reflectSymbol, $__global_Record_Unsafe_unsafeSet, $__global_Record_Unsafe_unsafeGet, $append1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($rb) use ($v, $ra, &$__fn) { return $__fn($v, $ra, $rb); };
+    if ($__num === 1) return function($ra, $rb = null) use ($v, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($v, $ra, $rb);
+      if ($__num2 === 1) return function($rb) use ($v, $ra, &$__fn) { return $__fn($v, $ra, $rb); };
+      return phpurs_curry_fallback($__fn, [$v], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+$tail = ($appendRecord1)(($GLOBALS['__phpurs_data0_Proxy'] ??= new Phpurs_Data0("Proxy")), $ra, $rb);
+$key = ($reflectSymbol)(($GLOBALS['__phpurs_data0_Proxy'] ??= new Phpurs_Data0("Proxy")));
+$insert = ($__global_Record_Unsafe_unsafeSet)($key);
+$get = ($__global_Record_Unsafe_unsafeGet)($key);
+    $__res = ($insert)(($append1)(($get)($ra), ($get)($rb)), $tail);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})())($__global_Prim_undefined);
     $__res = (function() use ($__global_Prim_undefined, $semigroupRecordCons, $reflectSymbol, $__global_Record_Unsafe_unsafeSet) {
   $__fn = function($dictMonoid) use ($__global_Prim_undefined, $semigroupRecordCons, $reflectSymbol, $__global_Record_Unsafe_unsafeSet, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$mempty1 = ($dictMonoid)->mempty;
+$__case_0 = $dictMonoid;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->mempty;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$mempty1 = $__case_res_4;
 $Semigroup0 = (($dictMonoid)->Semigroup0)($__global_Prim_undefined);
     $__res = (function() use ($semigroupRecordCons, $__global_Prim_undefined, &$Semigroup0, $reflectSymbol, $__global_Record_Unsafe_unsafeSet, $mempty1) {
   $__fn = function($__dollar____unused, $dictMonoidRecord = null) use ($semigroupRecordCons, $__global_Prim_undefined, &$Semigroup0, $reflectSymbol, $__global_Record_Unsafe_unsafeSet, $mempty1, &$__fn) {
@@ -344,7 +533,15 @@ $Semigroup0 = (($dictMonoid)->Semigroup0)($__global_Prim_undefined);
     if ($__num === 1) return function($dictMonoidRecord) use ($__dollar____unused, &$__fn) { return $__fn($__dollar____unused, $dictMonoidRecord); };
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
-$memptyRecord1 = ($dictMonoidRecord)->memptyRecord;
+$__case_0 = $dictMonoidRecord;
+$__case_res_5 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_5 = ($v)->memptyRecord;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$memptyRecord1 = $__case_res_5;
 $semigroupRecordCons1 = ($semigroupRecordCons)((($dictMonoidRecord)->SemigroupRecord0)($__global_Prim_undefined), $Semigroup0);
     $__res = (object)["memptyRecord" => (function() use ($memptyRecord1, $reflectSymbol, $__global_Record_Unsafe_unsafeSet, $mempty1) {
   $__fn = function($v) use ($memptyRecord1, $reflectSymbol, $__global_Record_Unsafe_unsafeSet, $mempty1, &$__fn) {
@@ -389,9 +586,24 @@ function Data_Monoid_power($dictMonoid) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$mempty1 = ($dictMonoid)->mempty;
-$append = ((($dictMonoid)->Semigroup0)($__global_Prim_undefined))->append;
+$__case_0 = $dictMonoid;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->mempty;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$mempty1 = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append = $__case_res_1;
     $__res = (function() {
   $__fn = function($x) use (&$__fn) {
   $__num = func_num_args();
@@ -434,7 +646,15 @@ function Data_Monoid_guard($dictMonoid) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$mempty1 = ($dictMonoid)->mempty;
+$__case_0 = $dictMonoid;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->mempty;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$mempty1 = $__case_res_0;
     $__res = (function() use ($mempty1) {
   $__body = function($v, $v1) use ($mempty1) {
     $__case_0 = $v;

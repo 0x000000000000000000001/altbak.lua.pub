@@ -196,9 +196,33 @@ function Control_Monad_Writer_Class_listens($dictMonadWriter) {
   }
 $__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $Monad1 = (((($dictMonadWriter)->MonadTell1)($__global_Prim_undefined))->Monad1)($__global_Prim_undefined);
-$bind = ((($Monad1)->Bind1)($__global_Prim_undefined))->bind;
-$listen1 = ($dictMonadWriter)->listen;
-$pure = ((($Monad1)->Applicative0)($__global_Prim_undefined))->pure;
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bind;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bind = $__case_res_0;
+$__case_0 = $dictMonadWriter;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->listen;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$listen1 = $__case_res_1;
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pure = $__case_res_2;
     $__res = (function() use ($bind, $listen1, $pure) {
   $__fn = function($f, $m = null) use ($bind, $listen1, $pure, &$__fn) {
   $__num = func_num_args();
@@ -257,10 +281,34 @@ function Control_Monad_Writer_Class_censor($dictMonadWriter) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$pass1 = ($dictMonadWriter)->pass;
+$__case_0 = $dictMonadWriter;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->pass;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pass1 = $__case_res_0;
 $Monad1 = (((($dictMonadWriter)->MonadTell1)($__global_Prim_undefined))->Monad1)($__global_Prim_undefined);
-$bind = ((($Monad1)->Bind1)($__global_Prim_undefined))->bind;
-$pure = ((($Monad1)->Applicative0)($__global_Prim_undefined))->pure;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->bind;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bind = $__case_res_1;
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pure = $__case_res_2;
     $__res = (function() use ($pass1, $bind, $pure) {
   $__fn = function($f, $m = null) use ($pass1, $bind, $pure, &$__fn) {
   $__num = func_num_args();

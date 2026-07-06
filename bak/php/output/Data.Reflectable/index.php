@@ -144,7 +144,7 @@ function Data_Reflectable_reifyType($__dollar____unused, $s = null, $f = null) {
   }
 $__global_Data_Reflectable_unsafeCoerce = ($GLOBALS['Data_Reflectable_unsafeCoerce'] ?? \Data\Reflectable\phpurs_eval_thunk('Data_Reflectable_unsafeCoerce'));
 $coerce = $__global_Data_Reflectable_unsafeCoerce;
-    $__res = ($coerce)((function() use ($f) {
+    $__res = ($__global_Data_Reflectable_unsafeCoerce)((function() use ($f) {
   $__fn = function($dictReflectable) use ($f, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {

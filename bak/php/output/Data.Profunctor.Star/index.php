@@ -107,8 +107,40 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Data_Profunctor_Star_composeFlipped': $v = (($GLOBALS['Control_Semigroupoid_composeFlipped'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_composeFlipped')))(($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn'))); break;
-      case 'Data_Profunctor_Star_compose': $v = (($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn')))->compose; break;
+      case 'Data_Profunctor_Star_composeFlipped': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compose;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $compose1 = $__case_res_0;
+  return (function() use ($compose1) {
+  $__fn = function($f, $g = null) use ($compose1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($g) use ($f, &$__fn) { return $__fn($f, $g); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($compose1)($g, $f);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+})(); break;
+      case 'Data_Profunctor_Star_compose': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compose;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_Profunctor_Star_newtypeStar': $v = (object)["Coercible0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
@@ -151,7 +183,15 @@ function Data_Profunctor_Star_semigroupoidStar($dictBind) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$bind = ($dictBind)->bind;
+$__case_0 = $dictBind;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bind;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bind = $__case_res_0;
     $__res = (object)["compose" => (function() use ($bind) {
   $__body = function($v, $v1) use ($bind) {
     $__case_0 = $v;
@@ -197,7 +237,15 @@ function Data_Profunctor_Star_profunctorStar($dictFunctor) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_Profunctor_Star_composeFlipped = ($GLOBALS['Data_Profunctor_Star_composeFlipped'] ?? \Data\Profunctor\Star\phpurs_eval_thunk('Data_Profunctor_Star_composeFlipped'));
-$map = ($dictFunctor)->map;
+$__case_0 = $dictFunctor;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_0;
     $__res = (object)["dimap" => (function() use ($__global_Data_Profunctor_Star_composeFlipped, $map) {
   $__body = function($f, $g, $v) use ($__global_Data_Profunctor_Star_composeFlipped, $map) {
     $__case_0 = $f;
@@ -240,9 +288,56 @@ function Data_Profunctor_Star_strongStar($dictFunctor) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Profunctor_Star_profunctorStar = ($GLOBALS['Data_Profunctor_Star_profunctorStar'] ?? \Data\Profunctor\Star\phpurs_eval_thunk('Data_Profunctor_Star_profunctorStar'));
-$map = ($dictFunctor)->map;
-$profunctorStar1 = ($__global_Data_Profunctor_Star_profunctorStar)($dictFunctor);
+$__global_Data_Profunctor_Star_composeFlipped = ($GLOBALS['Data_Profunctor_Star_composeFlipped'] ?? \Data\Profunctor\Star\phpurs_eval_thunk('Data_Profunctor_Star_composeFlipped'));
+$__case_0 = $dictFunctor;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_0;
+$__case_0 = $dictFunctor;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_1;
+$profunctorStar1 = (object)["dimap" => (function() use ($__global_Data_Profunctor_Star_composeFlipped, $map) {
+  $__body = function($f, $g, $v) use ($__global_Data_Profunctor_Star_composeFlipped, $map) {
+    $__case_0 = $f;
+    $__case_1 = $g;
+    $__case_2 = $v;
+    if (true) {
+$f1 = $__case_0;
+$g1 = $__case_1;
+$ft = $__case_2;
+return ($__global_Data_Profunctor_Star_composeFlipped)($f1, ($__global_Data_Profunctor_Star_composeFlipped)($ft, ($map)($g1)));
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $g = null, $v = null) use ($__global_Data_Profunctor_Star_composeFlipped, $map, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($v) use ($f, $g, &$__fn) { return $__fn($f, $g, $v); };
+    if ($__num === 1) return function($g, $v = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $g, $v);
+      if ($__num2 === 1) return function($v) use ($f, $g, &$__fn) { return $__fn($f, $g, $v); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = $__body($f, $g, $v);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})()];
     $__res = (object)["first" => (function() use ($map) {
   $__body = function($v) use ($map) {
     $__case_0 = $v;
@@ -383,7 +478,15 @@ function Data_Profunctor_Star_invariantStar($dictInvariant) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_Profunctor_Star_compose = ($GLOBALS['Data_Profunctor_Star_compose'] ?? \Data\Profunctor\Star\phpurs_eval_thunk('Data_Profunctor_Star_compose'));
-$imap = ($dictInvariant)->imap;
+$__case_0 = $dictInvariant;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->imap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$imap = $__case_res_0;
     $__res = (object)["imap" => (function() use ($__global_Data_Profunctor_Star_compose, $imap) {
   $__body = function($f, $g, $v) use ($__global_Data_Profunctor_Star_compose, $imap) {
     $__case_0 = $f;
@@ -452,7 +555,15 @@ function Data_Profunctor_Star_functorStar($dictFunctor) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_Profunctor_Star_compose = ($GLOBALS['Data_Profunctor_Star_compose'] ?? \Data\Profunctor\Star\phpurs_eval_thunk('Data_Profunctor_Star_compose'));
-$map = ($dictFunctor)->map;
+$__case_0 = $dictFunctor;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_0;
     $__res = (object)["map" => (function() use ($__global_Data_Profunctor_Star_compose, $map) {
   $__body = function($f, $v) use ($__global_Data_Profunctor_Star_compose, $map) {
     $__case_0 = $f;
@@ -487,12 +598,49 @@ function Data_Profunctor_Star_distributiveStar($dictDistributive) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Profunctor_Star_functorStar = ($GLOBALS['Data_Profunctor_Star_functorStar'] ?? \Data\Profunctor\Star\phpurs_eval_thunk('Data_Profunctor_Star_functorStar'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Profunctor_Star_compose = ($GLOBALS['Data_Profunctor_Star_compose'] ?? \Data\Profunctor\Star\phpurs_eval_thunk('Data_Profunctor_Star_compose'));
 while (true) {
-$collect = ($dictDistributive)->collect;
-$functorStar1 = ($__global_Data_Profunctor_Star_functorStar)((($dictDistributive)->Functor0)($__global_Prim_undefined));
+$__case_0 = $dictDistributive;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->collect;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$collect = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_1;
+$functorStar1 = (object)["map" => (function() use ($__global_Data_Profunctor_Star_compose, $map) {
+  $__body = function($f, $v) use ($__global_Data_Profunctor_Star_compose, $map) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    if (true) {
+$f1 = $__case_0;
+$g = $__case_1;
+return ($__global_Data_Profunctor_Star_compose)(($map)($f1), $g);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $v = null) use ($__global_Data_Profunctor_Star_compose, $map, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, &$__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($f, $v);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
 return (object)["distribute" => (function() use ($collect) {
   $__fn = function($dictFunctor) use ($collect, &$__fn) {
   $__num = func_num_args();
@@ -534,21 +682,36 @@ throw new \Exception("Pattern match failure");
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})(), "collect" => (function() use ($__global_Data_Profunctor_Star_compose, $dictDistributive) {
-  $__fn = function($dictFunctor) use ($__global_Data_Profunctor_Star_compose, $dictDistributive, &$__fn) {
+})(), "collect" => (function() use ($__global_Data_Profunctor_Star_compose, $dict) {
+  $__fn = function($dictFunctor) use ($__global_Data_Profunctor_Star_compose, $dict, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Profunctor_Star_distributiveStar = ($GLOBALS['Data_Profunctor_Star_distributiveStar'] ?? \Data\Profunctor\Star\phpurs_eval_thunk('Data_Profunctor_Star_distributiveStar'));
-$map = ($dictFunctor)->map;
-    $__res = (function() use ($__global_Data_Profunctor_Star_compose, $__global_Data_Profunctor_Star_distributiveStar, $dictDistributive, $dictFunctor, $map) {
-  $__fn = function($f) use ($__global_Data_Profunctor_Star_compose, $__global_Data_Profunctor_Star_distributiveStar, $dictDistributive, $dictFunctor, $map, &$__fn) {
+$__case_0 = $dictFunctor;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_2;
+    $__res = (function() use ($__global_Data_Profunctor_Star_compose, $dict, $dictFunctor, $map) {
+  $__fn = function($f) use ($__global_Data_Profunctor_Star_compose, $dict, $dictFunctor, $map, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($__global_Data_Profunctor_Star_compose)(((($__global_Data_Profunctor_Star_distributiveStar)($dictDistributive))->distribute)($dictFunctor), ($map)($f));
+$__case_0 = $dict;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->distribute;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__global_Data_Profunctor_Star_compose)(($__case_res_3)($dictFunctor), ($map)($f));
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -581,11 +744,57 @@ function Data_Profunctor_Star_closedStar($dictDistributive) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_Functor_functorFn = ($GLOBALS['Data_Functor_functorFn'] ?? \Data\Functor\phpurs_eval_thunk('Data_Functor_functorFn'));
-$__global_Data_Profunctor_Star_profunctorStar = ($GLOBALS['Data_Profunctor_Star_profunctorStar'] ?? \Data\Profunctor\Star\phpurs_eval_thunk('Data_Profunctor_Star_profunctorStar'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
+$__global_Data_Profunctor_Star_composeFlipped = ($GLOBALS['Data_Profunctor_Star_composeFlipped'] ?? \Data\Profunctor\Star\phpurs_eval_thunk('Data_Profunctor_Star_composeFlipped'));
 $__global_Data_Profunctor_Star_compose = ($GLOBALS['Data_Profunctor_Star_compose'] ?? \Data\Profunctor\Star\phpurs_eval_thunk('Data_Profunctor_Star_compose'));
-$distribute = (($dictDistributive)->distribute)($__global_Data_Functor_functorFn);
-$profunctorStar1 = ($__global_Data_Profunctor_Star_profunctorStar)((($dictDistributive)->Functor0)($__global_Prim_undefined));
+$__case_0 = $dictDistributive;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->distribute;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$distribute = ($__case_res_0)($__global_Data_Functor_functorFn);
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_1;
+$profunctorStar1 = (object)["dimap" => (function() use ($__global_Data_Profunctor_Star_composeFlipped, $map) {
+  $__body = function($f, $g, $v) use ($__global_Data_Profunctor_Star_composeFlipped, $map) {
+    $__case_0 = $f;
+    $__case_1 = $g;
+    $__case_2 = $v;
+    if (true) {
+$f1 = $__case_0;
+$g1 = $__case_1;
+$ft = $__case_2;
+return ($__global_Data_Profunctor_Star_composeFlipped)($f1, ($__global_Data_Profunctor_Star_composeFlipped)($ft, ($map)($g1)));
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $g = null, $v = null) use ($__global_Data_Profunctor_Star_composeFlipped, $map, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($v) use ($f, $g, &$__fn) { return $__fn($f, $g, $v); };
+    if ($__num === 1) return function($g, $v = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $g, $v);
+      if ($__num2 === 1) return function($v) use ($f, $g, &$__fn) { return $__fn($f, $g, $v); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = $__body($f, $g, $v);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})()];
     $__res = (object)["closed" => (function() use ($distribute, $__global_Data_Profunctor_Star_compose) {
   $__body = function($v) use ($distribute, $__global_Data_Profunctor_Star_compose) {
     $__case_0 = $v;
@@ -638,13 +847,68 @@ function Data_Profunctor_Star_choiceStar($dictApplicative) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$__global_Data_Profunctor_Star_profunctorStar = ($GLOBALS['Data_Profunctor_Star_profunctorStar'] ?? \Data\Profunctor\Star\phpurs_eval_thunk('Data_Profunctor_Star_profunctorStar'));
+$__global_Data_Profunctor_Star_composeFlipped = ($GLOBALS['Data_Profunctor_Star_composeFlipped'] ?? \Data\Profunctor\Star\phpurs_eval_thunk('Data_Profunctor_Star_composeFlipped'));
 $__global_Data_Either_either = ($GLOBALS['Data_Either_either'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_either'));
 $__global_Data_Profunctor_Star_compose = ($GLOBALS['Data_Profunctor_Star_compose'] ?? \Data\Profunctor\Star\phpurs_eval_thunk('Data_Profunctor_Star_compose'));
 $Functor0 = (((($dictApplicative)->Apply0)($__global_Prim_undefined))->Functor0)($__global_Prim_undefined);
-$map = ($Functor0)->map;
-$pure = ($dictApplicative)->pure;
-$profunctorStar1 = ($__global_Data_Profunctor_Star_profunctorStar)($Functor0);
+$__case_0 = $Functor0;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_0;
+$__case_0 = $dictApplicative;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pure = $__case_res_1;
+$__case_0 = $Functor0;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_2;
+$profunctorStar1 = (object)["dimap" => (function() use ($__global_Data_Profunctor_Star_composeFlipped, $map) {
+  $__body = function($f, $g, $v) use ($__global_Data_Profunctor_Star_composeFlipped, $map) {
+    $__case_0 = $f;
+    $__case_1 = $g;
+    $__case_2 = $v;
+    if (true) {
+$f1 = $__case_0;
+$g1 = $__case_1;
+$ft = $__case_2;
+return ($__global_Data_Profunctor_Star_composeFlipped)($f1, ($__global_Data_Profunctor_Star_composeFlipped)($ft, ($map)($g1)));
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $g = null, $v = null) use ($__global_Data_Profunctor_Star_composeFlipped, $map, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($v) use ($f, $g, &$__fn) { return $__fn($f, $g, $v); };
+    if ($__num === 1) return function($g, $v = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $g, $v);
+      if ($__num2 === 1) return function($v) use ($f, $g, &$__fn) { return $__fn($f, $g, $v); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = $__body($f, $g, $v);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})()];
     $__res = (object)["left" => (function() use ($__global_Data_Either_either, $__global_Data_Profunctor_Star_compose, $map, $pure) {
   $__body = function($v) use ($__global_Data_Either_either, $__global_Data_Profunctor_Star_compose, $map, $pure) {
     $__case_0 = $v;
@@ -745,10 +1009,57 @@ function Data_Profunctor_Star_categoryStar($dictMonad) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Profunctor_Star_semigroupoidStar = ($GLOBALS['Data_Profunctor_Star_semigroupoidStar'] ?? \Data\Profunctor\Star\phpurs_eval_thunk('Data_Profunctor_Star_semigroupoidStar'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$semigroupoidStar1 = ($__global_Data_Profunctor_Star_semigroupoidStar)((($dictMonad)->Bind1)($__global_Prim_undefined));
-    $__res = (object)["identity" => ((($dictMonad)->Applicative0)($__global_Prim_undefined))->pure, "Semigroupoid0" => (function() use ($semigroupoidStar1) {
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bind;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bind = $__case_res_0;
+$semigroupoidStar1 = (object)["compose" => (function() use ($bind) {
+  $__body = function($v, $v1) use ($bind) {
+    $__case_0 = $v;
+    $__case_1 = $v1;
+    if (true) {
+$f = $__case_0;
+$g = $__case_1;
+return (function() use ($bind, $g, $f) {
+  $__fn = function($x) use ($bind, $g, $f, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($bind)(($g)($x), $f);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($v, $v1 = null) use ($bind, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($v, $v1);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = (object)["identity" => $__case_res_1, "Semigroupoid0" => (function() use ($semigroupoidStar1) {
   $__fn = function($__dollar____unused) use ($semigroupoidStar1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
@@ -770,10 +1081,48 @@ function Data_Profunctor_Star_applyStar($dictApply) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Profunctor_Star_functorStar = ($GLOBALS['Data_Profunctor_Star_functorStar'] ?? \Data\Profunctor\Star\phpurs_eval_thunk('Data_Profunctor_Star_functorStar'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$apply = ($dictApply)->apply;
-$functorStar1 = ($__global_Data_Profunctor_Star_functorStar)((($dictApply)->Functor0)($__global_Prim_undefined));
+$__global_Data_Profunctor_Star_compose = ($GLOBALS['Data_Profunctor_Star_compose'] ?? \Data\Profunctor\Star\phpurs_eval_thunk('Data_Profunctor_Star_compose'));
+$__case_0 = $dictApply;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$apply = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_1;
+$functorStar1 = (object)["map" => (function() use ($__global_Data_Profunctor_Star_compose, $map) {
+  $__body = function($f, $v) use ($__global_Data_Profunctor_Star_compose, $map) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    if (true) {
+$f1 = $__case_0;
+$g = $__case_1;
+return ($__global_Data_Profunctor_Star_compose)(($map)($f1), $g);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $v = null) use ($__global_Data_Profunctor_Star_compose, $map, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, &$__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($f, $v);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
     $__res = (object)["apply" => (function() use ($apply) {
   $__body = function($v, $v1) use ($apply) {
     $__case_0 = $v;
@@ -828,10 +1177,100 @@ function Data_Profunctor_Star_bindStar($dictBind) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Profunctor_Star_applyStar = ($GLOBALS['Data_Profunctor_Star_applyStar'] ?? \Data\Profunctor\Star\phpurs_eval_thunk('Data_Profunctor_Star_applyStar'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$bind = ($dictBind)->bind;
-$applyStar1 = ($__global_Data_Profunctor_Star_applyStar)((($dictBind)->Apply0)($__global_Prim_undefined));
+$__global_Data_Profunctor_Star_compose = ($GLOBALS['Data_Profunctor_Star_compose'] ?? \Data\Profunctor\Star\phpurs_eval_thunk('Data_Profunctor_Star_compose'));
+$__case_0 = $dictBind;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bind;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bind = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$apply = $__case_res_1;
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_2;
+$functorStar1 = (object)["map" => (function() use ($__global_Data_Profunctor_Star_compose, $map) {
+  $__body = function($f, $v) use ($__global_Data_Profunctor_Star_compose, $map) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    if (true) {
+$f1 = $__case_0;
+$g = $__case_1;
+return ($__global_Data_Profunctor_Star_compose)(($map)($f1), $g);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $v = null) use ($__global_Data_Profunctor_Star_compose, $map, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, &$__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($f, $v);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+$applyStar1 = (object)["apply" => (function() use ($apply) {
+  $__body = function($v, $v1) use ($apply) {
+    $__case_0 = $v;
+    $__case_1 = $v1;
+    if (true) {
+$f = $__case_0;
+$g = $__case_1;
+return (function() use ($apply, $f, $g) {
+  $__fn = function($a) use ($apply, $f, $g, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($apply)(($f)($a), ($g)($a));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($v, $v1 = null) use ($apply, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($v, $v1);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "Functor0" => (function() use ($functorStar1) {
+  $__fn = function($__dollar____unused) use ($functorStar1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $functorStar1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
     $__res = (object)["bind" => (function() use ($bind) {
   $__body = function($v, $f) use ($bind) {
     $__case_0 = $v;
@@ -906,10 +1345,100 @@ function Data_Profunctor_Star_applicativeStar($dictApplicative) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Profunctor_Star_applyStar = ($GLOBALS['Data_Profunctor_Star_applyStar'] ?? \Data\Profunctor\Star\phpurs_eval_thunk('Data_Profunctor_Star_applyStar'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$pure = ($dictApplicative)->pure;
-$applyStar1 = ($__global_Data_Profunctor_Star_applyStar)((($dictApplicative)->Apply0)($__global_Prim_undefined));
+$__global_Data_Profunctor_Star_compose = ($GLOBALS['Data_Profunctor_Star_compose'] ?? \Data\Profunctor\Star\phpurs_eval_thunk('Data_Profunctor_Star_compose'));
+$__case_0 = $dictApplicative;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pure = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$apply = $__case_res_1;
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_2;
+$functorStar1 = (object)["map" => (function() use ($__global_Data_Profunctor_Star_compose, $map) {
+  $__body = function($f, $v) use ($__global_Data_Profunctor_Star_compose, $map) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    if (true) {
+$f1 = $__case_0;
+$g = $__case_1;
+return ($__global_Data_Profunctor_Star_compose)(($map)($f1), $g);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $v = null) use ($__global_Data_Profunctor_Star_compose, $map, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, &$__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($f, $v);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+$applyStar1 = (object)["apply" => (function() use ($apply) {
+  $__body = function($v, $v1) use ($apply) {
+    $__case_0 = $v;
+    $__case_1 = $v1;
+    if (true) {
+$f = $__case_0;
+$g = $__case_1;
+return (function() use ($apply, $f, $g) {
+  $__fn = function($a) use ($apply, $f, $g, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($apply)(($f)($a), ($g)($a));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($v, $v1 = null) use ($apply, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($v, $v1);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "Functor0" => (function() use ($functorStar1) {
+  $__fn = function($__dollar____unused) use ($functorStar1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $functorStar1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
     $__res = (object)["pure" => (function() use ($pure) {
   $__fn = function($a, $v = null) use ($pure, &$__fn) {
   $__num = func_num_args();
@@ -943,11 +1472,278 @@ function Data_Profunctor_Star_monadStar($dictMonad) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Profunctor_Star_applicativeStar = ($GLOBALS['Data_Profunctor_Star_applicativeStar'] ?? \Data\Profunctor\Star\phpurs_eval_thunk('Data_Profunctor_Star_applicativeStar'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$__global_Data_Profunctor_Star_bindStar = ($GLOBALS['Data_Profunctor_Star_bindStar'] ?? \Data\Profunctor\Star\phpurs_eval_thunk('Data_Profunctor_Star_bindStar'));
-$applicativeStar1 = ($__global_Data_Profunctor_Star_applicativeStar)((($dictMonad)->Applicative0)($__global_Prim_undefined));
-$bindStar1 = ($__global_Data_Profunctor_Star_bindStar)((($dictMonad)->Bind1)($__global_Prim_undefined));
+$__global_Data_Profunctor_Star_compose = ($GLOBALS['Data_Profunctor_Star_compose'] ?? \Data\Profunctor\Star\phpurs_eval_thunk('Data_Profunctor_Star_compose'));
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pure = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$apply = $__case_res_1;
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_2;
+$functorStar1 = (object)["map" => (function() use ($__global_Data_Profunctor_Star_compose, $map) {
+  $__body = function($f, $v) use ($__global_Data_Profunctor_Star_compose, $map) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    if (true) {
+$f1 = $__case_0;
+$g = $__case_1;
+return ($__global_Data_Profunctor_Star_compose)(($map)($f1), $g);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $v = null) use ($__global_Data_Profunctor_Star_compose, $map, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, &$__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($f, $v);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+$applyStar1 = (object)["apply" => (function() use ($apply) {
+  $__body = function($v, $v1) use ($apply) {
+    $__case_0 = $v;
+    $__case_1 = $v1;
+    if (true) {
+$f = $__case_0;
+$g = $__case_1;
+return (function() use ($apply, $f, $g) {
+  $__fn = function($a) use ($apply, $f, $g, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($apply)(($f)($a), ($g)($a));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($v, $v1 = null) use ($apply, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($v, $v1);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "Functor0" => (function() use ($functorStar1) {
+  $__fn = function($__dollar____unused) use ($functorStar1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $functorStar1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+$applicativeStar1 = (object)["pure" => (function() use ($pure) {
+  $__fn = function($a, $v = null) use ($pure, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($a, &$__fn) { return $__fn($a, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($pure)($a);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "Apply0" => (function() use ($applyStar1) {
+  $__fn = function($__dollar____unused) use ($applyStar1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $applyStar1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+$__case_0 = $dict;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->bind;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bind = $__case_res_3;
+$__case_0 = $dict;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$apply = $__case_res_4;
+$__case_0 = $dict;
+$__case_res_5 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_5 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_5;
+$functorStar1 = (object)["map" => (function() use ($__global_Data_Profunctor_Star_compose, $map) {
+  $__body = function($f, $v) use ($__global_Data_Profunctor_Star_compose, $map) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    if (true) {
+$f1 = $__case_0;
+$g = $__case_1;
+return ($__global_Data_Profunctor_Star_compose)(($map)($f1), $g);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $v = null) use ($__global_Data_Profunctor_Star_compose, $map, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, &$__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($f, $v);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+$applyStar1 = (object)["apply" => (function() use ($apply) {
+  $__body = function($v, $v1) use ($apply) {
+    $__case_0 = $v;
+    $__case_1 = $v1;
+    if (true) {
+$f = $__case_0;
+$g = $__case_1;
+return (function() use ($apply, $f, $g) {
+  $__fn = function($a) use ($apply, $f, $g, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($apply)(($f)($a), ($g)($a));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($v, $v1 = null) use ($apply, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($v, $v1);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "Functor0" => (function() use ($functorStar1) {
+  $__fn = function($__dollar____unused) use ($functorStar1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $functorStar1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+$bindStar1 = (object)["bind" => (function() use ($bind) {
+  $__body = function($v, $f) use ($bind) {
+    $__case_0 = $v;
+    $__case_1 = $f;
+    if (true) {
+$m = $__case_0;
+$f1 = $__case_1;
+return (function() use ($bind, $m, $f1) {
+  $__fn = function($x) use ($bind, $m, $f1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($bind)(($m)($x), (function() use ($f1, $x) {
+  $__body = function($a) use ($f1, $x) {
+    $v1 = ($f1)($a);
+    $__case_0 = $v1;
+    if (true) {
+$g = $__case_0;
+return ($g)($x);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($a) use ($f1, $x, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $__body($a);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})());
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($v, $f = null) use ($bind, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($f) use ($v, &$__fn) { return $__fn($v, $f); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($v, $f);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "Apply0" => (function() use ($applyStar1) {
+  $__fn = function($__dollar____unused) use ($applyStar1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $applyStar1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
     $__res = (object)["Applicative0" => (function() use ($applicativeStar1) {
   $__fn = function($__dollar____unused) use ($applicativeStar1, &$__fn) {
   $__num = func_num_args();
@@ -980,10 +1776,48 @@ function Data_Profunctor_Star_altStar($dictAlt) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Profunctor_Star_functorStar = ($GLOBALS['Data_Profunctor_Star_functorStar'] ?? \Data\Profunctor\Star\phpurs_eval_thunk('Data_Profunctor_Star_functorStar'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$alt = ($dictAlt)->alt;
-$functorStar1 = ($__global_Data_Profunctor_Star_functorStar)((($dictAlt)->Functor0)($__global_Prim_undefined));
+$__global_Data_Profunctor_Star_compose = ($GLOBALS['Data_Profunctor_Star_compose'] ?? \Data\Profunctor\Star\phpurs_eval_thunk('Data_Profunctor_Star_compose'));
+$__case_0 = $dictAlt;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->alt;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$alt = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_1;
+$functorStar1 = (object)["map" => (function() use ($__global_Data_Profunctor_Star_compose, $map) {
+  $__body = function($f, $v) use ($__global_Data_Profunctor_Star_compose, $map) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    if (true) {
+$f1 = $__case_0;
+$g = $__case_1;
+return ($__global_Data_Profunctor_Star_compose)(($map)($f1), $g);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $v = null) use ($__global_Data_Profunctor_Star_compose, $map, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, &$__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($f, $v);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
     $__res = (object)["alt" => (function() use ($alt) {
   $__body = function($v, $v1) use ($alt) {
     $__case_0 = $v;
@@ -1038,10 +1872,100 @@ function Data_Profunctor_Star_plusStar($dictPlus) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Profunctor_Star_altStar = ($GLOBALS['Data_Profunctor_Star_altStar'] ?? \Data\Profunctor\Star\phpurs_eval_thunk('Data_Profunctor_Star_altStar'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$empty = ($dictPlus)->empty;
-$altStar1 = ($__global_Data_Profunctor_Star_altStar)((($dictPlus)->Alt0)($__global_Prim_undefined));
+$__global_Data_Profunctor_Star_compose = ($GLOBALS['Data_Profunctor_Star_compose'] ?? \Data\Profunctor\Star\phpurs_eval_thunk('Data_Profunctor_Star_compose'));
+$__case_0 = $dictPlus;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->empty;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$empty = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->alt;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$alt = $__case_res_1;
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_2;
+$functorStar1 = (object)["map" => (function() use ($__global_Data_Profunctor_Star_compose, $map) {
+  $__body = function($f, $v) use ($__global_Data_Profunctor_Star_compose, $map) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    if (true) {
+$f1 = $__case_0;
+$g = $__case_1;
+return ($__global_Data_Profunctor_Star_compose)(($map)($f1), $g);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $v = null) use ($__global_Data_Profunctor_Star_compose, $map, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, &$__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($f, $v);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+$altStar1 = (object)["alt" => (function() use ($alt) {
+  $__body = function($v, $v1) use ($alt) {
+    $__case_0 = $v;
+    $__case_1 = $v1;
+    if (true) {
+$f = $__case_0;
+$g = $__case_1;
+return (function() use ($alt, $f, $g) {
+  $__fn = function($a) use ($alt, $f, $g, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($alt)(($f)($a), ($g)($a));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($v, $v1 = null) use ($alt, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($v, $v1);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "Functor0" => (function() use ($functorStar1) {
+  $__fn = function($__dollar____unused) use ($functorStar1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $functorStar1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
     $__res = (object)["empty" => (function() use ($empty) {
   $__fn = function($v) use ($empty, &$__fn) {
   $__num = func_num_args();
@@ -1074,11 +1998,236 @@ function Data_Profunctor_Star_alternativeStar($dictAlternative) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Profunctor_Star_applicativeStar = ($GLOBALS['Data_Profunctor_Star_applicativeStar'] ?? \Data\Profunctor\Star\phpurs_eval_thunk('Data_Profunctor_Star_applicativeStar'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$__global_Data_Profunctor_Star_plusStar = ($GLOBALS['Data_Profunctor_Star_plusStar'] ?? \Data\Profunctor\Star\phpurs_eval_thunk('Data_Profunctor_Star_plusStar'));
-$applicativeStar1 = ($__global_Data_Profunctor_Star_applicativeStar)((($dictAlternative)->Applicative0)($__global_Prim_undefined));
-$plusStar1 = ($__global_Data_Profunctor_Star_plusStar)((($dictAlternative)->Plus1)($__global_Prim_undefined));
+$__global_Data_Profunctor_Star_compose = ($GLOBALS['Data_Profunctor_Star_compose'] ?? \Data\Profunctor\Star\phpurs_eval_thunk('Data_Profunctor_Star_compose'));
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pure = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$apply = $__case_res_1;
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_2;
+$functorStar1 = (object)["map" => (function() use ($__global_Data_Profunctor_Star_compose, $map) {
+  $__body = function($f, $v) use ($__global_Data_Profunctor_Star_compose, $map) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    if (true) {
+$f1 = $__case_0;
+$g = $__case_1;
+return ($__global_Data_Profunctor_Star_compose)(($map)($f1), $g);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $v = null) use ($__global_Data_Profunctor_Star_compose, $map, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, &$__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($f, $v);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+$applyStar1 = (object)["apply" => (function() use ($apply) {
+  $__body = function($v, $v1) use ($apply) {
+    $__case_0 = $v;
+    $__case_1 = $v1;
+    if (true) {
+$f = $__case_0;
+$g = $__case_1;
+return (function() use ($apply, $f, $g) {
+  $__fn = function($a) use ($apply, $f, $g, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($apply)(($f)($a), ($g)($a));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($v, $v1 = null) use ($apply, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($v, $v1);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "Functor0" => (function() use ($functorStar1) {
+  $__fn = function($__dollar____unused) use ($functorStar1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $functorStar1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+$applicativeStar1 = (object)["pure" => (function() use ($pure) {
+  $__fn = function($a, $v = null) use ($pure, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($a, &$__fn) { return $__fn($a, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($pure)($a);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "Apply0" => (function() use ($applyStar1) {
+  $__fn = function($__dollar____unused) use ($applyStar1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $applyStar1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+$__case_0 = $dict;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->empty;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$empty = $__case_res_3;
+$__case_0 = $dict;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->alt;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$alt = $__case_res_4;
+$__case_0 = $dict;
+$__case_res_5 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_5 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_5;
+$functorStar1 = (object)["map" => (function() use ($__global_Data_Profunctor_Star_compose, $map) {
+  $__body = function($f, $v) use ($__global_Data_Profunctor_Star_compose, $map) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    if (true) {
+$f1 = $__case_0;
+$g = $__case_1;
+return ($__global_Data_Profunctor_Star_compose)(($map)($f1), $g);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $v = null) use ($__global_Data_Profunctor_Star_compose, $map, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, &$__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($f, $v);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+$altStar1 = (object)["alt" => (function() use ($alt) {
+  $__body = function($v, $v1) use ($alt) {
+    $__case_0 = $v;
+    $__case_1 = $v1;
+    if (true) {
+$f = $__case_0;
+$g = $__case_1;
+return (function() use ($alt, $f, $g) {
+  $__fn = function($a) use ($alt, $f, $g, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($alt)(($f)($a), ($g)($a));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($v, $v1 = null) use ($alt, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($v, $v1);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "Functor0" => (function() use ($functorStar1) {
+  $__fn = function($__dollar____unused) use ($functorStar1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $functorStar1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+$plusStar1 = (object)["empty" => (function() use ($empty) {
+  $__fn = function($v) use ($empty, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $empty;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})(), "Alt0" => (function() use ($altStar1) {
+  $__fn = function($__dollar____unused) use ($altStar1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $altStar1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
     $__res = (object)["Applicative0" => (function() use ($applicativeStar1) {
   $__fn = function($__dollar____unused) use ($applicativeStar1, &$__fn) {
   $__num = func_num_args();
@@ -1111,11 +2260,549 @@ function Data_Profunctor_Star_monadPlusStar($dictMonadPlus) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Profunctor_Star_monadStar = ($GLOBALS['Data_Profunctor_Star_monadStar'] ?? \Data\Profunctor\Star\phpurs_eval_thunk('Data_Profunctor_Star_monadStar'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$__global_Data_Profunctor_Star_alternativeStar = ($GLOBALS['Data_Profunctor_Star_alternativeStar'] ?? \Data\Profunctor\Star\phpurs_eval_thunk('Data_Profunctor_Star_alternativeStar'));
-$monadStar1 = ($__global_Data_Profunctor_Star_monadStar)((($dictMonadPlus)->Monad0)($__global_Prim_undefined));
-$alternativeStar1 = ($__global_Data_Profunctor_Star_alternativeStar)((($dictMonadPlus)->Alternative1)($__global_Prim_undefined));
+$__global_Data_Profunctor_Star_compose = ($GLOBALS['Data_Profunctor_Star_compose'] ?? \Data\Profunctor\Star\phpurs_eval_thunk('Data_Profunctor_Star_compose'));
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pure = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$apply = $__case_res_1;
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_2;
+$functorStar1 = (object)["map" => (function() use ($__global_Data_Profunctor_Star_compose, $map) {
+  $__body = function($f, $v) use ($__global_Data_Profunctor_Star_compose, $map) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    if (true) {
+$f1 = $__case_0;
+$g = $__case_1;
+return ($__global_Data_Profunctor_Star_compose)(($map)($f1), $g);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $v = null) use ($__global_Data_Profunctor_Star_compose, $map, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, &$__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($f, $v);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+$applyStar1 = (object)["apply" => (function() use ($apply) {
+  $__body = function($v, $v1) use ($apply) {
+    $__case_0 = $v;
+    $__case_1 = $v1;
+    if (true) {
+$f = $__case_0;
+$g = $__case_1;
+return (function() use ($apply, $f, $g) {
+  $__fn = function($a) use ($apply, $f, $g, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($apply)(($f)($a), ($g)($a));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($v, $v1 = null) use ($apply, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($v, $v1);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "Functor0" => (function() use ($functorStar1) {
+  $__fn = function($__dollar____unused) use ($functorStar1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $functorStar1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+$applicativeStar1 = (object)["pure" => (function() use ($pure) {
+  $__fn = function($a, $v = null) use ($pure, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($a, &$__fn) { return $__fn($a, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($pure)($a);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "Apply0" => (function() use ($applyStar1) {
+  $__fn = function($__dollar____unused) use ($applyStar1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $applyStar1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+$__case_0 = $dict;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->bind;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bind = $__case_res_3;
+$__case_0 = $dict;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$apply = $__case_res_4;
+$__case_0 = $dict;
+$__case_res_5 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_5 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_5;
+$functorStar1 = (object)["map" => (function() use ($__global_Data_Profunctor_Star_compose, $map) {
+  $__body = function($f, $v) use ($__global_Data_Profunctor_Star_compose, $map) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    if (true) {
+$f1 = $__case_0;
+$g = $__case_1;
+return ($__global_Data_Profunctor_Star_compose)(($map)($f1), $g);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $v = null) use ($__global_Data_Profunctor_Star_compose, $map, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, &$__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($f, $v);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+$applyStar1 = (object)["apply" => (function() use ($apply) {
+  $__body = function($v, $v1) use ($apply) {
+    $__case_0 = $v;
+    $__case_1 = $v1;
+    if (true) {
+$f = $__case_0;
+$g = $__case_1;
+return (function() use ($apply, $f, $g) {
+  $__fn = function($a) use ($apply, $f, $g, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($apply)(($f)($a), ($g)($a));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($v, $v1 = null) use ($apply, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($v, $v1);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "Functor0" => (function() use ($functorStar1) {
+  $__fn = function($__dollar____unused) use ($functorStar1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $functorStar1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+$bindStar1 = (object)["bind" => (function() use ($bind) {
+  $__body = function($v, $f) use ($bind) {
+    $__case_0 = $v;
+    $__case_1 = $f;
+    if (true) {
+$m = $__case_0;
+$f1 = $__case_1;
+return (function() use ($bind, $m, $f1) {
+  $__fn = function($x) use ($bind, $m, $f1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($bind)(($m)($x), (function() use ($f1, $x) {
+  $__body = function($a) use ($f1, $x) {
+    $v1 = ($f1)($a);
+    $__case_0 = $v1;
+    if (true) {
+$g = $__case_0;
+return ($g)($x);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($a) use ($f1, $x, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $__body($a);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})());
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($v, $f = null) use ($bind, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($f) use ($v, &$__fn) { return $__fn($v, $f); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($v, $f);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "Apply0" => (function() use ($applyStar1) {
+  $__fn = function($__dollar____unused) use ($applyStar1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $applyStar1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+$monadStar1 = (object)["Applicative0" => (function() use ($applicativeStar1) {
+  $__fn = function($__dollar____unused) use ($applicativeStar1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $applicativeStar1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})(), "Bind1" => (function() use ($bindStar1) {
+  $__fn = function($__dollar____unused) use ($bindStar1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $bindStar1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+$__case_0 = $dict;
+$__case_res_6 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_6 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pure = $__case_res_6;
+$__case_0 = $dict;
+$__case_res_7 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_7 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$apply = $__case_res_7;
+$__case_0 = $dict;
+$__case_res_8 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_8 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_8;
+$functorStar1 = (object)["map" => (function() use ($__global_Data_Profunctor_Star_compose, $map) {
+  $__body = function($f, $v) use ($__global_Data_Profunctor_Star_compose, $map) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    if (true) {
+$f1 = $__case_0;
+$g = $__case_1;
+return ($__global_Data_Profunctor_Star_compose)(($map)($f1), $g);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $v = null) use ($__global_Data_Profunctor_Star_compose, $map, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, &$__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($f, $v);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+$applyStar1 = (object)["apply" => (function() use ($apply) {
+  $__body = function($v, $v1) use ($apply) {
+    $__case_0 = $v;
+    $__case_1 = $v1;
+    if (true) {
+$f = $__case_0;
+$g = $__case_1;
+return (function() use ($apply, $f, $g) {
+  $__fn = function($a) use ($apply, $f, $g, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($apply)(($f)($a), ($g)($a));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($v, $v1 = null) use ($apply, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($v, $v1);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "Functor0" => (function() use ($functorStar1) {
+  $__fn = function($__dollar____unused) use ($functorStar1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $functorStar1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+$applicativeStar1 = (object)["pure" => (function() use ($pure) {
+  $__fn = function($a, $v = null) use ($pure, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($a, &$__fn) { return $__fn($a, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($pure)($a);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "Apply0" => (function() use ($applyStar1) {
+  $__fn = function($__dollar____unused) use ($applyStar1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $applyStar1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+$__case_0 = $dict;
+$__case_res_9 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_9 = ($v)->empty;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$empty = $__case_res_9;
+$__case_0 = $dict;
+$__case_res_10 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_10 = ($v)->alt;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$alt = $__case_res_10;
+$__case_0 = $dict;
+$__case_res_11 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_11 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_11;
+$functorStar1 = (object)["map" => (function() use ($__global_Data_Profunctor_Star_compose, $map) {
+  $__body = function($f, $v) use ($__global_Data_Profunctor_Star_compose, $map) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    if (true) {
+$f1 = $__case_0;
+$g = $__case_1;
+return ($__global_Data_Profunctor_Star_compose)(($map)($f1), $g);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $v = null) use ($__global_Data_Profunctor_Star_compose, $map, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, &$__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($f, $v);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+$altStar1 = (object)["alt" => (function() use ($alt) {
+  $__body = function($v, $v1) use ($alt) {
+    $__case_0 = $v;
+    $__case_1 = $v1;
+    if (true) {
+$f = $__case_0;
+$g = $__case_1;
+return (function() use ($alt, $f, $g) {
+  $__fn = function($a) use ($alt, $f, $g, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($alt)(($f)($a), ($g)($a));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($v, $v1 = null) use ($alt, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($v, $v1);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "Functor0" => (function() use ($functorStar1) {
+  $__fn = function($__dollar____unused) use ($functorStar1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $functorStar1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+$plusStar1 = (object)["empty" => (function() use ($empty) {
+  $__fn = function($v) use ($empty, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $empty;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})(), "Alt0" => (function() use ($altStar1) {
+  $__fn = function($__dollar____unused) use ($altStar1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $altStar1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+$alternativeStar1 = (object)["Applicative0" => (function() use ($applicativeStar1) {
+  $__fn = function($__dollar____unused) use ($applicativeStar1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $applicativeStar1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})(), "Plus1" => (function() use ($plusStar1) {
+  $__fn = function($__dollar____unused) use ($plusStar1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $plusStar1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
     $__res = (object)["Monad0" => (function() use ($monadStar1) {
   $__fn = function($__dollar____unused) use ($monadStar1, &$__fn) {
   $__num = func_num_args();

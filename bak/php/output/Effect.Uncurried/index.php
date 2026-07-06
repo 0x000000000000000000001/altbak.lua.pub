@@ -105,10 +105,17 @@ function Effect_Uncurried_semigroupEffectFn9($dictSemigroup) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Effect_semigroupEffect = ($GLOBALS['Effect_semigroupEffect'] ?? \Effect\phpurs_eval_thunk('Effect_semigroupEffect'));
 $__global_Effect_Uncurried_mkEffectFn9 = ($GLOBALS['Effect_Uncurried_mkEffectFn9'] ?? \Effect\Uncurried\phpurs_eval_thunk('Effect_Uncurried_mkEffectFn9'));
 $__global_Effect_Uncurried_runEffectFn9 = ($GLOBALS['Effect_Uncurried_runEffectFn9'] ?? \Effect\Uncurried\phpurs_eval_thunk('Effect_Uncurried_runEffectFn9'));
-$append = (($__global_Effect_semigroupEffect)($dictSemigroup))->append;
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append = $__case_res_0;
     $__res = (object)["append" => (function() use ($__global_Effect_Uncurried_mkEffectFn9, $append, $__global_Effect_Uncurried_runEffectFn9) {
   $__fn = function($f1, $f2 = null) use ($__global_Effect_Uncurried_mkEffectFn9, $append, $__global_Effect_Uncurried_runEffectFn9, &$__fn) {
   $__num = func_num_args();
@@ -142,10 +149,17 @@ function Effect_Uncurried_semigroupEffectFn8($dictSemigroup) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Effect_semigroupEffect = ($GLOBALS['Effect_semigroupEffect'] ?? \Effect\phpurs_eval_thunk('Effect_semigroupEffect'));
 $__global_Effect_Uncurried_mkEffectFn8 = ($GLOBALS['Effect_Uncurried_mkEffectFn8'] ?? \Effect\Uncurried\phpurs_eval_thunk('Effect_Uncurried_mkEffectFn8'));
 $__global_Effect_Uncurried_runEffectFn8 = ($GLOBALS['Effect_Uncurried_runEffectFn8'] ?? \Effect\Uncurried\phpurs_eval_thunk('Effect_Uncurried_runEffectFn8'));
-$append = (($__global_Effect_semigroupEffect)($dictSemigroup))->append;
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append = $__case_res_0;
     $__res = (object)["append" => (function() use ($__global_Effect_Uncurried_mkEffectFn8, $append, $__global_Effect_Uncurried_runEffectFn8) {
   $__fn = function($f1, $f2 = null) use ($__global_Effect_Uncurried_mkEffectFn8, $append, $__global_Effect_Uncurried_runEffectFn8, &$__fn) {
   $__num = func_num_args();
@@ -179,10 +193,17 @@ function Effect_Uncurried_semigroupEffectFn7($dictSemigroup) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Effect_semigroupEffect = ($GLOBALS['Effect_semigroupEffect'] ?? \Effect\phpurs_eval_thunk('Effect_semigroupEffect'));
 $__global_Effect_Uncurried_mkEffectFn7 = ($GLOBALS['Effect_Uncurried_mkEffectFn7'] ?? \Effect\Uncurried\phpurs_eval_thunk('Effect_Uncurried_mkEffectFn7'));
 $__global_Effect_Uncurried_runEffectFn7 = ($GLOBALS['Effect_Uncurried_runEffectFn7'] ?? \Effect\Uncurried\phpurs_eval_thunk('Effect_Uncurried_runEffectFn7'));
-$append = (($__global_Effect_semigroupEffect)($dictSemigroup))->append;
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append = $__case_res_0;
     $__res = (object)["append" => (function() use ($__global_Effect_Uncurried_mkEffectFn7, $append, $__global_Effect_Uncurried_runEffectFn7) {
   $__fn = function($f1, $f2 = null) use ($__global_Effect_Uncurried_mkEffectFn7, $append, $__global_Effect_Uncurried_runEffectFn7, &$__fn) {
   $__num = func_num_args();
@@ -216,10 +237,17 @@ function Effect_Uncurried_semigroupEffectFn6($dictSemigroup) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Effect_semigroupEffect = ($GLOBALS['Effect_semigroupEffect'] ?? \Effect\phpurs_eval_thunk('Effect_semigroupEffect'));
 $__global_Effect_Uncurried_mkEffectFn6 = ($GLOBALS['Effect_Uncurried_mkEffectFn6'] ?? \Effect\Uncurried\phpurs_eval_thunk('Effect_Uncurried_mkEffectFn6'));
 $__global_Effect_Uncurried_runEffectFn6 = ($GLOBALS['Effect_Uncurried_runEffectFn6'] ?? \Effect\Uncurried\phpurs_eval_thunk('Effect_Uncurried_runEffectFn6'));
-$append = (($__global_Effect_semigroupEffect)($dictSemigroup))->append;
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append = $__case_res_0;
     $__res = (object)["append" => (function() use ($__global_Effect_Uncurried_mkEffectFn6, $append, $__global_Effect_Uncurried_runEffectFn6) {
   $__fn = function($f1, $f2 = null) use ($__global_Effect_Uncurried_mkEffectFn6, $append, $__global_Effect_Uncurried_runEffectFn6, &$__fn) {
   $__num = func_num_args();
@@ -253,10 +281,17 @@ function Effect_Uncurried_semigroupEffectFn5($dictSemigroup) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Effect_semigroupEffect = ($GLOBALS['Effect_semigroupEffect'] ?? \Effect\phpurs_eval_thunk('Effect_semigroupEffect'));
 $__global_Effect_Uncurried_mkEffectFn5 = ($GLOBALS['Effect_Uncurried_mkEffectFn5'] ?? \Effect\Uncurried\phpurs_eval_thunk('Effect_Uncurried_mkEffectFn5'));
 $__global_Effect_Uncurried_runEffectFn5 = ($GLOBALS['Effect_Uncurried_runEffectFn5'] ?? \Effect\Uncurried\phpurs_eval_thunk('Effect_Uncurried_runEffectFn5'));
-$append = (($__global_Effect_semigroupEffect)($dictSemigroup))->append;
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append = $__case_res_0;
     $__res = (object)["append" => (function() use ($__global_Effect_Uncurried_mkEffectFn5, $append, $__global_Effect_Uncurried_runEffectFn5) {
   $__fn = function($f1, $f2 = null) use ($__global_Effect_Uncurried_mkEffectFn5, $append, $__global_Effect_Uncurried_runEffectFn5, &$__fn) {
   $__num = func_num_args();
@@ -290,10 +325,17 @@ function Effect_Uncurried_semigroupEffectFn4($dictSemigroup) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Effect_semigroupEffect = ($GLOBALS['Effect_semigroupEffect'] ?? \Effect\phpurs_eval_thunk('Effect_semigroupEffect'));
 $__global_Effect_Uncurried_mkEffectFn4 = ($GLOBALS['Effect_Uncurried_mkEffectFn4'] ?? \Effect\Uncurried\phpurs_eval_thunk('Effect_Uncurried_mkEffectFn4'));
 $__global_Effect_Uncurried_runEffectFn4 = ($GLOBALS['Effect_Uncurried_runEffectFn4'] ?? \Effect\Uncurried\phpurs_eval_thunk('Effect_Uncurried_runEffectFn4'));
-$append = (($__global_Effect_semigroupEffect)($dictSemigroup))->append;
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append = $__case_res_0;
     $__res = (object)["append" => (function() use ($__global_Effect_Uncurried_mkEffectFn4, $append, $__global_Effect_Uncurried_runEffectFn4) {
   $__fn = function($f1, $f2 = null) use ($__global_Effect_Uncurried_mkEffectFn4, $append, $__global_Effect_Uncurried_runEffectFn4, &$__fn) {
   $__num = func_num_args();
@@ -346,10 +388,17 @@ function Effect_Uncurried_semigroupEffectFn3($dictSemigroup) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Effect_semigroupEffect = ($GLOBALS['Effect_semigroupEffect'] ?? \Effect\phpurs_eval_thunk('Effect_semigroupEffect'));
 $__global_Effect_Uncurried_mkEffectFn3 = ($GLOBALS['Effect_Uncurried_mkEffectFn3'] ?? \Effect\Uncurried\phpurs_eval_thunk('Effect_Uncurried_mkEffectFn3'));
 $__global_Effect_Uncurried_runEffectFn3 = ($GLOBALS['Effect_Uncurried_runEffectFn3'] ?? \Effect\Uncurried\phpurs_eval_thunk('Effect_Uncurried_runEffectFn3'));
-$append = (($__global_Effect_semigroupEffect)($dictSemigroup))->append;
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append = $__case_res_0;
     $__res = (object)["append" => (function() use ($__global_Effect_Uncurried_mkEffectFn3, $append, $__global_Effect_Uncurried_runEffectFn3) {
   $__fn = function($f1, $f2 = null) use ($__global_Effect_Uncurried_mkEffectFn3, $append, $__global_Effect_Uncurried_runEffectFn3, &$__fn) {
   $__num = func_num_args();
@@ -390,10 +439,17 @@ function Effect_Uncurried_semigroupEffectFn2($dictSemigroup) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Effect_semigroupEffect = ($GLOBALS['Effect_semigroupEffect'] ?? \Effect\phpurs_eval_thunk('Effect_semigroupEffect'));
 $__global_Effect_Uncurried_mkEffectFn2 = ($GLOBALS['Effect_Uncurried_mkEffectFn2'] ?? \Effect\Uncurried\phpurs_eval_thunk('Effect_Uncurried_mkEffectFn2'));
 $__global_Effect_Uncurried_runEffectFn2 = ($GLOBALS['Effect_Uncurried_runEffectFn2'] ?? \Effect\Uncurried\phpurs_eval_thunk('Effect_Uncurried_runEffectFn2'));
-$append = (($__global_Effect_semigroupEffect)($dictSemigroup))->append;
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append = $__case_res_0;
     $__res = (object)["append" => (function() use ($__global_Effect_Uncurried_mkEffectFn2, $append, $__global_Effect_Uncurried_runEffectFn2) {
   $__fn = function($f1, $f2 = null) use ($__global_Effect_Uncurried_mkEffectFn2, $append, $__global_Effect_Uncurried_runEffectFn2, &$__fn) {
   $__num = func_num_args();
@@ -428,10 +484,17 @@ function Effect_Uncurried_semigroupEffectFn10($dictSemigroup) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Effect_semigroupEffect = ($GLOBALS['Effect_semigroupEffect'] ?? \Effect\phpurs_eval_thunk('Effect_semigroupEffect'));
 $__global_Effect_Uncurried_mkEffectFn10 = ($GLOBALS['Effect_Uncurried_mkEffectFn10'] ?? \Effect\Uncurried\phpurs_eval_thunk('Effect_Uncurried_mkEffectFn10'));
 $__global_Effect_Uncurried_runEffectFn10 = ($GLOBALS['Effect_Uncurried_runEffectFn10'] ?? \Effect\Uncurried\phpurs_eval_thunk('Effect_Uncurried_runEffectFn10'));
-$append = (($__global_Effect_semigroupEffect)($dictSemigroup))->append;
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append = $__case_res_0;
     $__res = (object)["append" => (function() use ($__global_Effect_Uncurried_mkEffectFn10, $append, $__global_Effect_Uncurried_runEffectFn10) {
   $__fn = function($f1, $f2 = null) use ($__global_Effect_Uncurried_mkEffectFn10, $append, $__global_Effect_Uncurried_runEffectFn10, &$__fn) {
   $__num = func_num_args();
@@ -465,10 +528,17 @@ function Effect_Uncurried_semigroupEffectFn1($dictSemigroup) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Effect_semigroupEffect = ($GLOBALS['Effect_semigroupEffect'] ?? \Effect\phpurs_eval_thunk('Effect_semigroupEffect'));
 $__global_Effect_Uncurried_mkEffectFn1 = ($GLOBALS['Effect_Uncurried_mkEffectFn1'] ?? \Effect\Uncurried\phpurs_eval_thunk('Effect_Uncurried_mkEffectFn1'));
 $__global_Effect_Uncurried_runEffectFn1 = ($GLOBALS['Effect_Uncurried_runEffectFn1'] ?? \Effect\Uncurried\phpurs_eval_thunk('Effect_Uncurried_runEffectFn1'));
-$append = (($__global_Effect_semigroupEffect)($dictSemigroup))->append;
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append = $__case_res_0;
     $__res = (object)["append" => (function() use ($__global_Effect_Uncurried_mkEffectFn1, $append, $__global_Effect_Uncurried_runEffectFn1) {
   $__fn = function($f1, $f2 = null) use ($__global_Effect_Uncurried_mkEffectFn1, $append, $__global_Effect_Uncurried_runEffectFn1, &$__fn) {
   $__num = func_num_args();
@@ -502,12 +572,48 @@ function Effect_Uncurried_monoidEffectFn9($dictMonoid) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Effect_monoidEffect = ($GLOBALS['Effect_monoidEffect'] ?? \Effect\phpurs_eval_thunk('Effect_monoidEffect'));
-$__global_Effect_Uncurried_semigroupEffectFn9 = ($GLOBALS['Effect_Uncurried_semigroupEffectFn9'] ?? \Effect\Uncurried\phpurs_eval_thunk('Effect_Uncurried_semigroupEffectFn9'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Effect_Uncurried_mkEffectFn9 = ($GLOBALS['Effect_Uncurried_mkEffectFn9'] ?? \Effect\Uncurried\phpurs_eval_thunk('Effect_Uncurried_mkEffectFn9'));
-$mempty = (($__global_Effect_monoidEffect)($dictMonoid))->mempty;
-$semigroupEffectFn91 = ($__global_Effect_Uncurried_semigroupEffectFn9)((($dictMonoid)->Semigroup0)($__global_Prim_undefined));
+$__global_Effect_Uncurried_runEffectFn9 = ($GLOBALS['Effect_Uncurried_runEffectFn9'] ?? \Effect\Uncurried\phpurs_eval_thunk('Effect_Uncurried_runEffectFn9'));
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->mempty;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$mempty = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append = $__case_res_1;
+$semigroupEffectFn91 = (object)["append" => (function() use ($__global_Effect_Uncurried_mkEffectFn9, $append, $__global_Effect_Uncurried_runEffectFn9) {
+  $__fn = function($f1, $f2 = null) use ($__global_Effect_Uncurried_mkEffectFn9, $append, $__global_Effect_Uncurried_runEffectFn9, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($f2) use ($f1, &$__fn) { return $__fn($f1, $f2); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($__global_Effect_Uncurried_mkEffectFn9)((function() use ($append, $__global_Effect_Uncurried_runEffectFn9, $f1, $f2) {
+  $__fn = function($a, $b = null, $c = null, $d = null, $e = null, $f = null, $g = null, $h = null, $i = null) use ($append, $__global_Effect_Uncurried_runEffectFn9, $f1, $f2, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 9) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 9);
+  }
+    $__res = ($append)(($__global_Effect_Uncurried_runEffectFn9)($f1, $a, $b, $c, $d, $e, $f, $g, $h, $i), ($__global_Effect_Uncurried_runEffectFn9)($f2, $a, $b, $c, $d, $e, $f, $g, $h, $i));
+  return $__num > 9 ? $__res(...array_slice(func_get_args(), 9)) : $__res;
+  };
+  return $__fn;
+})());
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
     $__res = (object)["mempty" => ($__global_Effect_Uncurried_mkEffectFn9)((function() use ($mempty) {
   $__fn = function($v, $v1 = null, $v2 = null, $v3 = null, $v4 = null, $v5 = null, $v6 = null, $v7 = null, $v8 = null) use ($mempty, &$__fn) {
   $__num = func_num_args();
@@ -540,12 +646,48 @@ function Effect_Uncurried_monoidEffectFn8($dictMonoid) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Effect_monoidEffect = ($GLOBALS['Effect_monoidEffect'] ?? \Effect\phpurs_eval_thunk('Effect_monoidEffect'));
-$__global_Effect_Uncurried_semigroupEffectFn8 = ($GLOBALS['Effect_Uncurried_semigroupEffectFn8'] ?? \Effect\Uncurried\phpurs_eval_thunk('Effect_Uncurried_semigroupEffectFn8'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Effect_Uncurried_mkEffectFn8 = ($GLOBALS['Effect_Uncurried_mkEffectFn8'] ?? \Effect\Uncurried\phpurs_eval_thunk('Effect_Uncurried_mkEffectFn8'));
-$mempty = (($__global_Effect_monoidEffect)($dictMonoid))->mempty;
-$semigroupEffectFn81 = ($__global_Effect_Uncurried_semigroupEffectFn8)((($dictMonoid)->Semigroup0)($__global_Prim_undefined));
+$__global_Effect_Uncurried_runEffectFn8 = ($GLOBALS['Effect_Uncurried_runEffectFn8'] ?? \Effect\Uncurried\phpurs_eval_thunk('Effect_Uncurried_runEffectFn8'));
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->mempty;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$mempty = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append = $__case_res_1;
+$semigroupEffectFn81 = (object)["append" => (function() use ($__global_Effect_Uncurried_mkEffectFn8, $append, $__global_Effect_Uncurried_runEffectFn8) {
+  $__fn = function($f1, $f2 = null) use ($__global_Effect_Uncurried_mkEffectFn8, $append, $__global_Effect_Uncurried_runEffectFn8, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($f2) use ($f1, &$__fn) { return $__fn($f1, $f2); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($__global_Effect_Uncurried_mkEffectFn8)((function() use ($append, $__global_Effect_Uncurried_runEffectFn8, $f1, $f2) {
+  $__fn = function($a, $b = null, $c = null, $d = null, $e = null, $f = null, $g = null, $h = null) use ($append, $__global_Effect_Uncurried_runEffectFn8, $f1, $f2, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 8) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 8);
+  }
+    $__res = ($append)(($__global_Effect_Uncurried_runEffectFn8)($f1, $a, $b, $c, $d, $e, $f, $g, $h), ($__global_Effect_Uncurried_runEffectFn8)($f2, $a, $b, $c, $d, $e, $f, $g, $h));
+  return $__num > 8 ? $__res(...array_slice(func_get_args(), 8)) : $__res;
+  };
+  return $__fn;
+})());
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
     $__res = (object)["mempty" => ($__global_Effect_Uncurried_mkEffectFn8)((function() use ($mempty) {
   $__fn = function($v, $v1 = null, $v2 = null, $v3 = null, $v4 = null, $v5 = null, $v6 = null, $v7 = null) use ($mempty, &$__fn) {
   $__num = func_num_args();
@@ -578,12 +720,48 @@ function Effect_Uncurried_monoidEffectFn7($dictMonoid) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Effect_monoidEffect = ($GLOBALS['Effect_monoidEffect'] ?? \Effect\phpurs_eval_thunk('Effect_monoidEffect'));
-$__global_Effect_Uncurried_semigroupEffectFn7 = ($GLOBALS['Effect_Uncurried_semigroupEffectFn7'] ?? \Effect\Uncurried\phpurs_eval_thunk('Effect_Uncurried_semigroupEffectFn7'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Effect_Uncurried_mkEffectFn7 = ($GLOBALS['Effect_Uncurried_mkEffectFn7'] ?? \Effect\Uncurried\phpurs_eval_thunk('Effect_Uncurried_mkEffectFn7'));
-$mempty = (($__global_Effect_monoidEffect)($dictMonoid))->mempty;
-$semigroupEffectFn71 = ($__global_Effect_Uncurried_semigroupEffectFn7)((($dictMonoid)->Semigroup0)($__global_Prim_undefined));
+$__global_Effect_Uncurried_runEffectFn7 = ($GLOBALS['Effect_Uncurried_runEffectFn7'] ?? \Effect\Uncurried\phpurs_eval_thunk('Effect_Uncurried_runEffectFn7'));
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->mempty;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$mempty = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append = $__case_res_1;
+$semigroupEffectFn71 = (object)["append" => (function() use ($__global_Effect_Uncurried_mkEffectFn7, $append, $__global_Effect_Uncurried_runEffectFn7) {
+  $__fn = function($f1, $f2 = null) use ($__global_Effect_Uncurried_mkEffectFn7, $append, $__global_Effect_Uncurried_runEffectFn7, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($f2) use ($f1, &$__fn) { return $__fn($f1, $f2); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($__global_Effect_Uncurried_mkEffectFn7)((function() use ($append, $__global_Effect_Uncurried_runEffectFn7, $f1, $f2) {
+  $__fn = function($a, $b = null, $c = null, $d = null, $e = null, $f = null, $g = null) use ($append, $__global_Effect_Uncurried_runEffectFn7, $f1, $f2, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 7) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 7);
+  }
+    $__res = ($append)(($__global_Effect_Uncurried_runEffectFn7)($f1, $a, $b, $c, $d, $e, $f, $g), ($__global_Effect_Uncurried_runEffectFn7)($f2, $a, $b, $c, $d, $e, $f, $g));
+  return $__num > 7 ? $__res(...array_slice(func_get_args(), 7)) : $__res;
+  };
+  return $__fn;
+})());
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
     $__res = (object)["mempty" => ($__global_Effect_Uncurried_mkEffectFn7)((function() use ($mempty) {
   $__fn = function($v, $v1 = null, $v2 = null, $v3 = null, $v4 = null, $v5 = null, $v6 = null) use ($mempty, &$__fn) {
   $__num = func_num_args();
@@ -616,12 +794,48 @@ function Effect_Uncurried_monoidEffectFn6($dictMonoid) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Effect_monoidEffect = ($GLOBALS['Effect_monoidEffect'] ?? \Effect\phpurs_eval_thunk('Effect_monoidEffect'));
-$__global_Effect_Uncurried_semigroupEffectFn6 = ($GLOBALS['Effect_Uncurried_semigroupEffectFn6'] ?? \Effect\Uncurried\phpurs_eval_thunk('Effect_Uncurried_semigroupEffectFn6'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Effect_Uncurried_mkEffectFn6 = ($GLOBALS['Effect_Uncurried_mkEffectFn6'] ?? \Effect\Uncurried\phpurs_eval_thunk('Effect_Uncurried_mkEffectFn6'));
-$mempty = (($__global_Effect_monoidEffect)($dictMonoid))->mempty;
-$semigroupEffectFn61 = ($__global_Effect_Uncurried_semigroupEffectFn6)((($dictMonoid)->Semigroup0)($__global_Prim_undefined));
+$__global_Effect_Uncurried_runEffectFn6 = ($GLOBALS['Effect_Uncurried_runEffectFn6'] ?? \Effect\Uncurried\phpurs_eval_thunk('Effect_Uncurried_runEffectFn6'));
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->mempty;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$mempty = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append = $__case_res_1;
+$semigroupEffectFn61 = (object)["append" => (function() use ($__global_Effect_Uncurried_mkEffectFn6, $append, $__global_Effect_Uncurried_runEffectFn6) {
+  $__fn = function($f1, $f2 = null) use ($__global_Effect_Uncurried_mkEffectFn6, $append, $__global_Effect_Uncurried_runEffectFn6, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($f2) use ($f1, &$__fn) { return $__fn($f1, $f2); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($__global_Effect_Uncurried_mkEffectFn6)((function() use ($append, $__global_Effect_Uncurried_runEffectFn6, $f1, $f2) {
+  $__fn = function($a, $b = null, $c = null, $d = null, $e = null, $f = null) use ($append, $__global_Effect_Uncurried_runEffectFn6, $f1, $f2, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 6) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 6);
+  }
+    $__res = ($append)(($__global_Effect_Uncurried_runEffectFn6)($f1, $a, $b, $c, $d, $e, $f), ($__global_Effect_Uncurried_runEffectFn6)($f2, $a, $b, $c, $d, $e, $f));
+  return $__num > 6 ? $__res(...array_slice(func_get_args(), 6)) : $__res;
+  };
+  return $__fn;
+})());
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
     $__res = (object)["mempty" => ($__global_Effect_Uncurried_mkEffectFn6)((function() use ($mempty) {
   $__fn = function($v, $v1 = null, $v2 = null, $v3 = null, $v4 = null, $v5 = null) use ($mempty, &$__fn) {
   $__num = func_num_args();
@@ -654,12 +868,48 @@ function Effect_Uncurried_monoidEffectFn5($dictMonoid) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Effect_monoidEffect = ($GLOBALS['Effect_monoidEffect'] ?? \Effect\phpurs_eval_thunk('Effect_monoidEffect'));
-$__global_Effect_Uncurried_semigroupEffectFn5 = ($GLOBALS['Effect_Uncurried_semigroupEffectFn5'] ?? \Effect\Uncurried\phpurs_eval_thunk('Effect_Uncurried_semigroupEffectFn5'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Effect_Uncurried_mkEffectFn5 = ($GLOBALS['Effect_Uncurried_mkEffectFn5'] ?? \Effect\Uncurried\phpurs_eval_thunk('Effect_Uncurried_mkEffectFn5'));
-$mempty = (($__global_Effect_monoidEffect)($dictMonoid))->mempty;
-$semigroupEffectFn51 = ($__global_Effect_Uncurried_semigroupEffectFn5)((($dictMonoid)->Semigroup0)($__global_Prim_undefined));
+$__global_Effect_Uncurried_runEffectFn5 = ($GLOBALS['Effect_Uncurried_runEffectFn5'] ?? \Effect\Uncurried\phpurs_eval_thunk('Effect_Uncurried_runEffectFn5'));
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->mempty;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$mempty = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append = $__case_res_1;
+$semigroupEffectFn51 = (object)["append" => (function() use ($__global_Effect_Uncurried_mkEffectFn5, $append, $__global_Effect_Uncurried_runEffectFn5) {
+  $__fn = function($f1, $f2 = null) use ($__global_Effect_Uncurried_mkEffectFn5, $append, $__global_Effect_Uncurried_runEffectFn5, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($f2) use ($f1, &$__fn) { return $__fn($f1, $f2); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($__global_Effect_Uncurried_mkEffectFn5)((function() use ($append, $__global_Effect_Uncurried_runEffectFn5, $f1, $f2) {
+  $__fn = function($a, $b = null, $c = null, $d = null, $e = null) use ($append, $__global_Effect_Uncurried_runEffectFn5, $f1, $f2, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 5) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 5);
+  }
+    $__res = ($append)(($__global_Effect_Uncurried_runEffectFn5)($f1, $a, $b, $c, $d, $e), ($__global_Effect_Uncurried_runEffectFn5)($f2, $a, $b, $c, $d, $e));
+  return $__num > 5 ? $__res(...array_slice(func_get_args(), 5)) : $__res;
+  };
+  return $__fn;
+})());
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
     $__res = (object)["mempty" => ($__global_Effect_Uncurried_mkEffectFn5)((function() use ($mempty) {
   $__fn = function($v, $v1 = null, $v2 = null, $v3 = null, $v4 = null) use ($mempty, &$__fn) {
   $__num = func_num_args();
@@ -692,12 +942,67 @@ function Effect_Uncurried_monoidEffectFn4($dictMonoid) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Effect_monoidEffect = ($GLOBALS['Effect_monoidEffect'] ?? \Effect\phpurs_eval_thunk('Effect_monoidEffect'));
-$__global_Effect_Uncurried_semigroupEffectFn4 = ($GLOBALS['Effect_Uncurried_semigroupEffectFn4'] ?? \Effect\Uncurried\phpurs_eval_thunk('Effect_Uncurried_semigroupEffectFn4'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Effect_Uncurried_mkEffectFn4 = ($GLOBALS['Effect_Uncurried_mkEffectFn4'] ?? \Effect\Uncurried\phpurs_eval_thunk('Effect_Uncurried_mkEffectFn4'));
-$mempty = (($__global_Effect_monoidEffect)($dictMonoid))->mempty;
-$semigroupEffectFn41 = ($__global_Effect_Uncurried_semigroupEffectFn4)((($dictMonoid)->Semigroup0)($__global_Prim_undefined));
+$__global_Effect_Uncurried_runEffectFn4 = ($GLOBALS['Effect_Uncurried_runEffectFn4'] ?? \Effect\Uncurried\phpurs_eval_thunk('Effect_Uncurried_runEffectFn4'));
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->mempty;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$mempty = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append = $__case_res_1;
+$semigroupEffectFn41 = (object)["append" => (function() use ($__global_Effect_Uncurried_mkEffectFn4, $append, $__global_Effect_Uncurried_runEffectFn4) {
+  $__fn = function($f1, $f2 = null) use ($__global_Effect_Uncurried_mkEffectFn4, $append, $__global_Effect_Uncurried_runEffectFn4, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($f2) use ($f1, &$__fn) { return $__fn($f1, $f2); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($__global_Effect_Uncurried_mkEffectFn4)((function() use ($append, $__global_Effect_Uncurried_runEffectFn4, $f1, $f2) {
+  $__fn = function($a, $b = null, $c = null, $d = null) use ($append, $__global_Effect_Uncurried_runEffectFn4, $f1, $f2, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 4) {
+    if ($__num === 3) return function($d) use ($a, $b, $c, &$__fn) { return $__fn($a, $b, $c, $d); };
+    if ($__num === 2) return function($c, $d = null) use ($a, $b, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($a, $b, $c, $d);
+      if ($__num2 === 1) return function($d) use ($a, $b, $c, &$__fn) { return $__fn($a, $b, $c, $d); };
+      return phpurs_curry_fallback($__fn, [$a, $b], 4);
+    };
+    if ($__num === 1) return function($b, $c = null, $d = null) use ($a, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 3) return $__fn($a, $b, $c, $d);
+      if ($__num2 === 2) return function($d) use ($a, $b, $c, &$__fn) { return $__fn($a, $b, $c, $d); };
+      if ($__num2 === 1) return function($c, $d = null) use ($a, $b, &$__fn) {
+        $__num3 = func_num_args();
+        if ($__num3 === 2) return $__fn($a, $b, $c, $d);
+        if ($__num3 === 1) return function($d) use ($a, $b, $c, &$__fn) { return $__fn($a, $b, $c, $d); };
+        return phpurs_curry_fallback($__fn, [$a, $b], 4);
+      };
+      return phpurs_curry_fallback($__fn, [$a], 4);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 4);
+  }
+    $__res = ($append)(($__global_Effect_Uncurried_runEffectFn4)($f1, $a, $b, $c, $d), ($__global_Effect_Uncurried_runEffectFn4)($f2, $a, $b, $c, $d));
+  return $__num > 4 ? $__res(...array_slice(func_get_args(), 4)) : $__res;
+  };
+  return $__fn;
+})());
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
     $__res = (object)["mempty" => ($__global_Effect_Uncurried_mkEffectFn4)((function() use ($mempty) {
   $__fn = function($v, $v1 = null, $v2 = null, $v3 = null) use ($mempty, &$__fn) {
   $__num = func_num_args();
@@ -749,12 +1054,55 @@ function Effect_Uncurried_monoidEffectFn3($dictMonoid) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Effect_monoidEffect = ($GLOBALS['Effect_monoidEffect'] ?? \Effect\phpurs_eval_thunk('Effect_monoidEffect'));
-$__global_Effect_Uncurried_semigroupEffectFn3 = ($GLOBALS['Effect_Uncurried_semigroupEffectFn3'] ?? \Effect\Uncurried\phpurs_eval_thunk('Effect_Uncurried_semigroupEffectFn3'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Effect_Uncurried_mkEffectFn3 = ($GLOBALS['Effect_Uncurried_mkEffectFn3'] ?? \Effect\Uncurried\phpurs_eval_thunk('Effect_Uncurried_mkEffectFn3'));
-$mempty = (($__global_Effect_monoidEffect)($dictMonoid))->mempty;
-$semigroupEffectFn31 = ($__global_Effect_Uncurried_semigroupEffectFn3)((($dictMonoid)->Semigroup0)($__global_Prim_undefined));
+$__global_Effect_Uncurried_runEffectFn3 = ($GLOBALS['Effect_Uncurried_runEffectFn3'] ?? \Effect\Uncurried\phpurs_eval_thunk('Effect_Uncurried_runEffectFn3'));
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->mempty;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$mempty = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append = $__case_res_1;
+$semigroupEffectFn31 = (object)["append" => (function() use ($__global_Effect_Uncurried_mkEffectFn3, $append, $__global_Effect_Uncurried_runEffectFn3) {
+  $__fn = function($f1, $f2 = null) use ($__global_Effect_Uncurried_mkEffectFn3, $append, $__global_Effect_Uncurried_runEffectFn3, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($f2) use ($f1, &$__fn) { return $__fn($f1, $f2); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($__global_Effect_Uncurried_mkEffectFn3)((function() use ($append, $__global_Effect_Uncurried_runEffectFn3, $f1, $f2) {
+  $__fn = function($a, $b = null, $c = null) use ($append, $__global_Effect_Uncurried_runEffectFn3, $f1, $f2, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($c) use ($a, $b, &$__fn) { return $__fn($a, $b, $c); };
+    if ($__num === 1) return function($b, $c = null) use ($a, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($a, $b, $c);
+      if ($__num2 === 1) return function($c) use ($a, $b, &$__fn) { return $__fn($a, $b, $c); };
+      return phpurs_curry_fallback($__fn, [$a], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = ($append)(($__global_Effect_Uncurried_runEffectFn3)($f1, $a, $b, $c), ($__global_Effect_Uncurried_runEffectFn3)($f2, $a, $b, $c));
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})());
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
     $__res = (object)["mempty" => ($__global_Effect_Uncurried_mkEffectFn3)((function() use ($mempty) {
   $__fn = function($v, $v1 = null, $v2 = null) use ($mempty, &$__fn) {
   $__num = func_num_args();
@@ -794,12 +1142,49 @@ function Effect_Uncurried_monoidEffectFn2($dictMonoid) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Effect_monoidEffect = ($GLOBALS['Effect_monoidEffect'] ?? \Effect\phpurs_eval_thunk('Effect_monoidEffect'));
-$__global_Effect_Uncurried_semigroupEffectFn2 = ($GLOBALS['Effect_Uncurried_semigroupEffectFn2'] ?? \Effect\Uncurried\phpurs_eval_thunk('Effect_Uncurried_semigroupEffectFn2'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Effect_Uncurried_mkEffectFn2 = ($GLOBALS['Effect_Uncurried_mkEffectFn2'] ?? \Effect\Uncurried\phpurs_eval_thunk('Effect_Uncurried_mkEffectFn2'));
-$mempty = (($__global_Effect_monoidEffect)($dictMonoid))->mempty;
-$semigroupEffectFn21 = ($__global_Effect_Uncurried_semigroupEffectFn2)((($dictMonoid)->Semigroup0)($__global_Prim_undefined));
+$__global_Effect_Uncurried_runEffectFn2 = ($GLOBALS['Effect_Uncurried_runEffectFn2'] ?? \Effect\Uncurried\phpurs_eval_thunk('Effect_Uncurried_runEffectFn2'));
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->mempty;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$mempty = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append = $__case_res_1;
+$semigroupEffectFn21 = (object)["append" => (function() use ($__global_Effect_Uncurried_mkEffectFn2, $append, $__global_Effect_Uncurried_runEffectFn2) {
+  $__fn = function($f1, $f2 = null) use ($__global_Effect_Uncurried_mkEffectFn2, $append, $__global_Effect_Uncurried_runEffectFn2, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($f2) use ($f1, &$__fn) { return $__fn($f1, $f2); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($__global_Effect_Uncurried_mkEffectFn2)((function() use ($append, $__global_Effect_Uncurried_runEffectFn2, $f1, $f2) {
+  $__fn = function($a, $b = null) use ($append, $__global_Effect_Uncurried_runEffectFn2, $f1, $f2, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($b) use ($a, &$__fn) { return $__fn($a, $b); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($append)(($__global_Effect_Uncurried_runEffectFn2)($f1, $a, $b), ($__global_Effect_Uncurried_runEffectFn2)($f2, $a, $b));
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})());
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
     $__res = (object)["mempty" => ($__global_Effect_Uncurried_mkEffectFn2)((function() use ($mempty) {
   $__fn = function($v, $v1 = null) use ($mempty, &$__fn) {
   $__num = func_num_args();
@@ -833,12 +1218,48 @@ function Effect_Uncurried_monoidEffectFn10($dictMonoid) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Effect_monoidEffect = ($GLOBALS['Effect_monoidEffect'] ?? \Effect\phpurs_eval_thunk('Effect_monoidEffect'));
-$__global_Effect_Uncurried_semigroupEffectFn10 = ($GLOBALS['Effect_Uncurried_semigroupEffectFn10'] ?? \Effect\Uncurried\phpurs_eval_thunk('Effect_Uncurried_semigroupEffectFn10'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Effect_Uncurried_mkEffectFn10 = ($GLOBALS['Effect_Uncurried_mkEffectFn10'] ?? \Effect\Uncurried\phpurs_eval_thunk('Effect_Uncurried_mkEffectFn10'));
-$mempty = (($__global_Effect_monoidEffect)($dictMonoid))->mempty;
-$semigroupEffectFn101 = ($__global_Effect_Uncurried_semigroupEffectFn10)((($dictMonoid)->Semigroup0)($__global_Prim_undefined));
+$__global_Effect_Uncurried_runEffectFn10 = ($GLOBALS['Effect_Uncurried_runEffectFn10'] ?? \Effect\Uncurried\phpurs_eval_thunk('Effect_Uncurried_runEffectFn10'));
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->mempty;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$mempty = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append = $__case_res_1;
+$semigroupEffectFn101 = (object)["append" => (function() use ($__global_Effect_Uncurried_mkEffectFn10, $append, $__global_Effect_Uncurried_runEffectFn10) {
+  $__fn = function($f1, $f2 = null) use ($__global_Effect_Uncurried_mkEffectFn10, $append, $__global_Effect_Uncurried_runEffectFn10, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($f2) use ($f1, &$__fn) { return $__fn($f1, $f2); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($__global_Effect_Uncurried_mkEffectFn10)((function() use ($append, $__global_Effect_Uncurried_runEffectFn10, $f1, $f2) {
+  $__fn = function($a, $b = null, $c = null, $d = null, $e = null, $f = null, $g = null, $h = null, $i = null, $j = null) use ($append, $__global_Effect_Uncurried_runEffectFn10, $f1, $f2, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 10) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 10);
+  }
+    $__res = ($append)(($__global_Effect_Uncurried_runEffectFn10)($f1, $a, $b, $c, $d, $e, $f, $g, $h, $i, $j), ($__global_Effect_Uncurried_runEffectFn10)($f2, $a, $b, $c, $d, $e, $f, $g, $h, $i, $j));
+  return $__num > 10 ? $__res(...array_slice(func_get_args(), 10)) : $__res;
+  };
+  return $__fn;
+})());
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
     $__res = (object)["mempty" => ($__global_Effect_Uncurried_mkEffectFn10)((function() use ($mempty) {
   $__fn = function($v, $v1 = null, $v2 = null, $v3 = null, $v4 = null, $v5 = null, $v6 = null, $v7 = null, $v8 = null, $v9 = null) use ($mempty, &$__fn) {
   $__num = func_num_args();
@@ -871,12 +1292,48 @@ function Effect_Uncurried_monoidEffectFn1($dictMonoid) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Effect_monoidEffect = ($GLOBALS['Effect_monoidEffect'] ?? \Effect\phpurs_eval_thunk('Effect_monoidEffect'));
-$__global_Effect_Uncurried_semigroupEffectFn1 = ($GLOBALS['Effect_Uncurried_semigroupEffectFn1'] ?? \Effect\Uncurried\phpurs_eval_thunk('Effect_Uncurried_semigroupEffectFn1'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Effect_Uncurried_mkEffectFn1 = ($GLOBALS['Effect_Uncurried_mkEffectFn1'] ?? \Effect\Uncurried\phpurs_eval_thunk('Effect_Uncurried_mkEffectFn1'));
-$mempty = (($__global_Effect_monoidEffect)($dictMonoid))->mempty;
-$semigroupEffectFn11 = ($__global_Effect_Uncurried_semigroupEffectFn1)((($dictMonoid)->Semigroup0)($__global_Prim_undefined));
+$__global_Effect_Uncurried_runEffectFn1 = ($GLOBALS['Effect_Uncurried_runEffectFn1'] ?? \Effect\Uncurried\phpurs_eval_thunk('Effect_Uncurried_runEffectFn1'));
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->mempty;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$mempty = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append = $__case_res_1;
+$semigroupEffectFn11 = (object)["append" => (function() use ($__global_Effect_Uncurried_mkEffectFn1, $append, $__global_Effect_Uncurried_runEffectFn1) {
+  $__fn = function($f1, $f2 = null) use ($__global_Effect_Uncurried_mkEffectFn1, $append, $__global_Effect_Uncurried_runEffectFn1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($f2) use ($f1, &$__fn) { return $__fn($f1, $f2); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($__global_Effect_Uncurried_mkEffectFn1)((function() use ($append, $__global_Effect_Uncurried_runEffectFn1, $f1, $f2) {
+  $__fn = function($a) use ($append, $__global_Effect_Uncurried_runEffectFn1, $f1, $f2, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($append)(($__global_Effect_Uncurried_runEffectFn1)($f1, $a), ($__global_Effect_Uncurried_runEffectFn1)($f2, $a));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})());
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
     $__res = (object)["mempty" => ($__global_Effect_Uncurried_mkEffectFn1)((function() use ($mempty) {
   $__fn = function($v) use ($mempty, &$__fn) {
   $__num = func_num_args();

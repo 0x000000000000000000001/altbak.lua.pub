@@ -182,7 +182,15 @@ function Type_Equality_to($dictTypeEquals) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
   $__body = function($dictTypeEquals) {
-    $v = (($dictTypeEquals)->proof)((function() {
+    $__case_0 = $dictTypeEquals;
+    $__case_res_0 = null;
+    if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->proof;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $v = ($__case_res_0)((function() {
   $__fn = function($a) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
@@ -214,7 +222,15 @@ function Type_Equality_from($dictTypeEquals) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
   $__body = function($dictTypeEquals) {
-    $v = (($dictTypeEquals)->proof)((function() {
+    $__case_0 = $dictTypeEquals;
+    $__case_res_0 = null;
+    if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->proof;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $v = ($__case_res_0)((function() {
   $__fn = function($a) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {

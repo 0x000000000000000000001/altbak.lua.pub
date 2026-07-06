@@ -96,8 +96,28 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Control_Monad_Error_Class_compose': $v = (($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn')))->compose; break;
-      case 'Control_Monad_Error_Class_discard': $v = (($GLOBALS['Control_Bind_discardUnit'] ?? \Control\Bind\phpurs_eval_thunk('Control_Bind_discardUnit')))->discard; break;
+      case 'Control_Monad_Error_Class_compose': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compose;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Control_Monad_Error_Class_discard': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Bind_discardUnit'] ?? \Control\Bind\phpurs_eval_thunk('Control_Bind_discardUnit'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->discard;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Control_Monad_Error_Class_monadThrowMaybe': $v = (object)["throwError" => (($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const')))(($GLOBALS['__phpurs_data0_Nothing'] ??= new Phpurs_Data0("Nothing"))), "Monad0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
@@ -327,10 +347,25 @@ function Control_Monad_Error_Class_liftMaybe($dictMonadThrow) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Maybe_maybe = ($GLOBALS['Data_Maybe_maybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_maybe'));
-$throwError1 = ($dictMonadThrow)->throwError;
-$pure = ((((($dictMonadThrow)->Monad0)($__global_Prim_undefined))->Applicative0)($__global_Prim_undefined))->pure;
+$__case_0 = $dictMonadThrow;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->throwError;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$throwError1 = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pure = $__case_res_1;
     $__res = (function() use ($__global_Data_Maybe_maybe, $throwError1, $pure) {
   $__fn = function($error) use ($__global_Data_Maybe_maybe, $throwError1, $pure, &$__fn) {
   $__num = func_num_args();
@@ -354,8 +389,23 @@ function Control_Monad_Error_Class_liftEither($dictMonadThrow) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_Either_either = ($GLOBALS['Data_Either_either'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_either'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-    $__res = ($__global_Data_Either_either)(($dictMonadThrow)->throwError, ((((($dictMonadThrow)->Monad0)($__global_Prim_undefined))->Applicative0)($__global_Prim_undefined))->pure);
+$__case_0 = $dictMonadThrow;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->throwError;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__global_Data_Either_either)($__case_res_0, $__case_res_1);
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Control_Monad_Error_Class_liftEither'] = __NAMESPACE__ . '\\Control_Monad_Error_Class_liftEither';
@@ -388,9 +438,24 @@ function Control_Monad_Error_Class_catchJust($dictMonadError) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$throwError1 = ((($dictMonadError)->MonadThrow0)($__global_Prim_undefined))->throwError;
-$catchError1 = ($dictMonadError)->catchError;
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->throwError;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$throwError1 = $__case_res_0;
+$__case_0 = $dictMonadError;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->catchError;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$catchError1 = $__case_res_1;
     $__res = (function() use ($throwError1, $catchError1) {
   $__fn = function($p, $act = null, $handler = null) use ($throwError1, $catchError1, &$__fn) {
   $__num = func_num_args();
@@ -449,10 +514,34 @@ function Control_Monad_Error_Class_try($dictMonadError) {
   }
 $__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Control_Monad_Error_Class_compose = ($GLOBALS['Control_Monad_Error_Class_compose'] ?? \Control\Monad\Error\Class\phpurs_eval_thunk('Control_Monad_Error_Class_compose'));
-$catchError1 = ($dictMonadError)->catchError;
+$__case_0 = $dictMonadError;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->catchError;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$catchError1 = $__case_res_0;
 $Monad0 = (((($dictMonadError)->MonadThrow0)($__global_Prim_undefined))->Monad0)($__global_Prim_undefined);
-$map = ((((((($Monad0)->Bind1)($__global_Prim_undefined))->Apply0)($__global_Prim_undefined))->Functor0)($__global_Prim_undefined))->map;
-$pure = ((($Monad0)->Applicative0)($__global_Prim_undefined))->pure;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_1;
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pure = $__case_res_2;
     $__res = (function() use ($catchError1, $map, $__global_Control_Monad_Error_Class_compose, $pure) {
   $__fn = function($a) use ($catchError1, $map, $__global_Control_Monad_Error_Class_compose, $pure, &$__fn) {
   $__num = func_num_args();
@@ -496,17 +585,99 @@ function Control_Monad_Error_Class_withResource($dictMonadError) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$__global_Control_Monad_Error_Class_try = ($GLOBALS['Control_Monad_Error_Class_try'] ?? \Control\Monad\Error\Class\phpurs_eval_thunk('Control_Monad_Error_Class_try'));
+$__global_Control_Monad_Error_Class_compose = ($GLOBALS['Control_Monad_Error_Class_compose'] ?? \Control\Monad\Error\Class\phpurs_eval_thunk('Control_Monad_Error_Class_compose'));
 $__global_Control_Monad_Error_Class_discard = ($GLOBALS['Control_Monad_Error_Class_discard'] ?? \Control\Monad\Error\Class\phpurs_eval_thunk('Control_Monad_Error_Class_discard'));
 $__global_Data_Either_either = ($GLOBALS['Data_Either_either'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_either'));
 $MonadThrow0 = (($dictMonadError)->MonadThrow0)($__global_Prim_undefined);
 $Monad0 = (($MonadThrow0)->Monad0)($__global_Prim_undefined);
 $Bind1 = (($Monad0)->Bind1)($__global_Prim_undefined);
-$bind = ($Bind1)->bind;
-$try1 = ($__global_Control_Monad_Error_Class_try)($dictMonadError);
+$__case_0 = $Bind1;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bind;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bind = $__case_res_0;
+$__case_0 = $dictMonadError;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->catchError;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$catchError1 = $__case_res_1;
+$Monad0 = (((($dictMonadError)->MonadThrow0)($__global_Prim_undefined))->Monad0)($__global_Prim_undefined);
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_2;
+$__case_0 = $dict;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pure = $__case_res_3;
+$try1 = (function() use ($catchError1, $map, $__global_Control_Monad_Error_Class_compose, $pure) {
+  $__fn = function($a) use ($catchError1, $map, $__global_Control_Monad_Error_Class_compose, $pure, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($catchError1)(($map)((function() {
+  $__fn = function($value0) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = new Phpurs_Data1("Right", $value0);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})(), $a), ($__global_Control_Monad_Error_Class_compose)($pure, (function() {
+  $__fn = function($value0) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = new Phpurs_Data1("Left", $value0);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
 $discard1 = ($__global_Control_Monad_Error_Class_discard)($Bind1);
-$throwError1 = ($MonadThrow0)->throwError;
-$pure = ((($Monad0)->Applicative0)($__global_Prim_undefined))->pure;
+$__case_0 = $MonadThrow0;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->throwError;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$throwError1 = $__case_res_4;
+$__case_0 = $dict;
+$__case_res_5 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_5 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pure = $__case_res_5;
     $__res = (function() use ($bind, $try1, $discard1, $__global_Data_Either_either, $throwError1, $pure) {
   $__fn = function($acquire, $release = null, $kleisli = null) use ($bind, $try1, $discard1, $__global_Data_Either_either, $throwError1, $pure, &$__fn) {
   $__num = func_num_args();

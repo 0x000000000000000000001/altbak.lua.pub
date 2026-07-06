@@ -93,7 +93,17 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Data_Comparison_append': $v = ((($GLOBALS['Data_Semigroup_semigroupFn'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_semigroupFn')))((($GLOBALS['Data_Semigroup_semigroupFn'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_semigroupFn')))(($GLOBALS['Data_Ordering_semigroupOrdering'] ?? \Data\Ordering\phpurs_eval_thunk('Data_Ordering_semigroupOrdering')))))->append; break;
+      case 'Data_Comparison_append': $v = (function() {
+  $__case_0 = $dict;
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_Comparison_semigroupComparison': $v = (object)["append" => (function() {
   $__body = function($v, $v1) {
     $__global_Data_Comparison_append = ($GLOBALS['Data_Comparison_append'] ?? \Data\Comparison\phpurs_eval_thunk('Data_Comparison_append'));
@@ -209,7 +219,16 @@ function Data_Comparison_defaultComparison($dictOrd) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($dictOrd)->compare;
+  $__body = function($dictOrd) {
+    $__case_0 = $dictOrd;
+    if (true) {
+$v = $__case_0;
+return ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+    $__res = $__body($dictOrd);
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Comparison_defaultComparison'] = __NAMESPACE__ . '\\Data_Comparison_defaultComparison';

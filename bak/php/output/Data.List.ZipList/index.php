@@ -106,8 +106,28 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Data_List_ZipList_append': $v = ($GLOBALS['Data_Semigroup_concatString'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_concatString')); break;
-      case 'Data_List_ZipList_append1': $v = (($GLOBALS['Data_List_Lazy_Types_semigroupList'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_semigroupList')))->append; break;
+      case 'Data_List_ZipList_append': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Semigroup_semigroupString'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_semigroupString'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_List_ZipList_append1': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_List_Lazy_Types_semigroupList'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_semigroupList'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_List_ZipList_traversableZipList': $v = ($GLOBALS['Data_List_Lazy_Types_traversableList'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_traversableList')); break;
       case 'Data_List_ZipList_semigroupZipList': $v = ($GLOBALS['Data_List_Lazy_Types_semigroupList'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_semigroupList')); break;
       case 'Data_List_ZipList_newtypeZipList': $v = (object)["Coercible0" => (function() {
@@ -161,7 +181,16 @@ $__global_Data_List_Lazy_Types_functorList = ($GLOBALS['Data_List_Lazy_Types_fun
   };
   return $__fn;
 })()]; break;
-      case 'Data_List_ZipList_applicativeZipList': $v = (object)["pure" => ((($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn')))->compose)(($GLOBALS['Data_List_ZipList_ZipList'] ?? \Data\List\ZipList\phpurs_eval_thunk('Data_List_ZipList_ZipList')), ($GLOBALS['Data_List_Lazy_repeat'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_repeat'))), "Apply0" => (function() {
+      case 'Data_List_ZipList_applicativeZipList': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compose;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return (object)["pure" => ($__case_res_0)(($GLOBALS['Data_List_ZipList_ZipList'] ?? \Data\List\ZipList\phpurs_eval_thunk('Data_List_ZipList_ZipList')), ($GLOBALS['Data_List_Lazy_repeat'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_repeat'))), "Apply0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
@@ -172,7 +201,8 @@ $__global_Data_List_ZipList_applyZipList = ($GLOBALS['Data_List_ZipList_applyZip
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})()]; break;
+})()];
+})(); break;
       case 'Data_List_ZipList_altZipList': $v = (object)["alt" => (function() {
   $__body = function($v, $v1) {
     $__global_Data_List_ZipList_append1 = ($GLOBALS['Data_List_ZipList_append1'] ?? \Data\List\ZipList\phpurs_eval_thunk('Data_List_ZipList_append1'));
@@ -210,7 +240,16 @@ $__global_Data_List_Lazy_Types_functorList = ($GLOBALS['Data_List_Lazy_Types_fun
   };
   return $__fn;
 })()]; break;
-      case 'Data_List_ZipList_plusZipList': $v = (object)["empty" => ($GLOBALS['Data_List_Lazy_Types_nil'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_nil')), "Alt0" => (function() {
+      case 'Data_List_ZipList_plusZipList': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_List_Lazy_Types_monoidList'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_monoidList'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->mempty;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return (object)["empty" => $__case_res_0, "Alt0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
@@ -221,7 +260,8 @@ $__global_Data_List_ZipList_altZipList = ($GLOBALS['Data_List_ZipList_altZipList
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})()]; break;
+})()];
+})(); break;
       case 'Data_List_ZipList_alternativeZipList': $v = (object)["Applicative0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
@@ -276,19 +316,27 @@ function Data_List_ZipList_showZipList($dictShow) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_List_Lazy_Types_showList = ($GLOBALS['Data_List_Lazy_Types_showList'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_showList'));
-$show = (($__global_Data_List_Lazy_Types_showList)($dictShow))->show;
-    $__res = (object)["show" => (function() use ($show) {
-  $__body = function($v) use ($show) {
+$__global_Data_List_ZipList_append = ($GLOBALS['Data_List_ZipList_append'] ?? \Data\List\ZipList\phpurs_eval_thunk('Data_List_ZipList_append'));
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->show;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$show = $__case_res_0;
+    $__res = (object)["show" => (function() use ($__global_Data_List_ZipList_append, $show) {
+  $__body = function($v) use ($__global_Data_List_ZipList_append, $show) {
     $__case_0 = $v;
     if (true) {
 $xs = $__case_0;
-return ("(ZipList " . (($show)($xs) . ")"));
+return ($__global_Data_List_ZipList_append)("(ZipList ", ($__global_Data_List_ZipList_append)(($show)($xs), ")"));
 } else {
 throw new \Exception("Pattern match failure");
 };
   };
-  $__fn = function($v) use ($show, $__body, &$__fn) {
+  $__fn = function($v) use ($__global_Data_List_ZipList_append, $show, $__body, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
@@ -310,8 +358,20 @@ function Data_List_ZipList_ordZipList($dictOrd) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_List_Lazy_Types_ordList = ($GLOBALS['Data_List_Lazy_Types_ordList'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_ordList'));
-    $__res = ($__global_Data_List_Lazy_Types_ordList)($dictOrd);
+$__global_Data_List_Lazy_Types_eq11 = ($GLOBALS['Data_List_Lazy_Types_eq11'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_eq11'));
+$__global_Data_List_Lazy_Types_compare11 = ($GLOBALS['Data_List_Lazy_Types_compare11'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_compare11'));
+$eqList1 = (object)["eq" => ($__global_Data_List_Lazy_Types_eq11)($dictEq)];
+    $__res = (object)["compare" => ($__global_Data_List_Lazy_Types_compare11)($dictOrd), "Eq0" => (function() use ($eqList1) {
+  $__fn = function($__dollar____unused) use ($eqList1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $eqList1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_List_ZipList_ordZipList'] = __NAMESPACE__ . '\\Data_List_ZipList_ordZipList';
@@ -327,8 +387,8 @@ function Data_List_ZipList_eqZipList($dictEq) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_List_Lazy_Types_eqList = ($GLOBALS['Data_List_Lazy_Types_eqList'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_eqList'));
-    $__res = ($__global_Data_List_Lazy_Types_eqList)($dictEq);
+$__global_Data_List_Lazy_Types_eq11 = ($GLOBALS['Data_List_Lazy_Types_eq11'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_eq11'));
+    $__res = (object)["eq" => ($__global_Data_List_Lazy_Types_eq11)($dictEq)];
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_List_ZipList_eqZipList'] = __NAMESPACE__ . '\\Data_List_ZipList_eqZipList';

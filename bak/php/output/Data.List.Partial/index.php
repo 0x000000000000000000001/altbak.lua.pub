@@ -105,9 +105,7 @@ function Data_List_Partial_tail($__dollar____unused, $v = null) {
     if ($__num === 1) return function($v) use ($__dollar____unused, $__fn) { return $__fn($__dollar____unused, $v); };
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-    $__res = ((function() use ($v) {
-  $__body = function($__dollar____unused) use ($v) {
+  $__body = function($__dollar____unused, $v) {
     $__case_0 = $v;
     switch (($__case_0)->tag) {
 case "Cons":
@@ -119,16 +117,7 @@ throw new \Exception("Pattern match failure");
 break;
 };
   };
-  $__fn = function($__dollar____unused) use ($v, $__body, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) {
-    return phpurs_curry_fallback($__fn, func_get_args(), 1);
-  }
-    $__res = $__body($__dollar____unused);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})())($__global_Prim_undefined);
+    $__res = $__body($__dollar____unused, $v);
     return 2 < $__num ? $__res(...array_slice(func_get_args(), 2)) : $__res;
 }
 $GLOBALS['Data_List_Partial_tail'] = __NAMESPACE__ . '\\Data_List_Partial_tail';
@@ -143,35 +132,25 @@ function Data_List_Partial_last($__dollar____unused, $v = null) {
   }
 $__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 while (true) {
-return ((function() use ($v, $__global_Prim_undefined) {
-  $__body = function($__dollar____unused) use ($v, $__global_Prim_undefined) {
-    $__global_Data_List_Partial_last = ($GLOBALS['Data_List_Partial_last'] ?? \Data\List\Partial\phpurs_eval_thunk('Data_List_Partial_last'));
-    $__case_0 = $v;
-    if (((($__case_0)->tag === "Cons") && ((($__case_0)->v1)->tag === "Nil"))) {
+$__case_0 = $v;
+if (((($__case_0)->tag === "Cons") && ((($__case_0)->v1)->tag === "Nil"))) {
 $x = ($__case_0)->v0;
 return $x;
 } else {
 switch (($__case_0)->tag) {
 case "Cons":
 $xs = ($__case_0)->v1;
-return ($__global_Data_List_Partial_last)($__global_Prim_undefined, $xs);
+$__tco_tmp_0 = $__global_Prim_undefined;
+$__tco_tmp_1 = $xs;
+$__dollar____unused = $__tco_tmp_0;
+$v = $__tco_tmp_1;
+continue 2;
 break;
 default:
 throw new \Exception("Pattern match failure");
 break;
 };
 };
-  };
-  $__fn = function($__dollar____unused) use ($v, $__global_Prim_undefined, $__body, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) {
-    return phpurs_curry_fallback($__fn, func_get_args(), 1);
-  }
-    $__res = $__body($__dollar____unused);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})())($__global_Prim_undefined);
 };
     $__res = null;
     return 2 < $__num ? $__res(...array_slice(func_get_args(), 2)) : $__res;
@@ -188,11 +167,8 @@ function Data_List_Partial_init($__dollar____unused, $v = null) {
   }
 $__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 while (true) {
-return ((function() use ($v, $__global_Prim_undefined) {
-  $__body = function($__dollar____unused) use ($v, $__global_Prim_undefined) {
-    $__global_Data_List_Partial_init = ($GLOBALS['Data_List_Partial_init'] ?? \Data\List\Partial\phpurs_eval_thunk('Data_List_Partial_init'));
-    $__case_0 = $v;
-    if (((($__case_0)->tag === "Cons") && ((($__case_0)->v1)->tag === "Nil"))) {
+$__case_0 = $v;
+if (((($__case_0)->tag === "Cons") && ((($__case_0)->v1)->tag === "Nil"))) {
 return ($GLOBALS['__phpurs_data0_Nil'] ??= new Phpurs_Data0("Nil"));
 } else {
 switch (($__case_0)->tag) {
@@ -210,24 +186,13 @@ return ((function() {
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
-})())($x, ($__global_Data_List_Partial_init)($__global_Prim_undefined, $xs));
+})())($x, (($GLOBALS['Data_List_Partial_init'] ?? \Data\List\Partial\phpurs_eval_thunk('Data_List_Partial_init')))($__global_Prim_undefined, $xs));
 break;
 default:
 throw new \Exception("Pattern match failure");
 break;
 };
 };
-  };
-  $__fn = function($__dollar____unused) use ($v, $__global_Prim_undefined, $__body, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) {
-    return phpurs_curry_fallback($__fn, func_get_args(), 1);
-  }
-    $__res = $__body($__dollar____unused);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})())($__global_Prim_undefined);
 };
     $__res = null;
     return 2 < $__num ? $__res(...array_slice(func_get_args(), 2)) : $__res;
@@ -242,9 +207,7 @@ function Data_List_Partial_head($__dollar____unused, $v = null) {
     if ($__num === 1) return function($v) use ($__dollar____unused, $__fn) { return $__fn($__dollar____unused, $v); };
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-    $__res = ((function() use ($v) {
-  $__body = function($__dollar____unused) use ($v) {
+  $__body = function($__dollar____unused, $v) {
     $__case_0 = $v;
     switch (($__case_0)->tag) {
 case "Cons":
@@ -256,16 +219,7 @@ throw new \Exception("Pattern match failure");
 break;
 };
   };
-  $__fn = function($__dollar____unused) use ($v, $__body, &$__fn) {
-  $__num = func_num_args();
-  if ($__num < 1) {
-    return phpurs_curry_fallback($__fn, func_get_args(), 1);
-  }
-    $__res = $__body($__dollar____unused);
-  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
-  };
-  return $__fn;
-})())($__global_Prim_undefined);
+    $__res = $__body($__dollar____unused, $v);
     return 2 < $__num ? $__res(...array_slice(func_get_args(), 2)) : $__res;
 }
 $GLOBALS['Data_List_Partial_head'] = __NAMESPACE__ . '\\Data_List_Partial_head';

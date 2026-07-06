@@ -101,12 +101,72 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Data_List_Lazy_NonEmpty_compose': $v = (($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn')))->compose; break;
-      case 'Data_List_Lazy_NonEmpty_map': $v = (($GLOBALS['Data_Maybe_functorMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_functorMaybe')))->map; break;
-      case 'Data_List_Lazy_NonEmpty_add': $v = ($GLOBALS['Data_Semiring_intAdd'] ?? \Data\Semiring\phpurs_eval_thunk('Data_Semiring_intAdd')); break;
-      case 'Data_List_Lazy_NonEmpty_append': $v = (($GLOBALS['Data_List_Lazy_Types_semigroupList'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_semigroupList')))->append; break;
-      case 'Data_List_Lazy_NonEmpty_singleton': $v = (($GLOBALS['Data_List_Lazy_Types_applicativeNonEmptyList'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_applicativeNonEmptyList')))->pure; break;
-      case 'Data_List_Lazy_NonEmpty_concatMap': $v = (($GLOBALS['Data_Function_flip'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_flip')))((($GLOBALS['Data_List_Lazy_Types_bindNonEmptyList'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_bindNonEmptyList')))->bind); break;
+      case 'Data_List_Lazy_NonEmpty_compose': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compose;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_List_Lazy_NonEmpty_map': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Maybe_functorMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_functorMaybe'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_List_Lazy_NonEmpty_add': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Semiring_semiringInt'] ?? \Data\Semiring\phpurs_eval_thunk('Data_Semiring_semiringInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->add;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_List_Lazy_NonEmpty_append': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_List_Lazy_Types_semigroupList'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_semigroupList'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_List_Lazy_NonEmpty_singleton': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_List_Lazy_Types_applicativeNonEmptyList'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_applicativeNonEmptyList'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_List_Lazy_NonEmpty_concatMap': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_List_Lazy_Types_bindNonEmptyList'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_bindNonEmptyList'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bind;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return (($GLOBALS['Data_Function_flip'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_flip')))($__case_res_0);
+})(); break;
       default: throw new \Exception("Unknown thunk " . $id);
     }
     $GLOBALS[$id] = $v;
@@ -198,7 +258,15 @@ $__global_Data_List_Lazy_NonEmpty_compose = ($GLOBALS['Data_List_Lazy_NonEmpty_c
 $__global_Data_List_Lazy_NonEmpty_map = ($GLOBALS['Data_List_Lazy_NonEmpty_map'] ?? \Data\List\Lazy\NonEmpty\phpurs_eval_thunk('Data_List_Lazy_NonEmpty_map'));
 $__global_Data_List_Lazy_uncons = ($GLOBALS['Data_List_Lazy_uncons'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_uncons'));
 $__global_Data_List_Lazy_NonEmpty_toList = ($GLOBALS['Data_List_Lazy_NonEmpty_toList'] ?? \Data\List\Lazy\NonEmpty\phpurs_eval_thunk('Data_List_Lazy_NonEmpty_toList'));
-    $__res = ($__global_Data_List_Lazy_NonEmpty_compose)((($dictUnfoldable)->unfoldr)((function() use ($__global_Data_List_Lazy_NonEmpty_map, $__global_Data_List_Lazy_uncons) {
+$__case_0 = $dictUnfoldable;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->unfoldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__global_Data_List_Lazy_NonEmpty_compose)(($__case_res_0)((function() use ($__global_Data_List_Lazy_NonEmpty_map, $__global_Data_List_Lazy_uncons) {
   $__fn = function($xs) use ($__global_Data_List_Lazy_NonEmpty_map, $__global_Data_List_Lazy_uncons, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
@@ -311,6 +379,7 @@ function Data_List_Lazy_NonEmpty_length($v) {
   }
   $__body = function($v) {
     $__global_Data_Lazy_force = ($GLOBALS['Data_Lazy_force'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_force'));
+    $__global_Data_List_Lazy_NonEmpty_add = ($GLOBALS['Data_List_Lazy_NonEmpty_add'] ?? \Data\List\Lazy\NonEmpty\phpurs_eval_thunk('Data_List_Lazy_NonEmpty_add'));
     $__global_Data_List_Lazy_length = ($GLOBALS['Data_List_Lazy_length'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_length'));
     $__case_0 = $v;
     if (true) {
@@ -320,7 +389,7 @@ $__case_0 = $v1;
 switch (($__case_0)->tag) {
 case "NonEmpty":
 $xs = ($__case_0)->v1;
-return (1 + ($__global_Data_List_Lazy_length)($xs));
+return ($__global_Data_List_Lazy_NonEmpty_add)(1, ($__global_Data_List_Lazy_length)($xs));
 break;
 default:
 throw new \Exception("Pattern match failure");
@@ -556,8 +625,17 @@ function Data_List_Lazy_NonEmpty_fromFoldable($dictFoldable) {
   }
 $__global_Data_List_Lazy_NonEmpty_compose = ($GLOBALS['Data_List_Lazy_NonEmpty_compose'] ?? \Data\List\Lazy\NonEmpty\phpurs_eval_thunk('Data_List_Lazy_NonEmpty_compose'));
 $__global_Data_List_Lazy_NonEmpty_fromList = ($GLOBALS['Data_List_Lazy_NonEmpty_fromList'] ?? \Data\List\Lazy\NonEmpty\phpurs_eval_thunk('Data_List_Lazy_NonEmpty_fromList'));
-$__global_Data_List_Lazy_fromFoldable = ($GLOBALS['Data_List_Lazy_fromFoldable'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_fromFoldable'));
-    $__res = ($__global_Data_List_Lazy_NonEmpty_compose)($__global_Data_List_Lazy_NonEmpty_fromList, ($__global_Data_List_Lazy_fromFoldable)($dictFoldable));
+$__global_Data_List_Lazy_Types_cons = ($GLOBALS['Data_List_Lazy_Types_cons'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_cons'));
+$__global_Data_List_Lazy_Types_nil = ($GLOBALS['Data_List_Lazy_Types_nil'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_nil'));
+$__case_0 = $dictFoldable;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__global_Data_List_Lazy_NonEmpty_compose)($__global_Data_List_Lazy_NonEmpty_fromList, ($__case_res_0)($__global_Data_List_Lazy_Types_cons, $__global_Data_List_Lazy_Types_nil));
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_List_Lazy_NonEmpty_fromFoldable'] = __NAMESPACE__ . '\\Data_List_Lazy_NonEmpty_fromFoldable';
@@ -632,12 +710,21 @@ function Data_List_Lazy_NonEmpty_appendFoldable($dictFoldable) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_List_Lazy_fromFoldable = ($GLOBALS['Data_List_Lazy_fromFoldable'] ?? \Data\List\Lazy\phpurs_eval_thunk('Data_List_Lazy_fromFoldable'));
+$__global_Data_List_Lazy_Types_cons = ($GLOBALS['Data_List_Lazy_Types_cons'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_cons'));
+$__global_Data_List_Lazy_Types_nil = ($GLOBALS['Data_List_Lazy_Types_nil'] ?? \Data\List\Lazy\Types\phpurs_eval_thunk('Data_List_Lazy_Types_nil'));
 $__global_Data_Lazy_defer = ($GLOBALS['Data_Lazy_defer'] ?? \Data\Lazy\phpurs_eval_thunk('Data_Lazy_defer'));
 $__global_Data_List_Lazy_NonEmpty_head = ($GLOBALS['Data_List_Lazy_NonEmpty_head'] ?? \Data\List\Lazy\NonEmpty\phpurs_eval_thunk('Data_List_Lazy_NonEmpty_head'));
 $__global_Data_List_Lazy_NonEmpty_append = ($GLOBALS['Data_List_Lazy_NonEmpty_append'] ?? \Data\List\Lazy\NonEmpty\phpurs_eval_thunk('Data_List_Lazy_NonEmpty_append'));
 $__global_Data_List_Lazy_NonEmpty_tail = ($GLOBALS['Data_List_Lazy_NonEmpty_tail'] ?? \Data\List\Lazy\NonEmpty\phpurs_eval_thunk('Data_List_Lazy_NonEmpty_tail'));
-$fromFoldable1 = ($__global_Data_List_Lazy_fromFoldable)($dictFoldable);
+$__case_0 = $dictFoldable;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$fromFoldable1 = ($__case_res_0)($__global_Data_List_Lazy_Types_cons, $__global_Data_List_Lazy_Types_nil);
     $__res = (function() use ($__global_Data_Lazy_defer, $__global_Data_List_Lazy_NonEmpty_head, $__global_Data_List_Lazy_NonEmpty_append, $__global_Data_List_Lazy_NonEmpty_tail, $fromFoldable1) {
   $__fn = function($nel, $ys = null) use ($__global_Data_Lazy_defer, $__global_Data_List_Lazy_NonEmpty_head, $__global_Data_List_Lazy_NonEmpty_append, $__global_Data_List_Lazy_NonEmpty_tail, $fromFoldable1, &$__fn) {
   $__num = func_num_args();

@@ -117,25 +117,332 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Data_Map_Internal_add': $v = ($GLOBALS['Data_Semiring_intAdd'] ?? \Data\Semiring\phpurs_eval_thunk('Data_Semiring_intAdd')); break;
-      case 'Data_Map_Internal_greaterThan': $v = (($GLOBALS['Data_Ord_greaterThan'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_greaterThan')))(($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'))); break;
-      case 'Data_Map_Internal_lessThanOrEq': $v = (($GLOBALS['Data_Ord_lessThanOrEq'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_lessThanOrEq')))(($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'))); break;
-      case 'Data_Map_Internal_append': $v = ($GLOBALS['Data_Semigroup_concatString'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_concatString')); break;
-      case 'Data_Map_Internal_show': $v = ($GLOBALS['Data_Show_showIntImpl'] ?? \Data\Show\phpurs_eval_thunk('Data_Show_showIntImpl')); break;
-      case 'Data_Map_Internal_map': $v = (($GLOBALS['Data_Maybe_functorMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_functorMaybe')))->map; break;
-      case 'Data_Map_Internal_compose': $v = (($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn')))->compose; break;
-      case 'Data_Map_Internal_conj': $v = ($GLOBALS['Data_HeytingAlgebra_boolConj'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_boolConj')); break;
-      case 'Data_Map_Internal_identity': $v = (($GLOBALS['Control_Category_categoryFn'] ?? \Control\Category\phpurs_eval_thunk('Control_Category_categoryFn')))->identity; break;
-      case 'Data_Map_Internal_eq': $v = ($GLOBALS['Data_Eq_eqIntImpl'] ?? \Data\Eq\phpurs_eval_thunk('Data_Eq_eqIntImpl')); break;
-      case 'Data_Map_Internal_lessThan': $v = (($GLOBALS['Data_Ord_lessThan'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_lessThan')))(($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'))); break;
-      case 'Data_Map_Internal_abs': $v = (($GLOBALS['Data_Ord_abs'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_abs')))(($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt')), ($GLOBALS['Data_Ring_ringInt'] ?? \Data\Ring\phpurs_eval_thunk('Data_Ring_ringInt'))); break;
-      case 'Data_Map_Internal_sub': $v = ($GLOBALS['Data_Ring_intSub'] ?? \Data\Ring\phpurs_eval_thunk('Data_Ring_intSub')); break;
-      case 'Data_Map_Internal_disj': $v = ($GLOBALS['Data_HeytingAlgebra_boolDisj'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_boolDisj')); break;
+      case 'Data_Map_Internal_add': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Semiring_semiringInt'] ?? \Data\Semiring\phpurs_eval_thunk('Data_Semiring_semiringInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->add;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Map_Internal_greaterThan': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $compare3 = $__case_res_0;
+  return (function() use ($compare3) {
+  $__body = function($a1, $a2) use ($compare3) {
+    $v = ($compare3)($a1, $a2);
+    $__case_0 = $v;
+    switch (($__case_0)->tag) {
+case "GT":
+return true;
+break;
+default:
+return false;
+break;
+};
+  };
+  $__fn = function($a1, $a2 = null) use ($compare3, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($a2) use ($a1, &$__fn) { return $__fn($a1, $a2); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($a1, $a2);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+})(); break;
+      case 'Data_Map_Internal_lessThanOrEq': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $compare3 = $__case_res_0;
+  return (function() use ($compare3) {
+  $__body = function($a1, $a2) use ($compare3) {
+    $v = ($compare3)($a1, $a2);
+    $__case_0 = $v;
+    switch (($__case_0)->tag) {
+case "GT":
+return false;
+break;
+default:
+return true;
+break;
+};
+  };
+  $__fn = function($a1, $a2 = null) use ($compare3, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($a2) use ($a1, &$__fn) { return $__fn($a1, $a2); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($a1, $a2);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+})(); break;
+      case 'Data_Map_Internal_append': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Semigroup_semigroupString'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_semigroupString'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Map_Internal_show': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Show_showInt'] ?? \Data\Show\phpurs_eval_thunk('Data_Show_showInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->show;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Map_Internal_map': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Maybe_functorMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_functorMaybe'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Map_Internal_compose': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compose;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Map_Internal_conj': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_HeytingAlgebra_heytingAlgebraBoolean'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_heytingAlgebraBoolean'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->conj;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Map_Internal_identity': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Category_categoryFn'] ?? \Control\Category\phpurs_eval_thunk('Control_Category_categoryFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->identity;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Map_Internal_eq': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Eq_eqInt'] ?? \Data\Eq\phpurs_eval_thunk('Data_Eq_eqInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Map_Internal_lessThan': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $compare3 = $__case_res_0;
+  return (function() use ($compare3) {
+  $__body = function($a1, $a2) use ($compare3) {
+    $v = ($compare3)($a1, $a2);
+    $__case_0 = $v;
+    switch (($__case_0)->tag) {
+case "LT":
+return true;
+break;
+default:
+return false;
+break;
+};
+  };
+  $__fn = function($a1, $a2 = null) use ($compare3, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($a2) use ($a1, &$__fn) { return $__fn($a1, $a2); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($a1, $a2);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+})(); break;
+      case 'Data_Map_Internal_abs': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $compare3 = $__case_res_0;
+  $greaterThanOrEq1 = (function() use ($compare3) {
+  $__body = function($a1, $a2) use ($compare3) {
+    $v = ($compare3)($a1, $a2);
+    $__case_0 = $v;
+    switch (($__case_0)->tag) {
+case "LT":
+return false;
+break;
+default:
+return true;
+break;
+};
+  };
+  $__fn = function($a1, $a2 = null) use ($compare3, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($a2) use ($a1, &$__fn) { return $__fn($a1, $a2); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($a1, $a2);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+  return ((function() use ($dict, $greaterThanOrEq1) {
+  $__fn = function($dictRing) use ($dict, $greaterThanOrEq1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->zero;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$zero = $__case_res_1;
+$__case_0 = $dictRing;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->sub;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$sub1 = $__case_res_2;
+$__case_0 = $dict;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->zero;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$zero = $__case_res_3;
+$negate1 = (function() use ($sub1, $zero) {
+  $__fn = function($a) use ($sub1, $zero, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($sub1)($zero, $a);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+    $__res = (function() use ($greaterThanOrEq1, $zero, $negate1) {
+  $__body = function($x) use ($greaterThanOrEq1, $zero, $negate1) {
+    $__case_0 = ($greaterThanOrEq1)($x, $zero);
+    switch ($__case_0) {
+case true:
+return $x;
+break;
+default:
+return ($negate1)($x);
+break;
+};
+  };
+  $__fn = function($x) use ($greaterThanOrEq1, $zero, $negate1, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $__body($x);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})())(($GLOBALS['Data_Ring_ringInt'] ?? \Data\Ring\phpurs_eval_thunk('Data_Ring_ringInt')));
+})(); break;
+      case 'Data_Map_Internal_sub': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Ring_ringInt'] ?? \Data\Ring\phpurs_eval_thunk('Data_Ring_ringInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->sub;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Map_Internal_disj': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_HeytingAlgebra_heytingAlgebraBoolean'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_heytingAlgebraBoolean'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->disj;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_Map_Internal_Leaf': $v = ($GLOBALS['__phpurs_data0_Leaf'] ??= new Phpurs_Data0("Leaf")); break;
       case 'Data_Map_Internal_IterLeaf': $v = ($GLOBALS['__phpurs_data0_IterLeaf'] ??= new Phpurs_Data0("IterLeaf")); break;
       case 'Data_Map_Internal_IterDone': $v = ($GLOBALS['__phpurs_data0_IterDone'] ??= new Phpurs_Data0("IterDone")); break;
       case 'Data_Map_Internal_unsafeNode': $v = (($GLOBALS['Data_Function_Uncurried_mkFn4'] ?? \Data\Function\Uncurried\phpurs_eval_thunk('Data_Function_Uncurried_mkFn4')))((function() {
   $__body = function($k, $v, $l, $r) {
+    $__global_Data_Map_Internal_add = ($GLOBALS['Data_Map_Internal_add'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_add'));
     $__global_Data_Map_Internal_greaterThan = ($GLOBALS['Data_Map_Internal_greaterThan'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_greaterThan'));
     $__case_0 = $l;
     switch (($__case_0)->tag) {
@@ -168,7 +475,7 @@ return ((function() {
   return $__num > 6 ? $__res(...array_slice(func_get_args(), 6)) : $__res;
   };
   return $__fn;
-})())((1 + $h2), (1 + $s2), $k, $v, $l, $r);
+})())(($__global_Data_Map_Internal_add)(1, $h2), ($__global_Data_Map_Internal_add)(1, $s2), $k, $v, $l, $r);
 break;
 default:
 throw new \Exception("Pattern match failure");
@@ -191,7 +498,7 @@ return ((function() {
   return $__num > 6 ? $__res(...array_slice(func_get_args(), 6)) : $__res;
   };
   return $__fn;
-})())((1 + $h1), (1 + $s1), $k, $v, $l, $r);
+})())(($__global_Data_Map_Internal_add)(1, $h1), ($__global_Data_Map_Internal_add)(1, $s1), $k, $v, $l, $r);
 break;
 case "Node":
 $h2 = ($__case_0)->v0;
@@ -216,7 +523,7 @@ return ((function() {
   return $__num > 6 ? $__res(...array_slice(func_get_args(), 6)) : $__res;
   };
   return $__fn;
-})())((1 + $__case_res_0), ((1 + $s1) + $s2), $k, $v, $l, $r);
+})())(($__global_Data_Map_Internal_add)(1, $__case_res_0), ($__global_Data_Map_Internal_add)(($__global_Data_Map_Internal_add)(1, $s1), $s2), $k, $v, $l, $r);
 break;
 default:
 throw new \Exception("Pattern match failure");
@@ -269,7 +576,8 @@ break;
   };
   return $__fn;
 })(), ($GLOBALS['__phpurs_data0_IterLeaf'] ??= new Phpurs_Data0("IterLeaf"))); break;
-      case 'Data_Map_Internal_unsafeBalancedNode': $v = ($height = (function() {
+      case 'Data_Map_Internal_unsafeBalancedNode': $v = (function() {
+  $height = (function() {
   $__body = function($v) {
     $__case_0 = $v;
     switch (($__case_0)->tag) {
@@ -295,7 +603,7 @@ break;
   };
   return $__fn;
 })();
-$rotateLeft = (($GLOBALS['Data_Function_Uncurried_mkFn7'] ?? \Data\Function\Uncurried\phpurs_eval_thunk('Data_Function_Uncurried_mkFn7')))((function() {
+  $rotateLeft = (($GLOBALS['Data_Function_Uncurried_mkFn7'] ?? \Data\Function\Uncurried\phpurs_eval_thunk('Data_Function_Uncurried_mkFn7')))((function() {
   $__body = function($k, $v, $l, $rk, $rv, $rl, $rr) {
     $__global_Data_Function_Uncurried_runFn4 = ($GLOBALS['Data_Function_Uncurried_runFn4'] ?? \Data\Function\Uncurried\phpurs_eval_thunk('Data_Function_Uncurried_runFn4'));
     $__global_Data_Map_Internal_unsafeNode = ($GLOBALS['Data_Map_Internal_unsafeNode'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_unsafeNode'));
@@ -324,7 +632,7 @@ break;
   };
   return $__fn;
 })());
-$rotateRight = (($GLOBALS['Data_Function_Uncurried_mkFn7'] ?? \Data\Function\Uncurried\phpurs_eval_thunk('Data_Function_Uncurried_mkFn7')))((function() {
+  $rotateRight = (($GLOBALS['Data_Function_Uncurried_mkFn7'] ?? \Data\Function\Uncurried\phpurs_eval_thunk('Data_Function_Uncurried_mkFn7')))((function() {
   $__body = function($k, $v, $lk, $lv, $ll, $lr, $r) {
     $__global_Data_Function_Uncurried_runFn4 = ($GLOBALS['Data_Function_Uncurried_runFn4'] ?? \Data\Function\Uncurried\phpurs_eval_thunk('Data_Function_Uncurried_runFn4'));
     $__global_Data_Map_Internal_unsafeNode = ($GLOBALS['Data_Map_Internal_unsafeNode'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_unsafeNode'));
@@ -353,7 +661,7 @@ break;
   };
   return $__fn;
 })());
-return (($GLOBALS['Data_Function_Uncurried_mkFn4'] ?? \Data\Function\Uncurried\phpurs_eval_thunk('Data_Function_Uncurried_mkFn4')))((function() {
+  return (($GLOBALS['Data_Function_Uncurried_mkFn4'] ?? \Data\Function\Uncurried\phpurs_eval_thunk('Data_Function_Uncurried_mkFn4')))((function() {
   $__body = function($k, $v, $l, $r) {
     $__global_Data_Map_Internal_singleton = ($GLOBALS['Data_Map_Internal_singleton'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_singleton'));
     $__global_Data_Function_Uncurried_runFn4 = ($GLOBALS['Data_Function_Uncurried_runFn4'] ?? \Data\Function\Uncurried\phpurs_eval_thunk('Data_Function_Uncurried_runFn4'));
@@ -436,7 +744,8 @@ break;
   return $__num > 4 ? $__res(...array_slice(func_get_args(), 4)) : $__res;
   };
   return $__fn;
-})());)(); break;
+})());
+})(); break;
       case 'Data_Map_Internal_unsafeSplit': $v = (($GLOBALS['Data_Function_Uncurried_mkFn3'] ?? \Data\Function\Uncurried\phpurs_eval_thunk('Data_Function_Uncurried_mkFn3')))((function() {
   $__body = function($comp, $k, $m) {
     $__global_Data_Function_Uncurried_runFn3 = ($GLOBALS['Data_Function_Uncurried_runFn3'] ?? \Data\Function\Uncurried\phpurs_eval_thunk('Data_Function_Uncurried_runFn3'));
@@ -969,7 +1278,8 @@ break;
 })()); break;
       case 'Data_Map_Internal_semigroupMap1': $v = (($GLOBALS['Data_Map_Internal_semigroupMap'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_semigroupMap')))(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))); break;
       case 'Data_Map_Internal_stepUnorderedCps': $v = (($GLOBALS['Data_Map_Internal_stepWith'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_stepWith')))(($GLOBALS['Data_Map_Internal_iterMapU'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_iterMapU'))); break;
-      case 'Data_Map_Internal_stepUnfoldrUnordered': $v = ($step = (($GLOBALS['Data_Function_Uncurried_mkFn3'] ?? \Data\Function\Uncurried\phpurs_eval_thunk('Data_Function_Uncurried_mkFn3')))((function() {
+      case 'Data_Map_Internal_stepUnfoldrUnordered': $v = (function() {
+  $step = (($GLOBALS['Data_Function_Uncurried_mkFn3'] ?? \Data\Function\Uncurried\phpurs_eval_thunk('Data_Function_Uncurried_mkFn3')))((function() {
   $__fn = function($k, $v = null, $next = null) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 3) {
@@ -1019,7 +1329,7 @@ break;
   };
   return $__fn;
 })());
-return (($GLOBALS['Data_Map_Internal_stepUnorderedCps'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_stepUnorderedCps')))($step, (function() {
+  return (($GLOBALS['Data_Map_Internal_stepUnorderedCps'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_stepUnorderedCps')))($step, (function() {
   $__fn = function($v) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
@@ -1029,7 +1339,8 @@ return (($GLOBALS['Data_Map_Internal_stepUnorderedCps'] ?? \Data\Map\Internal\ph
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})());)(); break;
+})());
+})(); break;
       case 'Data_Map_Internal_stepUnordered': $v = (($GLOBALS['Data_Map_Internal_stepUnorderedCps'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_stepUnorderedCps')))((($GLOBALS['Data_Function_Uncurried_mkFn3'] ?? \Data\Function\Uncurried\phpurs_eval_thunk('Data_Function_Uncurried_mkFn3')))((function() {
   $__fn = function($k, $v = null, $next = null) use (&$__fn) {
   $__num = func_num_args();
@@ -1065,7 +1376,8 @@ return (($GLOBALS['Data_Map_Internal_stepUnorderedCps'] ?? \Data\Map\Internal\ph
   };
   return $__fn;
 })()), (($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const')))(($GLOBALS['__phpurs_data0_IterDone'] ??= new Phpurs_Data0("IterDone")))); break;
-      case 'Data_Map_Internal_iterMapR': $v = ($go = (function() use (&$go) {
+      case 'Data_Map_Internal_iterMapR': $v = (function() {
+  $go = (function() use (&$go) {
   $__fn = function($iter, $v = null) use (&$go, &$__fn) {
   $__num = func_num_args();
   if ($__num < 2) {
@@ -1107,7 +1419,7 @@ $__tco_tmp_0 = ((function() {
 $__tco_tmp_1 = $l;
 $iter = $__tco_tmp_0;
 $v = $__tco_tmp_1;
-continue II/*__LVL__*/;
+continue 3;
 break;
 default:
 $__tco_tmp_0 = ((function() {
@@ -1142,7 +1454,7 @@ $__tco_tmp_0 = ((function() {
 $__tco_tmp_1 = $r;
 $iter = $__tco_tmp_0;
 $v = $__tco_tmp_1;
-continue II/*__LVL__*/;
+continue 3;
 break;
 };
 break;
@@ -1156,7 +1468,8 @@ break;
   };
   return $__fn;
 })();
-return $go;)(); break;
+  return $go;
+})(); break;
       case 'Data_Map_Internal_stepDescCps': $v = (($GLOBALS['Data_Map_Internal_stepWith'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_stepWith')))(($GLOBALS['Data_Map_Internal_iterMapR'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_iterMapR'))); break;
       case 'Data_Map_Internal_stepDesc': $v = (($GLOBALS['Data_Map_Internal_stepDescCps'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_stepDescCps')))((($GLOBALS['Data_Function_Uncurried_mkFn3'] ?? \Data\Function\Uncurried\phpurs_eval_thunk('Data_Function_Uncurried_mkFn3')))((function() {
   $__fn = function($k, $v = null, $next = null) use (&$__fn) {
@@ -1193,7 +1506,8 @@ return $go;)(); break;
   };
   return $__fn;
 })()), (($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const')))(($GLOBALS['__phpurs_data0_IterDone'] ??= new Phpurs_Data0("IterDone")))); break;
-      case 'Data_Map_Internal_iterMapL': $v = ($go = (function() use (&$go) {
+      case 'Data_Map_Internal_iterMapL': $v = (function() {
+  $go = (function() use (&$go) {
   $__fn = function($iter, $v = null) use (&$go, &$__fn) {
   $__num = func_num_args();
   if ($__num < 2) {
@@ -1235,7 +1549,7 @@ $__tco_tmp_0 = ((function() {
 $__tco_tmp_1 = $l;
 $iter = $__tco_tmp_0;
 $v = $__tco_tmp_1;
-continue II/*__LVL__*/;
+continue 3;
 break;
 default:
 $__tco_tmp_0 = ((function() {
@@ -1270,7 +1584,7 @@ $__tco_tmp_0 = ((function() {
 $__tco_tmp_1 = $l;
 $iter = $__tco_tmp_0;
 $v = $__tco_tmp_1;
-continue II/*__LVL__*/;
+continue 3;
 break;
 };
 break;
@@ -1284,7 +1598,8 @@ break;
   };
   return $__fn;
 })();
-return $go;)(); break;
+  return $go;
+})(); break;
       case 'Data_Map_Internal_stepAscCps': $v = (($GLOBALS['Data_Map_Internal_stepWith'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_stepWith')))(($GLOBALS['Data_Map_Internal_iterMapL'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_iterMapL'))); break;
       case 'Data_Map_Internal_stepAsc': $v = (($GLOBALS['Data_Map_Internal_stepAscCps'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_stepAscCps')))((($GLOBALS['Data_Function_Uncurried_mkFn3'] ?? \Data\Function\Uncurried\phpurs_eval_thunk('Data_Function_Uncurried_mkFn3')))((function() {
   $__fn = function($k, $v = null, $next = null) use (&$__fn) {
@@ -1321,7 +1636,8 @@ return $go;)(); break;
   };
   return $__fn;
 })()), (($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const')))(($GLOBALS['__phpurs_data0_IterDone'] ??= new Phpurs_Data0("IterDone")))); break;
-      case 'Data_Map_Internal_stepUnfoldr': $v = ($step = (($GLOBALS['Data_Function_Uncurried_mkFn3'] ?? \Data\Function\Uncurried\phpurs_eval_thunk('Data_Function_Uncurried_mkFn3')))((function() {
+      case 'Data_Map_Internal_stepUnfoldr': $v = (function() {
+  $step = (($GLOBALS['Data_Function_Uncurried_mkFn3'] ?? \Data\Function\Uncurried\phpurs_eval_thunk('Data_Function_Uncurried_mkFn3')))((function() {
   $__fn = function($k, $v = null, $next = null) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 3) {
@@ -1371,7 +1687,7 @@ return $go;)(); break;
   };
   return $__fn;
 })());
-return (($GLOBALS['Data_Map_Internal_stepAscCps'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_stepAscCps')))($step, (function() {
+  return (($GLOBALS['Data_Map_Internal_stepAscCps'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_stepAscCps')))($step, (function() {
   $__fn = function($v) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
@@ -1381,8 +1697,19 @@ return (($GLOBALS['Data_Map_Internal_stepAscCps'] ?? \Data\Map\Internal\phpurs_e
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})());)(); break;
-      case 'Data_Map_Internal_toUnfoldable1': $v = (($GLOBALS['Data_Map_Internal_toUnfoldable'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_toUnfoldable')))(($GLOBALS['Data_Unfoldable_unfoldableArray'] ?? \Data\Unfoldable\phpurs_eval_thunk('Data_Unfoldable_unfoldableArray'))); break;
+})());
+})(); break;
+      case 'Data_Map_Internal_toUnfoldable1': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Unfoldable_unfoldableArray'] ?? \Data\Unfoldable\phpurs_eval_thunk('Data_Unfoldable_unfoldableArray'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->unfoldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return (($GLOBALS['Data_Map_Internal_compose'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_compose')))(($__case_res_0)(($GLOBALS['Data_Map_Internal_stepUnfoldr'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_stepUnfoldr'))), ($GLOBALS['Data_Map_Internal_toMapIter'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_toMapIter')));
+})(); break;
       case 'Data_Map_Internal_functorMap': $v = (object)["map" => (function() {
   $__fn = function($f) use (&$__fn) {
   $__num = func_num_args();
@@ -1602,15 +1929,30 @@ break;
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
-})(), "foldMap" => (function() {
-  $__fn = function($dictMonoid) use (&$__fn) {
+})(), "foldMap" => (function() use ($dict) {
+  $__fn = function($dictMonoid) use ($dict, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$mempty = ($dictMonoid)->mempty;
-$append1 = ((($dictMonoid)->Semigroup0)($__global_Prim_undefined))->append;
+$__case_0 = $dictMonoid;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->mempty;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$mempty = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append1 = $__case_res_1;
     $__res = (function() use ($mempty, $append1) {
   $__fn = function($f) use ($mempty, $append1, &$__fn) {
   $__num = func_num_args();
@@ -1760,15 +2102,30 @@ break;
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
-})(), "foldMapWithIndex" => (function() {
-  $__fn = function($dictMonoid) use (&$__fn) {
+})(), "foldMapWithIndex" => (function() use ($dict) {
+  $__fn = function($dictMonoid) use ($dict, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$mempty = ($dictMonoid)->mempty;
-$append1 = ((($dictMonoid)->Semigroup0)($__global_Prim_undefined))->append;
+$__case_0 = $dictMonoid;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->mempty;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$mempty = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append1 = $__case_res_1;
     $__res = (function() use ($mempty, $append1) {
   $__fn = function($f) use ($mempty, $append1, &$__fn) {
   $__num = func_num_args();
@@ -1824,7 +2181,16 @@ $__global_Data_Map_Internal_foldableMap = ($GLOBALS['Data_Map_Internal_foldableM
   };
   return $__fn;
 })()]; break;
-      case 'Data_Map_Internal_keys': $v = ((($GLOBALS['Data_Map_Internal_foldableWithIndexMap'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_foldableWithIndexMap')))->foldrWithIndex)((function() {
+      case 'Data_Map_Internal_keys': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Map_Internal_foldableWithIndexMap'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_foldableWithIndexMap'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldrWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return ($__case_res_0)((function() {
   $__fn = function($k, $v = null, $acc = null) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 3) {
@@ -1852,18 +2218,43 @@ $__global_Data_Map_Internal_foldableMap = ($GLOBALS['Data_Map_Internal_foldableM
   return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
   };
   return $__fn;
-})(), ($GLOBALS['__phpurs_data0_Nil'] ??= new Phpurs_Data0("Nil"))); break;
-      case 'Data_Map_Internal_traversableMap': $v = (object)["traverse" => (function() {
-  $__fn = function($dictApplicative) use (&$__fn) {
+})(), ($GLOBALS['__phpurs_data0_Nil'] ??= new Phpurs_Data0("Nil")));
+})(); break;
+      case 'Data_Map_Internal_traversableMap': $v = (object)["traverse" => (function() use ($dict) {
+  $__fn = function($dictApplicative) use ($dict, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$pure = ($dictApplicative)->pure;
+$__case_0 = $dictApplicative;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pure = $__case_res_0;
 $Apply0 = (($dictApplicative)->Apply0)($__global_Prim_undefined);
-$apply = ($Apply0)->apply;
-$map1 = ((($Apply0)->Functor0)($__global_Prim_undefined))->map;
+$__case_0 = $Apply0;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$apply = $__case_res_1;
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map1 = $__case_res_2;
     $__res = (function() use ($pure, $apply, $map1) {
   $__fn = function($f) use ($pure, $apply, $map1, &$__fn) {
   $__num = func_num_args();
@@ -1944,7 +2335,15 @@ break;
   }
 $__global_Data_Map_Internal_traversableMap = ($GLOBALS['Data_Map_Internal_traversableMap'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_traversableMap'));
 $__global_Data_Map_Internal_identity = ($GLOBALS['Data_Map_Internal_identity'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_identity'));
-    $__res = (($__global_Data_Map_Internal_traversableMap)->traverse)($dictApplicative, $__global_Data_Map_Internal_identity);
+$__case_0 = $__global_Data_Map_Internal_traversableMap;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->traverse;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__case_res_3)($dictApplicative, $__global_Data_Map_Internal_identity);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -1971,17 +2370,41 @@ $__global_Data_Map_Internal_foldableMap = ($GLOBALS['Data_Map_Internal_foldableM
   };
   return $__fn;
 })()]; break;
-      case 'Data_Map_Internal_traversableWithIndexMap': $v = (object)["traverseWithIndex" => (function() {
-  $__fn = function($dictApplicative) use (&$__fn) {
+      case 'Data_Map_Internal_traversableWithIndexMap': $v = (object)["traverseWithIndex" => (function() use ($dict) {
+  $__fn = function($dictApplicative) use ($dict, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$pure = ($dictApplicative)->pure;
+$__case_0 = $dictApplicative;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pure = $__case_res_0;
 $Apply0 = (($dictApplicative)->Apply0)($__global_Prim_undefined);
-$apply = ($Apply0)->apply;
-$map1 = ((($Apply0)->Functor0)($__global_Prim_undefined))->map;
+$__case_0 = $Apply0;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$apply = $__case_res_1;
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map1 = $__case_res_2;
     $__res = (function() use ($pure, $apply, $map1) {
   $__fn = function($f) use ($pure, $apply, $map1, &$__fn) {
   $__num = func_num_args();
@@ -2088,7 +2511,16 @@ $__global_Data_Map_Internal_traversableMap = ($GLOBALS['Data_Map_Internal_traver
   };
   return $__fn;
 })()]; break;
-      case 'Data_Map_Internal_values': $v = ((($GLOBALS['Data_Map_Internal_foldableMap'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_foldableMap')))->foldr)((function() {
+      case 'Data_Map_Internal_values': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Map_Internal_foldableMap'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_foldableMap'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return ($__case_res_0)((function() {
   $__fn = function($value0, $value1 = null) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 2) {
@@ -2099,7 +2531,8 @@ $__global_Data_Map_Internal_traversableMap = ($GLOBALS['Data_Map_Internal_traver
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
-})(), ($GLOBALS['__phpurs_data0_Nil'] ??= new Phpurs_Data0("Nil"))); break;
+})(), ($GLOBALS['__phpurs_data0_Nil'] ??= new Phpurs_Data0("Nil")));
+})(); break;
       case 'Data_Map_Internal_empty': $v = ($GLOBALS['__phpurs_data0_Leaf'] ??= new Phpurs_Data0("Leaf")); break;
       default: throw new \Exception("Unknown thunk " . $id);
     }
@@ -2352,7 +2785,15 @@ function Data_Map_Internal_unionWith($dictOrd) {
   }
 $__global_Data_Function_Uncurried_runFn4 = ($GLOBALS['Data_Function_Uncurried_runFn4'] ?? \Data\Function\Uncurried\phpurs_eval_thunk('Data_Function_Uncurried_runFn4'));
 $__global_Data_Map_Internal_unsafeUnionWith = ($GLOBALS['Data_Map_Internal_unsafeUnionWith'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_unsafeUnionWith'));
-$compare = ($dictOrd)->compare;
+$__case_0 = $dictOrd;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare = $__case_res_0;
     $__res = (function() use ($__global_Data_Function_Uncurried_runFn4, $__global_Data_Map_Internal_unsafeUnionWith, $compare) {
   $__fn = function($app, $m1 = null, $m2 = null) use ($__global_Data_Function_Uncurried_runFn4, $__global_Data_Map_Internal_unsafeUnionWith, $compare, &$__fn) {
   $__num = func_num_args();
@@ -2382,9 +2823,36 @@ function Data_Map_Internal_union($dictOrd) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Map_Internal_unionWith = ($GLOBALS['Data_Map_Internal_unionWith'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_unionWith'));
+$__global_Data_Function_Uncurried_runFn4 = ($GLOBALS['Data_Function_Uncurried_runFn4'] ?? \Data\Function\Uncurried\phpurs_eval_thunk('Data_Function_Uncurried_runFn4'));
+$__global_Data_Map_Internal_unsafeUnionWith = ($GLOBALS['Data_Map_Internal_unsafeUnionWith'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_unsafeUnionWith'));
 $__global_Data_Function_const = ($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const'));
-    $__res = ($__global_Data_Map_Internal_unionWith)($dictOrd, $__global_Data_Function_const);
+$__case_0 = $dictOrd;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare = $__case_res_0;
+    $__res = ((function() use ($__global_Data_Function_Uncurried_runFn4, $__global_Data_Map_Internal_unsafeUnionWith, $compare) {
+  $__fn = function($app, $m1 = null, $m2 = null) use ($__global_Data_Function_Uncurried_runFn4, $__global_Data_Map_Internal_unsafeUnionWith, $compare, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($m2) use ($app, $m1, &$__fn) { return $__fn($app, $m1, $m2); };
+    if ($__num === 1) return function($m1, $m2 = null) use ($app, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($app, $m1, $m2);
+      if ($__num2 === 1) return function($m2) use ($app, $m1, &$__fn) { return $__fn($app, $m1, $m2); };
+      return phpurs_curry_fallback($__fn, [$app], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = ($__global_Data_Function_Uncurried_runFn4)($__global_Data_Map_Internal_unsafeUnionWith, $compare, $app, $m1, $m2);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})())($__global_Data_Function_const);
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Map_Internal_union'] = __NAMESPACE__ . '\\Data_Map_Internal_union';
@@ -2400,7 +2868,15 @@ $__global_Data_Function_Uncurried_runFn4 = ($GLOBALS['Data_Function_Uncurried_ru
 $__global_Data_Map_Internal_unsafeBalancedNode = ($GLOBALS['Data_Map_Internal_unsafeBalancedNode'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_unsafeBalancedNode'));
 $__global_Data_Function_Uncurried_runFn2 = ($GLOBALS['Data_Function_Uncurried_runFn2'] ?? \Data\Function\Uncurried\phpurs_eval_thunk('Data_Function_Uncurried_runFn2'));
 $__global_Data_Map_Internal_unsafeJoinNodes = ($GLOBALS['Data_Map_Internal_unsafeJoinNodes'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_unsafeJoinNodes'));
-$compare = ($dictOrd)->compare;
+$__case_0 = $dictOrd;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare = $__case_res_0;
     $__res = (function() use ($compare, $__global_Data_Function_Uncurried_runFn4, $__global_Data_Map_Internal_unsafeBalancedNode, $__global_Data_Function_Uncurried_runFn2, $__global_Data_Map_Internal_unsafeJoinNodes) {
   $__fn = function($f, $k = null) use ($compare, $__global_Data_Function_Uncurried_runFn4, $__global_Data_Map_Internal_unsafeBalancedNode, $__global_Data_Function_Uncurried_runFn2, $__global_Data_Map_Internal_unsafeJoinNodes, &$__fn) {
   $__num = func_num_args();
@@ -2493,17 +2969,34 @@ function Data_Map_Internal_showTree($dictShow) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Show_showIntImpl = ($GLOBALS['Data_Show_showIntImpl'] ?? \Data\Show\phpurs_eval_thunk('Data_Show_showIntImpl'));
-$show1 = ($dictShow)->show;
-    $__res = (function() use ($__global_Data_Show_showIntImpl, $show1) {
-  $__fn = function($dictShow1) use ($__global_Data_Show_showIntImpl, $show1, &$__fn) {
+$__global_Data_Map_Internal_append = ($GLOBALS['Data_Map_Internal_append'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_append'));
+$__global_Data_Map_Internal_show = ($GLOBALS['Data_Map_Internal_show'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_show'));
+$__case_0 = $dictShow;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->show;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$show1 = $__case_res_0;
+    $__res = (function() use ($__global_Data_Map_Internal_append, $__global_Data_Map_Internal_show, $show1) {
+  $__fn = function($dictShow1) use ($__global_Data_Map_Internal_append, $__global_Data_Map_Internal_show, $show1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$show2 = ($dictShow1)->show;
-$go = (function() use ($__global_Data_Show_showIntImpl, $show1, $show2, &$go) {
-  $__fn = function($ind, $v = null) use ($__global_Data_Show_showIntImpl, $show1, $show2, &$go, &$__fn) {
+$__case_0 = $dictShow1;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->show;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$show2 = $__case_res_1;
+$go = (function() use ($__global_Data_Map_Internal_append, $__global_Data_Map_Internal_show, $show1, $show2, &$go) {
+  $__fn = function($ind, $v = null) use ($__global_Data_Map_Internal_append, $__global_Data_Map_Internal_show, $show1, $show2, &$go, &$__fn) {
   $__num = func_num_args();
   if ($__num < 2) {
     if ($__num === 1) return function($v) use ($ind, &$__fn) { return $__fn($ind, $v); };
@@ -2513,7 +3006,7 @@ while (true) {
 $__case_0 = $v;
 switch (($__case_0)->tag) {
 case "Leaf":
-return ($ind . "Leaf");
+return ($__global_Data_Map_Internal_append)($ind, "Leaf");
 break;
 case "Node":
 $h = ($__case_0)->v0;
@@ -2521,9 +3014,9 @@ $k = ($__case_0)->v2;
 $v1 = ($__case_0)->v3;
 $l = ($__case_0)->v4;
 $r = ($__case_0)->v5;
-return (($ind . ("[" . (($__global_Data_Show_showIntImpl)($h) . ("] " . (($show1)($k) . (" => " . (($show2)($v1) . "
-"))))))) . ((($go)(($ind . "    "), $l) . "
-") . ($go)(($ind . "    "), $r)));
+return ($__global_Data_Map_Internal_append)(($__global_Data_Map_Internal_append)($ind, ($__global_Data_Map_Internal_append)("[", ($__global_Data_Map_Internal_append)(($__global_Data_Map_Internal_show)($h), ($__global_Data_Map_Internal_append)("] ", ($__global_Data_Map_Internal_append)(($show1)($k), ($__global_Data_Map_Internal_append)(" => ", ($__global_Data_Map_Internal_append)(($show2)($v1), "
+"))))))), ($__global_Data_Map_Internal_append)(($__global_Data_Map_Internal_append)(($go)(($__global_Data_Map_Internal_append)($ind, "    "), $l), "
+"), ($go)(($__global_Data_Map_Internal_append)($ind, "    "), $r)));
 break;
 default:
 throw new \Exception("Pattern match failure");
@@ -2552,15 +3045,50 @@ function Data_Map_Internal_semigroupMap($__dollar____unused, $dictOrd = null) {
     if ($__num === 1) return function($dictOrd) use ($__dollar____unused, $__fn) { return $__fn($__dollar____unused, $dictOrd); };
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
-$__global_Data_Map_Internal_unionWith = ($GLOBALS['Data_Map_Internal_unionWith'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_unionWith'));
-$unionWith1 = ($__global_Data_Map_Internal_unionWith)($dictOrd);
+$__global_Data_Function_Uncurried_runFn4 = ($GLOBALS['Data_Function_Uncurried_runFn4'] ?? \Data\Function\Uncurried\phpurs_eval_thunk('Data_Function_Uncurried_runFn4'));
+$__global_Data_Map_Internal_unsafeUnionWith = ($GLOBALS['Data_Map_Internal_unsafeUnionWith'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_unsafeUnionWith'));
+$__case_0 = $dictOrd;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare = $__case_res_0;
+$unionWith1 = (function() use ($__global_Data_Function_Uncurried_runFn4, $__global_Data_Map_Internal_unsafeUnionWith, $compare) {
+  $__fn = function($app, $m1 = null, $m2 = null) use ($__global_Data_Function_Uncurried_runFn4, $__global_Data_Map_Internal_unsafeUnionWith, $compare, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($m2) use ($app, $m1, &$__fn) { return $__fn($app, $m1, $m2); };
+    if ($__num === 1) return function($m1, $m2 = null) use ($app, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($app, $m1, $m2);
+      if ($__num2 === 1) return function($m2) use ($app, $m1, &$__fn) { return $__fn($app, $m1, $m2); };
+      return phpurs_curry_fallback($__fn, [$app], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = ($__global_Data_Function_Uncurried_runFn4)($__global_Data_Map_Internal_unsafeUnionWith, $compare, $app, $m1, $m2);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})();
     $__res = (function() use ($unionWith1) {
   $__fn = function($dictSemigroup) use ($unionWith1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (object)["append" => ($unionWith1)(($dictSemigroup)->append)];
+$__case_0 = $dictSemigroup;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = (object)["append" => ($unionWith1)($__case_res_1)];
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -2582,7 +3110,15 @@ $__global_Data_Map_Internal_unsafeSplit = ($GLOBALS['Data_Map_Internal_unsafeSpl
 $__global_Data_Map_Internal_map = ($GLOBALS['Data_Map_Internal_map'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_map'));
 $__global_Data_Function_Uncurried_runFn2 = ($GLOBALS['Data_Function_Uncurried_runFn2'] ?? \Data\Function\Uncurried\phpurs_eval_thunk('Data_Function_Uncurried_runFn2'));
 $__global_Data_Map_Internal_unsafeJoinNodes = ($GLOBALS['Data_Map_Internal_unsafeJoinNodes'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_unsafeJoinNodes'));
-$compare = ($dictOrd)->compare;
+$__case_0 = $dictOrd;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare = $__case_res_0;
     $__res = (function() use ($__global_Data_Function_Uncurried_runFn3, $__global_Data_Map_Internal_unsafeSplit, $compare, $__global_Data_Map_Internal_map, $__global_Data_Function_Uncurried_runFn2, $__global_Data_Map_Internal_unsafeJoinNodes) {
   $__body = function($k, $m) use ($__global_Data_Function_Uncurried_runFn3, $__global_Data_Map_Internal_unsafeSplit, $compare, $__global_Data_Map_Internal_map, $__global_Data_Function_Uncurried_runFn2, $__global_Data_Map_Internal_unsafeJoinNodes) {
     $v = ($__global_Data_Function_Uncurried_runFn3)($__global_Data_Map_Internal_unsafeSplit, $compare, $k, $m);
@@ -2642,7 +3178,15 @@ function Data_Map_Internal_member($dictOrd) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$compare = ($dictOrd)->compare;
+$__case_0 = $dictOrd;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare = $__case_res_0;
     $__res = (function() use ($compare) {
   $__fn = function($k) use ($compare, &$__fn) {
   $__num = func_num_args();
@@ -2772,9 +3316,64 @@ function Data_Map_Internal_mapMaybe($dictOrd) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_Map_Internal_compose = ($GLOBALS['Data_Map_Internal_compose'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_compose'));
-$__global_Data_Map_Internal_mapMaybeWithKey = ($GLOBALS['Data_Map_Internal_mapMaybeWithKey'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_mapMaybeWithKey'));
+$__global_Data_Function_Uncurried_runFn4 = ($GLOBALS['Data_Function_Uncurried_runFn4'] ?? \Data\Function\Uncurried\phpurs_eval_thunk('Data_Function_Uncurried_runFn4'));
+$__global_Data_Map_Internal_unsafeBalancedNode = ($GLOBALS['Data_Map_Internal_unsafeBalancedNode'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_unsafeBalancedNode'));
+$__global_Data_Function_Uncurried_runFn2 = ($GLOBALS['Data_Function_Uncurried_runFn2'] ?? \Data\Function\Uncurried\phpurs_eval_thunk('Data_Function_Uncurried_runFn2'));
+$__global_Data_Map_Internal_unsafeJoinNodes = ($GLOBALS['Data_Map_Internal_unsafeJoinNodes'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_unsafeJoinNodes'));
 $__global_Data_Function_const = ($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const'));
-    $__res = ($__global_Data_Map_Internal_compose)(($__global_Data_Map_Internal_mapMaybeWithKey)($dictOrd), $__global_Data_Function_const);
+    $__res = ($__global_Data_Map_Internal_compose)((function() use ($__global_Data_Function_Uncurried_runFn4, $__global_Data_Map_Internal_unsafeBalancedNode, $__global_Data_Function_Uncurried_runFn2, $__global_Data_Map_Internal_unsafeJoinNodes) {
+  $__fn = function($f) use ($__global_Data_Function_Uncurried_runFn4, $__global_Data_Map_Internal_unsafeBalancedNode, $__global_Data_Function_Uncurried_runFn2, $__global_Data_Map_Internal_unsafeJoinNodes, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$go = (function() use ($f, $__global_Data_Function_Uncurried_runFn4, $__global_Data_Map_Internal_unsafeBalancedNode, &$go, $__global_Data_Function_Uncurried_runFn2, $__global_Data_Map_Internal_unsafeJoinNodes) {
+  $__fn = function($v) use ($f, $__global_Data_Function_Uncurried_runFn4, $__global_Data_Map_Internal_unsafeBalancedNode, &$go, $__global_Data_Function_Uncurried_runFn2, $__global_Data_Map_Internal_unsafeJoinNodes, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+while (true) {
+$__case_0 = $v;
+switch (($__case_0)->tag) {
+case "Leaf":
+return ($GLOBALS['__phpurs_data0_Leaf'] ??= new Phpurs_Data0("Leaf"));
+break;
+case "Node":
+$k = ($__case_0)->v2;
+$v1 = ($__case_0)->v3;
+$l = ($__case_0)->v4;
+$r = ($__case_0)->v5;
+$v2 = ($f)($k, $v1);
+$__case_0 = $v2;
+switch (($__case_0)->tag) {
+case "Just":
+$v__prime__ = ($__case_0)->v0;
+return ($__global_Data_Function_Uncurried_runFn4)($__global_Data_Map_Internal_unsafeBalancedNode, $k, $v__prime__, ($go)($l), ($go)($r));
+break;
+case "Nothing":
+return ($__global_Data_Function_Uncurried_runFn2)($__global_Data_Map_Internal_unsafeJoinNodes, ($go)($l), ($go)($r));
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+};
+    $__res = null;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+    $__res = $go;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})(), $__global_Data_Function_const);
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Map_Internal_mapMaybe'] = __NAMESPACE__ . '\\Data_Map_Internal_mapMaybe';
@@ -2786,7 +3385,15 @@ function Data_Map_Internal_lookupLE($dictOrd) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$compare = ($dictOrd)->compare;
+$__case_0 = $dictOrd;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare = $__case_res_0;
     $__res = (function() use ($compare) {
   $__fn = function($k) use ($compare, &$__fn) {
   $__num = func_num_args();
@@ -2885,7 +3492,15 @@ function Data_Map_Internal_lookupGE($dictOrd) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$compare = ($dictOrd)->compare;
+$__case_0 = $dictOrd;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare = $__case_res_0;
     $__res = (function() use ($compare) {
   $__fn = function($k) use ($compare, &$__fn) {
   $__num = func_num_args();
@@ -2984,7 +3599,15 @@ function Data_Map_Internal_lookup($dictOrd) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$compare = ($dictOrd)->compare;
+$__case_0 = $dictOrd;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare = $__case_res_0;
     $__res = (function() use ($compare) {
   $__fn = function($k) use ($compare, &$__fn) {
   $__num = func_num_args();
@@ -3237,7 +3860,15 @@ function Data_Map_Internal_toUnfoldableUnordered($dictUnfoldable) {
 $__global_Data_Map_Internal_compose = ($GLOBALS['Data_Map_Internal_compose'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_compose'));
 $__global_Data_Map_Internal_stepUnfoldrUnordered = ($GLOBALS['Data_Map_Internal_stepUnfoldrUnordered'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_stepUnfoldrUnordered'));
 $__global_Data_Map_Internal_toMapIter = ($GLOBALS['Data_Map_Internal_toMapIter'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_toMapIter'));
-    $__res = ($__global_Data_Map_Internal_compose)((($dictUnfoldable)->unfoldr)($__global_Data_Map_Internal_stepUnfoldrUnordered), $__global_Data_Map_Internal_toMapIter);
+$__case_0 = $dictUnfoldable;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->unfoldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__global_Data_Map_Internal_compose)(($__case_res_0)($__global_Data_Map_Internal_stepUnfoldrUnordered), $__global_Data_Map_Internal_toMapIter);
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Map_Internal_toUnfoldableUnordered'] = __NAMESPACE__ . '\\Data_Map_Internal_toUnfoldableUnordered';
@@ -3257,14 +3888,30 @@ function Data_Map_Internal_eqMapIter($dictEq) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_Map_Internal_stepAsc = ($GLOBALS['Data_Map_Internal_stepAsc'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_stepAsc'));
-$eq1 = ($dictEq)->eq;
+$__case_0 = $dictEq;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq1 = $__case_res_0;
     $__res = (function() use ($__global_Data_Map_Internal_stepAsc) {
   $__fn = function($dictEq1) use ($__global_Data_Map_Internal_stepAsc, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$eq2 = ($dictEq1)->eq;
+$__case_0 = $dictEq1;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq2 = $__case_res_1;
 $go = (function() use ($__global_Data_Map_Internal_stepAsc) {
   $__fn = function($a, $b = null) use ($__global_Data_Map_Internal_stepAsc, &$__fn) {
   $__num = func_num_args();
@@ -3323,18 +3970,103 @@ function Data_Map_Internal_ordMapIter($dictOrd) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Map_Internal_eqMapIter = ($GLOBALS['Data_Map_Internal_eqMapIter'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_eqMapIter'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Map_Internal_stepAsc = ($GLOBALS['Data_Map_Internal_stepAsc'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_stepAsc'));
-$compare = ($dictOrd)->compare;
-$eqMapIter1 = ($__global_Data_Map_Internal_eqMapIter)((($dictOrd)->Eq0)($__global_Prim_undefined));
+$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
+$__case_0 = $dictOrd;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq1 = $__case_res_1;
+$eqMapIter1 = (function() use ($__global_Data_Map_Internal_stepAsc) {
+  $__fn = function($dictEq1) use ($__global_Data_Map_Internal_stepAsc, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dictEq1;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq2 = $__case_res_2;
+$go = (function() use ($__global_Data_Map_Internal_stepAsc) {
+  $__fn = function($a, $b = null) use ($__global_Data_Map_Internal_stepAsc, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($b) use ($a, &$__fn) { return $__fn($a, $b); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+while (true) {
+$v = ($__global_Data_Map_Internal_stepAsc)($a);
+$__case_0 = $v;
+switch (($__case_0)->tag) {
+case "IterNext":
+$k1 = ($__case_0)->v0;
+$v1 = ($__case_0)->v1;
+$a__prime__ = ($__case_0)->v2;
+$v2 = ($__global_Data_Map_Internal_stepAsc)($b);
+$__case_0 = $v2;
+switch (($__case_0)->tag) {
+case "IterNext":
+$k2 = ($__case_0)->v0;
+$v21 = ($__case_0)->v1;
+$b__prime__ = ($__case_0)->v2;
+return "/* Unsupported: Guards not supported */";
+break;
+default:
+return false;
+break;
+};
+break;
+case "IterDone":
+return true;
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+};
+    $__res = null;
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+    $__res = (object)["eq" => $go];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
     $__res = (function() use ($eqMapIter1, $__global_Prim_undefined, $__global_Data_Map_Internal_stepAsc, $compare) {
   $__fn = function($dictOrd1) use ($eqMapIter1, $__global_Prim_undefined, $__global_Data_Map_Internal_stepAsc, $compare, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$compare1 = ($dictOrd1)->compare;
+$__case_0 = $dictOrd1;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare1 = $__case_res_3;
 $eqMapIter2 = ($eqMapIter1)((($dictOrd1)->Eq0)($__global_Prim_undefined));
 $go = (function() use ($__global_Data_Map_Internal_stepAsc, $compare, $compare1, &$go) {
   $__fn = function($a, $b = null) use ($__global_Data_Map_Internal_stepAsc, $compare, $compare1, &$go, &$__fn) {
@@ -3439,7 +4171,15 @@ function Data_Map_Internal_toUnfoldable($dictUnfoldable) {
 $__global_Data_Map_Internal_compose = ($GLOBALS['Data_Map_Internal_compose'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_compose'));
 $__global_Data_Map_Internal_stepUnfoldr = ($GLOBALS['Data_Map_Internal_stepUnfoldr'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_stepUnfoldr'));
 $__global_Data_Map_Internal_toMapIter = ($GLOBALS['Data_Map_Internal_toMapIter'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_toMapIter'));
-    $__res = ($__global_Data_Map_Internal_compose)((($dictUnfoldable)->unfoldr)($__global_Data_Map_Internal_stepUnfoldr), $__global_Data_Map_Internal_toMapIter);
+$__case_0 = $dictUnfoldable;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->unfoldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__global_Data_Map_Internal_compose)(($__case_res_0)($__global_Data_Map_Internal_stepUnfoldr), $__global_Data_Map_Internal_toMapIter);
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Map_Internal_toUnfoldable'] = __NAMESPACE__ . '\\Data_Map_Internal_toUnfoldable';
@@ -3452,24 +4192,83 @@ function Data_Map_Internal_showMap($dictShow) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Tuple_showTuple = ($GLOBALS['Data_Tuple_showTuple'] ?? \Data\Tuple\phpurs_eval_thunk('Data_Tuple_showTuple'));
-$__global_Data_Show_showArray = ($GLOBALS['Data_Show_showArray'] ?? \Data\Show\phpurs_eval_thunk('Data_Show_showArray'));
+$__global_Data_Tuple_append = ($GLOBALS['Data_Tuple_append'] ?? \Data\Tuple\phpurs_eval_thunk('Data_Tuple_append'));
+$__global_Data_Map_Internal_append = ($GLOBALS['Data_Map_Internal_append'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_append'));
 $__global_Data_Map_Internal_toUnfoldable1 = ($GLOBALS['Data_Map_Internal_toUnfoldable1'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_toUnfoldable1'));
-$showTuple = ($__global_Data_Tuple_showTuple)($dictShow);
-    $__res = (function() use ($__global_Data_Show_showArray, $showTuple, $__global_Data_Map_Internal_toUnfoldable1) {
-  $__fn = function($dictShow1) use ($__global_Data_Show_showArray, $showTuple, $__global_Data_Map_Internal_toUnfoldable1, &$__fn) {
+$__case_0 = $dictShow;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->show;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$show = $__case_res_0;
+$showTuple = (function() use ($__global_Data_Tuple_append, $show) {
+  $__fn = function($dictShow1) use ($__global_Data_Tuple_append, $show, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$show1 = (($__global_Data_Show_showArray)(($showTuple)($dictShow1)))->show;
-    $__res = (object)["show" => (function() use ($show1, $__global_Data_Map_Internal_toUnfoldable1) {
-  $__fn = function($as) use ($show1, $__global_Data_Map_Internal_toUnfoldable1, &$__fn) {
+$__case_0 = $dictShow1;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->show;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$show1 = $__case_res_1;
+    $__res = (object)["show" => (function() use ($__global_Data_Tuple_append, $show, $show1) {
+  $__body = function($v) use ($__global_Data_Tuple_append, $show, $show1) {
+    $__case_0 = $v;
+    switch (($__case_0)->tag) {
+case "Tuple":
+$a = ($__case_0)->v0;
+$b = ($__case_0)->v1;
+return ($__global_Data_Tuple_append)("(Tuple ", ($__global_Data_Tuple_append)(($show)($a), ($__global_Data_Tuple_append)(" ", ($__global_Data_Tuple_append)(($show1)($b), ")"))));
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($v) use ($__global_Data_Tuple_append, $show, $show1, $__body, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ("(fromFoldable " . (($show1)(($__global_Data_Map_Internal_toUnfoldable1)($as)) . ")"));
+    $__res = $__body($v);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+    $__res = (function() use ($dict, $__global_Data_Map_Internal_append, $__global_Data_Map_Internal_toUnfoldable1) {
+  $__fn = function($dictShow1) use ($dict, $__global_Data_Map_Internal_append, $__global_Data_Map_Internal_toUnfoldable1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->show;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$show1 = $__case_res_2;
+    $__res = (object)["show" => (function() use ($__global_Data_Map_Internal_append, $show1, $__global_Data_Map_Internal_toUnfoldable1) {
+  $__fn = function($as) use ($__global_Data_Map_Internal_append, $show1, $__global_Data_Map_Internal_toUnfoldable1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($__global_Data_Map_Internal_append)("(fromFoldable ", ($__global_Data_Map_Internal_append)(($show1)(($__global_Data_Map_Internal_toUnfoldable1)($as)), ")"));
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -3489,18 +4288,102 @@ function Data_Map_Internal_isSubmap($dictOrd) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Map_Internal_lookup = ($GLOBALS['Data_Map_Internal_lookup'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_lookup'));
-$__global_Data_HeytingAlgebra_boolConj = ($GLOBALS['Data_HeytingAlgebra_boolConj'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_boolConj'));
-$lookup1 = ($__global_Data_Map_Internal_lookup)($dictOrd);
-    $__res = (function() use ($lookup1, $__global_Data_HeytingAlgebra_boolConj) {
-  $__fn = function($dictEq) use ($lookup1, $__global_Data_HeytingAlgebra_boolConj, &$__fn) {
+$__global_Data_Map_Internal_conj = ($GLOBALS['Data_Map_Internal_conj'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_conj'));
+$__case_0 = $dictOrd;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare = $__case_res_0;
+$lookup1 = (function() use ($compare) {
+  $__fn = function($k) use ($compare, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$eq1 = ($dictEq)->eq;
-$go = (function() use ($lookup1, $__global_Data_HeytingAlgebra_boolConj, $eq1, &$go) {
-  $__fn = function($m1, $m2 = null) use ($lookup1, $__global_Data_HeytingAlgebra_boolConj, $eq1, &$go, &$__fn) {
+$go = (function() use ($compare, $k, &$go) {
+  $__fn = function($v) use ($compare, $k, &$go, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+while (true) {
+$__case_0 = $v;
+switch (($__case_0)->tag) {
+case "Leaf":
+return ($GLOBALS['__phpurs_data0_Nothing'] ??= new Phpurs_Data0("Nothing"));
+break;
+case "Node":
+$mk = ($__case_0)->v2;
+$mv = ($__case_0)->v3;
+$ml = ($__case_0)->v4;
+$mr = ($__case_0)->v5;
+$v1 = ($compare)($k, $mk);
+$__case_0 = $v1;
+switch (($__case_0)->tag) {
+case "LT":
+$__tco_tmp_0 = $ml;
+$v = $__tco_tmp_0;
+continue 3;
+break;
+case "GT":
+$__tco_tmp_0 = $mr;
+$v = $__tco_tmp_0;
+continue 3;
+break;
+case "EQ":
+return ((function() {
+  $__fn = function($value0) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = new Phpurs_Data1("Just", $value0);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})())($mv);
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+};
+    $__res = null;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+    $__res = $go;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+    $__res = (function() use ($lookup1, $__global_Data_Map_Internal_conj) {
+  $__fn = function($dictEq) use ($lookup1, $__global_Data_Map_Internal_conj, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dictEq;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq1 = $__case_res_1;
+$go = (function() use ($lookup1, $__global_Data_Map_Internal_conj, $eq1, &$go) {
+  $__fn = function($m1, $m2 = null) use ($lookup1, $__global_Data_Map_Internal_conj, $eq1, &$go, &$__fn) {
   $__num = func_num_args();
   if ($__num < 2) {
     if ($__num === 1) return function($m2) use ($m1, &$__fn) { return $__fn($m1, $m2); };
@@ -3525,7 +4408,7 @@ return false;
 break;
 case "Just":
 $v__prime__ = ($__case_0)->v0;
-return ($__global_Data_HeytingAlgebra_boolConj)(($eq1)($v, $v__prime__), ($__global_Data_HeytingAlgebra_boolConj)(($go)($l, $m2), ($go)($r, $m2)));
+return ($__global_Data_Map_Internal_conj)(($eq1)($v, $v__prime__), ($__global_Data_Map_Internal_conj)(($go)($l, $m2), ($go)($r, $m2)));
 break;
 default:
 throw new \Exception("Pattern match failure");
@@ -3583,7 +4466,15 @@ function Data_Map_Internal_intersectionWith($dictOrd) {
   }
 $__global_Data_Function_Uncurried_runFn4 = ($GLOBALS['Data_Function_Uncurried_runFn4'] ?? \Data\Function\Uncurried\phpurs_eval_thunk('Data_Function_Uncurried_runFn4'));
 $__global_Data_Map_Internal_unsafeIntersectionWith = ($GLOBALS['Data_Map_Internal_unsafeIntersectionWith'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_unsafeIntersectionWith'));
-$compare = ($dictOrd)->compare;
+$__case_0 = $dictOrd;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare = $__case_res_0;
     $__res = (function() use ($__global_Data_Function_Uncurried_runFn4, $__global_Data_Map_Internal_unsafeIntersectionWith, $compare) {
   $__fn = function($app, $m1 = null, $m2 = null) use ($__global_Data_Function_Uncurried_runFn4, $__global_Data_Map_Internal_unsafeIntersectionWith, $compare, &$__fn) {
   $__num = func_num_args();
@@ -3613,9 +4504,36 @@ function Data_Map_Internal_intersection($dictOrd) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Map_Internal_intersectionWith = ($GLOBALS['Data_Map_Internal_intersectionWith'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_intersectionWith'));
+$__global_Data_Function_Uncurried_runFn4 = ($GLOBALS['Data_Function_Uncurried_runFn4'] ?? \Data\Function\Uncurried\phpurs_eval_thunk('Data_Function_Uncurried_runFn4'));
+$__global_Data_Map_Internal_unsafeIntersectionWith = ($GLOBALS['Data_Map_Internal_unsafeIntersectionWith'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_unsafeIntersectionWith'));
 $__global_Data_Function_const = ($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const'));
-    $__res = ($__global_Data_Map_Internal_intersectionWith)($dictOrd, $__global_Data_Function_const);
+$__case_0 = $dictOrd;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare = $__case_res_0;
+    $__res = ((function() use ($__global_Data_Function_Uncurried_runFn4, $__global_Data_Map_Internal_unsafeIntersectionWith, $compare) {
+  $__fn = function($app, $m1 = null, $m2 = null) use ($__global_Data_Function_Uncurried_runFn4, $__global_Data_Map_Internal_unsafeIntersectionWith, $compare, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($m2) use ($app, $m1, &$__fn) { return $__fn($app, $m1, $m2); };
+    if ($__num === 1) return function($m1, $m2 = null) use ($app, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($app, $m1, $m2);
+      if ($__num2 === 1) return function($m2) use ($app, $m1, &$__fn) { return $__fn($app, $m1, $m2); };
+      return phpurs_curry_fallback($__fn, [$app], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = ($__global_Data_Function_Uncurried_runFn4)($__global_Data_Map_Internal_unsafeIntersectionWith, $compare, $app, $m1, $m2);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})())($__global_Data_Function_const);
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Map_Internal_intersection'] = __NAMESPACE__ . '\\Data_Map_Internal_intersection';
@@ -3630,7 +4548,15 @@ function Data_Map_Internal_insertWith($dictOrd) {
 $__global_Data_Map_Internal_singleton = ($GLOBALS['Data_Map_Internal_singleton'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_singleton'));
 $__global_Data_Function_Uncurried_runFn4 = ($GLOBALS['Data_Function_Uncurried_runFn4'] ?? \Data\Function\Uncurried\phpurs_eval_thunk('Data_Function_Uncurried_runFn4'));
 $__global_Data_Map_Internal_unsafeBalancedNode = ($GLOBALS['Data_Map_Internal_unsafeBalancedNode'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_unsafeBalancedNode'));
-$compare = ($dictOrd)->compare;
+$__case_0 = $dictOrd;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare = $__case_res_0;
     $__res = (function() use ($__global_Data_Map_Internal_singleton, $compare, $__global_Data_Function_Uncurried_runFn4, $__global_Data_Map_Internal_unsafeBalancedNode) {
   $__fn = function($app, $k = null, $v = null) use ($__global_Data_Map_Internal_singleton, $compare, $__global_Data_Function_Uncurried_runFn4, $__global_Data_Map_Internal_unsafeBalancedNode, &$__fn) {
   $__num = func_num_args();
@@ -3719,7 +4645,15 @@ function Data_Map_Internal_insert($dictOrd) {
 $__global_Data_Map_Internal_singleton = ($GLOBALS['Data_Map_Internal_singleton'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_singleton'));
 $__global_Data_Function_Uncurried_runFn4 = ($GLOBALS['Data_Function_Uncurried_runFn4'] ?? \Data\Function\Uncurried\phpurs_eval_thunk('Data_Function_Uncurried_runFn4'));
 $__global_Data_Map_Internal_unsafeBalancedNode = ($GLOBALS['Data_Map_Internal_unsafeBalancedNode'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_unsafeBalancedNode'));
-$compare = ($dictOrd)->compare;
+$__case_0 = $dictOrd;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare = $__case_res_0;
     $__res = (function() use ($__global_Data_Map_Internal_singleton, $compare, $__global_Data_Function_Uncurried_runFn4, $__global_Data_Map_Internal_unsafeBalancedNode) {
   $__fn = function($k, $v = null) use ($__global_Data_Map_Internal_singleton, $compare, $__global_Data_Function_Uncurried_runFn4, $__global_Data_Map_Internal_unsafeBalancedNode, &$__fn) {
   $__num = func_num_args();
@@ -3807,26 +4741,119 @@ function Data_Map_Internal_foldSubmapBy($dictOrd) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Ord_lessThan = ($GLOBALS['Data_Ord_lessThan'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_lessThan'));
-$__global_Data_Ord_greaterThan = ($GLOBALS['Data_Ord_greaterThan'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_greaterThan'));
-$__global_Data_Ord_lessThanOrEq = ($GLOBALS['Data_Ord_lessThanOrEq'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_lessThanOrEq'));
 $__global_Data_Function_const = ($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const'));
-$__global_Data_HeytingAlgebra_boolConj = ($GLOBALS['Data_HeytingAlgebra_boolConj'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_boolConj'));
-$lessThan1 = ($__global_Data_Ord_lessThan)($dictOrd);
-$greaterThan1 = ($__global_Data_Ord_greaterThan)($dictOrd);
-$lessThanOrEq1 = ($__global_Data_Ord_lessThanOrEq)($dictOrd);
-    $__res = (function() use ($lessThan1, $__global_Data_Function_const, $greaterThan1, $__global_Data_HeytingAlgebra_boolConj, $lessThanOrEq1) {
-  $__fn = function($appendFn, $memptyValue = null, $kmin = null, $kmax = null, $f = null) use ($lessThan1, $__global_Data_Function_const, $greaterThan1, $__global_Data_HeytingAlgebra_boolConj, $lessThanOrEq1, &$__fn) {
+$__global_Data_Map_Internal_conj = ($GLOBALS['Data_Map_Internal_conj'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_conj'));
+$__case_0 = $dictOrd;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare3 = $__case_res_0;
+$lessThan1 = (function() use ($compare3) {
+  $__body = function($a1, $a2) use ($compare3) {
+    $v = ($compare3)($a1, $a2);
+    $__case_0 = $v;
+    switch (($__case_0)->tag) {
+case "LT":
+return true;
+break;
+default:
+return false;
+break;
+};
+  };
+  $__fn = function($a1, $a2 = null) use ($compare3, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($a2) use ($a1, &$__fn) { return $__fn($a1, $a2); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($a1, $a2);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+$__case_0 = $dictOrd;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare3 = $__case_res_1;
+$greaterThan1 = (function() use ($compare3) {
+  $__body = function($a1, $a2) use ($compare3) {
+    $v = ($compare3)($a1, $a2);
+    $__case_0 = $v;
+    switch (($__case_0)->tag) {
+case "GT":
+return true;
+break;
+default:
+return false;
+break;
+};
+  };
+  $__fn = function($a1, $a2 = null) use ($compare3, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($a2) use ($a1, &$__fn) { return $__fn($a1, $a2); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($a1, $a2);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+$__case_0 = $dictOrd;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare3 = $__case_res_2;
+$lessThanOrEq1 = (function() use ($compare3) {
+  $__body = function($a1, $a2) use ($compare3) {
+    $v = ($compare3)($a1, $a2);
+    $__case_0 = $v;
+    switch (($__case_0)->tag) {
+case "GT":
+return false;
+break;
+default:
+return true;
+break;
+};
+  };
+  $__fn = function($a1, $a2 = null) use ($compare3, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($a2) use ($a1, &$__fn) { return $__fn($a1, $a2); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($a1, $a2);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+    $__res = (function() use ($lessThan1, $__global_Data_Function_const, $greaterThan1, $__global_Data_Map_Internal_conj, $lessThanOrEq1) {
+  $__fn = function($appendFn, $memptyValue = null, $kmin = null, $kmax = null, $f = null) use ($lessThan1, $__global_Data_Function_const, $greaterThan1, $__global_Data_Map_Internal_conj, $lessThanOrEq1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 5) {
     return phpurs_curry_fallback($__fn, func_get_args(), 5);
   }
 $__case_0 = $kmin;
-$__case_res_0 = null;
+$__case_res_3 = null;
 switch (($__case_0)->tag) {
 case "Just":
 $kmin__prime__ = ($__case_0)->v0;
-$__case_res_0 = (function() use ($lessThan1, $kmin__prime__) {
+$__case_res_3 = (function() use ($lessThan1, $kmin__prime__) {
   $__fn = function($k) use ($lessThan1, $kmin__prime__, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
@@ -3839,19 +4866,19 @@ $__case_res_0 = (function() use ($lessThan1, $kmin__prime__) {
 })();
 break;
 case "Nothing":
-$__case_res_0 = ($__global_Data_Function_const)(false);
+$__case_res_3 = ($__global_Data_Function_const)(false);
 break;
 default:
 throw new \Exception("Pattern match failure");
 break;
 };
-$tooSmall = $__case_res_0;
+$tooSmall = $__case_res_3;
 $__case_0 = $kmax;
-$__case_res_1 = null;
+$__case_res_4 = null;
 switch (($__case_0)->tag) {
 case "Just":
 $kmax__prime__ = ($__case_0)->v0;
-$__case_res_1 = (function() use ($greaterThan1, $kmax__prime__) {
+$__case_res_4 = (function() use ($greaterThan1, $kmax__prime__) {
   $__fn = function($k) use ($greaterThan1, $kmax__prime__, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
@@ -3864,26 +4891,26 @@ $__case_res_1 = (function() use ($greaterThan1, $kmax__prime__) {
 })();
 break;
 case "Nothing":
-$__case_res_1 = ($__global_Data_Function_const)(false);
+$__case_res_4 = ($__global_Data_Function_const)(false);
 break;
 default:
 throw new \Exception("Pattern match failure");
 break;
 };
-$tooLarge = $__case_res_1;
+$tooLarge = $__case_res_4;
 $__case_0 = $kmin;
 $__case_1 = $kmax;
-$__case_res_2 = null;
+$__case_res_5 = null;
 if (((($__case_0)->tag === "Just") && (($__case_1)->tag === "Just"))) {
 $kmin__prime__ = ($__case_0)->v0;
 $kmax__prime__ = ($__case_1)->v0;
-$__case_res_2 = (function() use ($__global_Data_HeytingAlgebra_boolConj, $lessThanOrEq1, $kmin__prime__, $kmax__prime__) {
-  $__fn = function($k) use ($__global_Data_HeytingAlgebra_boolConj, $lessThanOrEq1, $kmin__prime__, $kmax__prime__, &$__fn) {
+$__case_res_5 = (function() use ($__global_Data_Map_Internal_conj, $lessThanOrEq1, $kmin__prime__, $kmax__prime__) {
+  $__fn = function($k) use ($__global_Data_Map_Internal_conj, $lessThanOrEq1, $kmin__prime__, $kmax__prime__, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($__global_Data_HeytingAlgebra_boolConj)(($lessThanOrEq1)($kmin__prime__, $k), ($lessThanOrEq1)($k, $kmax__prime__));
+    $__res = ($__global_Data_Map_Internal_conj)(($lessThanOrEq1)($kmin__prime__, $k), ($lessThanOrEq1)($k, $kmax__prime__));
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -3891,7 +4918,7 @@ $__case_res_2 = (function() use ($__global_Data_HeytingAlgebra_boolConj, $lessTh
 } else {
 if (((($__case_0)->tag === "Just") && (($__case_1)->tag === "Nothing"))) {
 $kmin__prime__ = ($__case_0)->v0;
-$__case_res_2 = (function() use ($lessThanOrEq1, $kmin__prime__) {
+$__case_res_5 = (function() use ($lessThanOrEq1, $kmin__prime__) {
   $__fn = function($k) use ($lessThanOrEq1, $kmin__prime__, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
@@ -3905,7 +4932,7 @@ $__case_res_2 = (function() use ($lessThanOrEq1, $kmin__prime__) {
 } else {
 if (((($__case_0)->tag === "Nothing") && (($__case_1)->tag === "Just"))) {
 $kmax__prime__ = ($__case_1)->v0;
-$__case_res_2 = (function() use ($lessThanOrEq1, $kmax__prime__) {
+$__case_res_5 = (function() use ($lessThanOrEq1, $kmax__prime__) {
   $__fn = function($k) use ($lessThanOrEq1, $kmax__prime__, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
@@ -3918,14 +4945,14 @@ $__case_res_2 = (function() use ($lessThanOrEq1, $kmax__prime__) {
 })();
 } else {
 if (((($__case_0)->tag === "Nothing") && (($__case_1)->tag === "Nothing"))) {
-$__case_res_2 = ($__global_Data_Function_const)(true);
+$__case_res_5 = ($__global_Data_Function_const)(true);
 } else {
 throw new \Exception("Pattern match failure");
 };
 };
 };
 };
-$inBounds = $__case_res_2;
+$inBounds = $__case_res_5;
 $go = (function() use ($memptyValue, $appendFn, $tooSmall, &$go, $inBounds, $f, $tooLarge) {
   $__fn = function($v) use ($memptyValue, $appendFn, $tooSmall, &$go, $inBounds, $f, $tooLarge, &$__fn) {
   $__num = func_num_args();
@@ -3944,36 +4971,36 @@ $v1 = ($__case_0)->v3;
 $left = ($__case_0)->v4;
 $right = ($__case_0)->v5;
 $__case_0 = ($tooSmall)($k);
-$__case_res_3 = null;
+$__case_res_6 = null;
 switch ($__case_0) {
 case true:
-$__case_res_3 = $memptyValue;
+$__case_res_6 = $memptyValue;
 break;
 default:
-$__case_res_3 = ($go)($left);
+$__case_res_6 = ($go)($left);
 break;
 };
 $__case_0 = ($inBounds)($k);
-$__case_res_4 = null;
+$__case_res_7 = null;
 switch ($__case_0) {
 case true:
-$__case_res_4 = ($f)($k, $v1);
+$__case_res_7 = ($f)($k, $v1);
 break;
 default:
-$__case_res_4 = $memptyValue;
+$__case_res_7 = $memptyValue;
 break;
 };
 $__case_0 = ($tooLarge)($k);
-$__case_res_5 = null;
+$__case_res_8 = null;
 switch ($__case_0) {
 case true:
-$__case_res_5 = $memptyValue;
+$__case_res_8 = $memptyValue;
 break;
 default:
-$__case_res_5 = ($go)($right);
+$__case_res_8 = ($go)($right);
 break;
 };
-return ($appendFn)(($appendFn)($__case_res_3, $__case_res_4), $__case_res_5);
+return ($appendFn)(($appendFn)($__case_res_6, $__case_res_7), $__case_res_8);
 break;
 default:
 throw new \Exception("Pattern match failure");
@@ -4001,16 +5028,305 @@ function Data_Map_Internal_foldSubmap($dictOrd) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Map_Internal_foldSubmapBy = ($GLOBALS['Data_Map_Internal_foldSubmapBy'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_foldSubmapBy'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$foldSubmapBy1 = ($__global_Data_Map_Internal_foldSubmapBy)($dictOrd);
-    $__res = (function() use ($foldSubmapBy1, $__global_Prim_undefined) {
-  $__fn = function($dictMonoid) use ($foldSubmapBy1, $__global_Prim_undefined, &$__fn) {
+$__global_Data_Function_const = ($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const'));
+$__global_Data_Map_Internal_conj = ($GLOBALS['Data_Map_Internal_conj'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_conj'));
+$__case_0 = $dictOrd;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare3 = $__case_res_0;
+$lessThan1 = (function() use ($compare3) {
+  $__body = function($a1, $a2) use ($compare3) {
+    $v = ($compare3)($a1, $a2);
+    $__case_0 = $v;
+    switch (($__case_0)->tag) {
+case "LT":
+return true;
+break;
+default:
+return false;
+break;
+};
+  };
+  $__fn = function($a1, $a2 = null) use ($compare3, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($a2) use ($a1, &$__fn) { return $__fn($a1, $a2); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($a1, $a2);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+$__case_0 = $dictOrd;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare3 = $__case_res_1;
+$greaterThan1 = (function() use ($compare3) {
+  $__body = function($a1, $a2) use ($compare3) {
+    $v = ($compare3)($a1, $a2);
+    $__case_0 = $v;
+    switch (($__case_0)->tag) {
+case "GT":
+return true;
+break;
+default:
+return false;
+break;
+};
+  };
+  $__fn = function($a1, $a2 = null) use ($compare3, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($a2) use ($a1, &$__fn) { return $__fn($a1, $a2); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($a1, $a2);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+$__case_0 = $dictOrd;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare3 = $__case_res_2;
+$lessThanOrEq1 = (function() use ($compare3) {
+  $__body = function($a1, $a2) use ($compare3) {
+    $v = ($compare3)($a1, $a2);
+    $__case_0 = $v;
+    switch (($__case_0)->tag) {
+case "GT":
+return false;
+break;
+default:
+return true;
+break;
+};
+  };
+  $__fn = function($a1, $a2 = null) use ($compare3, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($a2) use ($a1, &$__fn) { return $__fn($a1, $a2); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($a1, $a2);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+$foldSubmapBy1 = (function() use ($lessThan1, $__global_Data_Function_const, $greaterThan1, $__global_Data_Map_Internal_conj, $lessThanOrEq1) {
+  $__fn = function($appendFn, $memptyValue = null, $kmin = null, $kmax = null, $f = null) use ($lessThan1, $__global_Data_Function_const, $greaterThan1, $__global_Data_Map_Internal_conj, $lessThanOrEq1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 5) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 5);
+  }
+$__case_0 = $kmin;
+$__case_res_3 = null;
+switch (($__case_0)->tag) {
+case "Just":
+$kmin__prime__ = ($__case_0)->v0;
+$__case_res_3 = (function() use ($lessThan1, $kmin__prime__) {
+  $__fn = function($k) use ($lessThan1, $kmin__prime__, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($foldSubmapBy1)(((($dictMonoid)->Semigroup0)($__global_Prim_undefined))->append, ($dictMonoid)->mempty);
+    $__res = ($lessThan1)($k, $kmin__prime__);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+break;
+case "Nothing":
+$__case_res_3 = ($__global_Data_Function_const)(false);
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+$tooSmall = $__case_res_3;
+$__case_0 = $kmax;
+$__case_res_4 = null;
+switch (($__case_0)->tag) {
+case "Just":
+$kmax__prime__ = ($__case_0)->v0;
+$__case_res_4 = (function() use ($greaterThan1, $kmax__prime__) {
+  $__fn = function($k) use ($greaterThan1, $kmax__prime__, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($greaterThan1)($k, $kmax__prime__);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+break;
+case "Nothing":
+$__case_res_4 = ($__global_Data_Function_const)(false);
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+$tooLarge = $__case_res_4;
+$__case_0 = $kmin;
+$__case_1 = $kmax;
+$__case_res_5 = null;
+if (((($__case_0)->tag === "Just") && (($__case_1)->tag === "Just"))) {
+$kmin__prime__ = ($__case_0)->v0;
+$kmax__prime__ = ($__case_1)->v0;
+$__case_res_5 = (function() use ($__global_Data_Map_Internal_conj, $lessThanOrEq1, $kmin__prime__, $kmax__prime__) {
+  $__fn = function($k) use ($__global_Data_Map_Internal_conj, $lessThanOrEq1, $kmin__prime__, $kmax__prime__, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($__global_Data_Map_Internal_conj)(($lessThanOrEq1)($kmin__prime__, $k), ($lessThanOrEq1)($k, $kmax__prime__));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+} else {
+if (((($__case_0)->tag === "Just") && (($__case_1)->tag === "Nothing"))) {
+$kmin__prime__ = ($__case_0)->v0;
+$__case_res_5 = (function() use ($lessThanOrEq1, $kmin__prime__) {
+  $__fn = function($k) use ($lessThanOrEq1, $kmin__prime__, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($lessThanOrEq1)($kmin__prime__, $k);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+} else {
+if (((($__case_0)->tag === "Nothing") && (($__case_1)->tag === "Just"))) {
+$kmax__prime__ = ($__case_1)->v0;
+$__case_res_5 = (function() use ($lessThanOrEq1, $kmax__prime__) {
+  $__fn = function($k) use ($lessThanOrEq1, $kmax__prime__, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($lessThanOrEq1)($k, $kmax__prime__);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+} else {
+if (((($__case_0)->tag === "Nothing") && (($__case_1)->tag === "Nothing"))) {
+$__case_res_5 = ($__global_Data_Function_const)(true);
+} else {
+throw new \Exception("Pattern match failure");
+};
+};
+};
+};
+$inBounds = $__case_res_5;
+$go = (function() use ($memptyValue, $appendFn, $tooSmall, &$go, $inBounds, $f, $tooLarge) {
+  $__fn = function($v) use ($memptyValue, $appendFn, $tooSmall, &$go, $inBounds, $f, $tooLarge, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+while (true) {
+$__case_0 = $v;
+switch (($__case_0)->tag) {
+case "Leaf":
+return $memptyValue;
+break;
+case "Node":
+$k = ($__case_0)->v2;
+$v1 = ($__case_0)->v3;
+$left = ($__case_0)->v4;
+$right = ($__case_0)->v5;
+$__case_0 = ($tooSmall)($k);
+$__case_res_6 = null;
+switch ($__case_0) {
+case true:
+$__case_res_6 = $memptyValue;
+break;
+default:
+$__case_res_6 = ($go)($left);
+break;
+};
+$__case_0 = ($inBounds)($k);
+$__case_res_7 = null;
+switch ($__case_0) {
+case true:
+$__case_res_7 = ($f)($k, $v1);
+break;
+default:
+$__case_res_7 = $memptyValue;
+break;
+};
+$__case_0 = ($tooLarge)($k);
+$__case_res_8 = null;
+switch ($__case_0) {
+case true:
+$__case_res_8 = $memptyValue;
+break;
+default:
+$__case_res_8 = ($go)($right);
+break;
+};
+return ($appendFn)(($appendFn)($__case_res_6, $__case_res_7), $__case_res_8);
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+};
+    $__res = null;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+    $__res = $go;
+  return $__num > 5 ? $__res(...array_slice(func_get_args(), 5)) : $__res;
+  };
+  return $__fn;
+})();
+    $__res = (function() use ($foldSubmapBy1, $dict) {
+  $__fn = function($dictMonoid) use ($foldSubmapBy1, $dict, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dict;
+$__case_res_9 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_9 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$__case_0 = $dictMonoid;
+$__case_res_10 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_10 = ($v)->mempty;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($foldSubmapBy1)($__case_res_9, $__case_res_10);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -4076,7 +5392,15 @@ function Data_Map_Internal_lookupGT($dictOrd) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_Map_Internal_findMin = ($GLOBALS['Data_Map_Internal_findMin'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_findMin'));
-$compare = ($dictOrd)->compare;
+$__case_0 = $dictOrd;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare = $__case_res_0;
     $__res = (function() use ($compare, $__global_Data_Map_Internal_findMin) {
   $__fn = function($k) use ($compare, $__global_Data_Map_Internal_findMin, &$__fn) {
   $__num = func_num_args();
@@ -4215,7 +5539,15 @@ function Data_Map_Internal_lookupLT($dictOrd) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_Map_Internal_findMax = ($GLOBALS['Data_Map_Internal_findMax'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_findMax'));
-$compare = ($dictOrd)->compare;
+$__case_0 = $dictOrd;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare = $__case_res_0;
     $__res = (function() use ($compare, $__global_Data_Map_Internal_findMax) {
   $__fn = function($k) use ($compare, $__global_Data_Map_Internal_findMax, &$__fn) {
   $__num = func_num_args();
@@ -4389,9 +5721,47 @@ function Data_Map_Internal_filter($dictOrd) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_Map_Internal_compose = ($GLOBALS['Data_Map_Internal_compose'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_compose'));
-$__global_Data_Map_Internal_filterWithKey = ($GLOBALS['Data_Map_Internal_filterWithKey'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_filterWithKey'));
 $__global_Data_Function_const = ($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const'));
-    $__res = ($__global_Data_Map_Internal_compose)(($__global_Data_Map_Internal_filterWithKey)($dictOrd), $__global_Data_Function_const);
+    $__res = ($__global_Data_Map_Internal_compose)((function() {
+  $__fn = function($f) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$go = (function() {
+  $__fn = function($v) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+while (true) {
+$__case_0 = $v;
+switch (($__case_0)->tag) {
+case "Leaf":
+return ($GLOBALS['__phpurs_data0_Leaf'] ??= new Phpurs_Data0("Leaf"));
+break;
+case "Node":
+$k = ($__case_0)->v2;
+$v1 = ($__case_0)->v3;
+$l = ($__case_0)->v4;
+$r = ($__case_0)->v5;
+return "/* Unsupported: Guards not supported */";
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+};
+    $__res = null;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+    $__res = $go;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})(), $__global_Data_Function_const);
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Map_Internal_filter'] = __NAMESPACE__ . '\\Data_Map_Internal_filter';
@@ -4403,15 +5773,93 @@ function Data_Map_Internal_eqMap($dictEq) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Map_Internal_eqMapIter = ($GLOBALS['Data_Map_Internal_eqMapIter'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_eqMapIter'));
-$eqMapIter1 = ($__global_Data_Map_Internal_eqMapIter)($dictEq);
-    $__res = (function() use ($eqMapIter1) {
-  $__fn = function($dictEq1) use ($eqMapIter1, &$__fn) {
+$__global_Data_Map_Internal_stepAsc = ($GLOBALS['Data_Map_Internal_stepAsc'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_stepAsc'));
+$__case_0 = $dictEq;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq1 = $__case_res_0;
+$eqMapIter1 = (function() use ($__global_Data_Map_Internal_stepAsc) {
+  $__fn = function($dictEq1) use ($__global_Data_Map_Internal_stepAsc, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$eq1 = (($eqMapIter1)($dictEq1))->eq;
+$__case_0 = $dictEq1;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq2 = $__case_res_1;
+$go = (function() use ($__global_Data_Map_Internal_stepAsc) {
+  $__fn = function($a, $b = null) use ($__global_Data_Map_Internal_stepAsc, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($b) use ($a, &$__fn) { return $__fn($a, $b); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+while (true) {
+$v = ($__global_Data_Map_Internal_stepAsc)($a);
+$__case_0 = $v;
+switch (($__case_0)->tag) {
+case "IterNext":
+$k1 = ($__case_0)->v0;
+$v1 = ($__case_0)->v1;
+$a__prime__ = ($__case_0)->v2;
+$v2 = ($__global_Data_Map_Internal_stepAsc)($b);
+$__case_0 = $v2;
+switch (($__case_0)->tag) {
+case "IterNext":
+$k2 = ($__case_0)->v0;
+$v21 = ($__case_0)->v1;
+$b__prime__ = ($__case_0)->v2;
+return "/* Unsupported: Guards not supported */";
+break;
+default:
+return false;
+break;
+};
+break;
+case "IterDone":
+return true;
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+};
+    $__res = null;
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+    $__res = (object)["eq" => $go];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+    $__res = (function() use ($dict) {
+  $__fn = function($dictEq1) use ($dict, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq1 = $__case_res_2;
     $__res = (object)["eq" => (function() {
   $__body = function($xs, $ys) {
     $__case_0 = $xs;
@@ -4471,19 +5919,342 @@ function Data_Map_Internal_ordMap($dictOrd) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Map_Internal_ordMapIter = ($GLOBALS['Data_Map_Internal_ordMapIter'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_ordMapIter'));
-$__global_Data_Map_Internal_eqMap = ($GLOBALS['Data_Map_Internal_eqMap'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_eqMap'));
+$__global_Data_Map_Internal_stepAsc = ($GLOBALS['Data_Map_Internal_stepAsc'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_stepAsc'));
 $__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Map_Internal_toMapIter = ($GLOBALS['Data_Map_Internal_toMapIter'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_toMapIter'));
-$ordMapIter1 = ($__global_Data_Map_Internal_ordMapIter)($dictOrd);
-$eqMap1 = ($__global_Data_Map_Internal_eqMap)((($dictOrd)->Eq0)($__global_Prim_undefined));
-    $__res = (function() use ($ordMapIter1, $eqMap1, $__global_Prim_undefined, $__global_Data_Map_Internal_toMapIter) {
-  $__fn = function($dictOrd1) use ($ordMapIter1, $eqMap1, $__global_Prim_undefined, $__global_Data_Map_Internal_toMapIter, &$__fn) {
+$__case_0 = $dictOrd;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq1 = $__case_res_1;
+$eqMapIter1 = (function() use ($__global_Data_Map_Internal_stepAsc) {
+  $__fn = function($dictEq1) use ($__global_Data_Map_Internal_stepAsc, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$compare = (($ordMapIter1)($dictOrd1))->compare;
+$__case_0 = $dictEq1;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq2 = $__case_res_2;
+$go = (function() use ($__global_Data_Map_Internal_stepAsc) {
+  $__fn = function($a, $b = null) use ($__global_Data_Map_Internal_stepAsc, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($b) use ($a, &$__fn) { return $__fn($a, $b); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+while (true) {
+$v = ($__global_Data_Map_Internal_stepAsc)($a);
+$__case_0 = $v;
+switch (($__case_0)->tag) {
+case "IterNext":
+$k1 = ($__case_0)->v0;
+$v1 = ($__case_0)->v1;
+$a__prime__ = ($__case_0)->v2;
+$v2 = ($__global_Data_Map_Internal_stepAsc)($b);
+$__case_0 = $v2;
+switch (($__case_0)->tag) {
+case "IterNext":
+$k2 = ($__case_0)->v0;
+$v21 = ($__case_0)->v1;
+$b__prime__ = ($__case_0)->v2;
+return "/* Unsupported: Guards not supported */";
+break;
+default:
+return false;
+break;
+};
+break;
+case "IterDone":
+return true;
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+};
+    $__res = null;
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+    $__res = (object)["eq" => $go];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+$ordMapIter1 = (function() use ($eqMapIter1, $__global_Prim_undefined, $__global_Data_Map_Internal_stepAsc, $compare) {
+  $__fn = function($dictOrd1) use ($eqMapIter1, $__global_Prim_undefined, $__global_Data_Map_Internal_stepAsc, $compare, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dictOrd1;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare1 = $__case_res_3;
+$eqMapIter2 = ($eqMapIter1)((($dictOrd1)->Eq0)($__global_Prim_undefined));
+$go = (function() use ($__global_Data_Map_Internal_stepAsc, $compare, $compare1, &$go) {
+  $__fn = function($a, $b = null) use ($__global_Data_Map_Internal_stepAsc, $compare, $compare1, &$go, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($b) use ($a, &$__fn) { return $__fn($a, $b); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+while (true) {
+$v = ($__global_Data_Map_Internal_stepAsc)($b);
+$v1 = ($__global_Data_Map_Internal_stepAsc)($a);
+$__case_0 = $v1;
+$__case_1 = $v;
+if (((($__case_0)->tag === "IterNext") && (($__case_1)->tag === "IterNext"))) {
+$k1 = ($__case_0)->v0;
+$v11 = ($__case_0)->v1;
+$a__prime__ = ($__case_0)->v2;
+$k2 = ($__case_1)->v0;
+$v2 = ($__case_1)->v1;
+$b__prime__ = ($__case_1)->v2;
+$v3 = ($compare)($k1, $k2);
+$__case_0 = $v3;
+switch (($__case_0)->tag) {
+case "EQ":
+$v4 = ($compare1)($v11, $v2);
+$__case_0 = $v4;
+switch (($__case_0)->tag) {
+case "EQ":
+$__tco_tmp_0 = $a__prime__;
+$__tco_tmp_1 = $b__prime__;
+$a = $__tco_tmp_0;
+$b = $__tco_tmp_1;
+continue 3;
+break;
+default:
+$other = $__case_0;
+return $other;
+break;
+};
+break;
+default:
+$other = $__case_0;
+return $other;
+break;
+};
+} else {
+if ((($__case_0)->tag === "IterDone")) {
+$b__prime__ = $__case_1;
+$__case_0 = $b__prime__;
+switch (($__case_0)->tag) {
+case "IterDone":
+return ($GLOBALS['__phpurs_data0_EQ'] ??= new Phpurs_Data0("EQ"));
+break;
+default:
+return ($GLOBALS['__phpurs_data0_LT'] ??= new Phpurs_Data0("LT"));
+break;
+};
+} else {
+switch (($__case_1)->tag) {
+case "IterDone":
+return ($GLOBALS['__phpurs_data0_GT'] ??= new Phpurs_Data0("GT"));
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+};
+};
+};
+    $__res = null;
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+    $__res = (object)["compare" => $go, "Eq0" => (function() use ($eqMapIter2) {
+  $__fn = function($__dollar____unused) use ($eqMapIter2, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $eqMapIter2;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+$__case_0 = $dict;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq1 = $__case_res_4;
+$eqMapIter1 = (function() use ($__global_Data_Map_Internal_stepAsc) {
+  $__fn = function($dictEq1) use ($__global_Data_Map_Internal_stepAsc, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dictEq1;
+$__case_res_5 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_5 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq2 = $__case_res_5;
+$go = (function() use ($__global_Data_Map_Internal_stepAsc) {
+  $__fn = function($a, $b = null) use ($__global_Data_Map_Internal_stepAsc, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($b) use ($a, &$__fn) { return $__fn($a, $b); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+while (true) {
+$v = ($__global_Data_Map_Internal_stepAsc)($a);
+$__case_0 = $v;
+switch (($__case_0)->tag) {
+case "IterNext":
+$k1 = ($__case_0)->v0;
+$v1 = ($__case_0)->v1;
+$a__prime__ = ($__case_0)->v2;
+$v2 = ($__global_Data_Map_Internal_stepAsc)($b);
+$__case_0 = $v2;
+switch (($__case_0)->tag) {
+case "IterNext":
+$k2 = ($__case_0)->v0;
+$v21 = ($__case_0)->v1;
+$b__prime__ = ($__case_0)->v2;
+return "/* Unsupported: Guards not supported */";
+break;
+default:
+return false;
+break;
+};
+break;
+case "IterDone":
+return true;
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+};
+    $__res = null;
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+    $__res = (object)["eq" => $go];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+$eqMap1 = (function() use ($dict) {
+  $__fn = function($dictEq1) use ($dict, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dict;
+$__case_res_6 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_6 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq1 = $__case_res_6;
+    $__res = (object)["eq" => (function() {
+  $__body = function($xs, $ys) {
+    $__case_0 = $xs;
+    switch (($__case_0)->tag) {
+case "Leaf":
+$__case_0 = $ys;
+switch (($__case_0)->tag) {
+case "Leaf":
+return true;
+break;
+default:
+return false;
+break;
+};
+break;
+case "Node":
+$s1 = ($__case_0)->v1;
+$__case_0 = $ys;
+switch (($__case_0)->tag) {
+case "Node":
+$s2 = ($__case_0)->v1;
+return "/* Unsupported: Guards not supported */";
+break;
+default:
+return false;
+break;
+};
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($xs, $ys = null) use ($__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($ys) use ($xs, &$__fn) { return $__fn($xs, $ys); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($xs, $ys);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+    $__res = (function() use ($dict, $eqMap1, $__global_Prim_undefined, $__global_Data_Map_Internal_toMapIter) {
+  $__fn = function($dictOrd1) use ($dict, $eqMap1, $__global_Prim_undefined, $__global_Data_Map_Internal_toMapIter, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dict;
+$__case_res_7 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_7 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare = $__case_res_7;
 $eqMap2 = ($eqMap1)((($dictOrd1)->Eq0)($__global_Prim_undefined));
     $__res = (object)["compare" => (function() use ($compare, $__global_Data_Map_Internal_toMapIter) {
   $__body = function($xs, $ys) use ($compare, $__global_Data_Map_Internal_toMapIter) {
@@ -4549,15 +6320,157 @@ function Data_Map_Internal_eq1Map($dictEq) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Map_Internal_eqMap = ($GLOBALS['Data_Map_Internal_eqMap'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_eqMap'));
-$eqMap1 = ($__global_Data_Map_Internal_eqMap)($dictEq);
-    $__res = (object)["eq1" => (function() use ($eqMap1) {
-  $__fn = function($dictEq1) use ($eqMap1, &$__fn) {
+$__global_Data_Map_Internal_stepAsc = ($GLOBALS['Data_Map_Internal_stepAsc'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_stepAsc'));
+$__case_0 = $dictEq;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq1 = $__case_res_0;
+$eqMapIter1 = (function() use ($__global_Data_Map_Internal_stepAsc) {
+  $__fn = function($dictEq1) use ($__global_Data_Map_Internal_stepAsc, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (($eqMap1)($dictEq1))->eq;
+$__case_0 = $dictEq1;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq2 = $__case_res_1;
+$go = (function() use ($__global_Data_Map_Internal_stepAsc) {
+  $__fn = function($a, $b = null) use ($__global_Data_Map_Internal_stepAsc, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($b) use ($a, &$__fn) { return $__fn($a, $b); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+while (true) {
+$v = ($__global_Data_Map_Internal_stepAsc)($a);
+$__case_0 = $v;
+switch (($__case_0)->tag) {
+case "IterNext":
+$k1 = ($__case_0)->v0;
+$v1 = ($__case_0)->v1;
+$a__prime__ = ($__case_0)->v2;
+$v2 = ($__global_Data_Map_Internal_stepAsc)($b);
+$__case_0 = $v2;
+switch (($__case_0)->tag) {
+case "IterNext":
+$k2 = ($__case_0)->v0;
+$v21 = ($__case_0)->v1;
+$b__prime__ = ($__case_0)->v2;
+return "/* Unsupported: Guards not supported */";
+break;
+default:
+return false;
+break;
+};
+break;
+case "IterDone":
+return true;
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+};
+    $__res = null;
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+    $__res = (object)["eq" => $go];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+$eqMap1 = (function() use ($dict) {
+  $__fn = function($dictEq1) use ($dict, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq1 = $__case_res_2;
+    $__res = (object)["eq" => (function() {
+  $__body = function($xs, $ys) {
+    $__case_0 = $xs;
+    switch (($__case_0)->tag) {
+case "Leaf":
+$__case_0 = $ys;
+switch (($__case_0)->tag) {
+case "Leaf":
+return true;
+break;
+default:
+return false;
+break;
+};
+break;
+case "Node":
+$s1 = ($__case_0)->v1;
+$__case_0 = $ys;
+switch (($__case_0)->tag) {
+case "Node":
+$s2 = ($__case_0)->v1;
+return "/* Unsupported: Guards not supported */";
+break;
+default:
+return false;
+break;
+};
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($xs, $ys = null) use ($__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($ys) use ($xs, &$__fn) { return $__fn($xs, $ys); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($xs, $ys);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+    $__res = (object)["eq1" => (function() use ($dict) {
+  $__body = function($dictEq1) use ($dict) {
+    $__case_0 = $dict;
+    if (true) {
+$v = $__case_0;
+return ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($dictEq1) use ($dict, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $__body($dictEq1);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -4573,18 +6486,566 @@ function Data_Map_Internal_ord1Map($dictOrd) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Map_Internal_ordMap = ($GLOBALS['Data_Map_Internal_ordMap'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_ordMap'));
-$__global_Data_Map_Internal_eq1Map = ($GLOBALS['Data_Map_Internal_eq1Map'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_eq1Map'));
+$__global_Data_Map_Internal_stepAsc = ($GLOBALS['Data_Map_Internal_stepAsc'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_stepAsc'));
 $__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$ordMap1 = ($__global_Data_Map_Internal_ordMap)($dictOrd);
-$eq1Map1 = ($__global_Data_Map_Internal_eq1Map)((($dictOrd)->Eq0)($__global_Prim_undefined));
-    $__res = (object)["compare1" => (function() use ($ordMap1) {
-  $__fn = function($dictOrd1) use ($ordMap1, &$__fn) {
+$__global_Data_Map_Internal_toMapIter = ($GLOBALS['Data_Map_Internal_toMapIter'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_toMapIter'));
+$__case_0 = $dictOrd;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq1 = $__case_res_1;
+$eqMapIter1 = (function() use ($__global_Data_Map_Internal_stepAsc) {
+  $__fn = function($dictEq1) use ($__global_Data_Map_Internal_stepAsc, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (($ordMap1)($dictOrd1))->compare;
+$__case_0 = $dictEq1;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq2 = $__case_res_2;
+$go = (function() use ($__global_Data_Map_Internal_stepAsc) {
+  $__fn = function($a, $b = null) use ($__global_Data_Map_Internal_stepAsc, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($b) use ($a, &$__fn) { return $__fn($a, $b); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+while (true) {
+$v = ($__global_Data_Map_Internal_stepAsc)($a);
+$__case_0 = $v;
+switch (($__case_0)->tag) {
+case "IterNext":
+$k1 = ($__case_0)->v0;
+$v1 = ($__case_0)->v1;
+$a__prime__ = ($__case_0)->v2;
+$v2 = ($__global_Data_Map_Internal_stepAsc)($b);
+$__case_0 = $v2;
+switch (($__case_0)->tag) {
+case "IterNext":
+$k2 = ($__case_0)->v0;
+$v21 = ($__case_0)->v1;
+$b__prime__ = ($__case_0)->v2;
+return "/* Unsupported: Guards not supported */";
+break;
+default:
+return false;
+break;
+};
+break;
+case "IterDone":
+return true;
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+};
+    $__res = null;
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+    $__res = (object)["eq" => $go];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+$ordMapIter1 = (function() use ($eqMapIter1, $__global_Prim_undefined, $__global_Data_Map_Internal_stepAsc, $compare) {
+  $__fn = function($dictOrd1) use ($eqMapIter1, $__global_Prim_undefined, $__global_Data_Map_Internal_stepAsc, $compare, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dictOrd1;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare1 = $__case_res_3;
+$eqMapIter2 = ($eqMapIter1)((($dictOrd1)->Eq0)($__global_Prim_undefined));
+$go = (function() use ($__global_Data_Map_Internal_stepAsc, $compare, $compare1, &$go) {
+  $__fn = function($a, $b = null) use ($__global_Data_Map_Internal_stepAsc, $compare, $compare1, &$go, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($b) use ($a, &$__fn) { return $__fn($a, $b); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+while (true) {
+$v = ($__global_Data_Map_Internal_stepAsc)($b);
+$v1 = ($__global_Data_Map_Internal_stepAsc)($a);
+$__case_0 = $v1;
+$__case_1 = $v;
+if (((($__case_0)->tag === "IterNext") && (($__case_1)->tag === "IterNext"))) {
+$k1 = ($__case_0)->v0;
+$v11 = ($__case_0)->v1;
+$a__prime__ = ($__case_0)->v2;
+$k2 = ($__case_1)->v0;
+$v2 = ($__case_1)->v1;
+$b__prime__ = ($__case_1)->v2;
+$v3 = ($compare)($k1, $k2);
+$__case_0 = $v3;
+switch (($__case_0)->tag) {
+case "EQ":
+$v4 = ($compare1)($v11, $v2);
+$__case_0 = $v4;
+switch (($__case_0)->tag) {
+case "EQ":
+$__tco_tmp_0 = $a__prime__;
+$__tco_tmp_1 = $b__prime__;
+$a = $__tco_tmp_0;
+$b = $__tco_tmp_1;
+continue 3;
+break;
+default:
+$other = $__case_0;
+return $other;
+break;
+};
+break;
+default:
+$other = $__case_0;
+return $other;
+break;
+};
+} else {
+if ((($__case_0)->tag === "IterDone")) {
+$b__prime__ = $__case_1;
+$__case_0 = $b__prime__;
+switch (($__case_0)->tag) {
+case "IterDone":
+return ($GLOBALS['__phpurs_data0_EQ'] ??= new Phpurs_Data0("EQ"));
+break;
+default:
+return ($GLOBALS['__phpurs_data0_LT'] ??= new Phpurs_Data0("LT"));
+break;
+};
+} else {
+switch (($__case_1)->tag) {
+case "IterDone":
+return ($GLOBALS['__phpurs_data0_GT'] ??= new Phpurs_Data0("GT"));
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+};
+};
+};
+    $__res = null;
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+    $__res = (object)["compare" => $go, "Eq0" => (function() use ($eqMapIter2) {
+  $__fn = function($__dollar____unused) use ($eqMapIter2, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $eqMapIter2;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+$__case_0 = $dict;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq1 = $__case_res_4;
+$eqMapIter1 = (function() use ($__global_Data_Map_Internal_stepAsc) {
+  $__fn = function($dictEq1) use ($__global_Data_Map_Internal_stepAsc, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dictEq1;
+$__case_res_5 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_5 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq2 = $__case_res_5;
+$go = (function() use ($__global_Data_Map_Internal_stepAsc) {
+  $__fn = function($a, $b = null) use ($__global_Data_Map_Internal_stepAsc, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($b) use ($a, &$__fn) { return $__fn($a, $b); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+while (true) {
+$v = ($__global_Data_Map_Internal_stepAsc)($a);
+$__case_0 = $v;
+switch (($__case_0)->tag) {
+case "IterNext":
+$k1 = ($__case_0)->v0;
+$v1 = ($__case_0)->v1;
+$a__prime__ = ($__case_0)->v2;
+$v2 = ($__global_Data_Map_Internal_stepAsc)($b);
+$__case_0 = $v2;
+switch (($__case_0)->tag) {
+case "IterNext":
+$k2 = ($__case_0)->v0;
+$v21 = ($__case_0)->v1;
+$b__prime__ = ($__case_0)->v2;
+return "/* Unsupported: Guards not supported */";
+break;
+default:
+return false;
+break;
+};
+break;
+case "IterDone":
+return true;
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+};
+    $__res = null;
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+    $__res = (object)["eq" => $go];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+$eqMap1 = (function() use ($dict) {
+  $__fn = function($dictEq1) use ($dict, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dict;
+$__case_res_6 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_6 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq1 = $__case_res_6;
+    $__res = (object)["eq" => (function() {
+  $__body = function($xs, $ys) {
+    $__case_0 = $xs;
+    switch (($__case_0)->tag) {
+case "Leaf":
+$__case_0 = $ys;
+switch (($__case_0)->tag) {
+case "Leaf":
+return true;
+break;
+default:
+return false;
+break;
+};
+break;
+case "Node":
+$s1 = ($__case_0)->v1;
+$__case_0 = $ys;
+switch (($__case_0)->tag) {
+case "Node":
+$s2 = ($__case_0)->v1;
+return "/* Unsupported: Guards not supported */";
+break;
+default:
+return false;
+break;
+};
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($xs, $ys = null) use ($__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($ys) use ($xs, &$__fn) { return $__fn($xs, $ys); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($xs, $ys);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+$ordMap1 = (function() use ($dict, $eqMap1, $__global_Prim_undefined, $__global_Data_Map_Internal_toMapIter) {
+  $__fn = function($dictOrd1) use ($dict, $eqMap1, $__global_Prim_undefined, $__global_Data_Map_Internal_toMapIter, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dict;
+$__case_res_7 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_7 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare = $__case_res_7;
+$eqMap2 = ($eqMap1)((($dictOrd1)->Eq0)($__global_Prim_undefined));
+    $__res = (object)["compare" => (function() use ($compare, $__global_Data_Map_Internal_toMapIter) {
+  $__body = function($xs, $ys) use ($compare, $__global_Data_Map_Internal_toMapIter) {
+    $__case_0 = $xs;
+    switch (($__case_0)->tag) {
+case "Leaf":
+$__case_0 = $ys;
+switch (($__case_0)->tag) {
+case "Leaf":
+return ($GLOBALS['__phpurs_data0_EQ'] ??= new Phpurs_Data0("EQ"));
+break;
+default:
+return ($GLOBALS['__phpurs_data0_LT'] ??= new Phpurs_Data0("LT"));
+break;
+};
+break;
+default:
+$__case_0 = $ys;
+switch (($__case_0)->tag) {
+case "Leaf":
+return ($GLOBALS['__phpurs_data0_GT'] ??= new Phpurs_Data0("GT"));
+break;
+default:
+return ($compare)(($__global_Data_Map_Internal_toMapIter)($xs), ($__global_Data_Map_Internal_toMapIter)($ys));
+break;
+};
+break;
+};
+  };
+  $__fn = function($xs, $ys = null) use ($compare, $__global_Data_Map_Internal_toMapIter, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($ys) use ($xs, &$__fn) { return $__fn($xs, $ys); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($xs, $ys);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "Eq0" => (function() use ($eqMap2) {
+  $__fn = function($__dollar____unused) use ($eqMap2, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $eqMap2;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+$__case_0 = $dict;
+$__case_res_8 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_8 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq1 = $__case_res_8;
+$eqMapIter1 = (function() use ($__global_Data_Map_Internal_stepAsc) {
+  $__fn = function($dictEq1) use ($__global_Data_Map_Internal_stepAsc, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dictEq1;
+$__case_res_9 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_9 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq2 = $__case_res_9;
+$go = (function() use ($__global_Data_Map_Internal_stepAsc) {
+  $__fn = function($a, $b = null) use ($__global_Data_Map_Internal_stepAsc, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($b) use ($a, &$__fn) { return $__fn($a, $b); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+while (true) {
+$v = ($__global_Data_Map_Internal_stepAsc)($a);
+$__case_0 = $v;
+switch (($__case_0)->tag) {
+case "IterNext":
+$k1 = ($__case_0)->v0;
+$v1 = ($__case_0)->v1;
+$a__prime__ = ($__case_0)->v2;
+$v2 = ($__global_Data_Map_Internal_stepAsc)($b);
+$__case_0 = $v2;
+switch (($__case_0)->tag) {
+case "IterNext":
+$k2 = ($__case_0)->v0;
+$v21 = ($__case_0)->v1;
+$b__prime__ = ($__case_0)->v2;
+return "/* Unsupported: Guards not supported */";
+break;
+default:
+return false;
+break;
+};
+break;
+case "IterDone":
+return true;
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+};
+    $__res = null;
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+    $__res = (object)["eq" => $go];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+$eqMap1 = (function() use ($dict) {
+  $__fn = function($dictEq1) use ($dict, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dict;
+$__case_res_10 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_10 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq1 = $__case_res_10;
+    $__res = (object)["eq" => (function() {
+  $__body = function($xs, $ys) {
+    $__case_0 = $xs;
+    switch (($__case_0)->tag) {
+case "Leaf":
+$__case_0 = $ys;
+switch (($__case_0)->tag) {
+case "Leaf":
+return true;
+break;
+default:
+return false;
+break;
+};
+break;
+case "Node":
+$s1 = ($__case_0)->v1;
+$__case_0 = $ys;
+switch (($__case_0)->tag) {
+case "Node":
+$s2 = ($__case_0)->v1;
+return "/* Unsupported: Guards not supported */";
+break;
+default:
+return false;
+break;
+};
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($xs, $ys = null) use ($__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($ys) use ($xs, &$__fn) { return $__fn($xs, $ys); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($xs, $ys);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+$eq1Map1 = (object)["eq1" => (function() use ($dict) {
+  $__body = function($dictEq1) use ($dict) {
+    $__case_0 = $dict;
+    if (true) {
+$v = $__case_0;
+return ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($dictEq1) use ($dict, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $__body($dictEq1);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+    $__res = (object)["compare1" => (function() use ($dict) {
+  $__body = function($dictOrd1) use ($dict) {
+    $__case_0 = $dict;
+    if (true) {
+$v = $__case_0;
+return ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($dictOrd1) use ($dict, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $__body($dictOrd1);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -4611,15 +7072,101 @@ function Data_Map_Internal_fromFoldable($dictOrd) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Map_Internal_insert = ($GLOBALS['Data_Map_Internal_insert'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_insert'));
-$insert1 = ($__global_Data_Map_Internal_insert)($dictOrd);
+$__global_Data_Map_Internal_singleton = ($GLOBALS['Data_Map_Internal_singleton'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_singleton'));
+$__global_Data_Function_Uncurried_runFn4 = ($GLOBALS['Data_Function_Uncurried_runFn4'] ?? \Data\Function\Uncurried\phpurs_eval_thunk('Data_Function_Uncurried_runFn4'));
+$__global_Data_Map_Internal_unsafeBalancedNode = ($GLOBALS['Data_Map_Internal_unsafeBalancedNode'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_unsafeBalancedNode'));
+$__case_0 = $dictOrd;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare = $__case_res_0;
+$insert1 = (function() use ($__global_Data_Map_Internal_singleton, $compare, $__global_Data_Function_Uncurried_runFn4, $__global_Data_Map_Internal_unsafeBalancedNode) {
+  $__fn = function($k, $v = null) use ($__global_Data_Map_Internal_singleton, $compare, $__global_Data_Function_Uncurried_runFn4, $__global_Data_Map_Internal_unsafeBalancedNode, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($k, &$__fn) { return $__fn($k, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+$go = (function() use ($__global_Data_Map_Internal_singleton, $k, $v, $compare, $__global_Data_Function_Uncurried_runFn4, $__global_Data_Map_Internal_unsafeBalancedNode, &$go) {
+  $__fn = function($v1) use ($__global_Data_Map_Internal_singleton, $k, $v, $compare, $__global_Data_Function_Uncurried_runFn4, $__global_Data_Map_Internal_unsafeBalancedNode, &$go, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+while (true) {
+$__case_0 = $v1;
+switch (($__case_0)->tag) {
+case "Leaf":
+return ($__global_Data_Map_Internal_singleton)($k, $v);
+break;
+case "Node":
+$mh = ($__case_0)->v0;
+$ms = ($__case_0)->v1;
+$mk = ($__case_0)->v2;
+$mv = ($__case_0)->v3;
+$ml = ($__case_0)->v4;
+$mr = ($__case_0)->v5;
+$v2 = ($compare)($k, $mk);
+$__case_0 = $v2;
+switch (($__case_0)->tag) {
+case "LT":
+return ($__global_Data_Function_Uncurried_runFn4)($__global_Data_Map_Internal_unsafeBalancedNode, $mk, $mv, ($go)($ml), $mr);
+break;
+case "GT":
+return ($__global_Data_Function_Uncurried_runFn4)($__global_Data_Map_Internal_unsafeBalancedNode, $mk, $mv, $ml, ($go)($mr));
+break;
+case "EQ":
+return ((function() {
+  $__fn = function($value0, $value1 = null, $value2 = null, $value3 = null, $value4 = null, $value5 = null) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 6) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 6);
+  }
+    $__res = new Phpurs_Data6("Node", $value0, $value1, $value2, $value3, $value4, $value5);
+  return $__num > 6 ? $__res(...array_slice(func_get_args(), 6)) : $__res;
+  };
+  return $__fn;
+})())($mh, $ms, $k, $v, $ml, $mr);
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+};
+    $__res = null;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+    $__res = $go;
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
     $__res = (function() use ($insert1) {
   $__fn = function($dictFoldable) use ($insert1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (($dictFoldable)->foldl)((function() use ($insert1) {
+$__case_0 = $dictFoldable;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->foldl;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__case_res_1)((function() use ($insert1) {
   $__body = function($m, $v) use ($insert1) {
     $__case_0 = $v;
     switch (($__case_0)->tag) {
@@ -4659,16 +7206,108 @@ function Data_Map_Internal_fromFoldableWith($dictOrd) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Map_Internal_insertWith = ($GLOBALS['Data_Map_Internal_insertWith'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_insertWith'));
+$__global_Data_Map_Internal_singleton = ($GLOBALS['Data_Map_Internal_singleton'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_singleton'));
+$__global_Data_Function_Uncurried_runFn4 = ($GLOBALS['Data_Function_Uncurried_runFn4'] ?? \Data\Function\Uncurried\phpurs_eval_thunk('Data_Function_Uncurried_runFn4'));
+$__global_Data_Map_Internal_unsafeBalancedNode = ($GLOBALS['Data_Map_Internal_unsafeBalancedNode'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_unsafeBalancedNode'));
 $__global_Data_Function_flip = ($GLOBALS['Data_Function_flip'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_flip'));
-$insertWith1 = ($__global_Data_Map_Internal_insertWith)($dictOrd);
+$__case_0 = $dictOrd;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare = $__case_res_0;
+$insertWith1 = (function() use ($__global_Data_Map_Internal_singleton, $compare, $__global_Data_Function_Uncurried_runFn4, $__global_Data_Map_Internal_unsafeBalancedNode) {
+  $__fn = function($app, $k = null, $v = null) use ($__global_Data_Map_Internal_singleton, $compare, $__global_Data_Function_Uncurried_runFn4, $__global_Data_Map_Internal_unsafeBalancedNode, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($v) use ($app, $k, &$__fn) { return $__fn($app, $k, $v); };
+    if ($__num === 1) return function($k, $v = null) use ($app, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($app, $k, $v);
+      if ($__num2 === 1) return function($v) use ($app, $k, &$__fn) { return $__fn($app, $k, $v); };
+      return phpurs_curry_fallback($__fn, [$app], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+$go = (function() use ($__global_Data_Map_Internal_singleton, $k, $v, $compare, $__global_Data_Function_Uncurried_runFn4, $__global_Data_Map_Internal_unsafeBalancedNode, &$go, $app) {
+  $__fn = function($v1) use ($__global_Data_Map_Internal_singleton, $k, $v, $compare, $__global_Data_Function_Uncurried_runFn4, $__global_Data_Map_Internal_unsafeBalancedNode, &$go, $app, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+while (true) {
+$__case_0 = $v1;
+switch (($__case_0)->tag) {
+case "Leaf":
+return ($__global_Data_Map_Internal_singleton)($k, $v);
+break;
+case "Node":
+$mh = ($__case_0)->v0;
+$ms = ($__case_0)->v1;
+$mk = ($__case_0)->v2;
+$mv = ($__case_0)->v3;
+$ml = ($__case_0)->v4;
+$mr = ($__case_0)->v5;
+$v2 = ($compare)($k, $mk);
+$__case_0 = $v2;
+switch (($__case_0)->tag) {
+case "LT":
+return ($__global_Data_Function_Uncurried_runFn4)($__global_Data_Map_Internal_unsafeBalancedNode, $mk, $mv, ($go)($ml), $mr);
+break;
+case "GT":
+return ($__global_Data_Function_Uncurried_runFn4)($__global_Data_Map_Internal_unsafeBalancedNode, $mk, $mv, $ml, ($go)($mr));
+break;
+case "EQ":
+return ((function() {
+  $__fn = function($value0, $value1 = null, $value2 = null, $value3 = null, $value4 = null, $value5 = null) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 6) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 6);
+  }
+    $__res = new Phpurs_Data6("Node", $value0, $value1, $value2, $value3, $value4, $value5);
+  return $__num > 6 ? $__res(...array_slice(func_get_args(), 6)) : $__res;
+  };
+  return $__fn;
+})())($mh, $ms, $k, ($app)($mv, $v), $ml, $mr);
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+};
+    $__res = null;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+    $__res = $go;
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})();
     $__res = (function() use ($insertWith1, $__global_Data_Function_flip) {
   $__fn = function($dictFoldable) use ($insertWith1, $__global_Data_Function_flip, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$foldl = ($dictFoldable)->foldl;
+$__case_0 = $dictFoldable;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->foldl;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldl = $__case_res_1;
     $__res = (function() use ($insertWith1, $__global_Data_Function_flip, $foldl) {
   $__fn = function($f) use ($insertWith1, $__global_Data_Function_flip, $foldl, &$__fn) {
   $__num = func_num_args();
@@ -4720,15 +7359,101 @@ function Data_Map_Internal_fromFoldableWithIndex($dictOrd) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Map_Internal_insert = ($GLOBALS['Data_Map_Internal_insert'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_insert'));
-$insert1 = ($__global_Data_Map_Internal_insert)($dictOrd);
+$__global_Data_Map_Internal_singleton = ($GLOBALS['Data_Map_Internal_singleton'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_singleton'));
+$__global_Data_Function_Uncurried_runFn4 = ($GLOBALS['Data_Function_Uncurried_runFn4'] ?? \Data\Function\Uncurried\phpurs_eval_thunk('Data_Function_Uncurried_runFn4'));
+$__global_Data_Map_Internal_unsafeBalancedNode = ($GLOBALS['Data_Map_Internal_unsafeBalancedNode'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_unsafeBalancedNode'));
+$__case_0 = $dictOrd;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare = $__case_res_0;
+$insert1 = (function() use ($__global_Data_Map_Internal_singleton, $compare, $__global_Data_Function_Uncurried_runFn4, $__global_Data_Map_Internal_unsafeBalancedNode) {
+  $__fn = function($k, $v = null) use ($__global_Data_Map_Internal_singleton, $compare, $__global_Data_Function_Uncurried_runFn4, $__global_Data_Map_Internal_unsafeBalancedNode, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($k, &$__fn) { return $__fn($k, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+$go = (function() use ($__global_Data_Map_Internal_singleton, $k, $v, $compare, $__global_Data_Function_Uncurried_runFn4, $__global_Data_Map_Internal_unsafeBalancedNode, &$go) {
+  $__fn = function($v1) use ($__global_Data_Map_Internal_singleton, $k, $v, $compare, $__global_Data_Function_Uncurried_runFn4, $__global_Data_Map_Internal_unsafeBalancedNode, &$go, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+while (true) {
+$__case_0 = $v1;
+switch (($__case_0)->tag) {
+case "Leaf":
+return ($__global_Data_Map_Internal_singleton)($k, $v);
+break;
+case "Node":
+$mh = ($__case_0)->v0;
+$ms = ($__case_0)->v1;
+$mk = ($__case_0)->v2;
+$mv = ($__case_0)->v3;
+$ml = ($__case_0)->v4;
+$mr = ($__case_0)->v5;
+$v2 = ($compare)($k, $mk);
+$__case_0 = $v2;
+switch (($__case_0)->tag) {
+case "LT":
+return ($__global_Data_Function_Uncurried_runFn4)($__global_Data_Map_Internal_unsafeBalancedNode, $mk, $mv, ($go)($ml), $mr);
+break;
+case "GT":
+return ($__global_Data_Function_Uncurried_runFn4)($__global_Data_Map_Internal_unsafeBalancedNode, $mk, $mv, $ml, ($go)($mr));
+break;
+case "EQ":
+return ((function() {
+  $__fn = function($value0, $value1 = null, $value2 = null, $value3 = null, $value4 = null, $value5 = null) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 6) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 6);
+  }
+    $__res = new Phpurs_Data6("Node", $value0, $value1, $value2, $value3, $value4, $value5);
+  return $__num > 6 ? $__res(...array_slice(func_get_args(), 6)) : $__res;
+  };
+  return $__fn;
+})())($mh, $ms, $k, $v, $ml, $mr);
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+};
+    $__res = null;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+    $__res = $go;
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
     $__res = (function() use ($insert1) {
   $__fn = function($dictFoldableWithIndex) use ($insert1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (($dictFoldableWithIndex)->foldlWithIndex)((function() use ($insert1) {
+$__case_0 = $dictFoldableWithIndex;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->foldlWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__case_res_1)((function() use ($insert1) {
   $__fn = function($k, $m = null, $v = null) use ($insert1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 3) {
@@ -4797,11 +7522,312 @@ function Data_Map_Internal_submap($dictOrd) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Map_Internal_foldSubmapBy = ($GLOBALS['Data_Map_Internal_foldSubmapBy'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_foldSubmapBy'));
-$__global_Data_Map_Internal_union = ($GLOBALS['Data_Map_Internal_union'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_union'));
+$__global_Data_Function_const = ($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const'));
+$__global_Data_Map_Internal_conj = ($GLOBALS['Data_Map_Internal_conj'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_conj'));
+$__global_Data_Function_Uncurried_runFn4 = ($GLOBALS['Data_Function_Uncurried_runFn4'] ?? \Data\Function\Uncurried\phpurs_eval_thunk('Data_Function_Uncurried_runFn4'));
+$__global_Data_Map_Internal_unsafeUnionWith = ($GLOBALS['Data_Map_Internal_unsafeUnionWith'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_unsafeUnionWith'));
 $__global_Data_Map_Internal_singleton = ($GLOBALS['Data_Map_Internal_singleton'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_singleton'));
-$foldSubmapBy1 = ($__global_Data_Map_Internal_foldSubmapBy)($dictOrd);
-$union1 = ($__global_Data_Map_Internal_union)($dictOrd);
+$__case_0 = $dictOrd;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare3 = $__case_res_0;
+$lessThan1 = (function() use ($compare3) {
+  $__body = function($a1, $a2) use ($compare3) {
+    $v = ($compare3)($a1, $a2);
+    $__case_0 = $v;
+    switch (($__case_0)->tag) {
+case "LT":
+return true;
+break;
+default:
+return false;
+break;
+};
+  };
+  $__fn = function($a1, $a2 = null) use ($compare3, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($a2) use ($a1, &$__fn) { return $__fn($a1, $a2); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($a1, $a2);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+$__case_0 = $dictOrd;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare3 = $__case_res_1;
+$greaterThan1 = (function() use ($compare3) {
+  $__body = function($a1, $a2) use ($compare3) {
+    $v = ($compare3)($a1, $a2);
+    $__case_0 = $v;
+    switch (($__case_0)->tag) {
+case "GT":
+return true;
+break;
+default:
+return false;
+break;
+};
+  };
+  $__fn = function($a1, $a2 = null) use ($compare3, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($a2) use ($a1, &$__fn) { return $__fn($a1, $a2); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($a1, $a2);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+$__case_0 = $dictOrd;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare3 = $__case_res_2;
+$lessThanOrEq1 = (function() use ($compare3) {
+  $__body = function($a1, $a2) use ($compare3) {
+    $v = ($compare3)($a1, $a2);
+    $__case_0 = $v;
+    switch (($__case_0)->tag) {
+case "GT":
+return false;
+break;
+default:
+return true;
+break;
+};
+  };
+  $__fn = function($a1, $a2 = null) use ($compare3, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($a2) use ($a1, &$__fn) { return $__fn($a1, $a2); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($a1, $a2);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+$foldSubmapBy1 = (function() use ($lessThan1, $__global_Data_Function_const, $greaterThan1, $__global_Data_Map_Internal_conj, $lessThanOrEq1) {
+  $__fn = function($appendFn, $memptyValue = null, $kmin = null, $kmax = null, $f = null) use ($lessThan1, $__global_Data_Function_const, $greaterThan1, $__global_Data_Map_Internal_conj, $lessThanOrEq1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 5) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 5);
+  }
+$__case_0 = $kmin;
+$__case_res_3 = null;
+switch (($__case_0)->tag) {
+case "Just":
+$kmin__prime__ = ($__case_0)->v0;
+$__case_res_3 = (function() use ($lessThan1, $kmin__prime__) {
+  $__fn = function($k) use ($lessThan1, $kmin__prime__, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($lessThan1)($k, $kmin__prime__);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+break;
+case "Nothing":
+$__case_res_3 = ($__global_Data_Function_const)(false);
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+$tooSmall = $__case_res_3;
+$__case_0 = $kmax;
+$__case_res_4 = null;
+switch (($__case_0)->tag) {
+case "Just":
+$kmax__prime__ = ($__case_0)->v0;
+$__case_res_4 = (function() use ($greaterThan1, $kmax__prime__) {
+  $__fn = function($k) use ($greaterThan1, $kmax__prime__, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($greaterThan1)($k, $kmax__prime__);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+break;
+case "Nothing":
+$__case_res_4 = ($__global_Data_Function_const)(false);
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+$tooLarge = $__case_res_4;
+$__case_0 = $kmin;
+$__case_1 = $kmax;
+$__case_res_5 = null;
+if (((($__case_0)->tag === "Just") && (($__case_1)->tag === "Just"))) {
+$kmin__prime__ = ($__case_0)->v0;
+$kmax__prime__ = ($__case_1)->v0;
+$__case_res_5 = (function() use ($__global_Data_Map_Internal_conj, $lessThanOrEq1, $kmin__prime__, $kmax__prime__) {
+  $__fn = function($k) use ($__global_Data_Map_Internal_conj, $lessThanOrEq1, $kmin__prime__, $kmax__prime__, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($__global_Data_Map_Internal_conj)(($lessThanOrEq1)($kmin__prime__, $k), ($lessThanOrEq1)($k, $kmax__prime__));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+} else {
+if (((($__case_0)->tag === "Just") && (($__case_1)->tag === "Nothing"))) {
+$kmin__prime__ = ($__case_0)->v0;
+$__case_res_5 = (function() use ($lessThanOrEq1, $kmin__prime__) {
+  $__fn = function($k) use ($lessThanOrEq1, $kmin__prime__, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($lessThanOrEq1)($kmin__prime__, $k);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+} else {
+if (((($__case_0)->tag === "Nothing") && (($__case_1)->tag === "Just"))) {
+$kmax__prime__ = ($__case_1)->v0;
+$__case_res_5 = (function() use ($lessThanOrEq1, $kmax__prime__) {
+  $__fn = function($k) use ($lessThanOrEq1, $kmax__prime__, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($lessThanOrEq1)($k, $kmax__prime__);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+} else {
+if (((($__case_0)->tag === "Nothing") && (($__case_1)->tag === "Nothing"))) {
+$__case_res_5 = ($__global_Data_Function_const)(true);
+} else {
+throw new \Exception("Pattern match failure");
+};
+};
+};
+};
+$inBounds = $__case_res_5;
+$go = (function() use ($memptyValue, $appendFn, $tooSmall, &$go, $inBounds, $f, $tooLarge) {
+  $__fn = function($v) use ($memptyValue, $appendFn, $tooSmall, &$go, $inBounds, $f, $tooLarge, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+while (true) {
+$__case_0 = $v;
+switch (($__case_0)->tag) {
+case "Leaf":
+return $memptyValue;
+break;
+case "Node":
+$k = ($__case_0)->v2;
+$v1 = ($__case_0)->v3;
+$left = ($__case_0)->v4;
+$right = ($__case_0)->v5;
+$__case_0 = ($tooSmall)($k);
+$__case_res_6 = null;
+switch ($__case_0) {
+case true:
+$__case_res_6 = $memptyValue;
+break;
+default:
+$__case_res_6 = ($go)($left);
+break;
+};
+$__case_0 = ($inBounds)($k);
+$__case_res_7 = null;
+switch ($__case_0) {
+case true:
+$__case_res_7 = ($f)($k, $v1);
+break;
+default:
+$__case_res_7 = $memptyValue;
+break;
+};
+$__case_0 = ($tooLarge)($k);
+$__case_res_8 = null;
+switch ($__case_0) {
+case true:
+$__case_res_8 = $memptyValue;
+break;
+default:
+$__case_res_8 = ($go)($right);
+break;
+};
+return ($appendFn)(($appendFn)($__case_res_6, $__case_res_7), $__case_res_8);
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+};
+    $__res = null;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+    $__res = $go;
+  return $__num > 5 ? $__res(...array_slice(func_get_args(), 5)) : $__res;
+  };
+  return $__fn;
+})();
+$__case_0 = $dictOrd;
+$__case_res_9 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_9 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare = $__case_res_9;
+$union1 = ((function() use ($__global_Data_Function_Uncurried_runFn4, $__global_Data_Map_Internal_unsafeUnionWith, $compare) {
+  $__fn = function($app, $m1 = null, $m2 = null) use ($__global_Data_Function_Uncurried_runFn4, $__global_Data_Map_Internal_unsafeUnionWith, $compare, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($m2) use ($app, $m1, &$__fn) { return $__fn($app, $m1, $m2); };
+    if ($__num === 1) return function($m1, $m2 = null) use ($app, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($app, $m1, $m2);
+      if ($__num2 === 1) return function($m2) use ($app, $m1, &$__fn) { return $__fn($app, $m1, $m2); };
+      return phpurs_curry_fallback($__fn, [$app], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = ($__global_Data_Function_Uncurried_runFn4)($__global_Data_Map_Internal_unsafeUnionWith, $compare, $app, $m1, $m2);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})())($__global_Data_Function_const);
     $__res = (function() use ($foldSubmapBy1, $union1, $__global_Data_Map_Internal_singleton) {
   $__fn = function($kmin, $kmax = null) use ($foldSubmapBy1, $union1, $__global_Data_Map_Internal_singleton, &$__fn) {
   $__num = func_num_args();
@@ -4825,15 +7851,51 @@ function Data_Map_Internal_unions($dictOrd) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Map_Internal_union = ($GLOBALS['Data_Map_Internal_union'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_union'));
-$union1 = ($__global_Data_Map_Internal_union)($dictOrd);
+$__global_Data_Function_Uncurried_runFn4 = ($GLOBALS['Data_Function_Uncurried_runFn4'] ?? \Data\Function\Uncurried\phpurs_eval_thunk('Data_Function_Uncurried_runFn4'));
+$__global_Data_Map_Internal_unsafeUnionWith = ($GLOBALS['Data_Map_Internal_unsafeUnionWith'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_unsafeUnionWith'));
+$__global_Data_Function_const = ($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const'));
+$__case_0 = $dictOrd;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare = $__case_res_0;
+$union1 = ((function() use ($__global_Data_Function_Uncurried_runFn4, $__global_Data_Map_Internal_unsafeUnionWith, $compare) {
+  $__fn = function($app, $m1 = null, $m2 = null) use ($__global_Data_Function_Uncurried_runFn4, $__global_Data_Map_Internal_unsafeUnionWith, $compare, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($m2) use ($app, $m1, &$__fn) { return $__fn($app, $m1, $m2); };
+    if ($__num === 1) return function($m1, $m2 = null) use ($app, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($app, $m1, $m2);
+      if ($__num2 === 1) return function($m2) use ($app, $m1, &$__fn) { return $__fn($app, $m1, $m2); };
+      return phpurs_curry_fallback($__fn, [$app], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = ($__global_Data_Function_Uncurried_runFn4)($__global_Data_Map_Internal_unsafeUnionWith, $compare, $app, $m1, $m2);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})())($__global_Data_Function_const);
     $__res = (function() use ($union1) {
   $__fn = function($dictFoldable) use ($union1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (($dictFoldable)->foldl)($union1, ($GLOBALS['__phpurs_data0_Leaf'] ??= new Phpurs_Data0("Leaf")));
+$__case_0 = $dictFoldable;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->foldl;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__case_res_1)($union1, ($GLOBALS['__phpurs_data0_Leaf'] ??= new Phpurs_Data0("Leaf")));
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -4851,7 +7913,15 @@ function Data_Map_Internal_difference($dictOrd) {
   }
 $__global_Data_Function_Uncurried_runFn3 = ($GLOBALS['Data_Function_Uncurried_runFn3'] ?? \Data\Function\Uncurried\phpurs_eval_thunk('Data_Function_Uncurried_runFn3'));
 $__global_Data_Map_Internal_unsafeDifference = ($GLOBALS['Data_Map_Internal_unsafeDifference'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_unsafeDifference'));
-$compare = ($dictOrd)->compare;
+$__case_0 = $dictOrd;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare = $__case_res_0;
     $__res = (function() use ($__global_Data_Function_Uncurried_runFn3, $__global_Data_Map_Internal_unsafeDifference, $compare) {
   $__fn = function($m1, $m2 = null) use ($__global_Data_Function_Uncurried_runFn3, $__global_Data_Map_Internal_unsafeDifference, $compare, &$__fn) {
   $__num = func_num_args();
@@ -4879,7 +7949,15 @@ $__global_Data_Function_Uncurried_runFn4 = ($GLOBALS['Data_Function_Uncurried_ru
 $__global_Data_Map_Internal_unsafeBalancedNode = ($GLOBALS['Data_Map_Internal_unsafeBalancedNode'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_unsafeBalancedNode'));
 $__global_Data_Function_Uncurried_runFn2 = ($GLOBALS['Data_Function_Uncurried_runFn2'] ?? \Data\Function\Uncurried\phpurs_eval_thunk('Data_Function_Uncurried_runFn2'));
 $__global_Data_Map_Internal_unsafeJoinNodes = ($GLOBALS['Data_Map_Internal_unsafeJoinNodes'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_unsafeJoinNodes'));
-$compare = ($dictOrd)->compare;
+$__case_0 = $dictOrd;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare = $__case_res_0;
     $__res = (function() use ($compare, $__global_Data_Function_Uncurried_runFn4, $__global_Data_Map_Internal_unsafeBalancedNode, $__global_Data_Function_Uncurried_runFn2, $__global_Data_Map_Internal_unsafeJoinNodes) {
   $__fn = function($k) use ($compare, $__global_Data_Function_Uncurried_runFn4, $__global_Data_Map_Internal_unsafeBalancedNode, $__global_Data_Function_Uncurried_runFn2, $__global_Data_Map_Internal_unsafeJoinNodes, &$__fn) {
   $__num = func_num_args();
@@ -4946,16 +8024,81 @@ function Data_Map_Internal_checkValid($dictOrd) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Ord_greaterThan = ($GLOBALS['Data_Ord_greaterThan'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_greaterThan'));
-$__global_Data_Ord_lessThan = ($GLOBALS['Data_Ord_lessThan'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_lessThan'));
-$__global_Data_HeytingAlgebra_boolConj = ($GLOBALS['Data_HeytingAlgebra_boolConj'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_boolConj'));
+$__global_Data_Map_Internal_conj = ($GLOBALS['Data_Map_Internal_conj'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_conj'));
+$__global_Data_Map_Internal_eq = ($GLOBALS['Data_Map_Internal_eq'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_eq'));
 $__global_Data_Map_Internal_greaterThan = ($GLOBALS['Data_Map_Internal_greaterThan'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_greaterThan'));
 $__global_Data_Map_Internal_lessThan = ($GLOBALS['Data_Map_Internal_lessThan'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_lessThan'));
 $__global_Data_Map_Internal_abs = ($GLOBALS['Data_Map_Internal_abs'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_abs'));
-$greaterThan1 = ($__global_Data_Ord_greaterThan)($dictOrd);
-$lessThan1 = ($__global_Data_Ord_lessThan)($dictOrd);
-$go = (function() use ($__global_Data_HeytingAlgebra_boolConj, $__global_Data_Map_Internal_greaterThan, $greaterThan1, &$go, $lessThan1, $__global_Data_Map_Internal_lessThan, $__global_Data_Map_Internal_abs) {
-  $__fn = function($v) use ($__global_Data_HeytingAlgebra_boolConj, $__global_Data_Map_Internal_greaterThan, $greaterThan1, &$go, $lessThan1, $__global_Data_Map_Internal_lessThan, $__global_Data_Map_Internal_abs, &$__fn) {
+$__global_Data_Map_Internal_sub = ($GLOBALS['Data_Map_Internal_sub'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_sub'));
+$__global_Data_Map_Internal_add = ($GLOBALS['Data_Map_Internal_add'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_add'));
+$__case_0 = $dictOrd;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare3 = $__case_res_0;
+$greaterThan1 = (function() use ($compare3) {
+  $__body = function($a1, $a2) use ($compare3) {
+    $v = ($compare3)($a1, $a2);
+    $__case_0 = $v;
+    switch (($__case_0)->tag) {
+case "GT":
+return true;
+break;
+default:
+return false;
+break;
+};
+  };
+  $__fn = function($a1, $a2 = null) use ($compare3, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($a2) use ($a1, &$__fn) { return $__fn($a1, $a2); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($a1, $a2);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+$__case_0 = $dictOrd;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare3 = $__case_res_1;
+$lessThan1 = (function() use ($compare3) {
+  $__body = function($a1, $a2) use ($compare3) {
+    $v = ($compare3)($a1, $a2);
+    $__case_0 = $v;
+    switch (($__case_0)->tag) {
+case "LT":
+return true;
+break;
+default:
+return false;
+break;
+};
+  };
+  $__fn = function($a1, $a2 = null) use ($compare3, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($a2) use ($a1, &$__fn) { return $__fn($a1, $a2); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($a1, $a2);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+$go = (function() use ($__global_Data_Map_Internal_conj, $__global_Data_Map_Internal_eq, $__global_Data_Map_Internal_greaterThan, $greaterThan1, &$go, $lessThan1, $__global_Data_Map_Internal_lessThan, $__global_Data_Map_Internal_abs, $__global_Data_Map_Internal_sub, $__global_Data_Map_Internal_add) {
+  $__fn = function($v) use ($__global_Data_Map_Internal_conj, $__global_Data_Map_Internal_eq, $__global_Data_Map_Internal_greaterThan, $greaterThan1, &$go, $lessThan1, $__global_Data_Map_Internal_lessThan, $__global_Data_Map_Internal_abs, $__global_Data_Map_Internal_sub, $__global_Data_Map_Internal_add, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
@@ -4984,7 +8127,7 @@ case "Node":
 $rh = ($__case_0)->v0;
 $rs = ($__case_0)->v1;
 $rk = ($__case_0)->v2;
-return ($__global_Data_HeytingAlgebra_boolConj)(($h === 2), ($__global_Data_HeytingAlgebra_boolConj)(($rh === 1), ($__global_Data_HeytingAlgebra_boolConj)(($__global_Data_Map_Internal_greaterThan)($s, $rs), ($__global_Data_HeytingAlgebra_boolConj)(($greaterThan1)($rk, $k), ($go)($r)))));
+return ($__global_Data_Map_Internal_conj)(($__global_Data_Map_Internal_eq)($h, 2), ($__global_Data_Map_Internal_conj)(($__global_Data_Map_Internal_eq)($rh, 1), ($__global_Data_Map_Internal_conj)(($__global_Data_Map_Internal_greaterThan)($s, $rs), ($__global_Data_Map_Internal_conj)(($greaterThan1)($rk, $k), ($go)($r)))));
 break;
 default:
 throw new \Exception("Pattern match failure");
@@ -4998,13 +8141,13 @@ $lk = ($__case_0)->v2;
 $__case_0 = $r;
 switch (($__case_0)->tag) {
 case "Leaf":
-return ($__global_Data_HeytingAlgebra_boolConj)(($h === 2), ($__global_Data_HeytingAlgebra_boolConj)(($lh === 1), ($__global_Data_HeytingAlgebra_boolConj)(($__global_Data_Map_Internal_greaterThan)($s, $ls), ($__global_Data_HeytingAlgebra_boolConj)(($lessThan1)($lk, $k), ($go)($l)))));
+return ($__global_Data_Map_Internal_conj)(($__global_Data_Map_Internal_eq)($h, 2), ($__global_Data_Map_Internal_conj)(($__global_Data_Map_Internal_eq)($lh, 1), ($__global_Data_Map_Internal_conj)(($__global_Data_Map_Internal_greaterThan)($s, $ls), ($__global_Data_Map_Internal_conj)(($lessThan1)($lk, $k), ($go)($l)))));
 break;
 case "Node":
 $rh = ($__case_0)->v0;
 $rs = ($__case_0)->v1;
 $rk = ($__case_0)->v2;
-return ($__global_Data_HeytingAlgebra_boolConj)(($__global_Data_Map_Internal_greaterThan)($h, $rh), ($__global_Data_HeytingAlgebra_boolConj)(($greaterThan1)($rk, $k), ($__global_Data_HeytingAlgebra_boolConj)(($__global_Data_Map_Internal_greaterThan)($h, $lh), ($__global_Data_HeytingAlgebra_boolConj)(($lessThan1)($lk, $k), ($__global_Data_HeytingAlgebra_boolConj)(($__global_Data_Map_Internal_lessThan)(($__global_Data_Map_Internal_abs)(($rh - $lh)), 2), ($__global_Data_HeytingAlgebra_boolConj)(((($rs + $ls) + 1) === $s), ($__global_Data_HeytingAlgebra_boolConj)(($go)($l), ($go)($r))))))));
+return ($__global_Data_Map_Internal_conj)(($__global_Data_Map_Internal_greaterThan)($h, $rh), ($__global_Data_Map_Internal_conj)(($greaterThan1)($rk, $k), ($__global_Data_Map_Internal_conj)(($__global_Data_Map_Internal_greaterThan)($h, $lh), ($__global_Data_Map_Internal_conj)(($lessThan1)($lk, $k), ($__global_Data_Map_Internal_conj)(($__global_Data_Map_Internal_lessThan)(($__global_Data_Map_Internal_abs)(($__global_Data_Map_Internal_sub)($rh, $lh)), 2), ($__global_Data_Map_Internal_conj)(($__global_Data_Map_Internal_eq)(($__global_Data_Map_Internal_add)(($__global_Data_Map_Internal_add)($rs, $ls), 1), $s), ($__global_Data_Map_Internal_conj)(($go)($l), ($go)($r))))))));
 break;
 default:
 throw new \Exception("Pattern match failure");
@@ -5038,9 +8181,66 @@ function Data_Map_Internal_catMaybes($dictOrd) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Map_Internal_mapMaybe = ($GLOBALS['Data_Map_Internal_mapMaybe'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_mapMaybe'));
+$__global_Data_Map_Internal_compose = ($GLOBALS['Data_Map_Internal_compose'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_compose'));
+$__global_Data_Function_Uncurried_runFn4 = ($GLOBALS['Data_Function_Uncurried_runFn4'] ?? \Data\Function\Uncurried\phpurs_eval_thunk('Data_Function_Uncurried_runFn4'));
+$__global_Data_Map_Internal_unsafeBalancedNode = ($GLOBALS['Data_Map_Internal_unsafeBalancedNode'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_unsafeBalancedNode'));
+$__global_Data_Function_Uncurried_runFn2 = ($GLOBALS['Data_Function_Uncurried_runFn2'] ?? \Data\Function\Uncurried\phpurs_eval_thunk('Data_Function_Uncurried_runFn2'));
+$__global_Data_Map_Internal_unsafeJoinNodes = ($GLOBALS['Data_Map_Internal_unsafeJoinNodes'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_unsafeJoinNodes'));
+$__global_Data_Function_const = ($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const'));
 $__global_Data_Map_Internal_identity = ($GLOBALS['Data_Map_Internal_identity'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_identity'));
-    $__res = ($__global_Data_Map_Internal_mapMaybe)($dictOrd, $__global_Data_Map_Internal_identity);
+    $__res = ($__global_Data_Map_Internal_compose)((function() use ($__global_Data_Function_Uncurried_runFn4, $__global_Data_Map_Internal_unsafeBalancedNode, $__global_Data_Function_Uncurried_runFn2, $__global_Data_Map_Internal_unsafeJoinNodes) {
+  $__fn = function($f) use ($__global_Data_Function_Uncurried_runFn4, $__global_Data_Map_Internal_unsafeBalancedNode, $__global_Data_Function_Uncurried_runFn2, $__global_Data_Map_Internal_unsafeJoinNodes, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$go = (function() use ($f, $__global_Data_Function_Uncurried_runFn4, $__global_Data_Map_Internal_unsafeBalancedNode, &$go, $__global_Data_Function_Uncurried_runFn2, $__global_Data_Map_Internal_unsafeJoinNodes) {
+  $__fn = function($v) use ($f, $__global_Data_Function_Uncurried_runFn4, $__global_Data_Map_Internal_unsafeBalancedNode, &$go, $__global_Data_Function_Uncurried_runFn2, $__global_Data_Map_Internal_unsafeJoinNodes, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+while (true) {
+$__case_0 = $v;
+switch (($__case_0)->tag) {
+case "Leaf":
+return ($GLOBALS['__phpurs_data0_Leaf'] ??= new Phpurs_Data0("Leaf"));
+break;
+case "Node":
+$k = ($__case_0)->v2;
+$v1 = ($__case_0)->v3;
+$l = ($__case_0)->v4;
+$r = ($__case_0)->v5;
+$v2 = ($f)($k, $v1);
+$__case_0 = $v2;
+switch (($__case_0)->tag) {
+case "Just":
+$v__prime__ = ($__case_0)->v0;
+return ($__global_Data_Function_Uncurried_runFn4)($__global_Data_Map_Internal_unsafeBalancedNode, $k, $v__prime__, ($go)($l), ($go)($r));
+break;
+case "Nothing":
+return ($__global_Data_Function_Uncurried_runFn2)($__global_Data_Map_Internal_unsafeJoinNodes, ($go)($l), ($go)($r));
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+};
+    $__res = null;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+    $__res = $go;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})(), $__global_Data_Function_const, $__global_Data_Map_Internal_identity);
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Map_Internal_catMaybes'] = __NAMESPACE__ . '\\Data_Map_Internal_catMaybes';
@@ -5052,10 +8252,37 @@ function Data_Map_Internal_applyMap($dictOrd) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Map_Internal_intersectionWith = ($GLOBALS['Data_Map_Internal_intersectionWith'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_intersectionWith'));
+$__global_Data_Function_Uncurried_runFn4 = ($GLOBALS['Data_Function_Uncurried_runFn4'] ?? \Data\Function\Uncurried\phpurs_eval_thunk('Data_Function_Uncurried_runFn4'));
+$__global_Data_Map_Internal_unsafeIntersectionWith = ($GLOBALS['Data_Map_Internal_unsafeIntersectionWith'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_unsafeIntersectionWith'));
 $__global_Data_Map_Internal_identity = ($GLOBALS['Data_Map_Internal_identity'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_identity'));
 $__global_Data_Map_Internal_functorMap = ($GLOBALS['Data_Map_Internal_functorMap'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_functorMap'));
-    $__res = (object)["apply" => ($__global_Data_Map_Internal_intersectionWith)($dictOrd, $__global_Data_Map_Internal_identity), "Functor0" => (function() use ($__global_Data_Map_Internal_functorMap) {
+$__case_0 = $dictOrd;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare = $__case_res_0;
+    $__res = (object)["apply" => ((function() use ($__global_Data_Function_Uncurried_runFn4, $__global_Data_Map_Internal_unsafeIntersectionWith, $compare) {
+  $__fn = function($app, $m1 = null, $m2 = null) use ($__global_Data_Function_Uncurried_runFn4, $__global_Data_Map_Internal_unsafeIntersectionWith, $compare, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($m2) use ($app, $m1, &$__fn) { return $__fn($app, $m1, $m2); };
+    if ($__num === 1) return function($m1, $m2 = null) use ($app, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($app, $m1, $m2);
+      if ($__num2 === 1) return function($m2) use ($app, $m1, &$__fn) { return $__fn($app, $m1, $m2); };
+      return phpurs_curry_fallback($__fn, [$app], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = ($__global_Data_Function_Uncurried_runFn4)($__global_Data_Map_Internal_unsafeIntersectionWith, $compare, $app, $m1, $m2);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})())($__global_Data_Map_Internal_identity), "Functor0" => (function() use ($__global_Data_Map_Internal_functorMap) {
   $__fn = function($__dollar____unused) use ($__global_Data_Map_Internal_functorMap, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
@@ -5077,13 +8304,182 @@ function Data_Map_Internal_bindMap($dictOrd) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Map_Internal_mapMaybeWithKey = ($GLOBALS['Data_Map_Internal_mapMaybeWithKey'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_mapMaybeWithKey'));
-$__global_Data_Map_Internal_lookup = ($GLOBALS['Data_Map_Internal_lookup'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_lookup'));
-$__global_Data_Map_Internal_applyMap = ($GLOBALS['Data_Map_Internal_applyMap'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_applyMap'));
+$__global_Data_Function_Uncurried_runFn4 = ($GLOBALS['Data_Function_Uncurried_runFn4'] ?? \Data\Function\Uncurried\phpurs_eval_thunk('Data_Function_Uncurried_runFn4'));
+$__global_Data_Map_Internal_unsafeBalancedNode = ($GLOBALS['Data_Map_Internal_unsafeBalancedNode'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_unsafeBalancedNode'));
+$__global_Data_Function_Uncurried_runFn2 = ($GLOBALS['Data_Function_Uncurried_runFn2'] ?? \Data\Function\Uncurried\phpurs_eval_thunk('Data_Function_Uncurried_runFn2'));
+$__global_Data_Map_Internal_unsafeJoinNodes = ($GLOBALS['Data_Map_Internal_unsafeJoinNodes'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_unsafeJoinNodes'));
+$__global_Data_Map_Internal_unsafeIntersectionWith = ($GLOBALS['Data_Map_Internal_unsafeIntersectionWith'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_unsafeIntersectionWith'));
+$__global_Data_Map_Internal_identity = ($GLOBALS['Data_Map_Internal_identity'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_identity'));
+$__global_Data_Map_Internal_functorMap = ($GLOBALS['Data_Map_Internal_functorMap'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_functorMap'));
 $__global_Data_Map_Internal_compose = ($GLOBALS['Data_Map_Internal_compose'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_compose'));
-$mapMaybeWithKey1 = ($__global_Data_Map_Internal_mapMaybeWithKey)($dictOrd);
-$lookup1 = ($__global_Data_Map_Internal_lookup)($dictOrd);
-$applyMap1 = ($__global_Data_Map_Internal_applyMap)($dictOrd);
+$mapMaybeWithKey1 = (function() use ($__global_Data_Function_Uncurried_runFn4, $__global_Data_Map_Internal_unsafeBalancedNode, $__global_Data_Function_Uncurried_runFn2, $__global_Data_Map_Internal_unsafeJoinNodes) {
+  $__fn = function($f) use ($__global_Data_Function_Uncurried_runFn4, $__global_Data_Map_Internal_unsafeBalancedNode, $__global_Data_Function_Uncurried_runFn2, $__global_Data_Map_Internal_unsafeJoinNodes, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$go = (function() use ($f, $__global_Data_Function_Uncurried_runFn4, $__global_Data_Map_Internal_unsafeBalancedNode, &$go, $__global_Data_Function_Uncurried_runFn2, $__global_Data_Map_Internal_unsafeJoinNodes) {
+  $__fn = function($v) use ($f, $__global_Data_Function_Uncurried_runFn4, $__global_Data_Map_Internal_unsafeBalancedNode, &$go, $__global_Data_Function_Uncurried_runFn2, $__global_Data_Map_Internal_unsafeJoinNodes, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+while (true) {
+$__case_0 = $v;
+switch (($__case_0)->tag) {
+case "Leaf":
+return ($GLOBALS['__phpurs_data0_Leaf'] ??= new Phpurs_Data0("Leaf"));
+break;
+case "Node":
+$k = ($__case_0)->v2;
+$v1 = ($__case_0)->v3;
+$l = ($__case_0)->v4;
+$r = ($__case_0)->v5;
+$v2 = ($f)($k, $v1);
+$__case_0 = $v2;
+switch (($__case_0)->tag) {
+case "Just":
+$v__prime__ = ($__case_0)->v0;
+return ($__global_Data_Function_Uncurried_runFn4)($__global_Data_Map_Internal_unsafeBalancedNode, $k, $v__prime__, ($go)($l), ($go)($r));
+break;
+case "Nothing":
+return ($__global_Data_Function_Uncurried_runFn2)($__global_Data_Map_Internal_unsafeJoinNodes, ($go)($l), ($go)($r));
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+};
+    $__res = null;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+    $__res = $go;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+$__case_0 = $dictOrd;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare = $__case_res_0;
+$lookup1 = (function() use ($compare) {
+  $__fn = function($k) use ($compare, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$go = (function() use ($compare, $k, &$go) {
+  $__fn = function($v) use ($compare, $k, &$go, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+while (true) {
+$__case_0 = $v;
+switch (($__case_0)->tag) {
+case "Leaf":
+return ($GLOBALS['__phpurs_data0_Nothing'] ??= new Phpurs_Data0("Nothing"));
+break;
+case "Node":
+$mk = ($__case_0)->v2;
+$mv = ($__case_0)->v3;
+$ml = ($__case_0)->v4;
+$mr = ($__case_0)->v5;
+$v1 = ($compare)($k, $mk);
+$__case_0 = $v1;
+switch (($__case_0)->tag) {
+case "LT":
+$__tco_tmp_0 = $ml;
+$v = $__tco_tmp_0;
+continue 3;
+break;
+case "GT":
+$__tco_tmp_0 = $mr;
+$v = $__tco_tmp_0;
+continue 3;
+break;
+case "EQ":
+return ((function() {
+  $__fn = function($value0) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = new Phpurs_Data1("Just", $value0);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})())($mv);
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+};
+    $__res = null;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+    $__res = $go;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+$__case_0 = $dictOrd;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare = $__case_res_1;
+$applyMap1 = (object)["apply" => ((function() use ($__global_Data_Function_Uncurried_runFn4, $__global_Data_Map_Internal_unsafeIntersectionWith, $compare) {
+  $__fn = function($app, $m1 = null, $m2 = null) use ($__global_Data_Function_Uncurried_runFn4, $__global_Data_Map_Internal_unsafeIntersectionWith, $compare, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($m2) use ($app, $m1, &$__fn) { return $__fn($app, $m1, $m2); };
+    if ($__num === 1) return function($m1, $m2 = null) use ($app, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($app, $m1, $m2);
+      if ($__num2 === 1) return function($m2) use ($app, $m1, &$__fn) { return $__fn($app, $m1, $m2); };
+      return phpurs_curry_fallback($__fn, [$app], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = ($__global_Data_Function_Uncurried_runFn4)($__global_Data_Map_Internal_unsafeIntersectionWith, $compare, $app, $m1, $m2);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})())($__global_Data_Map_Internal_identity), "Functor0" => (function() use ($__global_Data_Map_Internal_functorMap) {
+  $__fn = function($__dollar____unused) use ($__global_Data_Map_Internal_functorMap, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $__global_Data_Map_Internal_functorMap;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
     $__res = (object)["bind" => (function() use ($mapMaybeWithKey1, $__global_Data_Map_Internal_compose, $lookup1) {
   $__fn = function($m, $f = null) use ($mapMaybeWithKey1, $__global_Data_Map_Internal_compose, $lookup1, &$__fn) {
   $__num = func_num_args();
@@ -5127,9 +8523,9 @@ function Data_Map_Internal_anyWithKey($predicate) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_HeytingAlgebra_boolDisj = ($GLOBALS['Data_HeytingAlgebra_boolDisj'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_boolDisj'));
-$go = (function() use ($__global_Data_HeytingAlgebra_boolDisj, $predicate, &$go) {
-  $__fn = function($v) use ($__global_Data_HeytingAlgebra_boolDisj, $predicate, &$go, &$__fn) {
+$__global_Data_Map_Internal_disj = ($GLOBALS['Data_Map_Internal_disj'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_disj'));
+$go = (function() use ($__global_Data_Map_Internal_disj, $predicate, &$go) {
+  $__fn = function($v) use ($__global_Data_Map_Internal_disj, $predicate, &$go, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
@@ -5145,7 +8541,7 @@ $mk = ($__case_0)->v2;
 $mv = ($__case_0)->v3;
 $ml = ($__case_0)->v4;
 $mr = ($__case_0)->v5;
-return ($__global_Data_HeytingAlgebra_boolDisj)(($predicate)($mk, $mv), ($__global_Data_HeytingAlgebra_boolDisj)(($go)($ml), ($go)($mr)));
+return ($__global_Data_Map_Internal_disj)(($predicate)($mk, $mv), ($__global_Data_Map_Internal_disj)(($go)($ml), ($go)($mr)));
 break;
 default:
 throw new \Exception("Pattern match failure");
@@ -5169,9 +8565,9 @@ function Data_Map_Internal_any($predicate) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_HeytingAlgebra_boolDisj = ($GLOBALS['Data_HeytingAlgebra_boolDisj'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_boolDisj'));
-$go = (function() use ($__global_Data_HeytingAlgebra_boolDisj, $predicate, &$go) {
-  $__fn = function($v) use ($__global_Data_HeytingAlgebra_boolDisj, $predicate, &$go, &$__fn) {
+$__global_Data_Map_Internal_disj = ($GLOBALS['Data_Map_Internal_disj'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_disj'));
+$go = (function() use ($__global_Data_Map_Internal_disj, $predicate, &$go) {
+  $__fn = function($v) use ($__global_Data_Map_Internal_disj, $predicate, &$go, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
@@ -5186,7 +8582,7 @@ case "Node":
 $mv = ($__case_0)->v3;
 $ml = ($__case_0)->v4;
 $mr = ($__case_0)->v5;
-return ($__global_Data_HeytingAlgebra_boolDisj)(($predicate)($mv), ($__global_Data_HeytingAlgebra_boolDisj)(($go)($ml), ($go)($mr)));
+return ($__global_Data_Map_Internal_disj)(($predicate)($mv), ($__global_Data_Map_Internal_disj)(($go)($ml), ($go)($mr)));
 break;
 default:
 throw new \Exception("Pattern match failure");
@@ -5216,7 +8612,15 @@ $__global_Data_Function_Uncurried_runFn2 = ($GLOBALS['Data_Function_Uncurried_ru
 $__global_Data_Map_Internal_unsafeJoinNodes = ($GLOBALS['Data_Map_Internal_unsafeJoinNodes'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_unsafeJoinNodes'));
 $__global_Data_Function_Uncurried_runFn4 = ($GLOBALS['Data_Function_Uncurried_runFn4'] ?? \Data\Function\Uncurried\phpurs_eval_thunk('Data_Function_Uncurried_runFn4'));
 $__global_Data_Map_Internal_unsafeBalancedNode = ($GLOBALS['Data_Map_Internal_unsafeBalancedNode'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_unsafeBalancedNode'));
-$compare = ($dictOrd)->compare;
+$__case_0 = $dictOrd;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare = $__case_res_0;
     $__res = (function() use ($__global_Data_Function_Uncurried_runFn3, $__global_Data_Map_Internal_unsafeSplit, $compare, $__global_Data_Function_Uncurried_runFn2, $__global_Data_Map_Internal_unsafeJoinNodes, $__global_Data_Function_Uncurried_runFn4, $__global_Data_Map_Internal_unsafeBalancedNode) {
   $__body = function($f, $k, $m) use ($__global_Data_Function_Uncurried_runFn3, $__global_Data_Map_Internal_unsafeSplit, $compare, $__global_Data_Function_Uncurried_runFn2, $__global_Data_Map_Internal_unsafeJoinNodes, $__global_Data_Function_Uncurried_runFn4, $__global_Data_Map_Internal_unsafeBalancedNode) {
     $v = ($__global_Data_Function_Uncurried_runFn3)($__global_Data_Map_Internal_unsafeSplit, $compare, $k, $m);
@@ -5274,9 +8678,37 @@ function Data_Map_Internal_altMap($dictOrd) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Map_Internal_union = ($GLOBALS['Data_Map_Internal_union'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_union'));
+$__global_Data_Function_Uncurried_runFn4 = ($GLOBALS['Data_Function_Uncurried_runFn4'] ?? \Data\Function\Uncurried\phpurs_eval_thunk('Data_Function_Uncurried_runFn4'));
+$__global_Data_Map_Internal_unsafeUnionWith = ($GLOBALS['Data_Map_Internal_unsafeUnionWith'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_unsafeUnionWith'));
+$__global_Data_Function_const = ($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const'));
 $__global_Data_Map_Internal_functorMap = ($GLOBALS['Data_Map_Internal_functorMap'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_functorMap'));
-    $__res = (object)["alt" => ($__global_Data_Map_Internal_union)($dictOrd), "Functor0" => (function() use ($__global_Data_Map_Internal_functorMap) {
+$__case_0 = $dictOrd;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare = $__case_res_0;
+    $__res = (object)["alt" => ((function() use ($__global_Data_Function_Uncurried_runFn4, $__global_Data_Map_Internal_unsafeUnionWith, $compare) {
+  $__fn = function($app, $m1 = null, $m2 = null) use ($__global_Data_Function_Uncurried_runFn4, $__global_Data_Map_Internal_unsafeUnionWith, $compare, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($m2) use ($app, $m1, &$__fn) { return $__fn($app, $m1, $m2); };
+    if ($__num === 1) return function($m1, $m2 = null) use ($app, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($app, $m1, $m2);
+      if ($__num2 === 1) return function($m2) use ($app, $m1, &$__fn) { return $__fn($app, $m1, $m2); };
+      return phpurs_curry_fallback($__fn, [$app], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = ($__global_Data_Function_Uncurried_runFn4)($__global_Data_Map_Internal_unsafeUnionWith, $compare, $app, $m1, $m2);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})())($__global_Data_Function_const), "Functor0" => (function() use ($__global_Data_Map_Internal_functorMap) {
   $__fn = function($__dollar____unused) use ($__global_Data_Map_Internal_functorMap, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
@@ -5298,8 +8730,47 @@ function Data_Map_Internal_plusMap($dictOrd) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Map_Internal_altMap = ($GLOBALS['Data_Map_Internal_altMap'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_altMap'));
-$altMap1 = ($__global_Data_Map_Internal_altMap)($dictOrd);
+$__global_Data_Function_Uncurried_runFn4 = ($GLOBALS['Data_Function_Uncurried_runFn4'] ?? \Data\Function\Uncurried\phpurs_eval_thunk('Data_Function_Uncurried_runFn4'));
+$__global_Data_Map_Internal_unsafeUnionWith = ($GLOBALS['Data_Map_Internal_unsafeUnionWith'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_unsafeUnionWith'));
+$__global_Data_Function_const = ($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const'));
+$__global_Data_Map_Internal_functorMap = ($GLOBALS['Data_Map_Internal_functorMap'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_functorMap'));
+$__case_0 = $dictOrd;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare = $__case_res_0;
+$altMap1 = (object)["alt" => ((function() use ($__global_Data_Function_Uncurried_runFn4, $__global_Data_Map_Internal_unsafeUnionWith, $compare) {
+  $__fn = function($app, $m1 = null, $m2 = null) use ($__global_Data_Function_Uncurried_runFn4, $__global_Data_Map_Internal_unsafeUnionWith, $compare, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($m2) use ($app, $m1, &$__fn) { return $__fn($app, $m1, $m2); };
+    if ($__num === 1) return function($m1, $m2 = null) use ($app, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($app, $m1, $m2);
+      if ($__num2 === 1) return function($m2) use ($app, $m1, &$__fn) { return $__fn($app, $m1, $m2); };
+      return phpurs_curry_fallback($__fn, [$app], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = ($__global_Data_Function_Uncurried_runFn4)($__global_Data_Map_Internal_unsafeUnionWith, $compare, $app, $m1, $m2);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})())($__global_Data_Function_const), "Functor0" => (function() use ($__global_Data_Map_Internal_functorMap) {
+  $__fn = function($__dollar____unused) use ($__global_Data_Map_Internal_functorMap, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $__global_Data_Map_Internal_functorMap;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
     $__res = (object)["empty" => ($GLOBALS['__phpurs_data0_Leaf'] ??= new Phpurs_Data0("Leaf")), "Alt0" => (function() use ($altMap1) {
   $__fn = function($__dollar____unused) use ($altMap1, &$__fn) {
   $__num = func_num_args();

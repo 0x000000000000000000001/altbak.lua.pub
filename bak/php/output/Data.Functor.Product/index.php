@@ -101,10 +101,50 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Data_Functor_Product_append': $v = ($GLOBALS['Data_Semigroup_concatString'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_concatString')); break;
-      case 'Data_Functor_Product_bimap': $v = (($GLOBALS['Data_Bifunctor_bifunctorTuple'] ?? \Data\Bifunctor\phpurs_eval_thunk('Data_Bifunctor_bifunctorTuple')))->bimap; break;
-      case 'Data_Functor_Product_conj': $v = ($GLOBALS['Data_HeytingAlgebra_boolConj'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_boolConj')); break;
-      case 'Data_Functor_Product_compose': $v = (($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn')))->compose; break;
+      case 'Data_Functor_Product_append': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Semigroup_semigroupString'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_semigroupString'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Functor_Product_bimap': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Bifunctor_bifunctorTuple'] ?? \Data\Bifunctor\phpurs_eval_thunk('Data_Bifunctor_bifunctorTuple'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bimap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Functor_Product_conj': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_HeytingAlgebra_heytingAlgebraBoolean'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_heytingAlgebraBoolean'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->conj;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Functor_Product_compose': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compose;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_Functor_Product_unwrap': $v = (($GLOBALS['Data_Newtype_unwrap'] ?? \Data\Newtype\phpurs_eval_thunk('Data_Newtype_unwrap')))(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))); break;
       case 'Data_Functor_Product_newtypeProduct': $v = (object)["Coercible0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
@@ -151,29 +191,46 @@ function Data_Functor_Product_showProduct($dictShow) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$show = ($dictShow)->show;
-    $__res = (function() use ($show) {
-  $__fn = function($dictShow1) use ($show, &$__fn) {
+$__global_Data_Functor_Product_append = ($GLOBALS['Data_Functor_Product_append'] ?? \Data\Functor\Product\phpurs_eval_thunk('Data_Functor_Product_append'));
+$__case_0 = $dictShow;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->show;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$show = $__case_res_0;
+    $__res = (function() use ($__global_Data_Functor_Product_append, $show) {
+  $__fn = function($dictShow1) use ($__global_Data_Functor_Product_append, $show, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$show1 = ($dictShow1)->show;
-    $__res = (object)["show" => (function() use ($show, $show1) {
-  $__body = function($v) use ($show, $show1) {
+$__case_0 = $dictShow1;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->show;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$show1 = $__case_res_1;
+    $__res = (object)["show" => (function() use ($__global_Data_Functor_Product_append, $show, $show1) {
+  $__body = function($v) use ($__global_Data_Functor_Product_append, $show, $show1) {
     $__case_0 = $v;
     switch (($__case_0)->tag) {
 case "Tuple":
 $fa = ($__case_0)->v0;
 $ga = ($__case_0)->v1;
-return ("(product " . (($show)($fa) . (" " . (($show1)($ga) . ")"))));
+return ($__global_Data_Functor_Product_append)("(product ", ($__global_Data_Functor_Product_append)(($show)($fa), ($__global_Data_Functor_Product_append)(" ", ($__global_Data_Functor_Product_append)(($show1)($ga), ")"))));
 break;
 default:
 throw new \Exception("Pattern match failure");
 break;
 };
   };
-  $__fn = function($v) use ($show, $show1, $__body, &$__fn) {
+  $__fn = function($v) use ($__global_Data_Functor_Product_append, $show, $show1, $__body, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
@@ -224,14 +281,30 @@ function Data_Functor_Product_functorProduct($dictFunctor) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_Functor_Product_bimap = ($GLOBALS['Data_Functor_Product_bimap'] ?? \Data\Functor\Product\phpurs_eval_thunk('Data_Functor_Product_bimap'));
-$map = ($dictFunctor)->map;
+$__case_0 = $dictFunctor;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_0;
     $__res = (function() use ($__global_Data_Functor_Product_bimap, $map) {
   $__fn = function($dictFunctor1) use ($__global_Data_Functor_Product_bimap, $map, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$map1 = ($dictFunctor1)->map;
+$__case_0 = $dictFunctor1;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map1 = $__case_res_1;
     $__res = (object)["map" => (function() use ($__global_Data_Functor_Product_bimap, $map, $map1) {
   $__body = function($f, $v) use ($__global_Data_Functor_Product_bimap, $map, $map1) {
     $__case_0 = $f;
@@ -270,25 +343,41 @@ function Data_Functor_Product_eq1Product($dictEq1) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_HeytingAlgebra_boolConj = ($GLOBALS['Data_HeytingAlgebra_boolConj'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_boolConj'));
-$eq1 = ($dictEq1)->eq1;
-    $__res = (function() use ($eq1, $__global_Data_HeytingAlgebra_boolConj) {
-  $__fn = function($dictEq11) use ($eq1, $__global_Data_HeytingAlgebra_boolConj, &$__fn) {
+$__global_Data_Functor_Product_conj = ($GLOBALS['Data_Functor_Product_conj'] ?? \Data\Functor\Product\phpurs_eval_thunk('Data_Functor_Product_conj'));
+$__case_0 = $dictEq1;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq1 = $__case_res_0;
+    $__res = (function() use ($eq1, $__global_Data_Functor_Product_conj) {
+  $__fn = function($dictEq11) use ($eq1, $__global_Data_Functor_Product_conj, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$eq11 = ($dictEq11)->eq1;
-    $__res = (object)["eq1" => (function() use ($eq1, $eq11, $__global_Data_HeytingAlgebra_boolConj) {
-  $__fn = function($dictEq) use ($eq1, $eq11, $__global_Data_HeytingAlgebra_boolConj, &$__fn) {
+$__case_0 = $dictEq11;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->eq1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq11 = $__case_res_1;
+    $__res = (object)["eq1" => (function() use ($eq1, $eq11, $__global_Data_Functor_Product_conj) {
+  $__fn = function($dictEq) use ($eq1, $eq11, $__global_Data_Functor_Product_conj, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $eq12 = ($eq1)($dictEq);
 $eq13 = ($eq11)($dictEq);
-    $__res = (function() use ($__global_Data_HeytingAlgebra_boolConj, $eq12, $eq13) {
-  $__body = function($v, $v1) use ($__global_Data_HeytingAlgebra_boolConj, $eq12, $eq13) {
+    $__res = (function() use ($__global_Data_Functor_Product_conj, $eq12, $eq13) {
+  $__body = function($v, $v1) use ($__global_Data_Functor_Product_conj, $eq12, $eq13) {
     $__case_0 = $v;
     $__case_1 = $v1;
     if (((($__case_0)->tag === "Tuple") && (($__case_1)->tag === "Tuple"))) {
@@ -296,12 +385,12 @@ $l1 = ($__case_0)->v0;
 $r1 = ($__case_0)->v1;
 $l2 = ($__case_1)->v0;
 $r2 = ($__case_1)->v1;
-return ($__global_Data_HeytingAlgebra_boolConj)(($eq12)($l1, $l2), ($eq13)($r1, $r2));
+return ($__global_Data_Functor_Product_conj)(($eq12)($l1, $l2), ($eq13)($r1, $r2));
 } else {
 throw new \Exception("Pattern match failure");
 };
   };
-  $__fn = function($v, $v1 = null) use ($__global_Data_HeytingAlgebra_boolConj, $eq12, $eq13, $__body, &$__fn) {
+  $__fn = function($v, $v1 = null) use ($__global_Data_Functor_Product_conj, $eq12, $eq13, $__body, &$__fn) {
   $__num = func_num_args();
   if ($__num < 2) {
     if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
@@ -331,15 +420,87 @@ function Data_Functor_Product_eqProduct($dictEq1) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Functor_Product_eq1Product = ($GLOBALS['Data_Functor_Product_eq1Product'] ?? \Data\Functor\Product\phpurs_eval_thunk('Data_Functor_Product_eq1Product'));
-$eq1Product1 = ($__global_Data_Functor_Product_eq1Product)($dictEq1);
-    $__res = (function() use ($eq1Product1) {
-  $__fn = function($dictEq11) use ($eq1Product1, &$__fn) {
+$__global_Data_Functor_Product_conj = ($GLOBALS['Data_Functor_Product_conj'] ?? \Data\Functor\Product\phpurs_eval_thunk('Data_Functor_Product_conj'));
+$__case_0 = $dictEq1;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq1 = $__case_res_0;
+$eq1Product1 = (function() use ($eq1, $__global_Data_Functor_Product_conj) {
+  $__fn = function($dictEq11) use ($eq1, $__global_Data_Functor_Product_conj, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$eq1 = (($eq1Product1)($dictEq11))->eq1;
+$__case_0 = $dictEq11;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->eq1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq11 = $__case_res_1;
+    $__res = (object)["eq1" => (function() use ($eq1, $eq11, $__global_Data_Functor_Product_conj) {
+  $__fn = function($dictEq) use ($eq1, $eq11, $__global_Data_Functor_Product_conj, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$eq12 = ($eq1)($dictEq);
+$eq13 = ($eq11)($dictEq);
+    $__res = (function() use ($__global_Data_Functor_Product_conj, $eq12, $eq13) {
+  $__body = function($v, $v1) use ($__global_Data_Functor_Product_conj, $eq12, $eq13) {
+    $__case_0 = $v;
+    $__case_1 = $v1;
+    if (((($__case_0)->tag === "Tuple") && (($__case_1)->tag === "Tuple"))) {
+$l1 = ($__case_0)->v0;
+$r1 = ($__case_0)->v1;
+$l2 = ($__case_1)->v0;
+$r2 = ($__case_1)->v1;
+return ($__global_Data_Functor_Product_conj)(($eq12)($l1, $l2), ($eq13)($r1, $r2));
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($v, $v1 = null) use ($__global_Data_Functor_Product_conj, $eq12, $eq13, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($v, $v1);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+    $__res = (function() use ($dict) {
+  $__fn = function($dictEq11) use ($dict, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->eq1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq1 = $__case_res_2;
     $__res = (function() use ($eq1) {
   $__fn = function($dictEq) use ($eq1, &$__fn) {
   $__num = func_num_args();
@@ -366,17 +527,97 @@ function Data_Functor_Product_ord1Product($dictOrd1) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Functor_Product_eq1Product = ($GLOBALS['Data_Functor_Product_eq1Product'] ?? \Data\Functor\Product\phpurs_eval_thunk('Data_Functor_Product_eq1Product'));
+$__global_Data_Functor_Product_conj = ($GLOBALS['Data_Functor_Product_conj'] ?? \Data\Functor\Product\phpurs_eval_thunk('Data_Functor_Product_conj'));
 $__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$compare1 = ($dictOrd1)->compare1;
-$eq1Product1 = ($__global_Data_Functor_Product_eq1Product)((($dictOrd1)->Eq10)($__global_Prim_undefined));
+$__case_0 = $dictOrd1;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare1 = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->eq1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq1 = $__case_res_1;
+$eq1Product1 = (function() use ($eq1, $__global_Data_Functor_Product_conj) {
+  $__fn = function($dictEq11) use ($eq1, $__global_Data_Functor_Product_conj, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dictEq11;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->eq1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq11 = $__case_res_2;
+    $__res = (object)["eq1" => (function() use ($eq1, $eq11, $__global_Data_Functor_Product_conj) {
+  $__fn = function($dictEq) use ($eq1, $eq11, $__global_Data_Functor_Product_conj, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$eq12 = ($eq1)($dictEq);
+$eq13 = ($eq11)($dictEq);
+    $__res = (function() use ($__global_Data_Functor_Product_conj, $eq12, $eq13) {
+  $__body = function($v, $v1) use ($__global_Data_Functor_Product_conj, $eq12, $eq13) {
+    $__case_0 = $v;
+    $__case_1 = $v1;
+    if (((($__case_0)->tag === "Tuple") && (($__case_1)->tag === "Tuple"))) {
+$l1 = ($__case_0)->v0;
+$r1 = ($__case_0)->v1;
+$l2 = ($__case_1)->v0;
+$r2 = ($__case_1)->v1;
+return ($__global_Data_Functor_Product_conj)(($eq12)($l1, $l2), ($eq13)($r1, $r2));
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($v, $v1 = null) use ($__global_Data_Functor_Product_conj, $eq12, $eq13, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($v, $v1);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
     $__res = (function() use ($eq1Product1, $__global_Prim_undefined, $compare1) {
   $__fn = function($dictOrd11) use ($eq1Product1, $__global_Prim_undefined, $compare1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$compare11 = ($dictOrd11)->compare1;
+$__case_0 = $dictOrd11;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->compare1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare11 = $__case_res_3;
 $eq1Product2 = ($eq1Product1)((($dictOrd11)->Eq10)($__global_Prim_undefined));
     $__res = (object)["compare1" => (function() use ($compare1, $compare11) {
   $__fn = function($dictOrd) use ($compare1, $compare11, &$__fn) {
@@ -450,18 +691,269 @@ function Data_Functor_Product_ordProduct($dictOrd1) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Functor_Product_ord1Product = ($GLOBALS['Data_Functor_Product_ord1Product'] ?? \Data\Functor\Product\phpurs_eval_thunk('Data_Functor_Product_ord1Product'));
-$__global_Data_Functor_Product_eqProduct = ($GLOBALS['Data_Functor_Product_eqProduct'] ?? \Data\Functor\Product\phpurs_eval_thunk('Data_Functor_Product_eqProduct'));
+$__global_Data_Functor_Product_conj = ($GLOBALS['Data_Functor_Product_conj'] ?? \Data\Functor\Product\phpurs_eval_thunk('Data_Functor_Product_conj'));
 $__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$ord1Product1 = ($__global_Data_Functor_Product_ord1Product)($dictOrd1);
-$eqProduct1 = ($__global_Data_Functor_Product_eqProduct)((($dictOrd1)->Eq10)($__global_Prim_undefined));
-    $__res = (function() use ($ord1Product1, $eqProduct1, $__global_Prim_undefined) {
-  $__fn = function($dictOrd11) use ($ord1Product1, $eqProduct1, $__global_Prim_undefined, &$__fn) {
+$__case_0 = $dictOrd1;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare1 = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->eq1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq1 = $__case_res_1;
+$eq1Product1 = (function() use ($eq1, $__global_Data_Functor_Product_conj) {
+  $__fn = function($dictEq11) use ($eq1, $__global_Data_Functor_Product_conj, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$compare1 = (($ord1Product1)($dictOrd11))->compare1;
+$__case_0 = $dictEq11;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->eq1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq11 = $__case_res_2;
+    $__res = (object)["eq1" => (function() use ($eq1, $eq11, $__global_Data_Functor_Product_conj) {
+  $__fn = function($dictEq) use ($eq1, $eq11, $__global_Data_Functor_Product_conj, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$eq12 = ($eq1)($dictEq);
+$eq13 = ($eq11)($dictEq);
+    $__res = (function() use ($__global_Data_Functor_Product_conj, $eq12, $eq13) {
+  $__body = function($v, $v1) use ($__global_Data_Functor_Product_conj, $eq12, $eq13) {
+    $__case_0 = $v;
+    $__case_1 = $v1;
+    if (((($__case_0)->tag === "Tuple") && (($__case_1)->tag === "Tuple"))) {
+$l1 = ($__case_0)->v0;
+$r1 = ($__case_0)->v1;
+$l2 = ($__case_1)->v0;
+$r2 = ($__case_1)->v1;
+return ($__global_Data_Functor_Product_conj)(($eq12)($l1, $l2), ($eq13)($r1, $r2));
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($v, $v1 = null) use ($__global_Data_Functor_Product_conj, $eq12, $eq13, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($v, $v1);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+$ord1Product1 = (function() use ($eq1Product1, $__global_Prim_undefined, $compare1) {
+  $__fn = function($dictOrd11) use ($eq1Product1, $__global_Prim_undefined, $compare1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dictOrd11;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->compare1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare11 = $__case_res_3;
+$eq1Product2 = ($eq1Product1)((($dictOrd11)->Eq10)($__global_Prim_undefined));
+    $__res = (object)["compare1" => (function() use ($compare1, $compare11) {
+  $__fn = function($dictOrd) use ($compare1, $compare11, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$compare12 = ($compare1)($dictOrd);
+$compare13 = ($compare11)($dictOrd);
+    $__res = (function() use ($compare12, $compare13) {
+  $__body = function($v, $v1) use ($compare12, $compare13) {
+    $__case_0 = $v;
+    $__case_1 = $v1;
+    if (((($__case_0)->tag === "Tuple") && (($__case_1)->tag === "Tuple"))) {
+$l1 = ($__case_0)->v0;
+$r1 = ($__case_0)->v1;
+$l2 = ($__case_1)->v0;
+$r2 = ($__case_1)->v1;
+$v2 = ($compare12)($l1, $l2);
+$__case_0 = $v2;
+switch (($__case_0)->tag) {
+case "EQ":
+return ($compare13)($r1, $r2);
+break;
+default:
+$o = $__case_0;
+return $o;
+break;
+};
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($v, $v1 = null) use ($compare12, $compare13, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($v, $v1);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})(), "Eq10" => (function() use ($eq1Product2) {
+  $__fn = function($__dollar____unused) use ($eq1Product2, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $eq1Product2;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+$__case_0 = $dict;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->eq1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq1 = $__case_res_4;
+$eq1Product1 = (function() use ($eq1, $__global_Data_Functor_Product_conj) {
+  $__fn = function($dictEq11) use ($eq1, $__global_Data_Functor_Product_conj, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dictEq11;
+$__case_res_5 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_5 = ($v)->eq1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq11 = $__case_res_5;
+    $__res = (object)["eq1" => (function() use ($eq1, $eq11, $__global_Data_Functor_Product_conj) {
+  $__fn = function($dictEq) use ($eq1, $eq11, $__global_Data_Functor_Product_conj, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$eq12 = ($eq1)($dictEq);
+$eq13 = ($eq11)($dictEq);
+    $__res = (function() use ($__global_Data_Functor_Product_conj, $eq12, $eq13) {
+  $__body = function($v, $v1) use ($__global_Data_Functor_Product_conj, $eq12, $eq13) {
+    $__case_0 = $v;
+    $__case_1 = $v1;
+    if (((($__case_0)->tag === "Tuple") && (($__case_1)->tag === "Tuple"))) {
+$l1 = ($__case_0)->v0;
+$r1 = ($__case_0)->v1;
+$l2 = ($__case_1)->v0;
+$r2 = ($__case_1)->v1;
+return ($__global_Data_Functor_Product_conj)(($eq12)($l1, $l2), ($eq13)($r1, $r2));
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($v, $v1 = null) use ($__global_Data_Functor_Product_conj, $eq12, $eq13, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($v, $v1);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+$eqProduct1 = (function() use ($dict) {
+  $__fn = function($dictEq11) use ($dict, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dict;
+$__case_res_6 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_6 = ($v)->eq1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq1 = $__case_res_6;
+    $__res = (function() use ($eq1) {
+  $__fn = function($dictEq) use ($eq1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = (object)["eq" => ($eq1)($dictEq)];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+    $__res = (function() use ($dict, $eqProduct1, $__global_Prim_undefined) {
+  $__fn = function($dictOrd11) use ($dict, $eqProduct1, $__global_Prim_undefined, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dict;
+$__case_res_7 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_7 = ($v)->compare1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare1 = $__case_res_7;
 $eqProduct2 = ($eqProduct1)((($dictOrd11)->Eq10)($__global_Prim_undefined));
     $__res = (function() use ($eqProduct2, $__global_Prim_undefined, $compare1) {
   $__fn = function($dictOrd) use ($eqProduct2, $__global_Prim_undefined, $compare1, &$__fn) {
@@ -533,18 +1025,84 @@ function Data_Functor_Product_applyProduct($dictApply) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Functor_Product_functorProduct = ($GLOBALS['Data_Functor_Product_functorProduct'] ?? \Data\Functor\Product\phpurs_eval_thunk('Data_Functor_Product_functorProduct'));
+$__global_Data_Functor_Product_bimap = ($GLOBALS['Data_Functor_Product_bimap'] ?? \Data\Functor\Product\phpurs_eval_thunk('Data_Functor_Product_bimap'));
 $__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Functor_Product_product = ($GLOBALS['Data_Functor_Product_product'] ?? \Data\Functor\Product\phpurs_eval_thunk('Data_Functor_Product_product'));
-$apply = ($dictApply)->apply;
-$functorProduct1 = ($__global_Data_Functor_Product_functorProduct)((($dictApply)->Functor0)($__global_Prim_undefined));
+$__case_0 = $dictApply;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$apply = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_1;
+$functorProduct1 = (function() use ($__global_Data_Functor_Product_bimap, $map) {
+  $__fn = function($dictFunctor1) use ($__global_Data_Functor_Product_bimap, $map, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dictFunctor1;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map1 = $__case_res_2;
+    $__res = (object)["map" => (function() use ($__global_Data_Functor_Product_bimap, $map, $map1) {
+  $__body = function($f, $v) use ($__global_Data_Functor_Product_bimap, $map, $map1) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    if (true) {
+$f1 = $__case_0;
+$fga = $__case_1;
+return ($__global_Data_Functor_Product_bimap)(($map)($f1), ($map1)($f1), $fga);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $v = null) use ($__global_Data_Functor_Product_bimap, $map, $map1, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, &$__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($f, $v);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
     $__res = (function() use ($functorProduct1, $__global_Prim_undefined, $__global_Data_Functor_Product_product, $apply) {
   $__fn = function($dictApply1) use ($functorProduct1, $__global_Prim_undefined, $__global_Data_Functor_Product_product, $apply, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$apply1 = ($dictApply1)->apply;
+$__case_0 = $dictApply1;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$apply1 = $__case_res_3;
 $functorProduct2 = ($functorProduct1)((($dictApply1)->Functor0)($__global_Prim_undefined));
     $__res = (object)["apply" => (function() use ($__global_Data_Functor_Product_product, $apply, $apply1) {
   $__body = function($v, $v1) use ($__global_Data_Functor_Product_product, $apply, $apply1) {
@@ -596,22 +1154,152 @@ function Data_Functor_Product_bindProduct($dictBind) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Functor_Product_applyProduct = ($GLOBALS['Data_Functor_Product_applyProduct'] ?? \Data\Functor\Product\phpurs_eval_thunk('Data_Functor_Product_applyProduct'));
+$__global_Data_Functor_Product_bimap = ($GLOBALS['Data_Functor_Product_bimap'] ?? \Data\Functor\Product\phpurs_eval_thunk('Data_Functor_Product_bimap'));
 $__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Functor_Product_product = ($GLOBALS['Data_Functor_Product_product'] ?? \Data\Functor\Product\phpurs_eval_thunk('Data_Functor_Product_product'));
 $__global_Data_Functor_Product_compose = ($GLOBALS['Data_Functor_Product_compose'] ?? \Data\Functor\Product\phpurs_eval_thunk('Data_Functor_Product_compose'));
 $__global_Data_Tuple_fst = ($GLOBALS['Data_Tuple_fst'] ?? \Data\Tuple\phpurs_eval_thunk('Data_Tuple_fst'));
 $__global_Data_Functor_Product_unwrap = ($GLOBALS['Data_Functor_Product_unwrap'] ?? \Data\Functor\Product\phpurs_eval_thunk('Data_Functor_Product_unwrap'));
 $__global_Data_Tuple_snd = ($GLOBALS['Data_Tuple_snd'] ?? \Data\Tuple\phpurs_eval_thunk('Data_Tuple_snd'));
-$bind = ($dictBind)->bind;
-$applyProduct1 = ($__global_Data_Functor_Product_applyProduct)((($dictBind)->Apply0)($__global_Prim_undefined));
+$__case_0 = $dictBind;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bind;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bind = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$apply = $__case_res_1;
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_2;
+$functorProduct1 = (function() use ($__global_Data_Functor_Product_bimap, $map) {
+  $__fn = function($dictFunctor1) use ($__global_Data_Functor_Product_bimap, $map, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dictFunctor1;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map1 = $__case_res_3;
+    $__res = (object)["map" => (function() use ($__global_Data_Functor_Product_bimap, $map, $map1) {
+  $__body = function($f, $v) use ($__global_Data_Functor_Product_bimap, $map, $map1) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    if (true) {
+$f1 = $__case_0;
+$fga = $__case_1;
+return ($__global_Data_Functor_Product_bimap)(($map)($f1), ($map1)($f1), $fga);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $v = null) use ($__global_Data_Functor_Product_bimap, $map, $map1, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, &$__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($f, $v);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+$applyProduct1 = (function() use ($functorProduct1, $__global_Prim_undefined, $__global_Data_Functor_Product_product, $apply) {
+  $__fn = function($dictApply1) use ($functorProduct1, $__global_Prim_undefined, $__global_Data_Functor_Product_product, $apply, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dictApply1;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$apply1 = $__case_res_4;
+$functorProduct2 = ($functorProduct1)((($dictApply1)->Functor0)($__global_Prim_undefined));
+    $__res = (object)["apply" => (function() use ($__global_Data_Functor_Product_product, $apply, $apply1) {
+  $__body = function($v, $v1) use ($__global_Data_Functor_Product_product, $apply, $apply1) {
+    $__case_0 = $v;
+    $__case_1 = $v1;
+    if (((($__case_0)->tag === "Tuple") && (($__case_1)->tag === "Tuple"))) {
+$f = ($__case_0)->v0;
+$g = ($__case_0)->v1;
+$a = ($__case_1)->v0;
+$b = ($__case_1)->v1;
+return ($__global_Data_Functor_Product_product)(($apply)($f, $a), ($apply1)($g, $b));
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($v, $v1 = null) use ($__global_Data_Functor_Product_product, $apply, $apply1, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($v, $v1);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "Functor0" => (function() use ($functorProduct2) {
+  $__fn = function($__dollar____unused) use ($functorProduct2, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $functorProduct2;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
     $__res = (function() use ($applyProduct1, $__global_Prim_undefined, $__global_Data_Functor_Product_product, $bind, $__global_Data_Functor_Product_compose, $__global_Data_Tuple_fst, $__global_Data_Functor_Product_unwrap, $__global_Data_Tuple_snd) {
   $__fn = function($dictBind1) use ($applyProduct1, $__global_Prim_undefined, $__global_Data_Functor_Product_product, $bind, $__global_Data_Functor_Product_compose, $__global_Data_Tuple_fst, $__global_Data_Functor_Product_unwrap, $__global_Data_Tuple_snd, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$bind1 = ($dictBind1)->bind;
+$__case_0 = $dictBind1;
+$__case_res_5 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_5 = ($v)->bind;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bind1 = $__case_res_5;
 $applyProduct2 = ($applyProduct1)((($dictBind1)->Apply0)($__global_Prim_undefined));
     $__res = (object)["bind" => (function() use ($__global_Data_Functor_Product_product, $bind, $__global_Data_Functor_Product_compose, $__global_Data_Tuple_fst, $__global_Data_Functor_Product_unwrap, $bind1, $__global_Data_Tuple_snd) {
   $__body = function($v, $f) use ($__global_Data_Functor_Product_product, $bind, $__global_Data_Functor_Product_compose, $__global_Data_Tuple_fst, $__global_Data_Functor_Product_unwrap, $bind1, $__global_Data_Tuple_snd) {
@@ -665,18 +1353,148 @@ function Data_Functor_Product_applicativeProduct($dictApplicative) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Functor_Product_applyProduct = ($GLOBALS['Data_Functor_Product_applyProduct'] ?? \Data\Functor\Product\phpurs_eval_thunk('Data_Functor_Product_applyProduct'));
+$__global_Data_Functor_Product_bimap = ($GLOBALS['Data_Functor_Product_bimap'] ?? \Data\Functor\Product\phpurs_eval_thunk('Data_Functor_Product_bimap'));
 $__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Functor_Product_product = ($GLOBALS['Data_Functor_Product_product'] ?? \Data\Functor\Product\phpurs_eval_thunk('Data_Functor_Product_product'));
-$pure = ($dictApplicative)->pure;
-$applyProduct1 = ($__global_Data_Functor_Product_applyProduct)((($dictApplicative)->Apply0)($__global_Prim_undefined));
+$__case_0 = $dictApplicative;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pure = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$apply = $__case_res_1;
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_2;
+$functorProduct1 = (function() use ($__global_Data_Functor_Product_bimap, $map) {
+  $__fn = function($dictFunctor1) use ($__global_Data_Functor_Product_bimap, $map, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dictFunctor1;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map1 = $__case_res_3;
+    $__res = (object)["map" => (function() use ($__global_Data_Functor_Product_bimap, $map, $map1) {
+  $__body = function($f, $v) use ($__global_Data_Functor_Product_bimap, $map, $map1) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    if (true) {
+$f1 = $__case_0;
+$fga = $__case_1;
+return ($__global_Data_Functor_Product_bimap)(($map)($f1), ($map1)($f1), $fga);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $v = null) use ($__global_Data_Functor_Product_bimap, $map, $map1, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, &$__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($f, $v);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+$applyProduct1 = (function() use ($functorProduct1, $__global_Prim_undefined, $__global_Data_Functor_Product_product, $apply) {
+  $__fn = function($dictApply1) use ($functorProduct1, $__global_Prim_undefined, $__global_Data_Functor_Product_product, $apply, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dictApply1;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$apply1 = $__case_res_4;
+$functorProduct2 = ($functorProduct1)((($dictApply1)->Functor0)($__global_Prim_undefined));
+    $__res = (object)["apply" => (function() use ($__global_Data_Functor_Product_product, $apply, $apply1) {
+  $__body = function($v, $v1) use ($__global_Data_Functor_Product_product, $apply, $apply1) {
+    $__case_0 = $v;
+    $__case_1 = $v1;
+    if (((($__case_0)->tag === "Tuple") && (($__case_1)->tag === "Tuple"))) {
+$f = ($__case_0)->v0;
+$g = ($__case_0)->v1;
+$a = ($__case_1)->v0;
+$b = ($__case_1)->v1;
+return ($__global_Data_Functor_Product_product)(($apply)($f, $a), ($apply1)($g, $b));
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($v, $v1 = null) use ($__global_Data_Functor_Product_product, $apply, $apply1, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($v, $v1);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "Functor0" => (function() use ($functorProduct2) {
+  $__fn = function($__dollar____unused) use ($functorProduct2, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $functorProduct2;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
     $__res = (function() use ($applyProduct1, $__global_Prim_undefined, $__global_Data_Functor_Product_product, $pure) {
   $__fn = function($dictApplicative1) use ($applyProduct1, $__global_Prim_undefined, $__global_Data_Functor_Product_product, $pure, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$pure1 = ($dictApplicative1)->pure;
+$__case_0 = $dictApplicative1;
+$__case_res_5 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_5 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pure1 = $__case_res_5;
 $applyProduct2 = ($applyProduct1)((($dictApplicative1)->Apply0)($__global_Prim_undefined));
     $__res = (object)["pure" => (function() use ($__global_Data_Functor_Product_product, $pure, $pure1) {
   $__fn = function($a) use ($__global_Data_Functor_Product_product, $pure, $pure1, &$__fn) {
@@ -714,11 +1532,359 @@ function Data_Functor_Product_monadProduct($dictMonad) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Functor_Product_applicativeProduct = ($GLOBALS['Data_Functor_Product_applicativeProduct'] ?? \Data\Functor\Product\phpurs_eval_thunk('Data_Functor_Product_applicativeProduct'));
+$__global_Data_Functor_Product_bimap = ($GLOBALS['Data_Functor_Product_bimap'] ?? \Data\Functor\Product\phpurs_eval_thunk('Data_Functor_Product_bimap'));
 $__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$__global_Data_Functor_Product_bindProduct = ($GLOBALS['Data_Functor_Product_bindProduct'] ?? \Data\Functor\Product\phpurs_eval_thunk('Data_Functor_Product_bindProduct'));
-$applicativeProduct1 = ($__global_Data_Functor_Product_applicativeProduct)((($dictMonad)->Applicative0)($__global_Prim_undefined));
-$bindProduct1 = ($__global_Data_Functor_Product_bindProduct)((($dictMonad)->Bind1)($__global_Prim_undefined));
+$__global_Data_Functor_Product_product = ($GLOBALS['Data_Functor_Product_product'] ?? \Data\Functor\Product\phpurs_eval_thunk('Data_Functor_Product_product'));
+$__global_Data_Functor_Product_compose = ($GLOBALS['Data_Functor_Product_compose'] ?? \Data\Functor\Product\phpurs_eval_thunk('Data_Functor_Product_compose'));
+$__global_Data_Tuple_fst = ($GLOBALS['Data_Tuple_fst'] ?? \Data\Tuple\phpurs_eval_thunk('Data_Tuple_fst'));
+$__global_Data_Functor_Product_unwrap = ($GLOBALS['Data_Functor_Product_unwrap'] ?? \Data\Functor\Product\phpurs_eval_thunk('Data_Functor_Product_unwrap'));
+$__global_Data_Tuple_snd = ($GLOBALS['Data_Tuple_snd'] ?? \Data\Tuple\phpurs_eval_thunk('Data_Tuple_snd'));
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pure = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$apply = $__case_res_1;
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_2;
+$functorProduct1 = (function() use ($__global_Data_Functor_Product_bimap, $map) {
+  $__fn = function($dictFunctor1) use ($__global_Data_Functor_Product_bimap, $map, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dictFunctor1;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map1 = $__case_res_3;
+    $__res = (object)["map" => (function() use ($__global_Data_Functor_Product_bimap, $map, $map1) {
+  $__body = function($f, $v) use ($__global_Data_Functor_Product_bimap, $map, $map1) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    if (true) {
+$f1 = $__case_0;
+$fga = $__case_1;
+return ($__global_Data_Functor_Product_bimap)(($map)($f1), ($map1)($f1), $fga);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $v = null) use ($__global_Data_Functor_Product_bimap, $map, $map1, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, &$__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($f, $v);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+$applyProduct1 = (function() use ($functorProduct1, $__global_Prim_undefined, $__global_Data_Functor_Product_product, $apply) {
+  $__fn = function($dictApply1) use ($functorProduct1, $__global_Prim_undefined, $__global_Data_Functor_Product_product, $apply, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dictApply1;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$apply1 = $__case_res_4;
+$functorProduct2 = ($functorProduct1)((($dictApply1)->Functor0)($__global_Prim_undefined));
+    $__res = (object)["apply" => (function() use ($__global_Data_Functor_Product_product, $apply, $apply1) {
+  $__body = function($v, $v1) use ($__global_Data_Functor_Product_product, $apply, $apply1) {
+    $__case_0 = $v;
+    $__case_1 = $v1;
+    if (((($__case_0)->tag === "Tuple") && (($__case_1)->tag === "Tuple"))) {
+$f = ($__case_0)->v0;
+$g = ($__case_0)->v1;
+$a = ($__case_1)->v0;
+$b = ($__case_1)->v1;
+return ($__global_Data_Functor_Product_product)(($apply)($f, $a), ($apply1)($g, $b));
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($v, $v1 = null) use ($__global_Data_Functor_Product_product, $apply, $apply1, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($v, $v1);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "Functor0" => (function() use ($functorProduct2) {
+  $__fn = function($__dollar____unused) use ($functorProduct2, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $functorProduct2;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+$applicativeProduct1 = (function() use ($applyProduct1, $__global_Prim_undefined, $__global_Data_Functor_Product_product, $pure) {
+  $__fn = function($dictApplicative1) use ($applyProduct1, $__global_Prim_undefined, $__global_Data_Functor_Product_product, $pure, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dictApplicative1;
+$__case_res_5 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_5 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pure1 = $__case_res_5;
+$applyProduct2 = ($applyProduct1)((($dictApplicative1)->Apply0)($__global_Prim_undefined));
+    $__res = (object)["pure" => (function() use ($__global_Data_Functor_Product_product, $pure, $pure1) {
+  $__fn = function($a) use ($__global_Data_Functor_Product_product, $pure, $pure1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($__global_Data_Functor_Product_product)(($pure)($a), ($pure1)($a));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})(), "Apply0" => (function() use ($applyProduct2) {
+  $__fn = function($__dollar____unused) use ($applyProduct2, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $applyProduct2;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+$__case_0 = $dict;
+$__case_res_6 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_6 = ($v)->bind;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bind = $__case_res_6;
+$__case_0 = $dict;
+$__case_res_7 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_7 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$apply = $__case_res_7;
+$__case_0 = $dict;
+$__case_res_8 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_8 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_8;
+$functorProduct1 = (function() use ($__global_Data_Functor_Product_bimap, $map) {
+  $__fn = function($dictFunctor1) use ($__global_Data_Functor_Product_bimap, $map, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dictFunctor1;
+$__case_res_9 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_9 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map1 = $__case_res_9;
+    $__res = (object)["map" => (function() use ($__global_Data_Functor_Product_bimap, $map, $map1) {
+  $__body = function($f, $v) use ($__global_Data_Functor_Product_bimap, $map, $map1) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    if (true) {
+$f1 = $__case_0;
+$fga = $__case_1;
+return ($__global_Data_Functor_Product_bimap)(($map)($f1), ($map1)($f1), $fga);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $v = null) use ($__global_Data_Functor_Product_bimap, $map, $map1, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, &$__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($f, $v);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+$applyProduct1 = (function() use ($functorProduct1, $__global_Prim_undefined, $__global_Data_Functor_Product_product, $apply) {
+  $__fn = function($dictApply1) use ($functorProduct1, $__global_Prim_undefined, $__global_Data_Functor_Product_product, $apply, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dictApply1;
+$__case_res_10 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_10 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$apply1 = $__case_res_10;
+$functorProduct2 = ($functorProduct1)((($dictApply1)->Functor0)($__global_Prim_undefined));
+    $__res = (object)["apply" => (function() use ($__global_Data_Functor_Product_product, $apply, $apply1) {
+  $__body = function($v, $v1) use ($__global_Data_Functor_Product_product, $apply, $apply1) {
+    $__case_0 = $v;
+    $__case_1 = $v1;
+    if (((($__case_0)->tag === "Tuple") && (($__case_1)->tag === "Tuple"))) {
+$f = ($__case_0)->v0;
+$g = ($__case_0)->v1;
+$a = ($__case_1)->v0;
+$b = ($__case_1)->v1;
+return ($__global_Data_Functor_Product_product)(($apply)($f, $a), ($apply1)($g, $b));
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($v, $v1 = null) use ($__global_Data_Functor_Product_product, $apply, $apply1, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($v, $v1);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "Functor0" => (function() use ($functorProduct2) {
+  $__fn = function($__dollar____unused) use ($functorProduct2, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $functorProduct2;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+$bindProduct1 = (function() use ($applyProduct1, $__global_Prim_undefined, $__global_Data_Functor_Product_product, $bind, $__global_Data_Functor_Product_compose, $__global_Data_Tuple_fst, $__global_Data_Functor_Product_unwrap, $__global_Data_Tuple_snd) {
+  $__fn = function($dictBind1) use ($applyProduct1, $__global_Prim_undefined, $__global_Data_Functor_Product_product, $bind, $__global_Data_Functor_Product_compose, $__global_Data_Tuple_fst, $__global_Data_Functor_Product_unwrap, $__global_Data_Tuple_snd, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dictBind1;
+$__case_res_11 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_11 = ($v)->bind;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bind1 = $__case_res_11;
+$applyProduct2 = ($applyProduct1)((($dictBind1)->Apply0)($__global_Prim_undefined));
+    $__res = (object)["bind" => (function() use ($__global_Data_Functor_Product_product, $bind, $__global_Data_Functor_Product_compose, $__global_Data_Tuple_fst, $__global_Data_Functor_Product_unwrap, $bind1, $__global_Data_Tuple_snd) {
+  $__body = function($v, $f) use ($__global_Data_Functor_Product_product, $bind, $__global_Data_Functor_Product_compose, $__global_Data_Tuple_fst, $__global_Data_Functor_Product_unwrap, $bind1, $__global_Data_Tuple_snd) {
+    $__case_0 = $v;
+    $__case_1 = $f;
+    switch (($__case_0)->tag) {
+case "Tuple":
+$fa = ($__case_0)->v0;
+$ga = ($__case_0)->v1;
+$f1 = $__case_1;
+return ($__global_Data_Functor_Product_product)(($bind)($fa, ($__global_Data_Functor_Product_compose)($__global_Data_Tuple_fst, ($__global_Data_Functor_Product_compose)($__global_Data_Functor_Product_unwrap, $f1))), ($bind1)($ga, ($__global_Data_Functor_Product_compose)($__global_Data_Tuple_snd, ($__global_Data_Functor_Product_compose)($__global_Data_Functor_Product_unwrap, $f1))));
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($v, $f = null) use ($__global_Data_Functor_Product_product, $bind, $__global_Data_Functor_Product_compose, $__global_Data_Tuple_fst, $__global_Data_Functor_Product_unwrap, $bind1, $__global_Data_Tuple_snd, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($f) use ($v, &$__fn) { return $__fn($v, $f); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($v, $f);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "Apply0" => (function() use ($applyProduct2) {
+  $__fn = function($__dollar____unused) use ($applyProduct2, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $applyProduct2;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
     $__res = (function() use ($applicativeProduct1, $__global_Prim_undefined, $bindProduct1) {
   $__fn = function($dictMonad1) use ($applicativeProduct1, $__global_Prim_undefined, $bindProduct1, &$__fn) {
   $__num = func_num_args();

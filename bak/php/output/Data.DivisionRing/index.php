@@ -88,14 +88,25 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Data_DivisionRing_div': $v = ($GLOBALS['Data_EuclideanRing_numDiv'] ?? \Data\EuclideanRing\phpurs_eval_thunk('Data_EuclideanRing_numDiv')); break;
+      case 'Data_DivisionRing_div': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_EuclideanRing_euclideanRingNumber'] ?? \Data\EuclideanRing\phpurs_eval_thunk('Data_EuclideanRing_euclideanRingNumber'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->div;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_DivisionRing_divisionringNumber': $v = (object)["recip" => (function() {
   $__fn = function($x) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (1.0 / $x);
+$__global_Data_DivisionRing_div = ($GLOBALS['Data_DivisionRing_div'] ?? \Data\DivisionRing\phpurs_eval_thunk('Data_DivisionRing_div'));
+    $__res = ($__global_Data_DivisionRing_div)(1.0, $x);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -161,9 +172,24 @@ function Data_DivisionRing_rightDiv($dictDivisionRing) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$mul = ((((($dictDivisionRing)->Ring0)($__global_Prim_undefined))->Semiring0)($__global_Prim_undefined))->mul;
-$recip1 = ($dictDivisionRing)->recip;
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->mul;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$mul = $__case_res_0;
+$__case_0 = $dictDivisionRing;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->recip;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$recip1 = $__case_res_1;
     $__res = (function() use ($mul, $recip1) {
   $__fn = function($a, $b = null) use ($mul, $recip1, &$__fn) {
   $__num = func_num_args();
@@ -187,9 +213,24 @@ function Data_DivisionRing_leftDiv($dictDivisionRing) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$mul = ((((($dictDivisionRing)->Ring0)($__global_Prim_undefined))->Semiring0)($__global_Prim_undefined))->mul;
-$recip1 = ($dictDivisionRing)->recip;
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->mul;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$mul = $__case_res_0;
+$__case_0 = $dictDivisionRing;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->recip;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$recip1 = $__case_res_1;
     $__res = (function() use ($mul, $recip1) {
   $__fn = function($a, $b = null) use ($mul, $recip1, &$__fn) {
   $__num = func_num_args();

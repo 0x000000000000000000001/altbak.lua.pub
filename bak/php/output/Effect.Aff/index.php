@@ -117,14 +117,106 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Effect_Aff_bind': $v = ($GLOBALS['Effect_bindE'] ?? \Effect\phpurs_eval_thunk('Effect_bindE')); break;
-      case 'Effect_Aff_discard': $v = ((($GLOBALS['Control_Bind_discardUnit'] ?? \Control\Bind\phpurs_eval_thunk('Control_Bind_discardUnit')))->discard)(($GLOBALS['Effect_bindEffect'] ?? \Effect\phpurs_eval_thunk('Effect_bindEffect'))); break;
-      case 'Effect_Aff_pure': $v = ($GLOBALS['Effect_pureE'] ?? \Effect\phpurs_eval_thunk('Effect_pureE')); break;
-      case 'Effect_Aff_compose': $v = (($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn')))->compose; break;
-      case 'Effect_Aff_void': $v = (($GLOBALS['Data_Functor_void'] ?? \Data\Functor\phpurs_eval_thunk('Data_Functor_void')))(($GLOBALS['Effect_functorEffect'] ?? \Effect\phpurs_eval_thunk('Effect_functorEffect'))); break;
-      case 'Effect_Aff_map': $v = (($GLOBALS['Effect_functorEffect'] ?? \Effect\phpurs_eval_thunk('Effect_functorEffect')))->map; break;
-      case 'Effect_Aff_pure1': $v = ($GLOBALS['Data_Either_Right'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Right')); break;
-      case 'Effect_Aff_composeFlipped': $v = (($GLOBALS['Control_Semigroupoid_composeFlipped'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_composeFlipped')))(($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn'))); break;
+      case 'Effect_Aff_bind': $v = (function() {
+  $__case_0 = ($GLOBALS['Effect_bindEffect'] ?? \Effect\phpurs_eval_thunk('Effect_bindEffect'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bind;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Effect_Aff_discard': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Bind_discardUnit'] ?? \Control\Bind\phpurs_eval_thunk('Control_Bind_discardUnit'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->discard;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return ($__case_res_0)(($GLOBALS['Effect_bindEffect'] ?? \Effect\phpurs_eval_thunk('Effect_bindEffect')));
+})(); break;
+      case 'Effect_Aff_pure': $v = (function() {
+  $__case_0 = ($GLOBALS['Effect_applicativeEffect'] ?? \Effect\phpurs_eval_thunk('Effect_applicativeEffect'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Effect_Aff_compose': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compose;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Effect_Aff_void': $v = (function() {
+  $__case_0 = ($GLOBALS['Effect_functorEffect'] ?? \Effect\phpurs_eval_thunk('Effect_functorEffect'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return ($__case_res_0)((($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const')))(($GLOBALS['Data_Unit_unit'] ?? \Data\Unit\phpurs_eval_thunk('Data_Unit_unit'))));
+})(); break;
+      case 'Effect_Aff_map': $v = (function() {
+  $__case_0 = ($GLOBALS['Effect_functorEffect'] ?? \Effect\phpurs_eval_thunk('Effect_functorEffect'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Effect_Aff_pure1': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Either_applicativeEither'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_applicativeEither'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Effect_Aff_composeFlipped': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compose;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $compose1 = $__case_res_0;
+  return (function() use ($compose1) {
+  $__fn = function($f, $g = null) use ($compose1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($g) use ($f, &$__fn) { return $__fn($f, $g); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($compose1)($g, $f);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+})(); break;
       case 'Effect_Aff_suspendAff': $v = (($GLOBALS['Effect_Aff__fork'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff__fork')))(false); break;
       case 'Effect_Aff_newtypeCanceler': $v = (object)["Coercible0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
@@ -140,9 +232,20 @@ $__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thun
 })()]; break;
       case 'Effect_Aff_functorParAff': $v = (object)["map" => ($GLOBALS['Effect_Aff__parAffMap'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff__parAffMap'))]; break;
       case 'Effect_Aff_functorAff': $v = (object)["map" => ($GLOBALS['Effect_Aff__map'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff__map'))]; break;
-      case 'Effect_Aff_map1': $v = ($GLOBALS['Effect_Aff__map'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff__map')); break;
+      case 'Effect_Aff_map1': $v = (function() {
+  $__case_0 = ($GLOBALS['Effect_Aff_functorAff'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_functorAff'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Effect_Aff_forkAff': $v = (($GLOBALS['Effect_Aff__fork'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff__fork')))(true); break;
-      case 'Effect_Aff_ffiUtil': $v = ($unsafeFromRight = (function() {
+      case 'Effect_Aff_ffiUtil': $v = (function() {
+  $unsafeFromRight = (function() {
   $__body = function($v) {
     $__global_Partial_Unsafe_unsafeCrashWith = ($GLOBALS['Partial_Unsafe_unsafeCrashWith'] ?? \Partial\Unsafe\phpurs_eval_thunk('Partial_Unsafe_unsafeCrashWith'));
     $__case_0 = $v;
@@ -169,7 +272,7 @@ break;
   };
   return $__fn;
 })();
-$unsafeFromLeft = (function() {
+  $unsafeFromLeft = (function() {
   $__body = function($v) {
     $__global_Partial_Unsafe_unsafeCrashWith = ($GLOBALS['Partial_Unsafe_unsafeCrashWith'] ?? \Partial\Unsafe\phpurs_eval_thunk('Partial_Unsafe_unsafeCrashWith'));
     $__case_0 = $v;
@@ -196,7 +299,7 @@ break;
   };
   return $__fn;
 })();
-$isLeft = (function() {
+  $isLeft = (function() {
   $__body = function($v) {
     $__case_0 = $v;
     switch (($__case_0)->tag) {
@@ -221,7 +324,7 @@ break;
   };
   return $__fn;
 })();
-return (object)["isLeft" => $isLeft, "fromLeft" => $unsafeFromLeft, "fromRight" => $unsafeFromRight, "left" => (function() {
+  return (object)["isLeft" => $isLeft, "fromLeft" => $unsafeFromLeft, "fromRight" => $unsafeFromRight, "left" => (function() {
   $__fn = function($value0) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
@@ -241,7 +344,8 @@ return (object)["isLeft" => $isLeft, "fromLeft" => $unsafeFromLeft, "fromRight" 
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})()];)(); break;
+})()];
+})(); break;
       case 'Effect_Aff_launchAff_': $v = (($GLOBALS['Effect_Aff_compose'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_compose')))(($GLOBALS['Effect_Aff_void'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_void')), ($GLOBALS['Effect_Aff_launchAff'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_launchAff'))); break;
       case 'Effect_Aff_launchSuspendedAff': $v = ($GLOBALS['Effect_Aff_makeFiber'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_makeFiber')); break;
       case 'Effect_Aff_applyParAff': $v = (object)["apply" => ($GLOBALS['Effect_Aff__parAffApply'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff__parAffApply')), "Functor0" => (function() {
@@ -256,7 +360,44 @@ $__global_Effect_Aff_functorParAff = ($GLOBALS['Effect_Aff_functorParAff'] ?? \E
   };
   return $__fn;
 })()]; break;
-      case 'Effect_Aff_lift2': $v = (($GLOBALS['Control_Apply_lift2'] ?? \Control\Apply\phpurs_eval_thunk('Control_Apply_lift2')))(($GLOBALS['Effect_Aff_applyParAff'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_applyParAff'))); break;
+      case 'Effect_Aff_lift2': $v = (function() {
+  $__case_0 = ($GLOBALS['Effect_Aff_applyParAff'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_applyParAff'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $apply1 = $__case_res_0;
+  $__case_0 = $dict;
+  $__case_res_1 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $map = $__case_res_1;
+  return (function() use ($apply1, $map) {
+  $__fn = function($f, $a = null, $b = null) use ($apply1, $map, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($b) use ($f, $a, &$__fn) { return $__fn($f, $a, $b); };
+    if ($__num === 1) return function($a, $b = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $a, $b);
+      if ($__num2 === 1) return function($b) use ($f, $a, &$__fn) { return $__fn($f, $a, $b); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = ($apply1)(($map)($f, $a), $b);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})();
+})(); break;
       case 'Effect_Aff_monadAff': $v = (object)["Applicative0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
@@ -304,7 +445,57 @@ $__global_Effect_Aff_applyAff = ($GLOBALS['Effect_Aff_applyAff'] ?? \Effect\Aff\
   };
   return $__fn;
 })()]; break;
-      case 'Effect_Aff_applyAff': $v = (object)["apply" => (($GLOBALS['Control_Monad_ap'] ?? \Control\Monad\phpurs_eval_thunk('Control_Monad_ap')))(($GLOBALS['Effect_Aff_monadAff'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_monadAff'))), "Functor0" => (function() {
+      case 'Effect_Aff_applyAff': $v = (function() {
+  $__case_0 = $dict;
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bind;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $bind = $__case_res_0;
+  $__case_0 = $dict;
+  $__case_res_1 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $pure = $__case_res_1;
+  return (object)["apply" => (function() use ($bind, $pure) {
+  $__fn = function($f, $a = null) use ($bind, $pure, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($a) use ($f, &$__fn) { return $__fn($f, $a); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($bind)($f, (function() use ($bind, $a, $pure) {
+  $__fn = function($f__prime__) use ($bind, $a, $pure, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($bind)($a, (function() use ($pure, $f__prime__) {
+  $__fn = function($a__prime__) use ($pure, $f__prime__, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($pure)(($f__prime__)($a__prime__));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})());
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})());
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "Functor0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
@@ -315,22 +506,100 @@ $__global_Effect_Aff_functorAff = ($GLOBALS['Effect_Aff_functorAff'] ?? \Effect\
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})()]; break;
-      case 'Effect_Aff_pure2': $v = ($GLOBALS['Effect_Aff__pure'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff__pure')); break;
-      case 'Effect_Aff_bind1': $v = ($GLOBALS['Effect_Aff__bind'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff__bind')); break;
-      case 'Effect_Aff_lift21': $v = (($GLOBALS['Control_Apply_lift2'] ?? \Control\Apply\phpurs_eval_thunk('Control_Apply_lift2')))(($GLOBALS['Effect_Aff_applyAff'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_applyAff'))); break;
-      case 'Effect_Aff_apply': $v = (($GLOBALS['Effect_Aff_applyAff'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_applyAff')))->apply; break;
-      case 'Effect_Aff_bindFlipped': $v = (($GLOBALS['Control_Bind_bindFlipped'] ?? \Control\Bind\phpurs_eval_thunk('Control_Bind_bindFlipped')))(($GLOBALS['Effect_Aff_bindAff'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_bindAff'))); break;
+})()];
+})(); break;
+      case 'Effect_Aff_pure2': $v = (function() {
+  $__case_0 = ($GLOBALS['Effect_Aff_applicativeAff'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_applicativeAff'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Effect_Aff_bind1': $v = (function() {
+  $__case_0 = ($GLOBALS['Effect_Aff_bindAff'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_bindAff'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bind;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Effect_Aff_lift21': $v = (function() {
+  $__case_0 = ($GLOBALS['Effect_Aff_applyAff'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_applyAff'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $apply1 = $__case_res_0;
+  $__case_0 = $dict;
+  $__case_res_1 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $map = $__case_res_1;
+  return (function() use ($apply1, $map) {
+  $__fn = function($f, $a = null, $b = null) use ($apply1, $map, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($b) use ($f, $a, &$__fn) { return $__fn($f, $a, $b); };
+    if ($__num === 1) return function($a, $b = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $a, $b);
+      if ($__num2 === 1) return function($b) use ($f, $a, &$__fn) { return $__fn($f, $a, $b); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = ($apply1)(($map)($f, $a), $b);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})();
+})(); break;
+      case 'Effect_Aff_apply': $v = (function() {
+  $__case_0 = ($GLOBALS['Effect_Aff_applyAff'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_applyAff'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Effect_Aff_bindFlipped': $v = (function() {
+  $__case_0 = ($GLOBALS['Effect_Aff_bindAff'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_bindAff'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bind;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return (($GLOBALS['Data_Function_flip'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_flip')))($__case_res_0);
+})(); break;
       case 'Effect_Aff_lazyAff': $v = (object)["defer" => (function() {
   $__fn = function($f) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Effect_Aff__bind = ($GLOBALS['Effect_Aff__bind'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff__bind'));
-$__global_Effect_Aff__pure = ($GLOBALS['Effect_Aff__pure'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff__pure'));
+$__global_Effect_Aff_bind1 = ($GLOBALS['Effect_Aff_bind1'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_bind1'));
+$__global_Effect_Aff_pure2 = ($GLOBALS['Effect_Aff_pure2'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_pure2'));
 $__global_Data_Unit_unit = ($GLOBALS['Data_Unit_unit'] ?? \Data\Unit\phpurs_eval_thunk('Data_Unit_unit'));
-    $__res = ($__global_Effect_Aff__bind)(($__global_Effect_Aff__pure)($__global_Data_Unit_unit), $f);
+    $__res = ($__global_Effect_Aff_bind1)(($__global_Effect_Aff_pure2)($__global_Data_Unit_unit), $f);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -358,8 +627,18 @@ $__global_Effect_Aff_applyParAff = ($GLOBALS['Effect_Aff_applyParAff'] ?? \Effec
   };
   return $__fn;
 })()]; break;
-      case 'Effect_Aff_parallel': $v = ($GLOBALS['Unsafe_Coerce_unsafeCoerce'] ?? \Unsafe\Coerce\phpurs_eval_thunk('Unsafe_Coerce_unsafeCoerce')); break;
-      case 'Effect_Aff_applicativeParAff': $v = (object)["pure" => (($GLOBALS['Effect_Aff_compose'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_compose')))(($GLOBALS['Unsafe_Coerce_unsafeCoerce'] ?? \Unsafe\Coerce\phpurs_eval_thunk('Unsafe_Coerce_unsafeCoerce')), ($GLOBALS['Effect_Aff__pure'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff__pure'))), "Apply0" => (function() {
+      case 'Effect_Aff_parallel': $v = (function() {
+  $__case_0 = ($GLOBALS['Effect_Aff_parallelAff'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_parallelAff'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->parallel;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Effect_Aff_applicativeParAff': $v = (object)["pure" => (($GLOBALS['Effect_Aff_compose'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_compose')))(($GLOBALS['Effect_Aff_parallel'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_parallel')), ($GLOBALS['Effect_Aff_pure2'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_pure2'))), "Apply0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
@@ -371,8 +650,166 @@ $__global_Effect_Aff_applyParAff = ($GLOBALS['Effect_Aff_applyParAff'] ?? \Effec
   };
   return $__fn;
 })()]; break;
-      case 'Effect_Aff_pure3': $v = (($GLOBALS['Effect_Aff_applicativeParAff'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_applicativeParAff')))->pure; break;
-      case 'Effect_Aff_parSequence_': $v = (($GLOBALS['Control_Parallel_parSequence_'] ?? \Control\Parallel\phpurs_eval_thunk('Control_Parallel_parSequence_')))(($GLOBALS['Effect_Aff_parallelAff'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_parallelAff')), ($GLOBALS['Effect_Aff_applicativeParAff'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_applicativeParAff')), ($GLOBALS['Data_Foldable_foldableArray'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableArray'))); break;
+      case 'Effect_Aff_pure3': $v = (function() {
+  $__case_0 = ($GLOBALS['Effect_Aff_applicativeParAff'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_applicativeParAff'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Effect_Aff_parSequence_': $v = (function() {
+  $__case_0 = ($GLOBALS['Effect_Aff_parallelAff'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_parallelAff'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->sequential;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $sequential = $__case_res_0;
+  $__case_0 = ($GLOBALS['Effect_Aff_parallelAff'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_parallelAff'));
+  $__case_res_1 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->parallel;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $parallel = $__case_res_1;
+  $parTraverse_1 = (function() use ($dict, $sequential, $parallel) {
+  $__fn = function($dictApplicative) use ($dict, $sequential, $parallel, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__global_Data_Function_const = ($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const'));
+$__global_Control_Apply_identity = ($GLOBALS['Control_Apply_identity'] ?? \Control\Apply\phpurs_eval_thunk('Control_Apply_identity'));
+$__global_Data_Foldable_compose = ($GLOBALS['Data_Foldable_compose'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_compose'));
+$__global_Data_Unit_unit = ($GLOBALS['Data_Unit_unit'] ?? \Data\Unit\phpurs_eval_thunk('Data_Unit_unit'));
+$__global_Control_Parallel_compose = ($GLOBALS['Control_Parallel_compose'] ?? \Control\Parallel\phpurs_eval_thunk('Control_Parallel_compose'));
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$apply1 = $__case_res_2;
+$__case_0 = $dict;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_3;
+$applySecond = (function() use ($apply1, $map, $__global_Data_Function_const, $__global_Control_Apply_identity) {
+  $__fn = function($a, $b = null) use ($apply1, $map, $__global_Data_Function_const, $__global_Control_Apply_identity, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($b) use ($a, &$__fn) { return $__fn($a, $b); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($apply1)(($map)(($__global_Data_Function_const)($__global_Control_Apply_identity), $a), $b);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+$__case_0 = $dictApplicative;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pure = $__case_res_4;
+$traverse_ = (function() use ($__global_Data_Foldable_compose, $applySecond, $pure, $__global_Data_Unit_unit) {
+  $__fn = function($dictFoldable) use ($__global_Data_Foldable_compose, $applySecond, $pure, $__global_Data_Unit_unit, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dictFoldable;
+$__case_res_5 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_5 = ($v)->foldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldr3 = $__case_res_5;
+    $__res = (function() use ($foldr3, $__global_Data_Foldable_compose, $applySecond, $pure, $__global_Data_Unit_unit) {
+  $__fn = function($f) use ($foldr3, $__global_Data_Foldable_compose, $applySecond, $pure, $__global_Data_Unit_unit, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($foldr3)(($__global_Data_Foldable_compose)($applySecond, $f), ($pure)($__global_Data_Unit_unit));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+    $__res = (function() use ($traverse_, $__global_Control_Parallel_compose, $sequential, $parallel) {
+  $__fn = function($dictFoldable) use ($traverse_, $__global_Control_Parallel_compose, $sequential, $parallel, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$traverse_1 = ($traverse_)($dictFoldable);
+    $__res = (function() use ($__global_Control_Parallel_compose, $sequential, $traverse_1, $parallel) {
+  $__fn = function($f) use ($__global_Control_Parallel_compose, $sequential, $traverse_1, $parallel, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($__global_Control_Parallel_compose)($sequential, ($traverse_1)(($__global_Control_Parallel_compose)($parallel, $f)));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+  return ((function() use ($parTraverse_1) {
+  $__fn = function($dictApplicative) use ($parTraverse_1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__global_Control_Parallel_identity = ($GLOBALS['Control_Parallel_identity'] ?? \Control\Parallel\phpurs_eval_thunk('Control_Parallel_identity'));
+$parTraverse_2 = ($parTraverse_1)($dictApplicative);
+    $__res = (function() use ($parTraverse_2, $__global_Control_Parallel_identity) {
+  $__fn = function($dictFoldable) use ($parTraverse_2, $__global_Control_Parallel_identity, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = ($parTraverse_2)($dictFoldable, $__global_Control_Parallel_identity);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})())(($GLOBALS['Effect_Aff_applicativeParAff'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_applicativeParAff')), ($GLOBALS['Data_Foldable_foldableArray'] ?? \Data\Foldable\phpurs_eval_thunk('Data_Foldable_foldableArray')));
+})(); break;
       case 'Effect_Aff_semigroupCanceler': $v = (object)["append" => (function() {
   $__body = function($v, $v1) {
     $__global_Effect_Aff_parSequence_ = ($GLOBALS['Effect_Aff_parSequence_'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_parSequence_'));
@@ -419,8 +856,18 @@ $__global_Effect_Aff_monadAff = ($GLOBALS['Effect_Aff_monadAff'] ?? \Effect\Aff\
   };
   return $__fn;
 })()]; break;
-      case 'Effect_Aff_liftEffect': $v = ($GLOBALS['Effect_Aff__liftEffect'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff__liftEffect')); break;
-      case 'Effect_Aff_effectCanceler': $v = (($GLOBALS['Effect_Aff_compose'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_compose')))(($GLOBALS['Effect_Aff_Canceler'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_Canceler')), (($GLOBALS['Effect_Aff_compose'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_compose')))(($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const')), ($GLOBALS['Effect_Aff__liftEffect'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff__liftEffect')))); break;
+      case 'Effect_Aff_liftEffect': $v = (function() {
+  $__case_0 = ($GLOBALS['Effect_Aff_monadEffectAff'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_monadEffectAff'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->liftEffect;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Effect_Aff_effectCanceler': $v = (($GLOBALS['Effect_Aff_compose'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_compose')))(($GLOBALS['Effect_Aff_Canceler'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_Canceler')), (($GLOBALS['Effect_Aff_compose'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_compose')))(($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const')), ($GLOBALS['Effect_Aff_liftEffect'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_liftEffect')))); break;
       case 'Effect_Aff_functorFiber': $v = (object)["map" => (function() {
   $__fn = function($f, $t = null) use (&$__fn) {
   $__num = func_num_args();
@@ -430,9 +877,9 @@ $__global_Effect_Aff_monadAff = ($GLOBALS['Effect_Aff_monadAff'] ?? \Effect\Aff\
   }
 $__global_Effect_Unsafe_unsafePerformEffect = ($GLOBALS['Effect_Unsafe_unsafePerformEffect'] ?? \Effect\Unsafe\phpurs_eval_thunk('Effect_Unsafe_unsafePerformEffect'));
 $__global_Effect_Aff_makeFiber = ($GLOBALS['Effect_Aff_makeFiber'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_makeFiber'));
-$__global_Effect_Aff__map = ($GLOBALS['Effect_Aff__map'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff__map'));
+$__global_Effect_Aff_map1 = ($GLOBALS['Effect_Aff_map1'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_map1'));
 $__global_Effect_Aff_joinFiber = ($GLOBALS['Effect_Aff_joinFiber'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_joinFiber'));
-    $__res = ($__global_Effect_Unsafe_unsafePerformEffect)(($__global_Effect_Aff_makeFiber)(($__global_Effect_Aff__map)($f, ($__global_Effect_Aff_joinFiber)($t))));
+    $__res = ($__global_Effect_Unsafe_unsafePerformEffect)(($__global_Effect_Aff_makeFiber)(($__global_Effect_Aff_map1)($f, ($__global_Effect_Aff_joinFiber)($t))));
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
@@ -472,8 +919,8 @@ $__global_Effect_Aff_functorFiber = ($GLOBALS['Effect_Aff_functorFiber'] ?? \Eff
   }
 $__global_Effect_Unsafe_unsafePerformEffect = ($GLOBALS['Effect_Unsafe_unsafePerformEffect'] ?? \Effect\Unsafe\phpurs_eval_thunk('Effect_Unsafe_unsafePerformEffect'));
 $__global_Effect_Aff_makeFiber = ($GLOBALS['Effect_Aff_makeFiber'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_makeFiber'));
-$__global_Effect_Aff__pure = ($GLOBALS['Effect_Aff__pure'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff__pure'));
-    $__res = ($__global_Effect_Unsafe_unsafePerformEffect)(($__global_Effect_Aff_makeFiber)(($__global_Effect_Aff__pure)($a)));
+$__global_Effect_Aff_pure2 = ($GLOBALS['Effect_Aff_pure2'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_pure2'));
+    $__res = ($__global_Effect_Unsafe_unsafePerformEffect)(($__global_Effect_Aff_makeFiber)(($__global_Effect_Aff_pure2)($a)));
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -490,7 +937,16 @@ $__global_Effect_Aff_applyFiber = ($GLOBALS['Effect_Aff_applyFiber'] ?? \Effect\
   return $__fn;
 })()]; break;
       case 'Effect_Aff_fiberCanceler': $v = (($GLOBALS['Effect_Aff_compose'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_compose')))(($GLOBALS['Effect_Aff_Canceler'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_Canceler')), (($GLOBALS['Data_Function_flip'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_flip')))(($GLOBALS['Effect_Aff_killFiber'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_killFiber')))); break;
-      case 'Effect_Aff_monadSTAff': $v = (object)["liftST" => (($GLOBALS['Effect_Aff_composeFlipped'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_composeFlipped')))(($GLOBALS['Unsafe_Coerce_unsafeCoerce'] ?? \Unsafe\Coerce\phpurs_eval_thunk('Unsafe_Coerce_unsafeCoerce')), ($GLOBALS['Effect_Aff__liftEffect'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff__liftEffect'))), "Monad0" => (function() {
+      case 'Effect_Aff_monadSTAff': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Monad_ST_Class_monadSTEffect'] ?? \Control\Monad\ST\Class\phpurs_eval_thunk('Control_Monad_ST_Class_monadSTEffect'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->liftST;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return (object)["liftST" => (($GLOBALS['Effect_Aff_composeFlipped'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_composeFlipped')))($__case_res_0, ($GLOBALS['Effect_Aff_liftEffect'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_liftEffect'))), "Monad0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
@@ -501,7 +957,8 @@ $__global_Effect_Aff_monadAff = ($GLOBALS['Effect_Aff_monadAff'] ?? \Effect\Aff\
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})()]; break;
+})()];
+})(); break;
       case 'Effect_Aff_monadThrowAff': $v = (object)["throwError" => ($GLOBALS['Effect_Aff__throwError'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff__throwError')), "Monad0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
@@ -526,8 +983,79 @@ $__global_Effect_Aff_monadThrowAff = ($GLOBALS['Effect_Aff_monadThrowAff'] ?? \E
   };
   return $__fn;
 })()]; break;
-      case 'Effect_Aff_try': $v = (($GLOBALS['Control_Monad_Error_Class_try'] ?? \Control\Monad\Error\Class\phpurs_eval_thunk('Control_Monad_Error_Class_try')))(($GLOBALS['Effect_Aff_monadErrorAff'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_monadErrorAff'))); break;
-      case 'Effect_Aff_catchError': $v = ($GLOBALS['Effect_Aff__catchError'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff__catchError')); break;
+      case 'Effect_Aff_try': $v = (function() {
+  $__case_0 = ($GLOBALS['Effect_Aff_monadErrorAff'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_monadErrorAff'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->catchError;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $catchError1 = $__case_res_0;
+  $Monad0 = ((((($GLOBALS['Effect_Aff_monadErrorAff'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_monadErrorAff')))->MonadThrow0)(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))))->Monad0)(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined')));
+  $__case_0 = $dict;
+  $__case_res_1 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $map = $__case_res_1;
+  $__case_0 = $dict;
+  $__case_res_2 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $pure = $__case_res_2;
+  return (function() use ($catchError1, $map, $pure) {
+  $__fn = function($a) use ($catchError1, $map, $pure, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__global_Control_Monad_Error_Class_compose = ($GLOBALS['Control_Monad_Error_Class_compose'] ?? \Control\Monad\Error\Class\phpurs_eval_thunk('Control_Monad_Error_Class_compose'));
+    $__res = ($catchError1)(($map)((function() {
+  $__fn = function($value0) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = new Phpurs_Data1("Right", $value0);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})(), $a), ($__global_Control_Monad_Error_Class_compose)($pure, (function() {
+  $__fn = function($value0) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = new Phpurs_Data1("Left", $value0);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()));
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+})(); break;
+      case 'Effect_Aff_catchError': $v = (function() {
+  $__case_0 = ($GLOBALS['Effect_Aff_monadErrorAff'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_monadErrorAff'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->catchError;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Effect_Aff_attempt': $v = ($GLOBALS['Effect_Aff_try'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_try')); break;
       case 'Effect_Aff_monadRecAff': $v = (object)["tailRecM" => (function() {
   $__fn = function($k) use (&$__fn) {
@@ -535,22 +1063,22 @@ $__global_Effect_Aff_monadThrowAff = ($GLOBALS['Effect_Aff_monadThrowAff'] ?? \E
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Effect_Aff__bind = ($GLOBALS['Effect_Aff__bind'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff__bind'));
-$__global_Effect_Aff__pure = ($GLOBALS['Effect_Aff__pure'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff__pure'));
-$go = (function() use ($__global_Effect_Aff__bind, $k, $__global_Effect_Aff__pure, &$go) {
-  $__fn = function($a) use ($__global_Effect_Aff__bind, $k, $__global_Effect_Aff__pure, &$go, &$__fn) {
+$__global_Effect_Aff_bind1 = ($GLOBALS['Effect_Aff_bind1'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_bind1'));
+$__global_Effect_Aff_pure2 = ($GLOBALS['Effect_Aff_pure2'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_pure2'));
+$go = (function() use ($__global_Effect_Aff_bind1, $k, $__global_Effect_Aff_pure2, &$go) {
+  $__fn = function($a) use ($__global_Effect_Aff_bind1, $k, $__global_Effect_Aff_pure2, &$go, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 while (true) {
-return ($__global_Effect_Aff__bind)(($k)($a), (function() use ($__global_Effect_Aff__pure, &$go) {
-  $__body = function($res) use ($__global_Effect_Aff__pure, &$go) {
+return ($__global_Effect_Aff_bind1)(($k)($a), (function() use ($__global_Effect_Aff_pure2, &$go) {
+  $__body = function($res) use ($__global_Effect_Aff_pure2, &$go) {
     $__case_0 = $res;
     switch (($__case_0)->tag) {
 case "Done":
 $r = ($__case_0)->v0;
-return ($__global_Effect_Aff__pure)($r);
+return ($__global_Effect_Aff_pure2)($r);
 break;
 case "Loop":
 $b = ($__case_0)->v0;
@@ -561,7 +1089,7 @@ throw new \Exception("Pattern match failure");
 break;
 };
   };
-  $__fn = function($res) use ($__global_Effect_Aff__pure, &$go, $__body, &$__fn) {
+  $__fn = function($res) use ($__global_Effect_Aff_pure2, &$go, $__body, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
@@ -593,7 +1121,7 @@ $__global_Effect_Aff_monadAff = ($GLOBALS['Effect_Aff_monadAff'] ?? \Effect\Aff\
   };
   return $__fn;
 })()]; break;
-      case 'Effect_Aff_nonCanceler': $v = (($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const')))((($GLOBALS['Effect_Aff__pure'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff__pure')))(($GLOBALS['Data_Unit_unit'] ?? \Data\Unit\phpurs_eval_thunk('Data_Unit_unit')))); break;
+      case 'Effect_Aff_nonCanceler': $v = (($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const')))((($GLOBALS['Effect_Aff_pure2'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_pure2')))(($GLOBALS['Data_Unit_unit'] ?? \Data\Unit\phpurs_eval_thunk('Data_Unit_unit')))); break;
       case 'Effect_Aff_monoidCanceler': $v = (object)["mempty" => ($GLOBALS['Effect_Aff_nonCanceler'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_nonCanceler')), "Semigroup0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
@@ -606,21 +1134,31 @@ $__global_Effect_Aff_semigroupCanceler = ($GLOBALS['Effect_Aff_semigroupCanceler
   };
   return $__fn;
 })()]; break;
-      case 'Effect_Aff_mempty': $v = ($GLOBALS['Effect_Aff_nonCanceler'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_nonCanceler')); break;
+      case 'Effect_Aff_mempty': $v = (function() {
+  $__case_0 = ($GLOBALS['Effect_Aff_monoidCanceler'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_monoidCanceler'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->mempty;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Effect_Aff_never': $v = (($GLOBALS['Effect_Aff_makeAff'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_makeAff')))((function() {
   $__fn = function($v) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Effect_pureE = ($GLOBALS['Effect_pureE'] ?? \Effect\phpurs_eval_thunk('Effect_pureE'));
-$__global_Effect_Aff_nonCanceler = ($GLOBALS['Effect_Aff_nonCanceler'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_nonCanceler'));
-    $__res = ($__global_Effect_pureE)($__global_Effect_Aff_nonCanceler);
+$__global_Effect_Aff_pure = ($GLOBALS['Effect_Aff_pure'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_pure'));
+$__global_Effect_Aff_mempty = ($GLOBALS['Effect_Aff_mempty'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_mempty'));
+    $__res = ($__global_Effect_Aff_pure)($__global_Effect_Aff_mempty);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
 })()); break;
-      case 'Effect_Aff_apathize': $v = (($GLOBALS['Effect_Aff_composeFlipped'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_composeFlipped')))(($GLOBALS['Effect_Aff_try'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_try')), (($GLOBALS['Effect_Aff__map'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff__map')))((($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const')))(($GLOBALS['Data_Unit_unit'] ?? \Data\Unit\phpurs_eval_thunk('Data_Unit_unit'))))); break;
+      case 'Effect_Aff_apathize': $v = (($GLOBALS['Effect_Aff_composeFlipped'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_composeFlipped')))(($GLOBALS['Effect_Aff_try'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_try')), (($GLOBALS['Effect_Aff_map1'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_map1')))((($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const')))(($GLOBALS['Data_Unit_unit'] ?? \Data\Unit\phpurs_eval_thunk('Data_Unit_unit'))))); break;
       case 'Effect_Aff_altParAff': $v = (object)["alt" => ($GLOBALS['Effect_Aff__parAffAlt'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff__parAffAlt')), "Functor0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
@@ -640,9 +1178,9 @@ $__global_Effect_Aff_functorParAff = ($GLOBALS['Effect_Aff_functorParAff'] ?? \E
     if ($__num === 1) return function($a2) use ($a1, &$__fn) { return $__fn($a1, $a2); };
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
-$__global_Effect_Aff__catchError = ($GLOBALS['Effect_Aff__catchError'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff__catchError'));
+$__global_Effect_Aff_catchError = ($GLOBALS['Effect_Aff_catchError'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_catchError'));
 $__global_Data_Function_const = ($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const'));
-    $__res = ($__global_Effect_Aff__catchError)($a1, ($__global_Data_Function_const)($a2));
+    $__res = ($__global_Effect_Aff_catchError)($a1, ($__global_Data_Function_const)($a2));
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
@@ -658,7 +1196,16 @@ $__global_Effect_Aff_functorAff = ($GLOBALS['Effect_Aff_functorAff'] ?? \Effect\
   };
   return $__fn;
 })()]; break;
-      case 'Effect_Aff_plusAff': $v = (object)["empty" => (($GLOBALS['Effect_Aff__throwError'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff__throwError')))((($GLOBALS['Effect_Exception_error'] ?? \Effect\Exception\phpurs_eval_thunk('Effect_Exception_error')))("Always fails")), "Alt0" => (function() {
+      case 'Effect_Aff_plusAff': $v = (function() {
+  $__case_0 = ($GLOBALS['Effect_Aff_monadThrowAff'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_monadThrowAff'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->throwError;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return (object)["empty" => ($__case_res_0)((($GLOBALS['Effect_Exception_error'] ?? \Effect\Exception\phpurs_eval_thunk('Effect_Exception_error')))("Always fails")), "Alt0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
@@ -669,8 +1216,18 @@ $__global_Effect_Aff_altAff = ($GLOBALS['Effect_Aff_altAff'] ?? \Effect\Aff\phpu
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})()]; break;
-      case 'Effect_Aff_plusParAff': $v = (object)["empty" => (($GLOBALS['Unsafe_Coerce_unsafeCoerce'] ?? \Unsafe\Coerce\phpurs_eval_thunk('Unsafe_Coerce_unsafeCoerce')))((($GLOBALS['Effect_Aff_plusAff'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_plusAff')))->empty), "Alt0" => (function() {
+})()];
+})(); break;
+      case 'Effect_Aff_plusParAff': $v = (function() {
+  $__case_0 = ($GLOBALS['Effect_Aff_plusAff'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_plusAff'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->empty;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return (object)["empty" => (($GLOBALS['Effect_Aff_parallel'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_parallel')))($__case_res_0), "Alt0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
@@ -681,7 +1238,8 @@ $__global_Effect_Aff_altParAff = ($GLOBALS['Effect_Aff_altParAff'] ?? \Effect\Af
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})()]; break;
+})()];
+})(); break;
       case 'Effect_Aff_alternativeParAff': $v = (object)["Applicative0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
@@ -857,12 +1415,12 @@ function Effect_Aff_launchAff($aff) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Effect_bindE = ($GLOBALS['Effect_bindE'] ?? \Effect\phpurs_eval_thunk('Effect_bindE'));
+$__global_Effect_Aff_bind = ($GLOBALS['Effect_Aff_bind'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_bind'));
 $__global_Effect_Aff_makeFiber = ($GLOBALS['Effect_Aff_makeFiber'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_makeFiber'));
 $__global_Effect_Aff_discard = ($GLOBALS['Effect_Aff_discard'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_discard'));
-$__global_Effect_pureE = ($GLOBALS['Effect_pureE'] ?? \Effect\phpurs_eval_thunk('Effect_pureE'));
-    $__res = ($__global_Effect_bindE)(($__global_Effect_Aff_makeFiber)($aff), (function() use ($__global_Effect_Aff_discard, $__global_Effect_pureE) {
-  $__fn = function($fiber) use ($__global_Effect_Aff_discard, $__global_Effect_pureE, &$__fn) {
+$__global_Effect_Aff_pure = ($GLOBALS['Effect_Aff_pure'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_pure'));
+    $__res = ($__global_Effect_Aff_bind)(($__global_Effect_Aff_makeFiber)($aff), (function() use ($__global_Effect_Aff_discard, $__global_Effect_Aff_pure) {
+  $__fn = function($fiber) use ($__global_Effect_Aff_discard, $__global_Effect_Aff_pure, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
@@ -875,13 +1433,13 @@ $__case_res_0 = ($f)->run;
 } else {
 throw new \Exception("Pattern match failure");
 };
-    $__res = ($__global_Effect_Aff_discard)($__case_res_0, (function() use ($__global_Effect_pureE, $fiber) {
-  $__fn = function($__dollar____unused) use ($__global_Effect_pureE, $fiber, &$__fn) {
+    $__res = ($__global_Effect_Aff_discard)($__case_res_0, (function() use ($__global_Effect_Aff_pure, $fiber) {
+  $__fn = function($__dollar____unused) use ($__global_Effect_Aff_pure, $fiber, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($__global_Effect_pureE)($fiber);
+    $__res = ($__global_Effect_Aff_pure)($fiber);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -954,7 +1512,15 @@ function Effect_Aff_semigroupParAff($dictSemigroup) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Effect_Aff_lift2 = ($GLOBALS['Effect_Aff_lift2'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_lift2'));
-    $__res = (object)["append" => ($__global_Effect_Aff_lift2)(($dictSemigroup)->append)];
+$__case_0 = $dictSemigroup;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = (object)["append" => ($__global_Effect_Aff_lift2)($__case_res_0)];
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Effect_Aff_semigroupParAff'] = __NAMESPACE__ . '\\Effect_Aff_semigroupParAff';
@@ -978,7 +1544,7 @@ function Effect_Aff_cancelWith($aff, $v = null) {
   }
   $__body = function($aff, $v) {
     $__global_Effect_Aff_generalBracket = ($GLOBALS['Effect_Aff_generalBracket'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_generalBracket'));
-    $__global_Effect_Aff__pure = ($GLOBALS['Effect_Aff__pure'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff__pure'));
+    $__global_Effect_Aff_pure2 = ($GLOBALS['Effect_Aff_pure2'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_pure2'));
     $__global_Data_Unit_unit = ($GLOBALS['Data_Unit_unit'] ?? \Data\Unit\phpurs_eval_thunk('Data_Unit_unit'));
     $__global_Data_Function_const = ($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const'));
     $__case_0 = $aff;
@@ -986,7 +1552,7 @@ function Effect_Aff_cancelWith($aff, $v = null) {
     if (true) {
 $aff1 = $__case_0;
 $cancel = $__case_1;
-return ($__global_Effect_Aff_generalBracket)(($__global_Effect_Aff__pure)($__global_Data_Unit_unit), (object)["killed" => (function() use ($cancel) {
+return ($__global_Effect_Aff_generalBracket)(($__global_Effect_Aff_pure2)($__global_Data_Unit_unit), (object)["killed" => (function() use ($cancel) {
   $__fn = function($e, $v1 = null) use ($cancel, &$__fn) {
   $__num = func_num_args();
   if ($__num < 2) {
@@ -997,7 +1563,7 @@ return ($__global_Effect_Aff_generalBracket)(($__global_Effect_Aff__pure)($__glo
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
-})(), "failed" => ($__global_Data_Function_const)($__global_Effect_Aff__pure), "completed" => ($__global_Data_Function_const)($__global_Effect_Aff__pure)], ($__global_Data_Function_const)($aff1));
+})(), "failed" => ($__global_Data_Function_const)($__global_Effect_Aff_pure2), "completed" => ($__global_Data_Function_const)($__global_Effect_Aff_pure2)], ($__global_Data_Function_const)($aff1));
 } else {
 throw new \Exception("Pattern match failure");
 };
@@ -1016,10 +1582,10 @@ function Effect_Aff_finally($fin, $a = null) {
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
 $__global_Effect_Aff_bracket = ($GLOBALS['Effect_Aff_bracket'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_bracket'));
-$__global_Effect_Aff__pure = ($GLOBALS['Effect_Aff__pure'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff__pure'));
+$__global_Effect_Aff_pure2 = ($GLOBALS['Effect_Aff_pure2'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_pure2'));
 $__global_Data_Unit_unit = ($GLOBALS['Data_Unit_unit'] ?? \Data\Unit\phpurs_eval_thunk('Data_Unit_unit'));
 $__global_Data_Function_const = ($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const'));
-    $__res = ($__global_Effect_Aff_bracket)(($__global_Effect_Aff__pure)($__global_Data_Unit_unit), ($__global_Data_Function_const)($fin), ($__global_Data_Function_const)($a));
+    $__res = ($__global_Effect_Aff_bracket)(($__global_Effect_Aff_pure2)($__global_Data_Unit_unit), ($__global_Data_Function_const)($fin), ($__global_Data_Function_const)($a));
     return 2 < $__num ? $__res(...array_slice(func_get_args(), 2)) : $__res;
 }
 $GLOBALS['Effect_Aff_finally'] = __NAMESPACE__ . '\\Effect_Aff_finally';
@@ -1033,9 +1599,9 @@ function Effect_Aff_invincible($a) {
   }
 $__global_Effect_Aff_bracket = ($GLOBALS['Effect_Aff_bracket'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_bracket'));
 $__global_Data_Function_const = ($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const'));
-$__global_Effect_Aff__pure = ($GLOBALS['Effect_Aff__pure'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff__pure'));
+$__global_Effect_Aff_pure2 = ($GLOBALS['Effect_Aff_pure2'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_pure2'));
 $__global_Data_Unit_unit = ($GLOBALS['Data_Unit_unit'] ?? \Data\Unit\phpurs_eval_thunk('Data_Unit_unit'));
-    $__res = ($__global_Effect_Aff_bracket)($a, ($__global_Data_Function_const)(($__global_Effect_Aff__pure)($__global_Data_Unit_unit)), $__global_Effect_Aff__pure);
+    $__res = ($__global_Effect_Aff_bracket)($a, ($__global_Data_Function_const)(($__global_Effect_Aff_pure2)($__global_Data_Unit_unit)), $__global_Effect_Aff_pure2);
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Effect_Aff_invincible'] = __NAMESPACE__ . '\\Effect_Aff_invincible';
@@ -1053,11 +1619,26 @@ function Effect_Aff_monoidParAff($dictMonoid) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Effect_Aff_semigroupParAff = ($GLOBALS['Effect_Aff_semigroupParAff'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_semigroupParAff'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
+$__global_Effect_Aff_lift2 = ($GLOBALS['Effect_Aff_lift2'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_lift2'));
 $__global_Effect_Aff_pure3 = ($GLOBALS['Effect_Aff_pure3'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_pure3'));
-$semigroupParAff1 = ($__global_Effect_Aff_semigroupParAff)((($dictMonoid)->Semigroup0)($__global_Prim_undefined));
-    $__res = (object)["mempty" => ($__global_Effect_Aff_pure3)(($dictMonoid)->mempty), "Semigroup0" => (function() use ($semigroupParAff1) {
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$semigroupParAff1 = (object)["append" => ($__global_Effect_Aff_lift2)($__case_res_0)];
+$__case_0 = $dictMonoid;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->mempty;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = (object)["mempty" => ($__global_Effect_Aff_pure3)($__case_res_1), "Semigroup0" => (function() use ($semigroupParAff1) {
   $__fn = function($__dollar____unused) use ($semigroupParAff1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
@@ -1081,7 +1662,15 @@ function Effect_Aff_semigroupAff($dictSemigroup) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Effect_Aff_lift21 = ($GLOBALS['Effect_Aff_lift21'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_lift21'));
-    $__res = (object)["append" => ($__global_Effect_Aff_lift21)(($dictSemigroup)->append)];
+$__case_0 = $dictSemigroup;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = (object)["append" => ($__global_Effect_Aff_lift21)($__case_res_0)];
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Effect_Aff_semigroupAff'] = __NAMESPACE__ . '\\Effect_Aff_semigroupAff';
@@ -1135,12 +1724,12 @@ function Effect_Aff_killFiber($e, $v = null) {
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
   $__body = function($e, $v) {
-    $__global_Effect_Aff__bind = ($GLOBALS['Effect_Aff__bind'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff__bind'));
-    $__global_Effect_Aff__liftEffect = ($GLOBALS['Effect_Aff__liftEffect'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff__liftEffect'));
+    $__global_Effect_Aff_bind1 = ($GLOBALS['Effect_Aff_bind1'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_bind1'));
+    $__global_Effect_Aff_liftEffect = ($GLOBALS['Effect_Aff_liftEffect'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_liftEffect'));
     $__global_Effect_Aff_void = ($GLOBALS['Effect_Aff_void'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_void'));
     $__global_Data_Function_Uncurried_runFn2 = ($GLOBALS['Data_Function_Uncurried_runFn2'] ?? \Data\Function\Uncurried\phpurs_eval_thunk('Data_Function_Uncurried_runFn2'));
     $__global_Data_Function_const = ($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const'));
-    $__global_Effect_pureE = ($GLOBALS['Effect_pureE'] ?? \Effect\phpurs_eval_thunk('Effect_pureE'));
+    $__global_Effect_Aff_pure = ($GLOBALS['Effect_Aff_pure'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_pure'));
     $__global_Data_Unit_unit = ($GLOBALS['Data_Unit_unit'] ?? \Data\Unit\phpurs_eval_thunk('Data_Unit_unit'));
     $__global_Effect_Aff_makeAff = ($GLOBALS['Effect_Aff_makeAff'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_makeAff'));
     $__global_Effect_Aff_map = ($GLOBALS['Effect_Aff_map'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_map'));
@@ -1150,12 +1739,12 @@ function Effect_Aff_killFiber($e, $v = null) {
     if (true) {
 $e1 = $__case_0;
 $t = $__case_1;
-return ($__global_Effect_Aff__bind)(($__global_Effect_Aff__liftEffect)(($t)->isSuspended), (function() use ($__global_Effect_Aff__liftEffect, $__global_Effect_Aff_void, $__global_Data_Function_Uncurried_runFn2, $t, $e1, $__global_Data_Function_const, $__global_Effect_pureE, $__global_Data_Unit_unit, $__global_Effect_Aff_makeAff, $__global_Effect_Aff_map, $__global_Effect_Aff_effectCanceler) {
-  $__body = function($suspended) use ($__global_Effect_Aff__liftEffect, $__global_Effect_Aff_void, $__global_Data_Function_Uncurried_runFn2, $t, $e1, $__global_Data_Function_const, $__global_Effect_pureE, $__global_Data_Unit_unit, $__global_Effect_Aff_makeAff, $__global_Effect_Aff_map, $__global_Effect_Aff_effectCanceler) {
+return ($__global_Effect_Aff_bind1)(($__global_Effect_Aff_liftEffect)(($t)->isSuspended), (function() use ($__global_Effect_Aff_liftEffect, $__global_Effect_Aff_void, $__global_Data_Function_Uncurried_runFn2, $t, $e1, $__global_Data_Function_const, $__global_Effect_Aff_pure, $__global_Data_Unit_unit, $__global_Effect_Aff_makeAff, $__global_Effect_Aff_map, $__global_Effect_Aff_effectCanceler) {
+  $__body = function($suspended) use ($__global_Effect_Aff_liftEffect, $__global_Effect_Aff_void, $__global_Data_Function_Uncurried_runFn2, $t, $e1, $__global_Data_Function_const, $__global_Effect_Aff_pure, $__global_Data_Unit_unit, $__global_Effect_Aff_makeAff, $__global_Effect_Aff_map, $__global_Effect_Aff_effectCanceler) {
     $__case_0 = $suspended;
     switch ($__case_0) {
 case true:
-return ($__global_Effect_Aff__liftEffect)(($__global_Effect_Aff_void)(($__global_Data_Function_Uncurried_runFn2)(($t)->kill, $e1, ($__global_Data_Function_const)(($__global_Effect_pureE)($__global_Data_Unit_unit)))));
+return ($__global_Effect_Aff_liftEffect)(($__global_Effect_Aff_void)(($__global_Data_Function_Uncurried_runFn2)(($t)->kill, $e1, ($__global_Data_Function_const)(($__global_Effect_Aff_pure)($__global_Data_Unit_unit)))));
 break;
 default:
 return ($__global_Effect_Aff_makeAff)((function() use ($__global_Effect_Aff_map, $__global_Effect_Aff_effectCanceler, $__global_Data_Function_Uncurried_runFn2, $t, $e1) {
@@ -1172,7 +1761,7 @@ return ($__global_Effect_Aff_makeAff)((function() use ($__global_Effect_Aff_map,
 break;
 };
   };
-  $__fn = function($suspended) use ($__global_Effect_Aff__liftEffect, $__global_Effect_Aff_void, $__global_Data_Function_Uncurried_runFn2, $t, $e1, $__global_Data_Function_const, $__global_Effect_pureE, $__global_Data_Unit_unit, $__global_Effect_Aff_makeAff, $__global_Effect_Aff_map, $__global_Effect_Aff_effectCanceler, $__body, &$__fn) {
+  $__fn = function($suspended) use ($__global_Effect_Aff_liftEffect, $__global_Effect_Aff_void, $__global_Data_Function_Uncurried_runFn2, $t, $e1, $__global_Data_Function_const, $__global_Effect_Aff_pure, $__global_Data_Unit_unit, $__global_Effect_Aff_makeAff, $__global_Effect_Aff_map, $__global_Effect_Aff_effectCanceler, $__body, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
@@ -1203,36 +1792,36 @@ $__global_Effect_Exception_error = ($GLOBALS['Effect_Exception_error'] ?? \Effec
 $__global_Effect_Aff_makeAff = ($GLOBALS['Effect_Aff_makeAff'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_makeAff'));
 $__global_Data_Function_Uncurried_runFn3 = ($GLOBALS['Data_Function_Uncurried_runFn3'] ?? \Data\Function\Uncurried\phpurs_eval_thunk('Data_Function_Uncurried_runFn3'));
 $__global_Effect_Aff__killAll = ($GLOBALS['Effect_Aff__killAll'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff__killAll'));
-$__global_Data_Either_Right = ($GLOBALS['Data_Either_Right'] ?? \Data\Either\phpurs_eval_thunk('Data_Either_Right'));
+$__global_Effect_Aff_pure1 = ($GLOBALS['Effect_Aff_pure1'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_pure1'));
 $__global_Data_Unit_unit = ($GLOBALS['Data_Unit_unit'] ?? \Data\Unit\phpurs_eval_thunk('Data_Unit_unit'));
-$__global_Effect_bindE = ($GLOBALS['Effect_bindE'] ?? \Effect\phpurs_eval_thunk('Effect_bindE'));
+$__global_Effect_Aff_bind = ($GLOBALS['Effect_Aff_bind'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_bind'));
 $__global_Data_Function_Uncurried_runFn2 = ($GLOBALS['Data_Function_Uncurried_runFn2'] ?? \Data\Function\Uncurried\phpurs_eval_thunk('Data_Function_Uncurried_runFn2'));
 $__global_Effect_Aff__makeSupervisedFiber = ($GLOBALS['Effect_Aff__makeSupervisedFiber'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff__makeSupervisedFiber'));
 $__global_Effect_Aff_ffiUtil = ($GLOBALS['Effect_Aff_ffiUtil'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_ffiUtil'));
 $__global_Effect_Aff_discard = ($GLOBALS['Effect_Aff_discard'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_discard'));
-$__global_Effect_pureE = ($GLOBALS['Effect_pureE'] ?? \Effect\phpurs_eval_thunk('Effect_pureE'));
+$__global_Effect_Aff_pure = ($GLOBALS['Effect_Aff_pure'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_pure'));
 $__global_Effect_Aff_generalBracket = ($GLOBALS['Effect_Aff_generalBracket'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_generalBracket'));
-$__global_Effect_Aff__liftEffect = ($GLOBALS['Effect_Aff__liftEffect'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff__liftEffect'));
+$__global_Effect_Aff_liftEffect = ($GLOBALS['Effect_Aff_liftEffect'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_liftEffect'));
 $__global_Effect_Aff_parSequence_ = ($GLOBALS['Effect_Aff_parSequence_'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_parSequence_'));
 $__global_Effect_Aff_killFiber = ($GLOBALS['Effect_Aff_killFiber'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_killFiber'));
 $__global_Data_Function_const = ($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const'));
 $__global_Effect_Aff_compose = ($GLOBALS['Effect_Aff_compose'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_compose'));
 $__global_Effect_Aff_joinFiber = ($GLOBALS['Effect_Aff_joinFiber'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_joinFiber'));
 $killError = ($__global_Effect_Exception_error)("[Aff] Child fiber outlived parent");
-$killAll = (function() use ($__global_Effect_Aff_makeAff, $__global_Data_Function_Uncurried_runFn3, $__global_Effect_Aff__killAll, $__global_Data_Either_Right, $__global_Data_Unit_unit) {
-  $__fn = function($err, $sup = null) use ($__global_Effect_Aff_makeAff, $__global_Data_Function_Uncurried_runFn3, $__global_Effect_Aff__killAll, $__global_Data_Either_Right, $__global_Data_Unit_unit, &$__fn) {
+$killAll = (function() use ($__global_Effect_Aff_makeAff, $__global_Data_Function_Uncurried_runFn3, $__global_Effect_Aff__killAll, $__global_Effect_Aff_pure1, $__global_Data_Unit_unit) {
+  $__fn = function($err, $sup = null) use ($__global_Effect_Aff_makeAff, $__global_Data_Function_Uncurried_runFn3, $__global_Effect_Aff__killAll, $__global_Effect_Aff_pure1, $__global_Data_Unit_unit, &$__fn) {
   $__num = func_num_args();
   if ($__num < 2) {
     if ($__num === 1) return function($sup) use ($err, &$__fn) { return $__fn($err, $sup); };
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
-    $__res = ($__global_Effect_Aff_makeAff)((function() use ($__global_Data_Function_Uncurried_runFn3, $__global_Effect_Aff__killAll, $err, $sup, $__global_Data_Either_Right, $__global_Data_Unit_unit) {
-  $__fn = function($k) use ($__global_Data_Function_Uncurried_runFn3, $__global_Effect_Aff__killAll, $err, $sup, $__global_Data_Either_Right, $__global_Data_Unit_unit, &$__fn) {
+    $__res = ($__global_Effect_Aff_makeAff)((function() use ($__global_Data_Function_Uncurried_runFn3, $__global_Effect_Aff__killAll, $err, $sup, $__global_Effect_Aff_pure1, $__global_Data_Unit_unit) {
+  $__fn = function($k) use ($__global_Data_Function_Uncurried_runFn3, $__global_Effect_Aff__killAll, $err, $sup, $__global_Effect_Aff_pure1, $__global_Data_Unit_unit, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($__global_Data_Function_Uncurried_runFn3)($__global_Effect_Aff__killAll, $err, ($sup)->supervisor, ($k)(($__global_Data_Either_Right)($__global_Data_Unit_unit)));
+    $__res = ($__global_Data_Function_Uncurried_runFn3)($__global_Effect_Aff__killAll, $err, ($sup)->supervisor, ($k)(($__global_Effect_Aff_pure1)($__global_Data_Unit_unit)));
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -1241,8 +1830,8 @@ $killAll = (function() use ($__global_Effect_Aff_makeAff, $__global_Data_Functio
   };
   return $__fn;
 })();
-$acquire = ($__global_Effect_bindE)(($__global_Data_Function_Uncurried_runFn2)($__global_Effect_Aff__makeSupervisedFiber, $__global_Effect_Aff_ffiUtil, $aff), (function() use ($__global_Effect_Aff_discard, $__global_Effect_pureE) {
-  $__fn = function($sup) use ($__global_Effect_Aff_discard, $__global_Effect_pureE, &$__fn) {
+$acquire = ($__global_Effect_Aff_bind)(($__global_Data_Function_Uncurried_runFn2)($__global_Effect_Aff__makeSupervisedFiber, $__global_Effect_Aff_ffiUtil, $aff), (function() use ($__global_Effect_Aff_discard, $__global_Effect_Aff_pure) {
+  $__fn = function($sup) use ($__global_Effect_Aff_discard, $__global_Effect_Aff_pure, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
@@ -1255,13 +1844,13 @@ $__case_res_0 = ($f)->run;
 } else {
 throw new \Exception("Pattern match failure");
 };
-    $__res = ($__global_Effect_Aff_discard)($__case_res_0, (function() use ($__global_Effect_pureE, $sup) {
-  $__fn = function($__dollar____unused) use ($__global_Effect_pureE, $sup, &$__fn) {
+    $__res = ($__global_Effect_Aff_discard)($__case_res_0, (function() use ($__global_Effect_Aff_pure, $sup) {
+  $__fn = function($__dollar____unused) use ($__global_Effect_Aff_pure, $sup, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($__global_Effect_pureE)($sup);
+    $__res = ($__global_Effect_Aff_pure)($sup);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -1270,7 +1859,7 @@ throw new \Exception("Pattern match failure");
   };
   return $__fn;
 })());
-    $__res = ($__global_Effect_Aff_generalBracket)(($__global_Effect_Aff__liftEffect)($acquire), (object)["killed" => (function() use ($__global_Effect_Aff_parSequence_, $__global_Effect_Aff_killFiber, $killAll) {
+    $__res = ($__global_Effect_Aff_generalBracket)(($__global_Effect_Aff_liftEffect)($acquire), (object)["killed" => (function() use ($__global_Effect_Aff_parSequence_, $__global_Effect_Aff_killFiber, $killAll) {
   $__fn = function($err, $sup = null) use ($__global_Effect_Aff_parSequence_, $__global_Effect_Aff_killFiber, $killAll, &$__fn) {
   $__num = func_num_args();
   if ($__num < 2) {
@@ -1313,9 +1902,9 @@ function Effect_Aff_runAff($k, $aff = null) {
 $__global_Effect_Aff_launchAff = ($GLOBALS['Effect_Aff_launchAff'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_launchAff'));
 $__global_Effect_Aff_bindFlipped = ($GLOBALS['Effect_Aff_bindFlipped'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_bindFlipped'));
 $__global_Effect_Aff_compose = ($GLOBALS['Effect_Aff_compose'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_compose'));
-$__global_Effect_Aff__liftEffect = ($GLOBALS['Effect_Aff__liftEffect'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff__liftEffect'));
+$__global_Effect_Aff_liftEffect = ($GLOBALS['Effect_Aff_liftEffect'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_liftEffect'));
 $__global_Effect_Aff_try = ($GLOBALS['Effect_Aff_try'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_try'));
-    $__res = ($__global_Effect_Aff_launchAff)(($__global_Effect_Aff_bindFlipped)(($__global_Effect_Aff_compose)($__global_Effect_Aff__liftEffect, $k), ($__global_Effect_Aff_try)($aff)));
+    $__res = ($__global_Effect_Aff_launchAff)(($__global_Effect_Aff_bindFlipped)(($__global_Effect_Aff_compose)($__global_Effect_Aff_liftEffect, $k), ($__global_Effect_Aff_try)($aff)));
     return 2 < $__num ? $__res(...array_slice(func_get_args(), 2)) : $__res;
 }
 $GLOBALS['Effect_Aff_runAff'] = __NAMESPACE__ . '\\Effect_Aff_runAff';
@@ -1346,9 +1935,9 @@ function Effect_Aff_runSuspendedAff($k, $aff = null) {
 $__global_Effect_Aff_makeFiber = ($GLOBALS['Effect_Aff_makeFiber'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_makeFiber'));
 $__global_Effect_Aff_bindFlipped = ($GLOBALS['Effect_Aff_bindFlipped'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_bindFlipped'));
 $__global_Effect_Aff_compose = ($GLOBALS['Effect_Aff_compose'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_compose'));
-$__global_Effect_Aff__liftEffect = ($GLOBALS['Effect_Aff__liftEffect'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff__liftEffect'));
+$__global_Effect_Aff_liftEffect = ($GLOBALS['Effect_Aff_liftEffect'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_liftEffect'));
 $__global_Effect_Aff_try = ($GLOBALS['Effect_Aff_try'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_try'));
-    $__res = ($__global_Effect_Aff_makeFiber)(($__global_Effect_Aff_bindFlipped)(($__global_Effect_Aff_compose)($__global_Effect_Aff__liftEffect, $k), ($__global_Effect_Aff_try)($aff)));
+    $__res = ($__global_Effect_Aff_makeFiber)(($__global_Effect_Aff_bindFlipped)(($__global_Effect_Aff_compose)($__global_Effect_Aff_liftEffect, $k), ($__global_Effect_Aff_try)($aff)));
     return 2 < $__num ? $__res(...array_slice(func_get_args(), 2)) : $__res;
 }
 $GLOBALS['Effect_Aff_runSuspendedAff'] = __NAMESPACE__ . '\\Effect_Aff_runSuspendedAff';
@@ -1361,11 +1950,26 @@ function Effect_Aff_monoidAff($dictMonoid) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Effect_Aff_semigroupAff = ($GLOBALS['Effect_Aff_semigroupAff'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_semigroupAff'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$__global_Effect_Aff__pure = ($GLOBALS['Effect_Aff__pure'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff__pure'));
-$semigroupAff1 = ($__global_Effect_Aff_semigroupAff)((($dictMonoid)->Semigroup0)($__global_Prim_undefined));
-    $__res = (object)["mempty" => ($__global_Effect_Aff__pure)(($dictMonoid)->mempty), "Semigroup0" => (function() use ($semigroupAff1) {
+$__global_Effect_Aff_lift21 = ($GLOBALS['Effect_Aff_lift21'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_lift21'));
+$__global_Effect_Aff_pure2 = ($GLOBALS['Effect_Aff_pure2'] ?? \Effect\Aff\phpurs_eval_thunk('Effect_Aff_pure2'));
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$semigroupAff1 = (object)["append" => ($__global_Effect_Aff_lift21)($__case_res_0)];
+$__case_0 = $dictMonoid;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->mempty;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = (object)["mempty" => ($__global_Effect_Aff_pure2)($__case_res_1), "Semigroup0" => (function() use ($semigroupAff1) {
   $__fn = function($__dollar____unused) use ($semigroupAff1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {

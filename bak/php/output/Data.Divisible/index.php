@@ -181,11 +181,91 @@ function Data_Divisible_divisibleOp($dictMonoid) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Divide_divideOp = ($GLOBALS['Data_Divide_divideOp'] ?? \Data\Divide\phpurs_eval_thunk('Data_Divide_divideOp'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
+$__global_Data_Op_contravariantOp = ($GLOBALS['Data_Op_contravariantOp'] ?? \Data\Op\phpurs_eval_thunk('Data_Op_contravariantOp'));
 $__global_Data_Function_const = ($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const'));
-$divideOp = ($__global_Data_Divide_divideOp)((($dictMonoid)->Semigroup0)($__global_Prim_undefined));
-    $__res = (object)["conquer" => ($__global_Data_Function_const)(($dictMonoid)->mempty), "Divide0" => (function() use ($divideOp) {
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append1 = $__case_res_0;
+$divideOp = (object)["divide" => (function() use ($append1) {
+  $__body = function($f, $v, $v1) use ($append1) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    $__case_2 = $v1;
+    if (true) {
+$f1 = $__case_0;
+$g = $__case_1;
+$h = $__case_2;
+return (function() use ($f1, $append1, $g, $h) {
+  $__body = function($a) use ($f1, $append1, $g, $h) {
+    $v2 = ($f1)($a);
+    $__case_0 = $v2;
+    switch (($__case_0)->tag) {
+case "Tuple":
+$b = ($__case_0)->v0;
+$c = ($__case_0)->v1;
+return ($append1)(($g)($b), ($h)($c));
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($a) use ($f1, $append1, $g, $h, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $__body($a);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $v = null, $v1 = null) use ($append1, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($v1) use ($f, $v, &$__fn) { return $__fn($f, $v, $v1); };
+    if ($__num === 1) return function($v, $v1 = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $v, $v1);
+      if ($__num2 === 1) return function($v1) use ($f, $v, &$__fn) { return $__fn($f, $v, $v1); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = $__body($f, $v, $v1);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})(), "Contravariant0" => (function() use ($__global_Data_Op_contravariantOp) {
+  $__fn = function($__dollar____unused) use ($__global_Data_Op_contravariantOp, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $__global_Data_Op_contravariantOp;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+$__case_0 = $dictMonoid;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->mempty;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = (object)["conquer" => ($__global_Data_Function_const)($__case_res_1), "Divide0" => (function() use ($divideOp) {
   $__fn = function($__dollar____unused) use ($divideOp, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {

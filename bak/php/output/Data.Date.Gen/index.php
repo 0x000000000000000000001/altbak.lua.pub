@@ -100,11 +100,51 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Data_Date_Gen_compose': $v = (($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn')))->compose; break;
+      case 'Data_Date_Gen_compose': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compose;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_Date_Gen_fromJust': $v = (($GLOBALS['Data_Maybe_fromJust'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_fromJust')))(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))); break;
-      case 'Data_Date_Gen_bind': $v = (($GLOBALS['Data_Maybe_bindMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_bindMaybe')))->bind; break;
-      case 'Data_Date_Gen_bottom': $v = ($GLOBALS['Data_Date_Component_January'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_January')); break;
-      case 'Data_Date_Gen_bottom1': $v = (($GLOBALS['Data_Date_Component_boundedDay'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_boundedDay')))->bottom; break;
+      case 'Data_Date_Gen_bind': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Maybe_bindMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_bindMaybe'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bind;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Date_Gen_bottom': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Date_Component_boundedMonth'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_boundedMonth'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bottom;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Date_Gen_bottom1': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Date_Component_boundedDay'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_boundedDay'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bottom;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       default: throw new \Exception("Unknown thunk " . $id);
     }
     $GLOBALS[$id] = $v;
@@ -127,54 +167,114 @@ function Data_Date_Gen_genDate($dictMonadGen) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$__global_Data_Date_Component_Gen_genYear = ($GLOBALS['Data_Date_Component_Gen_genYear'] ?? \Data\Date\Component\Gen\phpurs_eval_thunk('Data_Date_Component_Gen_genYear'));
+$__global_Data_Date_Component_Gen_compose = ($GLOBALS['Data_Date_Component_Gen_compose'] ?? \Data\Date\Component\Gen\phpurs_eval_thunk('Data_Date_Component_Gen_compose'));
+$__global_Partial_Unsafe__unsafePartial = ($GLOBALS['Partial_Unsafe__unsafePartial'] ?? \Partial\Unsafe\phpurs_eval_thunk('Partial_Unsafe__unsafePartial'));
+$__global_Data_Date_Component_Gen_fromJust = ($GLOBALS['Data_Date_Component_Gen_fromJust'] ?? \Data\Date\Component\Gen\phpurs_eval_thunk('Data_Date_Component_Gen_fromJust'));
+$__global_Data_Date_Component_Gen_toEnum = ($GLOBALS['Data_Date_Component_Gen_toEnum'] ?? \Data\Date\Component\Gen\phpurs_eval_thunk('Data_Date_Component_Gen_toEnum'));
 $__global_Data_Date_isLeapYear = ($GLOBALS['Data_Date_isLeapYear'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_isLeapYear'));
 $__global_Data_Date_Gen_compose = ($GLOBALS['Data_Date_Gen_compose'] ?? \Data\Date\Gen\phpurs_eval_thunk('Data_Date_Gen_compose'));
 $__global_Data_Time_Duration_Days = ($GLOBALS['Data_Time_Duration_Days'] ?? \Data\Time\Duration\phpurs_eval_thunk('Data_Time_Duration_Days'));
 $__global_Data_Int_toNumber = ($GLOBALS['Data_Int_toNumber'] ?? \Data\Int\phpurs_eval_thunk('Data_Int_toNumber'));
-$__global_Partial_Unsafe__unsafePartial = ($GLOBALS['Partial_Unsafe__unsafePartial'] ?? \Partial\Unsafe\phpurs_eval_thunk('Partial_Unsafe__unsafePartial'));
 $__global_Data_Date_Gen_fromJust = ($GLOBALS['Data_Date_Gen_fromJust'] ?? \Data\Date\Gen\phpurs_eval_thunk('Data_Date_Gen_fromJust'));
 $__global_Data_Date_Gen_bind = ($GLOBALS['Data_Date_Gen_bind'] ?? \Data\Date\Gen\phpurs_eval_thunk('Data_Date_Gen_bind'));
 $__global_Data_Date_exactDate = ($GLOBALS['Data_Date_exactDate'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_exactDate'));
-$__global_Data_Date_Component_January = ($GLOBALS['Data_Date_Component_January'] ?? \Data\Date\Component\phpurs_eval_thunk('Data_Date_Component_January'));
+$__global_Data_Date_Gen_bottom = ($GLOBALS['Data_Date_Gen_bottom'] ?? \Data\Date\Gen\phpurs_eval_thunk('Data_Date_Gen_bottom'));
 $__global_Data_Date_Gen_bottom1 = ($GLOBALS['Data_Date_Gen_bottom1'] ?? \Data\Date\Gen\phpurs_eval_thunk('Data_Date_Gen_bottom1'));
 $__global_Data_Date_adjust = ($GLOBALS['Data_Date_adjust'] ?? \Data\Date\phpurs_eval_thunk('Data_Date_adjust'));
 $Monad0 = (($dictMonadGen)->Monad0)($__global_Prim_undefined);
 $Bind1 = (($Monad0)->Bind1)($__global_Prim_undefined);
-$bind1 = ($Bind1)->bind;
-$map = ((((($Bind1)->Apply0)($__global_Prim_undefined))->Functor0)($__global_Prim_undefined))->map;
-$chooseInt = ($dictMonadGen)->chooseInt;
-$pure = ((($Monad0)->Applicative0)($__global_Prim_undefined))->pure;
-    $__res = ($bind1)(($__global_Data_Date_Component_Gen_genYear)($dictMonadGen), (function() use ($__global_Data_Date_isLeapYear, $bind1, $map, $__global_Data_Date_Gen_compose, $__global_Data_Time_Duration_Days, $__global_Data_Int_toNumber, $chooseInt, $pure, $__global_Partial_Unsafe__unsafePartial, $__global_Data_Date_Gen_fromJust, $__global_Data_Date_Gen_bind, $__global_Data_Date_exactDate, $__global_Data_Date_Component_January, $__global_Data_Date_Gen_bottom1, $__global_Data_Date_adjust) {
-  $__fn = function($year) use ($__global_Data_Date_isLeapYear, $bind1, $map, $__global_Data_Date_Gen_compose, $__global_Data_Time_Duration_Days, $__global_Data_Int_toNumber, $chooseInt, $pure, $__global_Partial_Unsafe__unsafePartial, $__global_Data_Date_Gen_fromJust, $__global_Data_Date_Gen_bind, $__global_Data_Date_exactDate, $__global_Data_Date_Component_January, $__global_Data_Date_Gen_bottom1, $__global_Data_Date_adjust, &$__fn) {
+$__case_0 = $Bind1;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bind;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bind1 = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_1;
+$__case_0 = $dictMonadGen;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->chooseInt;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$chooseInt = $__case_res_2;
+$__case_0 = $dict;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pure = $__case_res_3;
+$__case_0 = $dict;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$__case_0 = $dictMonadGen;
+$__case_res_5 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_5 = ($v)->chooseInt;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($bind1)(($__case_res_4)(($__global_Data_Date_Component_Gen_compose)(($__global_Partial_Unsafe__unsafePartial)((function() use ($__global_Data_Date_Component_Gen_fromJust) {
+  $__fn = function($__dollar____unused) use ($__global_Data_Date_Component_Gen_fromJust, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $__global_Data_Date_Component_Gen_fromJust;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()), $__global_Data_Date_Component_Gen_toEnum), ($__case_res_5)(1900, 2100)), (function() use ($__global_Data_Date_isLeapYear, $bind1, $map, $__global_Data_Date_Gen_compose, $__global_Data_Time_Duration_Days, $__global_Data_Int_toNumber, $chooseInt, $pure, $__global_Partial_Unsafe__unsafePartial, $__global_Data_Date_Gen_fromJust, $__global_Data_Date_Gen_bind, $__global_Data_Date_exactDate, $__global_Data_Date_Gen_bottom, $__global_Data_Date_Gen_bottom1, $__global_Data_Date_adjust) {
+  $__fn = function($year) use ($__global_Data_Date_isLeapYear, $bind1, $map, $__global_Data_Date_Gen_compose, $__global_Data_Time_Duration_Days, $__global_Data_Int_toNumber, $chooseInt, $pure, $__global_Partial_Unsafe__unsafePartial, $__global_Data_Date_Gen_fromJust, $__global_Data_Date_Gen_bind, $__global_Data_Date_exactDate, $__global_Data_Date_Gen_bottom, $__global_Data_Date_Gen_bottom1, $__global_Data_Date_adjust, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__case_0 = ($__global_Data_Date_isLeapYear)($year);
-$__case_res_0 = null;
+$__case_res_6 = null;
 switch ($__case_0) {
 case true:
-$__case_res_0 = 365;
+$__case_res_6 = 365;
 break;
 default:
-$__case_res_0 = 364;
+$__case_res_6 = 364;
 break;
 };
-$maxDays = $__case_res_0;
-    $__res = ($bind1)(($map)(($__global_Data_Date_Gen_compose)($__global_Data_Time_Duration_Days, $__global_Data_Int_toNumber), ($chooseInt)(0, $maxDays)), (function() use ($pure, $__global_Partial_Unsafe__unsafePartial, $__global_Data_Date_Gen_fromJust, $__global_Data_Date_Gen_bind, $__global_Data_Date_exactDate, $year, $__global_Data_Date_Component_January, $__global_Data_Date_Gen_bottom1, $__global_Data_Date_adjust) {
-  $__fn = function($days) use ($pure, $__global_Partial_Unsafe__unsafePartial, $__global_Data_Date_Gen_fromJust, $__global_Data_Date_Gen_bind, $__global_Data_Date_exactDate, $year, $__global_Data_Date_Component_January, $__global_Data_Date_Gen_bottom1, $__global_Data_Date_adjust, &$__fn) {
+$maxDays = $__case_res_6;
+    $__res = ($bind1)(($map)(($__global_Data_Date_Gen_compose)($__global_Data_Time_Duration_Days, $__global_Data_Int_toNumber), ($chooseInt)(0, $maxDays)), (function() use ($pure, $__global_Partial_Unsafe__unsafePartial, $__global_Data_Date_Gen_fromJust, $__global_Data_Date_Gen_bind, $__global_Data_Date_exactDate, $year, $__global_Data_Date_Gen_bottom, $__global_Data_Date_Gen_bottom1, $__global_Data_Date_adjust) {
+  $__fn = function($days) use ($pure, $__global_Partial_Unsafe__unsafePartial, $__global_Data_Date_Gen_fromJust, $__global_Data_Date_Gen_bind, $__global_Data_Date_exactDate, $year, $__global_Data_Date_Gen_bottom, $__global_Data_Date_Gen_bottom1, $__global_Data_Date_adjust, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($pure)(($__global_Partial_Unsafe__unsafePartial)((function() use ($__global_Data_Date_Gen_fromJust, $__global_Data_Date_Gen_bind, $__global_Data_Date_exactDate, $year, $__global_Data_Date_Component_January, $__global_Data_Date_Gen_bottom1, $__global_Data_Date_adjust, $days) {
-  $__fn = function($__dollar____unused) use ($__global_Data_Date_Gen_fromJust, $__global_Data_Date_Gen_bind, $__global_Data_Date_exactDate, $year, $__global_Data_Date_Component_January, $__global_Data_Date_Gen_bottom1, $__global_Data_Date_adjust, $days, &$__fn) {
+    $__res = ($pure)(($__global_Partial_Unsafe__unsafePartial)((function() use ($__global_Data_Date_Gen_fromJust, $__global_Data_Date_Gen_bind, $__global_Data_Date_exactDate, $year, $__global_Data_Date_Gen_bottom, $__global_Data_Date_Gen_bottom1, $__global_Data_Date_adjust, $days) {
+  $__fn = function($__dollar____unused) use ($__global_Data_Date_Gen_fromJust, $__global_Data_Date_Gen_bind, $__global_Data_Date_exactDate, $year, $__global_Data_Date_Gen_bottom, $__global_Data_Date_Gen_bottom1, $__global_Data_Date_adjust, $days, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($__global_Data_Date_Gen_fromJust)(($__global_Data_Date_Gen_bind)(($__global_Data_Date_exactDate)($year, $__global_Data_Date_Component_January, $__global_Data_Date_Gen_bottom1), (function() use ($__global_Data_Date_adjust, $days) {
+    $__res = ($__global_Data_Date_Gen_fromJust)(($__global_Data_Date_Gen_bind)(($__global_Data_Date_exactDate)($year, $__global_Data_Date_Gen_bottom, $__global_Data_Date_Gen_bottom1), (function() use ($__global_Data_Date_adjust, $days) {
   $__fn = function($janFirst) use ($__global_Data_Date_adjust, $days, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {

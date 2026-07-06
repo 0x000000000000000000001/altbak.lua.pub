@@ -161,14 +161,30 @@ function Data_Semiring_Generic_genericZero($dictGeneric) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$to = ($dictGeneric)->to;
+$__case_0 = $dictGeneric;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->to;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$to = $__case_res_0;
     $__res = (function() use ($to) {
   $__fn = function($dictGenericSemiring) use ($to, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($to)(($dictGenericSemiring)->genericZero__prime__);
+$__case_0 = $dictGenericSemiring;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->genericZero__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($to)($__case_res_1);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -185,8 +201,40 @@ function Data_Semiring_Generic_genericSemiringArgument($dictSemiring) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$add = ($dictSemiring)->add;
-$mul = ($dictSemiring)->mul;
+$__case_0 = $dictSemiring;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->add;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$add = $__case_res_0;
+$__case_0 = $dictSemiring;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->mul;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$mul = $__case_res_1;
+$__case_0 = $dictSemiring;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->zero;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$__case_0 = $dictSemiring;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->one;
+} else {
+throw new \Exception("Pattern match failure");
+};
     $__res = (object)["genericAdd'" => (function() use ($add) {
   $__body = function($v, $v1) use ($add) {
     $__case_0 = $v;
@@ -209,7 +257,7 @@ throw new \Exception("Pattern match failure");
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
-})(), "genericZero'" => ($dictSemiring)->zero, "genericMul'" => (function() use ($mul) {
+})(), "genericZero'" => $__case_res_2, "genericMul'" => (function() use ($mul) {
   $__body = function($v, $v1) use ($mul) {
     $__case_0 = $v;
     $__case_1 = $v1;
@@ -231,7 +279,7 @@ throw new \Exception("Pattern match failure");
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
-})(), "genericOne'" => ($dictSemiring)->one];
+})(), "genericOne'" => $__case_res_3];
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Semiring_Generic_genericSemiringArgument'] = __NAMESPACE__ . '\\Data_Semiring_Generic_genericSemiringArgument';
@@ -264,14 +312,30 @@ function Data_Semiring_Generic_genericOne($dictGeneric) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$to = ($dictGeneric)->to;
+$__case_0 = $dictGeneric;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->to;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$to = $__case_res_0;
     $__res = (function() use ($to) {
   $__fn = function($dictGenericSemiring) use ($to, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($to)(($dictGenericSemiring)->genericOne__prime__);
+$__case_0 = $dictGenericSemiring;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->genericOne__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($to)($__case_res_1);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -308,15 +372,39 @@ function Data_Semiring_Generic_genericMul($dictGeneric) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$to = ($dictGeneric)->to;
-$from = ($dictGeneric)->from;
+$__case_0 = $dictGeneric;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->to;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$to = $__case_res_0;
+$__case_0 = $dictGeneric;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->from;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$from = $__case_res_1;
     $__res = (function() use ($to, $from) {
   $__fn = function($dictGenericSemiring) use ($to, $from, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$genericMul__prime__1 = ($dictGenericSemiring)->genericMul__prime__;
+$__case_0 = $dictGenericSemiring;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->genericMul__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericMul__prime__1 = $__case_res_2;
     $__res = (function() use ($to, $genericMul__prime__1, $from) {
   $__fn = function($x, $y = null) use ($to, $genericMul__prime__1, $from, &$__fn) {
   $__num = func_num_args();
@@ -365,8 +453,40 @@ function Data_Semiring_Generic_genericSemiringConstructor($dictGenericSemiring) 
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$genericAdd__prime__1 = ($dictGenericSemiring)->genericAdd__prime__;
-$genericMul__prime__1 = ($dictGenericSemiring)->genericMul__prime__;
+$__case_0 = $dictGenericSemiring;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->genericAdd__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericAdd__prime__1 = $__case_res_0;
+$__case_0 = $dictGenericSemiring;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->genericMul__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericMul__prime__1 = $__case_res_1;
+$__case_0 = $dictGenericSemiring;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->genericZero__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$__case_0 = $dictGenericSemiring;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->genericOne__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
     $__res = (object)["genericAdd'" => (function() use ($genericAdd__prime__1) {
   $__body = function($v, $v1) use ($genericAdd__prime__1) {
     $__case_0 = $v;
@@ -389,7 +509,7 @@ throw new \Exception("Pattern match failure");
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
-})(), "genericZero'" => ($dictGenericSemiring)->genericZero__prime__, "genericMul'" => (function() use ($genericMul__prime__1) {
+})(), "genericZero'" => $__case_res_2, "genericMul'" => (function() use ($genericMul__prime__1) {
   $__body = function($v, $v1) use ($genericMul__prime__1) {
     $__case_0 = $v;
     $__case_1 = $v1;
@@ -411,7 +531,7 @@ throw new \Exception("Pattern match failure");
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
-})(), "genericOne'" => ($dictGenericSemiring)->genericOne__prime__];
+})(), "genericOne'" => $__case_res_3];
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Semiring_Generic_genericSemiringConstructor'] = __NAMESPACE__ . '\\Data_Semiring_Generic_genericSemiringConstructor';
@@ -423,18 +543,82 @@ function Data_Semiring_Generic_genericSemiringProduct($dictGenericSemiring) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$genericAdd__prime__1 = ($dictGenericSemiring)->genericAdd__prime__;
-$genericZero__prime__1 = ($dictGenericSemiring)->genericZero__prime__;
-$genericMul__prime__1 = ($dictGenericSemiring)->genericMul__prime__;
-$genericOne__prime__1 = ($dictGenericSemiring)->genericOne__prime__;
+$__case_0 = $dictGenericSemiring;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->genericAdd__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericAdd__prime__1 = $__case_res_0;
+$__case_0 = $dictGenericSemiring;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->genericZero__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericZero__prime__1 = $__case_res_1;
+$__case_0 = $dictGenericSemiring;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->genericMul__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericMul__prime__1 = $__case_res_2;
+$__case_0 = $dictGenericSemiring;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->genericOne__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericOne__prime__1 = $__case_res_3;
     $__res = (function() use ($genericAdd__prime__1, $genericZero__prime__1, $genericMul__prime__1, $genericOne__prime__1) {
   $__fn = function($dictGenericSemiring1) use ($genericAdd__prime__1, $genericZero__prime__1, $genericMul__prime__1, $genericOne__prime__1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$genericAdd__prime__2 = ($dictGenericSemiring1)->genericAdd__prime__;
-$genericMul__prime__2 = ($dictGenericSemiring1)->genericMul__prime__;
+$__case_0 = $dictGenericSemiring1;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->genericAdd__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericAdd__prime__2 = $__case_res_4;
+$__case_0 = $dictGenericSemiring1;
+$__case_res_5 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_5 = ($v)->genericMul__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericMul__prime__2 = $__case_res_5;
+$__case_0 = $dictGenericSemiring1;
+$__case_res_6 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_6 = ($v)->genericZero__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$__case_0 = $dictGenericSemiring1;
+$__case_res_7 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_7 = ($v)->genericOne__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
     $__res = (object)["genericAdd'" => (function() use ($genericAdd__prime__1, $genericAdd__prime__2) {
   $__body = function($v, $v1) use ($genericAdd__prime__1, $genericAdd__prime__2) {
     $__case_0 = $v;
@@ -481,7 +665,7 @@ throw new \Exception("Pattern match failure");
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
-})())($genericZero__prime__1, ($dictGenericSemiring1)->genericZero__prime__), "genericMul'" => (function() use ($genericMul__prime__1, $genericMul__prime__2) {
+})())($genericZero__prime__1, $__case_res_6), "genericMul'" => (function() use ($genericMul__prime__1, $genericMul__prime__2) {
   $__body = function($v, $v1) use ($genericMul__prime__1, $genericMul__prime__2) {
     $__case_0 = $v;
     $__case_1 = $v1;
@@ -527,7 +711,7 @@ throw new \Exception("Pattern match failure");
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
-})())($genericOne__prime__1, ($dictGenericSemiring1)->genericOne__prime__)];
+})())($genericOne__prime__1, $__case_res_7)];
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -543,15 +727,39 @@ function Data_Semiring_Generic_genericAdd($dictGeneric) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$to = ($dictGeneric)->to;
-$from = ($dictGeneric)->from;
+$__case_0 = $dictGeneric;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->to;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$to = $__case_res_0;
+$__case_0 = $dictGeneric;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->from;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$from = $__case_res_1;
     $__res = (function() use ($to, $from) {
   $__fn = function($dictGenericSemiring) use ($to, $from, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$genericAdd__prime__1 = ($dictGenericSemiring)->genericAdd__prime__;
+$__case_0 = $dictGenericSemiring;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->genericAdd__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericAdd__prime__1 = $__case_res_2;
     $__res = (function() use ($to, $genericAdd__prime__1, $from) {
   $__fn = function($x, $y = null) use ($to, $genericAdd__prime__1, $from, &$__fn) {
   $__num = func_num_args();

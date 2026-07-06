@@ -118,7 +118,7 @@ function Data_Symbol_reifySymbol($s, $f = null) {
   }
 $__global_Data_Symbol_unsafeCoerce = ($GLOBALS['Data_Symbol_unsafeCoerce'] ?? \Data\Symbol\phpurs_eval_thunk('Data_Symbol_unsafeCoerce'));
 $coerce = $__global_Data_Symbol_unsafeCoerce;
-    $__res = ($coerce)((function() use ($f) {
+    $__res = ($__global_Data_Symbol_unsafeCoerce)((function() use ($f) {
   $__fn = function($dictIsSymbol) use ($f, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {

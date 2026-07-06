@@ -98,7 +98,17 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Data_Monoid_Additive_append': $v = ($GLOBALS['Data_Semigroup_concatString'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_concatString')); break;
+      case 'Data_Monoid_Additive_append': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Semigroup_semigroupString'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_semigroupString'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_Monoid_Additive_functorAdditive': $v = (object)["map" => (function() {
   $__body = function($f, $m) {
     $__case_0 = $m;
@@ -121,23 +131,41 @@ throw new \Exception("Pattern match failure");
   return $__fn;
 })()]; break;
       case 'Data_Monoid_Additive_eq1Additive': $v = (object)["eq1" => (function() {
-  $__fn = function($dictEq) use (&$__fn) {
+  $__body = function($dictEq) {
+    $__case_0 = $dictEq;
+    if (true) {
+$v = $__case_0;
+return ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($dictEq) use ($__body, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($dictEq)->eq;
+    $__res = $__body($dictEq);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
 })()]; break;
       case 'Data_Monoid_Additive_ord1Additive': $v = (object)["compare1" => (function() {
-  $__fn = function($dictOrd) use (&$__fn) {
+  $__body = function($dictOrd) {
+    $__case_0 = $dictOrd;
+    if (true) {
+$v = $__case_0;
+return ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($dictOrd) use ($__body, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($dictOrd)->compare;
+    $__res = $__body($dictOrd);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -285,18 +313,27 @@ function Data_Monoid_Additive_showAdditive($dictShow) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$show = ($dictShow)->show;
-    $__res = (object)["show" => (function() use ($show) {
-  $__body = function($v) use ($show) {
+$__global_Data_Monoid_Additive_append = ($GLOBALS['Data_Monoid_Additive_append'] ?? \Data\Monoid\Additive\phpurs_eval_thunk('Data_Monoid_Additive_append'));
+$__case_0 = $dictShow;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->show;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$show = $__case_res_0;
+    $__res = (object)["show" => (function() use ($__global_Data_Monoid_Additive_append, $show) {
+  $__body = function($v) use ($__global_Data_Monoid_Additive_append, $show) {
     $__case_0 = $v;
     if (true) {
 $a = $__case_0;
-return ("(Additive " . (($show)($a) . ")"));
+return ($__global_Data_Monoid_Additive_append)("(Additive ", ($__global_Data_Monoid_Additive_append)(($show)($a), ")"));
 } else {
 throw new \Exception("Pattern match failure");
 };
   };
-  $__fn = function($v) use ($show, $__body, &$__fn) {
+  $__fn = function($v) use ($__global_Data_Monoid_Additive_append, $show, $__body, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
@@ -317,7 +354,15 @@ function Data_Monoid_Additive_semigroupAdditive($dictSemiring) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$add = ($dictSemiring)->add;
+$__case_0 = $dictSemiring;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->add;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$add = $__case_res_0;
     $__res = (object)["append" => (function() use ($add) {
   $__body = function($v, $v1) use ($add) {
     $__case_0 = $v;
@@ -364,9 +409,47 @@ function Data_Monoid_Additive_monoidAdditive($dictSemiring) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Monoid_Additive_semigroupAdditive = ($GLOBALS['Data_Monoid_Additive_semigroupAdditive'] ?? \Data\Monoid\Additive\phpurs_eval_thunk('Data_Monoid_Additive_semigroupAdditive'));
-$semigroupAdditive1 = ($__global_Data_Monoid_Additive_semigroupAdditive)($dictSemiring);
-    $__res = (object)["mempty" => ($dictSemiring)->zero, "Semigroup0" => (function() use ($semigroupAdditive1) {
+$__case_0 = $dictSemiring;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->add;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$add = $__case_res_0;
+$semigroupAdditive1 = (object)["append" => (function() use ($add) {
+  $__body = function($v, $v1) use ($add) {
+    $__case_0 = $v;
+    $__case_1 = $v1;
+    if (true) {
+$a = $__case_0;
+$b = $__case_1;
+return ($add)($a, $b);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($v, $v1 = null) use ($add, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($v, $v1);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+$__case_0 = $dictSemiring;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->zero;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = (object)["mempty" => $__case_res_1, "Semigroup0" => (function() use ($semigroupAdditive1) {
   $__fn = function($__dollar____unused) use ($semigroupAdditive1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {

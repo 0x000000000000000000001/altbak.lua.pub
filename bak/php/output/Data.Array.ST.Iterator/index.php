@@ -98,14 +98,84 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Data_Array_ST_Iterator_bind': $v = ($GLOBALS['Control_Monad_ST_Internal_bind_'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_bind_')); break;
-      case 'Data_Array_ST_Iterator_pure': $v = ($GLOBALS['Control_Monad_ST_Internal_pure_'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_pure_')); break;
-      case 'Data_Array_ST_Iterator_add': $v = ($GLOBALS['Data_Semiring_intAdd'] ?? \Data\Semiring\phpurs_eval_thunk('Data_Semiring_intAdd')); break;
-      case 'Data_Array_ST_Iterator_map': $v = ($GLOBALS['Control_Monad_ST_Internal_map_'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_map_')); break;
-      case 'Data_Array_ST_Iterator_not': $v = ($GLOBALS['Data_HeytingAlgebra_boolNot'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_boolNot')); break;
-      case 'Data_Array_ST_Iterator_void': $v = (($GLOBALS['Data_Functor_void'] ?? \Data\Functor\phpurs_eval_thunk('Data_Functor_void')))(($GLOBALS['Control_Monad_ST_Internal_functorST'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_functorST'))); break;
+      case 'Data_Array_ST_Iterator_bind': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Monad_ST_Internal_bindST'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_bindST'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bind;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Array_ST_Iterator_pure': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Monad_ST_Internal_applicativeST'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_applicativeST'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Array_ST_Iterator_add': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Semiring_semiringInt'] ?? \Data\Semiring\phpurs_eval_thunk('Data_Semiring_semiringInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->add;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Array_ST_Iterator_map': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Monad_ST_Internal_functorST'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_functorST'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Array_ST_Iterator_not': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_HeytingAlgebra_heytingAlgebraBoolean'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_heytingAlgebraBoolean'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->not;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Array_ST_Iterator_void': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Monad_ST_Internal_functorST'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_functorST'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return ($__case_res_0)((($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const')))(($GLOBALS['Data_Unit_unit'] ?? \Data\Unit\phpurs_eval_thunk('Data_Unit_unit'))));
+})(); break;
       case 'Data_Array_ST_Iterator_pushAll': $v = (($GLOBALS['Data_Array_ST_Iterator_pushWhile'] ?? \Data\Array\ST\Iterator\phpurs_eval_thunk('Data_Array_ST_Iterator_pushWhile')))((($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const')))(true)); break;
-      case 'Data_Array_ST_Iterator_exhausted': $v = ((($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn')))->compose)((($GLOBALS['Control_Monad_ST_Internal_map_'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_map_')))(($GLOBALS['Data_Maybe_isNothing'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_isNothing'))), ($GLOBALS['Data_Array_ST_Iterator_peek'] ?? \Data\Array\ST\Iterator\phpurs_eval_thunk('Data_Array_ST_Iterator_peek'))); break;
+      case 'Data_Array_ST_Iterator_exhausted': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compose;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return ($__case_res_0)((($GLOBALS['Data_Array_ST_Iterator_map'] ?? \Data\Array\ST\Iterator\phpurs_eval_thunk('Data_Array_ST_Iterator_map')))(($GLOBALS['Data_Maybe_isNothing'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_isNothing'))), ($GLOBALS['Data_Array_ST_Iterator_peek'] ?? \Data\Array\ST\Iterator\phpurs_eval_thunk('Data_Array_ST_Iterator_peek')));
+})(); break;
       default: throw new \Exception("Unknown thunk " . $id);
     }
     $GLOBALS[$id] = $v;
@@ -142,21 +212,21 @@ function Data_Array_ST_Iterator_peek($v) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
   $__body = function($v) {
-    $__global_Control_Monad_ST_Internal_bind_ = ($GLOBALS['Control_Monad_ST_Internal_bind_'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_bind_'));
+    $__global_Data_Array_ST_Iterator_bind = ($GLOBALS['Data_Array_ST_Iterator_bind'] ?? \Data\Array\ST\Iterator\phpurs_eval_thunk('Data_Array_ST_Iterator_bind'));
     $__global_Control_Monad_ST_Internal_read = ($GLOBALS['Control_Monad_ST_Internal_read'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_read'));
-    $__global_Control_Monad_ST_Internal_pure_ = ($GLOBALS['Control_Monad_ST_Internal_pure_'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_pure_'));
+    $__global_Data_Array_ST_Iterator_pure = ($GLOBALS['Data_Array_ST_Iterator_pure'] ?? \Data\Array\ST\Iterator\phpurs_eval_thunk('Data_Array_ST_Iterator_pure'));
     $__case_0 = $v;
     switch (($__case_0)->tag) {
 case "Iterator":
 $f = ($__case_0)->v0;
 $currentIndex = ($__case_0)->v1;
-return ($__global_Control_Monad_ST_Internal_bind_)(($__global_Control_Monad_ST_Internal_read)($currentIndex), (function() use ($__global_Control_Monad_ST_Internal_pure_, $f) {
-  $__fn = function($i) use ($__global_Control_Monad_ST_Internal_pure_, $f, &$__fn) {
+return ($__global_Data_Array_ST_Iterator_bind)(($__global_Control_Monad_ST_Internal_read)($currentIndex), (function() use ($__global_Data_Array_ST_Iterator_pure, $f) {
+  $__fn = function($i) use ($__global_Data_Array_ST_Iterator_pure, $f, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($__global_Control_Monad_ST_Internal_pure_)(($f)($i));
+    $__res = ($__global_Data_Array_ST_Iterator_pure)(($f)($i));
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -180,38 +250,39 @@ function Data_Array_ST_Iterator_next($v) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
   $__body = function($v) {
-    $__global_Control_Monad_ST_Internal_bind_ = ($GLOBALS['Control_Monad_ST_Internal_bind_'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_bind_'));
+    $__global_Data_Array_ST_Iterator_bind = ($GLOBALS['Data_Array_ST_Iterator_bind'] ?? \Data\Array\ST\Iterator\phpurs_eval_thunk('Data_Array_ST_Iterator_bind'));
     $__global_Control_Monad_ST_Internal_read = ($GLOBALS['Control_Monad_ST_Internal_read'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_read'));
     $__global_Control_Monad_ST_Internal_modify = ($GLOBALS['Control_Monad_ST_Internal_modify'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_modify'));
-    $__global_Control_Monad_ST_Internal_pure_ = ($GLOBALS['Control_Monad_ST_Internal_pure_'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_pure_'));
+    $__global_Data_Array_ST_Iterator_add = ($GLOBALS['Data_Array_ST_Iterator_add'] ?? \Data\Array\ST\Iterator\phpurs_eval_thunk('Data_Array_ST_Iterator_add'));
+    $__global_Data_Array_ST_Iterator_pure = ($GLOBALS['Data_Array_ST_Iterator_pure'] ?? \Data\Array\ST\Iterator\phpurs_eval_thunk('Data_Array_ST_Iterator_pure'));
     $__case_0 = $v;
     switch (($__case_0)->tag) {
 case "Iterator":
 $f = ($__case_0)->v0;
 $currentIndex = ($__case_0)->v1;
-return ($__global_Control_Monad_ST_Internal_bind_)(($__global_Control_Monad_ST_Internal_read)($currentIndex), (function() use ($__global_Control_Monad_ST_Internal_bind_, $__global_Control_Monad_ST_Internal_modify, $currentIndex, $__global_Control_Monad_ST_Internal_pure_, $f) {
-  $__fn = function($i) use ($__global_Control_Monad_ST_Internal_bind_, $__global_Control_Monad_ST_Internal_modify, $currentIndex, $__global_Control_Monad_ST_Internal_pure_, $f, &$__fn) {
+return ($__global_Data_Array_ST_Iterator_bind)(($__global_Control_Monad_ST_Internal_read)($currentIndex), (function() use ($__global_Data_Array_ST_Iterator_bind, $__global_Control_Monad_ST_Internal_modify, $__global_Data_Array_ST_Iterator_add, $currentIndex, $__global_Data_Array_ST_Iterator_pure, $f) {
+  $__fn = function($i) use ($__global_Data_Array_ST_Iterator_bind, $__global_Control_Monad_ST_Internal_modify, $__global_Data_Array_ST_Iterator_add, $currentIndex, $__global_Data_Array_ST_Iterator_pure, $f, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($__global_Control_Monad_ST_Internal_bind_)(($__global_Control_Monad_ST_Internal_modify)((function() {
-  $__fn = function($v1) use (&$__fn) {
+    $__res = ($__global_Data_Array_ST_Iterator_bind)(($__global_Control_Monad_ST_Internal_modify)((function() use ($__global_Data_Array_ST_Iterator_add) {
+  $__fn = function($v1) use ($__global_Data_Array_ST_Iterator_add, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($v1 + 1);
+    $__res = ($__global_Data_Array_ST_Iterator_add)($v1, 1);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})(), $currentIndex), (function() use ($__global_Control_Monad_ST_Internal_pure_, $f, $i) {
-  $__fn = function($__dollar____unused) use ($__global_Control_Monad_ST_Internal_pure_, $f, $i, &$__fn) {
+})(), $currentIndex), (function() use ($__global_Data_Array_ST_Iterator_pure, $f, $i) {
+  $__fn = function($__dollar____unused) use ($__global_Data_Array_ST_Iterator_pure, $f, $i, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($__global_Control_Monad_ST_Internal_pure_)(($f)($i));
+    $__res = ($__global_Data_Array_ST_Iterator_pure)(($f)($i));
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -245,22 +316,22 @@ function Data_Array_ST_Iterator_pushWhile($p, $iter = null, $array = null) {
     };
     return phpurs_curry_fallback($__fn, func_get_args(), 3);
   }
-$__global_Control_Monad_ST_Internal_bind_ = ($GLOBALS['Control_Monad_ST_Internal_bind_'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_bind_'));
+$__global_Data_Array_ST_Iterator_bind = ($GLOBALS['Data_Array_ST_Iterator_bind'] ?? \Data\Array\ST\Iterator\phpurs_eval_thunk('Data_Array_ST_Iterator_bind'));
 $__global_Control_Monad_ST_Internal_new = ($GLOBALS['Control_Monad_ST_Internal_new'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_new'));
 $__global_Control_Monad_ST_Internal_while = ($GLOBALS['Control_Monad_ST_Internal_while'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_while'));
-$__global_Control_Monad_ST_Internal_map_ = ($GLOBALS['Control_Monad_ST_Internal_map_'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_map_'));
-$__global_Data_HeytingAlgebra_boolNot = ($GLOBALS['Data_HeytingAlgebra_boolNot'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_boolNot'));
+$__global_Data_Array_ST_Iterator_map = ($GLOBALS['Data_Array_ST_Iterator_map'] ?? \Data\Array\ST\Iterator\phpurs_eval_thunk('Data_Array_ST_Iterator_map'));
+$__global_Data_Array_ST_Iterator_not = ($GLOBALS['Data_Array_ST_Iterator_not'] ?? \Data\Array\ST\Iterator\phpurs_eval_thunk('Data_Array_ST_Iterator_not'));
 $__global_Control_Monad_ST_Internal_read = ($GLOBALS['Control_Monad_ST_Internal_read'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_read'));
 $__global_Data_Array_ST_Iterator_peek = ($GLOBALS['Data_Array_ST_Iterator_peek'] ?? \Data\Array\ST\Iterator\phpurs_eval_thunk('Data_Array_ST_Iterator_peek'));
 $__global_Data_Array_ST_Iterator_void = ($GLOBALS['Data_Array_ST_Iterator_void'] ?? \Data\Array\ST\Iterator\phpurs_eval_thunk('Data_Array_ST_Iterator_void'));
 $__global_Control_Monad_ST_Internal_write = ($GLOBALS['Control_Monad_ST_Internal_write'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_write'));
-    $__res = ($__global_Control_Monad_ST_Internal_bind_)(($__global_Control_Monad_ST_Internal_new)(false), (function() use ($__global_Control_Monad_ST_Internal_while, $__global_Control_Monad_ST_Internal_map_, $__global_Data_HeytingAlgebra_boolNot, $__global_Control_Monad_ST_Internal_read, $__global_Control_Monad_ST_Internal_bind_, $__global_Data_Array_ST_Iterator_peek, $iter, $__global_Data_Array_ST_Iterator_void, $__global_Control_Monad_ST_Internal_write) {
-  $__fn = function($break) use ($__global_Control_Monad_ST_Internal_while, $__global_Control_Monad_ST_Internal_map_, $__global_Data_HeytingAlgebra_boolNot, $__global_Control_Monad_ST_Internal_read, $__global_Control_Monad_ST_Internal_bind_, $__global_Data_Array_ST_Iterator_peek, $iter, $__global_Data_Array_ST_Iterator_void, $__global_Control_Monad_ST_Internal_write, &$__fn) {
+    $__res = ($__global_Data_Array_ST_Iterator_bind)(($__global_Control_Monad_ST_Internal_new)(false), (function() use ($__global_Control_Monad_ST_Internal_while, $__global_Data_Array_ST_Iterator_map, $__global_Data_Array_ST_Iterator_not, $__global_Control_Monad_ST_Internal_read, $__global_Data_Array_ST_Iterator_bind, $__global_Data_Array_ST_Iterator_peek, $iter, $__global_Data_Array_ST_Iterator_void, $__global_Control_Monad_ST_Internal_write) {
+  $__fn = function($break) use ($__global_Control_Monad_ST_Internal_while, $__global_Data_Array_ST_Iterator_map, $__global_Data_Array_ST_Iterator_not, $__global_Control_Monad_ST_Internal_read, $__global_Data_Array_ST_Iterator_bind, $__global_Data_Array_ST_Iterator_peek, $iter, $__global_Data_Array_ST_Iterator_void, $__global_Control_Monad_ST_Internal_write, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($__global_Control_Monad_ST_Internal_while)(($__global_Control_Monad_ST_Internal_map_)($__global_Data_HeytingAlgebra_boolNot, ($__global_Control_Monad_ST_Internal_read)($break)), ($__global_Control_Monad_ST_Internal_bind_)(($__global_Data_Array_ST_Iterator_peek)($iter), (function() use ($__global_Data_Array_ST_Iterator_void, $__global_Control_Monad_ST_Internal_write, $break) {
+    $__res = ($__global_Control_Monad_ST_Internal_while)(($__global_Data_Array_ST_Iterator_map)($__global_Data_Array_ST_Iterator_not, ($__global_Control_Monad_ST_Internal_read)($break)), ($__global_Data_Array_ST_Iterator_bind)(($__global_Data_Array_ST_Iterator_peek)($iter), (function() use ($__global_Data_Array_ST_Iterator_void, $__global_Control_Monad_ST_Internal_write, $break) {
   $__body = function($mx) use ($__global_Data_Array_ST_Iterator_void, $__global_Control_Monad_ST_Internal_write, $break) {
     $__case_0 = $mx;
     switch (($__case_0)->tag) {
@@ -299,9 +370,9 @@ function Data_Array_ST_Iterator_iterator($f) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Control_Monad_ST_Internal_map_ = ($GLOBALS['Control_Monad_ST_Internal_map_'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_map_'));
+$__global_Data_Array_ST_Iterator_map = ($GLOBALS['Data_Array_ST_Iterator_map'] ?? \Data\Array\ST\Iterator\phpurs_eval_thunk('Data_Array_ST_Iterator_map'));
 $__global_Control_Monad_ST_Internal_new = ($GLOBALS['Control_Monad_ST_Internal_new'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_new'));
-    $__res = ($__global_Control_Monad_ST_Internal_map_)(((function() {
+    $__res = ($__global_Data_Array_ST_Iterator_map)(((function() {
   $__fn = function($value0, $value1 = null) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 2) {
@@ -325,22 +396,22 @@ function Data_Array_ST_Iterator_iterate($iter, $f = null) {
     if ($__num === 1) return function($f) use ($iter, $__fn) { return $__fn($iter, $f); };
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
-$__global_Control_Monad_ST_Internal_bind_ = ($GLOBALS['Control_Monad_ST_Internal_bind_'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_bind_'));
+$__global_Data_Array_ST_Iterator_bind = ($GLOBALS['Data_Array_ST_Iterator_bind'] ?? \Data\Array\ST\Iterator\phpurs_eval_thunk('Data_Array_ST_Iterator_bind'));
 $__global_Control_Monad_ST_Internal_new = ($GLOBALS['Control_Monad_ST_Internal_new'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_new'));
 $__global_Control_Monad_ST_Internal_while = ($GLOBALS['Control_Monad_ST_Internal_while'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_while'));
-$__global_Control_Monad_ST_Internal_map_ = ($GLOBALS['Control_Monad_ST_Internal_map_'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_map_'));
-$__global_Data_HeytingAlgebra_boolNot = ($GLOBALS['Data_HeytingAlgebra_boolNot'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_boolNot'));
+$__global_Data_Array_ST_Iterator_map = ($GLOBALS['Data_Array_ST_Iterator_map'] ?? \Data\Array\ST\Iterator\phpurs_eval_thunk('Data_Array_ST_Iterator_map'));
+$__global_Data_Array_ST_Iterator_not = ($GLOBALS['Data_Array_ST_Iterator_not'] ?? \Data\Array\ST\Iterator\phpurs_eval_thunk('Data_Array_ST_Iterator_not'));
 $__global_Control_Monad_ST_Internal_read = ($GLOBALS['Control_Monad_ST_Internal_read'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_read'));
 $__global_Data_Array_ST_Iterator_next = ($GLOBALS['Data_Array_ST_Iterator_next'] ?? \Data\Array\ST\Iterator\phpurs_eval_thunk('Data_Array_ST_Iterator_next'));
 $__global_Data_Array_ST_Iterator_void = ($GLOBALS['Data_Array_ST_Iterator_void'] ?? \Data\Array\ST\Iterator\phpurs_eval_thunk('Data_Array_ST_Iterator_void'));
 $__global_Control_Monad_ST_Internal_write = ($GLOBALS['Control_Monad_ST_Internal_write'] ?? \Control\Monad\ST\Internal\phpurs_eval_thunk('Control_Monad_ST_Internal_write'));
-    $__res = ($__global_Control_Monad_ST_Internal_bind_)(($__global_Control_Monad_ST_Internal_new)(false), (function() use ($__global_Control_Monad_ST_Internal_while, $__global_Control_Monad_ST_Internal_map_, $__global_Data_HeytingAlgebra_boolNot, $__global_Control_Monad_ST_Internal_read, $__global_Control_Monad_ST_Internal_bind_, $__global_Data_Array_ST_Iterator_next, $iter, $f, $__global_Data_Array_ST_Iterator_void, $__global_Control_Monad_ST_Internal_write) {
-  $__fn = function($break) use ($__global_Control_Monad_ST_Internal_while, $__global_Control_Monad_ST_Internal_map_, $__global_Data_HeytingAlgebra_boolNot, $__global_Control_Monad_ST_Internal_read, $__global_Control_Monad_ST_Internal_bind_, $__global_Data_Array_ST_Iterator_next, $iter, $f, $__global_Data_Array_ST_Iterator_void, $__global_Control_Monad_ST_Internal_write, &$__fn) {
+    $__res = ($__global_Data_Array_ST_Iterator_bind)(($__global_Control_Monad_ST_Internal_new)(false), (function() use ($__global_Control_Monad_ST_Internal_while, $__global_Data_Array_ST_Iterator_map, $__global_Data_Array_ST_Iterator_not, $__global_Control_Monad_ST_Internal_read, $__global_Data_Array_ST_Iterator_bind, $__global_Data_Array_ST_Iterator_next, $iter, $f, $__global_Data_Array_ST_Iterator_void, $__global_Control_Monad_ST_Internal_write) {
+  $__fn = function($break) use ($__global_Control_Monad_ST_Internal_while, $__global_Data_Array_ST_Iterator_map, $__global_Data_Array_ST_Iterator_not, $__global_Control_Monad_ST_Internal_read, $__global_Data_Array_ST_Iterator_bind, $__global_Data_Array_ST_Iterator_next, $iter, $f, $__global_Data_Array_ST_Iterator_void, $__global_Control_Monad_ST_Internal_write, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($__global_Control_Monad_ST_Internal_while)(($__global_Control_Monad_ST_Internal_map_)($__global_Data_HeytingAlgebra_boolNot, ($__global_Control_Monad_ST_Internal_read)($break)), ($__global_Control_Monad_ST_Internal_bind_)(($__global_Data_Array_ST_Iterator_next)($iter), (function() use ($f, $__global_Data_Array_ST_Iterator_void, $__global_Control_Monad_ST_Internal_write, $break) {
+    $__res = ($__global_Control_Monad_ST_Internal_while)(($__global_Data_Array_ST_Iterator_map)($__global_Data_Array_ST_Iterator_not, ($__global_Control_Monad_ST_Internal_read)($break)), ($__global_Data_Array_ST_Iterator_bind)(($__global_Data_Array_ST_Iterator_next)($iter), (function() use ($f, $__global_Data_Array_ST_Iterator_void, $__global_Control_Monad_ST_Internal_write, $break) {
   $__body = function($mx) use ($f, $__global_Data_Array_ST_Iterator_void, $__global_Control_Monad_ST_Internal_write, $break) {
     $__case_0 = $mx;
     switch (($__case_0)->tag) {

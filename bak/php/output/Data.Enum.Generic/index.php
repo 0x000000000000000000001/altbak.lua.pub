@@ -102,19 +102,187 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Data_Enum_Generic_compose': $v = (($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn')))->compose; break;
-      case 'Data_Enum_Generic_map': $v = (($GLOBALS['Data_Maybe_functorMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_functorMaybe')))->map; break;
+      case 'Data_Enum_Generic_compose': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compose;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Enum_Generic_map': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Maybe_functorMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_functorMaybe'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_Enum_Generic_unwrap': $v = (($GLOBALS['Data_Newtype_unwrap'] ?? \Data\Newtype\phpurs_eval_thunk('Data_Newtype_unwrap')))(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))); break;
-      case 'Data_Enum_Generic_add': $v = ($GLOBALS['Data_Semiring_intAdd'] ?? \Data\Semiring\phpurs_eval_thunk('Data_Semiring_intAdd')); break;
-      case 'Data_Enum_Generic_conj': $v = ($GLOBALS['Data_HeytingAlgebra_boolConj'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_boolConj')); break;
-      case 'Data_Enum_Generic_greaterThanOrEq': $v = (($GLOBALS['Data_Ord_greaterThanOrEq'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_greaterThanOrEq')))(($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'))); break;
-      case 'Data_Enum_Generic_lessThan': $v = (($GLOBALS['Data_Ord_lessThan'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_lessThan')))(($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'))); break;
-      case 'Data_Enum_Generic_sub': $v = ($GLOBALS['Data_Ring_intSub'] ?? \Data\Ring\phpurs_eval_thunk('Data_Ring_intSub')); break;
-      case 'Data_Enum_Generic_mul': $v = ($GLOBALS['Data_Semiring_intMul'] ?? \Data\Semiring\phpurs_eval_thunk('Data_Semiring_intMul')); break;
-      case 'Data_Enum_Generic_apply': $v = (($GLOBALS['Data_Maybe_applyMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_applyMaybe')))->apply; break;
-      case 'Data_Enum_Generic_div': $v = ($GLOBALS['Data_EuclideanRing_intDiv'] ?? \Data\EuclideanRing\phpurs_eval_thunk('Data_EuclideanRing_intDiv')); break;
-      case 'Data_Enum_Generic_mod': $v = ($GLOBALS['Data_EuclideanRing_intMod'] ?? \Data\EuclideanRing\phpurs_eval_thunk('Data_EuclideanRing_intMod')); break;
-      case 'Data_Enum_Generic_eq': $v = ($GLOBALS['Data_Eq_eqIntImpl'] ?? \Data\Eq\phpurs_eval_thunk('Data_Eq_eqIntImpl')); break;
+      case 'Data_Enum_Generic_add': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Semiring_semiringInt'] ?? \Data\Semiring\phpurs_eval_thunk('Data_Semiring_semiringInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->add;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Enum_Generic_conj': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_HeytingAlgebra_heytingAlgebraBoolean'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_heytingAlgebraBoolean'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->conj;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Enum_Generic_greaterThanOrEq': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $compare3 = $__case_res_0;
+  return (function() use ($compare3) {
+  $__body = function($a1, $a2) use ($compare3) {
+    $v = ($compare3)($a1, $a2);
+    $__case_0 = $v;
+    switch (($__case_0)->tag) {
+case "LT":
+return false;
+break;
+default:
+return true;
+break;
+};
+  };
+  $__fn = function($a1, $a2 = null) use ($compare3, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($a2) use ($a1, &$__fn) { return $__fn($a1, $a2); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($a1, $a2);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+})(); break;
+      case 'Data_Enum_Generic_lessThan': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Ord_ordInt'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $compare3 = $__case_res_0;
+  return (function() use ($compare3) {
+  $__body = function($a1, $a2) use ($compare3) {
+    $v = ($compare3)($a1, $a2);
+    $__case_0 = $v;
+    switch (($__case_0)->tag) {
+case "LT":
+return true;
+break;
+default:
+return false;
+break;
+};
+  };
+  $__fn = function($a1, $a2 = null) use ($compare3, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($a2) use ($a1, &$__fn) { return $__fn($a1, $a2); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($a1, $a2);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+})(); break;
+      case 'Data_Enum_Generic_sub': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Ring_ringInt'] ?? \Data\Ring\phpurs_eval_thunk('Data_Ring_ringInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->sub;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Enum_Generic_mul': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Semiring_semiringInt'] ?? \Data\Semiring\phpurs_eval_thunk('Data_Semiring_semiringInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->mul;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Enum_Generic_apply': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Maybe_applyMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_applyMaybe'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Enum_Generic_div': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_EuclideanRing_euclideanRingInt'] ?? \Data\EuclideanRing\phpurs_eval_thunk('Data_EuclideanRing_euclideanRingInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->div;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Enum_Generic_mod': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_EuclideanRing_euclideanRingInt'] ?? \Data\EuclideanRing\phpurs_eval_thunk('Data_EuclideanRing_euclideanRingInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->mod;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Enum_Generic_eq': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Eq_eqInt'] ?? \Data\Eq\phpurs_eval_thunk('Data_Eq_eqInt'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_Enum_Generic_genericEnumNoArguments': $v = (object)["genericPred'" => (function() {
   $__fn = function($v) use (&$__fn) {
   $__num = func_num_args();
@@ -138,7 +306,8 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
 })()]; break;
       case 'Data_Enum_Generic_genericBoundedEnumNoArguments': $v = (object)["genericCardinality'" => 1, "genericToEnum'" => (function() {
   $__body = function($i) {
-    $__case_0 = ($i === 0);
+    $__global_Data_Enum_Generic_eq = ($GLOBALS['Data_Enum_Generic_eq'] ?? \Data\Enum\Generic\phpurs_eval_thunk('Data_Enum_Generic_eq'));
+    $__case_0 = ($__global_Data_Enum_Generic_eq)($i, 0);
     switch ($__case_0) {
 case true:
 return ((function() {
@@ -254,14 +423,30 @@ function Data_Enum_Generic_genericToEnum($dictGeneric) {
   }
 $__global_Data_Enum_Generic_compose = ($GLOBALS['Data_Enum_Generic_compose'] ?? \Data\Enum\Generic\phpurs_eval_thunk('Data_Enum_Generic_compose'));
 $__global_Data_Enum_Generic_map = ($GLOBALS['Data_Enum_Generic_map'] ?? \Data\Enum\Generic\phpurs_eval_thunk('Data_Enum_Generic_map'));
-$to = ($dictGeneric)->to;
+$__case_0 = $dictGeneric;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->to;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$to = $__case_res_0;
     $__res = (function() use ($__global_Data_Enum_Generic_compose, $__global_Data_Enum_Generic_map, $to) {
   $__fn = function($dictGenericBoundedEnum) use ($__global_Data_Enum_Generic_compose, $__global_Data_Enum_Generic_map, $to, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($__global_Data_Enum_Generic_compose)(($__global_Data_Enum_Generic_map)($to), ($dictGenericBoundedEnum)->genericToEnum__prime__);
+$__case_0 = $dictGenericBoundedEnum;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->genericToEnum__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__global_Data_Enum_Generic_compose)(($__global_Data_Enum_Generic_map)($to), $__case_res_1);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -300,15 +485,39 @@ function Data_Enum_Generic_genericSucc($dictGeneric) {
   }
 $__global_Data_Enum_Generic_compose = ($GLOBALS['Data_Enum_Generic_compose'] ?? \Data\Enum\Generic\phpurs_eval_thunk('Data_Enum_Generic_compose'));
 $__global_Data_Enum_Generic_map = ($GLOBALS['Data_Enum_Generic_map'] ?? \Data\Enum\Generic\phpurs_eval_thunk('Data_Enum_Generic_map'));
-$to = ($dictGeneric)->to;
-$from = ($dictGeneric)->from;
+$__case_0 = $dictGeneric;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->to;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$to = $__case_res_0;
+$__case_0 = $dictGeneric;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->from;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$from = $__case_res_1;
     $__res = (function() use ($__global_Data_Enum_Generic_compose, $__global_Data_Enum_Generic_map, $to, $from) {
   $__fn = function($dictGenericEnum) use ($__global_Data_Enum_Generic_compose, $__global_Data_Enum_Generic_map, $to, $from, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($__global_Data_Enum_Generic_compose)(($__global_Data_Enum_Generic_map)($to), ($__global_Data_Enum_Generic_compose)(($dictGenericEnum)->genericSucc__prime__, $from));
+$__case_0 = $dictGenericEnum;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->genericSucc__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__global_Data_Enum_Generic_compose)(($__global_Data_Enum_Generic_map)($to), ($__global_Data_Enum_Generic_compose)($__case_res_2, $from));
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -347,15 +556,39 @@ function Data_Enum_Generic_genericPred($dictGeneric) {
   }
 $__global_Data_Enum_Generic_compose = ($GLOBALS['Data_Enum_Generic_compose'] ?? \Data\Enum\Generic\phpurs_eval_thunk('Data_Enum_Generic_compose'));
 $__global_Data_Enum_Generic_map = ($GLOBALS['Data_Enum_Generic_map'] ?? \Data\Enum\Generic\phpurs_eval_thunk('Data_Enum_Generic_map'));
-$to = ($dictGeneric)->to;
-$from = ($dictGeneric)->from;
+$__case_0 = $dictGeneric;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->to;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$to = $__case_res_0;
+$__case_0 = $dictGeneric;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->from;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$from = $__case_res_1;
     $__res = (function() use ($__global_Data_Enum_Generic_compose, $__global_Data_Enum_Generic_map, $to, $from) {
   $__fn = function($dictGenericEnum) use ($__global_Data_Enum_Generic_compose, $__global_Data_Enum_Generic_map, $to, $from, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($__global_Data_Enum_Generic_compose)(($__global_Data_Enum_Generic_map)($to), ($__global_Data_Enum_Generic_compose)(($dictGenericEnum)->genericPred__prime__, $from));
+$__case_0 = $dictGenericEnum;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->genericPred__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__global_Data_Enum_Generic_compose)(($__global_Data_Enum_Generic_map)($to), ($__global_Data_Enum_Generic_compose)($__case_res_2, $from));
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -393,14 +626,30 @@ function Data_Enum_Generic_genericFromEnum($dictGeneric) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_Enum_Generic_compose = ($GLOBALS['Data_Enum_Generic_compose'] ?? \Data\Enum\Generic\phpurs_eval_thunk('Data_Enum_Generic_compose'));
-$from = ($dictGeneric)->from;
+$__case_0 = $dictGeneric;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->from;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$from = $__case_res_0;
     $__res = (function() use ($__global_Data_Enum_Generic_compose, $from) {
   $__fn = function($dictGenericBoundedEnum) use ($__global_Data_Enum_Generic_compose, $from, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($__global_Data_Enum_Generic_compose)(($dictGenericBoundedEnum)->genericFromEnum__prime__, $from);
+$__case_0 = $dictGenericBoundedEnum;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->genericFromEnum__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__global_Data_Enum_Generic_compose)($__case_res_1, $from);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -417,30 +666,78 @@ function Data_Enum_Generic_genericEnumSum($dictGenericEnum) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_Enum_Generic_map = ($GLOBALS['Data_Enum_Generic_map'] ?? \Data\Enum\Generic\phpurs_eval_thunk('Data_Enum_Generic_map'));
-$genericPred__prime__1 = ($dictGenericEnum)->genericPred__prime__;
-$genericSucc__prime__1 = ($dictGenericEnum)->genericSucc__prime__;
+$__case_0 = $dictGenericEnum;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->genericPred__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericPred__prime__1 = $__case_res_0;
+$__case_0 = $dictGenericEnum;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->genericSucc__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericSucc__prime__1 = $__case_res_1;
     $__res = (function() use ($__global_Data_Enum_Generic_map, $genericPred__prime__1, $genericSucc__prime__1) {
   $__fn = function($dictGenericTop) use ($__global_Data_Enum_Generic_map, $genericPred__prime__1, $genericSucc__prime__1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$genericTop__prime__ = ($dictGenericTop)->genericTop__prime__;
+$__case_0 = $dictGenericTop;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->genericTop__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericTop__prime__ = $__case_res_2;
     $__res = (function() use ($__global_Data_Enum_Generic_map, $genericPred__prime__1, $genericTop__prime__, $genericSucc__prime__1) {
   $__fn = function($dictGenericEnum1) use ($__global_Data_Enum_Generic_map, $genericPred__prime__1, $genericTop__prime__, $genericSucc__prime__1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$genericPred__prime__2 = ($dictGenericEnum1)->genericPred__prime__;
-$genericSucc__prime__2 = ($dictGenericEnum1)->genericSucc__prime__;
+$__case_0 = $dictGenericEnum1;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->genericPred__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericPred__prime__2 = $__case_res_3;
+$__case_0 = $dictGenericEnum1;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->genericSucc__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericSucc__prime__2 = $__case_res_4;
     $__res = (function() use ($__global_Data_Enum_Generic_map, $genericPred__prime__1, $genericPred__prime__2, $genericTop__prime__, $genericSucc__prime__1, $genericSucc__prime__2) {
   $__fn = function($dictGenericBottom) use ($__global_Data_Enum_Generic_map, $genericPred__prime__1, $genericPred__prime__2, $genericTop__prime__, $genericSucc__prime__1, $genericSucc__prime__2, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$genericBottom__prime__ = ($dictGenericBottom)->genericBottom__prime__;
+$__case_0 = $dictGenericBottom;
+$__case_res_5 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_5 = ($v)->genericBottom__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericBottom__prime__ = $__case_res_5;
     $__res = (object)["genericPred'" => (function() use ($__global_Data_Enum_Generic_map, $genericPred__prime__1, $genericPred__prime__2, $genericTop__prime__) {
   $__body = function($v) use ($__global_Data_Enum_Generic_map, $genericPred__prime__1, $genericPred__prime__2, $genericTop__prime__) {
     $__case_0 = $v;
@@ -645,8 +942,24 @@ function Data_Enum_Generic_genericEnumProduct($dictGenericEnum) {
   }
 $__global_Data_Enum_Generic_map = ($GLOBALS['Data_Enum_Generic_map'] ?? \Data\Enum\Generic\phpurs_eval_thunk('Data_Enum_Generic_map'));
 $__global_Data_Function_flip = ($GLOBALS['Data_Function_flip'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_flip'));
-$genericPred__prime__1 = ($dictGenericEnum)->genericPred__prime__;
-$genericSucc__prime__1 = ($dictGenericEnum)->genericSucc__prime__;
+$__case_0 = $dictGenericEnum;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->genericPred__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericPred__prime__1 = $__case_res_0;
+$__case_0 = $dictGenericEnum;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->genericSucc__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericSucc__prime__1 = $__case_res_1;
     $__res = (function() use ($__global_Data_Enum_Generic_map, $__global_Data_Function_flip, $genericPred__prime__1, $genericSucc__prime__1) {
   $__fn = function($dictGenericTop, $dictGenericBottom = null, $dictGenericEnum1 = null) use ($__global_Data_Enum_Generic_map, $__global_Data_Function_flip, $genericPred__prime__1, $genericSucc__prime__1, &$__fn) {
   $__num = func_num_args();
@@ -660,22 +973,54 @@ $genericSucc__prime__1 = ($dictGenericEnum)->genericSucc__prime__;
     };
     return phpurs_curry_fallback($__fn, func_get_args(), 3);
   }
-$genericPred__prime__2 = ($dictGenericEnum1)->genericPred__prime__;
-$genericSucc__prime__2 = ($dictGenericEnum1)->genericSucc__prime__;
+$__case_0 = $dictGenericEnum1;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->genericPred__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericPred__prime__2 = $__case_res_2;
+$__case_0 = $dictGenericEnum1;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->genericSucc__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericSucc__prime__2 = $__case_res_3;
     $__res = (function() use ($genericPred__prime__2, $__global_Data_Enum_Generic_map, $__global_Data_Function_flip, $genericPred__prime__1, $genericSucc__prime__2, $genericSucc__prime__1) {
   $__fn = function($dictGenericTop1) use ($genericPred__prime__2, $__global_Data_Enum_Generic_map, $__global_Data_Function_flip, $genericPred__prime__1, $genericSucc__prime__2, $genericSucc__prime__1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$genericTop__prime__ = ($dictGenericTop1)->genericTop__prime__;
+$__case_0 = $dictGenericTop1;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->genericTop__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericTop__prime__ = $__case_res_4;
     $__res = (function() use ($genericPred__prime__2, $__global_Data_Enum_Generic_map, $__global_Data_Function_flip, $genericTop__prime__, $genericPred__prime__1, $genericSucc__prime__2, $genericSucc__prime__1) {
   $__fn = function($dictGenericBottom1) use ($genericPred__prime__2, $__global_Data_Enum_Generic_map, $__global_Data_Function_flip, $genericTop__prime__, $genericPred__prime__1, $genericSucc__prime__2, $genericSucc__prime__1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$genericBottom__prime__ = ($dictGenericBottom1)->genericBottom__prime__;
+$__case_0 = $dictGenericBottom1;
+$__case_res_5 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_5 = ($v)->genericBottom__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericBottom__prime__ = $__case_res_5;
     $__res = (object)["genericPred'" => (function() use ($genericPred__prime__2, $__global_Data_Enum_Generic_map, $__global_Data_Function_flip, $genericTop__prime__, $genericPred__prime__1) {
   $__body = function($v) use ($genericPred__prime__2, $__global_Data_Enum_Generic_map, $__global_Data_Function_flip, $genericTop__prime__, $genericPred__prime__1) {
     $__case_0 = $v;
@@ -839,8 +1184,24 @@ function Data_Enum_Generic_genericEnumConstructor($dictGenericEnum) {
   }
 $__global_Data_Enum_Generic_map = ($GLOBALS['Data_Enum_Generic_map'] ?? \Data\Enum\Generic\phpurs_eval_thunk('Data_Enum_Generic_map'));
 $__global_Data_Generic_Rep_Constructor = ($GLOBALS['Data_Generic_Rep_Constructor'] ?? \Data\Generic\Rep\phpurs_eval_thunk('Data_Generic_Rep_Constructor'));
-$genericPred__prime__1 = ($dictGenericEnum)->genericPred__prime__;
-$genericSucc__prime__1 = ($dictGenericEnum)->genericSucc__prime__;
+$__case_0 = $dictGenericEnum;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->genericPred__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericPred__prime__1 = $__case_res_0;
+$__case_0 = $dictGenericEnum;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->genericSucc__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericSucc__prime__1 = $__case_res_1;
     $__res = (object)["genericPred'" => (function() use ($__global_Data_Enum_Generic_map, $__global_Data_Generic_Rep_Constructor, $genericPred__prime__1) {
   $__body = function($v) use ($__global_Data_Enum_Generic_map, $__global_Data_Generic_Rep_Constructor, $genericPred__prime__1) {
     $__case_0 = $v;
@@ -893,8 +1254,24 @@ function Data_Enum_Generic_genericEnumArgument($dictEnum) {
   }
 $__global_Data_Enum_Generic_map = ($GLOBALS['Data_Enum_Generic_map'] ?? \Data\Enum\Generic\phpurs_eval_thunk('Data_Enum_Generic_map'));
 $__global_Data_Generic_Rep_Argument = ($GLOBALS['Data_Generic_Rep_Argument'] ?? \Data\Generic\Rep\phpurs_eval_thunk('Data_Generic_Rep_Argument'));
-$pred = ($dictEnum)->pred;
-$succ = ($dictEnum)->succ;
+$__case_0 = $dictEnum;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->pred;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pred = $__case_res_0;
+$__case_0 = $dictEnum;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->succ;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$succ = $__case_res_1;
     $__res = (object)["genericPred'" => (function() use ($__global_Data_Enum_Generic_map, $__global_Data_Generic_Rep_Argument, $pred) {
   $__body = function($v) use ($__global_Data_Enum_Generic_map, $__global_Data_Generic_Rep_Argument, $pred) {
     $__case_0 = $v;
@@ -968,7 +1345,15 @@ function Data_Enum_Generic_genericCardinality($dictGeneric, $dictGenericBoundedE
     return phpurs_curry_fallback($__fn, func_get_args(), 2);
   }
 $__global_Data_Enum_Generic_unwrap = ($GLOBALS['Data_Enum_Generic_unwrap'] ?? \Data\Enum\Generic\phpurs_eval_thunk('Data_Enum_Generic_unwrap'));
-    $__res = ($__global_Data_Enum_Generic_unwrap)(($dictGenericBoundedEnum)->genericCardinality__prime__);
+$__case_0 = $dictGenericBoundedEnum;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->genericCardinality__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__global_Data_Enum_Generic_unwrap)($__case_res_0);
     return 2 < $__num ? $__res(...array_slice(func_get_args(), 2)) : $__res;
 }
 $GLOBALS['Data_Enum_Generic_genericCardinality'] = __NAMESPACE__ . '\\Data_Enum_Generic_genericCardinality';
@@ -980,19 +1365,68 @@ function Data_Enum_Generic_genericBoundedEnumSum($dictGenericBoundedEnum) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
+$__global_Data_Enum_Generic_add = ($GLOBALS['Data_Enum_Generic_add'] ?? \Data\Enum\Generic\phpurs_eval_thunk('Data_Enum_Generic_add'));
 $__global_Data_Enum_Generic_unwrap = ($GLOBALS['Data_Enum_Generic_unwrap'] ?? \Data\Enum\Generic\phpurs_eval_thunk('Data_Enum_Generic_unwrap'));
-$genericCardinality__prime__1 = ($dictGenericBoundedEnum)->genericCardinality__prime__;
-$genericToEnum__prime__1 = ($dictGenericBoundedEnum)->genericToEnum__prime__;
-$genericFromEnum__prime__1 = ($dictGenericBoundedEnum)->genericFromEnum__prime__;
-    $__res = (function() use ($__global_Data_Enum_Generic_unwrap, $genericCardinality__prime__1, $genericFromEnum__prime__1) {
-  $__fn = function($dictGenericBoundedEnum1) use ($__global_Data_Enum_Generic_unwrap, $genericCardinality__prime__1, $genericFromEnum__prime__1, &$__fn) {
+$__case_0 = $dictGenericBoundedEnum;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->genericCardinality__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericCardinality__prime__1 = $__case_res_0;
+$__case_0 = $dictGenericBoundedEnum;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->genericToEnum__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericToEnum__prime__1 = $__case_res_1;
+$__case_0 = $dictGenericBoundedEnum;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->genericFromEnum__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericFromEnum__prime__1 = $__case_res_2;
+    $__res = (function() use ($__global_Data_Enum_Generic_add, $__global_Data_Enum_Generic_unwrap, $genericCardinality__prime__1, $genericFromEnum__prime__1) {
+  $__fn = function($dictGenericBoundedEnum1) use ($__global_Data_Enum_Generic_add, $__global_Data_Enum_Generic_unwrap, $genericCardinality__prime__1, $genericFromEnum__prime__1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$genericToEnum__prime__2 = ($dictGenericBoundedEnum1)->genericToEnum__prime__;
-$genericFromEnum__prime__2 = ($dictGenericBoundedEnum1)->genericFromEnum__prime__;
-    $__res = (object)["genericCardinality'" => (($__global_Data_Enum_Generic_unwrap)($genericCardinality__prime__1) + ($__global_Data_Enum_Generic_unwrap)(($dictGenericBoundedEnum1)->genericCardinality__prime__)), "genericToEnum'" => (function() use ($genericCardinality__prime__1) {
+$__case_0 = $dictGenericBoundedEnum1;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->genericToEnum__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericToEnum__prime__2 = $__case_res_3;
+$__case_0 = $dictGenericBoundedEnum1;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->genericFromEnum__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericFromEnum__prime__2 = $__case_res_4;
+$__case_0 = $dictGenericBoundedEnum1;
+$__case_res_5 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_5 = ($v)->genericCardinality__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = (object)["genericCardinality'" => ($__global_Data_Enum_Generic_add)(($__global_Data_Enum_Generic_unwrap)($genericCardinality__prime__1), ($__global_Data_Enum_Generic_unwrap)($__case_res_5)), "genericToEnum'" => (function() use ($genericCardinality__prime__1) {
   $__fn = function($n) use ($genericCardinality__prime__1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
@@ -1022,8 +1456,8 @@ throw new \Exception("Pattern match failure");
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})(), "genericFromEnum'" => (function() use ($genericFromEnum__prime__1, $genericFromEnum__prime__2, $__global_Data_Enum_Generic_unwrap, $genericCardinality__prime__1) {
-  $__body = function($v) use ($genericFromEnum__prime__1, $genericFromEnum__prime__2, $__global_Data_Enum_Generic_unwrap, $genericCardinality__prime__1) {
+})(), "genericFromEnum'" => (function() use ($genericFromEnum__prime__1, $__global_Data_Enum_Generic_add, $genericFromEnum__prime__2, $__global_Data_Enum_Generic_unwrap, $genericCardinality__prime__1) {
+  $__body = function($v) use ($genericFromEnum__prime__1, $__global_Data_Enum_Generic_add, $genericFromEnum__prime__2, $__global_Data_Enum_Generic_unwrap, $genericCardinality__prime__1) {
     $__case_0 = $v;
     switch (($__case_0)->tag) {
 case "Inl":
@@ -1032,14 +1466,14 @@ return ($genericFromEnum__prime__1)($a);
 break;
 case "Inr":
 $b = ($__case_0)->v0;
-return (($genericFromEnum__prime__2)($b) + ($__global_Data_Enum_Generic_unwrap)($genericCardinality__prime__1));
+return ($__global_Data_Enum_Generic_add)(($genericFromEnum__prime__2)($b), ($__global_Data_Enum_Generic_unwrap)($genericCardinality__prime__1));
 break;
 default:
 throw new \Exception("Pattern match failure");
 break;
 };
   };
-  $__fn = function($v) use ($genericFromEnum__prime__1, $genericFromEnum__prime__2, $__global_Data_Enum_Generic_unwrap, $genericCardinality__prime__1, $__body, &$__fn) {
+  $__fn = function($v) use ($genericFromEnum__prime__1, $__global_Data_Enum_Generic_add, $genericFromEnum__prime__2, $__global_Data_Enum_Generic_unwrap, $genericCardinality__prime__1, $__body, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
@@ -1064,24 +1498,75 @@ function Data_Enum_Generic_genericBoundedEnumProduct($dictGenericBoundedEnum) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
+$__global_Data_Enum_Generic_mul = ($GLOBALS['Data_Enum_Generic_mul'] ?? \Data\Enum\Generic\phpurs_eval_thunk('Data_Enum_Generic_mul'));
 $__global_Data_Enum_Generic_unwrap = ($GLOBALS['Data_Enum_Generic_unwrap'] ?? \Data\Enum\Generic\phpurs_eval_thunk('Data_Enum_Generic_unwrap'));
 $__global_Data_Enum_Generic_apply = ($GLOBALS['Data_Enum_Generic_apply'] ?? \Data\Enum\Generic\phpurs_eval_thunk('Data_Enum_Generic_apply'));
 $__global_Data_Enum_Generic_map = ($GLOBALS['Data_Enum_Generic_map'] ?? \Data\Enum\Generic\phpurs_eval_thunk('Data_Enum_Generic_map'));
-$__global_Data_EuclideanRing_intMod = ($GLOBALS['Data_EuclideanRing_intMod'] ?? \Data\EuclideanRing\phpurs_eval_thunk('Data_EuclideanRing_intMod'));
-$genericCardinality__prime__1 = ($dictGenericBoundedEnum)->genericCardinality__prime__;
-$genericToEnum__prime__1 = ($dictGenericBoundedEnum)->genericToEnum__prime__;
-$genericFromEnum__prime__1 = ($dictGenericBoundedEnum)->genericFromEnum__prime__;
-    $__res = (function() use ($__global_Data_Enum_Generic_unwrap, $genericCardinality__prime__1, $__global_Data_Enum_Generic_apply, $__global_Data_Enum_Generic_map, $genericToEnum__prime__1, $__global_Data_EuclideanRing_intMod, $genericFromEnum__prime__1) {
-  $__fn = function($dictGenericBoundedEnum1) use ($__global_Data_Enum_Generic_unwrap, $genericCardinality__prime__1, $__global_Data_Enum_Generic_apply, $__global_Data_Enum_Generic_map, $genericToEnum__prime__1, $__global_Data_EuclideanRing_intMod, $genericFromEnum__prime__1, &$__fn) {
+$__global_Data_Enum_Generic_div = ($GLOBALS['Data_Enum_Generic_div'] ?? \Data\Enum\Generic\phpurs_eval_thunk('Data_Enum_Generic_div'));
+$__global_Data_Enum_Generic_mod = ($GLOBALS['Data_Enum_Generic_mod'] ?? \Data\Enum\Generic\phpurs_eval_thunk('Data_Enum_Generic_mod'));
+$__global_Data_Enum_Generic_add = ($GLOBALS['Data_Enum_Generic_add'] ?? \Data\Enum\Generic\phpurs_eval_thunk('Data_Enum_Generic_add'));
+$__case_0 = $dictGenericBoundedEnum;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->genericCardinality__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericCardinality__prime__1 = $__case_res_0;
+$__case_0 = $dictGenericBoundedEnum;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->genericToEnum__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericToEnum__prime__1 = $__case_res_1;
+$__case_0 = $dictGenericBoundedEnum;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->genericFromEnum__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericFromEnum__prime__1 = $__case_res_2;
+    $__res = (function() use ($__global_Data_Enum_Generic_mul, $__global_Data_Enum_Generic_unwrap, $genericCardinality__prime__1, $__global_Data_Enum_Generic_apply, $__global_Data_Enum_Generic_map, $genericToEnum__prime__1, $__global_Data_Enum_Generic_div, $__global_Data_Enum_Generic_mod, $__global_Data_Enum_Generic_add, $genericFromEnum__prime__1) {
+  $__fn = function($dictGenericBoundedEnum1) use ($__global_Data_Enum_Generic_mul, $__global_Data_Enum_Generic_unwrap, $genericCardinality__prime__1, $__global_Data_Enum_Generic_apply, $__global_Data_Enum_Generic_map, $genericToEnum__prime__1, $__global_Data_Enum_Generic_div, $__global_Data_Enum_Generic_mod, $__global_Data_Enum_Generic_add, $genericFromEnum__prime__1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$genericCardinality__prime__2 = ($dictGenericBoundedEnum1)->genericCardinality__prime__;
-$genericToEnum__prime__2 = ($dictGenericBoundedEnum1)->genericToEnum__prime__;
-$genericFromEnum__prime__2 = ($dictGenericBoundedEnum1)->genericFromEnum__prime__;
-$from = (function() use ($genericFromEnum__prime__1, $genericFromEnum__prime__2) {
-  $__body = function($v, $v1) use ($genericFromEnum__prime__1, $genericFromEnum__prime__2) {
+$__case_0 = $dictGenericBoundedEnum1;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->genericCardinality__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericCardinality__prime__2 = $__case_res_3;
+$__case_0 = $dictGenericBoundedEnum1;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->genericToEnum__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericToEnum__prime__2 = $__case_res_4;
+$__case_0 = $dictGenericBoundedEnum1;
+$__case_res_5 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_5 = ($v)->genericFromEnum__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericFromEnum__prime__2 = $__case_res_5;
+$from = (function() use ($__global_Data_Enum_Generic_add, $__global_Data_Enum_Generic_mul, $genericFromEnum__prime__1, $genericFromEnum__prime__2) {
+  $__body = function($v, $v1) use ($__global_Data_Enum_Generic_add, $__global_Data_Enum_Generic_mul, $genericFromEnum__prime__1, $genericFromEnum__prime__2) {
     $__case_0 = $v;
     $__case_1 = $v1;
     switch (($__case_1)->tag) {
@@ -1089,14 +1574,14 @@ case "Product":
 $cb = $__case_0;
 $a = ($__case_1)->v0;
 $b = ($__case_1)->v1;
-return ((($genericFromEnum__prime__1)($a) * $cb) + ($genericFromEnum__prime__2)($b));
+return ($__global_Data_Enum_Generic_add)(($__global_Data_Enum_Generic_mul)(($genericFromEnum__prime__1)($a), $cb), ($genericFromEnum__prime__2)($b));
 break;
 default:
 throw new \Exception("Pattern match failure");
 break;
 };
   };
-  $__fn = function($v, $v1 = null) use ($genericFromEnum__prime__1, $genericFromEnum__prime__2, $__body, &$__fn) {
+  $__fn = function($v, $v1 = null) use ($__global_Data_Enum_Generic_add, $__global_Data_Enum_Generic_mul, $genericFromEnum__prime__1, $genericFromEnum__prime__2, $__body, &$__fn) {
   $__num = func_num_args();
   if ($__num < 2) {
     if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
@@ -1107,14 +1592,14 @@ break;
   };
   return $__fn;
 })();
-    $__res = (object)["genericCardinality'" => (($__global_Data_Enum_Generic_unwrap)($genericCardinality__prime__1) * ($__global_Data_Enum_Generic_unwrap)($genericCardinality__prime__2)), "genericToEnum'" => (function() use ($__global_Data_Enum_Generic_apply, $__global_Data_Enum_Generic_map, $genericToEnum__prime__1, $genericToEnum__prime__2, $__global_Data_EuclideanRing_intMod, $genericCardinality__prime__2) {
-  $__fn = function($n) use ($__global_Data_Enum_Generic_apply, $__global_Data_Enum_Generic_map, $genericToEnum__prime__1, $genericToEnum__prime__2, $__global_Data_EuclideanRing_intMod, $genericCardinality__prime__2, &$__fn) {
+    $__res = (object)["genericCardinality'" => ($__global_Data_Enum_Generic_mul)(($__global_Data_Enum_Generic_unwrap)($genericCardinality__prime__1), ($__global_Data_Enum_Generic_unwrap)($genericCardinality__prime__2)), "genericToEnum'" => (function() use ($__global_Data_Enum_Generic_apply, $__global_Data_Enum_Generic_map, $genericToEnum__prime__1, $__global_Data_Enum_Generic_div, $genericToEnum__prime__2, $__global_Data_Enum_Generic_mod, $genericCardinality__prime__2) {
+  $__fn = function($n) use ($__global_Data_Enum_Generic_apply, $__global_Data_Enum_Generic_map, $genericToEnum__prime__1, $__global_Data_Enum_Generic_div, $genericToEnum__prime__2, $__global_Data_Enum_Generic_mod, $genericCardinality__prime__2, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$to = (function() use ($__global_Data_Enum_Generic_apply, $__global_Data_Enum_Generic_map, $genericToEnum__prime__1, $n, $genericToEnum__prime__2, $__global_Data_EuclideanRing_intMod) {
-  $__body = function($v) use ($__global_Data_Enum_Generic_apply, $__global_Data_Enum_Generic_map, $genericToEnum__prime__1, $n, $genericToEnum__prime__2, $__global_Data_EuclideanRing_intMod) {
+$to = (function() use ($__global_Data_Enum_Generic_apply, $__global_Data_Enum_Generic_map, $genericToEnum__prime__1, $__global_Data_Enum_Generic_div, $n, $genericToEnum__prime__2, $__global_Data_Enum_Generic_mod) {
+  $__body = function($v) use ($__global_Data_Enum_Generic_apply, $__global_Data_Enum_Generic_map, $genericToEnum__prime__1, $__global_Data_Enum_Generic_div, $n, $genericToEnum__prime__2, $__global_Data_Enum_Generic_mod) {
     $__case_0 = $v;
     if (true) {
 $cb = $__case_0;
@@ -1129,12 +1614,12 @@ return ($__global_Data_Enum_Generic_apply)(($__global_Data_Enum_Generic_map)((fu
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
-})(), ($genericToEnum__prime__1)(($n / $cb))), ($genericToEnum__prime__2)(($__global_Data_EuclideanRing_intMod)($n, $cb)));
+})(), ($genericToEnum__prime__1)(($__global_Data_Enum_Generic_div)($n, $cb))), ($genericToEnum__prime__2)(($__global_Data_Enum_Generic_mod)($n, $cb)));
 } else {
 throw new \Exception("Pattern match failure");
 };
   };
-  $__fn = function($v) use ($__global_Data_Enum_Generic_apply, $__global_Data_Enum_Generic_map, $genericToEnum__prime__1, $n, $genericToEnum__prime__2, $__global_Data_EuclideanRing_intMod, $__body, &$__fn) {
+  $__fn = function($v) use ($__global_Data_Enum_Generic_apply, $__global_Data_Enum_Generic_map, $genericToEnum__prime__1, $__global_Data_Enum_Generic_div, $n, $genericToEnum__prime__2, $__global_Data_Enum_Generic_mod, $__body, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
@@ -1168,9 +1653,33 @@ function Data_Enum_Generic_genericBoundedEnumConstructor($dictGenericBoundedEnum
 $__global_Data_Enum_Generic_unwrap = ($GLOBALS['Data_Enum_Generic_unwrap'] ?? \Data\Enum\Generic\phpurs_eval_thunk('Data_Enum_Generic_unwrap'));
 $__global_Data_Enum_Generic_map = ($GLOBALS['Data_Enum_Generic_map'] ?? \Data\Enum\Generic\phpurs_eval_thunk('Data_Enum_Generic_map'));
 $__global_Data_Generic_Rep_Constructor = ($GLOBALS['Data_Generic_Rep_Constructor'] ?? \Data\Generic\Rep\phpurs_eval_thunk('Data_Generic_Rep_Constructor'));
-$genericToEnum__prime__1 = ($dictGenericBoundedEnum)->genericToEnum__prime__;
-$genericFromEnum__prime__1 = ($dictGenericBoundedEnum)->genericFromEnum__prime__;
-    $__res = (object)["genericCardinality'" => ($__global_Data_Enum_Generic_unwrap)(($dictGenericBoundedEnum)->genericCardinality__prime__), "genericToEnum'" => (function() use ($__global_Data_Enum_Generic_map, $__global_Data_Generic_Rep_Constructor, $genericToEnum__prime__1) {
+$__case_0 = $dictGenericBoundedEnum;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->genericToEnum__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericToEnum__prime__1 = $__case_res_0;
+$__case_0 = $dictGenericBoundedEnum;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->genericFromEnum__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericFromEnum__prime__1 = $__case_res_1;
+$__case_0 = $dictGenericBoundedEnum;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->genericCardinality__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = (object)["genericCardinality'" => ($__global_Data_Enum_Generic_unwrap)($__case_res_2), "genericToEnum'" => (function() use ($__global_Data_Enum_Generic_map, $__global_Data_Generic_Rep_Constructor, $genericToEnum__prime__1) {
   $__fn = function($i) use ($__global_Data_Enum_Generic_map, $__global_Data_Generic_Rep_Constructor, $genericToEnum__prime__1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
@@ -1214,9 +1723,33 @@ function Data_Enum_Generic_genericBoundedEnumArgument($dictBoundedEnum) {
 $__global_Data_Enum_Generic_unwrap = ($GLOBALS['Data_Enum_Generic_unwrap'] ?? \Data\Enum\Generic\phpurs_eval_thunk('Data_Enum_Generic_unwrap'));
 $__global_Data_Enum_Generic_map = ($GLOBALS['Data_Enum_Generic_map'] ?? \Data\Enum\Generic\phpurs_eval_thunk('Data_Enum_Generic_map'));
 $__global_Data_Generic_Rep_Argument = ($GLOBALS['Data_Generic_Rep_Argument'] ?? \Data\Generic\Rep\phpurs_eval_thunk('Data_Generic_Rep_Argument'));
-$toEnum = ($dictBoundedEnum)->toEnum;
-$fromEnum = ($dictBoundedEnum)->fromEnum;
-    $__res = (object)["genericCardinality'" => ($__global_Data_Enum_Generic_unwrap)(($dictBoundedEnum)->cardinality), "genericToEnum'" => (function() use ($__global_Data_Enum_Generic_map, $__global_Data_Generic_Rep_Argument, $toEnum) {
+$__case_0 = $dictBoundedEnum;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->toEnum;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$toEnum = $__case_res_0;
+$__case_0 = $dictBoundedEnum;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->fromEnum;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$fromEnum = $__case_res_1;
+$__case_0 = $dictBoundedEnum;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->cardinality;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = (object)["genericCardinality'" => ($__global_Data_Enum_Generic_unwrap)($__case_res_2), "genericToEnum'" => (function() use ($__global_Data_Enum_Generic_map, $__global_Data_Generic_Rep_Argument, $toEnum) {
   $__fn = function($i) use ($__global_Data_Enum_Generic_map, $__global_Data_Generic_Rep_Argument, $toEnum, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {

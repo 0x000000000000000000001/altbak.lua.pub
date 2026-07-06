@@ -161,7 +161,15 @@ function Data_Functor_Contravariant_cmapFlipped($dictContravariant) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$cmap1 = ($dictContravariant)->cmap;
+$__case_0 = $dictContravariant;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->cmap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$cmap1 = $__case_res_0;
     $__res = (function() use ($cmap1) {
   $__fn = function($x, $f = null) use ($cmap1, &$__fn) {
   $__num = func_num_args();
@@ -186,14 +194,30 @@ function Data_Functor_Contravariant_coerce($dictContravariant) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_Void_absurd = ($GLOBALS['Data_Void_absurd'] ?? \Data\Void\phpurs_eval_thunk('Data_Void_absurd'));
-$cmap1 = ($dictContravariant)->cmap;
+$__case_0 = $dictContravariant;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->cmap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$cmap1 = $__case_res_0;
     $__res = (function() use ($__global_Data_Void_absurd, $cmap1) {
   $__fn = function($dictFunctor) use ($__global_Data_Void_absurd, $cmap1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$map = ($dictFunctor)->map;
+$__case_0 = $dictFunctor;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_1;
     $__res = (function() use ($map, $__global_Data_Void_absurd, $cmap1) {
   $__fn = function($a) use ($map, $__global_Data_Void_absurd, $cmap1, &$__fn) {
   $__num = func_num_args();
@@ -220,7 +244,15 @@ function Data_Functor_Contravariant_imapC($dictContravariant) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$cmap1 = ($dictContravariant)->cmap;
+$__case_0 = $dictContravariant;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->cmap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$cmap1 = $__case_res_0;
     $__res = (function() use ($cmap1) {
   $__fn = function($v, $f = null) use ($cmap1, &$__fn) {
   $__num = func_num_args();

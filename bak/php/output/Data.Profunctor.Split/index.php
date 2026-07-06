@@ -93,8 +93,28 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Data_Profunctor_Split_compose': $v = (($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn')))->compose; break;
-      case 'Data_Profunctor_Split_identity': $v = (($GLOBALS['Control_Category_categoryFn'] ?? \Control\Category\phpurs_eval_thunk('Control_Category_categoryFn')))->identity; break;
+      case 'Data_Profunctor_Split_compose': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compose;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Profunctor_Split_identity': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Category_categoryFn'] ?? \Control\Category\phpurs_eval_thunk('Control_Category_categoryFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->identity;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_Profunctor_Split_profunctorSplit': $v = (object)["dimap" => (function() {
   $__fn = function($f, $g = null) use (&$__fn) {
   $__num = func_num_args();
@@ -291,7 +311,15 @@ function Data_Profunctor_Split_lowerSplit($dictInvariant) {
   }
 $__global_Data_Profunctor_Split_unSplit = ($GLOBALS['Data_Profunctor_Split_unSplit'] ?? \Data\Profunctor\Split\phpurs_eval_thunk('Data_Profunctor_Split_unSplit'));
 $__global_Data_Function_flip = ($GLOBALS['Data_Function_flip'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_flip'));
-    $__res = ($__global_Data_Profunctor_Split_unSplit)(($__global_Data_Function_flip)(($dictInvariant)->imap));
+$__case_0 = $dictInvariant;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->imap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__global_Data_Profunctor_Split_unSplit)(($__global_Data_Function_flip)($__case_res_0));
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Profunctor_Split_lowerSplit'] = __NAMESPACE__ . '\\Data_Profunctor_Split_lowerSplit';

@@ -150,15 +150,39 @@ function Data_Ring_Generic_genericSub($dictGeneric) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$to = ($dictGeneric)->to;
-$from = ($dictGeneric)->from;
+$__case_0 = $dictGeneric;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->to;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$to = $__case_res_0;
+$__case_0 = $dictGeneric;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->from;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$from = $__case_res_1;
     $__res = (function() use ($to, $from) {
   $__fn = function($dictGenericRing) use ($to, $from, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$genericSub__prime__1 = ($dictGenericRing)->genericSub__prime__;
+$__case_0 = $dictGenericRing;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->genericSub__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericSub__prime__1 = $__case_res_2;
     $__res = (function() use ($to, $genericSub__prime__1, $from) {
   $__fn = function($x, $y = null) use ($to, $genericSub__prime__1, $from, &$__fn) {
   $__num = func_num_args();
@@ -186,14 +210,30 @@ function Data_Ring_Generic_genericRingProduct($dictGenericRing) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$genericSub__prime__1 = ($dictGenericRing)->genericSub__prime__;
+$__case_0 = $dictGenericRing;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->genericSub__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericSub__prime__1 = $__case_res_0;
     $__res = (function() use ($genericSub__prime__1) {
   $__fn = function($dictGenericRing1) use ($genericSub__prime__1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$genericSub__prime__2 = ($dictGenericRing1)->genericSub__prime__;
+$__case_0 = $dictGenericRing1;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->genericSub__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericSub__prime__2 = $__case_res_1;
     $__res = (object)["genericSub'" => (function() use ($genericSub__prime__1, $genericSub__prime__2) {
   $__body = function($v, $v1) use ($genericSub__prime__1, $genericSub__prime__2) {
     $__case_0 = $v;
@@ -246,7 +286,15 @@ function Data_Ring_Generic_genericRingConstructor($dictGenericRing) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$genericSub__prime__1 = ($dictGenericRing)->genericSub__prime__;
+$__case_0 = $dictGenericRing;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->genericSub__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericSub__prime__1 = $__case_res_0;
     $__res = (object)["genericSub'" => (function() use ($genericSub__prime__1) {
   $__body = function($v, $v1) use ($genericSub__prime__1) {
     $__case_0 = $v;
@@ -281,7 +329,15 @@ function Data_Ring_Generic_genericRingArgument($dictRing) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$sub = ($dictRing)->sub;
+$__case_0 = $dictRing;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->sub;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$sub = $__case_res_0;
     $__res = (object)["genericSub'" => (function() use ($sub) {
   $__body = function($v, $v1) use ($sub) {
     $__case_0 = $v;

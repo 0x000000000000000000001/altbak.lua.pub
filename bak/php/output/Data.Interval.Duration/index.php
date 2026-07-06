@@ -98,9 +98,39 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Data_Interval_Duration_append': $v = ($GLOBALS['Data_Semigroup_concatString'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_concatString')); break;
-      case 'Data_Interval_Duration_add': $v = ($GLOBALS['Data_Semiring_numAdd'] ?? \Data\Semiring\phpurs_eval_thunk('Data_Semiring_numAdd')); break;
-      case 'Data_Interval_Duration_div': $v = ($GLOBALS['Data_EuclideanRing_numDiv'] ?? \Data\EuclideanRing\phpurs_eval_thunk('Data_EuclideanRing_numDiv')); break;
+      case 'Data_Interval_Duration_append': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Semigroup_semigroupString'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_semigroupString'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Interval_Duration_add': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Semiring_semiringNumber'] ?? \Data\Semiring\phpurs_eval_thunk('Data_Semiring_semiringNumber'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->add;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Interval_Duration_div': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_EuclideanRing_euclideanRingNumber'] ?? \Data\EuclideanRing\phpurs_eval_thunk('Data_EuclideanRing_euclideanRingNumber'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->div;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_Interval_Duration_Second': $v = ($GLOBALS['__phpurs_data0_Second'] ??= new Phpurs_Data0("Second")); break;
       case 'Data_Interval_Duration_Minute': $v = ($GLOBALS['__phpurs_data0_Minute'] ??= new Phpurs_Data0("Minute")); break;
       case 'Data_Interval_Duration_Hour': $v = ($GLOBALS['__phpurs_data0_Hour'] ??= new Phpurs_Data0("Hour")); break;
@@ -148,14 +178,25 @@ break;
   };
   return $__fn;
 })()]; break;
-      case 'Data_Interval_Duration_show': $v = ((($GLOBALS['Data_Map_Internal_showMap'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_showMap')))(($GLOBALS['Data_Interval_Duration_showDurationComponent'] ?? \Data\Interval\Duration\phpurs_eval_thunk('Data_Interval_Duration_showDurationComponent')), ($GLOBALS['Data_Show_showNumber'] ?? \Data\Show\phpurs_eval_thunk('Data_Show_showNumber'))))->show; break;
+      case 'Data_Interval_Duration_show': $v = (function() {
+  $__case_0 = $dict;
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->show;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_Interval_Duration_showDuration': $v = (object)["show" => (function() {
   $__body = function($v) {
+    $__global_Data_Interval_Duration_append = ($GLOBALS['Data_Interval_Duration_append'] ?? \Data\Interval\Duration\phpurs_eval_thunk('Data_Interval_Duration_append'));
     $__global_Data_Interval_Duration_show = ($GLOBALS['Data_Interval_Duration_show'] ?? \Data\Interval\Duration\phpurs_eval_thunk('Data_Interval_Duration_show'));
     $__case_0 = $v;
     if (true) {
 $d = $__case_0;
-return ("(Duration " . (($__global_Data_Interval_Duration_show)($d) . ")"));
+return ($__global_Data_Interval_Duration_append)("(Duration ", ($__global_Data_Interval_Duration_append)(($__global_Data_Interval_Duration_show)($d), ")"));
 } else {
 throw new \Exception("Pattern match failure");
 };
@@ -231,7 +272,17 @@ throw new \Exception("Pattern match failure");
   };
   return $__fn;
 })()]; break;
-      case 'Data_Interval_Duration_eq': $v = ((($GLOBALS['Data_Map_Internal_eqMap'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_eqMap')))(($GLOBALS['Data_Interval_Duration_eqDurationComponent'] ?? \Data\Interval\Duration\phpurs_eval_thunk('Data_Interval_Duration_eqDurationComponent')), ($GLOBALS['Data_Eq_eqNumber'] ?? \Data\Eq\phpurs_eval_thunk('Data_Eq_eqNumber'))))->eq; break;
+      case 'Data_Interval_Duration_eq': $v = (function() {
+  $__case_0 = $dict;
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_Interval_Duration_ordDurationComponent': $v = (object)["compare" => (function() {
   $__body = function($x, $y) {
     $__case_0 = $x;
@@ -336,17 +387,58 @@ $__global_Data_Interval_Duration_eqDurationComponent = ($GLOBALS['Data_Interval_
   };
   return $__fn;
 })()]; break;
-      case 'Data_Interval_Duration_unionWith': $v = (($GLOBALS['Data_Map_Internal_unionWith'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_unionWith')))(($GLOBALS['Data_Interval_Duration_ordDurationComponent'] ?? \Data\Interval\Duration\phpurs_eval_thunk('Data_Interval_Duration_ordDurationComponent'))); break;
-      case 'Data_Interval_Duration_compare': $v = ((($GLOBALS['Data_Map_Internal_ordMap'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_ordMap')))(($GLOBALS['Data_Interval_Duration_ordDurationComponent'] ?? \Data\Interval\Duration\phpurs_eval_thunk('Data_Interval_Duration_ordDurationComponent')), ($GLOBALS['Data_Ord_ordNumber'] ?? \Data\Ord\phpurs_eval_thunk('Data_Ord_ordNumber'))))->compare; break;
+      case 'Data_Interval_Duration_unionWith': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Interval_Duration_ordDurationComponent'] ?? \Data\Interval\Duration\phpurs_eval_thunk('Data_Interval_Duration_ordDurationComponent'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $compare = $__case_res_0;
+  return (function() use ($compare) {
+  $__fn = function($app, $m1 = null, $m2 = null) use ($compare, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($m2) use ($app, $m1, &$__fn) { return $__fn($app, $m1, $m2); };
+    if ($__num === 1) return function($m1, $m2 = null) use ($app, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($app, $m1, $m2);
+      if ($__num2 === 1) return function($m2) use ($app, $m1, &$__fn) { return $__fn($app, $m1, $m2); };
+      return phpurs_curry_fallback($__fn, [$app], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+$__global_Data_Function_Uncurried_runFn4 = ($GLOBALS['Data_Function_Uncurried_runFn4'] ?? \Data\Function\Uncurried\phpurs_eval_thunk('Data_Function_Uncurried_runFn4'));
+$__global_Data_Map_Internal_unsafeUnionWith = ($GLOBALS['Data_Map_Internal_unsafeUnionWith'] ?? \Data\Map\Internal\phpurs_eval_thunk('Data_Map_Internal_unsafeUnionWith'));
+    $__res = ($__global_Data_Function_Uncurried_runFn4)($__global_Data_Map_Internal_unsafeUnionWith, $compare, $app, $m1, $m2);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})();
+})(); break;
+      case 'Data_Interval_Duration_compare': $v = (function() {
+  $__case_0 = $dict;
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_Interval_Duration_semigroupDuration': $v = (object)["append" => (function() {
   $__body = function($v, $v1) {
     $__global_Data_Interval_Duration_unionWith = ($GLOBALS['Data_Interval_Duration_unionWith'] ?? \Data\Interval\Duration\phpurs_eval_thunk('Data_Interval_Duration_unionWith'));
+    $__global_Data_Interval_Duration_add = ($GLOBALS['Data_Interval_Duration_add'] ?? \Data\Interval\Duration\phpurs_eval_thunk('Data_Interval_Duration_add'));
     $__case_0 = $v;
     $__case_1 = $v1;
     if (true) {
 $a = $__case_0;
 $b = $__case_1;
-return ($__global_Data_Interval_Duration_unionWith)(($GLOBALS['Data_Semiring_numAdd'] ?? \Data\Semiring\phpurs_eval_thunk('Data_Semiring_numAdd')), $a, $b);
+return ($__global_Data_Interval_Duration_unionWith)($__global_Data_Interval_Duration_add, $a, $b);
 } else {
 throw new \Exception("Pattern match failure");
 };
@@ -434,17 +526,28 @@ $__global_Data_Interval_Duration_eqDuration = ($GLOBALS['Data_Interval_Duration_
   return $__fn;
 })()]; break;
       case 'Data_Interval_Duration_hour': $v = (($GLOBALS['Data_Interval_Duration_durationFromComponent'] ?? \Data\Interval\Duration\phpurs_eval_thunk('Data_Interval_Duration_durationFromComponent')))(($GLOBALS['__phpurs_data0_Hour'] ??= new Phpurs_Data0("Hour"))); break;
-      case 'Data_Interval_Duration_millisecond': $v = ((($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn')))->compose)((($GLOBALS['Data_Interval_Duration_durationFromComponent'] ?? \Data\Interval\Duration\phpurs_eval_thunk('Data_Interval_Duration_durationFromComponent')))(($GLOBALS['__phpurs_data0_Second'] ??= new Phpurs_Data0("Second"))), (function() {
+      case 'Data_Interval_Duration_millisecond': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compose;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return ($__case_res_0)((($GLOBALS['Data_Interval_Duration_durationFromComponent'] ?? \Data\Interval\Duration\phpurs_eval_thunk('Data_Interval_Duration_durationFromComponent')))(($GLOBALS['__phpurs_data0_Second'] ??= new Phpurs_Data0("Second"))), (function() {
   $__fn = function($v) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($v / 1000.0);
+$__global_Data_Interval_Duration_div = ($GLOBALS['Data_Interval_Duration_div'] ?? \Data\Interval\Duration\phpurs_eval_thunk('Data_Interval_Duration_div'));
+    $__res = ($__global_Data_Interval_Duration_div)($v, 1000.0);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})()); break;
+})());
+})(); break;
       case 'Data_Interval_Duration_minute': $v = (($GLOBALS['Data_Interval_Duration_durationFromComponent'] ?? \Data\Interval\Duration\phpurs_eval_thunk('Data_Interval_Duration_durationFromComponent')))(($GLOBALS['__phpurs_data0_Minute'] ??= new Phpurs_Data0("Minute"))); break;
       case 'Data_Interval_Duration_month': $v = (($GLOBALS['Data_Interval_Duration_durationFromComponent'] ?? \Data\Interval\Duration\phpurs_eval_thunk('Data_Interval_Duration_durationFromComponent')))(($GLOBALS['__phpurs_data0_Month'] ??= new Phpurs_Data0("Month"))); break;
       case 'Data_Interval_Duration_second': $v = (($GLOBALS['Data_Interval_Duration_durationFromComponent'] ?? \Data\Interval\Duration\phpurs_eval_thunk('Data_Interval_Duration_durationFromComponent')))(($GLOBALS['__phpurs_data0_Second'] ??= new Phpurs_Data0("Second"))); break;

@@ -107,19 +107,150 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Data_Bifoldable_compose': $v = (($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn')))->compose; break;
-      case 'Data_Bifoldable_identity': $v = (($GLOBALS['Control_Category_categoryFn'] ?? \Control\Category\phpurs_eval_thunk('Control_Category_categoryFn')))->identity; break;
+      case 'Data_Bifoldable_compose': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compose;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Bifoldable_identity': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Category_categoryFn'] ?? \Control\Category\phpurs_eval_thunk('Control_Category_categoryFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->identity;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_Bifoldable_unwrap': $v = (($GLOBALS['Data_Newtype_unwrap'] ?? \Data\Newtype\phpurs_eval_thunk('Data_Newtype_unwrap')))(($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'))); break;
-      case 'Data_Bifoldable_monoidEndo': $v = (($GLOBALS['Data_Monoid_Endo_monoidEndo'] ?? \Data\Monoid\Endo\phpurs_eval_thunk('Data_Monoid_Endo_monoidEndo')))(($GLOBALS['Control_Category_categoryFn'] ?? \Control\Category\phpurs_eval_thunk('Control_Category_categoryFn'))); break;
-      case 'Data_Bifoldable_monoidDual': $v = (($GLOBALS['Data_Monoid_Dual_monoidDual'] ?? \Data\Monoid\Dual\phpurs_eval_thunk('Data_Monoid_Dual_monoidDual')))(($GLOBALS['Data_Bifoldable_monoidEndo'] ?? \Data\Bifoldable\phpurs_eval_thunk('Data_Bifoldable_monoidEndo'))); break;
-      case 'Data_Bifoldable_bifoldableTuple': $v = (object)["bifoldMap" => (function() {
-  $__fn = function($dictMonoid) use (&$__fn) {
+      case 'Data_Bifoldable_monoidEndo': $v = (function() {
+  $__case_0 = $dict;
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compose;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $compose = $__case_res_0;
+  $semigroupEndo1 = (object)["append" => (function() use ($compose) {
+  $__body = function($v, $v1) use ($compose) {
+    $__case_0 = $v;
+    $__case_1 = $v1;
+    if (true) {
+$a = $__case_0;
+$b = $__case_1;
+return ($compose)($a, $b);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($v, $v1 = null) use ($compose, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($v, $v1);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+  $__case_0 = ($GLOBALS['Control_Category_categoryFn'] ?? \Control\Category\phpurs_eval_thunk('Control_Category_categoryFn'));
+  $__case_res_1 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->identity;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return (object)["mempty" => $__case_res_1, "Semigroup0" => (function() use ($semigroupEndo1) {
+  $__fn = function($__dollar____unused) use ($semigroupEndo1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$append = ((($dictMonoid)->Semigroup0)($__global_Prim_undefined))->append;
+    $__res = $semigroupEndo1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+})(); break;
+      case 'Data_Bifoldable_monoidDual': $v = (function() {
+  $__case_0 = $dict;
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $append1 = $__case_res_0;
+  $semigroupDual1 = (object)["append" => (function() use ($append1) {
+  $__body = function($v, $v1) use ($append1) {
+    $__case_0 = $v;
+    $__case_1 = $v1;
+    if (true) {
+$x = $__case_0;
+$y = $__case_1;
+return ($append1)($y, $x);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($v, $v1 = null) use ($append1, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($v, $v1);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+  $__case_0 = ($GLOBALS['Data_Bifoldable_monoidEndo'] ?? \Data\Bifoldable\phpurs_eval_thunk('Data_Bifoldable_monoidEndo'));
+  $__case_res_1 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->mempty;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return (object)["mempty" => $__case_res_1, "Semigroup0" => (function() use ($semigroupDual1) {
+  $__fn = function($__dollar____unused) use ($semigroupDual1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $semigroupDual1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+})(); break;
+      case 'Data_Bifoldable_bifoldableTuple': $v = (object)["bifoldMap" => (function() use ($dict) {
+  $__fn = function($dictMonoid) use ($dict, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append = $__case_res_0;
     $__res = (function() use ($append) {
   $__body = function($f, $g, $v) use ($append) {
     $__case_0 = $f;
@@ -591,19 +722,64 @@ function Data_Bifoldable_bitraverse_($dictBifoldable) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Control_Apply_applySecond = ($GLOBALS['Control_Apply_applySecond'] ?? \Control\Apply\phpurs_eval_thunk('Control_Apply_applySecond'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
+$__global_Data_Function_const = ($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const'));
+$__global_Control_Apply_identity = ($GLOBALS['Control_Apply_identity'] ?? \Control\Apply\phpurs_eval_thunk('Control_Apply_identity'));
 $__global_Data_Bifoldable_compose = ($GLOBALS['Data_Bifoldable_compose'] ?? \Data\Bifoldable\phpurs_eval_thunk('Data_Bifoldable_compose'));
 $__global_Data_Unit_unit = ($GLOBALS['Data_Unit_unit'] ?? \Data\Unit\phpurs_eval_thunk('Data_Unit_unit'));
-$bifoldr1 = ($dictBifoldable)->bifoldr;
-    $__res = (function() use ($__global_Control_Apply_applySecond, $__global_Prim_undefined, $bifoldr1, $__global_Data_Bifoldable_compose, $__global_Data_Unit_unit) {
-  $__fn = function($dictApplicative) use ($__global_Control_Apply_applySecond, $__global_Prim_undefined, $bifoldr1, $__global_Data_Bifoldable_compose, $__global_Data_Unit_unit, &$__fn) {
+$__case_0 = $dictBifoldable;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bifoldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bifoldr1 = $__case_res_0;
+    $__res = (function() use ($dict, $__global_Data_Function_const, $__global_Control_Apply_identity, $bifoldr1, $__global_Data_Bifoldable_compose, $__global_Data_Unit_unit) {
+  $__fn = function($dictApplicative) use ($dict, $__global_Data_Function_const, $__global_Control_Apply_identity, $bifoldr1, $__global_Data_Bifoldable_compose, $__global_Data_Unit_unit, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$applySecond = ($__global_Control_Apply_applySecond)((($dictApplicative)->Apply0)($__global_Prim_undefined));
-$pure = ($dictApplicative)->pure;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$apply1 = $__case_res_1;
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_2;
+$applySecond = (function() use ($apply1, $map, $__global_Data_Function_const, $__global_Control_Apply_identity) {
+  $__fn = function($a, $b = null) use ($apply1, $map, $__global_Data_Function_const, $__global_Control_Apply_identity, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($b) use ($a, &$__fn) { return $__fn($a, $b); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($apply1)(($map)(($__global_Data_Function_const)($__global_Control_Apply_identity), $a), $b);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+$__case_0 = $dictApplicative;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pure = $__case_res_3;
     $__res = (function() use ($bifoldr1, $__global_Data_Bifoldable_compose, $applySecond, $pure, $__global_Data_Unit_unit) {
   $__fn = function($f, $g = null) use ($bifoldr1, $__global_Data_Bifoldable_compose, $applySecond, $pure, $__global_Data_Unit_unit, &$__fn) {
   $__num = func_num_args();
@@ -631,8 +807,80 @@ function Data_Bifoldable_bifor_($dictBifoldable) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Bifoldable_bitraverse_ = ($GLOBALS['Data_Bifoldable_bitraverse_'] ?? \Data\Bifoldable\phpurs_eval_thunk('Data_Bifoldable_bitraverse_'));
-$bitraverse_1 = ($__global_Data_Bifoldable_bitraverse_)($dictBifoldable);
+$__global_Data_Function_const = ($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const'));
+$__global_Control_Apply_identity = ($GLOBALS['Control_Apply_identity'] ?? \Control\Apply\phpurs_eval_thunk('Control_Apply_identity'));
+$__global_Data_Bifoldable_compose = ($GLOBALS['Data_Bifoldable_compose'] ?? \Data\Bifoldable\phpurs_eval_thunk('Data_Bifoldable_compose'));
+$__global_Data_Unit_unit = ($GLOBALS['Data_Unit_unit'] ?? \Data\Unit\phpurs_eval_thunk('Data_Unit_unit'));
+$__case_0 = $dictBifoldable;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bifoldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bifoldr1 = $__case_res_0;
+$bitraverse_1 = (function() use ($dict, $__global_Data_Function_const, $__global_Control_Apply_identity, $bifoldr1, $__global_Data_Bifoldable_compose, $__global_Data_Unit_unit) {
+  $__fn = function($dictApplicative) use ($dict, $__global_Data_Function_const, $__global_Control_Apply_identity, $bifoldr1, $__global_Data_Bifoldable_compose, $__global_Data_Unit_unit, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$apply1 = $__case_res_1;
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_2;
+$applySecond = (function() use ($apply1, $map, $__global_Data_Function_const, $__global_Control_Apply_identity) {
+  $__fn = function($a, $b = null) use ($apply1, $map, $__global_Data_Function_const, $__global_Control_Apply_identity, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($b) use ($a, &$__fn) { return $__fn($a, $b); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($apply1)(($map)(($__global_Data_Function_const)($__global_Control_Apply_identity), $a), $b);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+$__case_0 = $dictApplicative;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pure = $__case_res_3;
+    $__res = (function() use ($bifoldr1, $__global_Data_Bifoldable_compose, $applySecond, $pure, $__global_Data_Unit_unit) {
+  $__fn = function($f, $g = null) use ($bifoldr1, $__global_Data_Bifoldable_compose, $applySecond, $pure, $__global_Data_Unit_unit, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($g) use ($f, &$__fn) { return $__fn($f, $g); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($bifoldr1)(($__global_Data_Bifoldable_compose)($applySecond, $f), ($__global_Data_Bifoldable_compose)($applySecond, $g), ($pure)($__global_Data_Unit_unit));
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
     $__res = (function() use ($bitraverse_1) {
   $__fn = function($dictApplicative) use ($bitraverse_1, &$__fn) {
   $__num = func_num_args();
@@ -673,9 +921,81 @@ function Data_Bifoldable_bisequence_($dictBifoldable) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Bifoldable_bitraverse_ = ($GLOBALS['Data_Bifoldable_bitraverse_'] ?? \Data\Bifoldable\phpurs_eval_thunk('Data_Bifoldable_bitraverse_'));
+$__global_Data_Function_const = ($GLOBALS['Data_Function_const'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_const'));
+$__global_Control_Apply_identity = ($GLOBALS['Control_Apply_identity'] ?? \Control\Apply\phpurs_eval_thunk('Control_Apply_identity'));
+$__global_Data_Bifoldable_compose = ($GLOBALS['Data_Bifoldable_compose'] ?? \Data\Bifoldable\phpurs_eval_thunk('Data_Bifoldable_compose'));
+$__global_Data_Unit_unit = ($GLOBALS['Data_Unit_unit'] ?? \Data\Unit\phpurs_eval_thunk('Data_Unit_unit'));
 $__global_Data_Bifoldable_identity = ($GLOBALS['Data_Bifoldable_identity'] ?? \Data\Bifoldable\phpurs_eval_thunk('Data_Bifoldable_identity'));
-$bitraverse_1 = ($__global_Data_Bifoldable_bitraverse_)($dictBifoldable);
+$__case_0 = $dictBifoldable;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bifoldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bifoldr1 = $__case_res_0;
+$bitraverse_1 = (function() use ($dict, $__global_Data_Function_const, $__global_Control_Apply_identity, $bifoldr1, $__global_Data_Bifoldable_compose, $__global_Data_Unit_unit) {
+  $__fn = function($dictApplicative) use ($dict, $__global_Data_Function_const, $__global_Control_Apply_identity, $bifoldr1, $__global_Data_Bifoldable_compose, $__global_Data_Unit_unit, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$apply1 = $__case_res_1;
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_2;
+$applySecond = (function() use ($apply1, $map, $__global_Data_Function_const, $__global_Control_Apply_identity) {
+  $__fn = function($a, $b = null) use ($apply1, $map, $__global_Data_Function_const, $__global_Control_Apply_identity, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($b) use ($a, &$__fn) { return $__fn($a, $b); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($apply1)(($map)(($__global_Data_Function_const)($__global_Control_Apply_identity), $a), $b);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+$__case_0 = $dictApplicative;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pure = $__case_res_3;
+    $__res = (function() use ($bifoldr1, $__global_Data_Bifoldable_compose, $applySecond, $pure, $__global_Data_Unit_unit) {
+  $__fn = function($f, $g = null) use ($bifoldr1, $__global_Data_Bifoldable_compose, $applySecond, $pure, $__global_Data_Unit_unit, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($g) use ($f, &$__fn) { return $__fn($f, $g); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($bifoldr1)(($__global_Data_Bifoldable_compose)($applySecond, $f), ($__global_Data_Bifoldable_compose)($applySecond, $g), ($pure)($__global_Data_Unit_unit));
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
     $__res = (function() use ($bitraverse_1, $__global_Data_Bifoldable_identity) {
   $__fn = function($dictApplicative) use ($bitraverse_1, $__global_Data_Bifoldable_identity, &$__fn) {
   $__num = func_num_args();
@@ -720,9 +1040,33 @@ function Data_Bifoldable_bifoldableJoker($dictFoldable) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$foldr = ($dictFoldable)->foldr;
-$foldl = ($dictFoldable)->foldl;
-$foldMap = ($dictFoldable)->foldMap;
+$__case_0 = $dictFoldable;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldr = $__case_res_0;
+$__case_0 = $dictFoldable;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->foldl;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldl = $__case_res_1;
+$__case_0 = $dictFoldable;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->foldMap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldMap = $__case_res_2;
     $__res = (object)["bifoldr" => (function() use ($foldr) {
   $__body = function($v, $r, $u, $v1) use ($foldr) {
     $__case_0 = $v;
@@ -863,9 +1207,33 @@ function Data_Bifoldable_bifoldableClown($dictFoldable) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$foldr = ($dictFoldable)->foldr;
-$foldl = ($dictFoldable)->foldl;
-$foldMap = ($dictFoldable)->foldMap;
+$__case_0 = $dictFoldable;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldr = $__case_res_0;
+$__case_0 = $dictFoldable;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->foldl;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldl = $__case_res_1;
+$__case_0 = $dictFoldable;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->foldMap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldMap = $__case_res_2;
     $__res = (object)["bifoldr" => (function() use ($foldr) {
   $__body = function($l, $v, $u, $v1) use ($foldr) {
     $__case_0 = $l;
@@ -1004,17 +1372,40 @@ function Data_Bifoldable_bifoldMapDefaultR($dictBifoldable) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Bifoldable_compose = ($GLOBALS['Data_Bifoldable_compose'] ?? \Data\Bifoldable\phpurs_eval_thunk('Data_Bifoldable_compose'));
-$bifoldr1 = ($dictBifoldable)->bifoldr;
-    $__res = (function() use ($__global_Prim_undefined, $bifoldr1, $__global_Data_Bifoldable_compose) {
-  $__fn = function($dictMonoid) use ($__global_Prim_undefined, $bifoldr1, $__global_Data_Bifoldable_compose, &$__fn) {
+$__case_0 = $dictBifoldable;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bifoldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bifoldr1 = $__case_res_0;
+    $__res = (function() use ($dict, $bifoldr1, $__global_Data_Bifoldable_compose) {
+  $__fn = function($dictMonoid) use ($dict, $bifoldr1, $__global_Data_Bifoldable_compose, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$append = ((($dictMonoid)->Semigroup0)($__global_Prim_undefined))->append;
-$mempty = ($dictMonoid)->mempty;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append = $__case_res_1;
+$__case_0 = $dictMonoid;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->mempty;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$mempty = $__case_res_2;
     $__res = (function() use ($bifoldr1, $__global_Data_Bifoldable_compose, $append, $mempty) {
   $__fn = function($f, $g = null) use ($bifoldr1, $__global_Data_Bifoldable_compose, $append, $mempty, &$__fn) {
   $__num = func_num_args();
@@ -1042,16 +1433,39 @@ function Data_Bifoldable_bifoldMapDefaultL($dictBifoldable) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$bifoldl1 = ($dictBifoldable)->bifoldl;
-    $__res = (function() use ($__global_Prim_undefined, $bifoldl1) {
-  $__fn = function($dictMonoid) use ($__global_Prim_undefined, $bifoldl1, &$__fn) {
+$__case_0 = $dictBifoldable;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bifoldl;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bifoldl1 = $__case_res_0;
+    $__res = (function() use ($dict, $bifoldl1) {
+  $__fn = function($dictMonoid) use ($dict, $bifoldl1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$append = ((($dictMonoid)->Semigroup0)($__global_Prim_undefined))->append;
-$mempty = ($dictMonoid)->mempty;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append = $__case_res_1;
+$__case_0 = $dictMonoid;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->mempty;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$mempty = $__case_res_2;
     $__res = (function() use ($bifoldl1, $append, $mempty) {
   $__fn = function($f, $g = null) use ($bifoldl1, $append, $mempty, &$__fn) {
   $__num = func_num_args();
@@ -1122,9 +1536,33 @@ function Data_Bifoldable_bifoldableFlip($dictBifoldable) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$bifoldr1 = ($dictBifoldable)->bifoldr;
-$bifoldl1 = ($dictBifoldable)->bifoldl;
-$bifoldMap1 = ($dictBifoldable)->bifoldMap;
+$__case_0 = $dictBifoldable;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bifoldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bifoldr1 = $__case_res_0;
+$__case_0 = $dictBifoldable;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->bifoldl;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bifoldl1 = $__case_res_1;
+$__case_0 = $dictBifoldable;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->bifoldMap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bifoldMap1 = $__case_res_2;
     $__res = (object)["bifoldr" => (function() use ($bifoldr1) {
   $__body = function($r, $l, $u, $v) use ($bifoldr1) {
     $__case_0 = $r;
@@ -1272,7 +1710,15 @@ $__global_Data_Bifoldable_compose = ($GLOBALS['Data_Bifoldable_compose'] ?? \Dat
 $__global_Data_Monoid_Dual_Dual = ($GLOBALS['Data_Monoid_Dual_Dual'] ?? \Data\Monoid\Dual\phpurs_eval_thunk('Data_Monoid_Dual_Dual'));
 $__global_Data_Monoid_Endo_Endo = ($GLOBALS['Data_Monoid_Endo_Endo'] ?? \Data\Monoid\Endo\phpurs_eval_thunk('Data_Monoid_Endo_Endo'));
 $__global_Data_Function_flip = ($GLOBALS['Data_Function_flip'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_flip'));
-$bifoldMap1 = (($dictBifoldable)->bifoldMap)($__global_Data_Bifoldable_monoidDual);
+$__case_0 = $dictBifoldable;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bifoldMap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bifoldMap1 = ($__case_res_0)($__global_Data_Bifoldable_monoidDual);
     $__res = (function() use ($__global_Data_Bifoldable_unwrap, $bifoldMap1, $__global_Data_Bifoldable_compose, $__global_Data_Monoid_Dual_Dual, $__global_Data_Monoid_Endo_Endo, $__global_Data_Function_flip) {
   $__fn = function($f, $g = null, $z = null, $p = null) use ($__global_Data_Bifoldable_unwrap, $bifoldMap1, $__global_Data_Bifoldable_compose, $__global_Data_Monoid_Dual_Dual, $__global_Data_Monoid_Endo_Endo, $__global_Data_Function_flip, &$__fn) {
   $__num = func_num_args();
@@ -1318,7 +1764,15 @@ $__global_Data_Bifoldable_monoidEndo = ($GLOBALS['Data_Bifoldable_monoidEndo'] ?
 $__global_Data_Bifoldable_unwrap = ($GLOBALS['Data_Bifoldable_unwrap'] ?? \Data\Bifoldable\phpurs_eval_thunk('Data_Bifoldable_unwrap'));
 $__global_Data_Bifoldable_compose = ($GLOBALS['Data_Bifoldable_compose'] ?? \Data\Bifoldable\phpurs_eval_thunk('Data_Bifoldable_compose'));
 $__global_Data_Monoid_Endo_Endo = ($GLOBALS['Data_Monoid_Endo_Endo'] ?? \Data\Monoid\Endo\phpurs_eval_thunk('Data_Monoid_Endo_Endo'));
-$bifoldMap1 = (($dictBifoldable)->bifoldMap)($__global_Data_Bifoldable_monoidEndo);
+$__case_0 = $dictBifoldable;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bifoldMap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bifoldMap1 = ($__case_res_0)($__global_Data_Bifoldable_monoidEndo);
     $__res = (function() use ($__global_Data_Bifoldable_unwrap, $bifoldMap1, $__global_Data_Bifoldable_compose, $__global_Data_Monoid_Endo_Endo) {
   $__fn = function($f, $g = null, $z = null, $p = null) use ($__global_Data_Bifoldable_unwrap, $bifoldMap1, $__global_Data_Bifoldable_compose, $__global_Data_Monoid_Endo_Endo, &$__fn) {
   $__num = func_num_args();
@@ -1360,21 +1814,40 @@ function Data_Bifoldable_bifoldableProduct2($dictBifoldable) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Bifoldable_bifoldrDefault = ($GLOBALS['Data_Bifoldable_bifoldrDefault'] ?? \Data\Bifoldable\phpurs_eval_thunk('Data_Bifoldable_bifoldrDefault'));
-$__global_Data_Bifoldable_bifoldlDefault = ($GLOBALS['Data_Bifoldable_bifoldlDefault'] ?? \Data\Bifoldable\phpurs_eval_thunk('Data_Bifoldable_bifoldlDefault'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
+$__global_Data_Bifoldable_monoidEndo = ($GLOBALS['Data_Bifoldable_monoidEndo'] ?? \Data\Bifoldable\phpurs_eval_thunk('Data_Bifoldable_monoidEndo'));
+$__global_Data_Bifoldable_unwrap = ($GLOBALS['Data_Bifoldable_unwrap'] ?? \Data\Bifoldable\phpurs_eval_thunk('Data_Bifoldable_unwrap'));
+$__global_Data_Bifoldable_compose = ($GLOBALS['Data_Bifoldable_compose'] ?? \Data\Bifoldable\phpurs_eval_thunk('Data_Bifoldable_compose'));
+$__global_Data_Monoid_Endo_Endo = ($GLOBALS['Data_Monoid_Endo_Endo'] ?? \Data\Monoid\Endo\phpurs_eval_thunk('Data_Monoid_Endo_Endo'));
+$__global_Data_Bifoldable_monoidDual = ($GLOBALS['Data_Bifoldable_monoidDual'] ?? \Data\Bifoldable\phpurs_eval_thunk('Data_Bifoldable_monoidDual'));
+$__global_Data_Monoid_Dual_Dual = ($GLOBALS['Data_Monoid_Dual_Dual'] ?? \Data\Monoid\Dual\phpurs_eval_thunk('Data_Monoid_Dual_Dual'));
+$__global_Data_Function_flip = ($GLOBALS['Data_Function_flip'] ?? \Data\Function\phpurs_eval_thunk('Data_Function_flip'));
 while (true) {
-$bifoldMap1 = ($dictBifoldable)->bifoldMap;
-return (function() use ($__global_Data_Bifoldable_bifoldrDefault, $dictBifoldable, $__global_Data_Bifoldable_bifoldlDefault, $__global_Prim_undefined, $bifoldMap1) {
-  $__fn = function($dictBifoldable1) use ($__global_Data_Bifoldable_bifoldrDefault, $dictBifoldable, $__global_Data_Bifoldable_bifoldlDefault, $__global_Prim_undefined, $bifoldMap1, &$__fn) {
+$__case_0 = $dictBifoldable;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bifoldMap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bifoldMap1 = $__case_res_0;
+return (function() use ($dict, $__global_Data_Bifoldable_monoidEndo, $__global_Data_Bifoldable_unwrap, $__global_Data_Bifoldable_compose, $__global_Data_Monoid_Endo_Endo, $__global_Data_Bifoldable_monoidDual, $__global_Data_Monoid_Dual_Dual, $__global_Data_Function_flip, $bifoldMap1) {
+  $__fn = function($dictBifoldable1) use ($dict, $__global_Data_Bifoldable_monoidEndo, $__global_Data_Bifoldable_unwrap, $__global_Data_Bifoldable_compose, $__global_Data_Monoid_Endo_Endo, $__global_Data_Bifoldable_monoidDual, $__global_Data_Monoid_Dual_Dual, $__global_Data_Function_flip, $bifoldMap1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Bifoldable_bifoldableProduct2 = ($GLOBALS['Data_Bifoldable_bifoldableProduct2'] ?? \Data\Bifoldable\phpurs_eval_thunk('Data_Bifoldable_bifoldableProduct2'));
-$bifoldMap2 = ($dictBifoldable1)->bifoldMap;
-    $__res = (object)["bifoldr" => (function() use ($__global_Data_Bifoldable_bifoldrDefault, $__global_Data_Bifoldable_bifoldableProduct2, $dictBifoldable, $dictBifoldable1) {
-  $__fn = function($l, $r = null, $u = null, $m = null) use ($__global_Data_Bifoldable_bifoldrDefault, $__global_Data_Bifoldable_bifoldableProduct2, $dictBifoldable, $dictBifoldable1, &$__fn) {
+$__case_0 = $dictBifoldable1;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->bifoldMap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bifoldMap2 = $__case_res_1;
+    $__res = (object)["bifoldr" => (function() use ($dict, $__global_Data_Bifoldable_monoidEndo, $__global_Data_Bifoldable_unwrap, $__global_Data_Bifoldable_compose, $__global_Data_Monoid_Endo_Endo) {
+  $__fn = function($l, $r = null, $u = null, $m = null) use ($dict, $__global_Data_Bifoldable_monoidEndo, $__global_Data_Bifoldable_unwrap, $__global_Data_Bifoldable_compose, $__global_Data_Monoid_Endo_Endo, &$__fn) {
   $__num = func_num_args();
   if ($__num < 4) {
     if ($__num === 3) return function($m) use ($l, $r, $u, &$__fn) { return $__fn($l, $r, $u, $m); };
@@ -1398,12 +1871,50 @@ $bifoldMap2 = ($dictBifoldable1)->bifoldMap;
     };
     return phpurs_curry_fallback($__fn, func_get_args(), 4);
   }
-    $__res = ($__global_Data_Bifoldable_bifoldrDefault)(($__global_Data_Bifoldable_bifoldableProduct2)($dictBifoldable, $dictBifoldable1), $l, $r, $u, $m);
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->bifoldMap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bifoldMap1 = ($__case_res_2)($__global_Data_Bifoldable_monoidEndo);
+    $__res = ((function() use ($__global_Data_Bifoldable_unwrap, $bifoldMap1, $__global_Data_Bifoldable_compose, $__global_Data_Monoid_Endo_Endo) {
+  $__fn = function($f, $g = null, $z = null, $p = null) use ($__global_Data_Bifoldable_unwrap, $bifoldMap1, $__global_Data_Bifoldable_compose, $__global_Data_Monoid_Endo_Endo, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 4) {
+    if ($__num === 3) return function($p) use ($f, $g, $z, &$__fn) { return $__fn($f, $g, $z, $p); };
+    if ($__num === 2) return function($z, $p = null) use ($f, $g, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $g, $z, $p);
+      if ($__num2 === 1) return function($p) use ($f, $g, $z, &$__fn) { return $__fn($f, $g, $z, $p); };
+      return phpurs_curry_fallback($__fn, [$f, $g], 4);
+    };
+    if ($__num === 1) return function($g, $z = null, $p = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 3) return $__fn($f, $g, $z, $p);
+      if ($__num2 === 2) return function($p) use ($f, $g, $z, &$__fn) { return $__fn($f, $g, $z, $p); };
+      if ($__num2 === 1) return function($z, $p = null) use ($f, $g, &$__fn) {
+        $__num3 = func_num_args();
+        if ($__num3 === 2) return $__fn($f, $g, $z, $p);
+        if ($__num3 === 1) return function($p) use ($f, $g, $z, &$__fn) { return $__fn($f, $g, $z, $p); };
+        return phpurs_curry_fallback($__fn, [$f, $g], 4);
+      };
+      return phpurs_curry_fallback($__fn, [$f], 4);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 4);
+  }
+    $__res = ($__global_Data_Bifoldable_unwrap)(($bifoldMap1)(($__global_Data_Bifoldable_compose)($__global_Data_Monoid_Endo_Endo, $f), ($__global_Data_Bifoldable_compose)($__global_Data_Monoid_Endo_Endo, $g), $p), $z);
   return $__num > 4 ? $__res(...array_slice(func_get_args(), 4)) : $__res;
   };
   return $__fn;
-})(), "bifoldl" => (function() use ($__global_Data_Bifoldable_bifoldlDefault, $__global_Data_Bifoldable_bifoldableProduct2, $dictBifoldable, $dictBifoldable1) {
-  $__fn = function($l, $r = null, $u = null, $m = null) use ($__global_Data_Bifoldable_bifoldlDefault, $__global_Data_Bifoldable_bifoldableProduct2, $dictBifoldable, $dictBifoldable1, &$__fn) {
+})())($l, $r, $u, $m);
+  return $__num > 4 ? $__res(...array_slice(func_get_args(), 4)) : $__res;
+  };
+  return $__fn;
+})(), "bifoldl" => (function() use ($dict, $__global_Data_Bifoldable_monoidDual, $__global_Data_Bifoldable_unwrap, $__global_Data_Bifoldable_compose, $__global_Data_Monoid_Dual_Dual, $__global_Data_Monoid_Endo_Endo, $__global_Data_Function_flip) {
+  $__fn = function($l, $r = null, $u = null, $m = null) use ($dict, $__global_Data_Bifoldable_monoidDual, $__global_Data_Bifoldable_unwrap, $__global_Data_Bifoldable_compose, $__global_Data_Monoid_Dual_Dual, $__global_Data_Monoid_Endo_Endo, $__global_Data_Function_flip, &$__fn) {
   $__num = func_num_args();
   if ($__num < 4) {
     if ($__num === 3) return function($m) use ($l, $r, $u, &$__fn) { return $__fn($l, $r, $u, $m); };
@@ -1427,17 +1938,63 @@ $bifoldMap2 = ($dictBifoldable1)->bifoldMap;
     };
     return phpurs_curry_fallback($__fn, func_get_args(), 4);
   }
-    $__res = ($__global_Data_Bifoldable_bifoldlDefault)(($__global_Data_Bifoldable_bifoldableProduct2)($dictBifoldable, $dictBifoldable1), $l, $r, $u, $m);
+$__case_0 = $dict;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->bifoldMap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bifoldMap1 = ($__case_res_3)($__global_Data_Bifoldable_monoidDual);
+    $__res = ((function() use ($__global_Data_Bifoldable_unwrap, $bifoldMap1, $__global_Data_Bifoldable_compose, $__global_Data_Monoid_Dual_Dual, $__global_Data_Monoid_Endo_Endo, $__global_Data_Function_flip) {
+  $__fn = function($f, $g = null, $z = null, $p = null) use ($__global_Data_Bifoldable_unwrap, $bifoldMap1, $__global_Data_Bifoldable_compose, $__global_Data_Monoid_Dual_Dual, $__global_Data_Monoid_Endo_Endo, $__global_Data_Function_flip, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 4) {
+    if ($__num === 3) return function($p) use ($f, $g, $z, &$__fn) { return $__fn($f, $g, $z, $p); };
+    if ($__num === 2) return function($z, $p = null) use ($f, $g, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $g, $z, $p);
+      if ($__num2 === 1) return function($p) use ($f, $g, $z, &$__fn) { return $__fn($f, $g, $z, $p); };
+      return phpurs_curry_fallback($__fn, [$f, $g], 4);
+    };
+    if ($__num === 1) return function($g, $z = null, $p = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 3) return $__fn($f, $g, $z, $p);
+      if ($__num2 === 2) return function($p) use ($f, $g, $z, &$__fn) { return $__fn($f, $g, $z, $p); };
+      if ($__num2 === 1) return function($z, $p = null) use ($f, $g, &$__fn) {
+        $__num3 = func_num_args();
+        if ($__num3 === 2) return $__fn($f, $g, $z, $p);
+        if ($__num3 === 1) return function($p) use ($f, $g, $z, &$__fn) { return $__fn($f, $g, $z, $p); };
+        return phpurs_curry_fallback($__fn, [$f, $g], 4);
+      };
+      return phpurs_curry_fallback($__fn, [$f], 4);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 4);
+  }
+    $__res = ($__global_Data_Bifoldable_unwrap)(($__global_Data_Bifoldable_unwrap)(($bifoldMap1)(($__global_Data_Bifoldable_compose)($__global_Data_Monoid_Dual_Dual, ($__global_Data_Bifoldable_compose)($__global_Data_Monoid_Endo_Endo, ($__global_Data_Function_flip)($f))), ($__global_Data_Bifoldable_compose)($__global_Data_Monoid_Dual_Dual, ($__global_Data_Bifoldable_compose)($__global_Data_Monoid_Endo_Endo, ($__global_Data_Function_flip)($g))), $p)), $z);
   return $__num > 4 ? $__res(...array_slice(func_get_args(), 4)) : $__res;
   };
   return $__fn;
-})(), "bifoldMap" => (function() use ($__global_Prim_undefined, $bifoldMap1, $bifoldMap2) {
-  $__fn = function($dictMonoid) use ($__global_Prim_undefined, $bifoldMap1, $bifoldMap2, &$__fn) {
+})())($l, $r, $u, $m);
+  return $__num > 4 ? $__res(...array_slice(func_get_args(), 4)) : $__res;
+  };
+  return $__fn;
+})(), "bifoldMap" => (function() use ($dict, $bifoldMap1, $bifoldMap2) {
+  $__fn = function($dictMonoid) use ($dict, $bifoldMap1, $bifoldMap2, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$append = ((($dictMonoid)->Semigroup0)($__global_Prim_undefined))->append;
+$__case_0 = $dict;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append = $__case_res_4;
 $bifoldMap3 = ($bifoldMap1)($dictMonoid);
 $bifoldMap4 = ($bifoldMap2)($dictMonoid);
     $__res = (function() use ($append, $bifoldMap3, $bifoldMap4) {
@@ -1497,7 +2054,15 @@ function Data_Bifoldable_bifold($dictBifoldable) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_Bifoldable_identity = ($GLOBALS['Data_Bifoldable_identity'] ?? \Data\Bifoldable\phpurs_eval_thunk('Data_Bifoldable_identity'));
-$bifoldMap1 = ($dictBifoldable)->bifoldMap;
+$__case_0 = $dictBifoldable;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bifoldMap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bifoldMap1 = $__case_res_0;
     $__res = (function() use ($bifoldMap1, $__global_Data_Bifoldable_identity) {
   $__fn = function($dictMonoid) use ($bifoldMap1, $__global_Data_Bifoldable_identity, &$__fn) {
   $__num = func_num_args();
@@ -1520,19 +2085,75 @@ function Data_Bifoldable_biany($dictBifoldable) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Monoid_Disj_monoidDisj = ($GLOBALS['Data_Monoid_Disj_monoidDisj'] ?? \Data\Monoid\Disj\phpurs_eval_thunk('Data_Monoid_Disj_monoidDisj'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Bifoldable_compose = ($GLOBALS['Data_Bifoldable_compose'] ?? \Data\Bifoldable\phpurs_eval_thunk('Data_Bifoldable_compose'));
 $__global_Data_Bifoldable_unwrap = ($GLOBALS['Data_Bifoldable_unwrap'] ?? \Data\Bifoldable\phpurs_eval_thunk('Data_Bifoldable_unwrap'));
 $__global_Data_Monoid_Disj_Disj = ($GLOBALS['Data_Monoid_Disj_Disj'] ?? \Data\Monoid\Disj\phpurs_eval_thunk('Data_Monoid_Disj_Disj'));
-$bifoldMap1 = ($dictBifoldable)->bifoldMap;
-    $__res = (function() use ($bifoldMap1, $__global_Data_Monoid_Disj_monoidDisj, $__global_Prim_undefined, $__global_Data_Bifoldable_compose, $__global_Data_Bifoldable_unwrap, $__global_Data_Monoid_Disj_Disj) {
-  $__fn = function($dictBooleanAlgebra) use ($bifoldMap1, $__global_Data_Monoid_Disj_monoidDisj, $__global_Prim_undefined, $__global_Data_Bifoldable_compose, $__global_Data_Bifoldable_unwrap, $__global_Data_Monoid_Disj_Disj, &$__fn) {
+$__case_0 = $dictBifoldable;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bifoldMap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bifoldMap1 = $__case_res_0;
+    $__res = (function() use ($bifoldMap1, $dict, $__global_Data_Bifoldable_compose, $__global_Data_Bifoldable_unwrap, $__global_Data_Monoid_Disj_Disj) {
+  $__fn = function($dictBooleanAlgebra) use ($bifoldMap1, $dict, $__global_Data_Bifoldable_compose, $__global_Data_Bifoldable_unwrap, $__global_Data_Monoid_Disj_Disj, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$bifoldMap2 = ($bifoldMap1)(($__global_Data_Monoid_Disj_monoidDisj)((($dictBooleanAlgebra)->HeytingAlgebra0)($__global_Prim_undefined)));
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->disj;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$disj = $__case_res_1;
+$semigroupDisj1 = (object)["append" => (function() use ($disj) {
+  $__body = function($v, $v1) use ($disj) {
+    $__case_0 = $v;
+    $__case_1 = $v1;
+    if (true) {
+$a = $__case_0;
+$b = $__case_1;
+return ($disj)($a, $b);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($v, $v1 = null) use ($disj, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($v, $v1);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->ff;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bifoldMap2 = ($bifoldMap1)((object)["mempty" => $__case_res_2, "Semigroup0" => (function() use ($semigroupDisj1) {
+  $__fn = function($__dollar____unused) use ($semigroupDisj1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $semigroupDisj1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()]);
     $__res = (function() use ($__global_Data_Bifoldable_compose, $__global_Data_Bifoldable_unwrap, $bifoldMap2, $__global_Data_Monoid_Disj_Disj) {
   $__fn = function($p, $q = null) use ($__global_Data_Bifoldable_compose, $__global_Data_Bifoldable_unwrap, $bifoldMap2, $__global_Data_Monoid_Disj_Disj, &$__fn) {
   $__num = func_num_args();
@@ -1560,19 +2181,75 @@ function Data_Bifoldable_biall($dictBifoldable) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Monoid_Conj_monoidConj = ($GLOBALS['Data_Monoid_Conj_monoidConj'] ?? \Data\Monoid\Conj\phpurs_eval_thunk('Data_Monoid_Conj_monoidConj'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_Bifoldable_compose = ($GLOBALS['Data_Bifoldable_compose'] ?? \Data\Bifoldable\phpurs_eval_thunk('Data_Bifoldable_compose'));
 $__global_Data_Bifoldable_unwrap = ($GLOBALS['Data_Bifoldable_unwrap'] ?? \Data\Bifoldable\phpurs_eval_thunk('Data_Bifoldable_unwrap'));
 $__global_Data_Monoid_Conj_Conj = ($GLOBALS['Data_Monoid_Conj_Conj'] ?? \Data\Monoid\Conj\phpurs_eval_thunk('Data_Monoid_Conj_Conj'));
-$bifoldMap1 = ($dictBifoldable)->bifoldMap;
-    $__res = (function() use ($bifoldMap1, $__global_Data_Monoid_Conj_monoidConj, $__global_Prim_undefined, $__global_Data_Bifoldable_compose, $__global_Data_Bifoldable_unwrap, $__global_Data_Monoid_Conj_Conj) {
-  $__fn = function($dictBooleanAlgebra) use ($bifoldMap1, $__global_Data_Monoid_Conj_monoidConj, $__global_Prim_undefined, $__global_Data_Bifoldable_compose, $__global_Data_Bifoldable_unwrap, $__global_Data_Monoid_Conj_Conj, &$__fn) {
+$__case_0 = $dictBifoldable;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bifoldMap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bifoldMap1 = $__case_res_0;
+    $__res = (function() use ($bifoldMap1, $dict, $__global_Data_Bifoldable_compose, $__global_Data_Bifoldable_unwrap, $__global_Data_Monoid_Conj_Conj) {
+  $__fn = function($dictBooleanAlgebra) use ($bifoldMap1, $dict, $__global_Data_Bifoldable_compose, $__global_Data_Bifoldable_unwrap, $__global_Data_Monoid_Conj_Conj, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$bifoldMap2 = ($bifoldMap1)(($__global_Data_Monoid_Conj_monoidConj)((($dictBooleanAlgebra)->HeytingAlgebra0)($__global_Prim_undefined)));
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->conj;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$conj = $__case_res_1;
+$semigroupConj1 = (object)["append" => (function() use ($conj) {
+  $__body = function($v, $v1) use ($conj) {
+    $__case_0 = $v;
+    $__case_1 = $v1;
+    if (true) {
+$a = $__case_0;
+$b = $__case_1;
+return ($conj)($a, $b);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($v, $v1 = null) use ($conj, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($v, $v1);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->tt;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$bifoldMap2 = ($bifoldMap1)((object)["mempty" => $__case_res_2, "Semigroup0" => (function() use ($semigroupConj1) {
+  $__fn = function($__dollar____unused) use ($semigroupConj1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $semigroupConj1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()]);
     $__res = (function() use ($__global_Data_Bifoldable_compose, $__global_Data_Bifoldable_unwrap, $bifoldMap2, $__global_Data_Monoid_Conj_Conj) {
   $__fn = function($p, $q = null) use ($__global_Data_Bifoldable_compose, $__global_Data_Bifoldable_unwrap, $bifoldMap2, $__global_Data_Monoid_Conj_Conj, &$__fn) {
   $__num = func_num_args();

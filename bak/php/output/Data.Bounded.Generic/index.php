@@ -130,7 +130,15 @@ function Data_Bounded_Generic_genericTopArgument($dictBounded) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (object)["genericTop'" => ($dictBounded)->top];
+$__case_0 = $dictBounded;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->top;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = (object)["genericTop'" => $__case_res_0];
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Bounded_Generic_genericTopArgument'] = __NAMESPACE__ . '\\Data_Bounded_Generic_genericTopArgument';
@@ -163,7 +171,15 @@ function Data_Bounded_Generic_genericTopConstructor($dictGenericTop) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (object)["genericTop'" => ($dictGenericTop)->genericTop__prime__];
+$__case_0 = $dictGenericTop;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->genericTop__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = (object)["genericTop'" => $__case_res_0];
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Bounded_Generic_genericTopConstructor'] = __NAMESPACE__ . '\\Data_Bounded_Generic_genericTopConstructor';
@@ -175,13 +191,29 @@ function Data_Bounded_Generic_genericTopProduct($dictGenericTop) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$genericTop__prime__1 = ($dictGenericTop)->genericTop__prime__;
+$__case_0 = $dictGenericTop;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->genericTop__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericTop__prime__1 = $__case_res_0;
     $__res = (function() use ($genericTop__prime__1) {
   $__fn = function($dictGenericTop1) use ($genericTop__prime__1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
+$__case_0 = $dictGenericTop1;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->genericTop__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
     $__res = (object)["genericTop'" => ((function() {
   $__fn = function($value0, $value1 = null) use (&$__fn) {
   $__num = func_num_args();
@@ -193,7 +225,7 @@ $genericTop__prime__1 = ($dictGenericTop)->genericTop__prime__;
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
-})())($genericTop__prime__1, ($dictGenericTop1)->genericTop__prime__)];
+})())($genericTop__prime__1, $__case_res_1)];
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -209,6 +241,14 @@ function Data_Bounded_Generic_genericTopSum($dictGenericTop) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
+$__case_0 = $dictGenericTop;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->genericTop__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
     $__res = (object)["genericTop'" => ((function() {
   $__fn = function($value0) use (&$__fn) {
   $__num = func_num_args();
@@ -219,7 +259,7 @@ function Data_Bounded_Generic_genericTopSum($dictGenericTop) {
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})())(($dictGenericTop)->genericTop__prime__)];
+})())($__case_res_0)];
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Bounded_Generic_genericTopSum'] = __NAMESPACE__ . '\\Data_Bounded_Generic_genericTopSum';
@@ -231,14 +271,30 @@ function Data_Bounded_Generic_genericTop($dictGeneric) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$to = ($dictGeneric)->to;
+$__case_0 = $dictGeneric;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->to;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$to = $__case_res_0;
     $__res = (function() use ($to) {
   $__fn = function($dictGenericTop) use ($to, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($to)(($dictGenericTop)->genericTop__prime__);
+$__case_0 = $dictGenericTop;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->genericTop__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($to)($__case_res_1);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -255,7 +311,15 @@ function Data_Bounded_Generic_genericBottomArgument($dictBounded) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (object)["genericBottom'" => ($dictBounded)->bottom];
+$__case_0 = $dictBounded;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->bottom;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = (object)["genericBottom'" => $__case_res_0];
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Bounded_Generic_genericBottomArgument'] = __NAMESPACE__ . '\\Data_Bounded_Generic_genericBottomArgument';
@@ -288,7 +352,15 @@ function Data_Bounded_Generic_genericBottomConstructor($dictGenericBottom) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (object)["genericBottom'" => ($dictGenericBottom)->genericBottom__prime__];
+$__case_0 = $dictGenericBottom;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->genericBottom__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = (object)["genericBottom'" => $__case_res_0];
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Bounded_Generic_genericBottomConstructor'] = __NAMESPACE__ . '\\Data_Bounded_Generic_genericBottomConstructor';
@@ -300,13 +372,29 @@ function Data_Bounded_Generic_genericBottomProduct($dictGenericBottom) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$genericBottom__prime__1 = ($dictGenericBottom)->genericBottom__prime__;
+$__case_0 = $dictGenericBottom;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->genericBottom__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericBottom__prime__1 = $__case_res_0;
     $__res = (function() use ($genericBottom__prime__1) {
   $__fn = function($dictGenericBottom1) use ($genericBottom__prime__1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
+$__case_0 = $dictGenericBottom1;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->genericBottom__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
     $__res = (object)["genericBottom'" => ((function() {
   $__fn = function($value0, $value1 = null) use (&$__fn) {
   $__num = func_num_args();
@@ -318,7 +406,7 @@ $genericBottom__prime__1 = ($dictGenericBottom)->genericBottom__prime__;
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
-})())($genericBottom__prime__1, ($dictGenericBottom1)->genericBottom__prime__)];
+})())($genericBottom__prime__1, $__case_res_1)];
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -334,6 +422,14 @@ function Data_Bounded_Generic_genericBottomSum($dictGenericBottom) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
+$__case_0 = $dictGenericBottom;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->genericBottom__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
     $__res = (object)["genericBottom'" => ((function() {
   $__fn = function($value0) use (&$__fn) {
   $__num = func_num_args();
@@ -344,7 +440,7 @@ function Data_Bounded_Generic_genericBottomSum($dictGenericBottom) {
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})())(($dictGenericBottom)->genericBottom__prime__)];
+})())($__case_res_0)];
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Bounded_Generic_genericBottomSum'] = __NAMESPACE__ . '\\Data_Bounded_Generic_genericBottomSum';
@@ -356,14 +452,30 @@ function Data_Bounded_Generic_genericBottom($dictGeneric) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$to = ($dictGeneric)->to;
+$__case_0 = $dictGeneric;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->to;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$to = $__case_res_0;
     $__res = (function() use ($to) {
   $__fn = function($dictGenericBottom) use ($to, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($to)(($dictGenericBottom)->genericBottom__prime__);
+$__case_0 = $dictGenericBottom;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->genericBottom__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($to)($__case_res_1);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;

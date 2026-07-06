@@ -105,9 +105,63 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Data_Functor_Costar_composeFlipped': $v = (($GLOBALS['Control_Semigroupoid_composeFlipped'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_composeFlipped')))(($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn'))); break;
-      case 'Data_Functor_Costar_lcmap': $v = (($GLOBALS['Data_Profunctor_lcmap'] ?? \Data\Profunctor\phpurs_eval_thunk('Data_Profunctor_lcmap')))(($GLOBALS['Data_Profunctor_profunctorFn'] ?? \Data\Profunctor\phpurs_eval_thunk('Data_Profunctor_profunctorFn'))); break;
-      case 'Data_Functor_Costar_compose': $v = (($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn')))->compose; break;
+      case 'Data_Functor_Costar_composeFlipped': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compose;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $compose1 = $__case_res_0;
+  return (function() use ($compose1) {
+  $__fn = function($f, $g = null) use ($compose1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($g) use ($f, &$__fn) { return $__fn($f, $g); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($compose1)($g, $f);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+})(); break;
+      case 'Data_Functor_Costar_lcmap': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Profunctor_profunctorFn'] ?? \Data\Profunctor\phpurs_eval_thunk('Data_Profunctor_profunctorFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->dimap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $dimap1 = $__case_res_0;
+  return (function() use ($dimap1) {
+  $__fn = function($a2b) use ($dimap1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__global_Data_Profunctor_identity = ($GLOBALS['Data_Profunctor_identity'] ?? \Data\Profunctor\phpurs_eval_thunk('Data_Profunctor_identity'));
+    $__res = ($dimap1)($a2b, $__global_Data_Profunctor_identity);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+})(); break;
+      case 'Data_Functor_Costar_compose': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compose;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_Functor_Costar_newtypeCostar': $v = (object)["Coercible0" => (function() {
   $__fn = function($__dollar____unused) use (&$__fn) {
   $__num = func_num_args();
@@ -144,14 +198,44 @@ throw new \Exception("Pattern match failure");
   };
   return $__fn;
 })()]; break;
-      case 'Data_Functor_Costar_invariantCostar': $v = (object)["imap" => (($GLOBALS['Data_Functor_Invariant_imapF'] ?? \Data\Functor\Invariant\phpurs_eval_thunk('Data_Functor_Invariant_imapF')))(($GLOBALS['Data_Functor_Costar_functorCostar'] ?? \Data\Functor\Costar\phpurs_eval_thunk('Data_Functor_Costar_functorCostar')))]; break;
+      case 'Data_Functor_Costar_invariantCostar': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Functor_Costar_functorCostar'] ?? \Data\Functor\Costar\phpurs_eval_thunk('Data_Functor_Costar_functorCostar'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  $map = $__case_res_0;
+  return (object)["imap" => (function() use ($map) {
+  $__fn = function($f, $v = null) use ($map, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, &$__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = ($map)($f);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+})(); break;
       case 'Data_Functor_Costar_distributiveCostar': $v = (object)["distribute" => (function() {
   $__fn = function($dictFunctor) use (&$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$map = ($dictFunctor)->map;
+$__case_0 = $dictFunctor;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_0;
     $__res = (function() use ($map) {
   $__fn = function($f, $a = null) use ($map, &$__fn) {
   $__num = func_num_args();
@@ -194,14 +278,30 @@ throw new \Exception("Pattern match failure");
   }
 $__global_Data_Functor_Costar_compose = ($GLOBALS['Data_Functor_Costar_compose'] ?? \Data\Functor\Costar\phpurs_eval_thunk('Data_Functor_Costar_compose'));
 $__global_Data_Functor_Costar_distributiveCostar = ($GLOBALS['Data_Functor_Costar_distributiveCostar'] ?? \Data\Functor\Costar\phpurs_eval_thunk('Data_Functor_Costar_distributiveCostar'));
-$map = ($dictFunctor)->map;
+$__case_0 = $dictFunctor;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_1;
     $__res = (function() use ($__global_Data_Functor_Costar_compose, $__global_Data_Functor_Costar_distributiveCostar, $dictFunctor, $map) {
   $__fn = function($f) use ($__global_Data_Functor_Costar_compose, $__global_Data_Functor_Costar_distributiveCostar, $dictFunctor, $map, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($__global_Data_Functor_Costar_compose)((($__global_Data_Functor_Costar_distributiveCostar)->distribute)($dictFunctor), ($map)($f));
+$__case_0 = $__global_Data_Functor_Costar_distributiveCostar;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->distribute;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__global_Data_Functor_Costar_compose)(($__case_res_2)($dictFunctor), ($map)($f));
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -396,8 +496,33 @@ function Data_Functor_Costar_semigroupoidCostar($dictExtend) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Control_Extend_composeCoKleisliFlipped = ($GLOBALS['Control_Extend_composeCoKleisliFlipped'] ?? \Control\Extend\phpurs_eval_thunk('Control_Extend_composeCoKleisliFlipped'));
-$composeCoKleisliFlipped = ($__global_Control_Extend_composeCoKleisliFlipped)($dictExtend);
+$__case_0 = $dictExtend;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->extend;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$extend1 = $__case_res_0;
+$composeCoKleisliFlipped = (function() use ($extend1) {
+  $__fn = function($f, $g = null, $w = null) use ($extend1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($w) use ($f, $g, &$__fn) { return $__fn($f, $g, $w); };
+    if ($__num === 1) return function($g, $w = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $g, $w);
+      if ($__num2 === 1) return function($w) use ($f, $g, &$__fn) { return $__fn($f, $g, $w); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = ($f)(($extend1)($g, $w));
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})();
     $__res = (object)["compose" => (function() use ($composeCoKleisliFlipped) {
   $__body = function($v, $v1) use ($composeCoKleisliFlipped) {
     $__case_0 = $v;
@@ -433,7 +558,15 @@ function Data_Functor_Costar_profunctorCostar($dictFunctor) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_Functor_Costar_composeFlipped = ($GLOBALS['Data_Functor_Costar_composeFlipped'] ?? \Data\Functor\Costar\phpurs_eval_thunk('Data_Functor_Costar_composeFlipped'));
-$map = ($dictFunctor)->map;
+$__case_0 = $dictFunctor;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_0;
     $__res = (object)["dimap" => (function() use ($__global_Data_Functor_Costar_composeFlipped, $map) {
   $__body = function($f, $g, $v) use ($__global_Data_Functor_Costar_composeFlipped, $map) {
     $__case_0 = $f;
@@ -477,13 +610,68 @@ function Data_Functor_Costar_strongCostar($dictComonad) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$__global_Data_Functor_Costar_profunctorCostar = ($GLOBALS['Data_Functor_Costar_profunctorCostar'] ?? \Data\Functor\Costar\phpurs_eval_thunk('Data_Functor_Costar_profunctorCostar'));
+$__global_Data_Functor_Costar_composeFlipped = ($GLOBALS['Data_Functor_Costar_composeFlipped'] ?? \Data\Functor\Costar\phpurs_eval_thunk('Data_Functor_Costar_composeFlipped'));
 $__global_Data_Tuple_fst = ($GLOBALS['Data_Tuple_fst'] ?? \Data\Tuple\phpurs_eval_thunk('Data_Tuple_fst'));
 $__global_Data_Tuple_snd = ($GLOBALS['Data_Tuple_snd'] ?? \Data\Tuple\phpurs_eval_thunk('Data_Tuple_snd'));
 $Functor0 = (((($dictComonad)->Extend0)($__global_Prim_undefined))->Functor0)($__global_Prim_undefined);
-$map = ($Functor0)->map;
-$extract = ($dictComonad)->extract;
-$profunctorCostar1 = ($__global_Data_Functor_Costar_profunctorCostar)($Functor0);
+$__case_0 = $Functor0;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_0;
+$__case_0 = $dictComonad;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->extract;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$extract = $__case_res_1;
+$__case_0 = $Functor0;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_2;
+$profunctorCostar1 = (object)["dimap" => (function() use ($__global_Data_Functor_Costar_composeFlipped, $map) {
+  $__body = function($f, $g, $v) use ($__global_Data_Functor_Costar_composeFlipped, $map) {
+    $__case_0 = $f;
+    $__case_1 = $g;
+    $__case_2 = $v;
+    if (true) {
+$f1 = $__case_0;
+$g1 = $__case_1;
+$h = $__case_2;
+return ($__global_Data_Functor_Costar_composeFlipped)(($map)($f1), ($__global_Data_Functor_Costar_composeFlipped)($h, $g1));
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $g = null, $v = null) use ($__global_Data_Functor_Costar_composeFlipped, $map, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($v) use ($f, $g, &$__fn) { return $__fn($f, $g, $v); };
+    if ($__num === 1) return function($g, $v = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $g, $v);
+      if ($__num2 === 1) return function($v) use ($f, $g, &$__fn) { return $__fn($f, $g, $v); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = $__body($f, $g, $v);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})()];
     $__res = (object)["first" => (function() use ($map, $__global_Data_Tuple_fst, $__global_Data_Tuple_snd, $extract) {
   $__body = function($v) use ($map, $__global_Data_Tuple_fst, $__global_Data_Tuple_snd, $extract) {
     $__case_0 = $v;
@@ -615,9 +803,56 @@ function Data_Functor_Costar_closedCostar($dictFunctor) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Functor_Costar_profunctorCostar = ($GLOBALS['Data_Functor_Costar_profunctorCostar'] ?? \Data\Functor\Costar\phpurs_eval_thunk('Data_Functor_Costar_profunctorCostar'));
-$map = ($dictFunctor)->map;
-$profunctorCostar1 = ($__global_Data_Functor_Costar_profunctorCostar)($dictFunctor);
+$__global_Data_Functor_Costar_composeFlipped = ($GLOBALS['Data_Functor_Costar_composeFlipped'] ?? \Data\Functor\Costar\phpurs_eval_thunk('Data_Functor_Costar_composeFlipped'));
+$__case_0 = $dictFunctor;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_0;
+$__case_0 = $dictFunctor;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map = $__case_res_1;
+$profunctorCostar1 = (object)["dimap" => (function() use ($__global_Data_Functor_Costar_composeFlipped, $map) {
+  $__body = function($f, $g, $v) use ($__global_Data_Functor_Costar_composeFlipped, $map) {
+    $__case_0 = $f;
+    $__case_1 = $g;
+    $__case_2 = $v;
+    if (true) {
+$f1 = $__case_0;
+$g1 = $__case_1;
+$h = $__case_2;
+return ($__global_Data_Functor_Costar_composeFlipped)(($map)($f1), ($__global_Data_Functor_Costar_composeFlipped)($h, $g1));
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($f, $g = null, $v = null) use ($__global_Data_Functor_Costar_composeFlipped, $map, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($v) use ($f, $g, &$__fn) { return $__fn($f, $g, $v); };
+    if ($__num === 1) return function($g, $v = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $g, $v);
+      if ($__num2 === 1) return function($v) use ($f, $g, &$__fn) { return $__fn($f, $g, $v); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = $__body($f, $g, $v);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})()];
     $__res = (object)["closed" => (function() use ($map) {
   $__body = function($v) use ($map) {
     $__case_0 = $v;
@@ -680,10 +915,65 @@ function Data_Functor_Costar_categoryCostar($dictComonad) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Functor_Costar_semigroupoidCostar = ($GLOBALS['Data_Functor_Costar_semigroupoidCostar'] ?? \Data\Functor\Costar\phpurs_eval_thunk('Data_Functor_Costar_semigroupoidCostar'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$semigroupoidCostar1 = ($__global_Data_Functor_Costar_semigroupoidCostar)((($dictComonad)->Extend0)($__global_Prim_undefined));
-    $__res = (object)["identity" => ($dictComonad)->extract, "Semigroupoid0" => (function() use ($semigroupoidCostar1) {
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->extend;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$extend1 = $__case_res_0;
+$composeCoKleisliFlipped = (function() use ($extend1) {
+  $__fn = function($f, $g = null, $w = null) use ($extend1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($w) use ($f, $g, &$__fn) { return $__fn($f, $g, $w); };
+    if ($__num === 1) return function($g, $w = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $g, $w);
+      if ($__num2 === 1) return function($w) use ($f, $g, &$__fn) { return $__fn($f, $g, $w); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = ($f)(($extend1)($g, $w));
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})();
+$semigroupoidCostar1 = (object)["compose" => (function() use ($composeCoKleisliFlipped) {
+  $__body = function($v, $v1) use ($composeCoKleisliFlipped) {
+    $__case_0 = $v;
+    $__case_1 = $v1;
+    if (true) {
+$f = $__case_0;
+$g = $__case_1;
+return ($composeCoKleisliFlipped)($f, $g);
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($v, $v1 = null) use ($composeCoKleisliFlipped, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($v, $v1);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+$__case_0 = $dictComonad;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->extract;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = (object)["identity" => $__case_res_1, "Semigroupoid0" => (function() use ($semigroupoidCostar1) {
   $__fn = function($__dollar____unused) use ($semigroupoidCostar1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
@@ -706,7 +996,15 @@ function Data_Functor_Costar_bifunctorCostar($dictContravariant) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_Functor_Costar_composeFlipped = ($GLOBALS['Data_Functor_Costar_composeFlipped'] ?? \Data\Functor\Costar\phpurs_eval_thunk('Data_Functor_Costar_composeFlipped'));
-$cmap = ($dictContravariant)->cmap;
+$__case_0 = $dictContravariant;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->cmap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$cmap = $__case_res_0;
     $__res = (object)["bimap" => (function() use ($__global_Data_Functor_Costar_composeFlipped, $cmap) {
   $__body = function($f, $g, $v) use ($__global_Data_Functor_Costar_composeFlipped, $cmap) {
     $__case_0 = $f;

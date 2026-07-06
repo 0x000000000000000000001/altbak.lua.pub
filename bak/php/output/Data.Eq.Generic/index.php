@@ -89,7 +89,17 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Data_Eq_Generic_conj': $v = ($GLOBALS['Data_HeytingAlgebra_boolConj'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_boolConj')); break;
+      case 'Data_Eq_Generic_conj': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_HeytingAlgebra_heytingAlgebraBoolean'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_heytingAlgebraBoolean'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->conj;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_Eq_Generic_genericEqNoConstructors': $v = (object)["genericEq'" => (function() {
   $__fn = function($v, $v1 = null) use (&$__fn) {
   $__num = func_num_args();
@@ -145,7 +155,15 @@ function Data_Eq_Generic_genericEqArgument($dictEq) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$eq = ($dictEq)->eq;
+$__case_0 = $dictEq;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq = $__case_res_0;
     $__res = (object)["genericEq'" => (function() use ($eq) {
   $__body = function($v, $v1) use ($eq) {
     $__case_0 = $v;
@@ -201,7 +219,15 @@ function Data_Eq_Generic_genericEqConstructor($dictGenericEq) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$genericEq__prime__1 = ($dictGenericEq)->genericEq__prime__;
+$__case_0 = $dictGenericEq;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->genericEq__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericEq__prime__1 = $__case_res_0;
     $__res = (object)["genericEq'" => (function() use ($genericEq__prime__1) {
   $__body = function($v, $v1) use ($genericEq__prime__1) {
     $__case_0 = $v;
@@ -236,17 +262,33 @@ function Data_Eq_Generic_genericEqProduct($dictGenericEq) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_HeytingAlgebra_boolConj = ($GLOBALS['Data_HeytingAlgebra_boolConj'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_boolConj'));
-$genericEq__prime__1 = ($dictGenericEq)->genericEq__prime__;
-    $__res = (function() use ($__global_Data_HeytingAlgebra_boolConj, $genericEq__prime__1) {
-  $__fn = function($dictGenericEq1) use ($__global_Data_HeytingAlgebra_boolConj, $genericEq__prime__1, &$__fn) {
+$__global_Data_Eq_Generic_conj = ($GLOBALS['Data_Eq_Generic_conj'] ?? \Data\Eq\Generic\phpurs_eval_thunk('Data_Eq_Generic_conj'));
+$__case_0 = $dictGenericEq;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->genericEq__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericEq__prime__1 = $__case_res_0;
+    $__res = (function() use ($__global_Data_Eq_Generic_conj, $genericEq__prime__1) {
+  $__fn = function($dictGenericEq1) use ($__global_Data_Eq_Generic_conj, $genericEq__prime__1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$genericEq__prime__2 = ($dictGenericEq1)->genericEq__prime__;
-    $__res = (object)["genericEq'" => (function() use ($__global_Data_HeytingAlgebra_boolConj, $genericEq__prime__1, $genericEq__prime__2) {
-  $__body = function($v, $v1) use ($__global_Data_HeytingAlgebra_boolConj, $genericEq__prime__1, $genericEq__prime__2) {
+$__case_0 = $dictGenericEq1;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->genericEq__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericEq__prime__2 = $__case_res_1;
+    $__res = (object)["genericEq'" => (function() use ($__global_Data_Eq_Generic_conj, $genericEq__prime__1, $genericEq__prime__2) {
+  $__body = function($v, $v1) use ($__global_Data_Eq_Generic_conj, $genericEq__prime__1, $genericEq__prime__2) {
     $__case_0 = $v;
     $__case_1 = $v1;
     if (((($__case_0)->tag === "Product") && (($__case_1)->tag === "Product"))) {
@@ -254,12 +296,12 @@ $a1 = ($__case_0)->v0;
 $b1 = ($__case_0)->v1;
 $a2 = ($__case_1)->v0;
 $b2 = ($__case_1)->v1;
-return ($__global_Data_HeytingAlgebra_boolConj)(($genericEq__prime__1)($a1, $a2), ($genericEq__prime__2)($b1, $b2));
+return ($__global_Data_Eq_Generic_conj)(($genericEq__prime__1)($a1, $a2), ($genericEq__prime__2)($b1, $b2));
 } else {
 throw new \Exception("Pattern match failure");
 };
   };
-  $__fn = function($v, $v1 = null) use ($__global_Data_HeytingAlgebra_boolConj, $genericEq__prime__1, $genericEq__prime__2, $__body, &$__fn) {
+  $__fn = function($v, $v1 = null) use ($__global_Data_Eq_Generic_conj, $genericEq__prime__1, $genericEq__prime__2, $__body, &$__fn) {
   $__num = func_num_args();
   if ($__num < 2) {
     if ($__num === 1) return function($v1) use ($v, &$__fn) { return $__fn($v, $v1); };
@@ -285,14 +327,30 @@ function Data_Eq_Generic_genericEqSum($dictGenericEq) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$genericEq__prime__1 = ($dictGenericEq)->genericEq__prime__;
+$__case_0 = $dictGenericEq;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->genericEq__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericEq__prime__1 = $__case_res_0;
     $__res = (function() use ($genericEq__prime__1) {
   $__fn = function($dictGenericEq1) use ($genericEq__prime__1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$genericEq__prime__2 = ($dictGenericEq1)->genericEq__prime__;
+$__case_0 = $dictGenericEq1;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->genericEq__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericEq__prime__2 = $__case_res_1;
     $__res = (object)["genericEq'" => (function() use ($genericEq__prime__1, $genericEq__prime__2) {
   $__body = function($v, $v1) use ($genericEq__prime__1, $genericEq__prime__2) {
     $__case_0 = $v;
@@ -341,14 +399,30 @@ function Data_Eq_Generic_genericEq($dictGeneric) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$from = ($dictGeneric)->from;
+$__case_0 = $dictGeneric;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->from;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$from = $__case_res_0;
     $__res = (function() use ($from) {
   $__fn = function($dictGenericEq) use ($from, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$genericEq__prime__1 = ($dictGenericEq)->genericEq__prime__;
+$__case_0 = $dictGenericEq;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->genericEq__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericEq__prime__1 = $__case_res_1;
     $__res = (function() use ($genericEq__prime__1, $from) {
   $__fn = function($x, $y = null) use ($genericEq__prime__1, $from, &$__fn) {
   $__num = func_num_args();

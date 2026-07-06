@@ -91,8 +91,28 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Data_Show_Generic_append': $v = ($GLOBALS['Data_Semigroup_concatArray'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_concatArray')); break;
-      case 'Data_Show_Generic_append1': $v = ($GLOBALS['Data_Semigroup_concatString'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_concatString')); break;
+      case 'Data_Show_Generic_append': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Semigroup_semigroupArray'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_semigroupArray'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_Show_Generic_append1': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Semigroup_semigroupString'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_semigroupString'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       case 'Data_Show_Generic_genericShowArgsNoArguments': $v = (object)["genericShowArgs" => (function() {
   $__fn = function($v) use (&$__fn) {
   $__num = func_num_args();
@@ -111,7 +131,15 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $__global_Data_Show_Generic_genericShowNoConstructors = ($GLOBALS['Data_Show_Generic_genericShowNoConstructors'] ?? \Data\Show\Generic\phpurs_eval_thunk('Data_Show_Generic_genericShowNoConstructors'));
-    $__res = (($__global_Data_Show_Generic_genericShowNoConstructors)->genericShow__prime__)($a);
+$__case_0 = $__global_Data_Show_Generic_genericShowNoConstructors;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->genericShow__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($__case_res_0)($a);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -159,7 +187,15 @@ function Data_Show_Generic_genericShowArgsArgument($dictShow) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$show = ($dictShow)->show;
+$__case_0 = $dictShow;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->show;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$show = $__case_res_0;
     $__res = (object)["genericShowArgs" => (function() use ($show) {
   $__body = function($v) use ($show) {
     $__case_0 = $v;
@@ -212,30 +248,46 @@ function Data_Show_Generic_genericShowArgsProduct($dictGenericShowArgs) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_Semigroup_concatArray = ($GLOBALS['Data_Semigroup_concatArray'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_concatArray'));
-$genericShowArgs1 = ($dictGenericShowArgs)->genericShowArgs;
-    $__res = (function() use ($__global_Data_Semigroup_concatArray, $genericShowArgs1) {
-  $__fn = function($dictGenericShowArgs1) use ($__global_Data_Semigroup_concatArray, $genericShowArgs1, &$__fn) {
+$__global_Data_Show_Generic_append = ($GLOBALS['Data_Show_Generic_append'] ?? \Data\Show\Generic\phpurs_eval_thunk('Data_Show_Generic_append'));
+$__case_0 = $dictGenericShowArgs;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->genericShowArgs;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericShowArgs1 = $__case_res_0;
+    $__res = (function() use ($__global_Data_Show_Generic_append, $genericShowArgs1) {
+  $__fn = function($dictGenericShowArgs1) use ($__global_Data_Show_Generic_append, $genericShowArgs1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$genericShowArgs2 = ($dictGenericShowArgs1)->genericShowArgs;
-    $__res = (object)["genericShowArgs" => (function() use ($__global_Data_Semigroup_concatArray, $genericShowArgs1, $genericShowArgs2) {
-  $__body = function($v) use ($__global_Data_Semigroup_concatArray, $genericShowArgs1, $genericShowArgs2) {
+$__case_0 = $dictGenericShowArgs1;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->genericShowArgs;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericShowArgs2 = $__case_res_1;
+    $__res = (object)["genericShowArgs" => (function() use ($__global_Data_Show_Generic_append, $genericShowArgs1, $genericShowArgs2) {
+  $__body = function($v) use ($__global_Data_Show_Generic_append, $genericShowArgs1, $genericShowArgs2) {
     $__case_0 = $v;
     switch (($__case_0)->tag) {
 case "Product":
 $a = ($__case_0)->v0;
 $b = ($__case_0)->v1;
-return ($__global_Data_Semigroup_concatArray)(($genericShowArgs1)($a), ($genericShowArgs2)($b));
+return ($__global_Data_Show_Generic_append)(($genericShowArgs1)($a), ($genericShowArgs2)($b));
 break;
 default:
 throw new \Exception("Pattern match failure");
 break;
 };
   };
-  $__fn = function($v) use ($__global_Data_Semigroup_concatArray, $genericShowArgs1, $genericShowArgs2, $__body, &$__fn) {
+  $__fn = function($v) use ($__global_Data_Show_Generic_append, $genericShowArgs1, $genericShowArgs2, $__body, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
@@ -260,18 +312,35 @@ function Data_Show_Generic_genericShowConstructor($dictGenericShowArgs) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
+$__global_Data_Show_Generic_append1 = ($GLOBALS['Data_Show_Generic_append1'] ?? \Data\Show\Generic\phpurs_eval_thunk('Data_Show_Generic_append1'));
 $__global_Data_Show_Generic_intercalate = ($GLOBALS['Data_Show_Generic_intercalate'] ?? \Data\Show\Generic\phpurs_eval_thunk('Data_Show_Generic_intercalate'));
-$__global_Data_Semigroup_concatArray = ($GLOBALS['Data_Semigroup_concatArray'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_concatArray'));
-$genericShowArgs1 = ($dictGenericShowArgs)->genericShowArgs;
-    $__res = (function() use ($genericShowArgs1, $__global_Data_Show_Generic_intercalate, $__global_Data_Semigroup_concatArray) {
-  $__fn = function($dictIsSymbol) use ($genericShowArgs1, $__global_Data_Show_Generic_intercalate, $__global_Data_Semigroup_concatArray, &$__fn) {
+$__global_Data_Show_Generic_append = ($GLOBALS['Data_Show_Generic_append'] ?? \Data\Show\Generic\phpurs_eval_thunk('Data_Show_Generic_append'));
+$__case_0 = $dictGenericShowArgs;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->genericShowArgs;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericShowArgs1 = $__case_res_0;
+    $__res = (function() use ($genericShowArgs1, $__global_Data_Show_Generic_append1, $__global_Data_Show_Generic_intercalate, $__global_Data_Show_Generic_append) {
+  $__fn = function($dictIsSymbol) use ($genericShowArgs1, $__global_Data_Show_Generic_append1, $__global_Data_Show_Generic_intercalate, $__global_Data_Show_Generic_append, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$reflectSymbol = ($dictIsSymbol)->reflectSymbol;
-    $__res = (object)["genericShow'" => (function() use ($reflectSymbol, $genericShowArgs1, $__global_Data_Show_Generic_intercalate, $__global_Data_Semigroup_concatArray) {
-  $__body = function($v) use ($reflectSymbol, $genericShowArgs1, $__global_Data_Show_Generic_intercalate, $__global_Data_Semigroup_concatArray) {
+$__case_0 = $dictIsSymbol;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->reflectSymbol;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$reflectSymbol = $__case_res_1;
+    $__res = (object)["genericShow'" => (function() use ($reflectSymbol, $genericShowArgs1, $__global_Data_Show_Generic_append1, $__global_Data_Show_Generic_intercalate, $__global_Data_Show_Generic_append) {
+  $__body = function($v) use ($reflectSymbol, $genericShowArgs1, $__global_Data_Show_Generic_append1, $__global_Data_Show_Generic_intercalate, $__global_Data_Show_Generic_append) {
     $__case_0 = $v;
     if (true) {
 $a = $__case_0;
@@ -283,7 +352,7 @@ return $ctor;
 } else {
 if (true) {
 $args = $__case_0;
-return ("(" . (($__global_Data_Show_Generic_intercalate)(" ", ($__global_Data_Semigroup_concatArray)([$ctor], $args)) . ")"));
+return ($__global_Data_Show_Generic_append1)("(", ($__global_Data_Show_Generic_append1)(($__global_Data_Show_Generic_intercalate)(" ", ($__global_Data_Show_Generic_append)([$ctor], $args)), ")"));
 } else {
 throw new \Exception("Pattern match failure");
 };
@@ -292,7 +361,7 @@ throw new \Exception("Pattern match failure");
 throw new \Exception("Pattern match failure");
 };
   };
-  $__fn = function($v) use ($reflectSymbol, $genericShowArgs1, $__global_Data_Show_Generic_intercalate, $__global_Data_Semigroup_concatArray, $__body, &$__fn) {
+  $__fn = function($v) use ($reflectSymbol, $genericShowArgs1, $__global_Data_Show_Generic_append1, $__global_Data_Show_Generic_intercalate, $__global_Data_Show_Generic_append, $__body, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
@@ -339,14 +408,30 @@ function Data_Show_Generic_genericShowSum($dictGenericShow) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$genericShow__prime__1 = ($dictGenericShow)->genericShow__prime__;
+$__case_0 = $dictGenericShow;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->genericShow__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericShow__prime__1 = $__case_res_0;
     $__res = (function() use ($genericShow__prime__1) {
   $__fn = function($dictGenericShow1) use ($genericShow__prime__1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$genericShow__prime__2 = ($dictGenericShow1)->genericShow__prime__;
+$__case_0 = $dictGenericShow1;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->genericShow__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericShow__prime__2 = $__case_res_1;
     $__res = (object)["genericShow'" => (function() use ($genericShow__prime__1, $genericShow__prime__2) {
   $__body = function($v) use ($genericShow__prime__1, $genericShow__prime__2) {
     $__case_0 = $v;
@@ -389,14 +474,30 @@ function Data_Show_Generic_genericShow($dictGeneric) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$from = ($dictGeneric)->from;
+$__case_0 = $dictGeneric;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->from;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$from = $__case_res_0;
     $__res = (function() use ($from) {
   $__fn = function($dictGenericShow) use ($from, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$genericShow__prime__1 = ($dictGenericShow)->genericShow__prime__;
+$__case_0 = $dictGenericShow;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->genericShow__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericShow__prime__1 = $__case_res_1;
     $__res = (function() use ($genericShow__prime__1, $from) {
   $__fn = function($x) use ($genericShow__prime__1, $from, &$__fn) {
   $__num = func_num_args();

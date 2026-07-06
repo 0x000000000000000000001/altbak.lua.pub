@@ -117,7 +117,15 @@ function Data_Monoid_Generic_genericMonoidArgument($dictMonoid) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (object)["genericMempty'" => ($dictMonoid)->mempty];
+$__case_0 = $dictMonoid;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->mempty;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = (object)["genericMempty'" => $__case_res_0];
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Monoid_Generic_genericMonoidArgument'] = __NAMESPACE__ . '\\Data_Monoid_Generic_genericMonoidArgument';
@@ -150,7 +158,15 @@ function Data_Monoid_Generic_genericMonoidConstructor($dictGenericMonoid) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (object)["genericMempty'" => ($dictGenericMonoid)->genericMempty__prime__];
+$__case_0 = $dictGenericMonoid;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->genericMempty__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = (object)["genericMempty'" => $__case_res_0];
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_Monoid_Generic_genericMonoidConstructor'] = __NAMESPACE__ . '\\Data_Monoid_Generic_genericMonoidConstructor';
@@ -162,13 +178,29 @@ function Data_Monoid_Generic_genericMonoidProduct($dictGenericMonoid) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$genericMempty__prime__1 = ($dictGenericMonoid)->genericMempty__prime__;
+$__case_0 = $dictGenericMonoid;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->genericMempty__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$genericMempty__prime__1 = $__case_res_0;
     $__res = (function() use ($genericMempty__prime__1) {
   $__fn = function($dictGenericMonoid1) use ($genericMempty__prime__1, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
+$__case_0 = $dictGenericMonoid1;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->genericMempty__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
     $__res = (object)["genericMempty'" => ((function() {
   $__fn = function($value0, $value1 = null) use (&$__fn) {
   $__num = func_num_args();
@@ -180,7 +212,7 @@ $genericMempty__prime__1 = ($dictGenericMonoid)->genericMempty__prime__;
   return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
   };
   return $__fn;
-})())($genericMempty__prime__1, ($dictGenericMonoid1)->genericMempty__prime__)];
+})())($genericMempty__prime__1, $__case_res_1)];
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -196,14 +228,30 @@ function Data_Monoid_Generic_genericMempty($dictGeneric) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$to = ($dictGeneric)->to;
+$__case_0 = $dictGeneric;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->to;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$to = $__case_res_0;
     $__res = (function() use ($to) {
   $__fn = function($dictGenericMonoid) use ($to, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = ($to)(($dictGenericMonoid)->genericMempty__prime__);
+$__case_0 = $dictGenericMonoid;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->genericMempty__prime__;
+} else {
+throw new \Exception("Pattern match failure");
+};
+    $__res = ($to)($__case_res_1);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;

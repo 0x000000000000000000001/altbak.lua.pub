@@ -110,11 +110,61 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
     static $cache = [];
     if (array_key_exists($id, $cache)) return $cache[$id];
     switch ($id) {
-      case 'Data_NonEmpty_map': $v = (($GLOBALS['Data_Tuple_functorTuple'] ?? \Data\Tuple\phpurs_eval_thunk('Data_Tuple_functorTuple')))->map; break;
-      case 'Data_NonEmpty_map1': $v = (($GLOBALS['Data_Maybe_functorMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_functorMaybe')))->map; break;
-      case 'Data_NonEmpty_append': $v = ($GLOBALS['Data_Semigroup_concatString'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_concatString')); break;
-      case 'Data_NonEmpty_compose': $v = (($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn')))->compose; break;
-      case 'Data_NonEmpty_conj': $v = ($GLOBALS['Data_HeytingAlgebra_boolConj'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_boolConj')); break;
+      case 'Data_NonEmpty_map': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Tuple_functorTuple'] ?? \Data\Tuple\phpurs_eval_thunk('Data_Tuple_functorTuple'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_NonEmpty_map1': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Maybe_functorMaybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_functorMaybe'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_NonEmpty_append': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_Semigroup_semigroupString'] ?? \Data\Semigroup\phpurs_eval_thunk('Data_Semigroup_semigroupString'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_NonEmpty_compose': $v = (function() {
+  $__case_0 = ($GLOBALS['Control_Semigroupoid_semigroupoidFn'] ?? \Control\Semigroupoid\phpurs_eval_thunk('Control_Semigroupoid_semigroupoidFn'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compose;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
+      case 'Data_NonEmpty_conj': $v = (function() {
+  $__case_0 = ($GLOBALS['Data_HeytingAlgebra_heytingAlgebraBoolean'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_heytingAlgebraBoolean'));
+  $__case_res_0 = null;
+  if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->conj;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  return $__case_res_0;
+})(); break;
       default: throw new \Exception("Unknown thunk " . $id);
     }
     $GLOBALS[$id] = $v;
@@ -152,7 +202,15 @@ function Data_NonEmpty_unfoldable1NonEmpty($dictUnfoldable) {
 $__global_Data_Tuple_uncurry = ($GLOBALS['Data_Tuple_uncurry'] ?? \Data\Tuple\phpurs_eval_thunk('Data_Tuple_uncurry'));
 $__global_Data_NonEmpty_map = ($GLOBALS['Data_NonEmpty_map'] ?? \Data\NonEmpty\phpurs_eval_thunk('Data_NonEmpty_map'));
 $__global_Data_NonEmpty_map1 = ($GLOBALS['Data_NonEmpty_map1'] ?? \Data\NonEmpty\phpurs_eval_thunk('Data_NonEmpty_map1'));
-$unfoldr = ($dictUnfoldable)->unfoldr;
+$__case_0 = $dictUnfoldable;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->unfoldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$unfoldr = $__case_res_0;
     $__res = (object)["unfoldr1" => (function() use ($__global_Data_Tuple_uncurry, $__global_Data_NonEmpty_map, $unfoldr, $__global_Data_NonEmpty_map1) {
   $__fn = function($f, $b = null) use ($__global_Data_Tuple_uncurry, $__global_Data_NonEmpty_map, $unfoldr, $__global_Data_NonEmpty_map1, &$__fn) {
   $__num = func_num_args();
@@ -211,7 +269,15 @@ function Data_NonEmpty_singleton($dictPlus) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$empty = ($dictPlus)->empty;
+$__case_0 = $dictPlus;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->empty;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$empty = $__case_res_0;
     $__res = (function() use ($empty) {
   $__fn = function($a) use ($empty, &$__fn) {
   $__num = func_num_args();
@@ -245,29 +311,46 @@ function Data_NonEmpty_showNonEmpty($dictShow) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$show = ($dictShow)->show;
-    $__res = (function() use ($show) {
-  $__fn = function($dictShow1) use ($show, &$__fn) {
+$__global_Data_NonEmpty_append = ($GLOBALS['Data_NonEmpty_append'] ?? \Data\NonEmpty\phpurs_eval_thunk('Data_NonEmpty_append'));
+$__case_0 = $dictShow;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->show;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$show = $__case_res_0;
+    $__res = (function() use ($__global_Data_NonEmpty_append, $show) {
+  $__fn = function($dictShow1) use ($__global_Data_NonEmpty_append, $show, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$show1 = ($dictShow1)->show;
-    $__res = (object)["show" => (function() use ($show, $show1) {
-  $__body = function($v) use ($show, $show1) {
+$__case_0 = $dictShow1;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->show;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$show1 = $__case_res_1;
+    $__res = (object)["show" => (function() use ($__global_Data_NonEmpty_append, $show, $show1) {
+  $__body = function($v) use ($__global_Data_NonEmpty_append, $show, $show1) {
     $__case_0 = $v;
     switch (($__case_0)->tag) {
 case "NonEmpty":
 $a = ($__case_0)->v0;
 $fa = ($__case_0)->v1;
-return ("(NonEmpty " . (($show)($a) . (" " . (($show1)($fa) . ")"))));
+return ($__global_Data_NonEmpty_append)("(NonEmpty ", ($__global_Data_NonEmpty_append)(($show)($a), ($__global_Data_NonEmpty_append)(" ", ($__global_Data_NonEmpty_append)(($show1)($fa), ")"))));
 break;
 default:
 throw new \Exception("Pattern match failure");
 break;
 };
   };
-  $__fn = function($v) use ($show, $show1, $__body, &$__fn) {
+  $__fn = function($v) use ($__global_Data_NonEmpty_append, $show, $show1, $__body, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
@@ -292,14 +375,30 @@ function Data_NonEmpty_semigroupNonEmpty($dictApplicative) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$pure = ($dictApplicative)->pure;
+$__case_0 = $dictApplicative;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pure = $__case_res_0;
     $__res = (function() use ($pure) {
   $__fn = function($dictSemigroup) use ($pure, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$append1 = ($dictSemigroup)->append;
+$__case_0 = $dictSemigroup;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append1 = $__case_res_1;
     $__res = (object)["append" => (function() use ($append1, $pure) {
   $__body = function($v, $v1) use ($append1, $pure) {
     $__case_0 = $v;
@@ -351,9 +450,24 @@ function Data_NonEmpty_oneOf($dictAlternative) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$alt = ((((($dictAlternative)->Plus1)($__global_Prim_undefined))->Alt0)($__global_Prim_undefined))->alt;
-$pure = ((($dictAlternative)->Applicative0)($__global_Prim_undefined))->pure;
+$__case_0 = $dict;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->alt;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$alt = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->pure;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$pure = $__case_res_1;
     $__res = (function() use ($alt, $pure) {
   $__body = function($v) use ($alt, $pure) {
     $__case_0 = $v;
@@ -413,7 +527,15 @@ function Data_NonEmpty_functorNonEmpty($dictFunctor) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$map2 = ($dictFunctor)->map;
+$__case_0 = $dictFunctor;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map2 = $__case_res_0;
     $__res = (object)["map" => (function() use ($map2) {
   $__body = function($f, $m) use ($map2) {
     $__case_0 = $m;
@@ -461,11 +583,61 @@ function Data_NonEmpty_functorWithIndex($dictFunctorWithIndex) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_NonEmpty_functorNonEmpty = ($GLOBALS['Data_NonEmpty_functorNonEmpty'] ?? \Data\NonEmpty\phpurs_eval_thunk('Data_NonEmpty_functorNonEmpty'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_NonEmpty_compose = ($GLOBALS['Data_NonEmpty_compose'] ?? \Data\NonEmpty\phpurs_eval_thunk('Data_NonEmpty_compose'));
-$mapWithIndex = ($dictFunctorWithIndex)->mapWithIndex;
-$functorNonEmpty1 = ($__global_Data_NonEmpty_functorNonEmpty)((($dictFunctorWithIndex)->Functor0)($__global_Prim_undefined));
+$__case_0 = $dictFunctorWithIndex;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->mapWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$mapWithIndex = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map2 = $__case_res_1;
+$functorNonEmpty1 = (object)["map" => (function() use ($map2) {
+  $__body = function($f, $m) use ($map2) {
+    $__case_0 = $m;
+    switch (($__case_0)->tag) {
+case "NonEmpty":
+$v = ($__case_0)->v0;
+$v1 = ($__case_0)->v1;
+return ((function() {
+  $__fn = function($value0, $value1 = null) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($value1) use ($value0, &$__fn) { return $__fn($value0, $value1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = new Phpurs_Data2("NonEmpty", $value0, $value1);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})())(($f)($v), ($map2)($f, $v1));
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($f, $m = null) use ($map2, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($m) use ($f, &$__fn) { return $__fn($f, $m); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($f, $m);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
     $__res = (object)["mapWithIndex" => (function() use ($mapWithIndex, $__global_Data_NonEmpty_compose) {
   $__body = function($f, $v) use ($mapWithIndex, $__global_Data_NonEmpty_compose) {
     $__case_0 = $f;
@@ -563,17 +735,48 @@ function Data_NonEmpty_foldableNonEmpty($dictFoldable) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$foldMap = ($dictFoldable)->foldMap;
-$foldl = ($dictFoldable)->foldl;
-$foldr = ($dictFoldable)->foldr;
-    $__res = (object)["foldMap" => (function() use ($__global_Prim_undefined, $foldMap) {
-  $__fn = function($dictMonoid) use ($__global_Prim_undefined, $foldMap, &$__fn) {
+$__case_0 = $dictFoldable;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldMap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldMap = $__case_res_0;
+$__case_0 = $dictFoldable;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->foldl;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldl = $__case_res_1;
+$__case_0 = $dictFoldable;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->foldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldr = $__case_res_2;
+    $__res = (object)["foldMap" => (function() use ($dict, $foldMap) {
+  $__fn = function($dictMonoid) use ($dict, $foldMap, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$append1 = ((($dictMonoid)->Semigroup0)($__global_Prim_undefined))->append;
+$__case_0 = $dict;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append1 = $__case_res_3;
 $foldMap1 = ($foldMap)($dictMonoid);
     $__res = (function() use ($append1, $foldMap1) {
   $__body = function($f, $v) use ($append1, $foldMap1) {
@@ -685,20 +888,191 @@ function Data_NonEmpty_foldableWithIndexNonEmpty($dictFoldableWithIndex) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_NonEmpty_foldableNonEmpty = ($GLOBALS['Data_NonEmpty_foldableNonEmpty'] ?? \Data\NonEmpty\phpurs_eval_thunk('Data_NonEmpty_foldableNonEmpty'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
 $__global_Data_NonEmpty_compose = ($GLOBALS['Data_NonEmpty_compose'] ?? \Data\NonEmpty\phpurs_eval_thunk('Data_NonEmpty_compose'));
-$foldMapWithIndex = ($dictFoldableWithIndex)->foldMapWithIndex;
-$foldlWithIndex = ($dictFoldableWithIndex)->foldlWithIndex;
-$foldrWithIndex = ($dictFoldableWithIndex)->foldrWithIndex;
-$foldableNonEmpty1 = ($__global_Data_NonEmpty_foldableNonEmpty)((($dictFoldableWithIndex)->Foldable0)($__global_Prim_undefined));
-    $__res = (object)["foldMapWithIndex" => (function() use ($__global_Prim_undefined, $foldMapWithIndex, $__global_Data_NonEmpty_compose) {
-  $__fn = function($dictMonoid) use ($__global_Prim_undefined, $foldMapWithIndex, $__global_Data_NonEmpty_compose, &$__fn) {
+$__case_0 = $dictFoldableWithIndex;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldMapWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldMapWithIndex = $__case_res_0;
+$__case_0 = $dictFoldableWithIndex;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->foldlWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldlWithIndex = $__case_res_1;
+$__case_0 = $dictFoldableWithIndex;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->foldrWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldrWithIndex = $__case_res_2;
+$__case_0 = $dict;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->foldMap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldMap = $__case_res_3;
+$__case_0 = $dict;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->foldl;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldl = $__case_res_4;
+$__case_0 = $dict;
+$__case_res_5 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_5 = ($v)->foldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldr = $__case_res_5;
+$foldableNonEmpty1 = (object)["foldMap" => (function() use ($dict, $foldMap) {
+  $__fn = function($dictMonoid) use ($dict, $foldMap, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$append1 = ((($dictMonoid)->Semigroup0)($__global_Prim_undefined))->append;
+$__case_0 = $dict;
+$__case_res_6 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_6 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append1 = $__case_res_6;
+$foldMap1 = ($foldMap)($dictMonoid);
+    $__res = (function() use ($append1, $foldMap1) {
+  $__body = function($f, $v) use ($append1, $foldMap1) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    switch (($__case_1)->tag) {
+case "NonEmpty":
+$f1 = $__case_0;
+$a = ($__case_1)->v0;
+$fa = ($__case_1)->v1;
+return ($append1)(($f1)($a), ($foldMap1)($f1, $fa));
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($f, $v = null) use ($append1, $foldMap1, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, &$__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($f, $v);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})(), "foldl" => (function() use ($foldl) {
+  $__body = function($f, $b, $v) use ($foldl) {
+    $__case_0 = $f;
+    $__case_1 = $b;
+    $__case_2 = $v;
+    switch (($__case_2)->tag) {
+case "NonEmpty":
+$f1 = $__case_0;
+$b1 = $__case_1;
+$a = ($__case_2)->v0;
+$fa = ($__case_2)->v1;
+return ($foldl)($f1, ($f1)($b1, $a), $fa);
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($f, $b = null, $v = null) use ($foldl, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($v) use ($f, $b, &$__fn) { return $__fn($f, $b, $v); };
+    if ($__num === 1) return function($b, $v = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $b, $v);
+      if ($__num2 === 1) return function($v) use ($f, $b, &$__fn) { return $__fn($f, $b, $v); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = $__body($f, $b, $v);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})(), "foldr" => (function() use ($foldr) {
+  $__body = function($f, $b, $v) use ($foldr) {
+    $__case_0 = $f;
+    $__case_1 = $b;
+    $__case_2 = $v;
+    switch (($__case_2)->tag) {
+case "NonEmpty":
+$f1 = $__case_0;
+$b1 = $__case_1;
+$a = ($__case_2)->v0;
+$fa = ($__case_2)->v1;
+return ($f1)($a, ($foldr)($f1, $b1, $fa));
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($f, $b = null, $v = null) use ($foldr, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($v) use ($f, $b, &$__fn) { return $__fn($f, $b, $v); };
+    if ($__num === 1) return function($b, $v = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $b, $v);
+      if ($__num2 === 1) return function($v) use ($f, $b, &$__fn) { return $__fn($f, $b, $v); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = $__body($f, $b, $v);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})()];
+    $__res = (object)["foldMapWithIndex" => (function() use ($dict, $foldMapWithIndex, $__global_Data_NonEmpty_compose) {
+  $__fn = function($dictMonoid) use ($dict, $foldMapWithIndex, $__global_Data_NonEmpty_compose, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dict;
+$__case_res_7 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_7 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append1 = $__case_res_7;
 $foldMapWithIndex1 = ($foldMapWithIndex)($dictMonoid);
     $__res = (function() use ($append1, $foldMapWithIndex1, $__global_Data_NonEmpty_compose) {
   $__body = function($f, $v) use ($append1, $foldMapWithIndex1, $__global_Data_NonEmpty_compose) {
@@ -850,22 +1224,237 @@ function Data_NonEmpty_traversableNonEmpty($dictTraversable) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_NonEmpty_functorNonEmpty = ($GLOBALS['Data_NonEmpty_functorNonEmpty'] ?? \Data\NonEmpty\phpurs_eval_thunk('Data_NonEmpty_functorNonEmpty'));
 $__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$__global_Data_NonEmpty_foldableNonEmpty = ($GLOBALS['Data_NonEmpty_foldableNonEmpty'] ?? \Data\NonEmpty\phpurs_eval_thunk('Data_NonEmpty_foldableNonEmpty'));
-$sequence = ($dictTraversable)->sequence;
-$traverse = ($dictTraversable)->traverse;
-$functorNonEmpty1 = ($__global_Data_NonEmpty_functorNonEmpty)((($dictTraversable)->Functor0)($__global_Prim_undefined));
-$foldableNonEmpty1 = ($__global_Data_NonEmpty_foldableNonEmpty)((($dictTraversable)->Foldable1)($__global_Prim_undefined));
-    $__res = (object)["sequence" => (function() use ($__global_Prim_undefined, $sequence) {
-  $__fn = function($dictApplicative) use ($__global_Prim_undefined, $sequence, &$__fn) {
+$__case_0 = $dictTraversable;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->sequence;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$sequence = $__case_res_0;
+$__case_0 = $dictTraversable;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->traverse;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$traverse = $__case_res_1;
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map2 = $__case_res_2;
+$functorNonEmpty1 = (object)["map" => (function() use ($map2) {
+  $__body = function($f, $m) use ($map2) {
+    $__case_0 = $m;
+    switch (($__case_0)->tag) {
+case "NonEmpty":
+$v = ($__case_0)->v0;
+$v1 = ($__case_0)->v1;
+return ((function() {
+  $__fn = function($value0, $value1 = null) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($value1) use ($value0, &$__fn) { return $__fn($value0, $value1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = new Phpurs_Data2("NonEmpty", $value0, $value1);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})())(($f)($v), ($map2)($f, $v1));
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($f, $m = null) use ($map2, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($m) use ($f, &$__fn) { return $__fn($f, $m); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($f, $m);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+$__case_0 = $dict;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->foldMap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldMap = $__case_res_3;
+$__case_0 = $dict;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->foldl;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldl = $__case_res_4;
+$__case_0 = $dict;
+$__case_res_5 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_5 = ($v)->foldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldr = $__case_res_5;
+$foldableNonEmpty1 = (object)["foldMap" => (function() use ($dict, $foldMap) {
+  $__fn = function($dictMonoid) use ($dict, $foldMap, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dict;
+$__case_res_6 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_6 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append1 = $__case_res_6;
+$foldMap1 = ($foldMap)($dictMonoid);
+    $__res = (function() use ($append1, $foldMap1) {
+  $__body = function($f, $v) use ($append1, $foldMap1) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    switch (($__case_1)->tag) {
+case "NonEmpty":
+$f1 = $__case_0;
+$a = ($__case_1)->v0;
+$fa = ($__case_1)->v1;
+return ($append1)(($f1)($a), ($foldMap1)($f1, $fa));
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($f, $v = null) use ($append1, $foldMap1, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, &$__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($f, $v);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})(), "foldl" => (function() use ($foldl) {
+  $__body = function($f, $b, $v) use ($foldl) {
+    $__case_0 = $f;
+    $__case_1 = $b;
+    $__case_2 = $v;
+    switch (($__case_2)->tag) {
+case "NonEmpty":
+$f1 = $__case_0;
+$b1 = $__case_1;
+$a = ($__case_2)->v0;
+$fa = ($__case_2)->v1;
+return ($foldl)($f1, ($f1)($b1, $a), $fa);
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($f, $b = null, $v = null) use ($foldl, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($v) use ($f, $b, &$__fn) { return $__fn($f, $b, $v); };
+    if ($__num === 1) return function($b, $v = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $b, $v);
+      if ($__num2 === 1) return function($v) use ($f, $b, &$__fn) { return $__fn($f, $b, $v); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = $__body($f, $b, $v);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})(), "foldr" => (function() use ($foldr) {
+  $__body = function($f, $b, $v) use ($foldr) {
+    $__case_0 = $f;
+    $__case_1 = $b;
+    $__case_2 = $v;
+    switch (($__case_2)->tag) {
+case "NonEmpty":
+$f1 = $__case_0;
+$b1 = $__case_1;
+$a = ($__case_2)->v0;
+$fa = ($__case_2)->v1;
+return ($f1)($a, ($foldr)($f1, $b1, $fa));
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($f, $b = null, $v = null) use ($foldr, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($v) use ($f, $b, &$__fn) { return $__fn($f, $b, $v); };
+    if ($__num === 1) return function($b, $v = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $b, $v);
+      if ($__num2 === 1) return function($v) use ($f, $b, &$__fn) { return $__fn($f, $b, $v); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = $__body($f, $b, $v);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})()];
+    $__res = (object)["sequence" => (function() use ($__global_Prim_undefined, $dict, $sequence) {
+  $__fn = function($dictApplicative) use ($__global_Prim_undefined, $dict, $sequence, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $Apply0 = (($dictApplicative)->Apply0)($__global_Prim_undefined);
-$apply = ($Apply0)->apply;
-$map2 = ((($Apply0)->Functor0)($__global_Prim_undefined))->map;
+$__case_0 = $Apply0;
+$__case_res_7 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_7 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$apply = $__case_res_7;
+$__case_0 = $dict;
+$__case_res_8 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_8 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map2 = $__case_res_8;
 $sequence1 = ($sequence)($dictApplicative);
     $__res = (function() use ($apply, $map2, $sequence1) {
   $__body = function($v) use ($apply, $map2, $sequence1) {
@@ -905,15 +1494,31 @@ break;
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
-})(), "traverse" => (function() use ($__global_Prim_undefined, $traverse) {
-  $__fn = function($dictApplicative) use ($__global_Prim_undefined, $traverse, &$__fn) {
+})(), "traverse" => (function() use ($__global_Prim_undefined, $dict, $traverse) {
+  $__fn = function($dictApplicative) use ($__global_Prim_undefined, $dict, $traverse, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $Apply0 = (($dictApplicative)->Apply0)($__global_Prim_undefined);
-$apply = ($Apply0)->apply;
-$map2 = ((($Apply0)->Functor0)($__global_Prim_undefined))->map;
+$__case_0 = $Apply0;
+$__case_res_9 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_9 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$apply = $__case_res_9;
+$__case_0 = $dict;
+$__case_res_10 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_10 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map2 = $__case_res_10;
 $traverse1 = ($traverse)($dictApplicative);
     $__res = (function() use ($apply, $map2, $traverse1) {
   $__body = function($f, $v) use ($apply, $map2, $traverse1) {
@@ -988,24 +1593,835 @@ function Data_NonEmpty_traversableWithIndexNonEmpty($dictTraversableWithIndex) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_NonEmpty_functorWithIndex = ($GLOBALS['Data_NonEmpty_functorWithIndex'] ?? \Data\NonEmpty\phpurs_eval_thunk('Data_NonEmpty_functorWithIndex'));
-$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$__global_Data_NonEmpty_foldableWithIndexNonEmpty = ($GLOBALS['Data_NonEmpty_foldableWithIndexNonEmpty'] ?? \Data\NonEmpty\phpurs_eval_thunk('Data_NonEmpty_foldableWithIndexNonEmpty'));
-$__global_Data_NonEmpty_traversableNonEmpty = ($GLOBALS['Data_NonEmpty_traversableNonEmpty'] ?? \Data\NonEmpty\phpurs_eval_thunk('Data_NonEmpty_traversableNonEmpty'));
 $__global_Data_NonEmpty_compose = ($GLOBALS['Data_NonEmpty_compose'] ?? \Data\NonEmpty\phpurs_eval_thunk('Data_NonEmpty_compose'));
-$traverseWithIndex = ($dictTraversableWithIndex)->traverseWithIndex;
-$functorWithIndex1 = ($__global_Data_NonEmpty_functorWithIndex)((($dictTraversableWithIndex)->FunctorWithIndex0)($__global_Prim_undefined));
-$foldableWithIndexNonEmpty1 = ($__global_Data_NonEmpty_foldableWithIndexNonEmpty)((($dictTraversableWithIndex)->FoldableWithIndex1)($__global_Prim_undefined));
-$traversableNonEmpty1 = ($__global_Data_NonEmpty_traversableNonEmpty)((($dictTraversableWithIndex)->Traversable2)($__global_Prim_undefined));
-    $__res = (object)["traverseWithIndex" => (function() use ($__global_Prim_undefined, $traverseWithIndex, $__global_Data_NonEmpty_compose) {
-  $__fn = function($dictApplicative) use ($__global_Prim_undefined, $traverseWithIndex, $__global_Data_NonEmpty_compose, &$__fn) {
+$__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
+$__case_0 = $dictTraversableWithIndex;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->traverseWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$traverseWithIndex = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->mapWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$mapWithIndex = $__case_res_1;
+$__case_0 = $dict;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map2 = $__case_res_2;
+$functorNonEmpty1 = (object)["map" => (function() use ($map2) {
+  $__body = function($f, $m) use ($map2) {
+    $__case_0 = $m;
+    switch (($__case_0)->tag) {
+case "NonEmpty":
+$v = ($__case_0)->v0;
+$v1 = ($__case_0)->v1;
+return ((function() {
+  $__fn = function($value0, $value1 = null) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($value1) use ($value0, &$__fn) { return $__fn($value0, $value1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = new Phpurs_Data2("NonEmpty", $value0, $value1);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})())(($f)($v), ($map2)($f, $v1));
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($f, $m = null) use ($map2, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($m) use ($f, &$__fn) { return $__fn($f, $m); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($f, $m);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+$functorWithIndex1 = (object)["mapWithIndex" => (function() use ($mapWithIndex, $__global_Data_NonEmpty_compose) {
+  $__body = function($f, $v) use ($mapWithIndex, $__global_Data_NonEmpty_compose) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    switch (($__case_1)->tag) {
+case "NonEmpty":
+$f1 = $__case_0;
+$a = ($__case_1)->v0;
+$fa = ($__case_1)->v1;
+return ((function() {
+  $__fn = function($value0, $value1 = null) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($value1) use ($value0, &$__fn) { return $__fn($value0, $value1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = new Phpurs_Data2("NonEmpty", $value0, $value1);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})())(($f1)(($GLOBALS['__phpurs_data0_Nothing'] ??= new Phpurs_Data0("Nothing")), $a), ($mapWithIndex)(($__global_Data_NonEmpty_compose)($f1, (function() {
+  $__fn = function($value0) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = new Phpurs_Data1("Just", $value0);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()), $fa));
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($f, $v = null) use ($mapWithIndex, $__global_Data_NonEmpty_compose, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, &$__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($f, $v);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "Functor0" => (function() use ($functorNonEmpty1) {
+  $__fn = function($__dollar____unused) use ($functorNonEmpty1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $functorNonEmpty1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+$__case_0 = $dict;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->foldMapWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldMapWithIndex = $__case_res_3;
+$__case_0 = $dict;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->foldlWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldlWithIndex = $__case_res_4;
+$__case_0 = $dict;
+$__case_res_5 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_5 = ($v)->foldrWithIndex;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldrWithIndex = $__case_res_5;
+$__case_0 = $dict;
+$__case_res_6 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_6 = ($v)->foldMap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldMap = $__case_res_6;
+$__case_0 = $dict;
+$__case_res_7 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_7 = ($v)->foldl;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldl = $__case_res_7;
+$__case_0 = $dict;
+$__case_res_8 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_8 = ($v)->foldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldr = $__case_res_8;
+$foldableNonEmpty1 = (object)["foldMap" => (function() use ($dict, $foldMap) {
+  $__fn = function($dictMonoid) use ($dict, $foldMap, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dict;
+$__case_res_9 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_9 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append1 = $__case_res_9;
+$foldMap1 = ($foldMap)($dictMonoid);
+    $__res = (function() use ($append1, $foldMap1) {
+  $__body = function($f, $v) use ($append1, $foldMap1) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    switch (($__case_1)->tag) {
+case "NonEmpty":
+$f1 = $__case_0;
+$a = ($__case_1)->v0;
+$fa = ($__case_1)->v1;
+return ($append1)(($f1)($a), ($foldMap1)($f1, $fa));
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($f, $v = null) use ($append1, $foldMap1, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, &$__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($f, $v);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})(), "foldl" => (function() use ($foldl) {
+  $__body = function($f, $b, $v) use ($foldl) {
+    $__case_0 = $f;
+    $__case_1 = $b;
+    $__case_2 = $v;
+    switch (($__case_2)->tag) {
+case "NonEmpty":
+$f1 = $__case_0;
+$b1 = $__case_1;
+$a = ($__case_2)->v0;
+$fa = ($__case_2)->v1;
+return ($foldl)($f1, ($f1)($b1, $a), $fa);
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($f, $b = null, $v = null) use ($foldl, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($v) use ($f, $b, &$__fn) { return $__fn($f, $b, $v); };
+    if ($__num === 1) return function($b, $v = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $b, $v);
+      if ($__num2 === 1) return function($v) use ($f, $b, &$__fn) { return $__fn($f, $b, $v); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = $__body($f, $b, $v);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})(), "foldr" => (function() use ($foldr) {
+  $__body = function($f, $b, $v) use ($foldr) {
+    $__case_0 = $f;
+    $__case_1 = $b;
+    $__case_2 = $v;
+    switch (($__case_2)->tag) {
+case "NonEmpty":
+$f1 = $__case_0;
+$b1 = $__case_1;
+$a = ($__case_2)->v0;
+$fa = ($__case_2)->v1;
+return ($f1)($a, ($foldr)($f1, $b1, $fa));
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($f, $b = null, $v = null) use ($foldr, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($v) use ($f, $b, &$__fn) { return $__fn($f, $b, $v); };
+    if ($__num === 1) return function($b, $v = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $b, $v);
+      if ($__num2 === 1) return function($v) use ($f, $b, &$__fn) { return $__fn($f, $b, $v); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = $__body($f, $b, $v);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})()];
+$foldableWithIndexNonEmpty1 = (object)["foldMapWithIndex" => (function() use ($dict, $foldMapWithIndex, $__global_Data_NonEmpty_compose) {
+  $__fn = function($dictMonoid) use ($dict, $foldMapWithIndex, $__global_Data_NonEmpty_compose, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dict;
+$__case_res_10 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_10 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append1 = $__case_res_10;
+$foldMapWithIndex1 = ($foldMapWithIndex)($dictMonoid);
+    $__res = (function() use ($append1, $foldMapWithIndex1, $__global_Data_NonEmpty_compose) {
+  $__body = function($f, $v) use ($append1, $foldMapWithIndex1, $__global_Data_NonEmpty_compose) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    switch (($__case_1)->tag) {
+case "NonEmpty":
+$f1 = $__case_0;
+$a = ($__case_1)->v0;
+$fa = ($__case_1)->v1;
+return ($append1)(($f1)(($GLOBALS['__phpurs_data0_Nothing'] ??= new Phpurs_Data0("Nothing")), $a), ($foldMapWithIndex1)(($__global_Data_NonEmpty_compose)($f1, (function() {
+  $__fn = function($value0) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = new Phpurs_Data1("Just", $value0);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()), $fa));
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($f, $v = null) use ($append1, $foldMapWithIndex1, $__global_Data_NonEmpty_compose, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, &$__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($f, $v);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})(), "foldlWithIndex" => (function() use ($foldlWithIndex, $__global_Data_NonEmpty_compose) {
+  $__body = function($f, $b, $v) use ($foldlWithIndex, $__global_Data_NonEmpty_compose) {
+    $__case_0 = $f;
+    $__case_1 = $b;
+    $__case_2 = $v;
+    switch (($__case_2)->tag) {
+case "NonEmpty":
+$f1 = $__case_0;
+$b1 = $__case_1;
+$a = ($__case_2)->v0;
+$fa = ($__case_2)->v1;
+return ($foldlWithIndex)(($__global_Data_NonEmpty_compose)($f1, (function() {
+  $__fn = function($value0) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = new Phpurs_Data1("Just", $value0);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()), ($f1)(($GLOBALS['__phpurs_data0_Nothing'] ??= new Phpurs_Data0("Nothing")), $b1, $a), $fa);
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($f, $b = null, $v = null) use ($foldlWithIndex, $__global_Data_NonEmpty_compose, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($v) use ($f, $b, &$__fn) { return $__fn($f, $b, $v); };
+    if ($__num === 1) return function($b, $v = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $b, $v);
+      if ($__num2 === 1) return function($v) use ($f, $b, &$__fn) { return $__fn($f, $b, $v); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = $__body($f, $b, $v);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})(), "foldrWithIndex" => (function() use ($foldrWithIndex, $__global_Data_NonEmpty_compose) {
+  $__body = function($f, $b, $v) use ($foldrWithIndex, $__global_Data_NonEmpty_compose) {
+    $__case_0 = $f;
+    $__case_1 = $b;
+    $__case_2 = $v;
+    switch (($__case_2)->tag) {
+case "NonEmpty":
+$f1 = $__case_0;
+$b1 = $__case_1;
+$a = ($__case_2)->v0;
+$fa = ($__case_2)->v1;
+return ($f1)(($GLOBALS['__phpurs_data0_Nothing'] ??= new Phpurs_Data0("Nothing")), $a, ($foldrWithIndex)(($__global_Data_NonEmpty_compose)($f1, (function() {
+  $__fn = function($value0) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = new Phpurs_Data1("Just", $value0);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()), $b1, $fa));
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($f, $b = null, $v = null) use ($foldrWithIndex, $__global_Data_NonEmpty_compose, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($v) use ($f, $b, &$__fn) { return $__fn($f, $b, $v); };
+    if ($__num === 1) return function($b, $v = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $b, $v);
+      if ($__num2 === 1) return function($v) use ($f, $b, &$__fn) { return $__fn($f, $b, $v); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = $__body($f, $b, $v);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})(), "Foldable0" => (function() use ($foldableNonEmpty1) {
+  $__fn = function($__dollar____unused) use ($foldableNonEmpty1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $foldableNonEmpty1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+$__case_0 = $dict;
+$__case_res_11 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_11 = ($v)->sequence;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$sequence = $__case_res_11;
+$__case_0 = $dict;
+$__case_res_12 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_12 = ($v)->traverse;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$traverse = $__case_res_12;
+$__case_0 = $dict;
+$__case_res_13 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_13 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map2 = $__case_res_13;
+$functorNonEmpty1 = (object)["map" => (function() use ($map2) {
+  $__body = function($f, $m) use ($map2) {
+    $__case_0 = $m;
+    switch (($__case_0)->tag) {
+case "NonEmpty":
+$v = ($__case_0)->v0;
+$v1 = ($__case_0)->v1;
+return ((function() {
+  $__fn = function($value0, $value1 = null) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($value1) use ($value0, &$__fn) { return $__fn($value0, $value1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = new Phpurs_Data2("NonEmpty", $value0, $value1);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})())(($f)($v), ($map2)($f, $v1));
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($f, $m = null) use ($map2, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($m) use ($f, &$__fn) { return $__fn($f, $m); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($f, $m);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+$__case_0 = $dict;
+$__case_res_14 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_14 = ($v)->foldMap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldMap = $__case_res_14;
+$__case_0 = $dict;
+$__case_res_15 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_15 = ($v)->foldl;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldl = $__case_res_15;
+$__case_0 = $dict;
+$__case_res_16 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_16 = ($v)->foldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldr = $__case_res_16;
+$foldableNonEmpty1 = (object)["foldMap" => (function() use ($dict, $foldMap) {
+  $__fn = function($dictMonoid) use ($dict, $foldMap, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dict;
+$__case_res_17 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_17 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append1 = $__case_res_17;
+$foldMap1 = ($foldMap)($dictMonoid);
+    $__res = (function() use ($append1, $foldMap1) {
+  $__body = function($f, $v) use ($append1, $foldMap1) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    switch (($__case_1)->tag) {
+case "NonEmpty":
+$f1 = $__case_0;
+$a = ($__case_1)->v0;
+$fa = ($__case_1)->v1;
+return ($append1)(($f1)($a), ($foldMap1)($f1, $fa));
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($f, $v = null) use ($append1, $foldMap1, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, &$__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($f, $v);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})(), "foldl" => (function() use ($foldl) {
+  $__body = function($f, $b, $v) use ($foldl) {
+    $__case_0 = $f;
+    $__case_1 = $b;
+    $__case_2 = $v;
+    switch (($__case_2)->tag) {
+case "NonEmpty":
+$f1 = $__case_0;
+$b1 = $__case_1;
+$a = ($__case_2)->v0;
+$fa = ($__case_2)->v1;
+return ($foldl)($f1, ($f1)($b1, $a), $fa);
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($f, $b = null, $v = null) use ($foldl, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($v) use ($f, $b, &$__fn) { return $__fn($f, $b, $v); };
+    if ($__num === 1) return function($b, $v = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $b, $v);
+      if ($__num2 === 1) return function($v) use ($f, $b, &$__fn) { return $__fn($f, $b, $v); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = $__body($f, $b, $v);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})(), "foldr" => (function() use ($foldr) {
+  $__body = function($f, $b, $v) use ($foldr) {
+    $__case_0 = $f;
+    $__case_1 = $b;
+    $__case_2 = $v;
+    switch (($__case_2)->tag) {
+case "NonEmpty":
+$f1 = $__case_0;
+$b1 = $__case_1;
+$a = ($__case_2)->v0;
+$fa = ($__case_2)->v1;
+return ($f1)($a, ($foldr)($f1, $b1, $fa));
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($f, $b = null, $v = null) use ($foldr, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($v) use ($f, $b, &$__fn) { return $__fn($f, $b, $v); };
+    if ($__num === 1) return function($b, $v = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $b, $v);
+      if ($__num2 === 1) return function($v) use ($f, $b, &$__fn) { return $__fn($f, $b, $v); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = $__body($f, $b, $v);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})()];
+$traversableNonEmpty1 = (object)["sequence" => (function() use ($__global_Prim_undefined, $dict, $sequence) {
+  $__fn = function($dictApplicative) use ($__global_Prim_undefined, $dict, $sequence, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
 $Apply0 = (($dictApplicative)->Apply0)($__global_Prim_undefined);
-$apply = ($Apply0)->apply;
-$map2 = ((($Apply0)->Functor0)($__global_Prim_undefined))->map;
+$__case_0 = $Apply0;
+$__case_res_18 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_18 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$apply = $__case_res_18;
+$__case_0 = $dict;
+$__case_res_19 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_19 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map2 = $__case_res_19;
+$sequence1 = ($sequence)($dictApplicative);
+    $__res = (function() use ($apply, $map2, $sequence1) {
+  $__body = function($v) use ($apply, $map2, $sequence1) {
+    $__case_0 = $v;
+    switch (($__case_0)->tag) {
+case "NonEmpty":
+$a = ($__case_0)->v0;
+$fa = ($__case_0)->v1;
+return ($apply)(($map2)((function() {
+  $__fn = function($value0, $value1 = null) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($value1) use ($value0, &$__fn) { return $__fn($value0, $value1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = new Phpurs_Data2("NonEmpty", $value0, $value1);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), $a), ($sequence1)($fa));
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($v) use ($apply, $map2, $sequence1, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $__body($v);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})(), "traverse" => (function() use ($__global_Prim_undefined, $dict, $traverse) {
+  $__fn = function($dictApplicative) use ($__global_Prim_undefined, $dict, $traverse, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$Apply0 = (($dictApplicative)->Apply0)($__global_Prim_undefined);
+$__case_0 = $Apply0;
+$__case_res_20 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_20 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$apply = $__case_res_20;
+$__case_0 = $dict;
+$__case_res_21 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_21 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map2 = $__case_res_21;
+$traverse1 = ($traverse)($dictApplicative);
+    $__res = (function() use ($apply, $map2, $traverse1) {
+  $__body = function($f, $v) use ($apply, $map2, $traverse1) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    switch (($__case_1)->tag) {
+case "NonEmpty":
+$f1 = $__case_0;
+$a = ($__case_1)->v0;
+$fa = ($__case_1)->v1;
+return ($apply)(($map2)((function() {
+  $__fn = function($value0, $value1 = null) use (&$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($value1) use ($value0, &$__fn) { return $__fn($value0, $value1); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = new Phpurs_Data2("NonEmpty", $value0, $value1);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), ($f1)($a)), ($traverse1)($f1, $fa));
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($f, $v = null) use ($apply, $map2, $traverse1, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, &$__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($f, $v);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})(), "Functor0" => (function() use ($functorNonEmpty1) {
+  $__fn = function($__dollar____unused) use ($functorNonEmpty1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $functorNonEmpty1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})(), "Foldable1" => (function() use ($foldableNonEmpty1) {
+  $__fn = function($__dollar____unused) use ($foldableNonEmpty1, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $foldableNonEmpty1;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+    $__res = (object)["traverseWithIndex" => (function() use ($__global_Prim_undefined, $dict, $traverseWithIndex, $__global_Data_NonEmpty_compose) {
+  $__fn = function($dictApplicative) use ($__global_Prim_undefined, $dict, $traverseWithIndex, $__global_Data_NonEmpty_compose, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$Apply0 = (($dictApplicative)->Apply0)($__global_Prim_undefined);
+$__case_0 = $Apply0;
+$__case_res_22 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_22 = ($v)->apply;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$apply = $__case_res_22;
+$__case_0 = $dict;
+$__case_res_23 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_23 = ($v)->map;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$map2 = $__case_res_23;
 $traverseWithIndex1 = ($traverseWithIndex)($dictApplicative);
     $__res = (function() use ($apply, $map2, $traverseWithIndex1, $__global_Data_NonEmpty_compose) {
   $__body = function($f, $v) use ($apply, $map2, $traverseWithIndex1, $__global_Data_NonEmpty_compose) {
@@ -1100,19 +2516,183 @@ function Data_NonEmpty_foldable1NonEmpty($dictFoldable) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_NonEmpty_foldableNonEmpty = ($GLOBALS['Data_NonEmpty_foldableNonEmpty'] ?? \Data\NonEmpty\phpurs_eval_thunk('Data_NonEmpty_foldableNonEmpty'));
 $__global_Data_Maybe_maybe = ($GLOBALS['Data_Maybe_maybe'] ?? \Data\Maybe\phpurs_eval_thunk('Data_Maybe_maybe'));
 $__global_Data_NonEmpty_compose = ($GLOBALS['Data_NonEmpty_compose'] ?? \Data\NonEmpty\phpurs_eval_thunk('Data_NonEmpty_compose'));
-$foldl = ($dictFoldable)->foldl;
-$foldr = ($dictFoldable)->foldr;
-$foldableNonEmpty1 = ($__global_Data_NonEmpty_foldableNonEmpty)($dictFoldable);
+$__case_0 = $dictFoldable;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->foldl;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldl = $__case_res_0;
+$__case_0 = $dictFoldable;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->foldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldr = $__case_res_1;
+$__case_0 = $dictFoldable;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->foldMap;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldMap = $__case_res_2;
+$__case_0 = $dictFoldable;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->foldl;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldl = $__case_res_3;
+$__case_0 = $dictFoldable;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->foldr;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$foldr = $__case_res_4;
+$foldableNonEmpty1 = (object)["foldMap" => (function() use ($dict, $foldMap) {
+  $__fn = function($dictMonoid) use ($dict, $foldMap, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dict;
+$__case_res_5 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_5 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append1 = $__case_res_5;
+$foldMap1 = ($foldMap)($dictMonoid);
+    $__res = (function() use ($append1, $foldMap1) {
+  $__body = function($f, $v) use ($append1, $foldMap1) {
+    $__case_0 = $f;
+    $__case_1 = $v;
+    switch (($__case_1)->tag) {
+case "NonEmpty":
+$f1 = $__case_0;
+$a = ($__case_1)->v0;
+$fa = ($__case_1)->v1;
+return ($append1)(($f1)($a), ($foldMap1)($f1, $fa));
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($f, $v = null) use ($append1, $foldMap1, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($v) use ($f, &$__fn) { return $__fn($f, $v); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($f, $v);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})();
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})(), "foldl" => (function() use ($foldl) {
+  $__body = function($f, $b, $v) use ($foldl) {
+    $__case_0 = $f;
+    $__case_1 = $b;
+    $__case_2 = $v;
+    switch (($__case_2)->tag) {
+case "NonEmpty":
+$f1 = $__case_0;
+$b1 = $__case_1;
+$a = ($__case_2)->v0;
+$fa = ($__case_2)->v1;
+return ($foldl)($f1, ($f1)($b1, $a), $fa);
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($f, $b = null, $v = null) use ($foldl, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($v) use ($f, $b, &$__fn) { return $__fn($f, $b, $v); };
+    if ($__num === 1) return function($b, $v = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $b, $v);
+      if ($__num2 === 1) return function($v) use ($f, $b, &$__fn) { return $__fn($f, $b, $v); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = $__body($f, $b, $v);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})(), "foldr" => (function() use ($foldr) {
+  $__body = function($f, $b, $v) use ($foldr) {
+    $__case_0 = $f;
+    $__case_1 = $b;
+    $__case_2 = $v;
+    switch (($__case_2)->tag) {
+case "NonEmpty":
+$f1 = $__case_0;
+$b1 = $__case_1;
+$a = ($__case_2)->v0;
+$fa = ($__case_2)->v1;
+return ($f1)($a, ($foldr)($f1, $b1, $fa));
+break;
+default:
+throw new \Exception("Pattern match failure");
+break;
+};
+  };
+  $__fn = function($f, $b = null, $v = null) use ($foldr, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 3) {
+    if ($__num === 2) return function($v) use ($f, $b, &$__fn) { return $__fn($f, $b, $v); };
+    if ($__num === 1) return function($b, $v = null) use ($f, &$__fn) {
+      $__num2 = func_num_args();
+      if ($__num2 === 2) return $__fn($f, $b, $v);
+      if ($__num2 === 1) return function($v) use ($f, $b, &$__fn) { return $__fn($f, $b, $v); };
+      return phpurs_curry_fallback($__fn, [$f], 3);
+    };
+    return phpurs_curry_fallback($__fn, func_get_args(), 3);
+  }
+    $__res = $__body($f, $b, $v);
+  return $__num > 3 ? $__res(...array_slice(func_get_args(), 3)) : $__res;
+  };
+  return $__fn;
+})()];
     $__res = (object)["foldMap1" => (function() use ($foldl) {
   $__fn = function($dictSemigroup) use ($foldl, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$append1 = ($dictSemigroup)->append;
+$__case_0 = $dictSemigroup;
+$__case_res_6 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_6 = ($v)->append;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$append1 = $__case_res_6;
     $__res = (function() use ($foldl, $append1) {
   $__body = function($f, $v) use ($foldl, $append1) {
     $__case_0 = $f;
@@ -1248,8 +2828,16 @@ function Data_NonEmpty_foldl1($dictFoldable) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_NonEmpty_foldable1NonEmpty = ($GLOBALS['Data_NonEmpty_foldable1NonEmpty'] ?? \Data\NonEmpty\phpurs_eval_thunk('Data_NonEmpty_foldable1NonEmpty'));
-    $__res = (($__global_Data_NonEmpty_foldable1NonEmpty)($dictFoldable))->foldl1;
+  $__body = function($dictFoldable) {
+    $__case_0 = $dict;
+    if (true) {
+$v = $__case_0;
+return ($v)->foldl1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+    $__res = $__body($dictFoldable);
     return 1 < $__num ? $__res(...array_slice(func_get_args(), 1)) : $__res;
 }
 $GLOBALS['Data_NonEmpty_foldl1'] = __NAMESPACE__ . '\\Data_NonEmpty_foldl1';
@@ -1261,18 +2849,34 @@ function Data_NonEmpty_eqNonEmpty($dictEq1) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_HeytingAlgebra_boolConj = ($GLOBALS['Data_HeytingAlgebra_boolConj'] ?? \Data\HeytingAlgebra\phpurs_eval_thunk('Data_HeytingAlgebra_boolConj'));
-$eq1 = ($dictEq1)->eq1;
-    $__res = (function() use ($eq1, $__global_Data_HeytingAlgebra_boolConj) {
-  $__fn = function($dictEq) use ($eq1, $__global_Data_HeytingAlgebra_boolConj, &$__fn) {
+$__global_Data_NonEmpty_conj = ($GLOBALS['Data_NonEmpty_conj'] ?? \Data\NonEmpty\phpurs_eval_thunk('Data_NonEmpty_conj'));
+$__case_0 = $dictEq1;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq1 = $__case_res_0;
+    $__res = (function() use ($eq1, $__global_Data_NonEmpty_conj) {
+  $__fn = function($dictEq) use ($eq1, $__global_Data_NonEmpty_conj, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$eq = ($dictEq)->eq;
+$__case_0 = $dictEq;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq = $__case_res_1;
 $eq11 = ($eq1)($dictEq);
-    $__res = (object)["eq" => (function() use ($__global_Data_HeytingAlgebra_boolConj, $eq, $eq11) {
-  $__body = function($x, $y) use ($__global_Data_HeytingAlgebra_boolConj, $eq, $eq11) {
+    $__res = (object)["eq" => (function() use ($__global_Data_NonEmpty_conj, $eq, $eq11) {
+  $__body = function($x, $y) use ($__global_Data_NonEmpty_conj, $eq, $eq11) {
     $__case_0 = $x;
     $__case_1 = $y;
     if (((($__case_0)->tag === "NonEmpty") && (($__case_1)->tag === "NonEmpty"))) {
@@ -1280,12 +2884,12 @@ $l = ($__case_0)->v0;
 $l1 = ($__case_0)->v1;
 $r = ($__case_1)->v0;
 $r1 = ($__case_1)->v1;
-return ($__global_Data_HeytingAlgebra_boolConj)(($eq)($l, $r), ($eq11)($l1, $r1));
+return ($__global_Data_NonEmpty_conj)(($eq)($l, $r), ($eq11)($l1, $r1));
 } else {
 throw new \Exception("Pattern match failure");
 };
   };
-  $__fn = function($x, $y = null) use ($__global_Data_HeytingAlgebra_boolConj, $eq, $eq11, $__body, &$__fn) {
+  $__fn = function($x, $y = null) use ($__global_Data_NonEmpty_conj, $eq, $eq11, $__body, &$__fn) {
   $__num = func_num_args();
   if ($__num < 2) {
     if ($__num === 1) return function($y) use ($x, &$__fn) { return $__fn($x, $y); };
@@ -1311,17 +2915,86 @@ function Data_NonEmpty_ordNonEmpty($dictOrd1) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_NonEmpty_eqNonEmpty = ($GLOBALS['Data_NonEmpty_eqNonEmpty'] ?? \Data\NonEmpty\phpurs_eval_thunk('Data_NonEmpty_eqNonEmpty'));
+$__global_Data_NonEmpty_conj = ($GLOBALS['Data_NonEmpty_conj'] ?? \Data\NonEmpty\phpurs_eval_thunk('Data_NonEmpty_conj'));
 $__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$compare1 = ($dictOrd1)->compare1;
-$eqNonEmpty1 = ($__global_Data_NonEmpty_eqNonEmpty)((($dictOrd1)->Eq10)($__global_Prim_undefined));
+$__case_0 = $dictOrd1;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare1 = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->eq1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq1 = $__case_res_1;
+$eqNonEmpty1 = (function() use ($eq1, $__global_Data_NonEmpty_conj) {
+  $__fn = function($dictEq) use ($eq1, $__global_Data_NonEmpty_conj, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dictEq;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq = $__case_res_2;
+$eq11 = ($eq1)($dictEq);
+    $__res = (object)["eq" => (function() use ($__global_Data_NonEmpty_conj, $eq, $eq11) {
+  $__body = function($x, $y) use ($__global_Data_NonEmpty_conj, $eq, $eq11) {
+    $__case_0 = $x;
+    $__case_1 = $y;
+    if (((($__case_0)->tag === "NonEmpty") && (($__case_1)->tag === "NonEmpty"))) {
+$l = ($__case_0)->v0;
+$l1 = ($__case_0)->v1;
+$r = ($__case_1)->v0;
+$r1 = ($__case_1)->v1;
+return ($__global_Data_NonEmpty_conj)(($eq)($l, $r), ($eq11)($l1, $r1));
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($x, $y = null) use ($__global_Data_NonEmpty_conj, $eq, $eq11, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($y) use ($x, &$__fn) { return $__fn($x, $y); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($x, $y);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
     $__res = (function() use ($compare1, $eqNonEmpty1, $__global_Prim_undefined) {
   $__fn = function($dictOrd) use ($compare1, $eqNonEmpty1, $__global_Prim_undefined, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$compare = ($dictOrd)->compare;
+$__case_0 = $dictOrd;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare = $__case_res_3;
 $compare11 = ($compare1)($dictOrd);
 $eqNonEmpty2 = ($eqNonEmpty1)((($dictOrd)->Eq0)($__global_Prim_undefined));
     $__res = (object)["compare" => (function() use ($compare, $compare11) {
@@ -1386,15 +3059,77 @@ function Data_NonEmpty_eq1NonEmpty($dictEq1) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_NonEmpty_eqNonEmpty = ($GLOBALS['Data_NonEmpty_eqNonEmpty'] ?? \Data\NonEmpty\phpurs_eval_thunk('Data_NonEmpty_eqNonEmpty'));
-$eqNonEmpty1 = ($__global_Data_NonEmpty_eqNonEmpty)($dictEq1);
-    $__res = (object)["eq1" => (function() use ($eqNonEmpty1) {
-  $__fn = function($dictEq) use ($eqNonEmpty1, &$__fn) {
+$__global_Data_NonEmpty_conj = ($GLOBALS['Data_NonEmpty_conj'] ?? \Data\NonEmpty\phpurs_eval_thunk('Data_NonEmpty_conj'));
+$__case_0 = $dictEq1;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->eq1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq1 = $__case_res_0;
+$eqNonEmpty1 = (function() use ($eq1, $__global_Data_NonEmpty_conj) {
+  $__fn = function($dictEq) use ($eq1, $__global_Data_NonEmpty_conj, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (($eqNonEmpty1)($dictEq))->eq;
+$__case_0 = $dictEq;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq = $__case_res_1;
+$eq11 = ($eq1)($dictEq);
+    $__res = (object)["eq" => (function() use ($__global_Data_NonEmpty_conj, $eq, $eq11) {
+  $__body = function($x, $y) use ($__global_Data_NonEmpty_conj, $eq, $eq11) {
+    $__case_0 = $x;
+    $__case_1 = $y;
+    if (((($__case_0)->tag === "NonEmpty") && (($__case_1)->tag === "NonEmpty"))) {
+$l = ($__case_0)->v0;
+$l1 = ($__case_0)->v1;
+$r = ($__case_1)->v0;
+$r1 = ($__case_1)->v1;
+return ($__global_Data_NonEmpty_conj)(($eq)($l, $r), ($eq11)($l1, $r1));
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($x, $y = null) use ($__global_Data_NonEmpty_conj, $eq, $eq11, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($y) use ($x, &$__fn) { return $__fn($x, $y); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($x, $y);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+    $__res = (object)["eq1" => (function() use ($dict) {
+  $__body = function($dictEq) use ($dict) {
+    $__case_0 = $dict;
+    if (true) {
+$v = $__case_0;
+return ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($dictEq) use ($dict, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $__body($dictEq);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
@@ -1410,18 +3145,229 @@ function Data_NonEmpty_ord1NonEmpty($dictOrd1) {
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-$__global_Data_NonEmpty_ordNonEmpty = ($GLOBALS['Data_NonEmpty_ordNonEmpty'] ?? \Data\NonEmpty\phpurs_eval_thunk('Data_NonEmpty_ordNonEmpty'));
-$__global_Data_NonEmpty_eq1NonEmpty = ($GLOBALS['Data_NonEmpty_eq1NonEmpty'] ?? \Data\NonEmpty\phpurs_eval_thunk('Data_NonEmpty_eq1NonEmpty'));
+$__global_Data_NonEmpty_conj = ($GLOBALS['Data_NonEmpty_conj'] ?? \Data\NonEmpty\phpurs_eval_thunk('Data_NonEmpty_conj'));
 $__global_Prim_undefined = ($GLOBALS['Prim_undefined'] ?? \Prim\phpurs_eval_thunk('Prim_undefined'));
-$ordNonEmpty1 = ($__global_Data_NonEmpty_ordNonEmpty)($dictOrd1);
-$eq1NonEmpty1 = ($__global_Data_NonEmpty_eq1NonEmpty)((($dictOrd1)->Eq10)($__global_Prim_undefined));
-    $__res = (object)["compare1" => (function() use ($ordNonEmpty1) {
-  $__fn = function($dictOrd) use ($ordNonEmpty1, &$__fn) {
+$__case_0 = $dictOrd1;
+$__case_res_0 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_0 = ($v)->compare1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare1 = $__case_res_0;
+$__case_0 = $dict;
+$__case_res_1 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_1 = ($v)->eq1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq1 = $__case_res_1;
+$eqNonEmpty1 = (function() use ($eq1, $__global_Data_NonEmpty_conj) {
+  $__fn = function($dictEq) use ($eq1, $__global_Data_NonEmpty_conj, &$__fn) {
   $__num = func_num_args();
   if ($__num < 1) {
     return phpurs_curry_fallback($__fn, func_get_args(), 1);
   }
-    $__res = (($ordNonEmpty1)($dictOrd))->compare;
+$__case_0 = $dictEq;
+$__case_res_2 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_2 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq = $__case_res_2;
+$eq11 = ($eq1)($dictEq);
+    $__res = (object)["eq" => (function() use ($__global_Data_NonEmpty_conj, $eq, $eq11) {
+  $__body = function($x, $y) use ($__global_Data_NonEmpty_conj, $eq, $eq11) {
+    $__case_0 = $x;
+    $__case_1 = $y;
+    if (((($__case_0)->tag === "NonEmpty") && (($__case_1)->tag === "NonEmpty"))) {
+$l = ($__case_0)->v0;
+$l1 = ($__case_0)->v1;
+$r = ($__case_1)->v0;
+$r1 = ($__case_1)->v1;
+return ($__global_Data_NonEmpty_conj)(($eq)($l, $r), ($eq11)($l1, $r1));
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($x, $y = null) use ($__global_Data_NonEmpty_conj, $eq, $eq11, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($y) use ($x, &$__fn) { return $__fn($x, $y); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($x, $y);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+$ordNonEmpty1 = (function() use ($compare1, $eqNonEmpty1, $__global_Prim_undefined) {
+  $__fn = function($dictOrd) use ($compare1, $eqNonEmpty1, $__global_Prim_undefined, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dictOrd;
+$__case_res_3 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_3 = ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$compare = $__case_res_3;
+$compare11 = ($compare1)($dictOrd);
+$eqNonEmpty2 = ($eqNonEmpty1)((($dictOrd)->Eq0)($__global_Prim_undefined));
+    $__res = (object)["compare" => (function() use ($compare, $compare11) {
+  $__body = function($x, $y) use ($compare, $compare11) {
+    $__case_0 = $x;
+    $__case_1 = $y;
+    if (((($__case_0)->tag === "NonEmpty") && (($__case_1)->tag === "NonEmpty"))) {
+$l = ($__case_0)->v0;
+$l1 = ($__case_0)->v1;
+$r = ($__case_1)->v0;
+$r1 = ($__case_1)->v1;
+$v = ($compare)($l, $r);
+$__case_0 = $v;
+switch (($__case_0)->tag) {
+case "LT":
+return ($GLOBALS['__phpurs_data0_LT'] ??= new Phpurs_Data0("LT"));
+break;
+case "GT":
+return ($GLOBALS['__phpurs_data0_GT'] ??= new Phpurs_Data0("GT"));
+break;
+default:
+return ($compare11)($l1, $r1);
+break;
+};
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($x, $y = null) use ($compare, $compare11, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($y) use ($x, &$__fn) { return $__fn($x, $y); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($x, $y);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})(), "Eq0" => (function() use ($eqNonEmpty2) {
+  $__fn = function($__dollar____unused) use ($eqNonEmpty2, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $eqNonEmpty2;
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+$__case_0 = $dict;
+$__case_res_4 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_4 = ($v)->eq1;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq1 = $__case_res_4;
+$eqNonEmpty1 = (function() use ($eq1, $__global_Data_NonEmpty_conj) {
+  $__fn = function($dictEq) use ($eq1, $__global_Data_NonEmpty_conj, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+$__case_0 = $dictEq;
+$__case_res_5 = null;
+if (true) {
+$v = $__case_0;
+$__case_res_5 = ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+$eq = $__case_res_5;
+$eq11 = ($eq1)($dictEq);
+    $__res = (object)["eq" => (function() use ($__global_Data_NonEmpty_conj, $eq, $eq11) {
+  $__body = function($x, $y) use ($__global_Data_NonEmpty_conj, $eq, $eq11) {
+    $__case_0 = $x;
+    $__case_1 = $y;
+    if (((($__case_0)->tag === "NonEmpty") && (($__case_1)->tag === "NonEmpty"))) {
+$l = ($__case_0)->v0;
+$l1 = ($__case_0)->v1;
+$r = ($__case_1)->v0;
+$r1 = ($__case_1)->v1;
+return ($__global_Data_NonEmpty_conj)(($eq)($l, $r), ($eq11)($l1, $r1));
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($x, $y = null) use ($__global_Data_NonEmpty_conj, $eq, $eq11, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 2) {
+    if ($__num === 1) return function($y) use ($x, &$__fn) { return $__fn($x, $y); };
+    return phpurs_curry_fallback($__fn, func_get_args(), 2);
+  }
+    $__res = $__body($x, $y);
+  return $__num > 2 ? $__res(...array_slice(func_get_args(), 2)) : $__res;
+  };
+  return $__fn;
+})()];
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})();
+$eq1NonEmpty1 = (object)["eq1" => (function() use ($dict) {
+  $__body = function($dictEq) use ($dict) {
+    $__case_0 = $dict;
+    if (true) {
+$v = $__case_0;
+return ($v)->eq;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($dictEq) use ($dict, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $__body($dictEq);
+  return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
+  };
+  return $__fn;
+})()];
+    $__res = (object)["compare1" => (function() use ($dict) {
+  $__body = function($dictOrd) use ($dict) {
+    $__case_0 = $dict;
+    if (true) {
+$v = $__case_0;
+return ($v)->compare;
+} else {
+throw new \Exception("Pattern match failure");
+};
+  };
+  $__fn = function($dictOrd) use ($dict, $__body, &$__fn) {
+  $__num = func_num_args();
+  if ($__num < 1) {
+    return phpurs_curry_fallback($__fn, func_get_args(), 1);
+  }
+    $__res = $__body($dictOrd);
   return $__num > 1 ? $__res(...array_slice(func_get_args(), 1)) : $__res;
   };
   return $__fn;
