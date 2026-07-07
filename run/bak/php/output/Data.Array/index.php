@@ -182,7 +182,7 @@ $length = function($xs) use (&$length) {
 $unconsImpl = function($empty, $next = null, $xs = null) use (&$unconsImpl) {
     if (func_num_args() < 3) {
         $__args = func_get_args();
-        return function(...$more) use ($__args, &$length) {
+        return function(...$more) use ($__args, &$unconsImpl) {
 
             return $unconsImpl(...array_merge($__args, $more));
         };
@@ -194,7 +194,7 @@ $unconsImpl = function($empty, $next = null, $xs = null) use (&$unconsImpl) {
 $indexImpl = function($just, $nothing = null, $xs = null, $i = null) use (&$indexImpl) {
     if (func_num_args() < 4) {
         $__args = func_get_args();
-        return function(...$more) use ($__args, &$unconsImpl) {
+        return function(...$more) use ($__args, &$indexImpl) {
 
             return $indexImpl(...array_merge($__args, $more));
         };
@@ -205,7 +205,7 @@ $indexImpl = function($just, $nothing = null, $xs = null, $i = null) use (&$inde
 $findMapImpl = function($nothing, $isJust = null, $f = null, $xs = null) use (&$findMapImpl) {
     if (func_num_args() < 4) {
         $__args = func_get_args();
-        return function(...$more) use ($__args, &$indexImpl) {
+        return function(...$more) use ($__args, &$findMapImpl) {
 
             return $findMapImpl(...array_merge($__args, $more));
         };
@@ -220,7 +220,7 @@ $findMapImpl = function($nothing, $isJust = null, $f = null, $xs = null) use (&$
 $findIndexImpl = function($just, $nothing = null, $f = null, $xs = null) use (&$findIndexImpl) {
     if (func_num_args() < 4) {
         $__args = func_get_args();
-        return function(...$more) use ($__args, &$findMapImpl) {
+        return function(...$more) use ($__args, &$findIndexImpl) {
 
             return $findIndexImpl(...array_merge($__args, $more));
         };
@@ -234,7 +234,7 @@ $findIndexImpl = function($just, $nothing = null, $f = null, $xs = null) use (&$
 $findLastIndexImpl = function($just, $nothing = null, $f = null, $xs = null) use (&$findLastIndexImpl) {
     if (func_num_args() < 4) {
         $__args = func_get_args();
-        return function(...$more) use ($__args, &$findIndexImpl) {
+        return function(...$more) use ($__args, &$findLastIndexImpl) {
 
             return $findLastIndexImpl(...array_merge($__args, $more));
         };
@@ -248,7 +248,7 @@ $findLastIndexImpl = function($just, $nothing = null, $f = null, $xs = null) use
 $_insertAt = function($just, $nothing = null, $i = null, $a = null, $l = null) use (&$_insertAt) {
     if (func_num_args() < 5) {
         $__args = func_get_args();
-        return function(...$more) use ($__args, &$findLastIndexImpl) {
+        return function(...$more) use ($__args, &$_insertAt) {
 
             return $_insertAt(...array_merge($__args, $more));
         };
@@ -262,7 +262,7 @@ $_insertAt = function($just, $nothing = null, $i = null, $a = null, $l = null) u
 $_deleteAt = function($just, $nothing = null, $i = null, $l = null) use (&$_deleteAt) {
     if (func_num_args() < 4) {
         $__args = func_get_args();
-        return function(...$more) use ($__args, &$_insertAt) {
+        return function(...$more) use ($__args, &$_deleteAt) {
 
             return $_deleteAt(...array_merge($__args, $more));
         };
@@ -276,7 +276,7 @@ $_deleteAt = function($just, $nothing = null, $i = null, $l = null) use (&$_dele
 $_updateAt = function($just, $nothing = null, $i = null, $a = null, $l = null) use (&$_updateAt) {
     if (func_num_args() < 5) {
         $__args = func_get_args();
-        return function(...$more) use ($__args, &$_deleteAt) {
+        return function(...$more) use ($__args, &$_updateAt) {
 
             return $_updateAt(...array_merge($__args, $more));
         };
@@ -299,7 +299,7 @@ $concat = function($xss) use (&$concat) {
 $filterImpl = function($f, $xs = null) use (&$filterImpl) {
     if (func_num_args() < 2) {
         $__args = func_get_args();
-        return function(...$more) use ($__args, &$_updateAt) {
+        return function(...$more) use ($__args, &$filterImpl) {
 
             return $filterImpl(...array_merge($__args, $more));
         };
@@ -314,7 +314,7 @@ $filterImpl = function($f, $xs = null) use (&$filterImpl) {
 $partitionImpl = function($f, $xs = null) use (&$partitionImpl) {
     if (func_num_args() < 2) {
         $__args = func_get_args();
-        return function(...$more) use ($__args, &$reverse) {
+        return function(...$more) use ($__args, &$partitionImpl) {
 
             return $partitionImpl(...array_merge($__args, $more));
         };
@@ -331,7 +331,7 @@ $partitionImpl = function($f, $xs = null) use (&$partitionImpl) {
 $scanlImpl = function($f, $b = null, $xs = null) use (&$scanlImpl) {
     if (func_num_args() < 3) {
         $__args = func_get_args();
-        return function(...$more) use ($__args, &$concat) {
+        return function(...$more) use ($__args, &$scanlImpl) {
 
             return $scanlImpl(...array_merge($__args, $more));
         };
@@ -348,7 +348,7 @@ $scanlImpl = function($f, $b = null, $xs = null) use (&$scanlImpl) {
 $scanrImpl = function($f, $b = null, $xs = null) use (&$scanrImpl) {
     if (func_num_args() < 3) {
         $__args = func_get_args();
-        return function(...$more) use ($__args, &$filterImpl) {
+        return function(...$more) use ($__args, &$scanrImpl) {
 
             return $scanrImpl(...array_merge($__args, $more));
         };
@@ -366,7 +366,7 @@ $scanrImpl = function($f, $b = null, $xs = null) use (&$scanrImpl) {
 $sortByImpl = function($compare, $fromOrdering = null, $xs = null) use (&$sortByImpl) {
     if (func_num_args() < 3) {
         $__args = func_get_args();
-        return function(...$more) use ($__args, &$partitionImpl) {
+        return function(...$more) use ($__args, &$sortByImpl) {
 
             return $sortByImpl(...array_merge($__args, $more));
         };
@@ -381,7 +381,7 @@ $sortByImpl = function($compare, $fromOrdering = null, $xs = null) use (&$sortBy
 $sliceImpl = function($s, $e = null, $l = null) use (&$sliceImpl) {
     if (func_num_args() < 3) {
         $__args = func_get_args();
-        return function(...$more) use ($__args, &$scanlImpl) {
+        return function(...$more) use ($__args, &$sliceImpl) {
 
             return $sliceImpl(...array_merge($__args, $more));
         };
@@ -392,7 +392,7 @@ $sliceImpl = function($s, $e = null, $l = null) use (&$sliceImpl) {
 $zipWithImpl = function($f, $xs = null, $ys = null) use (&$zipWithImpl) {
     if (func_num_args() < 3) {
         $__args = func_get_args();
-        return function(...$more) use ($__args, &$scanrImpl) {
+        return function(...$more) use ($__args, &$zipWithImpl) {
 
             return $zipWithImpl(...array_merge($__args, $more));
         };
@@ -408,7 +408,7 @@ $zipWithImpl = function($f, $xs = null, $ys = null) use (&$zipWithImpl) {
 $anyImpl = function($p, $xs = null) use (&$anyImpl) {
     if (func_num_args() < 2) {
         $__args = func_get_args();
-        return function(...$more) use ($__args, &$sortByImpl) {
+        return function(...$more) use ($__args, &$anyImpl) {
 
             return $anyImpl(...array_merge($__args, $more));
         };
@@ -422,7 +422,7 @@ $anyImpl = function($p, $xs = null) use (&$anyImpl) {
 $allImpl = function($p, $xs = null) use (&$allImpl) {
     if (func_num_args() < 2) {
         $__args = func_get_args();
-        return function(...$more) use ($__args, &$sliceImpl) {
+        return function(...$more) use ($__args, &$allImpl) {
 
             return $allImpl(...array_merge($__args, $more));
         };
@@ -436,7 +436,7 @@ $allImpl = function($p, $xs = null) use (&$allImpl) {
 $unsafeIndexImpl = function($xs, $n = null) use (&$unsafeIndexImpl) {
     if (func_num_args() < 2) {
         $__args = func_get_args();
-        return function(...$more) use ($__args, &$zipWithImpl) {
+        return function(...$more) use ($__args, &$unsafeIndexImpl) {
 
             return $unsafeIndexImpl(...array_merge($__args, $more));
         };

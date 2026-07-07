@@ -93,6 +93,14 @@ if (!function_exists(__NAMESPACE__ . '\\phpurs_eval_thunk')) {
   }
 }
 $Prim_undefined = function() { throw new \Exception("undefined"); };
+$ffi_Partial = \call_user_func(function() {
+$exports['_crashWith'] = function ($msg) {
+    throw new \Exception($msg);
+};
+
+return $exports;
+});
+$GLOBALS['Partial__crashWith'] = $ffi_Partial['_crashWith'] ?? null;
 
 
 // Partial_crashWith

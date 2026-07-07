@@ -117,7 +117,7 @@ $singleton = function($c) use (&$singleton) {
 $_charAt = function($just, $nothing = null, $i = null, $s = null) use (&$_charAt) {
     if (func_num_args() < 4) {
         $__args = func_get_args();
-        return function(...$more) use ($__args, &$fromCharArray) {
+        return function(...$more) use ($__args, &$_charAt) {
 
             return $_charAt(...array_merge($__args, $more));
         };
@@ -128,7 +128,7 @@ $_charAt = function($just, $nothing = null, $i = null, $s = null) use (&$_charAt
 $_toChar = function($just, $nothing = null, $s = null) use (&$_toChar) {
     if (func_num_args() < 3) {
         $__args = func_get_args();
-        return function(...$more) use ($__args, &$toCharArray) {
+        return function(...$more) use ($__args, &$_toChar) {
 
             return $_toChar(...array_merge($__args, $more));
         };
@@ -143,7 +143,7 @@ $length = function($s) use (&$length) {
 $countPrefix = function($p, $s = null) use (&$countPrefix) {
     if (func_num_args() < 2) {
         $__args = func_get_args();
-        return function(...$more) use ($__args, &$singleton) {
+        return function(...$more) use ($__args, &$countPrefix) {
 
             return $countPrefix(...array_merge($__args, $more));
         };
@@ -159,7 +159,7 @@ $countPrefix = function($p, $s = null) use (&$countPrefix) {
 $_indexOf = function($just, $nothing = null, $x = null, $s = null) use (&$_indexOf) {
     if (func_num_args() < 4) {
         $__args = func_get_args();
-        return function(...$more) use ($__args, &$_charAt) {
+        return function(...$more) use ($__args, &$_indexOf) {
 
             return $_indexOf(...array_merge($__args, $more));
         };
@@ -171,7 +171,7 @@ $_indexOf = function($just, $nothing = null, $x = null, $s = null) use (&$_index
 $_indexOfStartingAt = function($just, $nothing = null, $x = null, $startAt = null, $s = null) use (&$_indexOfStartingAt) {
     if (func_num_args() < 5) {
         $__args = func_get_args();
-        return function(...$more) use ($__args, &$_toChar) {
+        return function(...$more) use ($__args, &$_indexOfStartingAt) {
 
             return $_indexOfStartingAt(...array_merge($__args, $more));
         };
@@ -184,7 +184,7 @@ $_indexOfStartingAt = function($just, $nothing = null, $x = null, $startAt = nul
 $_lastIndexOf = function($just, $nothing = null, $x = null, $s = null) use (&$_lastIndexOf) {
     if (func_num_args() < 4) {
         $__args = func_get_args();
-        return function(...$more) use ($__args, &$length) {
+        return function(...$more) use ($__args, &$_lastIndexOf) {
 
             return $_lastIndexOf(...array_merge($__args, $more));
         };
@@ -199,7 +199,7 @@ $_lastIndexOf = function($just, $nothing = null, $x = null, $s = null) use (&$_l
 $_lastIndexOfStartingAt = function($just, $nothing = null, $x = null, $startAt = null, $s = null) use (&$_lastIndexOfStartingAt) {
     if (func_num_args() < 5) {
         $__args = func_get_args();
-        return function(...$more) use ($__args, &$countPrefix) {
+        return function(...$more) use ($__args, &$_lastIndexOfStartingAt) {
 
             return $_lastIndexOfStartingAt(...array_merge($__args, $more));
         };
@@ -221,7 +221,7 @@ $_lastIndexOfStartingAt = function($just, $nothing = null, $x = null, $startAt =
 $take = function($n, $s = null) use (&$take) {
     if (func_num_args() < 2) {
         $__args = func_get_args();
-        return function(...$more) use ($__args, &$_indexOf) {
+        return function(...$more) use ($__args, &$take) {
 
             return $take(...array_merge($__args, $more));
         };
@@ -232,7 +232,7 @@ $take = function($n, $s = null) use (&$take) {
 $drop = function($n, $s = null) use (&$drop) {
     if (func_num_args() < 2) {
         $__args = func_get_args();
-        return function(...$more) use ($__args, &$_indexOfStartingAt) {
+        return function(...$more) use ($__args, &$drop) {
 
             return $drop(...array_merge($__args, $more));
         };
@@ -243,7 +243,7 @@ $drop = function($n, $s = null) use (&$drop) {
 $slice = function($b, $e = null, $s = null) use (&$slice) {
     if (func_num_args() < 3) {
         $__args = func_get_args();
-        return function(...$more) use ($__args, &$_lastIndexOf) {
+        return function(...$more) use ($__args, &$slice) {
 
             return $slice(...array_merge($__args, $more));
         };
@@ -261,7 +261,7 @@ $slice = function($b, $e = null, $s = null) use (&$slice) {
 $splitAt = function($i, $s = null) use (&$splitAt) {
     if (func_num_args() < 2) {
         $__args = func_get_args();
-        return function(...$more) use ($__args, &$_lastIndexOfStartingAt) {
+        return function(...$more) use ($__args, &$splitAt) {
 
             return $splitAt(...array_merge($__args, $more));
         };

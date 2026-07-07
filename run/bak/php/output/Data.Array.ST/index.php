@@ -116,7 +116,7 @@ $new = function() use (&$new) {
 $peekImpl = function($just, $nothing = null, $i = null, $xs = null) use (&$peekImpl) {
     if (func_num_args() < 4) {
         $__args = func_get_args();
-        return function(...$more) use ($__args, &$new) {
+        return function(...$more) use ($__args, &$peekImpl) {
 
             return $peekImpl(...array_merge($__args, $more));
         };
@@ -127,7 +127,7 @@ $peekImpl = function($just, $nothing = null, $i = null, $xs = null) use (&$peekI
 $pokeImpl = function($i, $a = null, $xs = null) use (&$pokeImpl) {
     if (func_num_args() < 3) {
         $__args = func_get_args();
-        return function(...$more) use ($__args, &$peekImpl) {
+        return function(...$more) use ($__args, &$pokeImpl) {
 
             return $pokeImpl(...array_merge($__args, $more));
         };
@@ -146,7 +146,7 @@ $lengthImpl = function($xs) use (&$lengthImpl) {
 $popImpl = function($just, $nothing = null, $xs = null) use (&$popImpl) {
     if (func_num_args() < 3) {
         $__args = func_get_args();
-        return function(...$more) use ($__args, &$pokeImpl) {
+        return function(...$more) use ($__args, &$popImpl) {
 
             return $popImpl(...array_merge($__args, $more));
         };
@@ -157,7 +157,7 @@ $popImpl = function($just, $nothing = null, $xs = null) use (&$popImpl) {
 $pushAllImpl = function($as, $xs = null) use (&$pushAllImpl) {
     if (func_num_args() < 2) {
         $__args = func_get_args();
-        return function(...$more) use ($__args, &$lengthImpl) {
+        return function(...$more) use ($__args, &$pushAllImpl) {
 
             return $pushAllImpl(...array_merge($__args, $more));
         };
@@ -171,7 +171,7 @@ $pushAllImpl = function($as, $xs = null) use (&$pushAllImpl) {
 $shiftImpl = function($just, $nothing = null, $xs = null) use (&$shiftImpl) {
     if (func_num_args() < 3) {
         $__args = func_get_args();
-        return function(...$more) use ($__args, &$popImpl) {
+        return function(...$more) use ($__args, &$shiftImpl) {
 
             return $shiftImpl(...array_merge($__args, $more));
         };
@@ -182,7 +182,7 @@ $shiftImpl = function($just, $nothing = null, $xs = null) use (&$shiftImpl) {
 $unshiftAllImpl = function($as, $xs = null) use (&$unshiftAllImpl) {
     if (func_num_args() < 2) {
         $__args = func_get_args();
-        return function(...$more) use ($__args, &$pushAllImpl) {
+        return function(...$more) use ($__args, &$unshiftAllImpl) {
 
             return $unshiftAllImpl(...array_merge($__args, $more));
         };
@@ -194,7 +194,7 @@ $unshiftAllImpl = function($as, $xs = null) use (&$unshiftAllImpl) {
 $spliceImpl = function($i, $howMany = null, $bs = null, $xs = null) use (&$spliceImpl) {
     if (func_num_args() < 4) {
         $__args = func_get_args();
-        return function(...$more) use ($__args, &$shiftImpl) {
+        return function(...$more) use ($__args, &$spliceImpl) {
 
             return $spliceImpl(...array_merge($__args, $more));
         };
@@ -225,7 +225,7 @@ $cloneImpl = function($xs) use (&$cloneImpl) {
 $sortByImpl = function($compare, $fromOrdering = null, $xs = null) use (&$sortByImpl) {
     if (func_num_args() < 3) {
         $__args = func_get_args();
-        return function(...$more) use ($__args, &$unshiftAllImpl) {
+        return function(...$more) use ($__args, &$sortByImpl) {
 
             return $sortByImpl(...array_merge($__args, $more));
         };
@@ -248,7 +248,7 @@ $toAssocArrayImpl = function($xs) use (&$toAssocArrayImpl) {
 $pushImpl = function($a, $xs = null) use (&$pushImpl) {
     if (func_num_args() < 2) {
         $__args = func_get_args();
-        return function(...$more) use ($__args, &$spliceImpl) {
+        return function(...$more) use ($__args, &$pushImpl) {
 
             return $pushImpl(...array_merge($__args, $more));
         };

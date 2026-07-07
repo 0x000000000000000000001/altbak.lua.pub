@@ -2,7 +2,6 @@
 
 namespace Data\Show;
 
-require_once __DIR__ . '/../Data.Semigroup/index.php';
 require_once __DIR__ . '/../Data.Show/index.php';
 require_once __DIR__ . '/../Data.Unit/index.php';
 
@@ -103,7 +102,7 @@ $showCharImpl = function($c) use (&$showCharImpl) { return $c; };
 $showArrayImpl = function($f, $xs = null) use (&$showArrayImpl) {
     if (func_num_args() < 2) {
         $__args = func_get_args();
-        return function(...$more) use ($__args, &$showIntImpl) {
+        return function(...$more) use ($__args, &$showArrayImpl) {
 
             return $showArrayImpl(...array_merge($__args, $more));
         };
