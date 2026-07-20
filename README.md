@@ -4,7 +4,6 @@
 <br />
 <br />
 
-WIP: Currently working on a super-optimized PureScript compiler targeting Lua.
+The compiler is [here](https://github.com/purescript-lua/purescript-lua).
 
-Based on the universal backend source [0x000000000000000000001/altbak.pub](https://github.com/0x000000000000000000001/altbak.pub).
-Compiled output will be committed and exposed here for demonstrative purposes once complete.
+Based on the universal backend source 0x000000000000000000001/altbak.pub. Compiled output is committed and exposed here for demonstrative purposes.
